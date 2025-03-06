@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
-import { Sun, Moon } from "lucide-react";
+import { Sun, Moon, Search } from "lucide-react";
 import {
   CommandDialog,
   CommandInput,
@@ -108,7 +108,7 @@ export default function Header() {
   return (
     <header
       className={cn(
-        `bg-background shadow-md fixed top-0 w-full transition-transform duration-300 h-12 sm:h-14 md:h-16 flex items-center justify-center ${
+        `bg-background fixed top-0 w-full transition-transform duration-300 h-12 sm:h-14 md:h-16 flex items-center justify-center border-b ${
           headerVisible ? "translate-y-0" : "-translate-y-full"
         } z-20`,
       )}
@@ -124,7 +124,7 @@ export default function Header() {
               height={80}
             />
           </span>
-          <span className="text-lg sm:text-xl md:text-2xl font-bold">
+          <span className="text-base sm:text-lg md:text-xl font-bold">
             lazydino.dev
           </span>
         </Link>
@@ -139,16 +139,17 @@ export default function Header() {
             <Moon className="absolute h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             <span className="sr-only">Toggle theme</span>
           </Button>
-          <button
+          <Button
+            variant="ghost"
+            size="icon"
             onClick={() => setOpen(true)}
-            className="flex items-center gap-1 md:gap-2 rounded-md border border-input bg-transparent px-1.5 sm:px-2 md:px-3 py-1 md:py-2 text-xs md:text-sm text-muted-foreground hover:bg-accent transition-colors"
+            className="rounded-full h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10"
           >
-            <span className="hidden sm:inline">Search posts...</span>
-            <span className="sm:hidden">Search...</span>
-            <kbd className="pointer-events-none hidden md:inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
-              <span className="text-xs">⌘</span>K
-            </kbd>
-          </button>
+            <Search className="absolute h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem] rotate-90 transition-all" />
+            {/* <kbd className="pointer-events-none hidden md:inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100"> */}
+            {/*   <span className="text-xs">⌘</span>K */}
+            {/* </kbd> */}
+          </Button>
         </div>
         <CommandDialog open={open} onOpenChange={setOpen}>
           <DialogTitle hidden={true}></DialogTitle>

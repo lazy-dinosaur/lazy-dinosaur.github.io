@@ -56,7 +56,7 @@ function TreeNode({
 
   const paddingLeft = `${level * 12}px`;
   const linkClassName = cn(
-    "flex items-center gap-1 sm:gap-2 text-xs sm:text-sm font-medium hover:text-primary transition-colors px-1",
+    "flex items-center gap-1 sm:gap-2 text-xs 2xl:text-sm font-medium hover:text-primary transition-colors px-1",
     (isFileActive || isFolderActive) && "text-primary bg-accent/50",
   );
 
@@ -70,7 +70,11 @@ function TreeNode({
         onClick={() => setIsExpanded(!isExpanded)}
       >
         {node.type === "folder" && (
-          <Button variant="ghost" size="sm" className="h-6 sm:h-8 w-6 sm:w-8 p-0">
+          <Button
+            variant="ghost"
+            size="sm"
+            className="h-6 sm:h-8 w-6 sm:w-8 p-0"
+          >
             {isExpanded ? (
               <ChevronDown className="h-3 w-3 sm:h-4 sm:w-4" />
             ) : (

@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { usePosts } from "@/contexts/posts-context";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import { SidebarSection } from "./sidebar-section";
 
 interface RightSidebarProps {
   className?: string;
@@ -11,21 +12,16 @@ interface RightSidebarProps {
 
 const RightSidebar = ({ className }: RightSidebarProps) => {
   return (
-    <aside className={cn("hidden lg:block", className)}>
-      <ScrollArea className="h-full p-3 sm:p-4 md:p-5">
-        <h2 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 md:mb-5 border-b pb-2">
-          최근 게시물
-        </h2>
-        <div className="space-y-2 sm:space-y-3 mb-6 sm:mb-8 md:mb-10">
+    <aside className={cn("hidden xl:block", className)}>
+      <ScrollArea className="h-full">
+        <SidebarSection title="최근 게시물">
           <RecentPosts />
-        </div>
-
-        <h2 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 md:mb-5 mt-6 sm:mt-8 md:mt-10 border-b pb-2">
-          인기 태그
-        </h2>
-        <div className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-3">
-          <PopularTags />
-        </div>
+        </SidebarSection>
+        <SidebarSection title="인기 태그">
+          <div className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-3 px-1.5">
+            <PopularTags />
+          </div>
+        </SidebarSection>
       </ScrollArea>
     </aside>
   );
@@ -42,7 +38,7 @@ function RecentPosts() {
         <Link
           key={post.urlPath}
           href={`/posts/${post.urlPath}`}
-          className="block text-xs sm:text-sm hover:text-primary transition-colors line-clamp-1 py-0.5"
+          className="block text-xs 2xl:text-sm hover:text-primary transition-colors line-clamp-1 py-0.5 px-1.5"
         >
           {post.title}
         </Link>
@@ -75,7 +71,7 @@ function PopularTags() {
         <Badge
           key={tag}
           variant="outline"
-          className="text-2xs sm:text-xs hover:bg-primary hover:text-primary-foreground px-1.5 py-0.5 sm:px-2 sm:py-1"
+          className="text-2xs 2xl:text-xs hover:bg-primary hover:text-primary-foreground px-1.5 py-0.5 sm:px-2 sm:py-1"
         >
           #{tag}
         </Badge>

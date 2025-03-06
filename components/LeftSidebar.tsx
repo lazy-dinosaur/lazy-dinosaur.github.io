@@ -9,6 +9,7 @@ import { DialogTitle, DialogDescription } from "@radix-ui/react-dialog";
 import { usePosts } from "@/contexts/posts-context";
 import { buildFolderStructure } from "@/lib/utils";
 import { cn } from "@/lib/utils";
+import { SidebarSection } from "./sidebar-section";
 
 interface LeftSidebarProps {
   className?: string;
@@ -25,7 +26,7 @@ export default function LeftSidebar({ className }: LeftSidebarProps) {
       <Sheet open={open} onOpenChange={setOpen}>
         <DialogTitle hidden={true}></DialogTitle>
         <DialogDescription hidden={true}></DialogDescription>
-        <SheetTrigger asChild className="lg:hidden fixed bottom-4 left-4 z-50">
+        <SheetTrigger asChild className="xl:hidden fixed bottom-4 left-4 z-50">
           <Button
             variant="outline"
             size="icon"
@@ -51,12 +52,11 @@ export default function LeftSidebar({ className }: LeftSidebarProps) {
       </Sheet>
 
       {/* 데스크톱 버전 */}
-      <aside className={cn("hidden lg:block", className)}>
-        <ScrollArea className="h-full p-3 sm:p-4 md:p-5">
-          <h2 className="text-base sm:text-lg md:text-xl font-semibold mb-3 sm:mb-4 md:mb-5 px-1 sm:px-2 border-b pb-2">
-            카테고리
-          </h2>
-          <TreeView data={folderStructure} />
+      <aside className={cn("hidden xl:block", className)}>
+        <ScrollArea className="h-full">
+          <SidebarSection title="카테고리">
+            <TreeView data={folderStructure} />
+          </SidebarSection>
         </ScrollArea>
       </aside>
     </>

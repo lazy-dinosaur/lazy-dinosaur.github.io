@@ -12,6 +12,12 @@ export default {
   theme: {
     extend: {
       colors: {
+        textColor: {
+          primary: {
+            DEFAULT: "hsl(var(--primary-text))",
+            foreground: "hsl(var(--primary-foreground))",
+          },
+        },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -45,6 +51,10 @@ export default {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
+        selection: {
+          DEFAULT: "hsl(var(--selection))",
+          foreground: "hsl(var(--selection-foreground))",
+        },
         chart: {
           "1": "hsl(var(--chart-1))",
           "2": "hsl(var(--chart-2))",
