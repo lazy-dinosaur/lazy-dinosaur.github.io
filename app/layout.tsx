@@ -55,7 +55,7 @@ export default async function RootLayout({
               <Header />
               <div className="flex-1 flex flex-col xl:flex-row mt-12 sm:mt-14 md:mt-16 2xl:container 2xl:mx-auto md:px-5">
                 {/* 좌측 사이드바 - 데스크톱에서만 고정 */}
-                <LeftSidebar className="w-48 xl:w-52 2xl:w-56  lg:shrink-0 lg:sticky h-full lg:top-16 mb-4 lg:mb-0 mt-40" />
+                <LeftSidebar className="w-48 xl:w-52 2xl:w-56 lg:shrink-0 lg:sticky h-full lg:top-16 mb-4 lg:mb-0 mt-40" />
 
                 {/* 메인 콘텐츠 - 중앙 정렬 & 최대 너비 제한 */}
                 <div className="xl:max-w-5xl mx-auto rounded-lg w-full overflow-x-hidden p-3 2xl:p-6 h-full">

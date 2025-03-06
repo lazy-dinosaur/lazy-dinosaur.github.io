@@ -43,7 +43,7 @@ export default async function PostPage({ params }: PostPageProps) {
   const publishPath = post.urlPath.split("/").slice(0, -1).join("/");
 
   return (
-    <article className="rounded-lg p-4 sm:p-6 lg:p-8 min-h-[70vh] shadow-md">
+    <article className="bg-card rounded-lg p-4 sm:p-6 lg:p-8 min-h-[70vh] shadow-md">
       {/* 마크다운 콘텐츠 */}
       <div className="min-h-[250px] sm:min-h-[300px]">
         <MarkdownRenderer
