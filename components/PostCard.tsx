@@ -58,8 +58,8 @@ const PostCard = ({
               : "min-h-64 sm:min-h-80 md:min-h-96 h-full",
           )}
         >
-          <div>
-            <div className="text-xs sm:text-sm md:text-base line-clamp-2">
+          <div className="space-y-2">
+            <div className="text-sm sm:text-base md:text-lg line-clamp-2 font-bold">
               {title}
             </div>
             <p className="text-xs sm:text-sm text-muted-foreground mb-2 sm:mb-3 line-clamp-5">
