@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
-import { Sun, Moon, Search } from "lucide-react";
+import { Sun, Moon, Search, Menu } from "lucide-react";
 import {
   CommandDialog,
   CommandInput,
@@ -114,7 +114,16 @@ export default function Header() {
       )}
     >
       <div className="flex items-center justify-between py-1 sm:py-2 px-3 sm:px-4 md:px-6 w-full max-w-screen-2xl">
-        <Link className="flex items-center" href="/">
+        <div className="flex items-center gap-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="rounded-full h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 xl:hidden"
+            onClick={() => document.getElementById('sidebar-trigger')?.click()}
+          >
+            <Menu className="h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem]" />
+          </Button>
+          <Link className="flex items-center" href="/">
           <span className="relative w-10 h-8 sm:w-14 sm:h-9 md:w-20 md:h-12 mr-1 sm:mr-2">
             <Image
               src="/lazydino-logo3.png"
@@ -124,10 +133,11 @@ export default function Header() {
               height={80}
             />
           </span>
-          <span className="text-base sm:text-lg md:text-xl font-bold">
-            lazydino.dev
+          <span className="text-base sm:text-lg md:text-xl font-bold hidden lg:block">
+            {`Lazydino's Dev log`}
           </span>
-        </Link>
+          </Link>
+        </div>
         <div className="flex items-center gap-1 sm:gap-2">
           <Button
             variant="ghost"

@@ -9,7 +9,7 @@ export default async function Home() {
       {/* 헤더 섹션 */}
       <section className="space-y-2 sm:space-y-3 md:space-y-4 ">
         <h1 className="text-lg sm:text-xl lg:text-2xl font-bold">
-          LazyDino Dev Log
+          {`Lazydino's Dev log`}
         </h1>
         <p className="text-sm sm:text-base text-muted-foreground">
           내가 한걸 티내기 위해 만든 블로그
