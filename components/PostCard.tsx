@@ -59,10 +59,10 @@ const PostCard = ({
           )}
         >
           <div className="space-y-2">
-            <div className="text-sm sm:text-base md:text-lg line-clamp-2 font-bold">
+            <div className="text-base md:text-lg line-clamp-2 font-bold">
               {title}
             </div>
-            <p className="text-xs sm:text-sm text-muted-foreground mb-2 sm:mb-3 line-clamp-5">
+            <p className="text-sm text-muted-foreground mb-2 sm:mb-3 line-clamp-5">
               {(summary || plainContent || content).substring(
                 0,
                 thumbnail ? 200 : 300,
@@ -81,7 +81,7 @@ const PostCard = ({
                 </Badge>
               ))}
             </div>
-            <p className="text-2xs sm:text-xs text-muted-foreground">
+            <p className="text-xs text-muted-foreground">
               Published on {new Date(createdAt).toLocaleDateString()}
             </p>
           </div>
