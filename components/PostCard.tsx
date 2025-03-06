@@ -63,7 +63,11 @@ const PostCard = ({
               {title}
             </div>
             <p className="text-xs sm:text-sm text-muted-foreground mb-2 sm:mb-3 line-clamp-5">
-              {(plainContent || content).substring(0, thumbnail ? 200 : 300)}...
+              {(summary || plainContent || content).substring(
+                0,
+                thumbnail ? 200 : 300,
+              )}
+              ...
             </p>
           </div>
           <div>
