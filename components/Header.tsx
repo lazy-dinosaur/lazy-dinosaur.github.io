@@ -39,7 +39,7 @@ export default function Header() {
       const currentScrollY = window.scrollY;
 
       // 30px 이상 스크롤했을 때만 동작 (모바일에서는 더 빨리 반응하도록)
-      if (currentScrollY > 5) {
+      if (currentScrollY > 30) {
         // 이전 스크롤 위치보다 아래로 스크롤하면 헤더 숨김
         // 이전 스크롤 위치보다 위로 스크롤하면 헤더 표시
         setHeaderVisible(prevScrollY > currentScrollY);
@@ -119,23 +119,23 @@ export default function Header() {
             variant="ghost"
             size="icon"
             className="rounded-full h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 xl:hidden"
-            onClick={() => document.getElementById('sidebar-trigger')?.click()}
+            onClick={() => document.getElementById("sidebar-trigger")?.click()}
           >
             <Menu className="h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem]" />
           </Button>
           <Link className="flex items-center" href="/">
-          <span className="relative w-10 h-8 sm:w-14 sm:h-9 md:w-20 md:h-12 mr-1 sm:mr-2">
-            <Image
-              src="/lazydino-logo3.png"
-              alt="lazydino.dev"
-              className="h-full w-full object-cover"
-              width={80}
-              height={80}
-            />
-          </span>
-          <span className="text-base sm:text-lg md:text-xl font-bold hidden lg:block">
-            {`Lazydino's Dev log`}
-          </span>
+            <span className="relative w-10 h-8 sm:w-14 sm:h-9 md:w-20 md:h-12 mr-1 sm:mr-2">
+              <Image
+                src="/lazydino-logo3.png"
+                alt="lazydino.dev"
+                className="h-full w-full object-cover"
+                width={80}
+                height={80}
+              />
+            </span>
+            <span className="text-base sm:text-lg md:text-xl font-bold ">
+              {`Lazydino's Dev log`}
+            </span>
           </Link>
         </div>
         <div className="flex items-center gap-1 sm:gap-2">
