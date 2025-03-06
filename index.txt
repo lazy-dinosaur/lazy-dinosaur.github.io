@@ -5,19 +5,19 @@
 a:I[34835,[],""]
 :HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/_next/static/css/0924e8d15c4f6061.css","style"]
-0:{"P":null,"b":"PU1JpK3H6AYc3GGE_oKhi","p":"","c":["",""],"i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/0924e8d15c4f6061.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],"$L2"]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L3",null,["$","$L4",null,{"children":"$L5"}]]}],{},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","Vh8PQxn6hgDCO2uY2sf4K",{"children":[["$","$L6",null,{"children":"$L7"}],["$","$L8",null,{"children":"$L9"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]]}],false]],"m":"$undefined","G":["$a","$undefined"],"s":false,"S":true}
+:HL["/_next/static/css/1de576a243e39471.css","style"]
+0:{"P":null,"b":"4eGGNtfLywjOP0EWMWhS9","p":"","c":["",""],"i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/1de576a243e39471.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],"$L2"]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L3",null,["$","$L4",null,{"children":"$L5"}]]}],{},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","I4Whz_AJSOjVfmJ_kYDQu",{"children":[["$","$L6",null,{"children":"$L7"}],["$","$L8",null,{"children":"$L9"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]]}],false]],"m":"$undefined","G":["$a","$undefined"],"s":false,"S":true}
 9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 7:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"LazyDino Dev Log"}],["$","meta","2",{"name":"description","content":"내가 한걸 티내기 위해 만든 블로그"}],["$","link","3",{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"256x256"}],["$","link","4",{"rel":"icon","href":"/favicon.ico","sizes":"any","type":"image/x-icon"}]]
 5:null
-b:I[14627,["173","static/chunks/173-8992931c930b0419.js","970","static/chunks/970-734dac560ef910f1.js","295","static/chunks/295-1d64be5fdcca802f.js","389","static/chunks/389-465a7fb0cffb0280.js","177","static/chunks/app/layout-ca58efc58a6cdc1c.js"],"ThemeProvider"]
-c:I[96403,["173","static/chunks/173-8992931c930b0419.js","970","static/chunks/970-734dac560ef910f1.js","295","static/chunks/295-1d64be5fdcca802f.js","389","static/chunks/389-465a7fb0cffb0280.js","177","static/chunks/app/layout-ca58efc58a6cdc1c.js"],"PostsProvider"]
-f:I[23895,["173","static/chunks/173-8992931c930b0419.js","970","static/chunks/970-734dac560ef910f1.js","295","static/chunks/295-1d64be5fdcca802f.js","389","static/chunks/389-465a7fb0cffb0280.js","177","static/chunks/app/layout-ca58efc58a6cdc1c.js"],"default"]
-10:I[19751,["173","static/chunks/173-8992931c930b0419.js","970","static/chunks/970-734dac560ef910f1.js","295","static/chunks/295-1d64be5fdcca802f.js","389","static/chunks/389-465a7fb0cffb0280.js","177","static/chunks/app/layout-ca58efc58a6cdc1c.js"],"default"]
+b:I[14627,["173","static/chunks/173-8992931c930b0419.js","970","static/chunks/970-734dac560ef910f1.js","295","static/chunks/295-1d64be5fdcca802f.js","389","static/chunks/389-465a7fb0cffb0280.js","177","static/chunks/app/layout-00f5d8be5d38c3c6.js"],"ThemeProvider"]
+c:I[96403,["173","static/chunks/173-8992931c930b0419.js","970","static/chunks/970-734dac560ef910f1.js","295","static/chunks/295-1d64be5fdcca802f.js","389","static/chunks/389-465a7fb0cffb0280.js","177","static/chunks/app/layout-00f5d8be5d38c3c6.js"],"PostsProvider"]
+f:I[23895,["173","static/chunks/173-8992931c930b0419.js","970","static/chunks/970-734dac560ef910f1.js","295","static/chunks/295-1d64be5fdcca802f.js","389","static/chunks/389-465a7fb0cffb0280.js","177","static/chunks/app/layout-00f5d8be5d38c3c6.js"],"default"]
+10:I[19751,["173","static/chunks/173-8992931c930b0419.js","970","static/chunks/970-734dac560ef910f1.js","295","static/chunks/295-1d64be5fdcca802f.js","389","static/chunks/389-465a7fb0cffb0280.js","177","static/chunks/app/layout-00f5d8be5d38c3c6.js"],"default"]
 11:I[15244,[],""]
 12:I[43866,[],""]
 13:I[48173,["173","static/chunks/173-8992931c930b0419.js","970","static/chunks/970-734dac560ef910f1.js","974","static/chunks/app/page-9e534bf6d57b6e06.js"],""]
-14:I[81262,["173","static/chunks/173-8992931c930b0419.js","970","static/chunks/970-734dac560ef910f1.js","295","static/chunks/295-1d64be5fdcca802f.js","389","static/chunks/389-465a7fb0cffb0280.js","177","static/chunks/app/layout-ca58efc58a6cdc1c.js"],"default"]
+14:I[81262,["173","static/chunks/173-8992931c930b0419.js","970","static/chunks/970-734dac560ef910f1.js","295","static/chunks/295-1d64be5fdcca802f.js","389","static/chunks/389-465a7fb0cffb0280.js","177","static/chunks/app/layout-00f5d8be5d38c3c6.js"],"default"]
 d:T12a9,
 # 개인 블로그를 제작하게 된 이유
 
