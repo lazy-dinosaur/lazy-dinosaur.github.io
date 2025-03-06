@@ -5,20 +5,20 @@ export default async function Home() {
   const posts = await getPosts();
 
   return (
-    <div className="space-y-6 sm:space-y-8 md:space-y-10 p-4 sm:p-6 lg:p-8 h-full rounded-lg">
+    <div className="space-y-6 sm:space-y-8 2xl:space-y-10 h-full rounded-lg pb-5">
       {/* 헤더 섹션 */}
       <section className="space-y-2 sm:space-y-3 md:space-y-4 ">
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
+        <h1 className="text-lg sm:text-xl lg:text-2xl font-bold">
           LazyDino Dev Log
         </h1>
-        <p className="text-base sm:text-lg text-muted-foreground">
+        <p className="text-sm sm:text-base text-muted-foreground">
           내가 한걸 티내기 위해 만든 블로그
         </p>
       </section>
 
       {/* 포스트 그리드 */}
       <section>
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {posts.map((post) => (
             <PostCard
               key={post.urlPath}

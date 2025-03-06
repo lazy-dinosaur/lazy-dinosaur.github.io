@@ -53,17 +53,17 @@ export default async function RootLayout({
           <PostsProvider posts={posts}>
             <div className="min-h-screen flex flex-col">
               <Header />
-              <div className="flex-1 flex flex-col lg:flex-row mt-12 sm:mt-14 md:mt-16 justify-center container mx-auto">
+              <div className="flex-1 flex flex-col xl:flex-row mt-12 sm:mt-14 md:mt-16 2xl:container 2xl:mx-auto md:px-5">
                 {/* 좌측 사이드바 - 데스크톱에서만 고정 */}
-                <LeftSidebar className="w-full lg:w-52 xl:w-56 2xl:w-64 lg:shrink-0 lg:sticky h-full lg:top-0 mb-4 lg:mb-0 py-16" />
+                <LeftSidebar className="w-48 xl:w-52 2xl:w-56  lg:shrink-0 lg:sticky h-full lg:top-16 mb-4 lg:mb-0 mt-40" />
 
                 {/* 메인 콘텐츠 - 중앙 정렬 & 최대 너비 제한 */}
-                <div className="max-w-2xl sm:max-w-3xl lg:max-w-5xl mx-auto rounded-lg w-full overflow-x-hidden">
+                <div className="xl:max-w-5xl mx-auto rounded-lg w-full overflow-x-hidden p-3 2xl:p-6 h-full">
                   {children}
                 </div>
 
                 {/* 우측 사이드바 - 큰 화면에서만 표시 */}
-                <RightSidebar className="w-52 xl:w-56 2xl:w-64 shrink-0 hidden xl:block sticky top-0 py-16 h-full" />
+                <RightSidebar className="w-48 xl:w-52 2xl:w-56 shrink-0 hidden xl:block sticky top-16 h-full mt-40" />
               </div>
             </div>
           </PostsProvider>

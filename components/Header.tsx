@@ -124,7 +124,7 @@ export default function Header() {
               height={80}
             />
           </span>
-          <span className="text-md sm:text-lg md:text-xl font-bold">
+          <span className="text-base sm:text-lg md:text-xl font-bold">
             lazydino.dev
           </span>
         </Link>
