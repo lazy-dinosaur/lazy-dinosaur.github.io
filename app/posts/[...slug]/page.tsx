@@ -25,7 +25,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
   if (!post) {
     return (
-      <article className="rounded-lg p-6 xl:lp-8 min-h-[70vh]">
+      <article className="rounded-lg p-0 xl:lp-8 min-h-[70vh]">
         <h1 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">
           포스트를 찾을 수 없습니다.
         </h1>
@@ -43,7 +43,7 @@ export default async function PostPage({ params }: PostPageProps) {
   const publishPath = post.urlPath.split("/").slice(0, -1).join("/");
 
   return (
-    <article className="rounded-lg p-6 xl:lp-8 min-h-[70vh]">
+    <article className="rounded-lg p-0 xl:lp-8 min-h-[70vh]">
       {/* 마크다운 콘텐츠 */}
       <div className="min-h-[250px] sm:min-h-[300px]">
         <MarkdownRenderer

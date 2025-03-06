@@ -52,7 +52,7 @@ const PostCard = ({
         )}
         <div
           className={cn(
-            "w-full aspect-video sm:p-5 p-6 flex flex-col justify-between",
+            "w-full aspect-video p-3 md:p-6 flex flex-col justify-between",
             thumbnail
               ? "min-h-32 sm:min-h-40 md:min-h-48 h-1/2"
               : "min-h-64 sm:min-h-80 md:min-h-96 h-full",
