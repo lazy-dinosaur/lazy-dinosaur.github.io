@@ -169,9 +169,10 @@ export default function Header() {
               placeholder="Search posts..."
               value={searchQuery}
               onValueChange={setSearchQuery}
-              className="flex-1 border-none shadow-none focus:ring-0 text-sm sm:text-base"
+              className="flex-1 border-none shadow-none focus:ring-0 text-sm sm:text-base focus:outline-none"
+              autoFocus
             />
-            <ScrollArea className="h-full max-h-[300px]">
+            <ScrollArea className="h-full max-h-[50vh] sm:max-h-[300px]">
               <CommandList className="px-2 py-3 max-h-full">
                 <CommandEmpty className="py-6 text-center text-sm text-muted-foreground">
                   No results found.
