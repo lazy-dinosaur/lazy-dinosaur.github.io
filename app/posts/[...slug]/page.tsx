@@ -25,7 +25,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
   if (!post) {
     return (
-      <article className="bg-card rounded-lg p-6 xl:lp-8 min-h-[70vh]">
+      <article className="rounded-lg p-6 xl:lp-8 min-h-[70vh]">
         <h1 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">
           포스트를 찾을 수 없습니다.
         </h1>
