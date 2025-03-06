@@ -26,13 +26,13 @@ export default function LeftSidebar({ className }: LeftSidebarProps) {
       <Sheet open={open} onOpenChange={setOpen}>
         <DialogTitle hidden={true}></DialogTitle>
         <DialogDescription hidden={true}></DialogDescription>
-        <SheetTrigger asChild className="xl:hidden fixed bottom-4 left-4 z-50">
+        <SheetTrigger asChild className="hidden">
           <Button
+            id="sidebar-trigger"
             variant="outline"
             size="icon"
-            className="h-10 w-10 sm:h-12 sm:w-12 shadow-md"
           >
-            <Menu className="h-4 w-4 sm:h-5 sm:w-5" />
+            <Menu className="h-4 w-4" />
           </Button>
         </SheetTrigger>
         <SheetContent
