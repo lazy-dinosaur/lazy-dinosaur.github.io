@@ -9,6 +9,7 @@
     "lint": "next lint",
     "sync": "scripts/sync-notes.sh",
     "deploy": "bun run sync && bun run build && gh-pages -d out -b gh-pages",
+    "post": "bun run sync && git add . && git commit -m 'update post' && git push",
     "serve": "bunx serve@latest out"
   },
   "dependencies": {
