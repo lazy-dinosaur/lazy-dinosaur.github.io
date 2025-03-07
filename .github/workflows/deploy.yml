@@ -13,13 +13,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      # - uses: oven-sh/setup-bun@v2
+      - uses: oven-sh/setup-bun@v2
 
       - name: Install Dependencies
-        run: npm install
+        run: bun install
 
       - name: Build Project
-        run: npm run build # out 폴더 생성
+        run: bun run build # out 폴더 생성
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
