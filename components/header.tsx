@@ -163,9 +163,6 @@ export default function Header() {
             className="rounded-full h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10"
           >
             <Search className="absolute h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem] rotate-90 transition-all" />
-            {/* <kbd className="pointer-events-none hidden md:inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100"> */}
-            {/*   <span className="text-xs">⌘</span>K */}
-            {/* </kbd> */}
           </Button>
         </div>
         <CommandDialog open={open} onOpenChange={setOpen}>
