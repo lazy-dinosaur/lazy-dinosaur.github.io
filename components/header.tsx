@@ -108,12 +108,12 @@ export default function Header() {
   return (
     <header
       className={cn(
-        `bg-background fixed top-0 w-full transition-transform duration-300 h-12 sm:h-14 md:h-16 flex items-center justify-center border-b ${
+        `bg-background fixed top-0 w-full transition-transform duration-300 h-12 sm:h-14 md:h-16 flex items-center justify-center ${
           headerVisible ? "translate-y-0" : "-translate-y-full"
         } z-20`,
       )}
     >
-      <div className="flex items-center justify-between py-1 sm:py-2 px-3 sm:px-4 md:px-6 w-full max-w-screen-2xl">
+      <div className="flex items-center justify-between py-1 sm:py-2 px-3 sm:px-4 md:px-6 w-full max-w-screen-2xl border-b">
         <div className="flex items-center gap-2">
           <Button
             variant="ghost"

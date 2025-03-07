@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { getPosts } from "@/lib/posts";
 import Header from "../components/header";
 import { PostsProvider } from "@/contexts/posts-context";
+import Footer from "@/components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -51,9 +52,10 @@ export default async function RootLayout({
           <PostsProvider posts={posts}>
             <div className="min-h-screen flex flex-col">
               <Header />
-              <div className="flex-1 flex flex-col xl:flex-row mt-12 sm:mt-14 md:mt-16 2xl:container 2xl:mx-auto md:px-5">
+              <div className=" flex flex-col xl:flex-row mt-12 sm:mt-14 md:mt-16 2xl:container 2xl:mx-auto md:px-5">
                 {children}
               </div>
+              <Footer />
             </div>
           </PostsProvider>
         </ThemeProvider>
