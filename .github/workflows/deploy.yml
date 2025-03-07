@@ -1,0 +1,30 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - blog # 배포할 브랜치 (예: main 또는 master)
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Bun
+        run: curl -fsSL https://bun.sh/install | bash
+
+      - name: Install Dependencies
+        run: bun install
+
+      - name: Build Project
+        run: bun run build # out 폴더 생성
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v5
+        with:
+          branch: gh-pages # 배포할 브랜치
+          folder: out # 배포할 폴더
+          clean: true
+          token: ${{ secrets.GITHUB_TOKEN }}
