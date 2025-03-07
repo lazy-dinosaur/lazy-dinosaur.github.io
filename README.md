@@ -17,7 +17,43 @@ Next.js 기반
    - NOTES_SOURCE_DIR: 노트 저장소 주소 (절대주소)
    - IGNORED_DIRS: 무시하고 싶은 폴더 (상대주소)
 
-2. 의존 프로그램 설치
+2. `github actions` 설정
+   `.github/workflows/blog.yml` 파일에 추가
+
+   ```yml
+   name: Deploy to GitHub Pages
+
+   on:
+     push:
+       branches:
+         - blog # 배포할 브랜치 (예: main 또는 master)
+
+   jobs:
+     build-and-deploy:
+       runs-on: ubuntu-latest
+       permissions:
+         contents: write # GitHub Pages 배포를 위해 쓰기 권한 부여t
+       steps:
+         - name: Checkout code
+           uses: actions/checkout@v4
+         - uses: oven-sh/setup-bun@v2
+
+         - name: Install Dependencies
+           run: bun install
+
+         - name: Build Project
+           run: bun run build # out 폴더 생성
+
+         - name: Deploy to GitHub Pages
+           uses: JamesIves/github-pages-deploy-action@v4
+           with:
+             branch: gh-pages # 배포할 브랜치
+             folder: out # 배포할 폴더
+             clean: true
+             token: ${{ secrets.GITHUB_TOKEN }}
+   ```
+
+3. 의존 프로그램 설치
 
    - Ubuntu/Debian
 
@@ -38,7 +74,7 @@ Next.js 기반
      brew install bash yq gawk perl rsync findutils gnu-sed
      ```
 
-3. neovim 에 배포용 플러그인 생성
+4. neovim 에 배포용 플러그인 생성
 
    `lua/plugins/blog_deploy/core.lua` 파일 생성
 
@@ -234,7 +270,7 @@ Next.js 기반
    > map("n", "<localleader>oP", ":BlogDeploy<CR>", map_opts)
    > ```
 
-4. `obsidian.nvim` 설정 (중요!)
+5. `obsidian.nvim` 설정 (중요!)
    해당 블로그는 파일 이름과 파일 내부의 프론트메터를 통해 블로그에 포스팅 되기 때문에 필수적으로 해야하는 설정이 있다
 
    - 파일명과 프론트메터의 분리
