@@ -13,7 +13,7 @@ export default function Footer() {
           <Link href="mailto:woohs0130@naver.com" target="_blank">
             <FaEnvelope size={18} />
           </Link>
-          <Link href="https://kakaotalk-link" target="_blank">
+          <Link href="https://open.kakao.com/o/sdG4BPjh" target="_blank">
             <RiKakaoTalkFill size={18} />
             {/* 카카오톡 전용 ��이콘 없을 경우 채팅 아이콘으로 대체 */}
           </Link>
