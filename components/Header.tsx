@@ -134,7 +134,7 @@ export default function Header() {
               />
             </span>
             <span className="text-base sm:text-lg md:text-xl font-bold ">
-              {`Lazydino's Dev log`}
+              {`Lazydino's DevLog`}
             </span>
           </Link>
         </div>
