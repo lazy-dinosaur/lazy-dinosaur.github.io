@@ -3,7 +3,6 @@ import { getPosts } from "@/lib/posts";
 
 export default async function Home() {
   const posts = await getPosts();
-  console.log(posts);
 
   return (
     <div className="space-y-6 sm:space-y-8 2xl:space-y-10 h-full rounded-lg pb-5 py-10">
