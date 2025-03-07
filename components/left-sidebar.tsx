@@ -3,7 +3,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
-import { TreeView } from "@/components/TreeView";
+import { TreeView } from "@/components/tree-view";
 import { useState } from "react";
 import { DialogTitle, DialogDescription } from "@radix-ui/react-dialog";
 import { usePosts } from "@/contexts/posts-context";
@@ -27,11 +27,7 @@ export default function LeftSidebar({ className }: LeftSidebarProps) {
         <DialogTitle hidden={true}></DialogTitle>
         <DialogDescription hidden={true}></DialogDescription>
         <SheetTrigger asChild className="hidden">
-          <Button
-            id="sidebar-trigger"
-            variant="outline"
-            size="icon"
-          >
+          <Button id="sidebar-trigger" variant="outline" size="icon">
             <Menu className="h-4 w-4" />
           </Button>
         </SheetTrigger>

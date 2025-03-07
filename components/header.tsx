@@ -139,6 +139,9 @@ export default function Header() {
           </Link>
         </div>
         <div className="flex items-center gap-1 sm:gap-2">
+          <Button variant="ghost" className="sm:mr-2">
+            Projects
+          </Button>
           <Button
             variant="ghost"
             size="icon"

@@ -21,6 +21,7 @@ export interface Post {
   plainContent: string;
   image: string;
   tags: string[];
+  series: string;
   createdAt: string;
   modifiedAt: string;
 }
@@ -107,6 +108,7 @@ export async function getPost(slug: string[]): Promise<Post | null> {
       plainContent: extractPlainTextFromMarkdown(content),
       image: (postMeta.image || "") as string,
       tags: (postMeta.tags || []) as string[],
+      series: (postMeta.series || "") as string,
       createdAt: postMeta.createdAt as string,
       modifiedAt: postMeta.modifiedAt as string,
     };
@@ -128,4 +130,34 @@ function extractPlainTextFromMarkdown(markdown: string): string {
     .replace(/\[\[([^|]+)(?:\|([^\]]+))?\]\]/g, (_, __, label) => label || "")
     .replace(/\n\s*\n/g, "\n")
     .trim();
+}
+
+export function searchPosts(
+  posts: Post[],
+  query: string,
+  searchFields: ("title" | "summary" | "tags" | "content" | "series")[] = [
+    "title",
+    "summary",
+    "content",
+    "series",
+  ],
+): Post[] {
+  const lowerQuery = query.trim().toLowerCase();
+  if (!lowerQuery) return posts;
+
+  return posts.filter((post) => {
+    const checkField = (field: string) =>
+      field?.toLowerCase().includes(lowerQuery) ?? false;
+    const checkTags = post.tags.some((tag) =>
+      tag.toLowerCase().includes(lowerQuery),
+    );
+
+    return (
+      (searchFields.includes("title") && checkField(post.title)) ||
+      (searchFields.includes("summary") && checkField(post.summary)) ||
+      (searchFields.includes("tags") && checkTags) ||
+      (searchFields.includes("content") &&
+        post.plainContent.toLowerCase().includes(lowerQuery))
+    );
+  });
 }

@@ -11,6 +11,9 @@ export default {
   ],
   theme: {
     extend: {
+      future: {
+        hoverOnlyWhenSupported: true,
+      },
       colors: {
         textColor: {
           primary: {

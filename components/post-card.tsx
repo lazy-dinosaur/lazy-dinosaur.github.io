@@ -38,7 +38,7 @@ const PostCard = ({
 
   return (
     <Link href={`/posts/${urlPath}`}>
-      <div className="hover:shadow-lg transition-shadow duration-300 h-full group shadow-md rounded-md overflow-hidden bg-card">
+      <div className="hover:shadow-lg transition-shadow duration-300 h-full group shadow-md rounded-md overflow-hidden bg-card dark:border">
         {thumbnail && (
           <div className="relative w-full min-h-32 sm:min-h-40 md:min-h-48 aspect-video overflow-hidden rounded-md group-hover:shadow-md transition-shadow h-1/2">
             <Image

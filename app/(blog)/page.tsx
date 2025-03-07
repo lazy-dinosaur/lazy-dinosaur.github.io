@@ -1,11 +1,12 @@
-import PostCard from "../components/PostCard";
+import PostCard from "@/components/post-card";
 import { getPosts } from "@/lib/posts";
 
 export default async function Home() {
   const posts = await getPosts();
+  console.log(posts);
 
   return (
-    <div className="space-y-6 sm:space-y-8 2xl:space-y-10 h-full rounded-lg pb-5">
+    <div className="space-y-6 sm:space-y-8 2xl:space-y-10 h-full rounded-lg pb-5 py-10">
       {/* 헤더 섹션 */}
       <section className="space-y-2 sm:space-y-3 md:space-y-4 ">
         <h1 className="text-lg sm:text-xl lg:text-2xl font-bold">
