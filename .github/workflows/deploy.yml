@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-lates
+    runs-on: ubuntu-latest
     permissions:
       contents: write # GitHub Pages 배포를 위해 쓰기 권한 부여t
     steps:
