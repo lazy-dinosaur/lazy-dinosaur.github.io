@@ -12,12 +12,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # - name: Install Bun
-      #   run: |
-      #     # Bun 설치 스크립트 실행
-      #     curl -fsSL https://bun.sh/install | bash
-      #     # PATH 변수 강제 설정 (필요시)
-      #     echo 'export PATH="/usr/local/bin:$PATH"' >> $GITHUB_ENV
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
 
       - name: Install Dependencies
         run: bun install
@@ -25,9 +22,9 @@ jobs:
       - name: Build Project
         run: bun run build # out 폴더 생성
 
-      - uses: oven-sh/setup-bun@v2
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          bun-version: latest
           branch: gh-pages # 배포할 브랜치
           folder: out # 배포할 폴더
           clean: true
