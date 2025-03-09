@@ -5,7 +5,7 @@ export default async function Home() {
   const posts = await getPosts();
 
   return (
-    <div className="space-y-6 sm:space-y-8 2xl:space-y-10 h-full rounded-lg pb-5 py-10">
+    <div className="space-y-6 sm:space-y-8 2xl:space-y-10 h-full rounded-lg p-1 sm:p-7">
       {/* 헤더 섹션 */}
       <section className="space-y-2 sm:space-y-3 md:space-y-4 ">
         <h1 className="text-lg sm:text-xl lg:text-2xl font-bold">
