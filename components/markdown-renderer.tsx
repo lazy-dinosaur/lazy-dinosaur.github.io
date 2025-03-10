@@ -5,10 +5,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { Badge } from "./ui/badge";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { nightOwl, nord } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { Element } from "hast";
 import { Button } from "./ui/button";
 import { Copy, Check } from "lucide-react";
+import { useTheme } from "next-themes";
+import callouts from "remark-callouts";
 
 export interface MarkdownRendererProps {
   content: string;
@@ -42,6 +44,8 @@ export default function MarkdownRenderer({
   const [linkMap, setLinkMap] = useState<LinkMap>({});
   const [isMapLoaded, setIsMapLoaded] = useState(false);
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
 
   useEffect(() => {
     fetch("/link-map.json")
@@ -120,12 +124,12 @@ export default function MarkdownRenderer({
       </div>
     ),
     h2: ({ children }: { children?: React.ReactNode }) => (
-      <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mt-8 sm:mt-10 md:mt-12 mb-4 sm:mb-6 pb-1 sm:pb-2 border-b border-border/50">
+      <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold mt-8 sm:mt-10 md:mt-12 mb-4 sm:mb-6 pb-1 sm:pb-2 border-b border-border/50">
         {children}
       </h2>
     ),
     h3: ({ children }: { children?: React.ReactNode }) => (
-      <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold mt-6 sm:mt-8 md:mt-10 mb-3 sm:mb-4">
+      <h3 className="text-base sm:text-lg lg:text-xl font-semibold mt-6 sm:mt-8 md:mt-10 mb-3 sm:mb-4">
         {children}
       </h3>
     ),
@@ -193,21 +197,34 @@ export default function MarkdownRenderer({
               {copiedCode === code ? "복사됨" : "복사"}
             </Button>
           </div>
-          <SyntaxHighlighter
-            style={oneDark}
-            language={match[1]}
-            PreTag="div"
-            customStyle={{
-              margin: 0,
-              padding: "1rem",
-              borderRadius: 0,
-              fontSize: "12px",
-            }}
-            className="sm:text-[13px] md:text-[14px] sm:p-5 md:p-6"
-            {...props}
-          >
-            {code}
-          </SyntaxHighlighter>
+
+          <div className="overflow-auto max-w-full break-all whitespace-pre-wrap">
+            <SyntaxHighlighter
+              style={isDark ? nightOwl : nord}
+              language={match[1]}
+              PreTag="div"
+              customStyle={{
+                margin: 0,
+                padding: "1rem",
+                borderRadius: 0,
+                fontSize: "13px",
+                whiteSpace: "pre-wrap", // 자동 줄바꿈
+                wordBreak: "break-all", // 단어 중간에서도 줄바꿈
+                overflowWrap: "anywhere", // 어디서든 줄바꿈 허용
+                maxWidth: "100%",
+                overflowX: "visible", // 좌우 스크롤 제거
+              }}
+              wrapLines={true}
+              wrapLongLines={true}
+              lineProps={{
+                style: { wordBreak: "break-all", whiteSpace: "pre-wrap" },
+              }}
+              className="whitespace-pre-wrap break-all"
+              {...props}
+            >
+              {code}
+            </SyntaxHighlighter>
+          </div>
         </div>
       ) : (
         <code
@@ -362,7 +379,9 @@ export default function MarkdownRenderer({
 
   return (
     <div className="prose-custom">
-      <ReactMarkdown components={components}>{processedContent}</ReactMarkdown>
+      <ReactMarkdown components={components} remarkPlugins={[callouts]}>
+        {processedContent}
+      </ReactMarkdown>
     </div>
   );
 }
