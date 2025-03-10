@@ -17,6 +17,46 @@
                             "tags": ["blog", "dev", "project"],
                             "series": "나의 맞춤 블로그 만들기",
                             "createdAt": "2025-03-08 17:12:17",
-                            "modifiedAt": "2025-03-10 18:38:04"
+                            "modifiedAt": "2025-03-10 19:46:41"
+                        },
+  {
+                            "urlPath": "resource/ai/Aider",
+                            "title": "Aider",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["ai", "tool", "aider"],
+                            "series": "",
+                            "createdAt": "2025-03-10 08:21:08",
+                            "modifiedAt": "2025-03-10 18:49:05"
+                        },
+  {
+                            "urlPath": "resource/python/Python Script로 파일 복사해오기",
+                            "title": "Python Script로 파일 복사해오기",
+                            "summary": "",
+                            "image": "",
+                            "tags": [],
+                            "series": "",
+                            "createdAt": "2025-03-10 18:53:20",
+                            "modifiedAt": "2025-03-10 19:00:22"
+                        },
+  {
+                            "urlPath": "resource/python/Python Script로 Markdown 파일 읽어오기",
+                            "title": "Python Script로 Markdown 파일 읽어오기",
+                            "summary": "",
+                            "image": "",
+                            "tags": [],
+                            "series": "",
+                            "createdAt": "2025-03-10 18:53:44",
+                            "modifiedAt": "2025-03-10 19:00:30"
+                        },
+  {
+                            "urlPath": "resource/python/Python Script로 JSON 파일 작성하기",
+                            "title": "Python Script로 JSON 파일 작성하기",
+                            "summary": "",
+                            "image": "",
+                            "tags": [],
+                            "series": "",
+                            "createdAt": "2025-03-10 18:53:57",
+                            "modifiedAt": "2025-03-10 19:00:36"
                         }
 ]

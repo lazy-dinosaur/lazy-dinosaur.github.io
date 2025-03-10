@@ -26,7 +26,6 @@ interface LinkMap {
 
 function formatDate(dateString: string | undefined): string {
   if (!dateString) return "날짜 정보 없음";
-
   try {
     return new Date(dateString).toLocaleDateString("ko-KR");
   } catch (error) {
@@ -69,35 +68,55 @@ export default function MarkdownRenderer({
 
   const processWikiLinks = (text: string) => {
     // 이스케이프된 링크 패턴을 정상 링크로 변환
-    let processed = text.replace(
-      /\\\[(.*?)\\\]\((.*?)\)/g,
-      (_, linkText, href) => {
-        // 링크 텍스트는 그대로, href는 URI 인코딩
-        return `[${linkText}](${encodeURIComponent(href)})`;
-      },
-    );
-
-    // 위키링크 처리
+    let processed = text.replace(/\\(\[|\]|\(|\))/g, '$1');
+    
+    // 위키링크 처리 - 정규식 개선
     processed = processed.replace(
-      /\[\[([^|]+)(?:\|([^\]]+))?\]\]/g,
+      /\[\[([^|\]]+)(?:\|([^\]]+))?\]\]/g,
       (_, path, label) => {
         // 경로 정규화
         const cleanPath = path.replace(/\.md$/, "");
         // 표시할 이름이 없으면 경로의 마지막 부분을 사용
         const displayName = label || cleanPath.split("/").pop() || cleanPath;
-
         // URI 인코딩 적용
         const encodedPath = encodeURIComponent(cleanPath);
-
         // 인코딩된 경로로 마크다운 링크 생성
         return `[${displayName}](${encodedPath})`;
       },
     );
-
     return processed;
   };
 
+  // 콜아웃 블록 내부의 위키링크도 처리하기 위한 특별 처리
+  const processContentWithCallouts = (content: string) => {
+    // 콜아웃 패턴 - 공백 포함 ("> [!type]" 형식)
+    const calloutRegex = /(>\s\[!.*?\].*?(?:\n>.*?)*)(?:\n\n|$)/gs;
+
+    return content.replace(calloutRegex, (calloutBlock) => {
+      // 전체 콜아웃 블록 내에서 모든 위키링크를 한 번에 처리
+      return calloutBlock.replace(
+        /(- )?\[\[([^|\]]+)(?:\|([^\]]+))?\]\]/g,
+        (match, bulletPoint, path, label) => {
+          // 이스케이프 문자 제거 및 경로 정규화
+          const cleanPath = path.replace(/\\|\\.md$/, "");
+          // 표시할 이름이 없으면 경로의 마지막 부분을 사용
+          const displayName = label || cleanPath.split("/").pop() || cleanPath;
+          // URI 인코딩 적용
+          const encodedPath = encodeURIComponent(cleanPath);
+          // 불릿 포인트가 있으면 유지
+          const prefix = bulletPoint || "";
+          // 인코딩된 경로로 마크다운 링크 생성
+          return `${prefix}[${displayName}](${encodedPath})`;
+        }
+      );
+    });
+  };
+
+  // 처리 순서 변경: 위키링크 처리 전에 콜아웃 처리
   const processedContent = processWikiLinks(content);
+  const fullProcessedContent = processContentWithCallouts(processedContent);
+  // 최종 처리된 콘텐츠
+  const finalProcessedContent = fullProcessedContent;
 
   const components = {
     h1: ({ children }: { children?: React.ReactNode }) => (
@@ -113,7 +132,6 @@ export default function MarkdownRenderer({
             </Badge>
           ))}
         </div>
-
         {/* 날짜 정보 */}
         <div className="flex flex-col sm:flex-row sm:justify-between text-xs sm:text-sm text-muted-foreground mb-6 sm:mb-8 pb-3 sm:pb-4 border-b">
           <div>작성일: {formatDate(published)}</div>
@@ -141,22 +159,18 @@ export default function MarkdownRenderer({
     p: ({ children }: { children?: React.ReactNode }) => {
       const hasBlockElement = React.Children.toArray(children).some((child) => {
         if (!React.isValidElement(child)) return false;
-
         const childType = (child as React.ReactElement).type;
         const isCustomImage = childType === components.img;
-
         const htmlElementType =
           typeof childType === "string"
             ? childType
             : (childType as React.ComponentType).displayName;
-
         return (
           isCustomImage ||
           (htmlElementType &&
             ["div", "img", "pre", "table"].includes(htmlElementType))
         );
       });
-
       return hasBlockElement ? (
         <div className="my-3 sm:my-4 md:my-5">{children}</div>
       ) : (
@@ -178,7 +192,6 @@ export default function MarkdownRenderer({
     }) {
       const match = /language-(\w+)/.exec(className || "");
       const code = String(children).replace(/\n$/, "");
-
       return !inline && match ? (
         <div className="relative my-4 sm:my-6 md:my-8 rounded-lg overflow-hidden">
           <div className="flex items-center justify-between bg-primary/10 text-primary px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-mono">
@@ -197,7 +210,6 @@ export default function MarkdownRenderer({
               {copiedCode === code ? "복사됨" : "복사"}
             </Button>
           </div>
-
           <div className="overflow-auto max-w-full break-all whitespace-pre-wrap">
             <SyntaxHighlighter
               style={isDark ? nightOwl : nord}
@@ -261,7 +273,6 @@ export default function MarkdownRenderer({
     ),
     a: ({ href, children }: { href?: string; children?: React.ReactNode }) => {
       if (!href) return <span>{children}</span>;
-
       // 외부 링크 처리 (http로 시작하는 경우)
       if (href.startsWith("http")) {
         return (
@@ -275,7 +286,6 @@ export default function MarkdownRenderer({
           </a>
         );
       }
-
       // 홈으로 가는 링크
       if (href === "/") {
         return (
@@ -288,16 +298,13 @@ export default function MarkdownRenderer({
           </Link>
         );
       }
-
       // 내부 링크 처리
       if (!isMapLoaded)
         return <span className="text-muted-foreground">{children}</span>;
-
       // 디코딩 및 정규화
       const decodedHref = decodeURIComponent(href);
       const normalizedHref = decodedHref.replace(/\.md$/, "");
       const targetFileName = normalizedHref.split("/").pop();
-
       // 링크맵에서 검색
       for (const [key, value] of Object.entries(linkMap)) {
         const srcFileName = key.replace(/\.md$/, "").split("/").pop();
@@ -313,7 +320,6 @@ export default function MarkdownRenderer({
           );
         }
       }
-
       // 발행되지 않은 문서 링크
       return (
         <span
@@ -380,7 +386,7 @@ export default function MarkdownRenderer({
   return (
     <div className="prose-custom">
       <ReactMarkdown components={components} remarkPlugins={[remarkCallout]}>
-        {processedContent}
+        {finalProcessedContent}
       </ReactMarkdown>
     </div>
   );
