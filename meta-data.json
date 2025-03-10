@@ -1,31 +1,22 @@
 [
-        {
-            "urlPath": "project/blog/개인 블로그를 제작하게 된 이유",
-            "title": "개인 블로그를 제작하게 된 이유",
-            "summary": "",
-            "image": "",
-            "tags": [
-  "blog",
-  "dev",
-  "project"
-],
-            "series": "나의 맞춤 블로그 만들기",
-            "createdAt": "2025-03-08 17:09:39",
-            "modifiedAt": "2025-03-08 17:14:44"
-        }
-,
-        {
-            "urlPath": "project/blog/어떻게 블로그를 구현하였나",
-            "title": "어떻게 블로그를 구현하였나",
-            "summary": "",
-            "image": "",
-            "tags": [
-  "blog",
-  "dev",
-  "project"
-],
-            "series": "나의 맞춤 블로그 만들기",
-            "createdAt": "2025-03-08 17:12:17",
-            "modifiedAt": "2025-03-10 09:06:50"
-        }
+  {
+                            "urlPath": "project/blog/개인 블로그를 제작하게 된 이유",
+                            "title": "개인 블로그를 제작하게 된 이유",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["blog", "dev", "project"],
+                            "series": "나의 맞춤 블로그 만들기",
+                            "createdAt": "2025-03-08 17:09:39",
+                            "modifiedAt": "2025-03-08 17:14:44"
+                        },
+  {
+                            "urlPath": "project/blog/어떻게 블로그를 구현하였나",
+                            "title": "어떻게 블로그를 구현하였나",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["blog", "dev", "project"],
+                            "series": "나의 맞춤 블로그 만들기",
+                            "createdAt": "2025-03-08 17:12:17",
+                            "modifiedAt": "2025-03-10 15:52:06"
+                        }
 ]
