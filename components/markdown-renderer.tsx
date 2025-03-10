@@ -10,7 +10,7 @@ import { Element } from "hast";
 import { Button } from "./ui/button";
 import { Copy, Check } from "lucide-react";
 import { useTheme } from "next-themes";
-import callouts from "remark-callouts";
+import remarkCallout from "@r4ai/remark-callout";
 
 export interface MarkdownRendererProps {
   content: string;
@@ -379,7 +379,7 @@ export default function MarkdownRenderer({
 
   return (
     <div className="prose-custom">
-      <ReactMarkdown components={components} remarkPlugins={[callouts]}>
+      <ReactMarkdown components={components} remarkPlugins={[remarkCallout]}>
         {processedContent}
       </ReactMarkdown>
     </div>
