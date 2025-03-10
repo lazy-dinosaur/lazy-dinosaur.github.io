@@ -61,21 +61,33 @@ Next.js 기반
 
    - Ubuntu/Debian
 
-     ```shell
-     sudo apt update && sudo apt install -y bash yq gawk perl rsync findutils sed
+     ```bash
+     sudo apt update && sudo apt install -y rsync python
 
+     ```
+
+     ```bash
+     pip install pyyaml
      ```
 
    - Fedora
 
      ```bash
-     sudo dnf install -y bash yq gawk perl rsync findutils sed
+     sudo dnf install -y rsync python
+     ```
+
+     ```bash
+     pip install pyyaml
      ```
 
    - MacOS
 
      ```bash
-     brew install bash yq gawk perl rsync findutils gnu-sed
+     brew install rsync
+     ```
+
+     ```bash
+     pip install pyyaml
      ```
 
 4. neovim 에 배포용 플러그인 생성
@@ -484,12 +496,12 @@ Next.js 기반
 
 ## 기본 사용법
 
-기본 워크플로우는 `./scripts/sync-notes.sh` 를 실행시켜 옵시디언 노트 내부의 폴더의 노트들을 복사해온 뒤 gh-page cli를 통해 gh-page 에 퍼블리시 한다.
+기본 워크플로우는 `./scripts/sync-notes.py` 를 실행시켜 옵시디언 노트 내부의 폴더의 노트들을 복사해온 뒤 gh-page cli를 통해 gh-page 에 퍼블리시 한다.
 
 > [!IMPORTANT]
 > 모든 md 문서중 프론트메터 값에 publish 값에 문자열값이(빈문자열 제외) 존재하는 문서들만 가져온다.
 
-`./scripts/sync-notes.sh` 의 역할은 작성 중인 노트 폴더를 탐색하여 옳바른 구조로 정리해 블로그 배포용 프로젝트에 복사해오는 역할을 담당한다.
+`./scripts/sync-notes.py` 의 역할은 작성 중인 노트 폴더를 탐색하여 옳바른 구조로 정리해 블로그 배포용 프로젝트에 복사해오는 역할을 담당한다.
 
 가져온 노트는 구조에 맞춰 `content/posts`폴더 안에 복사해오며 문서에 연결된 이미지도 마찬가지로 `public/postImg`폴더 안에 복사해오게 된다
 
