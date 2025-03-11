@@ -117,8 +117,9 @@ export default function Header() {
       }}
       transition={{
         type: "spring",
-        stiffness: 400,
+        stiffness: 500,
         damping: 30,
+        duration: 0.2
       }}
     >
       <div className="flex items-center justify-between py-2 px-4 md:px-6 w-full max-w-screen-2xl border-b border-border/40 backdrop-blur-lg bg-background/80 shadow-sm">
@@ -135,7 +136,7 @@ export default function Header() {
             <motion.div
               className="relative w-10 h-8 sm:w-12 sm:h-10 md:w-14 md:h-12 mr-2 sm:mr-3 rounded-full overflow-hidden"
               whileHover={{ scale: 1.05, rotate: 5 }}
-              transition={{ type: "spring", stiffness: 500, damping: 20 }}
+              transition={{ type: "spring", stiffness: 600, damping: 25, duration: 0.15 }}
             >
               <Image
                 src="/lazydino-logo3.png"
@@ -187,7 +188,7 @@ export default function Header() {
                   rotate: theme === "dark" ? -180 : 0,
                 }}
                 transition={{
-                  duration: 0.5, // 시간 단축
+                  duration: 0.25, // 더 빠른 회전
                   ease: "easeOut", // 더 간단한 이징 함수 사용
                 }}
               >
@@ -195,7 +196,7 @@ export default function Header() {
                 <motion.div
                   initial={false}
                   animate={{ opacity: theme === "light" ? 1 : 0 }}
-                  transition={{ duration: 0.2 }}
+                  transition={{ duration: 0.15 }}
                   style={{ position: 'absolute' }}
                 >
                   <Sun className="h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem]" />
@@ -203,7 +204,7 @@ export default function Header() {
                 <motion.div
                   initial={false}
                   animate={{ opacity: theme === "dark" ? 1 : 0 }}
-                  transition={{ duration: 0.2 }}
+                  transition={{ duration: 0.15 }}
                   style={{ position: 'absolute' }}
                 >
                   <Moon className="h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem]" />

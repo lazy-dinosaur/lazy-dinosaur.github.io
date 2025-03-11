@@ -65,7 +65,7 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <PostsProvider posts={posts}>
-            <div className="min-h-screen flex flex-col">
+            <div className="min-h-screen flex flex-col motion-reduce">
               <Header />
               <main className="flex flex-col xl:flex-row mt-12 sm:mt-14 md:mt-16 2xl:container 2xl:mx-auto md:px-5">
                 {children}

@@ -199,9 +199,26 @@
   background-color: #4b5563;
 }
 
-/* 테마 전환 애니메이션 제거 - 기본 브라우저 동작만 사용 */
-* {
-  /* 트랜지션 효과 제거 */
+/* 빠른 애니메이션을 위한 전역 설정 */
+.animate-fast {
+  transition-duration: 0.15s !important;
+}
+
+.animate-medium {
+  transition-duration: 0.25s !important;
+}
+
+/* 애니메이션 전체 속도 조절 */
+.motion-reduce * {
+  transition-duration: 0.2s !important;
+  animation-duration: 0.2s !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.1s !important;
+    animation-duration: 0.1s !important;
+  }
 }
 
 /* 타이포그래피 시스템 */

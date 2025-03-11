@@ -218,8 +218,9 @@ export default function TableOfContents({ className }: TableOfContentsProps) {
                       initial={false}
                       transition={{
                         type: "spring",
-                        stiffness: 500,
-                        damping: 30,
+                        stiffness: 600,
+                        damping: 35,
+                        duration: 0.1
                       }}
                     />
                   )}

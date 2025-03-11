@@ -294,7 +294,7 @@ export default function MarkdownRenderer({
         className="spacing-section relative group"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.2 }}
       >
         <div className="flex flex-col w-full items-center justify-center">
           <div
@@ -307,7 +307,7 @@ export default function MarkdownRenderer({
               alt={alt || ""}
               width={1200}
               height={630}
-              className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.03] relative z-10"
+              className="w-full h-auto object-cover transition-transform duration-200 group-hover:scale-[1.02] relative z-10"
               sizes="(max-width: 640px) 95vw, (max-width: 768px) 85vw, (max-width: 1024px) 75vw, 50vw"
               loading="lazy"
             />
@@ -397,9 +397,9 @@ export default function MarkdownRenderer({
       <motion.blockquote
         className="spacing-paragraph border-l-4 border-primary pl-4 sm:pl-5 md:pl-6 py-2 sm:py-3
           bg-primary/5 rounded-r-lg shadow-sm"
-        initial={{ opacity: 0, x: -10 }}
+        initial={{ opacity: 0, x: -5 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.15 }}
       >
         <div className="text-foreground/80 italic font-medium">{children}</div>
       </motion.blockquote>
@@ -422,7 +422,7 @@ export default function MarkdownRenderer({
         className="spacing-section overflow-x-auto rounded-md sm:rounded-lg border border-primary/10 shadow-sm"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.15 }}
       >
         <table className="w-full border-collapse text-hierarchy-body">
           {children}
@@ -449,7 +449,7 @@ export default function MarkdownRenderer({
         className="spacing-section border-none h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"
         initial={{ width: 0 }}
         animate={{ width: "100%" }}
-        transition={{ duration: 0.7 }}
+        transition={{ duration: 0.2 }}
       />
     ),
     input: ({ checked }: { checked?: boolean }) => (

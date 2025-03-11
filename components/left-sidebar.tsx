@@ -60,9 +60,9 @@ export default function LeftSidebar({ className }: LeftSidebarProps) {
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ 
-          duration: 0.3,
+          duration: 0.15,
           ease: "easeOut",
-          delay: 0.1
+          delay: 0.05
         }}
       >
         <ScrollArea className="h-full">
@@ -70,7 +70,7 @@ export default function LeftSidebar({ className }: LeftSidebarProps) {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.2 }}
+              transition={{ delay: 0.1, duration: 0.1 }}
             >
               <TreeView key={`desktop-tree-${pathname}`} data={folderStructure} />
             </motion.div>

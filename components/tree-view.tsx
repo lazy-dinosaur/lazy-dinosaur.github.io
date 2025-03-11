@@ -78,7 +78,7 @@ function TreeNode({
           >
             <motion.div
               animate={{ rotate: isExpanded ? 90 : 0 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.1 }}
             >
               <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4" />
             </motion.div>
@@ -122,7 +122,7 @@ function TreeNode({
             height: isExpanded ? "auto" : 0,
             opacity: isExpanded ? 1 : 0,
           }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
+          transition={{ duration: 0.15, ease: "easeInOut" }}
         >
           <TreeView
             data={node.children}

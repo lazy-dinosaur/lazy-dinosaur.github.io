@@ -42,12 +42,12 @@ export default function PostContent({
               tags={tags}
             />
           </div>
-          
+
           {/* 이전글/다음글 네비게이션 */}
           <nav className="mt-8 sm:mt-10 pt-4 sm:pt-6 border-t">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               {prevPost ? (
-                <motion.div 
+                <motion.div
                   className="w-full sm:w-auto"
                   whileHover={{ x: -3 }}
                   transition={{ type: "spring", stiffness: 400, damping: 15 }}
@@ -59,7 +59,9 @@ export default function PostContent({
                     <ArrowLeft className="mr-2 h-4 w-4" />
                     <div>
                       <div className="text-xs mb-1">이전 글</div>
-                      <div className="text-sm font-medium truncate max-w-[250px]">{prevPost.title}</div>
+                      <div className="text-sm font-medium truncate max-w-[250px]">
+                        {prevPost.title}
+                      </div>
                     </div>
                   </Link>
                 </motion.div>
@@ -74,9 +76,9 @@ export default function PostContent({
                   </div>
                 </div>
               )}
-              
+
               {nextPost ? (
-                <motion.div 
+                <motion.div
                   className="w-full sm:w-auto text-right"
                   whileHover={{ x: 3 }}
                   transition={{ type: "spring", stiffness: 400, damping: 15 }}
@@ -87,7 +89,9 @@ export default function PostContent({
                   >
                     <div>
                       <div className="text-xs mb-1">다음 글</div>
-                      <div className="text-sm font-medium truncate max-w-[250px]">{nextPost.title}</div>
+                      <div className="text-sm font-medium truncate max-w-[250px]">
+                        {nextPost.title}
+                      </div>
                     </div>
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
@@ -105,7 +109,7 @@ export default function PostContent({
               )}
             </div>
           </nav>
-          
+
           <BackToHomeButton />
         </div>
       </div>

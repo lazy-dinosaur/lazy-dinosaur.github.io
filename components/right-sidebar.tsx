@@ -30,9 +30,9 @@ const RightSidebar = ({ className }: RightSidebarProps) => {
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{
-        duration: 0.3,
+        duration: 0.15,
         ease: "easeOut",
-        delay: 0.1,
+        delay: 0.05,
       }}
     >
       {isPostPage && (
@@ -40,7 +40,7 @@ const RightSidebar = ({ className }: RightSidebarProps) => {
           className="mb-6 sm:mb-8 md:mb-10"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.3 }}
+          transition={{ delay: 0.08, duration: 0.15 }}
         >
           <TableOfContents key={`toc-${pathname}`} />
         </motion.div>
@@ -49,7 +49,7 @@ const RightSidebar = ({ className }: RightSidebarProps) => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.3 }}
+          transition={{ delay: 0.1, duration: 0.15 }}
         >
           <SidebarSection title="최근 게시물">
             <RecentPosts key={`recent-posts-${pathname}`} />
@@ -59,7 +59,7 @@ const RightSidebar = ({ className }: RightSidebarProps) => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.3 }}
+          transition={{ delay: 0.15, duration: 0.15 }}
         >
           <SidebarSection title="인기 태그">
             <div className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-3 px-1.5">
@@ -96,8 +96,8 @@ const RecentPostItem = ({
       initial={{ opacity: 0, x: 10 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{
-        duration: 0.2,
-        delay: 0.5 + index * 0.05,
+        duration: 0.1,
+        delay: 0.1 + index * 0.02,
         ease: "easeOut",
       }}
     >
@@ -166,15 +166,15 @@ const TagItem = ({ tag, index }: { tag: string; index: number }) => {
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{
-        duration: 0.2,
-        delay: 0.6 + index * 0.03,
+        duration: 0.1,
+        delay: 0.15 + index * 0.01,
         type: "spring",
-        stiffness: 260,
-        damping: 20,
+        stiffness: 300,
+        damping: 25,
       }}
       whileHover={{
         scale: 1.05,
-        transition: { duration: 0.2 },
+        transition: { duration: 0.1 },
       }}
     >
       <Badge

@@ -10,8 +10,9 @@ const nextConfig: NextConfig = {
         hostname: "lazy-dinosaur.github.io",
       },
     ],
-    formats: ["image/webp"],
+    // formats: ["image/webp"],
     // Remove unoptimized: true to enable image optimization
+    unoptimized: true,
   },
   trailingSlash: true, // ✅ 정적 서버 라우팅 호환성
   /* config options here */
