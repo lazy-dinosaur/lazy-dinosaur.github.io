@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // output: "export",
+  output: "export",
   images: {
     domains: ["user-images.githubusercontent.com"],
     formats: ["image/webp"],

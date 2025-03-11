@@ -169,10 +169,8 @@ export default function Header() {
               variant="outline"
               size="icon"
               onClick={() => {
-                // requestAnimationFrame으로 렌더링 최적화
-                requestAnimationFrame(() => {
-                  setTheme(theme === "light" ? "dark" : "light");
-                });
+                // 테마 직접 변경
+                setTheme(theme === "light" ? "dark" : "light");
               }}
               className="relative overflow-hidden rounded-full h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 
                 border-border/60 hover:bg-primary/10 hover:text-primary hover:border-primary group"
