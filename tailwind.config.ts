@@ -10,13 +10,13 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
+    // container: {
+    //   center: true,
+    //   padding: "2rem",
+    //   screens: {
+    //     "2xl": "1400px",
+    //   },
+    // },
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -99,26 +99,26 @@ export default {
               content: '""',
             },
             h1: {
-              fontWeight: '700',
-              letterSpacing: '-0.025em',
+              fontWeight: "700",
+              letterSpacing: "-0.025em",
             },
             h2: {
-              fontWeight: '600',
-              letterSpacing: '-0.0125em',
+              fontWeight: "600",
+              letterSpacing: "-0.0125em",
             },
             h3: {
-              fontWeight: '500',
+              fontWeight: "500",
             },
             h4: {
-              fontWeight: '500',
+              fontWeight: "500",
             },
             p: {
-              lineHeight: '1.7',
+              lineHeight: "1.7",
             },
             a: {
-              fontWeight: '500',
-              textDecoration: 'none',
-            }
+              fontWeight: "500",
+              textDecoration: "none",
+            },
           },
         },
       },

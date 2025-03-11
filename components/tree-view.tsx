@@ -96,7 +96,7 @@ function TreeNode({
                   isFileActive ? "text-primary" : "text-muted-foreground",
                 )}
               />
-              <span>{node.name}</span>
+              <span className="line-clamp-1">{node.name}</span>
             </Link>
           ) : (
             <button className={linkClassName} style={{ paddingLeft: "28px" }}>
@@ -109,7 +109,7 @@ function TreeNode({
                   isFolderActive ? "text-primary" : "text-muted-foreground",
                 )}
               />
-              <span>{node.name}</span>
+              <span className="line-clamp-1">{node.name}</span>
             </button>
           )}
         </div>

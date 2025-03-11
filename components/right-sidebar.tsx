@@ -104,7 +104,7 @@ const RecentPostItem = ({
       <Link
         href={`/posts/${post.urlPath}`}
         className={cn(
-          "block text-xs 2xl:text-sm transition-all duration-200 line-clamp-1 py-1.5 px-2.5 rounded-md relative overflow-hidden group",
+          "block text-xs 2xl:text-sm transition-all duration-200 line-clamp-1 py-0.5 px-2.5 rounded-md relative overflow-hidden group",
           mounted && isActive
             ? "text-primary bg-primary/10 font-medium"
             : "hover:bg-accent hover:text-primary",
@@ -125,15 +125,15 @@ function RecentPosts() {
   const { posts } = usePosts();
   const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
-  
+
   // 마운트 여부만 한 번 체크
   useEffect(() => {
     setMounted(true);
   }, []);
-  
+
   // 최근 5개 게시물 선택
   const recentPosts = posts.slice(0, 5);
-  
+
   // 현재 페이지가 특정 포스트 페이지인지 확인
   const isInsidePostPage = pathname.startsWith("/posts/");
 
@@ -141,8 +141,9 @@ function RecentPosts() {
     <div className="space-y-2 sm:space-y-3">
       {recentPosts.map((post, index) => {
         // 클라이언트 사이드 렌더링 이후에만 활성화 상태 적용
-        const isActive = mounted && isInsidePostPage && pathname === `/posts/${post.urlPath}`;
-        
+        const isActive =
+          mounted && isInsidePostPage && pathname === `/posts/${post.urlPath}`;
+
         return (
           <RecentPostItem
             key={post.urlPath}
@@ -190,22 +191,22 @@ const TagItem = ({ tag, index }: { tag: string; index: number }) => {
 function PopularTags() {
   const { posts } = usePosts();
   const [mounted, setMounted] = useState(false);
-  
+
   // 마운트 여부만 한 번 체크
   useEffect(() => {
     setMounted(true);
   }, []);
-  
+
   // useMemo를 사용하여 인기 태그 계산
   const sortedTags = useMemo(() => {
     // 태그 빈도수 계산
     const tagCount: Record<string, number> = {};
-    posts.forEach(post => {
-      post.tags.forEach(tag => {
+    posts.forEach((post) => {
+      post.tags.forEach((tag) => {
         tagCount[tag] = (tagCount[tag] || 0) + 1;
       });
     });
-    
+
     // 빈도수로 정렬하여 상위 10개 태그 선택
     return Object.entries(tagCount)
       .sort(([, countA], [, countB]) => countB - countA)
@@ -215,9 +216,10 @@ function PopularTags() {
 
   return (
     <>
-      {mounted && sortedTags.map((tag, index) => (
-        <TagItem key={tag} tag={tag} index={index} />
-      ))}
+      {mounted &&
+        sortedTags.map((tag, index) => (
+          <TagItem key={tag} tag={tag} index={index} />
+        ))}
     </>
   );
 }

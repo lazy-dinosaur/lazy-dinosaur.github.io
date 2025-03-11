@@ -374,3 +374,13 @@ html {
     color: #666;
   }
 }
+
+/* 커스텀 텍스트 생략 스타일 */
+.text-ellipsis-custom {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  max-width: 100%;
+}
