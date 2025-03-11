@@ -3,7 +3,10 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: "export",
   images: {
-    domains: ["user-images.githubusercontent.com"],
+    domains: [
+      "user-images.githubusercontent.com",
+      "https://lazy-dinosaur.github.io/",
+    ],
     formats: ["image/webp"],
     // Remove unoptimized: true to enable image optimization
   },
