@@ -8,11 +8,11 @@ export default function BlogLayout({
 }) {
   return (
     <>
-      <LeftSidebar className="w-48 xl:w-52 2xl:w-56 lg:shrink-0 lg:sticky h-full lg:top-40 mb-4 lg:mb-0 mt-40" />
+      <LeftSidebar className="w-48 xl:w-52 2xl:w-56 lg:shrink-0 lg:sticky h-full lg:top-16 mb-4 lg:mb-0 mt-52" />
       <div className="xl:max-w-5xl mx-auto rounded-lg w-full overflow-x-hidden p-3 2xl:p-6 h-full">
         {children}
       </div>
-      <RightSidebar className="w-48 xl:w-52 2xl:w-56 shrink-0 hidden xl:block sticky top-40 h-full mt-40" />
+      <RightSidebar className="w-48 xl:w-52 2xl:w-56 shrink-0 hidden xl:block sticky top-16 h-full mt-52" />
     </>
   );
 }
