@@ -1,7 +1,8 @@
-import MarkdownRenderer from "@/components/markdown-renderer";
 import Link from "next/link";
-import { getPost, getPosts } from "@/lib/posts";
+import { getPost, getPosts, getAdjacentPosts } from "@/lib/posts";
 import { ArrowLeft } from "lucide-react";
+import PostAnimation from "@/components/post-animation";
+import PostContent from "./post-content";
 
 interface PostPageProps {
   params: Promise<{ slug: string[] }>;
@@ -41,30 +42,21 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   const publishPath = post.urlPath.split("/").slice(0, -1).join("/");
+  
+  // 이전/다음 게시물 가져오기
+  const { prev, next } = await getAdjacentPosts(post);
 
   return (
-    <article className="rounded-lg p-2 sm:p-7 max-w-3xl mx-auto">
-      {/* 마크다운 콘텐츠 */}
-      <div className="min-h-[250px] sm:min-h-[300px]">
-        <MarkdownRenderer
-          content={post.content}
-          publish={publishPath}
-          published={post.createdAt}
-          modified={post.modifiedAt}
-          tags={post.tags}
-        />
-      </div>
-
-      {/* 홈으로 돌아가기 */}
-      <div className="mt-8 sm:mt-10 md:mt-12 pt-4 sm:pt-6 border-t">
-        <Link
-          href="/"
-          className="text-primary hover:underline inline-flex items-center text-sm sm:text-base"
-        >
-          <ArrowLeft className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
-          홈으로 돌아가기
-        </Link>
-      </div>
-    </article>
+    <PostAnimation>
+      <PostContent
+        content={post.content}
+        publishPath={publishPath}
+        published={post.createdAt}
+        modified={post.modifiedAt}
+        tags={post.tags}
+        prevPost={prev}
+        nextPost={next}
+      />
+    </PostAnimation>
   );
 }

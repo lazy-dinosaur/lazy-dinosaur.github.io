@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+import { Calendar, ArrowRight } from "lucide-react";
 
 interface PostCardProps {
   urlPath: string;
@@ -13,6 +16,8 @@ interface PostCardProps {
   tags: string[];
   createdAt: string;
 }
+
+const DEFAULT_IMAGE = "/lazydino-logo.png";
 
 const PostCard = ({
   urlPath,
@@ -36,57 +41,86 @@ const PostCard = ({
     thumbnail = `/postImg/${publishDir}/${imageName}`;
   }
 
+  // 날짜 포맷팅
+  const formattedDate = new Date(createdAt).toLocaleDateString("ko-KR", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
+  // 게시물 요약 텍스트
+  const postSummary =
+    (summary || plainContent || content).substring(0, 150) + "...";
+
   return (
-    <Link href={`/posts/${urlPath}`}>
-      <div className="hover:shadow-lg transition-shadow duration-300 h-full group shadow-md rounded-md overflow-hidden bg-card">
-        {thumbnail && (
-          <div className="relative w-full min-h-32 sm:min-h-40 md:min-h-48 aspect-video overflow-hidden rounded-md group-hover:shadow-md transition-shadow h-1/2">
+    <Link href={`/posts/${urlPath}`} className="block h-full">
+      <motion.div
+        className="h-full group overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-all duration-300 hover:shadow-md"
+        whileHover={{
+          y: -5,
+          boxShadow: "0 12px 24px rgba(0,0,0,0.1)",
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 400,
+          damping: 20,
+        }}
+      >
+        <div className="aspect-video w-full overflow-hidden">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.5 }}
+            className="relative h-full w-full"
+          >
             <Image
-              src={thumbnail}
+              src={thumbnail || DEFAULT_IMAGE}
               alt={title}
-              fill
-              className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:opacity-90"
+              width={600}
+              height={340}
             />
+          </motion.div>
+        </div>
+
+        <div className="p-4 sm:p-6">
+          <div className="flex items-center gap-2 mb-3 text-xs text-muted-foreground">
+            <Calendar className="h-3 w-3" />
+            <span>{formattedDate}</span>
           </div>
-        )}
-        <div
-          className={cn(
-            "w-full aspect-video p-3 md:p-6 flex flex-col justify-between",
-            thumbnail
-              ? "min-h-32 sm:min-h-40 md:min-h-48 h-1/2"
-              : "min-h-64 sm:min-h-80 md:min-h-96 h-full",
-          )}
-        >
-          <div className="space-y-2">
-            <div className="text-base md:text-lg line-clamp-2 font-bold">
-              {title}
-            </div>
-            <p className="text-sm text-muted-foreground mb-2 sm:mb-3 line-clamp-5">
-              {(summary || plainContent || content).substring(
-                0,
-                thumbnail ? 200 : 300,
-              )}
-              ...
-            </p>
+
+          <h2 className="text-lg sm:text-xl font-bold line-clamp-2 group-hover:text-primary transition-colors mb-2">
+            {title}
+          </h2>
+
+          <p className="text-sm text-muted-foreground line-clamp-3 mb-4">
+            {postSummary}
+          </p>
+
+          <div className="flex flex-wrap gap-1.5 mb-4">
+            {tags.slice(0, 3).map((tag) => (
+              <Badge key={tag} variant="secondary" className="text-xs">
+                #{tag}
+              </Badge>
+            ))}
+            {tags.length > 3 && (
+              <Badge variant="outline" className="text-xs">
+                +{tags.length - 3}
+              </Badge>
+            )}
           </div>
-          <div>
-            <div className="flex flex-wrap gap-1 sm:gap-2 mb-2 sm:mb-3">
-              {tags.map((tag) => (
-                <Badge
-                  key={tag}
-                  className="text-xs px-1.5 py-0.5 sm:px-2 sm:py-1"
-                >
-                  #{tag}
-                </Badge>
-              ))}
-            </div>
-            <p className="text-xs text-muted-foreground">
-              Published on {new Date(createdAt).toLocaleDateString()}
-            </p>
+
+          <div className="flex justify-end">
+            <motion.div
+              className="text-sm text-primary font-medium flex items-center"
+              whileHover={{ x: 3 }}
+              transition={{ duration: 0.2 }}
+            >
+              Read More
+              <ArrowRight className="ml-1 h-4 w-4" />
+            </motion.div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </Link>
   );
 };

@@ -22,6 +22,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { usePosts } from "@/contexts/posts-context";
+import { motion } from "framer-motion";
 
 export default function Header() {
   const router = useRouter();
@@ -106,25 +107,36 @@ export default function Header() {
   if (!isClient) return null;
 
   return (
-    <header
+    <motion.header
       className={cn(
-        `bg-background fixed top-0 w-full transition-transform duration-300 h-12 sm:h-14 md:h-16 flex items-center justify-center ${
-          headerVisible ? "translate-y-0" : "-translate-y-full"
-        } z-20`,
+        `fixed top-0 w-full h-14 sm:h-16 md:h-18 flex items-center justify-center z-20`,
       )}
+      initial={{ y: -100 }}
+      animate={{
+        y: headerVisible ? 0 : -100,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 400,
+        damping: 30,
+      }}
     >
-      <div className="flex items-center justify-between py-1 sm:py-2 px-3 sm:px-4 md:px-6 w-full max-w-screen-2xl border-b">
+      <div className="flex items-center justify-between py-2 px-4 md:px-6 w-full max-w-screen-2xl border-b border-border/40 backdrop-blur-lg bg-background/80 shadow-sm">
         <div className="flex items-center gap-2">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="rounded-full h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 xl:hidden"
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="rounded-full h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 flex items-center justify-center xl:hidden bg-primary/10 text-primary"
             onClick={() => document.getElementById("sidebar-trigger")?.click()}
           >
             <Menu className="h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem]" />
-          </Button>
-          <Link className="flex items-center" href="/">
-            <span className="relative w-10 h-8 sm:w-14 sm:h-9 md:w-20 md:h-12 mr-1 sm:mr-2">
+          </motion.button>
+          <Link className="flex items-center group" href="/">
+            <motion.div
+              className="relative w-10 h-8 sm:w-12 sm:h-10 md:w-14 md:h-12 mr-2 sm:mr-3 rounded-full overflow-hidden"
+              whileHover={{ scale: 1.05, rotate: 5 }}
+              transition={{ type: "spring", stiffness: 500, damping: 20 }}
+            >
               <Image
                 src="/lazydino-logo3.png"
                 alt="lazydino.dev"
@@ -132,58 +144,112 @@ export default function Header() {
                 width={80}
                 height={80}
               />
-            </span>
-            <span className="text-base sm:text-lg md:text-xl font-bold ">
+            </motion.div>
+            <span className="text-base sm:text-lg md:text-xl font-bold group-hover:text-primary transition-colors">
               {`Lazydino's DevLog`}
             </span>
           </Link>
         </div>
-        <div className="flex items-center gap-1 sm:gap-2">
-          <Button
-            variant="ghost"
-            className="sm:mr-2"
-            onClick={() => router.push("/projects")}
+        <div className="flex items-center gap-2 sm:gap-3">
+          {/* <motion.div whileHover={{ y: -2 }} whileTap={{ y: 0 }}> */}
+          {/*   <Button */}
+          {/*     variant="ghost" */}
+          {/*     className="font-medium rounded-full px-4 hover:bg-primary/10 hover:text-primary" */}
+          {/*     onClick={() => router.push("/projects")} */}
+          {/*   > */}
+          {/*     Projects */}
+          {/*   </Button> */}
+          {/* </motion.div> */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            initial={false}
           >
-            Projects
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-            className="rounded-full h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10"
-          >
-            <Sun className="h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-            <Moon className="absolute h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-            <span className="sr-only">Toggle theme</span>
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setOpen(true)}
-            className="rounded-full h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10"
-          >
-            <Search className="absolute h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem] rotate-90 transition-all" />
-          </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => {
+                // 테마 변경 시 직접 변경
+                setTheme(theme === "light" ? "dark" : "light");
+              }}
+              className="relative overflow-hidden rounded-full h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 
+                border-border/60 hover:bg-primary/10 hover:text-primary hover:border-primary group"
+              aria-label="Toggle theme"
+            >
+              {/* 배경 효과 */}
+              <span className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300"></span>
+
+              {/* 테마 전환 아이콘 - 개선된 애니메이션 */}
+              <motion.div
+                className="absolute inset-0 flex items-center justify-center"
+                initial={false}
+                animate={{
+                  rotate: theme === "dark" ? -180 : 0,
+                }}
+                transition={{
+                  duration: 0.7,
+                  ease: [0.34, 1.56, 0.64, 1],
+                }}
+              >
+                {theme === "dark" ? (
+                  <Moon className="h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem]" />
+                ) : (
+                  <Sun className="h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem]" />
+                )}
+              </motion.div>
+              <span className="sr-only">Toggle theme</span>
+            </Button>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => setOpen(true)}
+              className="rounded-full h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 border-border/60 hover:bg-primary/10 hover:text-primary hover:border-primary"
+            >
+              <Search className="h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem] transition-all" />
+              <span className="sr-only">Search</span>
+            </Button>
+          </motion.div>
         </div>
         <CommandDialog open={open} onOpenChange={setOpen}>
           <DialogTitle hidden={true}></DialogTitle>
           <DialogDescription hidden={true}></DialogDescription>
           <Command shouldFilter={false}>
             <CommandInput
-              placeholder="Search posts..."
+              placeholder="Search posts... (Ctrl + K)"
               value={searchQuery}
               onValueChange={setSearchQuery}
-              className="flex-1 border-none shadow-none focus:ring-0 text-sm sm:text-base focus:outline-none"
+              className="flex-1 border-none shadow-none focus:ring-0 text-sm sm:text-base focus:outline-none placeholder:text-muted-foreground/70"
               autoFocus
             />
             <ScrollArea className="h-full max-h-[50vh] sm:max-h-[300px]">
               <CommandList className="px-2 py-3 max-h-full">
-                <CommandEmpty className="py-6 text-center text-sm text-muted-foreground">
-                  No results found.
+                <CommandEmpty className="py-6 text-center">
+                  <div className="flex flex-col items-center gap-2">
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1, rotate: [0, 10, 0] }}
+                      transition={{ duration: 0.5, type: "spring" }}
+                      className="text-muted-foreground/50 text-xl mb-2"
+                    >
+                      😕
+                    </motion.div>
+                    <p className="text-sm text-muted-foreground">
+                      No results found.
+                    </p>
+                    <p className="text-xs text-muted-foreground/70">
+                      Try searching with different keywords
+                    </p>
+                  </div>
                 </CommandEmpty>
                 <CommandGroup
-                  heading="Posts"
-                  className="text-xs font-medium text-muted-foreground px-2"
+                  heading={
+                    filteredPosts.length > 0
+                      ? `Results (${filteredPosts.length})`
+                      : "Posts"
+                  }
+                  className="text-xs font-medium text-primary/80 px-2"
                 >
                   {filteredPosts.map((post) => (
                     <CommandItem
@@ -193,7 +259,7 @@ export default function Header() {
                         router.push(`/posts/${post.urlPath}`);
                         setOpen(false);
                       }}
-                      className="cursor-pointer aria-selected:bg-accent aria-selected:text-accent-foreground"
+                      className="cursor-pointer aria-selected:bg-primary/10 aria-selected:text-primary rounded-md mb-1 border border-transparent hover:border-border/40"
                     >
                       <div className="py-1 sm:py-2">
                         <h3 className="text-sm sm:text-base font-medium">
@@ -287,6 +353,6 @@ export default function Header() {
           </Command>
         </CommandDialog>
       </div>
-    </header>
+    </motion.header>
   );
 }

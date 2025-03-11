@@ -98,6 +98,27 @@ export default {
             "code::after": {
               content: '""',
             },
+            h1: {
+              fontWeight: '700',
+              letterSpacing: '-0.025em',
+            },
+            h2: {
+              fontWeight: '600',
+              letterSpacing: '-0.0125em',
+            },
+            h3: {
+              fontWeight: '500',
+            },
+            h4: {
+              fontWeight: '500',
+            },
+            p: {
+              lineHeight: '1.7',
+            },
+            a: {
+              fontWeight: '500',
+              textDecoration: 'none',
+            }
           },
         },
       },
