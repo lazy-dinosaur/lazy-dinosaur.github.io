@@ -12,7 +12,7 @@
   .touch-target {
     @apply min-h-[44px] min-w-[44px];
   }
-  
+
   /* 그리드 레이아웃 유틸리티 */
   .grid-layout {
     display: grid;
@@ -119,7 +119,7 @@
 .light {
   --bg-real: #f8fdfb;
   --fg-real: #1e2e2d;
-  --primary-real: #56C2B1;
+  --primary-real: #56c2b1;
   --muted-bg-real: #ebf4f2;
   --muted-fg-real: #66857d;
   --border-real: #d5e8e3;
@@ -128,28 +128,40 @@
 .dark {
   --bg-real: #132826;
   --fg-real: #eeeeee;
-  --primary-real: #56C2B1;
+  --primary-real: #56c2b1;
   --muted-bg-real: #1f3a38;
   --muted-fg-real: #a3b3b1;
   --border-real: #284440;
 }
 
 /* 직접 색상 적용 */
-.light body, .dark body {
+.light body,
+.dark body {
   background-color: var(--bg-real);
   color: var(--fg-real);
-  transition: background-color 1s ease, color 1s ease;
+  transition:
+    background-color 1s ease,
+    color 1s ease;
 }
 
-.light a, .dark a,
-.light h1, .dark h1,
-.light h2, .dark h2,
-.light h3, .dark h3,
-.light h4, .dark h4,
-.light button, .dark button,
-.light .bg-background, .dark .bg-background,
-.light .text-foreground, .dark .text-foreground,
-.light .border-border, .dark .border-border {
+.light a,
+.dark a,
+.light h1,
+.dark h1,
+.light h2,
+.dark h2,
+.light h3,
+.dark h3,
+.light h4,
+.dark h4,
+.light button,
+.dark button,
+.light .bg-background,
+.dark .bg-background,
+.light .text-foreground,
+.dark .text-foreground,
+.light .border-border,
+.dark .border-border {
   transition: all 1s ease;
 }
 
@@ -187,40 +199,9 @@
   background-color: #4b5563;
 }
 
-/* 테마 전환을 위한 강력한 트랜지션 설정 - !important 사용 */
+/* 테마 전환 애니메이션 제거 - 기본 브라우저 동작만 사용 */
 * {
-  transition-property: color, background-color, border-color, outline-color, fill, stroke !important;
-  transition-duration: 1s !important;
-  transition-timing-function: ease !important;
-}
-
-/* 테마 전환 배경 오버레이 효과 */
-#theme-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 99999; /* 가장 높은 z-index로 설정 */
-  pointer-events: none;
-  opacity: 0;
-  transition: all 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
-}
-
-/* 라이트 → 다크 (밝기 감소) */
-.light #theme-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(8px);
-}
-
-/* 다크 → 라이트 (밝기 증가) */
-.dark #theme-overlay {
-  background-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(8px);
-}
-
-#theme-overlay.active {
-  opacity: 0.5;
+  /* 트랜지션 효과 제거 */
 }
 
 /* 타이포그래피 시스템 */
@@ -231,43 +212,43 @@
     line-height: 1.2;
     letter-spacing: -0.02em;
   }
-  
+
   .text-hierarchy-h2 {
     @apply text-lg sm:text-xl lg:text-2xl font-semibold;
     line-height: 1.3;
     letter-spacing: -0.01em;
   }
-  
+
   .text-hierarchy-h3 {
     @apply text-base sm:text-lg lg:text-xl font-medium;
     line-height: 1.4;
   }
-  
+
   .text-hierarchy-h4 {
     @apply text-sm sm:text-base lg:text-lg font-medium text-primary;
     line-height: 1.5;
   }
-  
+
   .text-hierarchy-body {
     @apply text-sm sm:text-base md:text-[17px] text-foreground/90;
     line-height: 1.7;
     font-weight: 400;
   }
-  
+
   .text-hierarchy-small {
     @apply text-xs sm:text-sm text-muted-foreground;
     line-height: 1.6;
   }
-  
+
   /* 타이포그래피 스페이싱 */
   .spacing-section {
     @apply my-8 sm:my-10 md:my-12;
   }
-  
+
   .spacing-paragraph {
     @apply my-3 sm:my-4 md:my-5;
   }
-  
+
   .spacing-heading {
     @apply mt-6 sm:mt-8 md:mt-10 mb-3 sm:mb-4;
   }
@@ -342,7 +323,7 @@ html {
 
 /* 목차 컴포넌트 스타일 */
 .toc-container {
-  position: sticky; 
+  position: sticky;
   top: 5rem;
   height: fit-content;
   max-height: calc(100vh - 8rem);
@@ -352,21 +333,22 @@ html {
 /* 인쇄 미디어 쿼리 */
 @media print {
   /* 인쇄 시 목차 및 스크롤 버튼 숨김 */
-  .toc, .scroll-to-top {
+  .toc,
+  .scroll-to-top {
     display: none !important;
   }
-  
+
   /* 인쇄 시 여백 조정 */
   @page {
     margin: 1.5cm;
   }
-  
+
   /* 인쇄 시 텍스트 색상 */
   body {
     color: black;
     background: white;
   }
-  
+
   /* 인쇄 시 링크 URL 표시 */
   .prose-custom a[href^="http"]::after {
     content: " (" attr(href) ")";

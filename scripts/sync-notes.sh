@@ -150,7 +150,7 @@ for orig_path in "${!PUBLISH_MAP[@]}"; do
             "summary": "$summary",
             "image": "$image",
             "tags": $tags,
-            "series": "$series",                                                                                                                                                                                                                  
+            "series": "$series",
             "createdAt": "$createdAt",
             "modifiedAt": "$modifiedAt"
         }

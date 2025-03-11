@@ -42,7 +42,7 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   const publishPath = post.urlPath.split("/").slice(0, -1).join("/");
-  
+
   // 이전/다음 게시물 가져오기
   const { prev, next } = await getAdjacentPosts(post);
 

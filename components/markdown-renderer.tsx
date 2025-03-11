@@ -7,6 +7,7 @@ import { Badge } from "./ui/badge";
 import { Element } from "hast";
 import CodeBlock from "./code-block";
 import { motion } from "framer-motion";
+import remarkCallout from "@r4ai/remark-callout";
 
 export interface MarkdownRendererProps {
   content: string;
@@ -54,41 +55,61 @@ export default function MarkdownRenderer({
 
   const processWikiLinks = (text: string) => {
     // 이스케이프된 링크 패턴을 정상 링크로 변환
-    let processed = text.replace(
-      /\\\[(.*?)\\\]\((.*?)\)/g,
-      (_, linkText, href) => {
-        // 링크 텍스트는 그대로, href는 URI 인코딩
-        return `[${linkText}](${encodeURIComponent(href)})`;
-      },
-    );
+    let processed = text.replace(/\\(\[|\]|\(|\))/g, "$1");
 
-    // 위키링크 처리
+    // 위키링크 처리 - 정규식 개선
     processed = processed.replace(
-      /\[\[([^|]+)(?:\|([^\]]+))?\]\]/g,
+      /\[\[([^|\]]+)(?:\|([^\]]+))?\]\]/g,
       (_, path, label) => {
         // 경로 정규화
         const cleanPath = path.replace(/\.md$/, "");
         // 표시할 이름이 없으면 경로의 마지막 부분을 사용
         const displayName = label || cleanPath.split("/").pop() || cleanPath;
-
         // URI 인코딩 적용
         const encodedPath = encodeURIComponent(cleanPath);
-
         // 인코딩된 경로로 마크다운 링크 생성
         return `[${displayName}](${encodedPath})`;
       },
     );
-
     return processed;
   };
 
+  // 콜아웃 블록 내부의 위키링크도 처리하기 위한 특별 처리
+  const processContentWithCallouts = (content: string) => {
+    // 콜아웃 패턴 - 공백 포함 ("> [!type]" 형식)
+    const calloutRegex = /(>\s\[!.*?\].*?(?:\n>.*?)*)(?:\n\n|$)/gs;
+
+    return content.replace(calloutRegex, (calloutBlock) => {
+      // 전체 콜아웃 블록 내에서 모든 위키링크를 한 번에 처리
+      return calloutBlock.replace(
+        /(- )?\[\[([^|\]]+)(?:\|([^\]]+))?\]\]/g,
+        (match, bulletPoint, path, label) => {
+          // 이스케이프 문자 제거 및 경로 정규화
+          const cleanPath = path.replace(/\\|\\.md$/, "");
+          // 표시할 이름이 없으면 경로의 마지막 부분을 사용
+          const displayName = label || cleanPath.split("/").pop() || cleanPath;
+          // URI 인코딩 적용
+          const encodedPath = encodeURIComponent(cleanPath);
+          // 불릿 포인트가 있으면 유지
+          const prefix = bulletPoint || "";
+          // 인코딩된 경로로 마크다운 링크 생성
+          return `${prefix}[${displayName}](${encodedPath})`;
+        },
+      );
+    });
+  };
+
+  // 처리 순서 변경: 위키링크 처리 전에 콜아웃 처리
   const processedContent = processWikiLinks(content);
+  const fullProcessedContent = processContentWithCallouts(processedContent);
+  // 최종 처리된 콘텐츠
+  const finalProcessedContent = fullProcessedContent;
 
   const components = {
     h1: ({ children }: { children?: React.ReactNode }) => (
       <div className="spacing-section">
-        <motion.h1 
-          id="post-title" 
+        <motion.h1
+          id="post-title"
           className="text-hierarchy-h1 mb-3 sm:mb-4 md:mb-5 text-primary"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -96,9 +117,9 @@ export default function MarkdownRenderer({
         >
           {children}
         </motion.h1>
-        
+
         {/* 태그 목록 */}
-        <motion.div 
+        <motion.div
           className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -122,7 +143,7 @@ export default function MarkdownRenderer({
         </motion.div>
 
         {/* 날짜 정보 */}
-        <motion.div 
+        <motion.div
           className="flex flex-col sm:flex-row sm:justify-between text-hierarchy-small mb-6 sm:mb-8 pb-3 sm:pb-4 border-b border-primary/10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -155,8 +176,8 @@ export default function MarkdownRenderer({
           className="group text-hierarchy-h2 spacing-heading pb-2 sm:pb-3 border-b border-primary/10 flex items-center"
         >
           <span>{children}</span>
-          <a 
-            href={`#${id}`} 
+          <a
+            href={`#${id}`}
             className="ml-2 opacity-0 group-hover:opacity-100 text-primary/60 hover:text-primary transition-opacity duration-200"
             aria-label="Link to this heading"
           >
@@ -173,13 +194,13 @@ export default function MarkdownRenderer({
           .replace(/\s+/g, "-")
           .replace(/[^\w\-]/g, "") || "heading";
       return (
-        <h3 
-          id={id} 
+        <h3
+          id={id}
           className="group text-hierarchy-h3 spacing-heading flex items-center"
         >
           <span>{children}</span>
-          <a 
-            href={`#${id}`} 
+          <a
+            href={`#${id}`}
             className="ml-2 opacity-0 group-hover:opacity-100 text-primary/60 hover:text-primary transition-opacity duration-200"
             aria-label="Link to this heading"
           >
@@ -196,13 +217,13 @@ export default function MarkdownRenderer({
           .replace(/\s+/g, "-")
           .replace(/[^\w\-]/g, "") || "heading";
       return (
-        <h4 
-          id={id} 
+        <h4
+          id={id}
           className="group text-hierarchy-h4 spacing-heading flex items-center"
         >
           <span>{children}</span>
-          <a 
-            href={`#${id}`} 
+          <a
+            href={`#${id}`}
             className="ml-2 opacity-0 group-hover:opacity-100 text-primary/60 hover:text-primary transition-opacity duration-200"
             aria-label="Link to this heading"
           >
@@ -269,7 +290,7 @@ export default function MarkdownRenderer({
       );
     },
     img: ({ src, alt }: { src?: string; alt?: string }) => (
-      <motion.div 
+      <motion.div
         className="spacing-section relative group"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -373,7 +394,7 @@ export default function MarkdownRenderer({
       );
     },
     blockquote: ({ children }: { children?: React.ReactNode }) => (
-      <motion.blockquote 
+      <motion.blockquote
         className="spacing-paragraph border-l-4 border-primary pl-4 sm:pl-5 md:pl-6 py-2 sm:py-3
           bg-primary/5 rounded-r-lg shadow-sm"
         initial={{ opacity: 0, x: -10 }}
@@ -394,12 +415,10 @@ export default function MarkdownRenderer({
       </ol>
     ),
     li: ({ children }: { children?: React.ReactNode }) => (
-      <li className="text-hierarchy-body pl-1.5 sm:pl-2">
-        {children}
-      </li>
+      <li className="text-hierarchy-body pl-1.5 sm:pl-2">{children}</li>
     ),
     table: ({ children }: { children?: React.ReactNode }) => (
-      <motion.div 
+      <motion.div
         className="spacing-section overflow-x-auto rounded-md sm:rounded-lg border border-primary/10 shadow-sm"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -411,7 +430,9 @@ export default function MarkdownRenderer({
       </motion.div>
     ),
     thead: ({ children }: { children?: React.ReactNode }) => (
-      <thead className="bg-primary/10 font-medium text-primary/90">{children}</thead>
+      <thead className="bg-primary/10 font-medium text-primary/90">
+        {children}
+      </thead>
     ),
     th: ({ children }: { children?: React.ReactNode }) => (
       <th className="text-left py-2.5 sm:py-3.5 px-3 sm:px-4 md:px-5 font-semibold border-b border-primary/10">
@@ -424,8 +445,8 @@ export default function MarkdownRenderer({
       </td>
     ),
     hr: () => (
-      <motion.hr 
-        className="spacing-section border-none h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" 
+      <motion.hr
+        className="spacing-section border-none h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"
         initial={{ width: 0 }}
         animate={{ width: "100%" }}
         transition={{ duration: 0.7 }}
@@ -445,7 +466,9 @@ export default function MarkdownRenderer({
 
   return (
     <div className="prose-custom">
-      <ReactMarkdown components={components}>{processedContent}</ReactMarkdown>
+      <ReactMarkdown components={components} remarkPlugins={[remarkCallout]}>
+        {finalProcessedContent}
+      </ReactMarkdown>
     </div>
   );
 }

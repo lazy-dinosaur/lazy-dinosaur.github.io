@@ -169,7 +169,7 @@ export default function Header() {
               variant="outline"
               size="icon"
               onClick={() => {
-                // 테마 변경 시 직접 변경
+                // 테마 직접 변경
                 setTheme(theme === "light" ? "dark" : "light");
               }}
               className="relative overflow-hidden rounded-full h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 
@@ -187,15 +187,27 @@ export default function Header() {
                   rotate: theme === "dark" ? -180 : 0,
                 }}
                 transition={{
-                  duration: 0.7,
-                  ease: [0.34, 1.56, 0.64, 1],
+                  duration: 0.5, // 시간 단축
+                  ease: "easeOut", // 더 간단한 이징 함수 사용
                 }}
               >
-                {theme === "dark" ? (
-                  <Moon className="h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem]" />
-                ) : (
+                {/* 아이콘을 상황에 따라 렌더링하는 대신 두 아이콘을 항상 표시하고 불투명도 조정 */}
+                <motion.div
+                  initial={false}
+                  animate={{ opacity: theme === "light" ? 1 : 0 }}
+                  transition={{ duration: 0.2 }}
+                  style={{ position: 'absolute' }}
+                >
                   <Sun className="h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem]" />
-                )}
+                </motion.div>
+                <motion.div
+                  initial={false}
+                  animate={{ opacity: theme === "dark" ? 1 : 0 }}
+                  transition={{ duration: 0.2 }}
+                  style={{ position: 'absolute' }}
+                >
+                  <Moon className="h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem]" />
+                </motion.div>
               </motion.div>
               <span className="sr-only">Toggle theme</span>
             </Button>
