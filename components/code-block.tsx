@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import {
   oneDark,
@@ -25,15 +25,15 @@ export default function CodeBlock({
   const [isCopied, setIsCopied] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const { theme, resolvedTheme } = useTheme();
-  
+  const { resolvedTheme } = useTheme();
+
   // 서버/클라이언트 하이드레이션 불일치 방지
   useEffect(() => {
     setMounted(true);
   }, []);
-  
+
   // 실제 사용할 테마 (마운트 전에는 기본값 사용)
-  const isDark = mounted ? (resolvedTheme === 'dark') : false;
+  const isDark = mounted ? resolvedTheme === "dark" : false;
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(code);
@@ -151,17 +151,20 @@ export default function CodeBlock({
 
           {/* 마운트 전까지는 로딩 상태 표시 */}
           {!mounted ? (
-            <div 
+            <div
               className="p-4 bg-muted/30 text-muted-foreground font-mono text-xs space-y-2 animate-pulse"
-              style={{ minHeight: '8rem' }}
+              style={{ minHeight: "8rem" }}
             >
-              {code.split('\n').slice(0, 8).map((_, idx) => (
-                <div 
-                  key={idx} 
-                  className="h-4 bg-muted-foreground/20 rounded"
-                  style={{ width: `${Math.floor(Math.random() * 50) + 50}%` }}
-                ></div>
-              ))}
+              {code
+                .split("\n")
+                .slice(0, 8)
+                .map((_, idx) => (
+                  <div
+                    key={idx}
+                    className="h-4 bg-muted-foreground/20 rounded"
+                    style={{ width: `${Math.floor(Math.random() * 50) + 50}%` }}
+                  ></div>
+                ))}
             </div>
           ) : (
             <SyntaxHighlighter
@@ -177,8 +180,10 @@ export default function CodeBlock({
                 overflowWrap: "anywhere", // 어디서든 줄바꿈 허용
                 maxWidth: "100%",
                 overflowX: "visible", // 좌우 스크롤 제거
-                background: isDark ? 'rgba(30, 30, 30, 0.95)' : 'rgba(250, 250, 250, 0.95)',
-                transition: 'background 0.3s ease'
+                background: isDark
+                  ? "rgba(30, 30, 30, 0.95)"
+                  : "rgba(250, 250, 250, 0.95)",
+                transition: "background 0.3s ease",
               }}
               wrapLines={true}
               wrapLongLines={true}
