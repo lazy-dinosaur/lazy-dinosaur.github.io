@@ -16,48 +16,69 @@
 
 @layer base {
   :root {
-    --background: 171 0% 100%;
-    --foreground: 171 0% 10%;
-    --card: 171 0% 100%;
-    --card-foreground: 171 0% 15%;
-    --popover: 171 0% 100%;
-    --popover-foreground: 171 95% 10%;
-    --primary: 171 47% 54.9%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 171 10% 90%;
-    --secondary-foreground: 0 0% 0%;
-    --muted: 133 10% 95%;
-    --muted-foreground: 171 0% 40%;
-    --accent: 133 10% 90%;
-    --accent-foreground: 171 0% 15%;
-    --destructive: 0 50% 50%;
-    --destructive-foreground: 171 0% 100%;
-    --border: 171 20% 82%;
-    --input: 171 20% 50%;
-    --ring: 171 47% 54.9%;
+    /* 라이트 모드 - 더 자연스러운 배경색 */
+    --background: 170 30% 98%; /* 매우 연한 민트 그레이 배경 */
+    --foreground: 173 21% 14%;
+
+    /* 로고 색상(#56C2B1)을 기준으로 라이트 모드 테마 */
+    --primary: 170 46% 55%; /* #56C2B1 - 로고 메인 색상 */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 170 20% 94%; /* 연한 민트 색상 */
+    --secondary-foreground: 170 46% 25%;
+
+    --muted: 170 10% 92%;
+    --muted-foreground: 170 10% 40%;
+
+    --accent: 170 50% 94%;
+    --accent-foreground: 170 46% 25%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 170 15% 85%;
+    --input: 170 15% 85%;
+    --ring: 170 46% 55%;
+
+    --card: 170 25% 99%;
+    --card-foreground: 173 21% 14%;
+
+    --popover: 170 25% 99%;
+    --popover-foreground: 173 21% 14%;
+
     --radius: 0.5rem;
   }
+
   .dark {
-    --background: 171 10% 10%;
-    --foreground: 171 0% 100%;
-    --card: 171 0% 10%;
-    --card-foreground: 171 0% 100%;
-    --popover: 171 10% 5%;
-    --popover-foreground: 171 0% 100%;
-    --primary: 171 47% 54.9%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 171 10% 20%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 133 10% 25%;
-    --muted-foreground: 171 0% 65%;
-    --accent: 133 10% 25%;
-    --accent-foreground: 171 0% 95%;
-    --destructive: 0 50% 50%;
-    --destructive-foreground: 171 0% 100%;
-    --border: 171 20% 50%;
-    --input: 171 20% 50%;
-    --ring: 171 47% 54.9%;
-    --radius: 0.5rem;
+    /* 다크 모드 - 더 자연스러운 배경색 */
+    --background: 173 30% 12%; /* 어두운 청록색 배경 */
+    --foreground: 0 0% 93%;
+
+    /* 로고 색상(#56C2B1)을 기준으로 다크 모드 테마 */
+    --primary: 170 46% 55%; /* #56C2B1 - 로고 메인 색상 */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 170 40% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 170 25% 18%;
+    --muted-foreground: 170 10% 70%;
+
+    --accent: 170 25% 22%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 74% 42%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 170 25% 22%;
+    --input: 170 25% 22%;
+    --ring: 170 46% 40%;
+
+    --card: 173 30% 15%;
+    --card-foreground: 0 0% 93%;
+
+    --popover: 173 30% 15%;
+    --popover-foreground: 0 0% 93%;
   }
 }
 
