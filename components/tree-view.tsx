@@ -58,7 +58,7 @@ function TreeNode({
 
   const paddingLeft = `${level * 12}px`;
   const linkClassName = cn(
-    "flex items-center gap-1.5 text-xs 2xl:text-sm font-medium transition-all duration-200 w-full px-2.5 py-1.5 rounded-md relative overflow-hidden",
+    "flex items-center gap-1.5 text-xs 2xl:text-sm font-medium transition-all duration-200 w-full max-w-full px-2.5 py-1.5 rounded-md relative overflow-hidden",
     isFileActive || isFolderActive
       ? "text-primary bg-primary/10"
       : "hover:bg-accent hover:text-primary",
@@ -67,7 +67,7 @@ function TreeNode({
   return (
     <div style={{ paddingLeft }} className="py-0.5">
       <div
-        className="flex items-center rounded-md mb-1 sm:mb-1.5 relative"
+        className="flex items-center rounded-md mb-1 sm:mb-1.5 relative w-full max-w-full overflow-hidden"
         onClick={() => node.type === "folder" && setIsExpanded(!isExpanded)}
       >
         {node.type === "folder" && (
@@ -84,7 +84,7 @@ function TreeNode({
             </motion.div>
           </Button>
         )}
-        <div className="flex-1">
+        <div className="flex-1 min-w-0 max-w-full">
           {node.type === "file" ? (
             <Link href={normalizedCurrentPath} className={linkClassName}>
               {isFileActive && (
@@ -96,7 +96,7 @@ function TreeNode({
                   isFileActive ? "text-primary" : "text-muted-foreground",
                 )}
               />
-              <span>{node.name}</span>
+              <span className="line-clamp-1">{node.name}</span>
             </Link>
           ) : (
             <button className={linkClassName} style={{ paddingLeft: "28px" }}>
@@ -109,7 +109,7 @@ function TreeNode({
                   isFolderActive ? "text-primary" : "text-muted-foreground",
                 )}
               />
-              <span>{node.name}</span>
+              <span className="line-clamp-1">{node.name}</span>
             </button>
           )}
         </div>

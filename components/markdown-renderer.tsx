@@ -7,6 +7,7 @@ import { Badge } from "./ui/badge";
 import { Element } from "hast";
 import CodeBlock from "./code-block";
 import { motion } from "framer-motion";
+import remarkCallout from "@r4ai/remark-callout";
 
 export interface MarkdownRendererProps {
   content: string;
@@ -54,35 +55,55 @@ export default function MarkdownRenderer({
 
   const processWikiLinks = (text: string) => {
     // 이스케이프된 링크 패턴을 정상 링크로 변환
-    let processed = text.replace(
-      /\\\[(.*?)\\\]\((.*?)\)/g,
-      (_, linkText, href) => {
-        // 링크 텍스트는 그대로, href는 URI 인코딩
-        return `[${linkText}](${encodeURIComponent(href)})`;
-      },
-    );
+    let processed = text.replace(/\\(\[|\]|\(|\))/g, "$1");
 
-    // 위키링크 처리
+    // 위키링크 처리 - 정규식 개선
     processed = processed.replace(
-      /\[\[([^|]+)(?:\|([^\]]+))?\]\]/g,
+      /\[\[([^|\]]+)(?:\|([^\]]+))?\]\]/g,
       (_, path, label) => {
         // 경로 정규화
         const cleanPath = path.replace(/\.md$/, "");
         // 표시할 이름이 없으면 경로의 마지막 부분을 사용
         const displayName = label || cleanPath.split("/").pop() || cleanPath;
-
         // URI 인코딩 적용
         const encodedPath = encodeURIComponent(cleanPath);
-
         // 인코딩된 경로로 마크다운 링크 생성
         return `[${displayName}](${encodedPath})`;
       },
     );
-
     return processed;
   };
 
+  // 콜아웃 블록 내부의 위키링크도 처리하기 위한 특별 처리
+  const processContentWithCallouts = (content: string) => {
+    // 콜아웃 패턴 - 공백 포함 ("> [!type]" 형식)
+    const calloutRegex = /(>\s\[!.*?\].*?(?:\n>.*?)*)(?:\n\n|$)/gs;
+
+    return content.replace(calloutRegex, (calloutBlock) => {
+      // 전체 콜아웃 블록 내에서 모든 위키링크를 한 번에 처리
+      return calloutBlock.replace(
+        /(- )?\[\[([^|\]]+)(?:\|([^\]]+))?\]\]/g,
+        (match, bulletPoint, path, label) => {
+          // 이스케이프 문자 제거 및 경로 정규화
+          const cleanPath = path.replace(/\\|\\.md$/, "");
+          // 표시할 이름이 없으면 경로의 마지막 부분을 사용
+          const displayName = label || cleanPath.split("/").pop() || cleanPath;
+          // URI 인코딩 적용
+          const encodedPath = encodeURIComponent(cleanPath);
+          // 불릿 포인트가 있으면 유지
+          const prefix = bulletPoint || "";
+          // 인코딩된 경로로 마크다운 링크 생성
+          return `${prefix}[${displayName}](${encodedPath})`;
+        },
+      );
+    });
+  };
+
+  // 처리 순서 변경: 위키링크 처리 전에 콜아웃 처리
   const processedContent = processWikiLinks(content);
+  const fullProcessedContent = processContentWithCallouts(processedContent);
+  // 최종 처리된 콘텐츠
+  const finalProcessedContent = fullProcessedContent;
 
   const components = {
     h1: ({ children }: { children?: React.ReactNode }) => (
@@ -445,7 +466,9 @@ export default function MarkdownRenderer({
 
   return (
     <div className="prose-custom">
-      <ReactMarkdown components={components}>{processedContent}</ReactMarkdown>
+      <ReactMarkdown components={components} remarkPlugins={[remarkCallout]}>
+        {finalProcessedContent}
+      </ReactMarkdown>
     </div>
   );
 }
