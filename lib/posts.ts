@@ -49,6 +49,7 @@ export async function getPosts(): Promise<Post[]> {
             plainContent: extractPlainTextFromMarkdown(content),
             image: (item.image || "") as string,
             tags: (item.tags || []) as string[],
+            series: (item.series || "") as string,
             createdAt: item.createdAt as string,
             modifiedAt: item.modifiedAt as string,
           };
@@ -60,13 +61,18 @@ export async function getPosts(): Promise<Post[]> {
       }),
     );
 
-    return posts.filter(Boolean) as Post[]; // 유효한 포스트만 필터링
+    // 날짜 기준으로 정렬 (최신 글이 먼저 오도록)
+    const validPosts = posts.filter(Boolean) as Post[];
+    return validPosts.sort((a, b) => 
+      new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+    );
   } catch (error) {
     console.error("Error loading posts:", error);
     return []; // 에러 시 빈 배열 반환
   }
 }
 
+// 이전/다음 게시물 포함하여 가져오는 함수
 export async function getPost(slug: string[]): Promise<Post | null> {
   // 슬러그 유효성 검사 강화
   if (!slug || !Array.isArray(slug) || slug.length === 0) {
@@ -115,6 +121,31 @@ export async function getPost(slug: string[]): Promise<Post | null> {
   } catch (error) {
     console.error("Error loading post:", error);
     return null; // 모든 에러 경우에 null 반환
+  }
+}
+
+// 이전 및 다음 게시물 가져오기
+export async function getAdjacentPosts(currentPost: Post): Promise<{ prev: Post | null; next: Post | null }> {
+  try {
+    const allPosts = await getPosts();
+    
+    // 현재 게시물의 인덱스 찾기
+    const currentIndex = allPosts.findIndex(post => post.urlPath === currentPost.urlPath);
+    
+    if (currentIndex === -1) {
+      return { prev: null, next: null };
+    }
+    
+    // 이전 글 (더 최신 글)
+    const prev = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
+    
+    // 다음 글 (더 오래된 글)
+    const next = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
+    
+    return { prev, next };
+  } catch (error) {
+    console.error("Error getting adjacent posts:", error);
+    return { prev: null, next: null };
   }
 }
 

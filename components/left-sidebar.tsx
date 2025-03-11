@@ -10,6 +10,8 @@ import { usePosts } from "@/contexts/posts-context";
 import { buildFolderStructure } from "@/lib/utils";
 import { cn } from "@/lib/utils";
 import { SidebarSection } from "./sidebar-section";
+import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 interface LeftSidebarProps {
   className?: string;
@@ -18,7 +20,11 @@ interface LeftSidebarProps {
 export default function LeftSidebar({ className }: LeftSidebarProps) {
   const [open, setOpen] = useState(false);
   const { posts } = usePosts();
+  const pathname = usePathname();
   const folderStructure = buildFolderStructure(posts);
+  
+  // URL이 변경될 때마다 컴포넌트를 강제로 리렌더링하기 위한 key 생성
+  const sidebarKey = `left-sidebar-${pathname}`;
 
   return (
     <>
@@ -41,20 +47,36 @@ export default function LeftSidebar({ className }: LeftSidebarProps) {
               <h2 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 px-1 sm:px-2">
                 카테고리
               </h2>
-              <TreeView data={folderStructure} />
+              <TreeView key={`mobile-tree-${pathname}`} data={folderStructure} />
             </ScrollArea>
           </div>
         </SheetContent>
       </Sheet>
 
       {/* 데스크톱 버전 */}
-      <aside className={cn("hidden xl:block", className)}>
+      <motion.aside 
+        key={sidebarKey}
+        className={cn("hidden xl:block", className)}
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ 
+          duration: 0.3,
+          ease: "easeOut",
+          delay: 0.1
+        }}
+      >
         <ScrollArea className="h-full">
           <SidebarSection title="카테고리">
-            <TreeView data={folderStructure} />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.2 }}
+            >
+              <TreeView key={`desktop-tree-${pathname}`} data={folderStructure} />
+            </motion.div>
           </SidebarSection>
         </ScrollArea>
-      </aside>
+      </motion.aside>
     </>
   );
 }
