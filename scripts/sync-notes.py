@@ -206,6 +206,7 @@ def sync_notes():
                         created_at = frontmatter.get("createdAt", "")
                         modified_at = frontmatter.get("modifiedAt", "")
                         series = frontmatter.get("series", "")
+                        publish = frontmatter.get("publish", "")
 
                         f.write(f'''  {{
                             "urlPath": "{publish_path}",
@@ -215,7 +216,8 @@ def sync_notes():
                             "tags": {json.dumps(tags)},
                             "series": "{series}",
                             "createdAt": "{created_at}",
-                            "modifiedAt": "{modified_at}"
+                            "modifiedAt": "{modified_at}",
+                            "publish": "{publish}"
                         }}''')
                         if i < len(publish_map) - 1:
                             f.write(",\n")

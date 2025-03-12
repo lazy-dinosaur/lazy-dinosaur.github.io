@@ -24,6 +24,7 @@ export interface Post {
   series: string;
   createdAt: string;
   modifiedAt: string;
+  publish: string; // publish 필드 추가 (카테고리 역할)
 }
 
 // getPosts 함수 수정
@@ -52,6 +53,7 @@ export async function getPosts(): Promise<Post[]> {
             series: (item.series || "") as string,
             createdAt: item.createdAt as string,
             modifiedAt: item.modifiedAt as string,
+            publish: (item.publish || "") as string,
           };
         } catch (error) {
           console.log(error);
@@ -117,6 +119,7 @@ export async function getPost(slug: string[]): Promise<Post | null> {
       series: (postMeta.series || "") as string,
       createdAt: postMeta.createdAt as string,
       modifiedAt: postMeta.modifiedAt as string,
+      publish: (postMeta.publish || "") as string,
     };
   } catch (error) {
     console.error("Error loading post:", error);
@@ -192,3 +195,6 @@ export function searchPosts(
     );
   });
 }
+
+// 프로젝트 ID와 관련된 포스트 찾기는 contexts/posts-context.tsx로 이동
+// 클라이언트 컴포넌트에서 fs 모듈 사용 문제 해결을 위함

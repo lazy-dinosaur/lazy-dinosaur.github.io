@@ -23,7 +23,7 @@ const ProjectCard = ({
   onClick: () => void;
 }) => {
   return (
-    <div className="group overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-all duration-300 hover:shadow-md">
+    <div className="group overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-all duration-300 hover:shadow-md h-full flex flex-col">
       <div className="aspect-video w-full overflow-hidden">
         <motion.div
           whileHover={{ scale: 1.05 }}
@@ -48,7 +48,7 @@ const ProjectCard = ({
         </motion.div>
       </div>
 
-      <div className="p-4 sm:p-6">
+      <div className="p-4 sm:p-6 flex flex-col flex-grow">
         <h2 className="text-xl font-bold line-clamp-1 group-hover:text-primary transition-colors">
           {project.title}
         </h2>
@@ -70,7 +70,7 @@ const ProjectCard = ({
           )}
         </div>
 
-        <div className="mt-4 flex justify-between items-center">
+        <div className="mt-auto pt-4 flex justify-between items-center">
           <div className="flex space-x-2">
             {project.githubUrl && (
               <Link
