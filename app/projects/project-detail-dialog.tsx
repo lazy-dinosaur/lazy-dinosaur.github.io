@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, FileText } from "lucide-react";
+import { ExternalLink, Github, FileText, Globe, Download } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Project } from "./types";
@@ -139,7 +139,7 @@ export default function ProjectDetailDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChangeAction}>
-      <DialogContent className="sm:max-w-3xl p-0 overflow-hidden flex flex-col max-h-[70vh] sm:top-[45%] gap-0">
+      <DialogContent className="sm:max-w-3xl p-0 overflow-hidden flex flex-col max-h-[90vh] sm:top-[50%] gap-0">
         {/* 헤더 영역 - 상단 고정 */}
         <div className="border-b px-6 pt-3 pb-3">
           <DialogHeader className="pb-0 pr-8">
@@ -197,7 +197,7 @@ export default function ProjectDetailDialog({
             </div>
           )}
           {project.lessons && (
-            <div className="mt-6">
+            <div className="py-6">
               <h3 className="text-lg font-medium mb-2">배운 점</h3>
               <p className="text-muted-foreground leading-relaxed">
                 {project.lessons}
@@ -286,7 +286,31 @@ export default function ProjectDetailDialog({
             >
               <Button variant="outline" size="sm">
                 <ExternalLink className="mr-2 h-4 w-4" />
-                라이브 데모
+                데모 사이트
+              </Button>
+            </Link>
+          )}
+          {project.serviceUrl && (
+            <Link
+              href={project.serviceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="outline" size="sm">
+                <Globe className="mr-2 h-4 w-4" />
+                서비스 바로가기
+              </Button>
+            </Link>
+          )}
+          {project.downloadUrl && (
+            <Link
+              href={project.downloadUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="outline" size="sm">
+                <Download className="mr-2 h-4 w-4" />
+                다운로드
               </Button>
             </Link>
           )}

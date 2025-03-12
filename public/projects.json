@@ -8,6 +8,8 @@
     "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     "githubUrl": "https://github.com/yourusername/my-blog",
     "demoUrl": "https://your-blog-url.com",
+    "serviceUrl": "https://yourblog.com",
+    "downloadUrl": "https://github.com/yourusername/my-blog/releases",
     "featured": true,
     "createdAt": "2023-12-01",
     "overview": "마크다운 파일을 기반으로 콘텐츠를 관리하는 개인 블로그 프로젝트입니다. Next.js의 App Router와 TypeScript를 활용해 개발했으며, 사용자 경험을 향상시키기 위한 다양한 기능을 포함하고 있습니다.",

@@ -205,62 +205,64 @@ export default function ProjectsPage() {
   };
 
   return (
-    <div className="container px-4 py-12 sm:px-6 lg:px-8">
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <h1 className="text-3xl font-bold mb-2">프로젝트</h1>
-        <p className="text-muted-foreground mb-8">
-          지금까지 진행한 다양한 프로젝트들을 소개합니다. 관심 있는 카테고리를
-          선택하여 필터링할 수 있습니다.
-        </p>
-      </motion.div>
-
-      <ProjectFilter
-        tags={allTags}
-        selectedTag={selectedTag}
-        setSelectedTag={setSelectedTag}
-      />
-
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <AnimatePresence mode="wait">
-          <div key={animationKey} className="contents">
-            {filteredProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    delay: index * 0.1, // 순차적으로 나타나도록 딜레이 추가
-                  },
-                }}
-                exit={{ opacity: 0, y: -20 }}
-              >
-                <ProjectCard
-                  project={project}
-                  onClick={() => handleProjectClick(project)}
-                />
-              </motion.div>
-            ))}
-          </div>
-        </AnimatePresence>
-      </div>
-
-      {filteredProjects.length === 0 && (
+    <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
+      <div className="mx-auto">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="py-20 text-center"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
         >
-          <p className="text-muted-foreground">
-            선택한 카테고리에 해당하는 프로젝트가 없습니다.
+          <h1 className="text-3xl font-bold mb-2">프로젝트</h1>
+          <p className="text-muted-foreground mb-8">
+            지금까지 진행한 다양한 프로젝트들을 소개합니다. 관심 있는 카테고리를
+            선택하여 필터링할 수 있습니다.
           </p>
         </motion.div>
-      )}
+
+        <ProjectFilter
+          tags={allTags}
+          selectedTag={selectedTag}
+          setSelectedTag={setSelectedTag}
+        />
+
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mx-auto max-w-full">
+          <AnimatePresence mode="wait">
+            <div key={animationKey} className="contents">
+              {filteredProjects.map((project, index) => (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      delay: index * 0.1, // 순차적으로 나타나도록 딜레이 추가
+                    },
+                  }}
+                  exit={{ opacity: 0, y: -20 }}
+                >
+                  <ProjectCard
+                    project={project}
+                    onClick={() => handleProjectClick(project)}
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </AnimatePresence>
+        </div>
+
+        {filteredProjects.length === 0 && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="py-20 text-center"
+          >
+            <p className="text-muted-foreground">
+              선택한 카테고리에 해당하는 프로젝트가 없습니다.
+            </p>
+          </motion.div>
+        )}
+      </div>
 
       {/* 프로젝트 상세 정보 다이얼로그 */}
       <ProjectDetailDialog
