@@ -157,15 +157,15 @@ export default function Header() {
           </Link>
         </div>
         <div className="flex items-center gap-2 sm:gap-3">
-          {/* <motion.div whileHover={{ y: -2 }} whileTap={{ y: 0 }}> */}
-          {/*   <Button */}
-          {/*     variant="ghost" */}
-          {/*     className="font-medium rounded-full px-4 hover:bg-primary/10 hover:text-primary" */}
-          {/*     onClick={() => router.push("/projects")} */}
-          {/*   > */}
-          {/*     Projects */}
-          {/*   </Button> */}
-          {/* </motion.div> */}
+          <motion.div whileHover={{ y: -2 }} whileTap={{ y: 0 }}>
+            <Button
+              variant="ghost"
+              className="font-medium rounded-full px-4 hover:bg-primary/10 hover:text-primary"
+              onClick={() => router.push("/projects")}
+            >
+              Projects
+            </Button>
+          </motion.div>
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

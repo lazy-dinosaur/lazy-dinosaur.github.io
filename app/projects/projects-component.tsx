@@ -11,61 +11,6 @@ import { Github, ExternalLink, ArrowRight } from "lucide-react";
 import { Project } from "./types";
 import ProjectDetailDialog from "./project-detail-dialog";
 
-// 샘플 프로젝트 데이터
-const SAMPLE_PROJECTS: Project[] = [
-  {
-    id: "my-blog",
-    title: "개인 블로그",
-    description:
-      "Next.js, TypeScript, Tailwind CSS를 사용하여 개발한 개인 블로그입니다. 마크다운 기반 콘텐츠 관리와 다크 모드를 지원합니다.",
-    thumbnail: "/postImg/project/blog/thumbnail.png", // 실제 썸네일 경로로 변경해야 합니다
-    tags: ["웹", "프론트엔드"],
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    githubUrl: "https://github.com/yourusername/my-blog",
-    demoUrl: "https://your-blog-url.com",
-    featured: true,
-    createdAt: "2023-12-01",
-  },
-  {
-    id: "ai-assistant",
-    title: "AI 어시스턴트 앱",
-    description:
-      "OpenAI API를 활용한 챗봇 어시스턴트 애플리케이션으로, 사용자 질문에 답변하고 다양한 작업을 도와줍니다.",
-    thumbnail: "/postImg/project/ai/assistant-app.png", // 실제 썸네일 경로로 변경해야 합니다
-    tags: ["AI", "웹", "백엔드"],
-    technologies: ["React", "Express.js", "OpenAI API", "MongoDB"],
-    githubUrl: "https://github.com/yourusername/ai-assistant",
-    featured: true,
-    createdAt: "2023-10-15",
-  },
-  {
-    id: "task-manager",
-    title: "태스크 매니저",
-    description:
-      "React와 Redux를 사용하여 개발한 일정 관리 애플리케이션으로, 드래그 앤 드롭 인터페이스와 로컬 스토리지 동기화를 지원합니다.",
-    thumbnail: "/postImg/project/task-manager.png", // 실제 썸네일 경로로 변경해야 합니다
-    tags: ["웹", "프론트엔드", "생산성"],
-    technologies: ["React", "Redux", "CSS Modules", "LocalStorage API"],
-    githubUrl: "https://github.com/yourusername/task-manager",
-    demoUrl: "https://your-task-app.com",
-    featured: false,
-    createdAt: "2023-08-20",
-  },
-  {
-    id: "weather-app",
-    title: "날씨 앱",
-    description:
-      "현재 위치 기반으로 날씨 정보를 제공하는 모바일 친화적인 웹 애플리케이션입니다.",
-    thumbnail: "/postImg/project/weather-app.png", // 실제 썸네일 경로로 변경해야 합니다
-    tags: ["웹", "API"],
-    technologies: ["HTML", "CSS", "JavaScript", "Weather API"],
-    githubUrl: "https://github.com/yourusername/weather-app",
-    demoUrl: "https://your-weather-app.com",
-    featured: false,
-    createdAt: "2023-07-10",
-  },
-];
-
 // 기본 이미지 경로 (실제 이미지가 없을 경우 사용)
 const DEFAULT_IMAGE = "/postImg/project/default-project.png";
 
@@ -78,12 +23,7 @@ const ProjectCard = ({
   onClick: () => void;
 }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 20 }}
-      className="group overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-all duration-300 hover:shadow-md"
-    >
+    <div className="group overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-all duration-300 hover:shadow-md">
       <div className="aspect-video w-full overflow-hidden">
         <motion.div
           whileHover={{ scale: 1.05 }}
@@ -168,7 +108,7 @@ const ProjectCard = ({
           </Button>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -211,21 +151,52 @@ export default function ProjectsPage() {
   const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [dialogOpen, setDialogOpen] = useState(false);
+  const [animationKey, setAnimationKey] = useState(0); // 애니메이션 키 상태 추가
+
+  const [projects, setProjects] = useState<Project[]>([]);
+
+  // 프로젝트 데이터 불러오기
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch("/projects.json");
+        const data = await response.json();
+        setProjects(data);
+        if (selectedTag === "all") {
+          setFilteredProjects(data);
+        } else {
+          const filtered = data.filter((project: Project) =>
+            project.tags.includes(selectedTag),
+          );
+          setFilteredProjects(filtered);
+        }
+      } catch (error) {
+        console.error(
+          "프로젝트 데이터를 불러오는 중 오류가 발생했습니다:",
+          error,
+        );
+      }
+    };
+
+    fetchProjects();
+  }, []);
 
   // 전체 태그 목록 추출
-  const allTags = Array.from(new Set(SAMPLE_PROJECTS.flatMap((p) => p.tags)));
+  const allTags = Array.from(new Set(projects.flatMap((p) => p.tags)));
 
   // 선택된 태그에 따라 프로젝트 필터링
   useEffect(() => {
     if (selectedTag === "all") {
-      setFilteredProjects(SAMPLE_PROJECTS);
+      setFilteredProjects(projects);
     } else {
-      const filtered = SAMPLE_PROJECTS.filter((project) =>
+      const filtered = projects.filter((project) =>
         project.tags.includes(selectedTag),
       );
       setFilteredProjects(filtered);
     }
-  }, [selectedTag]);
+    // 필터링이 변경될 때마다 애니메이션 키를 업데이트
+    setAnimationKey((prevKey) => prevKey + 1);
+  }, [selectedTag, projects]);
 
   // 프로젝트 상세 보기 열기
   const handleProjectClick = (project: Project) => {
@@ -254,14 +225,28 @@ export default function ProjectsPage() {
       />
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <AnimatePresence>
-          {filteredProjects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              onClick={() => handleProjectClick(project)}
-            />
-          ))}
+        <AnimatePresence mode="wait">
+          <div key={animationKey} className="contents">
+            {filteredProjects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    delay: index * 0.1, // 순차적으로 나타나도록 딜레이 추가
+                  },
+                }}
+                exit={{ opacity: 0, y: -20 }}
+              >
+                <ProjectCard
+                  project={project}
+                  onClick={() => handleProjectClick(project)}
+                />
+              </motion.div>
+            ))}
+          </div>
         </AnimatePresence>
       </div>
 
@@ -281,7 +266,7 @@ export default function ProjectsPage() {
       <ProjectDetailDialog
         project={selectedProject}
         open={dialogOpen}
-        onOpenChange={setDialogOpen}
+        onOpenChangeAction={setDialogOpen}
       />
     </div>
   );

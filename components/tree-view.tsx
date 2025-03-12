@@ -58,7 +58,7 @@ function TreeNode({
 
   const paddingLeft = `${level * 12}px`;
   const linkClassName = cn(
-    "flex items-center gap-1.5 text-xs 2xl:text-sm font-medium transition-all duration-200 w-full max-w-full px-2.5 py-1.5 rounded-md relative overflow-hidden",
+    "flex items-center gap-1.5 text-sm font-medium transition-all duration-200 w-full max-w-full px-2.5 py-1.5 rounded-md relative overflow-hidden",
     isFileActive || isFolderActive
       ? "text-primary bg-primary/10"
       : "hover:bg-accent hover:text-primary",

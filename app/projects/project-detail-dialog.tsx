@@ -1,17 +1,16 @@
 "use client";
 
 import React from "react";
-import { 
-  Dialog, 
-  DialogContent, 
-  DialogHeader, 
-  DialogTitle, 
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
   DialogDescription,
-  DialogClose
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, X } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Project } from "./types";
@@ -19,27 +18,22 @@ import { Project } from "./types";
 interface ProjectDetailDialogProps {
   project: Project | null;
   open: boolean;
-  onOpenChange: (open: boolean) => void;
+  onOpenChangeAction: (open: boolean) => void;
 }
 
 export default function ProjectDetailDialog({
   project,
   open,
-  onOpenChange,
+  onOpenChangeAction,
 }: ProjectDetailDialogProps) {
   if (!project) return null;
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <Dialog open={open} onOpenChange={onOpenChangeAction}>
       <DialogContent className="sm:max-w-3xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <div className="flex justify-between items-center">
             <DialogTitle className="text-2xl">{project.title}</DialogTitle>
-            <DialogClose asChild>
-              <Button variant="ghost" size="icon">
-                <X className="h-4 w-4" />
-              </Button>
-            </DialogClose>
           </div>
           <DialogDescription>
             <div className="flex flex-wrap gap-1 mt-2">
@@ -98,7 +92,11 @@ export default function ProjectDetailDialog({
 
         <div className="mt-6 flex flex-wrap gap-3">
           {project.githubUrl && (
-            <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+            <Link
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button variant="outline" size="sm">
                 <Github className="mr-2 h-4 w-4" />
                 GitHub 저장소
@@ -106,7 +104,11 @@ export default function ProjectDetailDialog({
             </Link>
           )}
           {project.demoUrl && (
-            <Link href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+            <Link
+              href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button variant="outline" size="sm">
                 <ExternalLink className="mr-2 h-4 w-4" />
                 라이브 데모

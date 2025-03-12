@@ -19,12 +19,12 @@ export default function Footer() {
             >
               Home
             </Link>
-            {/* <Link */}
-            {/*   href="/projects" */}
-            {/*   className="text-sm text-muted-foreground hover:text-primary transition-colors" */}
-            {/* > */}
-            {/*   Projects */}
-            {/* </Link> */}
+            <Link
+              href="/projects"
+              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              Projects
+            </Link>
             <Link
               href="https://github.com/lazy-dinosaur"
               target="_blank"

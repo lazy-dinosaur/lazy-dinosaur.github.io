@@ -104,7 +104,7 @@ const RecentPostItem = ({
       <Link
         href={`/posts/${post.urlPath}`}
         className={cn(
-          "block text-xs 2xl:text-sm transition-all duration-200 line-clamp-1 py-0.5 px-2.5 rounded-md relative overflow-hidden group",
+          "block text-sm transition-all duration-200 line-clamp-1 py-0.5 px-2.5 rounded-md relative overflow-hidden group",
           mounted && isActive
             ? "text-primary bg-primary/10 font-medium"
             : "hover:bg-accent hover:text-primary",
@@ -179,7 +179,7 @@ const TagItem = ({ tag, index }: { tag: string; index: number }) => {
     >
       <Badge
         variant="outline"
-        className="text-2xs 2xl:text-xs hover:bg-primary hover:text-primary-foreground px-1.5 py-0.5 sm:px-2 sm:py-1"
+        className="text-xs hover:bg-primary hover:text-primary-foreground px-1.5 py-0.5 sm:px-2 sm:py-1"
       >
         #{tag}
       </Badge>

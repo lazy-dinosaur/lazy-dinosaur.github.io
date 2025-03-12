@@ -22,7 +22,7 @@ export default function LeftSidebar({ className }: LeftSidebarProps) {
   const { posts } = usePosts();
   const pathname = usePathname();
   const folderStructure = buildFolderStructure(posts);
-  
+
   // URL이 변경될 때마다 컴포넌트를 강제로 리렌더링하기 위한 key 생성
   const sidebarKey = `left-sidebar-${pathname}`;
 
@@ -44,25 +44,28 @@ export default function LeftSidebar({ className }: LeftSidebarProps) {
         >
           <div className="relative h-full">
             <ScrollArea className="h-full p-3 sm:p-4">
-              <h2 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 px-1 sm:px-2">
+              <h2 className="text-lg font-semibold mb-3 sm:mb-4 px-1 sm:px-2">
                 카테고리
               </h2>
-              <TreeView key={`mobile-tree-${pathname}`} data={folderStructure} />
+              <TreeView
+                key={`mobile-tree-${pathname}`}
+                data={folderStructure}
+              />
             </ScrollArea>
           </div>
         </SheetContent>
       </Sheet>
 
       {/* 데스크톱 버전 */}
-      <motion.aside 
+      <motion.aside
         key={sidebarKey}
         className={cn("hidden xl:block", className)}
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ 
+        transition={{
           duration: 0.15,
           ease: "easeOut",
-          delay: 0.05
+          delay: 0.05,
         }}
       >
         <ScrollArea className="h-full">
@@ -72,7 +75,10 @@ export default function LeftSidebar({ className }: LeftSidebarProps) {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.1, duration: 0.1 }}
             >
-              <TreeView key={`desktop-tree-${pathname}`} data={folderStructure} />
+              <TreeView
+                key={`desktop-tree-${pathname}`}
+                data={folderStructure}
+              />
             </motion.div>
           </SidebarSection>
         </ScrollArea>

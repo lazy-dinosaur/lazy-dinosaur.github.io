@@ -82,7 +82,7 @@ const PostCard = ({
           </motion.div>
         </div>
 
-        <div className="p-4 sm:p-6">
+        <div className="p-4 sm:p-6 flex flex-col justify-between h-max">
           <div className="flex items-center gap-2 mb-3 text-xs text-muted-foreground">
             <Calendar className="h-3 w-3" />
             <span>{formattedDate}</span>
