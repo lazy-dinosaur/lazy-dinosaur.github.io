@@ -364,6 +364,23 @@ html {
     & > * {
       @apply m-0;
     }
+
+    /* 콜아웃 내부의 리스트 스타일링 */
+    & > ul, & > ol {
+      @apply ml-4 sm:ml-5 md:ml-6 space-y-1.5 sm:space-y-2 md:space-y-2.5;
+    }
+
+    & > ul {
+      @apply list-disc marker:text-primary/70;
+    }
+
+    & > ol {
+      @apply list-decimal marker:text-primary/70 marker:font-medium;
+    }
+
+    & li {
+      @apply text-hierarchy-body pl-1.5 sm:pl-2;
+    }
   }
 }
 
