@@ -145,12 +145,22 @@ export default function MarkdownRenderer({
     ),
     h2: ({ children }: { children?: React.ReactNode }) => {
       // 텍스트만 추출해서 id로 사용, 특수문자 제거하여 안전한 ID 생성
-      const id =
-        children
-          ?.toString()
+      const headingText = children?.toString() || "heading";
+      const id = "h2-" + 
+        headingText
           .toLowerCase()
           .replace(/\s+/g, "-")
-          .replace(/[^\w\-]/g, "") || "heading";
+          .replace(/[^\w\-]/g, "");
+
+      // 현재 URL에서 # 이후의 앵커 부분 제외하고 기본 URL만 가져오기
+      const getBaseUrl = () => {
+        if (typeof window !== "undefined") {
+          const url = window.location.href;
+          return url.split("#")[0];
+        }
+        return "";
+      };
+
       return (
         <h2
           id={id}
@@ -158,7 +168,7 @@ export default function MarkdownRenderer({
         >
           <span>{children}</span>
           <a
-            href={`#${id}`}
+            href={`${getBaseUrl()}#${id}`}
             className="ml-2 opacity-0 group-hover:opacity-100 text-primary/60 hover:text-primary transition-opacity duration-200"
             aria-label="Link to this heading"
           >
@@ -168,12 +178,23 @@ export default function MarkdownRenderer({
       );
     },
     h3: ({ children }: { children?: React.ReactNode }) => {
-      const id =
-        children
-          ?.toString()
+      // 텍스트만 추출하고 안전한 ID를 생성 - h3는 "h3-"로 시작하도록 prefix 추가
+      const headingText = children?.toString() || "heading";
+      const id = "h3-" + 
+        headingText
           .toLowerCase()
           .replace(/\s+/g, "-")
-          .replace(/[^\w\-]/g, "") || "heading";
+          .replace(/[^\w\-]/g, "");
+
+      // 현재 URL에서 # 이후의 앵커 부분 제외하고 기본 URL만 가져오기
+      const getBaseUrl = () => {
+        if (typeof window !== "undefined") {
+          const url = window.location.href;
+          return url.split("#")[0];
+        }
+        return "";
+      };
+
       return (
         <h3
           id={id}
@@ -181,7 +202,7 @@ export default function MarkdownRenderer({
         >
           <span>{children}</span>
           <a
-            href={`#${id}`}
+            href={`${getBaseUrl()}#${id}`}
             className="ml-2 opacity-0 group-hover:opacity-100 text-primary/60 hover:text-primary transition-opacity duration-200"
             aria-label="Link to this heading"
           >
@@ -191,12 +212,23 @@ export default function MarkdownRenderer({
       );
     },
     h4: ({ children }: { children?: React.ReactNode }) => {
-      const id =
-        children
-          ?.toString()
+      // 텍스트만 추출하고 안전한 ID를 생성 - h4는 "h4-"로 시작하도록 prefix 추가
+      const headingText = children?.toString() || "heading";
+      const id = "h4-" + 
+        headingText
           .toLowerCase()
           .replace(/\s+/g, "-")
-          .replace(/[^\w\-]/g, "") || "heading";
+          .replace(/[^\w\-]/g, "");
+
+      // 현재 URL에서 # 이후의 앵커 부분 제외하고 기본 URL만 가져오기
+      const getBaseUrl = () => {
+        if (typeof window !== "undefined") {
+          const url = window.location.href;
+          return url.split("#")[0];
+        }
+        return "";
+      };
+
       return (
         <h4
           id={id}
@@ -204,7 +236,7 @@ export default function MarkdownRenderer({
         >
           <span>{children}</span>
           <a
-            href={`#${id}`}
+            href={`${getBaseUrl()}#${id}`}
             className="ml-2 opacity-0 group-hover:opacity-100 text-primary/60 hover:text-primary transition-opacity duration-200"
             aria-label="Link to this heading"
           >

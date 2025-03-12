@@ -28,6 +28,7 @@ export default function TableOfContents({ className }: TableOfContentsProps) {
     headingRefs.current = new Map();
     setActiveId("");
 
+    // h1, h2, h3, h4 + h2-, h3-, h4- 프리픽스가 있는 id도 포함하도록 쿼리 수정
     const headingElements = document.querySelectorAll("h1, h2, h3, h4");
 
     // 중복된 ID를 처리하기 위한 Set
@@ -37,7 +38,7 @@ export default function TableOfContents({ className }: TableOfContentsProps) {
       .filter((el) => el.id) // id가 있는 헤딩만 포함
       .map((el, index) => {
         let id = el.id;
-
+        
         // ID가 이미 사용되었으면 고유 식별자 추가
         if (usedIds.has(id)) {
           id = `${id}-${index}`;
@@ -103,6 +104,7 @@ export default function TableOfContents({ className }: TableOfContentsProps) {
     // 직접 요소의 가시성을 계산하는 함수
     const calculateVisibility = () => {
       // 현재 문서에 존재하는 모든 헤딩 요소 선택 (h1은 제목이므로 제외)
+      // 새로운 h2-, h3-, h4- 프리픽스가 있는 id도 가져오도록 수정
       const headingElements = Array.from(
         document.querySelectorAll("h2, h3, h4"),
       ).filter((el) => el.id && el.id !== "post-title");
