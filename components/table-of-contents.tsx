@@ -35,7 +35,7 @@ export default function TableOfContents({ className }: TableOfContentsProps) {
     const usedIds = new Set<string>();
 
     const items: TOCItem[] = Array.from(headingElements)
-      .filter((el) => el.id) // id가 있는 헤딩만 포함
+      .filter((el) => el.id && el.textContent?.trim()) // id가 있고 내용이 비어있지 않은 헤딩만 포함
       .map((el, index) => {
         let id = el.id;
         
@@ -49,10 +49,11 @@ export default function TableOfContents({ className }: TableOfContentsProps) {
 
         return {
           id,
-          text: el.textContent || "",
+          text: el.textContent?.trim() || "",
           level: parseInt(el.tagName.substring(1)), // h1 -> 1, h2 -> 2, ...
         };
-      });
+      })
+      .filter(item => item.text); // 빈 텍스트를 가진 항목 제외
 
     setHeadings(items);
 
@@ -107,7 +108,11 @@ export default function TableOfContents({ className }: TableOfContentsProps) {
       // 새로운 h2-, h3-, h4- 프리픽스가 있는 id도 가져오도록 수정
       const headingElements = Array.from(
         document.querySelectorAll("h2, h3, h4"),
-      ).filter((el) => el.id && el.id !== "post-title");
+      ).filter((el) => 
+        el.id && 
+        el.id !== "post-title" && 
+        el.textContent?.trim()
+      );
 
       if (headingElements.length === 0) return;
 
