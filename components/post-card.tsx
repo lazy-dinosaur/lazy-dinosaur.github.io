@@ -55,7 +55,7 @@ const PostCard = ({
   return (
     <Link href={`/posts/${urlPath}`} className="block h-full">
       <motion.div
-        className="h-full group overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-all duration-300 hover:shadow-md"
+        className="h-full group overflow-hidden rounded-lg border border-border bg-card shadow-sm hover:shadow-md"
         whileHover={{
           y: -5,
           boxShadow: "0 12px 24px rgba(0,0,0,0.1)",
@@ -88,7 +88,7 @@ const PostCard = ({
             <span>{formattedDate}</span>
           </div>
 
-          <h2 className="text-lg sm:text-xl font-bold line-clamp-2 group-hover:text-primary transition-colors mb-2">
+          <h2 className="text-lg sm:text-xl font-bold line-clamp-2 group-hover:text-primary transition-colors mb-2 duration-300">
             {title}
           </h2>
 

@@ -119,7 +119,7 @@ export default function Header() {
         type: "spring",
         stiffness: 500,
         damping: 30,
-        duration: 0.2
+        duration: 0.2,
       }}
     >
       <div className="flex items-center justify-between py-2 px-4 md:px-6 w-full max-w-screen-2xl border-b border-border/40 backdrop-blur-lg bg-background/80 shadow-sm">
@@ -136,7 +136,12 @@ export default function Header() {
             <motion.div
               className="relative w-10 h-8 sm:w-12 sm:h-10 md:w-14 md:h-12 mr-2 sm:mr-3 rounded-full overflow-hidden"
               whileHover={{ scale: 1.05, rotate: 5 }}
-              transition={{ type: "spring", stiffness: 600, damping: 25, duration: 0.15 }}
+              transition={{
+                type: "spring",
+                stiffness: 600,
+                damping: 25,
+                duration: 0.15,
+              }}
             >
               <Image
                 src="/lazydino-logo3.png"
@@ -146,7 +151,7 @@ export default function Header() {
                 height={80}
               />
             </motion.div>
-            <span className="text-base sm:text-lg md:text-xl font-bold group-hover:text-primary transition-colors">
+            <span className="text-base sm:text-lg md:text-xl font-bold group-hover:text-primary transition-colors duration-300">
               {`Lazydino's DevLog`}
             </span>
           </Link>
@@ -197,7 +202,7 @@ export default function Header() {
                   initial={false}
                   animate={{ opacity: theme === "light" ? 1 : 0 }}
                   transition={{ duration: 0.15 }}
-                  style={{ position: 'absolute' }}
+                  style={{ position: "absolute" }}
                 >
                   <Sun className="h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem]" />
                 </motion.div>
@@ -205,7 +210,7 @@ export default function Header() {
                   initial={false}
                   animate={{ opacity: theme === "dark" ? 1 : 0 }}
                   transition={{ duration: 0.15 }}
-                  style={{ position: 'absolute' }}
+                  style={{ position: "absolute" }}
                 >
                   <Moon className="h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem]" />
                 </motion.div>
@@ -218,9 +223,9 @@ export default function Header() {
               variant="outline"
               size="icon"
               onClick={() => setOpen(true)}
-              className="rounded-full h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 border-border/60 hover:bg-primary/10 hover:text-primary hover:border-primary"
+              className="rounded-full h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 border-border/60 hover:bg-primary/10 hover:text-primary hover:border-primary transition-colors"
             >
-              <Search className="h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem] transition-all" />
+              <Search className="h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem] transition-all duration-300" />
               <span className="sr-only">Search</span>
             </Button>
           </motion.div>
