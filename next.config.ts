@@ -1,5 +1,4 @@
 import type { NextConfig } from "next";
-import withExportImages from "next-export-optimize-images";
 
 const nextConfig: NextConfig = {
   output: "export",
@@ -12,7 +11,7 @@ const nextConfig: NextConfig = {
         hostname: "lazy-dinosaur.github.io",
       },
     ],
-    // formats: ["image/webp"],
+    formats: ["image/webp"],
     // Remove unoptimized: true to enable image optimization
     // unoptimized: true,
   },
@@ -21,4 +20,4 @@ const nextConfig: NextConfig = {
   basePath: "",
 };
 
-export default withExportImages(nextConfig);
+export default nextConfig;
