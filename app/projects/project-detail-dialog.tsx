@@ -47,19 +47,30 @@ export default function ProjectDetailDialog({
 
           // 방법 1: 스크립트 수정 후 사용 - publish 필드를 기준으로 필터링
           // Python 스크립트 실행 후 이 코드를 사용할 것
-          
+
           // 포스트가 있고 프로젝트에 publishPath가 지정된 경우
           if (posts.length > 0 && project.publishPath) {
-            filteredPosts = posts.filter(post => 
-              // 정확히 일치하거나 하위 카테고리 포함
-              post.publish === project.publishPath ||
-              post.publish.startsWith(`${project.publishPath}/`)
+            filteredPosts = posts.filter(
+              (post) =>
+                // 정확히 일치하거나 하위 카테고리 포함
+                post.publish === project.publishPath ||
+                (post.publish &&
+                  project.publishPath &&
+                  post.publish.startsWith(`${project.publishPath}/`)),
             );
-            
+
             console.log("### 방법 1: publish 필드 매칭 ###");
             console.log("project.publishPath:", project.publishPath);
-            console.log("Posts with publish field:", posts.filter(p => p.publish).map(p => `${p.urlPath} (${p.publish})`));
-            console.log("Filtered by publish:", filteredPosts.map(p => p.urlPath));
+            console.log(
+              "Posts with publish field:",
+              posts
+                .filter((p) => p.publish)
+                .map((p) => `${p.urlPath} (${p.publish})`),
+            );
+            console.log(
+              "Filtered by publish:",
+              filteredPosts.map((p) => p.urlPath),
+            );
           }
           // 기존 방식으로 시도
           else if (project.relatedPosts && project.relatedPosts.length > 0) {
@@ -83,9 +94,12 @@ export default function ProjectDetailDialog({
             // urlPath로 매칭 (publish 필드가 없어서)
             filteredPosts = posts.filter(
               (post) =>
-                post.urlPath.startsWith(project.publishPath) ||
-                post.urlPath.includes(`/${project.publishPath}/`) ||
-                post.urlPath.includes(`/${project.publishPath}`),
+                (project.publishPath &&
+                  post.urlPath.startsWith(project.publishPath)) ||
+                (project.publishPath &&
+                  post.urlPath.includes(`/${project.publishPath}/`)) ||
+                (project.publishPath &&
+                  post.urlPath.includes(`/${project.publishPath}`)),
             );
 
             // 디버깅용 로그
@@ -119,77 +133,139 @@ export default function ProjectDetailDialog({
     }
 
     loadRelatedPosts();
-  }, [project, open, getProjectRelatedPosts, posts]);
+  }, [project, open, getProjectRelatedPosts, getPostsByUrlPaths, posts]);
 
   if (!project) return null;
 
   return (
     <Dialog open={open} onOpenChange={onOpenChangeAction}>
-      <DialogContent className="sm:max-w-3xl max-h-[90vh] overflow-y-auto">
-        <DialogHeader>
-          <div className="flex justify-between items-center">
-            <DialogTitle className="text-2xl">{project.title}</DialogTitle>
+      <DialogContent className="sm:max-w-3xl p-0 overflow-hidden flex flex-col max-h-[70vh] sm:top-[45%] gap-0">
+        {/* 헤더 영역 - 상단 고정 */}
+        <div className="border-b px-6 pt-3 pb-3">
+          <DialogHeader className="pb-0 pr-8">
+            <div className="flex justify-between items-center">
+              <DialogTitle className="text-2xl">{project.title}</DialogTitle>
+            </div>
+            <DialogDescription>
+              <div className="flex flex-wrap gap-1 mt-2">
+                {project.tags.map((tag) => (
+                  <Badge key={tag} variant="outline" className="text-xs">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            </DialogDescription>
+          </DialogHeader>
+        </div>
+
+        {/* 스크롤 가능한 컨텐츠 영역 */}
+        <div className="px-6 pt-3 pb-0 overflow-y-auto flex-1">
+          {/* 패딩 없음 - 스크롤 영역 */}
+          <div className="overflow-hidden rounded-lg">
+            <Image
+              src={project.thumbnail || "/postImg/project/default-project.png"}
+              alt={project.title}
+              width={800}
+              height={450}
+              className="w-full object-cover"
+            />
           </div>
-          <DialogDescription>
-            <div className="flex flex-wrap gap-1 mt-2">
-              {project.tags.map((tag) => (
-                <Badge key={tag} variant="outline" className="text-xs">
-                  {tag}
+          <div className="mt-6">
+            <h3 className="text-lg font-medium mb-2">프로젝트 개요</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              {project.overview || project.description}
+            </p>
+          </div>
+          <div className="mt-6">
+            <h3 className="text-lg font-medium mb-2">사용 기술</h3>
+            <div className="flex flex-wrap gap-2">
+              {project.technologies.map((tech) => (
+                <Badge key={tech} variant="secondary" className="text-sm">
+                  {tech}
                 </Badge>
               ))}
             </div>
-          </DialogDescription>
-        </DialogHeader>
-
-        <div className="mt-4 overflow-hidden rounded-lg">
-          <Image
-            src={project.thumbnail || "/postImg/project/default-project.png"}
-            alt={project.title}
-            width={800}
-            height={450}
-            className="w-full object-cover"
-          />
+          </div>
+          {project.features && project.features.length > 0 && (
+            <div className="mt-6">
+              <h3 className="text-lg font-medium mb-2">주요 기능</h3>
+              <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
+                {project.features.map((feature, index) => (
+                  <li key={index}>{feature}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {project.lessons && (
+            <div className="mt-6">
+              <h3 className="text-lg font-medium mb-2">배운 점</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                {project.lessons}
+              </p>
+            </div>
+          )}
+          {/* 관련 포스트 섹션 */}
+          {relatedPosts.length > 0 && (
+            <div className="mt-8 border-t py-6">
+              <h3 className="text-lg font-medium mb-4">관련 포스트</h3>
+              <div className="space-y-3">
+                {relatedPosts.map((post) => (
+                  <Link
+                    key={post.urlPath}
+                    href={`/posts/${post.urlPath}`}
+                    className="block p-3 rounded-md border border-border hover:bg-accent transition-colors"
+                  >
+                    <div className="flex items-start gap-3">
+                      <FileText className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-0.5" />
+                      <div>
+                        <h4 className="font-medium text-foreground">
+                          {post.title}
+                        </h4>
+                        {post.summary && (
+                          <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
+                            {post.summary}
+                          </p>
+                        )}
+                        <div className="flex items-center gap-2 mt-2">
+                          <span className="text-xs text-muted-foreground">
+                            {new Date(post.createdAt).toLocaleDateString()}
+                          </span>
+                          {post.tags && post.tags.length > 0 && (
+                            <div className="flex gap-1">
+                              {post.tags.slice(0, 3).map((tag) => (
+                                <Badge
+                                  key={tag}
+                                  variant="secondary"
+                                  className="text-xs"
+                                >
+                                  {tag}
+                                </Badge>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+          {isLoading && (
+            <div className="mt-8 border-t pt-6">
+              <h3 className="text-lg font-medium mb-4">관련 포스트</h3>
+              <div className="flex items-center justify-center py-6">
+                <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-primary"></div>
+                <span className="ml-2 text-sm text-muted-foreground">
+                  포스트 로딩 중...
+                </span>
+              </div>
+            </div>
+          )}
         </div>
 
-        <div className="mt-6">
-          <h3 className="text-lg font-medium mb-2">프로젝트 개요</h3>
-          <p className="text-muted-foreground leading-relaxed">
-            {project.overview || project.description}
-          </p>
-        </div>
-
-        <div className="mt-6">
-          <h3 className="text-lg font-medium mb-2">사용 기술</h3>
-          <div className="flex flex-wrap gap-2">
-            {project.technologies.map((tech) => (
-              <Badge key={tech} variant="secondary" className="text-sm">
-                {tech}
-              </Badge>
-            ))}
-          </div>
-        </div>
-
-        {project.features && project.features.length > 0 && (
-          <div className="mt-6">
-            <h3 className="text-lg font-medium mb-2">주요 기능</h3>
-            <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
-              {project.features.map((feature, index) => (
-                <li key={index}>{feature}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {project.lessons && (
-          <div className="mt-6">
-            <h3 className="text-lg font-medium mb-2">배운 점</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              {project.lessons}
-            </p>
-          </div>
-        )}
-
-        <div className="mt-6 flex flex-wrap gap-3">
+        {/* 푸터 영역 - 고정 */}
+        <div className="border-t px-6 py-3 flex flex-wrap gap-3 bg-background mt-1">
           {project.githubUrl && (
             <Link
               href={project.githubUrl}
@@ -215,66 +291,6 @@ export default function ProjectDetailDialog({
             </Link>
           )}
         </div>
-
-        {/* 관련 포스트 섹션 */}
-        {relatedPosts.length > 0 && (
-          <div className="mt-8 border-t pt-6">
-            <h3 className="text-lg font-medium mb-4">관련 포스트</h3>
-            <div className="space-y-3">
-              {relatedPosts.map((post) => (
-                <Link
-                  key={post.urlPath}
-                  href={`/posts/${post.urlPath}`}
-                  className="block p-3 rounded-md border border-border hover:bg-accent transition-colors"
-                >
-                  <div className="flex items-start gap-3">
-                    <FileText className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-0.5" />
-                    <div>
-                      <h4 className="font-medium text-foreground">
-                        {post.title}
-                      </h4>
-                      {post.summary && (
-                        <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
-                          {post.summary}
-                        </p>
-                      )}
-                      <div className="flex items-center gap-2 mt-2">
-                        <span className="text-xs text-muted-foreground">
-                          {new Date(post.createdAt).toLocaleDateString()}
-                        </span>
-                        {post.tags && post.tags.length > 0 && (
-                          <div className="flex gap-1">
-                            {post.tags.slice(0, 3).map((tag) => (
-                              <Badge
-                                key={tag}
-                                variant="secondary"
-                                className="text-xs"
-                              >
-                                {tag}
-                              </Badge>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {isLoading && (
-          <div className="mt-8 border-t pt-6">
-            <h3 className="text-lg font-medium mb-4">관련 포스트</h3>
-            <div className="flex items-center justify-center py-6">
-              <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-primary"></div>
-              <span className="ml-2 text-sm text-muted-foreground">
-                포스트 로딩 중...
-              </span>
-            </div>
-          </div>
-        )}
       </DialogContent>
     </Dialog>
   );
