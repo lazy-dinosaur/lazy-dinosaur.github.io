@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build && touch out/.nojekyll && next-export-optimize-images",
+    "build": "next build && touch out/.nojekyll",
     "start": "next start",
     "lint": "next lint",
     "sync": "scripts/sync-notes.py",
@@ -44,6 +44,7 @@
     "remark-rehype": "^11.1.1",
     "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7",
+    "tailwindcss-animated": "^2.0.0",
     "vercel": "^41.3.0"
   },
   "devDependencies": {

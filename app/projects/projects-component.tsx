@@ -16,7 +16,8 @@ const SAMPLE_PROJECTS: Project[] = [
   {
     id: "my-blog",
     title: "개인 블로그",
-    description: "Next.js, TypeScript, Tailwind CSS를 사용하여 개발한 개인 블로그입니다. 마크다운 기반 콘텐츠 관리와 다크 모드를 지원합니다.",
+    description:
+      "Next.js, TypeScript, Tailwind CSS를 사용하여 개발한 개인 블로그입니다. 마크다운 기반 콘텐츠 관리와 다크 모드를 지원합니다.",
     thumbnail: "/postImg/project/blog/thumbnail.png", // 실제 썸네일 경로로 변경해야 합니다
     tags: ["웹", "프론트엔드"],
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
@@ -28,7 +29,8 @@ const SAMPLE_PROJECTS: Project[] = [
   {
     id: "ai-assistant",
     title: "AI 어시스턴트 앱",
-    description: "OpenAI API를 활용한 챗봇 어시스턴트 애플리케이션으로, 사용자 질문에 답변하고 다양한 작업을 도와줍니다.",
+    description:
+      "OpenAI API를 활용한 챗봇 어시스턴트 애플리케이션으로, 사용자 질문에 답변하고 다양한 작업을 도와줍니다.",
     thumbnail: "/postImg/project/ai/assistant-app.png", // 실제 썸네일 경로로 변경해야 합니다
     tags: ["AI", "웹", "백엔드"],
     technologies: ["React", "Express.js", "OpenAI API", "MongoDB"],
@@ -39,7 +41,8 @@ const SAMPLE_PROJECTS: Project[] = [
   {
     id: "task-manager",
     title: "태스크 매니저",
-    description: "React와 Redux를 사용하여 개발한 일정 관리 애플리케이션으로, 드래그 앤 드롭 인터페이스와 로컬 스토리지 동기화를 지원합니다.",
+    description:
+      "React와 Redux를 사용하여 개발한 일정 관리 애플리케이션으로, 드래그 앤 드롭 인터페이스와 로컬 스토리지 동기화를 지원합니다.",
     thumbnail: "/postImg/project/task-manager.png", // 실제 썸네일 경로로 변경해야 합니다
     tags: ["웹", "프론트엔드", "생산성"],
     technologies: ["React", "Redux", "CSS Modules", "LocalStorage API"],
@@ -51,7 +54,8 @@ const SAMPLE_PROJECTS: Project[] = [
   {
     id: "weather-app",
     title: "날씨 앱",
-    description: "현재 위치 기반으로 날씨 정보를 제공하는 모바일 친화적인 웹 애플리케이션입니다.",
+    description:
+      "현재 위치 기반으로 날씨 정보를 제공하는 모바일 친화적인 웹 애플리케이션입니다.",
     thumbnail: "/postImg/project/weather-app.png", // 실제 썸네일 경로로 변경해야 합니다
     tags: ["웹", "API"],
     technologies: ["HTML", "CSS", "JavaScript", "Weather API"],
@@ -66,10 +70,10 @@ const SAMPLE_PROJECTS: Project[] = [
 const DEFAULT_IMAGE = "/postImg/project/default-project.png";
 
 // 프로젝트 카드 컴포넌트
-const ProjectCard = ({ 
-  project, 
-  onClick 
-}: { 
+const ProjectCard = ({
+  project,
+  onClick,
+}: {
   project: Project;
   onClick: () => void;
 }) => {
@@ -108,11 +112,11 @@ const ProjectCard = ({
         <h2 className="text-xl font-bold line-clamp-1 group-hover:text-primary transition-colors">
           {project.title}
         </h2>
-        
+
         <p className="mt-2 text-muted-foreground text-sm line-clamp-2">
           {project.description}
         </p>
-        
+
         <div className="mt-4 flex flex-wrap gap-1">
           {project.technologies.slice(0, 4).map((tech) => (
             <Badge variant="secondary" key={tech} className="text-xs">
@@ -125,32 +129,35 @@ const ProjectCard = ({
             </Badge>
           )}
         </div>
-        
+
         <div className="mt-4 flex justify-between items-center">
           <div className="flex space-x-2">
             {project.githubUrl && (
-              <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+              <Link
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button size="icon" variant="outline">
                   <Github className="h-4 w-4" />
                 </Button>
               </Link>
             )}
             {project.demoUrl && (
-              <Link href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+              <Link
+                href={project.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button size="icon" variant="outline">
                   <ExternalLink className="h-4 w-4" />
                 </Button>
               </Link>
             )}
           </div>
-          
-          <Button 
-            variant="ghost" 
-            className="group" 
-            size="sm"
-            onClick={onClick}
-          >
-            자세히 보기 
+
+          <Button variant="ghost" className="group" size="sm" onClick={onClick}>
+            자세히 보기
             <motion.span
               className="inline-block ml-1"
               whileHover={{ x: 3 }}
@@ -204,22 +211,22 @@ export default function ProjectsPage() {
   const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [dialogOpen, setDialogOpen] = useState(false);
-  
+
   // 전체 태그 목록 추출
-  const allTags = Array.from(new Set(SAMPLE_PROJECTS.flatMap(p => p.tags)));
-  
+  const allTags = Array.from(new Set(SAMPLE_PROJECTS.flatMap((p) => p.tags)));
+
   // 선택된 태그에 따라 프로젝트 필터링
   useEffect(() => {
     if (selectedTag === "all") {
       setFilteredProjects(SAMPLE_PROJECTS);
     } else {
-      const filtered = SAMPLE_PROJECTS.filter(project =>
-        project.tags.includes(selectedTag)
+      const filtered = SAMPLE_PROJECTS.filter((project) =>
+        project.tags.includes(selectedTag),
       );
       setFilteredProjects(filtered);
     }
   }, [selectedTag]);
-  
+
   // 프로젝트 상세 보기 열기
   const handleProjectClick = (project: Project) => {
     setSelectedProject(project);
@@ -235,38 +242,41 @@ export default function ProjectsPage() {
       >
         <h1 className="text-3xl font-bold mb-2">프로젝트</h1>
         <p className="text-muted-foreground mb-8">
-          지금까지 진행한 다양한 프로젝트들을 소개합니다. 관심 있는 카테고리를 선택하여 필터링할 수 있습니다.
+          지금까지 진행한 다양한 프로젝트들을 소개합니다. 관심 있는 카테고리를
+          선택하여 필터링할 수 있습니다.
         </p>
       </motion.div>
-      
+
       <ProjectFilter
         tags={allTags}
         selectedTag={selectedTag}
         setSelectedTag={setSelectedTag}
       />
-      
+
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         <AnimatePresence>
           {filteredProjects.map((project) => (
-            <ProjectCard 
-              key={project.id} 
-              project={project} 
+            <ProjectCard
+              key={project.id}
+              project={project}
               onClick={() => handleProjectClick(project)}
             />
           ))}
         </AnimatePresence>
       </div>
-      
+
       {filteredProjects.length === 0 && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="py-20 text-center"
         >
-          <p className="text-muted-foreground">선택한 카테고리에 해당하는 프로젝트가 없습니다.</p>
+          <p className="text-muted-foreground">
+            선택한 카테고리에 해당하는 프로젝트가 없습니다.
+          </p>
         </motion.div>
       )}
-      
+
       {/* 프로젝트 상세 정보 다이얼로그 */}
       <ProjectDetailDialog
         project={selectedProject}

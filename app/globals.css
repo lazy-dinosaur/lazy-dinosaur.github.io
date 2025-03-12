@@ -139,30 +139,6 @@
 .dark body {
   background-color: var(--bg-real);
   color: var(--fg-real);
-  transition:
-    background-color 1s ease,
-    color 1s ease;
-}
-
-.light a,
-.dark a,
-.light h1,
-.dark h1,
-.light h2,
-.dark h2,
-.light h3,
-.dark h3,
-.light h4,
-.dark h4,
-.light button,
-.dark button,
-.light .bg-background,
-.dark .bg-background,
-.light .text-foreground,
-.dark .text-foreground,
-.light .border-border,
-.dark .border-border {
-  transition: all 1s ease;
 }
 
 .no-scrollbar {
@@ -197,28 +173,6 @@
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background-color: #4b5563;
-}
-
-/* 빠른 애니메이션을 위한 전역 설정 */
-.animate-fast {
-  transition-duration: 0.15s !important;
-}
-
-.animate-medium {
-  transition-duration: 0.25s !important;
-}
-
-/* 애니메이션 전체 속도 조절 */
-.motion-reduce * {
-  transition-duration: 0.2s !important;
-  animation-duration: 0.2s !important;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * {
-    transition-duration: 0.1s !important;
-    animation-duration: 0.1s !important;
-  }
 }
 
 /* 타이포그래피 시스템 */

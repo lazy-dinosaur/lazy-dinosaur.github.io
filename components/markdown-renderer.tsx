@@ -108,47 +108,28 @@ export default function MarkdownRenderer({
   const components = {
     h1: ({ children }: { children?: React.ReactNode }) => (
       <div className="spacing-section">
-        <motion.h1
+        <h1
           id="post-title"
           className="text-hierarchy-h1 mb-3 sm:mb-4 md:mb-5 text-primary"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
         >
           {children}
-        </motion.h1>
+        </h1>
 
-        {/* 태그 목록 */}
-        <motion.div
-          className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          {tags?.map((tag, index) => (
-            <motion.div
-              key={tag}
-              initial={{ opacity: 0, y: 5 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.1 + index * 0.05 }}
-            >
+        <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
+          {tags?.map((tag) => (
+            <div key={tag}>
               <Badge
                 variant="secondary"
                 className="text-hierarchy-small hover:bg-primary/20 transition-colors duration-200"
               >
                 #{tag}
               </Badge>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* 날짜 정보 */}
-        <motion.div
-          className="flex flex-col sm:flex-row sm:justify-between text-hierarchy-small mb-6 sm:mb-8 pb-3 sm:pb-4 border-b border-primary/10"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
+        <div className="flex flex-col sm:flex-row sm:justify-between text-hierarchy-small mb-6 sm:mb-8 pb-3 sm:pb-4 border-b border-primary/10">
           <div className="flex items-center space-x-2">
             <span className="text-primary/70">작성일:</span>
             <span>{formatDate(published)}</span>
@@ -159,7 +140,7 @@ export default function MarkdownRenderer({
               <span>{formatDate(modified)}</span>
             </div>
           )}
-        </motion.div>
+        </div>
       </div>
     ),
     h2: ({ children }: { children?: React.ReactNode }) => {

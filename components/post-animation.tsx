@@ -27,18 +27,6 @@ export default function PostAnimation({ children }: { children: ReactNode }) {
   );
 }
 
-export function PostAnimationWrapper({ children }: { children: ReactNode }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.2, ease: "easeOut" }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 export function BackToHomeButton() {
   return (
     <div className="mt-8 sm:mt-10 md:mt-12 pt-4 sm:pt-6 border-t">
