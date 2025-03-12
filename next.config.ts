@@ -4,6 +4,7 @@ import withExportImages from "next-export-optimize-images";
 const nextConfig: NextConfig = {
   output: "export",
   images: {
+    loader: "default",
     domains: ["user-images.githubusercontent.com", "lazy-dinosaur.github.io"],
     remotePatterns: [
       {
