@@ -179,7 +179,7 @@ export default function ProjectsPage() {
     };
 
     fetchProjects();
-  }, []);
+  }, [selectedTag]);
 
   // 전체 태그 목록 추출
   const allTags = Array.from(new Set(projects.flatMap((p) => p.tags)));
