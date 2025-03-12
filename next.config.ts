@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
+// import withExportImages from "next-export-optimize-images";
 
 const nextConfig: NextConfig = {
-  output: "export",
+  // output: "export",
   images: {
     domains: ["user-images.githubusercontent.com", "lazy-dinosaur.github.io"],
     remotePatterns: [
