@@ -7,7 +7,8 @@
                             "tags": ["blog", "dev", "project"],
                             "series": "나의 맞춤 블로그 만들기",
                             "createdAt": "2025-03-08 17:09:39",
-                            "modifiedAt": "2025-03-11 17:54:33"
+                            "modifiedAt": "2025-03-13 15:00:11",
+                            "publish": "project/blog"
                         },
   {
                             "urlPath": "project/blog/어떻게 블로그를 구현하였나",
@@ -17,6 +18,7 @@
                             "tags": ["blog", "dev", "project"],
                             "series": "나의 맞춤 블로그 만들기",
                             "createdAt": "2025-03-08 17:12:17",
-                            "modifiedAt": "2025-03-10 19:46:41"
+                            "modifiedAt": "2025-03-13 15:00:05",
+                            "publish": "project/blog"
                         }
 ]
