@@ -262,7 +262,7 @@ export default function Header() {
         duration: 0.2,
       }}
     >
-      <div className="flex items-center justify-between py-2 px-4 md:px-6 w-full max-w-screen-2xl border-b border-border/40 backdrop-blur-lg bg-background/80 shadow-sm">
+      <div className="flex items-center justify-between py-2 px-4 md:px-6 w-full max-w-screen-2xl border-b-2 border-border/40 backdrop-blur-lg bg-background/80">
         <div className="flex items-center gap-2">
           {/* 포스트 페이지나 프로젝트 상세 페이지일 때만 뒤로가기 버튼 표시 */}
           {shouldShowBackButton && (
