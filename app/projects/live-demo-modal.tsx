@@ -45,11 +45,13 @@ export default function LiveDemoModal({
 
   // 이미지 URL이 변경될 때 로딩 상태 처리
   useEffect(() => {
-    if (project?.demoImages && 
-        Array.isArray(project.demoImages) && 
-        currentImageIndex >= 0 &&
-        currentImageIndex < project.demoImages.length &&
-        project.demoImages[currentImageIndex]) {
+    if (
+      project?.demoImages &&
+      Array.isArray(project.demoImages) &&
+      currentImageIndex >= 0 &&
+      currentImageIndex < project.demoImages.length &&
+      project.demoImages[currentImageIndex]
+    ) {
       // 현재 이미지가 이미 로딩되었는지 확인
       if (!loadedImages[currentImageIndex]) {
         setIsImageLoading(true);
@@ -61,7 +63,11 @@ export default function LiveDemoModal({
 
   // 이미지 갤러리 컨트롤
   const nextImage = () => {
-    if (project.demoImages && Array.isArray(project.demoImages) && project.demoImages.length > 0) {
+    if (
+      project.demoImages &&
+      Array.isArray(project.demoImages) &&
+      project.demoImages.length > 0
+    ) {
       const nextIndex =
         currentImageIndex === project.demoImages.length - 1
           ? 0
@@ -77,7 +83,11 @@ export default function LiveDemoModal({
   };
 
   const prevImage = () => {
-    if (project.demoImages && Array.isArray(project.demoImages) && project.demoImages.length > 0) {
+    if (
+      project.demoImages &&
+      Array.isArray(project.demoImages) &&
+      project.demoImages.length > 0
+    ) {
       const prevIndex =
         currentImageIndex === 0
           ? project.demoImages.length - 1
@@ -146,8 +156,8 @@ export default function LiveDemoModal({
 
             {project.demoType === "images" &&
               project.demoImages &&
-              project.demoImages.length > 0 && 
-              currentImageIndex >= 0 && 
+              project.demoImages.length > 0 &&
+              currentImageIndex >= 0 &&
               currentImageIndex < project.demoImages.length && (
                 <div className="w-full h-full relative flex items-center justify-center bg-black/5">
                   <div className="relative w-full h-full flex flex-col">
@@ -164,32 +174,39 @@ export default function LiveDemoModal({
                         </div>
                       )}
 
-                      {project.demoImages && project.demoImages[currentImageIndex] && (
-                        <Image
-                          src={project.demoImages[currentImageIndex]?.url || ''}
-                          alt={`${project.title} 스크린샷 ${currentImageIndex + 1}`}
-                          fill
-                          className="object-contain"
-                          priority
-                          onLoadingComplete={() => {
-                            // 현재 이미지가 로드되면 로딩 상태 해제
-                            setIsImageLoading(false);
-                            setLoadedImages((prev) => ({
-                              ...prev,
-                              [currentImageIndex]: true,
-                            }));
-                          }}
-                        />
-                      )}
+                      {project.demoImages &&
+                        project.demoImages[currentImageIndex] && (
+                          <Image
+                            src={
+                              project.demoImages[currentImageIndex]?.url || ""
+                            }
+                            alt={`${project.title} 스크린샷 ${currentImageIndex + 1}`}
+                            fill
+                            className="object-contain"
+                            priority
+                            onLoadingComplete={() => {
+                              // 현재 이미지가 로드되면 로딩 상태 해제
+                              setIsImageLoading(false);
+                              setLoadedImages((prev) => ({
+                                ...prev,
+                                [currentImageIndex]: true,
+                              }));
+                            }}
+                          />
+                        )}
 
                       {/* 이미지 설명 - 페이지네이션 불릿보다 위에 배치 */}
-                      {project.demoImages && project.demoImages[currentImageIndex]?.description && (
-                        <div className="absolute bottom-12 left-0 right-0 p-3 sm:p-4 bg-background/90 dark:bg-background/90 backdrop-blur-sm w-full text-center">
-                          <p className="text-xs sm:text-sm text-foreground">
-                            {project.demoImages[currentImageIndex]?.description}
-                          </p>
-                        </div>
-                      )}
+                      {project.demoImages &&
+                        project.demoImages[currentImageIndex]?.description && (
+                          <div className="absolute bottom-12 left-0 right-0 p-3 sm:p-4 bg-background/90 dark:bg-background/90 backdrop-blur-sm w-full text-center">
+                            <p className="text-xs sm:text-sm text-foreground">
+                              {
+                                project.demoImages[currentImageIndex]
+                                  ?.description
+                              }
+                            </p>
+                          </div>
+                        )}
                     </div>
                   </div>
 
@@ -260,7 +277,7 @@ export default function LiveDemoModal({
                 currentImageIndex < project.demoImages.length &&
                 `스크린샷 ${currentImageIndex + 1}/${project.demoImages.length}`}
             </p>
-            <Button 
+            <Button
               onClick={() => onOpenChangeAction(false)}
               size="sm"
               className="text-xs sm:text-sm py-1 h-7 sm:h-9"
