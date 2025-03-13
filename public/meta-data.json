@@ -1,16 +1,5 @@
 [
   {
-                            "urlPath": "project/blog/회사 사이트 외주받고 1인개발한 후기",
-                            "title": "회사 사이트 외주받고 1인개발한 후기",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["dev"],
-                            "series": "",
-                            "createdAt": "2025-02-27 08:26:41",
-                            "modifiedAt": "2025-03-12 21:53:15",
-                            "publish": "project/blog"
-                        },
-  {
                             "urlPath": "project/blog/개인 블로그를 제작하게 된 이유",
                             "title": "개인 블로그를 제작하게 된 이유",
                             "summary": "",
@@ -18,7 +7,7 @@
                             "tags": ["blog", "dev", "project"],
                             "series": "나의 맞춤 블로그 만들기",
                             "createdAt": "2025-03-08 17:09:39",
-                            "modifiedAt": "2025-03-11 17:54:33",
+                            "modifiedAt": "2025-03-13 15:00:11",
                             "publish": "project/blog"
                         },
   {
@@ -29,7 +18,7 @@
                             "tags": ["blog", "dev", "project"],
                             "series": "나의 맞춤 블로그 만들기",
                             "createdAt": "2025-03-08 17:12:17",
-                            "modifiedAt": "2025-03-12 21:39:19",
+                            "modifiedAt": "2025-03-13 15:00:05",
                             "publish": "project/blog"
                         }
 ]

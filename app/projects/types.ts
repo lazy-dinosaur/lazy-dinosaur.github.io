@@ -27,6 +27,7 @@ export interface Project {
   overview?: string;
   features?: string[];
   lessons?: string;
+  challenges?: string[]; // 개발 과정에서 어려웠던 점들
   futurePlans?: string[]; // 향후 계획
   images?: string[];
 

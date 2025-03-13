@@ -27,6 +27,21 @@
       "코드 구문 강조 및 복사 기능"
     ],
     "lessons": "이 프로젝트를 통해 Next.js의 App Router 구조와 서버 컴포넌트 활용법을 배웠습니다. 또한 마크다운 파일 파싱과 렌더링 최적화, 그리고 애니메이션 처리에 관한 경험을 쌓을 수 있었습니다.",
+    "challenges": [
+      "Next.js의 App Router와 Server Components 모델 적응: 기존 Pages Router에서 App Router로 전환하면서 서버 컴포넌트와 클라이언트 컴포넌트의 구분 및 데이터 흐름을 이해하는 데 시간이 소요되었습니다.",
+      "마크다운 파싱 최적화: 코드 블록, 수식, 이미지 등 다양한 마크다운 확장 기능을 지원하면서도 빠른 렌더링을 위한 최적화 과정이 필요했습니다.",
+      "다크 모드 구현: 테마 전환 시 깜박임 없는 부드러운 전환을 구현하기 위해 여러 테스트를 거쳐야 했습니다.",
+      "모바일 반응형 디자인: 사이드바, 목차, 코드 블록 등 복잡한 요소들의 모바일 레이아웃 최적화가 어려웠습니다.",
+      "useSearchParams() 훅 사용 시 Suspense 경계 문제: Next.js의 특정 훅들이 Suspense 경계 내에서 사용되어야 한다는 요구사항을 해결하기 위해 컴포넌트 구조를 재설계해야 했습니다."
+    ],
+
+    "demoType": "images",
+    "demoImages": [
+      {
+        "url": "/projects/my-blog/my-blog.png",
+        "description": "My Blog"
+      }
+    ],
     "futurePlans": [
       "시리즈별/태그별 검색기능 추가",
       "댓글 기능 추가",
@@ -43,7 +58,7 @@
     "id": "imyourbox-website",
     "title": "아임유어박스 웹페이지",
     "description": "Next.js, TypeScript, Tailwind CSS, Framer Motion, Payload.js, Supabase, Vercel을 활용한 회사 웹페이지입니다. 고객들과 회사의 직원들을 위한 웹페이지입니다. SMTP와 이메일 템플릿을 이용한 문의내역을 이메일로 전달받고 데이터베이스에 저장하는 등의 기능과 개발자가 없어도 사이트를 유지 관리 할 수 있도록 Payload.js 를 활용한 관리자 기능이 특징 입니다.",
-    "thumbnail": "/projects/imyourbox/imyourbox-website.gif",
+    "thumbnail": "/projects/imyourbox/imyourbox-landingpage.gif",
     "tags": ["웹", "풀스택"],
     "technologies": [
       "Next.js",
@@ -61,10 +76,11 @@
     "serviceUrl": "https://imyourbox.com",
     "featured": true,
     "createdAt": "2025-02-27",
-    "overview": "1인 외주로 진행한 택배 배송대행 회사 웹페이지 프로젝트입니다. Next.js와 다양한 기술을 활용하여 개발하였으며, 회사 관계자가 직접 콘텐츠를 관리할 수 있도록 관리자 기능을 제공합니다.",
+    "overview": "1인 외주로 진행한 풀필먼트 회사 웹페이지 프로젝트입니다. Next.js와 다양한 기술을 활용하여 개발하였으며, 회사 관계자가 직접 콘텐츠를 관리할 수 있도록 관리자 기능을 제공합니다.",
     "features": [
       "Payload.js를 활용한 관리자 페이지 구현",
       "데이터 CSV 형식으로 추출하는 기능 구현",
+      "Zod 와 React Hook Form을 활용한 데이터 검증",
       "기업 뉴스, 연혁, 지도, 공지사항을 관리할 수 있는 기능",
       "고객 문의 제출 및 이메일 전송 자동화",
       "Framer Motion을 활용한 Parallax 스크롤 애니메이션",
@@ -74,19 +90,30 @@
       "모든 디바이스를 지원하는 반응형 디자인"
     ],
     "lessons": "이 프로젝트를 통해 Next.js의 App Router와 API 라우팅, Payload.js를 활용한 헤드리스 CMS 구현 방법을 배웠습니다. 또한 SMTP 연동, 이메일 템플릿 작성, 그리고 여러 외부 API와의 통합 경험을 쌓을 수 있었습니다. 혼자 외주를 받아 진행한 프로젝트인 만큼 클라이언트와 소통하며 의견을 조율하는 커뮤니케이션 능력도 크게 향상되었습니다.",
+    "challenges": [
+      "Payload.js와 Supabase 통합: 외부 데이터베이스(Supabase)와 Payload.js를 연동하여 데이터를 저장하고 관리하는 과정에서 복잡한 관계 설정이 필요했습니다.",
+      "복잡한 애니메이션 구현: Framer Motion을 사용한 Parallax 스크롤 애니메이션의 성능 최적화가 어려웠으며, 다양한 디바이스에서 일관된 경험을 제공하기 위한 조정이 필요했습니다.",
+      "네이버 지도 API 커스터마이징: 네이버 지도 API를 활용하여 맞춤형 마커와 팝업 창을 구현하는 과정에서 API 문서 부족으로 인한 어려움이 있었습니다.",
+      "이메일 템플릿 반응형 설계: 다양한 이메일 클라이언트에서 일관되게 표시되는 반응형 이메일 템플릿을 설계하는 것이 예상보다 복잡했습니다.",
+      "고객 요구사항 변경 대응: 개발 중간에 추가되는 요구사항을 기존 구조를 최대한 유지하면서 효율적으로 통합하는 설계가 필요했습니다."
+    ],
     "demoType": "images",
     "demoImages": [
       {
-        "url": "/projects/imyourbox-website.gif",
+        "url": "/projects/imyourbox/imyourbox-landingpage.gif",
         "description": "메인 페이지: 서비스의 핵심 내용을 한눈에 볼 수 있는 랜딩 페이지입니다. 애니메이션과 반응형 디자인으로 사용자 경험을 강화했습니다."
       },
       {
-        "url": "/projects/imyourbox-dashboard.png",
+        "url": "/projects/imyourbox/payload.png",
         "description": "관리자 대시보드: Payload.js를 통해 구현된 관리자 패널입니다. 회사 직원이 콘텐츠를 쉽게 관리할 수 있습니다."
       },
       {
-        "url": "/projects/imyourbox-map.png",
+        "url": "/projects/imyourbox/imyourbox-naver-map.gif",
         "description": "위치 정보 페이지: 네이버 지도 API를 활용하여 회사 위치와 근처 주요 시설을 표시한 지도 기능입니다."
+      },
+      {
+        "url": "/projects/imyourbox/imyourbox-mail",
+        "description": "이메일 템플릿: 사이트를 통해 회사로 이메일이 전달됬을때의 디자인 입니다."
       }
     ],
     "publishPath": "project/imyourbox"
@@ -136,6 +163,13 @@
       "사용자 설정 저장 및 불러오기 기능"
     ],
     "lessons": "이 프로젝트를 통해 브라우저 확장 프로그램 개발 방법과 트레이딩 알고리즘 구현, 실시간 데이터 처리 및 시각화에 대한 경험을 쌓았습니다. 또한 사용자 인터페이스를 통한 복잡한 계산의 단순화 및 자동화 구현 방법을 익혔습니다.",
+    "challenges": [
+      "브라우저 확장 프로그램 환경 제약: Manifest V3 규칙을 준수하면서 필요한 기능을 구현하는 과정에서 보안 정책으로 인한 제약을 극복해야 했습니다.",
+      "바이낸스 API 연동: 거래소 API와의 안전한 통신을 위한 인증 및 요청 관리가 복잡했으며, 레이트 리밋 등을 고려한 최적화가 필요했습니다.",
+      "실시간 차트 최적화: 가벼운 차트 라이브러리를 사용하면서도 복잡한 기술적 지표를 표시하기 위한 성능 최적화가 어려웠습니다.",
+      "위험 관리 알고리즘 정확성: 다양한 시장 조건에서도 정확한 손절가와 진입 배율을 계산하기 위한 알고리즘 설계와 테스트가 필요했습니다.",
+      "사용자 설정 관리: 크롬 확장 프로그램의 스토리지 제약 내에서 사용자 설정을 효율적으로 저장하고 관리하는 방법을 구현해야 했습니다."
+    ],
     "futurePlans": [
       "다양한 손절가 계산 방식 추가",
       "차트와 직접 인터랙션하며 손절 및 타겟 설정하는 기능",

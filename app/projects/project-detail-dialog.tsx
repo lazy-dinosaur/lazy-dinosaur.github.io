@@ -211,6 +211,16 @@ export default function ProjectDetailDialog({
               </p>
             </div>
           )}
+          {project.challenges && project.challenges.length > 0 && (
+            <div className="py-6">
+              <h3 className="text-lg font-medium mb-2">어려웠던 점</h3>
+              <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
+                {project.challenges.map((challenge, index) => (
+                  <li key={index} className="leading-relaxed">{challenge}</li>
+                ))}
+              </ul>
+            </div>
+          )}
           {project.futurePlans && project.futurePlans.length > 0 && (
             <div className="py-6">
               <h3 className="text-lg font-medium mb-2">향후 계획</h3>
