@@ -249,7 +249,7 @@ export default function Header() {
   return (
     <motion.header
       className={cn(
-        `fixed top-0 w-full h-14 sm:h-16 md:h-18 flex items-center justify-center z-20 border-b border-border/40 backdrop-blur-lg bg-background/80`,
+        `fixed top-0 w-full h-14 sm:h-16 md:h-18 flex items-center justify-center z-20 border-border/40 backdrop-blur-lg bg-background/80`,
       )}
       initial={{ y: -100 }}
       animate={{

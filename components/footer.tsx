@@ -8,7 +8,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full border-t border-border/40 bg-background/50 backdrop-blur-sm py-6 md:py-8 mt-10">
+    <footer className="w-full border-border/40 bg-background/50 backdrop-blur-sm py-6 md:py-8 mt-10">
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           {/* Left side - Nav links */}
