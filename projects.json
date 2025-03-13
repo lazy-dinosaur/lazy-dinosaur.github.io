@@ -112,7 +112,7 @@
         "description": "위치 정보 페이지: 네이버 지도 API를 활용하여 회사 위치와 근처 주요 시설을 표시한 지도 기능입니다."
       },
       {
-        "url": "/projects/imyourbox/imyourbox-mail",
+        "url": "/projects/imyourbox/imyourbox-mail.jpeg",
         "description": "이메일 템플릿: 사이트를 통해 회사로 이메일이 전달됬을때의 디자인 입니다."
       }
     ],
@@ -128,16 +128,8 @@
     "demoType": "images",
     "demoImages": [
       {
-        "url": "/projects/lazy-trading-screen1.png",
+        "url": "/projects/lazy-trading/lazy-trading.png",
         "description": "대시보드 화면: 실시간 가격 정보와 함께 거래 설정을 할 수 있는 메인 인터페이스입니다."
-      },
-      {
-        "url": "/projects/lazy-trading-screen2.png",
-        "description": "손절가 계산기: 투자 금액과 위험 비율에 따라 최적의 손절가를 자동으로 계산해주는 화면입니다."
-      },
-      {
-        "url": "/projects/lazy-trading-screen3.png",
-        "description": "거래 기록 분석: 과거 거래 내역을 시각화하여 트레이딩 패턴을 분석할 수 있는 기능입니다."
       }
     ],
     "tags": ["가상화폐", "웹", "시각화", "프론트엔드"],
