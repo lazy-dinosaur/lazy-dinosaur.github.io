@@ -166,27 +166,12 @@ export default function Header() {
                 height={80}
               />
             </motion.div>
-            <span className="text-base sm:text-lg md:text-xl font-bold group-hover:text-primary transition-colors duration-300 hidden xl:block">
+            <span className="text-base sm:text-lg md:text-xl font-bold group-hover:text-primary transition-colors duration-300 hidden sm:block">
               {`Lazydino's DevLog`}
             </span>
           </Link>
         </div>
         <div className="flex items-center gap-2 sm:gap-3">
-          {/* 스크린 사이즈 상관없이 항상 표시할 Portfolio 버튼 */}
-          <motion.div
-            whileHover={{ y: -2 }}
-            whileTap={{ y: 0 }}
-            className="hidden xl:block"
-          >
-            <Button
-              variant="ghost"
-              className="font-medium rounded-full px-4 hover:bg-primary/10 hover:text-primary"
-              onClick={() => router.push("/projects")}
-            >
-              Portfolio
-            </Button>
-          </motion.div>
-
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
