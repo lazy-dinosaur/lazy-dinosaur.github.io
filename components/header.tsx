@@ -266,44 +266,50 @@ export default function Header() {
         <div className="flex items-center gap-2">
           {/* 포스트 페이지나 프로젝트 상세 페이지일 때만 뒤로가기 버튼 표시 */}
           {shouldShowBackButton && (
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="rounded-full h-8 w-8 sm:h-9 sm:w-9 flex items-center justify-center bg-primary/10 text-primary"
-              onClick={() => router.back()}
-              aria-label="뒤로가기"
-            >
-              <ChevronLeft className="h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem]" />
-            </motion.button>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => router.back()}
+                className="rounded-full h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 border-border/60 hover:bg-primary/10 hover:text-primary hover:border-primary transition-colors"
+                aria-label="뒤로가기"
+              >
+                <ChevronLeft className="h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem]" />
+                <span className="sr-only">Back</span>
+              </Button>
+            </motion.div>
           )}
-          <Link className="flex items-center group" href="/">
+          <Link href="/">
             <motion.div
-              className="relative w-10 h-8 sm:w-12 sm:h-10 md:w-14 md:h-12 mr-2 sm:mr-3 rounded-full overflow-hidden"
-              whileHover={{ scale: 1.05, rotate: 5 }}
+              className="flex items-center"
+              whileHover={{ scale: 1.05, rotate: 1.5 }}
               transition={{
                 type: "spring",
-                stiffness: 600,
+                stiffness: 500,
                 damping: 25,
-                duration: 0.15,
+                duration: 0.2,
               }}
             >
-              <Image
-                src="/lazydino-logo3.png"
-                alt="lazydino.dev"
-                className="h-full w-full object-cover"
-                width={80}
-                height={80}
-              />
+              <div className="relative w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 mr-2 sm:mr-3 rounded-full overflow-hidden">
+                <Image
+                  src="/lazydino-logo3.png"
+                  alt="lazydino.dev"
+                  className="h-full w-full object-cover"
+                  width={160}
+                  height={160}
+                  priority
+                />
+              </div>
+              <span className="text-base sm:text-lg md:text-xl font-bold text-foreground hover:text-primary transition-colors duration-300 hidden sm:block">
+                {`Lazydino's DevLog`}
+              </span>
             </motion.div>
-            <span className="text-base sm:text-lg md:text-xl font-bold group-hover:text-primary transition-colors duration-300 hidden sm:block">
-              {`Lazydino's DevLog`}
-            </span>
           </Link>
         </div>
         <div className="flex items-center gap-2 sm:gap-3">
           <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.05, rotate: 30 }}
+            whileTap={{ scale: 0.95, rotate: -10 }}
             initial={false}
             className="flex items-center"
           >
@@ -355,7 +361,17 @@ export default function Header() {
             </Button>
           </motion.div>
 
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <motion.div
+            whileHover={{
+              scale: 1.05,
+              rotate: [0, -3, 3, -2, 2, 0],
+              transition: {
+                rotate: { repeat: Infinity, duration: 0.8, ease: "easeInOut" },
+                scale: { duration: 0.2 },
+              },
+            }}
+            whileTap={{ scale: 0.95, rotate: 0 }}
+          >
             <Button
               variant="outline"
               size="icon"
