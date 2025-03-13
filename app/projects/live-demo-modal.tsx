@@ -89,7 +89,7 @@ export default function LiveDemoModal({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChangeAction}>
-      <DialogContent className="w-[95vw] max-w-full sm:max-w-4xl p-0 overflow-hidden h-[95vh] max-h-[95vh] sm:max-h-[90vh] fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
+      <DialogContent className="w-[92vw] max-w-full sm:max-w-4xl p-0 overflow-hidden h-[85vh] max-h-[85vh] sm:max-h-[90vh] fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] rounded-xl">
         <div className="flex flex-col h-full">
           <DialogHeader className="px-4 sm:px-6 py-3 border-b">
             <div className="flex justify-between items-center">
@@ -237,7 +237,7 @@ export default function LiveDemoModal({
             )}
           </div>
 
-          <div className="p-3 sm:p-4 border-t flex justify-between items-center">
+          <div className="p-2 sm:p-4 border-t flex justify-between items-center">
             <p className="text-sm text-muted-foreground">
               {project.demoType === "iframe" &&
                 "실제 서비스 환경에서의 데모입니다."}
@@ -248,7 +248,13 @@ export default function LiveDemoModal({
                 project.demoImages &&
                 `스크린샷 ${currentImageIndex + 1}/${project.demoImages.length}`}
             </p>
-            <Button onClick={() => onOpenChangeAction(false)}>닫기</Button>
+            <Button 
+              onClick={() => onOpenChangeAction(false)}
+              size="sm"
+              className="text-xs sm:text-sm py-1 h-7 sm:h-9"
+            >
+              닫기
+            </Button>
           </div>
         </div>
       </DialogContent>

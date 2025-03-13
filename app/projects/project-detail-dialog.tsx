@@ -140,7 +140,7 @@ export default function ProjectDetailDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChangeAction}>
-      <DialogContent className="w-[95vw] max-w-full sm:max-w-3xl p-0 overflow-hidden flex flex-col h-[95vh] sm:h-auto max-h-[95vh] sm:max-h-[90vh] fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] gap-0">
+      <DialogContent className="w-[92vw] max-w-full sm:max-w-3xl p-0 overflow-hidden flex flex-col h-[85vh] max-h-[85vh] sm:max-h-[90vh] fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] gap-0 rounded-xl">
         {/* 헤더 영역 - 상단 고정 */}
         <div className="border-b px-4 sm:px-6 pt-3 pb-3">
           <DialogHeader className="pb-0 pr-4 sm:pr-8">
@@ -165,7 +165,7 @@ export default function ProjectDetailDialog({
         </div>
 
         {/* 스크롤 가능한 컨텐츠 영역 */}
-        <div className="px-4 sm:px-6 pt-3 pb-0 overflow-y-auto flex-1">
+        <div className="px-3 sm:px-6 pt-2 pb-0 overflow-y-auto flex-1 overscroll-contain">
           {/* 패딩 없음 - 스크롤 영역 */}
           <div className="overflow-hidden rounded-lg">
             <Image
@@ -292,11 +292,12 @@ export default function ProjectDetailDialog({
         </div>
 
         {/* 푸터 영역 - 고정 */}
-        <div className="border-t px-4 sm:px-6 py-3 flex flex-wrap gap-2 sm:gap-3 bg-background mt-1">
+        <div className="border-t px-3 sm:px-6 py-2 sm:py-3 flex flex-wrap gap-1.5 sm:gap-3 bg-background mt-1">
           {project.demoType && project.demoType !== 'none' && (
             <Button 
               variant="default" 
-              size="sm" 
+              size="sm"
+              className="text-xs sm:text-sm py-1 h-7 sm:h-9"
               onClick={() => setLiveDemoOpen(true)}
             >
               <Play className="mr-2 h-4 w-4" />
@@ -309,8 +310,12 @@ export default function ProjectDetailDialog({
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button variant="outline" size="sm">
-                <Github className="mr-2 h-4 w-4" />
+              <Button 
+                variant="outline" 
+                size="sm"
+                className="text-xs sm:text-sm py-1 h-7 sm:h-9"
+              >
+                <Github className="mr-1.5 h-3.5 w-3.5 sm:mr-2 sm:h-4 sm:w-4" />
                 GitHub 저장소
               </Button>
             </Link>
@@ -321,8 +326,12 @@ export default function ProjectDetailDialog({
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button variant="outline" size="sm">
-                <ExternalLink className="mr-2 h-4 w-4" />
+              <Button 
+                variant="outline" 
+                size="sm"
+                className="text-xs sm:text-sm py-1 h-7 sm:h-9"
+              >
+                <ExternalLink className="mr-1.5 h-3.5 w-3.5 sm:mr-2 sm:h-4 sm:w-4" />
                 데모 사이트
               </Button>
             </Link>
@@ -333,8 +342,12 @@ export default function ProjectDetailDialog({
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button variant="outline" size="sm">
-                <Globe className="mr-2 h-4 w-4" />
+              <Button 
+                variant="outline" 
+                size="sm"
+                className="text-xs sm:text-sm py-1 h-7 sm:h-9"
+              >
+                <Globe className="mr-1.5 h-3.5 w-3.5 sm:mr-2 sm:h-4 sm:w-4" />
                 서비스 바로가기
               </Button>
             </Link>
@@ -345,8 +358,12 @@ export default function ProjectDetailDialog({
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button variant="outline" size="sm">
-                <Download className="mr-2 h-4 w-4" />
+              <Button 
+                variant="outline" 
+                size="sm"
+                className="text-xs sm:text-sm py-1 h-7 sm:h-9"
+              >
+                <Download className="mr-1.5 h-3.5 w-3.5 sm:mr-2 sm:h-4 sm:w-4" />
                 다운로드
               </Button>
             </Link>
