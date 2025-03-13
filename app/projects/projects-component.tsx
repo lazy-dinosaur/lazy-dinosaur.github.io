@@ -459,7 +459,7 @@ export default function ProjectsPage() {
                   </span>
                   의
                   {selectedProjectType === "project"
-                    ? " 프로젝트 가 "
+                    ? " 프로젝트가 "
                     : " 학습/실습 작업물이 "}
                   있습니다.
                 </p>
