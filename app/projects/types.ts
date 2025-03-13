@@ -10,12 +10,14 @@ export interface Project {
   serviceUrl?: string; // 실제 서비스 중인 URL
   downloadUrl?: string; // 다운로드 URL (앱, 파일 등)
   featured: boolean;
+  inDevelopment?: boolean; // 개발 중 여부
   createdAt: string;
 
   // 상세 정보 (선택적)
   overview?: string;
   features?: string[];
   lessons?: string;
+  futurePlans?: string[]; // 향후 계획
   images?: string[];
 
   // 관련 포스트 (선택적)

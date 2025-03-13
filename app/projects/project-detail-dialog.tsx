@@ -6,7 +6,6 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogDescription,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -144,17 +143,22 @@ export default function ProjectDetailDialog({
         <div className="border-b px-6 pt-3 pb-3">
           <DialogHeader className="pb-0 pr-8">
             <div className="flex justify-between items-center">
-              <DialogTitle className="text-2xl">{project.title}</DialogTitle>
+              <div className="flex items-center gap-2">
+                <DialogTitle className="text-2xl">{project.title}</DialogTitle>
+                {project.inDevelopment && (
+                  <Badge className="bg-amber-500 text-white">개발 중</Badge>
+                )}
+              </div>
             </div>
-            <DialogDescription>
-              <div className="flex flex-wrap gap-1 mt-2">
+            <div className="mt-2">
+              <div className="flex flex-wrap gap-1">
                 {project.tags.map((tag) => (
                   <Badge key={tag} variant="outline" className="text-xs">
                     {tag}
                   </Badge>
                 ))}
               </div>
-            </DialogDescription>
+            </div>
           </DialogHeader>
         </div>
 
@@ -202,6 +206,16 @@ export default function ProjectDetailDialog({
               <p className="text-muted-foreground leading-relaxed">
                 {project.lessons}
               </p>
+            </div>
+          )}
+          {project.futurePlans && project.futurePlans.length > 0 && (
+            <div className="py-6">
+              <h3 className="text-lg font-medium mb-2">향후 계획</h3>
+              <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
+                {project.futurePlans.map((plan, index) => (
+                  <li key={index}>{plan}</li>
+                ))}
+              </ul>
             </div>
           )}
           {/* 관련 포스트 섹션 */}

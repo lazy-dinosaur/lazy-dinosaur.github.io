@@ -37,13 +37,33 @@ const ProjectCard = ({
             width={600}
             height={340}
           />
-          {project.featured && (
-            <Badge
-              className="absolute right-2 top-2 bg-primary text-primary-foreground"
-              variant="default"
-            >
-              주요 프로젝트
-            </Badge>
+          <div className="absolute right-2 top-2 flex flex-col gap-1">
+            {project.featured && (
+              <Badge
+                className="bg-primary text-primary-foreground"
+                variant="default"
+              >
+                주요 프로젝트
+              </Badge>
+            )}
+            {project.inDevelopment && (
+              <Badge className="bg-amber-500 text-white" variant="default">
+                개발 중
+              </Badge>
+            )}
+          </div>
+
+          {project.tags && project.tags.length > 0 && (
+            <div className="absolute bottom-0 left-0 right-0 flex flex-wrap gap-1 p-2 bg-gradient-to-t from-slate-900/10 to-transparent dark:from-black/50">
+              {project.tags.map((tag, index) => (
+                <Badge
+                  key={`img-tag-${index}`}
+                  className="text-xs bg-primary/90 text-primary-foreground border-none shadow-sm hover:bg-primary/100 transition-colors"
+                >
+                  {tag}
+                </Badge>
+              ))}
+            </div>
           )}
         </motion.div>
       </div>
@@ -58,12 +78,13 @@ const ProjectCard = ({
         </p>
 
         <div className="mt-4 flex flex-wrap gap-1">
-          {project.technologies.slice(0, 4).map((tech) => (
-            <Badge variant="secondary" key={tech} className="text-xs">
-              {tech}
-            </Badge>
-          ))}
-          {project.technologies.length > 4 && (
+          {project.technologies &&
+            project.technologies.slice(0, 4).map((tech) => (
+              <Badge variant="secondary" key={tech} className="text-xs">
+                {tech}
+              </Badge>
+            ))}
+          {project.technologies && project.technologies.length > 4 && (
             <Badge variant="outline" className="text-xs">
               +{project.technologies.length - 4}
             </Badge>
@@ -122,18 +143,22 @@ const ProjectFilter = ({
   selectedTag: string;
   setSelectedTag: (tag: string) => void;
 }) => {
+  // Ensure tags is an array
+  const validTags = Array.isArray(tags) ? tags : [];
+
   return (
     <div className="mb-8 flex flex-wrap gap-2">
       <Button
+        key="all"
         variant={selectedTag === "all" ? "default" : "outline"}
         size="sm"
         onClick={() => setSelectedTag("all")}
       >
         전체
       </Button>
-      {tags.map((tag) => (
+      {validTags.map((tag, index) => (
         <Button
-          key={tag}
+          key={`tag-${index}-${tag}`} // Ensure unique keys with index
           variant={selectedTag === tag ? "default" : "outline"}
           size="sm"
           onClick={() => setSelectedTag(tag)}
@@ -165,8 +190,11 @@ export default function ProjectsPage() {
         if (selectedTag === "all") {
           setFilteredProjects(data);
         } else {
-          const filtered = data.filter((project: Project) =>
-            project.tags.includes(selectedTag),
+          const filtered = data.filter(
+            (project: Project) =>
+              project.tags &&
+              Array.isArray(project.tags) &&
+              project.tags.includes(selectedTag),
           );
           setFilteredProjects(filtered);
         }
@@ -181,16 +209,25 @@ export default function ProjectsPage() {
     fetchProjects();
   }, [selectedTag]);
 
-  // 전체 태그 목록 추출
-  const allTags = Array.from(new Set(projects.flatMap((p) => p.tags)));
+  // 전체 태그 목록 추출 - make sure to filter undefined tags
+  const allTags = Array.from(
+    new Set(
+      projects
+        .filter((p) => p.tags && Array.isArray(p.tags))
+        .flatMap((p) => p.tags),
+    ),
+  );
 
   // 선택된 태그에 따라 프로젝트 필터링
   useEffect(() => {
     if (selectedTag === "all") {
       setFilteredProjects(projects);
     } else {
-      const filtered = projects.filter((project) =>
-        project.tags.includes(selectedTag),
+      const filtered = projects.filter(
+        (project) =>
+          project.tags &&
+          Array.isArray(project.tags) &&
+          project.tags.includes(selectedTag),
       );
       setFilteredProjects(filtered);
     }
@@ -220,14 +257,15 @@ export default function ProjectsPage() {
         </motion.div>
 
         <ProjectFilter
+          key="project-filter"
           tags={allTags}
           selectedTag={selectedTag}
           setSelectedTag={setSelectedTag}
         />
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mx-auto max-w-full">
-          <AnimatePresence mode="wait">
-            <div key={animationKey} className="contents">
+          <AnimatePresence mode="wait" key={animationKey}>
+            <div key={`content-${animationKey}`} className="contents">
               {filteredProjects.map((project, index) => (
                 <motion.div
                   key={project.id}
