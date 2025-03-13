@@ -300,7 +300,7 @@ export default function Header() {
                   priority
                 />
               </div>
-              <span className="text-base sm:text-lg md:text-xl font-bold text-foreground hover:text-primary transition-colors duration-300 hidden sm:block">
+              <span className="text-base sm:text-lg md:text-xl font-bold text-foreground hover:text-primary transition-colors duration-300">
                 {`Lazydino's DevLog`}
               </span>
             </motion.div>
