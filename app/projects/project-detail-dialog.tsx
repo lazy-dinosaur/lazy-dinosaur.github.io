@@ -9,12 +9,13 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, FileText, Globe, Download } from "lucide-react";
+import { ExternalLink, Github, FileText, Globe, Download, Play } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Project } from "./types";
 import { usePosts } from "@/contexts/posts-context";
 import type { Post } from "@/lib/posts";
+import LiveDemoModal from "./live-demo-modal";
 
 interface ProjectDetailDialogProps {
   project: Project | null;
@@ -30,6 +31,7 @@ export default function ProjectDetailDialog({
   const { getProjectRelatedPosts, getPostsByUrlPaths, posts } = usePosts();
   const [relatedPosts, setRelatedPosts] = useState<Post[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [liveDemoOpen, setLiveDemoOpen] = useState(false);
 
   // 프로젝트가 열릴 때 관련 포스트 로드
   useEffect(() => {
@@ -280,6 +282,16 @@ export default function ProjectDetailDialog({
 
         {/* 푸터 영역 - 고정 */}
         <div className="border-t px-6 py-3 flex flex-wrap gap-3 bg-background mt-1">
+          {project.demoType && project.demoType !== 'none' && (
+            <Button 
+              variant="default" 
+              size="sm" 
+              onClick={() => setLiveDemoOpen(true)}
+            >
+              <Play className="mr-2 h-4 w-4" />
+              라이브 데모
+            </Button>
+          )}
           {project.githubUrl && (
             <Link
               href={project.githubUrl}
@@ -330,6 +342,13 @@ export default function ProjectDetailDialog({
           )}
         </div>
       </DialogContent>
+      
+      {/* 라이브 데모 모달 */}
+      <LiveDemoModal 
+        project={project} 
+        open={liveDemoOpen} 
+        onOpenChangeAction={setLiveDemoOpen} 
+      />
     </Dialog>
   );
 }

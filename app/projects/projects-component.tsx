@@ -250,9 +250,13 @@ export default function ProjectsPage() {
           transition={{ duration: 0.5 }}
         >
           <h1 className="text-3xl font-bold mb-2">프로젝트</h1>
-          <p className="text-muted-foreground mb-8">
+          <p className="text-muted-foreground mb-2">
             지금까지 진행한 다양한 프로젝트들을 소개합니다. 관심 있는 카테고리를
             선택하여 필터링할 수 있습니다.
+          </p>
+          
+          <p className="text-muted-foreground mb-8">
+            게으름이 버그가 아닌 기능이 되는 세상을 만들기 위한 솔루션들입니다. 문제를 해결하고 효율을 높이는 것이 제 프로젝트의 핵심 가치입니다. 🚀
           </p>
         </motion.div>
 

@@ -6,9 +6,11 @@ import { motion } from "framer-motion";
 export function HeaderSection({
   title,
   description,
+  extraContent,
 }: {
   title: string;
   description: string;
+  extraContent?: React.ReactNode;
 }) {
   return (
     <motion.section
@@ -33,6 +35,16 @@ export function HeaderSection({
       >
         {description}
       </motion.p>
+      {extraContent && (
+        <motion.div
+          className="mt-4 text-base"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.2 }}
+        >
+          {extraContent}
+        </motion.div>
+      )}
     </motion.section>
   );
 }

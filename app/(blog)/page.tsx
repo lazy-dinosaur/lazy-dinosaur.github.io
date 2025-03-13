@@ -13,6 +13,11 @@ export default function Home() {
       <HeaderSection
         title="Lazydino's DevLog"
         description="내가 한걸 티내기 위해 만든 블로그"
+        extraContent={
+          <div className="text-muted-foreground">
+            <p>세상을 게으르게 만들기 위해 발전하고 싶은 프론트엔드 개발자입니다. 🚀</p>
+          </div>
+        }
       />
 
       {/* 포스트 그리드 */}

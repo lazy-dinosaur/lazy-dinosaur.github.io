@@ -72,6 +72,12 @@
       "모든 디바이스를 지원하는 반응형 디자인"
     ],
     "lessons": "이 프로젝트를 통해 Next.js의 App Router와 API 라우팅, Payload.js를 활용한 헤드리스 CMS 구현 방법을 배웠습니다. 또한 SMTP 연동, 이메일 템플릿 작성, 그리고 여러 외부 API와의 통합 경험을 쌓을 수 있었습니다. 혼자 외주를 받아 진행한 프로젝트인 만큼 클라이언트와 소통하며 의견을 조율하는 커뮤니케이션 능력도 크게 향상되었습니다.",
+    "demoType": "images",
+    "demoImages": [
+      "/projects/imyourbox-website.gif",
+      "/projects/imyourbox-dashboard.png",
+      "/projects/imyourbox-map.png"
+    ],
     "publishPath": "project/imyourbox"
   },
   {
@@ -80,6 +86,12 @@
     "description": "Vite, React, Typescript, Tailwind CSS, ReactQuery, Light Weight Chart를 사용하여 개발한 크롬 확장 프로그램 입니다. 자동적으로 계산된 손절가와 진입 배율을 활용해 한번의 클릭으로 안전한 매매를 가능하게 하는것을 목적으로 하고있습니다.",
     "thumbnail": "/projects/lazy-trading.png",
     "inDevelopment": true,
+    "demoType": "images",
+    "demoImages": [
+      "/projects/lazy-trading-screen1.png",
+      "/projects/lazy-trading-screen2.png",
+      "/projects/lazy-trading-screen3.png"
+    ],
     "tags": ["가상화폐", "웹", "시각화", "프론트엔드"],
     "technologies": [
       "React",
