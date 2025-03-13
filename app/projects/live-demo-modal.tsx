@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
@@ -24,23 +24,66 @@ export default function LiveDemoModal({
   onOpenChangeAction,
 }: LiveDemoModalProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isImageLoading, setIsImageLoading] = useState(true);
+  const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
+
+  // 모달이 열리면 초기 이미지 로딩 상태 설정
+  useEffect(() => {
+    if (open && project?.demoImages && project.demoImages.length > 0) {
+      // 로딩 상태 초기화
+      setIsImageLoading(true);
+
+      // 초기 로딩 상태 설정 - 모든 이미지를 미로드 상태로 설정
+      const initialLoadState: Record<number, boolean> = {};
+      project.demoImages.forEach((_, idx) => {
+        initialLoadState[idx] = false;
+      });
+      setLoadedImages(initialLoadState);
+    }
+  }, [open, project]);
+
+  // 이미지 URL이 변경될 때 로딩 상태 처리
+  useEffect(() => {
+    if (project?.demoImages && project.demoImages[currentImageIndex]) {
+      // 현재 이미지가 이미 로딩되었는지 확인
+      if (!loadedImages[currentImageIndex]) {
+        setIsImageLoading(true);
+      }
+    }
+  }, [currentImageIndex, project, loadedImages]);
 
   if (!project) return null;
 
   // 이미지 갤러리 컨트롤
   const nextImage = () => {
     if (project.demoImages) {
-      setCurrentImageIndex((prev) =>
-        prev === project.demoImages!.length - 1 ? 0 : prev + 1,
-      );
+      const nextIndex =
+        currentImageIndex === project.demoImages.length - 1
+          ? 0
+          : currentImageIndex + 1;
+
+      // 이미지가 아직 로드되지 않았다면 로딩 상태 활성화
+      if (!loadedImages[nextIndex]) {
+        setIsImageLoading(true);
+      }
+
+      setCurrentImageIndex(nextIndex);
     }
   };
 
   const prevImage = () => {
     if (project.demoImages) {
-      setCurrentImageIndex((prev) =>
-        prev === 0 ? project.demoImages!.length - 1 : prev - 1,
-      );
+      const prevIndex =
+        currentImageIndex === 0
+          ? project.demoImages.length - 1
+          : currentImageIndex - 1;
+
+      // 이미지가 아직 로드되지 않았다면 로딩 상태 활성화
+      if (!loadedImages[prevIndex]) {
+        setIsImageLoading(true);
+      }
+
+      setCurrentImageIndex(prevIndex);
     }
   };
 
@@ -102,13 +145,34 @@ export default function LiveDemoModal({
                 <div className="w-full h-full relative flex items-center justify-center bg-black/5">
                   <div className="relative w-full h-full flex flex-col">
                     <div className="relative flex-grow">
+                      {/* 로딩 오버레이 */}
+                      {isImageLoading && (
+                        <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/30 backdrop-blur-sm">
+                          <div className="flex flex-col items-center">
+                            <div className="animate-spin rounded-full h-12 w-12 border-2 border-t-transparent border-white mb-2"></div>
+                            <p className="text-white text-sm">
+                              이미지 로딩 중...
+                            </p>
+                          </div>
+                        </div>
+                      )}
+
                       <Image
                         src={project.demoImages[currentImageIndex].url}
                         alt={`${project.title} 스크린샷 ${currentImageIndex + 1}`}
                         fill
                         className="object-contain"
+                        priority
+                        onLoadingComplete={() => {
+                          // 현재 이미지가 로드되면 로딩 상태 해제
+                          setIsImageLoading(false);
+                          setLoadedImages((prev) => ({
+                            ...prev,
+                            [currentImageIndex]: true,
+                          }));
+                        }}
                       />
-                      
+
                       {/* 이미지 설명 - 페이지네이션 불릿보다 위에 배치 */}
                       {project.demoImages[currentImageIndex].description && (
                         <div className="absolute bottom-12 left-0 right-0 p-3 sm:p-4 bg-background/90 dark:bg-background/90 backdrop-blur-sm w-full text-center">
@@ -145,7 +209,12 @@ export default function LiveDemoModal({
                             key={index}
                             variant="ghost"
                             size="sm"
-                            onClick={() => setCurrentImageIndex(index)}
+                            onClick={() => {
+                              if (!loadedImages[index]) {
+                                setIsImageLoading(true);
+                              }
+                              setCurrentImageIndex(index);
+                            }}
                             className={`w-2 h-2 p-0 rounded-full ${
                               currentImageIndex === index
                                 ? "bg-white"
