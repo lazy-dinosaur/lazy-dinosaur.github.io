@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -223,14 +223,21 @@ export default function ProjectsPage() {
   const [selectedProjectType, setSelectedProjectType] =
     useState<string>("project");
 
-  // 전체 태그 목록 추출 - make sure to filter undefined tags
-  const allTags = Array.from(
-    new Set(
-      projects
-        .filter((p) => p.tags && Array.isArray(p.tags))
-        .flatMap((p) => p.tags),
-    ),
-  );
+  // 현재 선택된 프로젝트 타입에 따른 태그 목록 추출
+  const filteredTagsByType = useMemo(() => {
+    return Array.from(
+      new Set(
+        projects
+          .filter(
+            (p) =>
+              p.projectType === selectedProjectType &&
+              p.tags &&
+              Array.isArray(p.tags),
+          )
+          .flatMap((p) => p.tags),
+      ),
+    );
+  }, [projects, selectedProjectType]);
 
   // 태그와 프로젝트 타입에 따라 프로젝트 필터링
   useEffect(() => {
@@ -240,6 +247,16 @@ export default function ProjectsPage() {
     filtered = filtered.filter(
       (project) => project.projectType === selectedProjectType,
     );
+
+    // 선택된 태그가 현재 프로젝트 타입의 태그 목록에 있는지 확인
+    const isValidTag =
+      selectedTag === "all" || filteredTagsByType.includes(selectedTag);
+
+    // 유효한 태그가 아니면 태그 선택 초기화
+    if (!isValidTag && selectedTag !== "all") {
+      setSelectedTag("all");
+      return;
+    }
 
     // 태그로 필터링
     if (selectedTag !== "all") {
@@ -255,7 +272,7 @@ export default function ProjectsPage() {
 
     // 필터링이 변경될 때마다 애니메이션 키를 업데이트
     setAnimationKey((prevKey) => prevKey + 1);
-  }, [selectedTag, selectedProjectType, projects]);
+  }, [selectedTag, selectedProjectType, projects, filteredTagsByType]);
 
   // URL 파라미터를 통해 프로젝트 모달 열기 처리
   useEffect(() => {
@@ -333,7 +350,13 @@ export default function ProjectsPage() {
                     selectedProjectType === type.value ? "default" : "outline"
                   }
                   size="sm"
-                  onClick={() => setSelectedProjectType(type.value)}
+                  onClick={() => {
+                    // 프로젝트 타입이 변경되면 태그 선택 초기화
+                    if (selectedProjectType !== type.value) {
+                      setSelectedProjectType(type.value);
+                      setSelectedTag("all");
+                    }
+                  }}
                   className={
                     selectedProjectType === type.value ? "bg-primary" : ""
                   }
@@ -350,8 +373,8 @@ export default function ProjectsPage() {
             태그
           </h3>
           <ProjectFilter
-            key="project-filter"
-            tags={allTags}
+            key={`project-filter-${selectedProjectType}`}
+            tags={filteredTagsByType}
             selectedTag={selectedTag}
             setSelectedTag={setSelectedTag}
           />
