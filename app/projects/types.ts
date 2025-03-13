@@ -1,6 +1,14 @@
 export type DemoType = 'iframe' | 'video' | 'images' | 'code' | 'none';
 
+export type ProjectType = 'project' | 'study'; // 프로젝트 유형: 실제 프로젝트 또는 학습/실습
+
+export interface DemoImage {
+  url: string;
+  description?: string;
+}
+
 export interface Project {
+  projectType?: ProjectType; // 프로젝트 유형
   id: string;
   title: string;
   description: string;
@@ -26,7 +34,7 @@ export interface Project {
   demoType?: DemoType;
   demoUrl?: string; // iframe 또는 코드 타입일 경우 URL
   demoVideoUrl?: string; // 비디오 타입일 경우 비디오 URL
-  demoImages?: string[]; // 이미지 타입일 경우 이미지 URL 배열
+  demoImages?: DemoImage[]; // 이미지 타입일 경우 이미지와 설명이 포함된 객체 배열
   demoCodeSandboxId?: string; // 코드 타입일 경우 CodeSandbox ID
 
   // 관련 포스트 (선택적)

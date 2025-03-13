@@ -1,5 +1,6 @@
 [
   {
+    "projectType": "project",
     "id": "my-blog",
     "title": "개인 블로그",
     "description": "Next.js, TypeScript, Tailwind CSS를 사용하여 개발한 개인 블로그입니다. 마크다운 기반 콘텐츠 관리와 다크 모드를 지원합니다.",
@@ -38,6 +39,7 @@
     "publishPath": "project/blog"
   },
   {
+    "projectType": "project",
     "id": "imyourbox-website",
     "title": "아임유어박스 웹페이지",
     "description": "Next.js, TypeScript, Tailwind CSS, Framer Motion, Payload.js, Supabase, Vercel을 활용한 회사 웹페이지입니다. 고객들과 회사의 직원들을 위한 웹페이지입니다. SMTP와 이메일 템플릿을 이용한 문의내역을 이메일로 전달받고 데이터베이스에 저장하는 등의 기능과 개발자가 없어도 사이트를 유지 관리 할 수 있도록 Payload.js 를 활용한 관리자 기능이 특징 입니다.",
@@ -74,13 +76,23 @@
     "lessons": "이 프로젝트를 통해 Next.js의 App Router와 API 라우팅, Payload.js를 활용한 헤드리스 CMS 구현 방법을 배웠습니다. 또한 SMTP 연동, 이메일 템플릿 작성, 그리고 여러 외부 API와의 통합 경험을 쌓을 수 있었습니다. 혼자 외주를 받아 진행한 프로젝트인 만큼 클라이언트와 소통하며 의견을 조율하는 커뮤니케이션 능력도 크게 향상되었습니다.",
     "demoType": "images",
     "demoImages": [
-      "/projects/imyourbox-website.gif",
-      "/projects/imyourbox-dashboard.png",
-      "/projects/imyourbox-map.png"
+      {
+        "url": "/projects/imyourbox-website.gif",
+        "description": "메인 페이지: 서비스의 핵심 내용을 한눈에 볼 수 있는 랜딩 페이지입니다. 애니메이션과 반응형 디자인으로 사용자 경험을 강화했습니다."
+      },
+      {
+        "url": "/projects/imyourbox-dashboard.png",
+        "description": "관리자 대시보드: Payload.js를 통해 구현된 관리자 패널입니다. 회사 직원이 콘텐츠를 쉽게 관리할 수 있습니다."
+      },
+      {
+        "url": "/projects/imyourbox-map.png",
+        "description": "위치 정보 페이지: 네이버 지도 API를 활용하여 회사 위치와 근처 주요 시설을 표시한 지도 기능입니다."
+      }
     ],
     "publishPath": "project/imyourbox"
   },
   {
+    "projectType": "project",
     "id": "lazy-trading",
     "title": "LazyTrading 크롬 확장프로그램",
     "description": "Vite, React, Typescript, Tailwind CSS, ReactQuery, Light Weight Chart를 사용하여 개발한 크롬 확장 프로그램 입니다. 자동적으로 계산된 손절가와 진입 배율을 활용해 한번의 클릭으로 안전한 매매를 가능하게 하는것을 목적으로 하고있습니다.",
@@ -88,9 +100,18 @@
     "inDevelopment": true,
     "demoType": "images",
     "demoImages": [
-      "/projects/lazy-trading-screen1.png",
-      "/projects/lazy-trading-screen2.png",
-      "/projects/lazy-trading-screen3.png"
+      {
+        "url": "/projects/lazy-trading-screen1.png",
+        "description": "대시보드 화면: 실시간 가격 정보와 함께 거래 설정을 할 수 있는 메인 인터페이스입니다."
+      },
+      {
+        "url": "/projects/lazy-trading-screen2.png",
+        "description": "손절가 계산기: 투자 금액과 위험 비율에 따라 최적의 손절가를 자동으로 계산해주는 화면입니다."
+      },
+      {
+        "url": "/projects/lazy-trading-screen3.png",
+        "description": "거래 기록 분석: 과거 거래 내역을 시각화하여 트레이딩 패턴을 분석할 수 있는 기능입니다."
+      }
     ],
     "tags": ["가상화폐", "웹", "시각화", "프론트엔드"],
     "technologies": [

@@ -4,8 +4,8 @@ import { getPosts } from "@/lib/posts";
 import { PostsProvider } from "@/contexts/posts-context";
 
 export const metadata: Metadata = {
-  title: "프로젝트 | lazydino",
-  description: "개발자 lazydino의 프로젝트 포트폴리오",
+  title: "포트폴리오 | lazydino",
+  description: "개발자 lazydino의 프로젝트 및 학습 포트폴리오",
 };
 
 export default async function Projects() {

@@ -46,11 +46,11 @@ export default function LiveDemoModal({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChangeAction}>
-      <DialogContent className="sm:max-w-4xl p-0 h-[80vh] max-h-[90vh] overflow-hidden">
+      <DialogContent className="w-[95vw] max-w-full sm:max-w-4xl p-0 overflow-hidden h-[95vh] max-h-[95vh] sm:max-h-[90vh] fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
         <div className="flex flex-col h-full">
-          <DialogHeader className="px-6 py-3 border-b">
+          <DialogHeader className="px-4 sm:px-6 py-3 border-b">
             <div className="flex justify-between items-center">
-              <DialogTitle className="text-xl">
+              <DialogTitle className="text-lg sm:text-xl break-all">
                 {project.title} - 라이브 데모
               </DialogTitle>
             </div>
@@ -100,13 +100,24 @@ export default function LiveDemoModal({
               project.demoImages &&
               project.demoImages.length > 0 && (
                 <div className="w-full h-full relative flex items-center justify-center bg-black/5">
-                  <div className="relative w-full h-full">
-                    <Image
-                      src={project.demoImages[currentImageIndex]}
-                      alt={`${project.title} 스크린샷 ${currentImageIndex + 1}`}
-                      fill
-                      className="object-contain"
-                    />
+                  <div className="relative w-full h-full flex flex-col">
+                    <div className="relative flex-grow">
+                      <Image
+                        src={project.demoImages[currentImageIndex].url}
+                        alt={`${project.title} 스크린샷 ${currentImageIndex + 1}`}
+                        fill
+                        className="object-contain"
+                      />
+                      
+                      {/* 이미지 설명 - 페이지네이션 불릿보다 위에 배치 */}
+                      {project.demoImages[currentImageIndex].description && (
+                        <div className="absolute bottom-12 left-0 right-0 p-3 sm:p-4 bg-background/90 dark:bg-background/90 backdrop-blur-sm w-full text-center">
+                          <p className="text-xs sm:text-sm text-foreground">
+                            {project.demoImages[currentImageIndex].description}
+                          </p>
+                        </div>
+                      )}
+                    </div>
                   </div>
 
                   {/* 이미지 갤러리 컨트롤 */}
@@ -116,19 +127,19 @@ export default function LiveDemoModal({
                         variant="ghost"
                         size="icon"
                         onClick={prevImage}
-                        className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white rounded-full h-10 w-10"
+                        className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white rounded-full h-8 w-8 sm:h-10 sm:w-10"
                       >
-                        <ChevronLeft className="h-6 w-6" />
+                        <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
                       </Button>
                       <Button
                         variant="ghost"
                         size="icon"
                         onClick={nextImage}
-                        className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white rounded-full h-10 w-10"
+                        className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white rounded-full h-8 w-8 sm:h-10 sm:w-10"
                       >
-                        <ChevronRight className="h-6 w-6" />
+                        <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
                       </Button>
-                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
                         {project.demoImages.map((_, index) => (
                           <Button
                             key={index}
@@ -157,7 +168,7 @@ export default function LiveDemoModal({
             )}
           </div>
 
-          <div className="p-4 border-t flex justify-between items-center">
+          <div className="p-3 sm:p-4 border-t flex justify-between items-center">
             <p className="text-sm text-muted-foreground">
               {project.demoType === "iframe" &&
                 "실제 서비스 환경에서의 데모입니다."}

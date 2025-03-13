@@ -140,13 +140,13 @@ export default function ProjectDetailDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChangeAction}>
-      <DialogContent className="sm:max-w-3xl p-0 overflow-hidden flex flex-col max-h-[90vh] sm:top-[50%] gap-0">
+      <DialogContent className="w-[95vw] max-w-full sm:max-w-3xl p-0 overflow-hidden flex flex-col h-[95vh] sm:h-auto max-h-[95vh] sm:max-h-[90vh] fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] gap-0">
         {/* 헤더 영역 - 상단 고정 */}
-        <div className="border-b px-6 pt-3 pb-3">
-          <DialogHeader className="pb-0 pr-8">
+        <div className="border-b px-4 sm:px-6 pt-3 pb-3">
+          <DialogHeader className="pb-0 pr-4 sm:pr-8">
             <div className="flex justify-between items-center">
-              <div className="flex items-center gap-2">
-                <DialogTitle className="text-2xl">{project.title}</DialogTitle>
+              <div className="flex flex-wrap items-center gap-2">
+                <DialogTitle className="text-xl sm:text-2xl break-all">{project.title}</DialogTitle>
                 {project.inDevelopment && (
                   <Badge className="bg-amber-500 text-white">개발 중</Badge>
                 )}
@@ -165,7 +165,7 @@ export default function ProjectDetailDialog({
         </div>
 
         {/* 스크롤 가능한 컨텐츠 영역 */}
-        <div className="px-6 pt-3 pb-0 overflow-y-auto flex-1">
+        <div className="px-4 sm:px-6 pt-3 pb-0 overflow-y-auto flex-1">
           {/* 패딩 없음 - 스크롤 영역 */}
           <div className="overflow-hidden rounded-lg">
             <Image
@@ -174,6 +174,7 @@ export default function ProjectDetailDialog({
               width={800}
               height={450}
               className="w-full object-cover"
+              priority
             />
           </div>
           <div className="mt-6">
@@ -281,7 +282,7 @@ export default function ProjectDetailDialog({
         </div>
 
         {/* 푸터 영역 - 고정 */}
-        <div className="border-t px-6 py-3 flex flex-wrap gap-3 bg-background mt-1">
+        <div className="border-t px-4 sm:px-6 py-3 flex flex-wrap gap-2 sm:gap-3 bg-background mt-1">
           {project.demoType && project.demoType !== 'none' && (
             <Button 
               variant="default" 

@@ -2,10 +2,10 @@
 
 import React, { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
-import { Sun, Moon, Search, Menu } from "lucide-react";
+import { Sun, Moon, Search, Menu, ChevronLeft } from "lucide-react";
 import {
   CommandDialog,
   CommandInput,
@@ -26,12 +26,23 @@ import { motion } from "framer-motion";
 
 export default function Header() {
   const router = useRouter();
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [prevScrollY, setPrevScrollY] = useState(0);
   const [headerVisible, setHeaderVisible] = useState(true);
   const [isClient, setIsClient] = useState(false);
   const { posts } = usePosts();
+
+  // 뒤로가기 버튼이 필요한 페이지인지 확인하는 로직
+  const isPostPage = pathname?.startsWith("/posts/");
+  const isProjectDetailPage =
+    pathname === "/projects" &&
+    typeof window !== "undefined" &&
+    window.location.search.includes("project=");
+
+  // 뒤로가기 버튼이 필요한 페이지인지 확인
+  const shouldShowBackButton = isPostPage || isProjectDetailPage;
 
   useEffect(() => {
     setIsClient(true);
@@ -124,14 +135,18 @@ export default function Header() {
     >
       <div className="flex items-center justify-between py-2 px-4 md:px-6 w-full max-w-screen-2xl border-b border-border/40 backdrop-blur-lg bg-background/80 shadow-sm">
         <div className="flex items-center gap-2">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="rounded-full h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 flex items-center justify-center xl:hidden bg-primary/10 text-primary"
-            onClick={() => document.getElementById("sidebar-trigger")?.click()}
-          >
-            <Menu className="h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem]" />
-          </motion.button>
+          {/* 포스트 페이지나 프로젝트 상세 페이지일 때만 뒤로가기 버튼 표시 */}
+          {shouldShowBackButton && (
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="rounded-full h-8 w-8 sm:h-9 sm:w-9 flex items-center justify-center bg-primary/10 text-primary"
+              onClick={() => router.back()}
+              aria-label="뒤로가기"
+            >
+              <ChevronLeft className="h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem]" />
+            </motion.button>
+          )}
           <Link className="flex items-center group" href="/">
             <motion.div
               className="relative w-10 h-8 sm:w-12 sm:h-10 md:w-14 md:h-12 mr-2 sm:mr-3 rounded-full overflow-hidden"
@@ -151,25 +166,32 @@ export default function Header() {
                 height={80}
               />
             </motion.div>
-            <span className="text-base sm:text-lg md:text-xl font-bold group-hover:text-primary transition-colors duration-300">
+            <span className="text-base sm:text-lg md:text-xl font-bold group-hover:text-primary transition-colors duration-300 hidden xl:block">
               {`Lazydino's DevLog`}
             </span>
           </Link>
         </div>
         <div className="flex items-center gap-2 sm:gap-3">
-          <motion.div whileHover={{ y: -2 }} whileTap={{ y: 0 }}>
+          {/* 스크린 사이즈 상관없이 항상 표시할 Portfolio 버튼 */}
+          <motion.div
+            whileHover={{ y: -2 }}
+            whileTap={{ y: 0 }}
+            className="hidden xl:block"
+          >
             <Button
               variant="ghost"
               className="font-medium rounded-full px-4 hover:bg-primary/10 hover:text-primary"
               onClick={() => router.push("/projects")}
             >
-              Projects
+              Portfolio
             </Button>
           </motion.div>
+
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             initial={false}
+            className="flex items-center"
           >
             <Button
               variant="outline"
@@ -218,6 +240,7 @@ export default function Header() {
               <span className="sr-only">Toggle theme</span>
             </Button>
           </motion.div>
+
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button
               variant="outline"
@@ -229,6 +252,17 @@ export default function Header() {
               <span className="sr-only">Search</span>
             </Button>
           </motion.div>
+
+          {/* 사이드바가 숨겨질 때만 사이드바 버튼 표시 (xl 브레이크포인트 이하에서) */}
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="rounded-full h-8 w-8 sm:h-9 sm:w-9 flex items-center justify-center bg-primary/10 text-primary xl:hidden"
+            onClick={() => document.getElementById("sidebar-trigger")?.click()}
+            aria-label="사이드바 메뉴"
+          >
+            <Menu className="h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem]" />
+          </motion.button>
         </div>
         <CommandDialog open={open} onOpenChange={setOpen}>
           <DialogTitle hidden={true}></DialogTitle>

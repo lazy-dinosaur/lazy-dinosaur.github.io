@@ -23,7 +23,7 @@ export default function Footer() {
               href="/projects"
               className="text-sm text-muted-foreground hover:text-primary transition-colors"
             >
-              Projects
+              Portfolio
             </Link>
             <Link
               href="https://github.com/lazy-dinosaur"
