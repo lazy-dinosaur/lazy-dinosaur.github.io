@@ -375,7 +375,10 @@ export default function ProjectDetailDialog({
       <LiveDemoModal 
         project={project} 
         open={liveDemoOpen} 
-        onOpenChangeAction={setLiveDemoOpen} 
+        onOpenChangeAction={(open) => {
+          // 모달이 닫힐 때만 상태 업데이트
+          setLiveDemoOpen(open);
+        }} 
       />
     </Dialog>
   );
