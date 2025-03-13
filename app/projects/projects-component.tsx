@@ -1,6 +1,12 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from "react";
+import React, {
+  useState,
+  useEffect,
+  useMemo,
+  useCallback,
+  Suspense,
+} from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -105,9 +111,9 @@ const ProjectCard = ({
                 </Button>
               </Link>
             )}
-            {project.demoUrl && (
+            {project.liveSiteUrl && (
               <Link
-                href={project.demoUrl}
+                href={project.liveSiteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -171,11 +177,26 @@ const ProjectFilter = ({
   );
 };
 
-// 프로젝트 페이지 메인 컴포넌트
-export default function ProjectsPage() {
+// URL 파라미터를 처리하는 컴포넌트
+function SearchParamsHandler({
+  onProjectFound,
+}: {
+  onProjectFound: (projectId: string) => void;
+}) {
   const searchParams = useSearchParams();
   const projectParam = searchParams.get("project");
 
+  useEffect(() => {
+    if (projectParam) {
+      onProjectFound(projectParam);
+    }
+  }, [projectParam, onProjectFound]);
+
+  return null;
+}
+
+// 프로젝트 페이지 메인 컴포넌트
+export default function ProjectsPage() {
   const [selectedTag, setSelectedTag] = useState<string>("all");
   const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -183,10 +204,12 @@ export default function ProjectsPage() {
   const [animationKey, setAnimationKey] = useState(0); // 애니메이션 키 상태 추가
 
   const [projects, setProjects] = useState<Project[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   // 프로젝트 데이터 불러오기
   useEffect(() => {
     const fetchProjects = async () => {
+      setIsLoading(true);
       try {
         const response = await fetch("/projects.json");
         const data = await response.json();
@@ -207,6 +230,8 @@ export default function ProjectsPage() {
           "프로젝트 데이터를 불러오는 중 오류가 발생했습니다:",
           error,
         );
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -241,49 +266,67 @@ export default function ProjectsPage() {
 
   // 태그와 프로젝트 타입에 따라 프로젝트 필터링
   useEffect(() => {
-    let filtered = [...projects];
+    // 프로젝트 목록이 비어있으면 처리하지 않음
+    if (projects.length === 0) return;
 
-    // 프로젝트 타입으로 필터링 (항상 특정 타입으로 필터링)
-    filtered = filtered.filter(
-      (project) => project.projectType === selectedProjectType,
-    );
+    // 필터링 시작 - 잠시 로딩 표시
+    setIsLoading(true);
 
-    // 선택된 태그가 현재 프로젝트 타입의 태그 목록에 있는지 확인
-    const isValidTag =
-      selectedTag === "all" || filteredTagsByType.includes(selectedTag);
+    // 짧은 지연을 추가하여 로딩 상태가 깜박이지 않도록 함
+    const filterTimeout = setTimeout(() => {
+      let filtered = [...projects];
 
-    // 유효한 태그가 아니면 태그 선택 초기화
-    if (!isValidTag && selectedTag !== "all") {
-      setSelectedTag("all");
-      return;
-    }
-
-    // 태그로 필터링
-    if (selectedTag !== "all") {
+      // 프로젝트 타입으로 필터링 (항상 특정 타입으로 필터링)
       filtered = filtered.filter(
-        (project) =>
-          project.tags &&
-          Array.isArray(project.tags) &&
-          project.tags.includes(selectedTag),
+        (project) => project.projectType === selectedProjectType,
       );
-    }
 
-    setFilteredProjects(filtered);
+      // 선택된 태그가 현재 프로젝트 타입의 태그 목록에 있는지 확인
+      const isValidTag =
+        selectedTag === "all" || filteredTagsByType.includes(selectedTag);
 
-    // 필터링이 변경될 때마다 애니메이션 키를 업데이트
-    setAnimationKey((prevKey) => prevKey + 1);
+      // 유효한 태그가 아니면 태그 선택 초기화
+      if (!isValidTag && selectedTag !== "all") {
+        setSelectedTag("all");
+        setIsLoading(false);
+        return;
+      }
+
+      // 태그로 필터링
+      if (selectedTag !== "all") {
+        filtered = filtered.filter(
+          (project) =>
+            project.tags &&
+            Array.isArray(project.tags) &&
+            project.tags.includes(selectedTag),
+        );
+      }
+
+      setFilteredProjects(filtered);
+
+      // 필터링이 변경될 때마다 애니메이션 키를 업데이트
+      setAnimationKey((prevKey) => prevKey + 1);
+
+      // 로딩 상태 해제
+      setIsLoading(false);
+    }, 300); // 300ms 지연
+
+    return () => clearTimeout(filterTimeout);
   }, [selectedTag, selectedProjectType, projects, filteredTagsByType]);
 
-  // URL 파라미터를 통해 프로젝트 모달 열기 처리
-  useEffect(() => {
-    if (projectParam && projects.length > 0) {
-      const foundProject = projects.find((p) => p.id === projectParam);
-      if (foundProject) {
-        setSelectedProject(foundProject);
-        setDialogOpen(true);
+  // URL 파라미터로 찾은 프로젝트 처리 함수
+  const handleProjectFound = useCallback(
+    (projectId: string) => {
+      if (projects.length > 0) {
+        const foundProject = projects.find((p) => p.id === projectId);
+        if (foundProject) {
+          setSelectedProject(foundProject);
+          setDialogOpen(true);
+        }
       }
-    }
-  }, [projectParam, projects]);
+    },
+    [projects],
+  );
 
   // 프로젝트 상세 보기 열기
   const handleProjectClick = (project: Project) => {
@@ -309,6 +352,22 @@ export default function ProjectsPage() {
 
   return (
     <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
+      {/* URL 파라미터를 처리하는 컴포넌트를 Suspense로 감싸기 */}
+      <Suspense
+        fallback={
+          <div className="flex items-center justify-center w-full py-20">
+            <div className="flex flex-col items-center">
+              <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary mb-4"></div>
+              <p className="text-muted-foreground text-sm">
+                프로젝트를 불러오는 중...
+              </p>
+            </div>
+          </div>
+        }
+      >
+        <SearchParamsHandler onProjectFound={handleProjectFound} />
+      </Suspense>
+
       <div className="mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -10 }}
@@ -380,56 +439,71 @@ export default function ProjectsPage() {
           />
         </div>
 
-        {/* 결과 개수 표시 */}
-        {filteredProjects.length > 0 && (
-          <div className="mb-6">
-            <p className="text-sm text-muted-foreground">
-              {selectedProjectType === "project" ? "🚀" : "📚"} 총{" "}
-              <span className="font-medium">{filteredProjects.length}개</span>의
-              {selectedProjectType === "project"
-                ? " 프로젝트"
-                : " 학습/실습 작업물"}
-              이 있습니다.
-            </p>
-          </div>
-        )}
-
-        {filteredProjects.length > 0 ? (
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mx-auto max-w-full">
-            <AnimatePresence mode="wait" key={animationKey}>
-              <div key={`content-${animationKey}`} className="contents">
-                {filteredProjects.map((project, index) => (
-                  <motion.div
-                    key={project.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{
-                      opacity: 1,
-                      y: 0,
-                      transition: {
-                        delay: index * 0.1, // 순차적으로 나타나도록 딜레이 추가
-                      },
-                    }}
-                    exit={{ opacity: 0, y: -20 }}
-                  >
-                    <ProjectCard
-                      project={project}
-                      onClick={() => handleProjectClick(project)}
-                    />
-                  </motion.div>
-                ))}
-              </div>
-            </AnimatePresence>
+        {/* 로딩 중 표시 */}
+        {isLoading ? (
+          <div className="flex items-center justify-center w-full py-32">
+            <div className="flex flex-col items-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mb-4"></div>
+              <p className="text-muted-foreground">프로젝트를 불러오는 중...</p>
+            </div>
           </div>
         ) : (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="py-20 text-center"
-          >
-            <p className="text-muted-foreground">
-              선택한 카테고리와 태그에 해당하는 프로젝트가 없습니다.
-            </p>
-          </motion.div>
+          <>
+            {/* 결과 개수 표시 */}
+            {filteredProjects.length > 0 && (
+              <div className="mb-6">
+                <p className="text-sm text-muted-foreground">
+                  {selectedProjectType === "project" ? "🚀" : "📚"} 총{" "}
+                  <span className="font-medium">
+                    {filteredProjects.length}개
+                  </span>
+                  의
+                  {selectedProjectType === "project"
+                    ? " 프로젝트"
+                    : " 학습/실습 작업물"}
+                  이 있습니다.
+                </p>
+              </div>
+            )}
+
+            {filteredProjects.length > 0 ? (
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mx-auto max-w-full">
+                <AnimatePresence mode="wait" key={animationKey}>
+                  <div key={`content-${animationKey}`} className="contents">
+                    {filteredProjects.map((project, index) => (
+                      <motion.div
+                        key={project.id}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{
+                          opacity: 1,
+                          y: 0,
+                          transition: {
+                            delay: index * 0.1, // 순차적으로 나타나도록 딜레이 추가
+                          },
+                        }}
+                        exit={{ opacity: 0, y: -20 }}
+                      >
+                        <ProjectCard
+                          project={project}
+                          onClick={() => handleProjectClick(project)}
+                        />
+                      </motion.div>
+                    ))}
+                  </div>
+                </AnimatePresence>
+              </div>
+            ) : (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="py-20 text-center"
+              >
+                <p className="text-muted-foreground">
+                  선택한 카테고리와 태그에 해당하는 프로젝트가 없습니다.
+                </p>
+              </motion.div>
+            )}
+          </>
         )}
       </div>
 

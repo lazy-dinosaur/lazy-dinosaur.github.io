@@ -1,6 +1,6 @@
-export type DemoType = 'iframe' | 'video' | 'images' | 'code' | 'none';
+export type DemoType = "iframe" | "video" | "images" | "code" | "none";
 
-export type ProjectType = 'project' | 'study'; // 프로젝트 유형: 실제 프로젝트 또는 학습/실습
+export type ProjectType = "project" | "study"; // 프로젝트 유형: 실제 프로젝트 또는 학습/실습
 
 export interface DemoImage {
   url: string;
@@ -16,7 +16,7 @@ export interface Project {
   tags: string[];
   technologies: string[];
   githubUrl?: string;
-  demoUrl?: string;
+  liveSiteUrl?: string; // 라이브 사이트 URL (카드에 표시되는 데모 링크)
   serviceUrl?: string; // 실제 서비스 중인 URL
   downloadUrl?: string; // 다운로드 URL (앱, 파일 등)
   featured: boolean;

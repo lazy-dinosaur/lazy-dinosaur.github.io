@@ -305,9 +305,9 @@ export default function ProjectDetailDialog({
               </Button>
             </Link>
           )}
-          {project.demoUrl && (
+          {project.liveSiteUrl && (
             <Link
-              href={project.demoUrl}
+              href={project.liveSiteUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
