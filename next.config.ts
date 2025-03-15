@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export",
+  // output: "export",
   images: {
     loader: "default",
     domains: ["user-images.githubusercontent.com", "lazy-dinosaur.github.io"],
