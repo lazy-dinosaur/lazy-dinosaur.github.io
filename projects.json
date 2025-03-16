@@ -61,7 +61,7 @@
     "id": "imyourbox-website",
     "title": "아임유어박스 웹페이지",
     "description": "Next.js, TypeScript, Tailwind CSS, Framer Motion, Payload.js, Supabase, Vercel을 활용한 회사 웹페이지입니다. 고객들과 회사의 직원들을 위한 웹페이지입니다. SMTP와 이메일 템플릿을 이용한 문의내역을 이메일로 전달받고 데이터베이스에 저장하는 등의 기능과 개발자가 없어도 사이트를 유지 관리 할 수 있도록 Payload.js 를 활용한 관리자 기능이 특징 입니다.",
-    "thumbnail": "/projects/imyourbox/imyourbox-landingpage.gif",
+    "thumbnail": "/projects/imyourbox/imyourbox-main.mp4",
     "tags": ["웹", "풀스택"],
     "technologies": [
       "Next.js",
@@ -103,7 +103,7 @@
     "demoType": "images",
     "demoImages": [
       {
-        "url": "/projects/imyourbox/imyourbox-landingpage.gif",
+        "url": "/projects/imyourbox/imyourbox-main.mp4",
         "description": "메인 페이지: 서비스의 핵심 내용을 한눈에 볼 수 있는 랜딩 페이지입니다. 애니메이션과 반응형 디자인으로 사용자 경험을 강화했습니다."
       },
       {
