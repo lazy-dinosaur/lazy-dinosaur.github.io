@@ -77,6 +77,7 @@
     "title": "아임유어박스 웹페이지",
     "description": "Next.js, TypeScript, Tailwind CSS, Framer Motion, Payload.js, Supabase, Vercel을 활용한 회사 웹페이지입니다. 고객들과 회사의 직원들을 위한 웹페이지입니다. SMTP와 이메일 템플릿을 이용한 문의내역을 이메일로 전달받고 데이터베이스에 저장하는 등의 기능과 개발자가 없어도 사이트를 유지 관리 할 수 있도록 Payload.js 를 활용한 관리자 기능이 특징 입니다.",
     "thumbnail": "/projects/imyourbox/imyourbox-main.mp4",
+    "thumbnailOptions": { "playbackRate": 2.5 },
     "tags": ["웹", "풀스택"],
     "technologies": [
       "Next.js",
@@ -109,6 +110,7 @@
     ],
     "lessons": "이 프로젝트를 통해 Next.js의 App Router와 API 라우팅, Payload.js를 활용한 헤드리스 CMS 구현 방법을 배웠습니다. 또한 SMTP 연동, 이메일 템플릿 작성, 그리고 여러 외부 API와의 통합 경험을 쌓을 수 있었습니다. 혼자 외주를 받아 진행한 프로젝트인 만큼 클라이언트와 소통하며 의견을 조율하는 커뮤니케이션 능력도 크게 향상되었습니다.",
     "challenges": [
+      "디자이너가 존재하지 않아 디자인을 새로 만들어야 했습니다.",
       "Payload.js와 Supabase 통합: 외부 데이터베이스(Supabase)와 Payload.js를 연동하여 데이터를 저장하고 관리하는 과정에서 복잡한 관계 설정이 필요했습니다.",
       "복잡한 애니메이션 구현: Framer Motion을 사용한 Parallax 스크롤 애니메이션의 성능 최적화가 어려웠으며, 다양한 디바이스에서 일관된 경험을 제공하기 위한 조정이 필요했습니다.",
       "네이버 지도 API 커스터마이징: 네이버 지도 API를 활용하여 맞춤형 마커와 팝업 창을 구현하는 과정에서 API 문서 부족으로 인한 어려움이 있었습니다.",
@@ -122,15 +124,29 @@
         "description": "메인 페이지: 서비스의 핵심 내용을 한눈에 볼 수 있는 랜딩 페이지입니다. 애니메이션과 반응형 디자인으로 사용자 경험을 강화했습니다."
       },
       {
-        "url": "/projects/imyourbox/payload.png",
-        "description": "관리자 대시보드: Payload.js를 통해 구현된 관리자 패널입니다. 회사 직원이 콘텐츠를 쉽게 관리할 수 있습니다."
+        "url": "/projects/imyourbox/imyourbox-parallax-example.mp4",
+        "description": "Parallax 스크롤 이펙트: Framer motion 을 활용하여 구현한 입체감 있는 스크롤 효과 입니다."
       },
       {
-        "url": "/projects/imyourbox/imyourbox-naver-map.gif",
-        "description": "위치 정보 페이지: 네이버 지도 API를 활용하여 회사 위치와 근처 주요 시설을 표시한 지도 기능입니다."
+        "url": "/projects/imyourbox/imyourbox-admin-collections.png",
+        "description": "관리자 대시보드: Payload.js를 통해 구현된 관리자 패널입니다. 회사 직원이 콘텐츠를 쉽게 관리할 수 있습니다. 회사 사이트 내의 공지사항 모달, 회사 뉴스, 회사 연혁, 회사의 위치 소개를 추가하고 삭제하며 관리하며 사이트의 컨텐츠를 관리할 수 있습니다. 또한 사이트를 통한 문의 내역을 저장하여 확인하고 수정할 수 있습니다."
       },
       {
-        "url": "/projects/imyourbox/imyourbox-mail.jpeg",
+        "url": "/projects/imyourbox/imyourbox-csv-example.mp4",
+        "description": "CSV 추출을 위한 커스텀 버튼: 요구사항에 맞춰 추가한 Payload 의 커스텀 컴포넌트로 Payload 에 저장된 고객 문의 사항들을 CSV 파일로 추출하는 기능을 구현한 버튼 입니다.",
+        "showControls": true
+      },
+      {
+        "url": "/projects/imyourbox/imyourbox-map-example.mp4",
+        "description": "위치 정보 페이지: 네이버 지도 API를 활용하여 회사 위치와 근처 주요 시설을 표시한 지도 기능입니다. Payload를 통해 추가되고 수정됩니다."
+      },
+      {
+        "url": "/projects/imyourbox/imyourbox-inquiry-example.mp4",
+        "description": "문의 기능: nodemailer를 활용하여 문의 내용을 회사 이메일로 전송하는 기능입니다. 전송과 동시에 문의 내용이  Payload api 를 활용하여 supabase에 저장됩니다.",
+        "playbackRate": 2.5
+      },
+      {
+        "url": "/projects/imyourbox/imyourbox-mail-blurry.png",
         "description": "이메일 템플릿: 사이트를 통해 회사로 이메일이 전달됬을때의 디자인 입니다."
       }
     ],
