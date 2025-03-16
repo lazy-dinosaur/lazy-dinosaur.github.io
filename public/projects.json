@@ -40,16 +40,19 @@
     "demoImages": [
       {
         "url": "/projects/my-blog/blog-sync-example.mp4",
-        "description": "파이썬 스크립트를 통한 노트 동기화: 스크립트를 통해 블로그에 필요한 파일들을 생성하고 자동으로 분류합니다."
+        "description": "파이썬 스크립트를 통한 노트 동기화: 스크립트를 통해 블로그에 필요한 파일들을 생성하고 자동으로 분류합니다.",
+        "showControls": true
       },
       {
         "url": "/projects/my-blog/blog-post-example.mp4",
         "description": "Neovim과의 통합: Neovim을 통해 노트를 작성하면서 커맨드를 통해 블로그를 바로 포스팅할 수 있습니다.",
+        "showControls": true,
         "playbackRate": 2.5
       },
       {
         "url": "/projects/my-blog/blog-search-example.mp4",
-        "description": "한글 검색기능: 전체 노트의 타이틀, 태그, 본문을 검색하며 한글의 자모음을 분리하여 검색해 부자연스러운 결과를 없앴습니다."
+        "description": "한글 검색기능: 전체 노트의 타이틀, 태그, 본문을 검색하며 한글의 자모음을 분리하여 검색해 부자연스러운 결과를 없앴습니다.",
+        "showControls": true
       },
       {
         "url": "/projects/my-blog/blog-toc-example.mp4",
