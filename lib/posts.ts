@@ -1,6 +1,5 @@
 import { promises as fs } from "fs";
 import path from "path";
-import matter from "gray-matter";
 import metaData from "../public/meta-data.json";
 
 // interface MetaData {
@@ -27,50 +26,107 @@ export interface Post {
   publish: string; // publish 필드 추가 (카테고리 역할)
 }
 
-// getPosts 함수 수정
-export async function getPosts(): Promise<Post[]> {
+interface PostContent {
+  content: string;
+  plainContent: string;
+}
+
+// 최적화된 getPosts 함수 - 메타데이터만 반환하고 콘텐츠는 필요할 때 가져옴
+export async function getPostsMetadata(): Promise<
+  Omit<Post, "content" | "plainContent">[]
+> {
   try {
     if (!metaData || metaData.length === 0) return [];
 
-    const postsDir = path.join(process.cwd(), "content", "posts");
+    const posts = metaData.map((item: Record<string, unknown>) => ({
+      urlPath: item.urlPath as string,
+      title: item.title as string,
+      summary: item.summary as string,
+      image: (item.image || "") as string,
+      tags: (item.tags || []) as string[],
+      series: (item.series || "") as string,
+      createdAt: item.createdAt as string,
+      modifiedAt: item.modifiedAt as string,
+      publish: (item.publish || "") as string,
+    }));
+
+    // 날짜 기준으로 정렬 (최신 글이 먼저 오도록)
+    return posts.sort(
+      (a, b) =>
+        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
+    );
+  } catch (error) {
+    console.error("Error loading posts metadata:", error);
+    return []; // 에러 시 빈 배열 반환
+  }
+}
+
+// 모든 포스트를 가져오는 함수 (하위 호환성 유지)
+export async function getPosts(): Promise<Post[]> {
+  try {
+    const postsMetadata = await getPostsMetadata();
+
     const posts = await Promise.all(
-      metaData.map(async (item: Record<string, unknown>) => {
+      postsMetadata.map(async (metadata) => {
         try {
-          const filePath = path.join(postsDir, `${item.urlPath}.md`);
-          await fs.access(filePath, fs.constants.F_OK); // 파일 존재 확인
-
-          const fileContent = await fs.readFile(filePath, "utf8");
-          const { content } = matter(fileContent);
-
+          const content = await getPostContent(metadata.urlPath);
           return {
-            urlPath: item.urlPath as string,
-            title: item.title as string,
-            summary: item.summary as string,
-            content,
-            plainContent: extractPlainTextFromMarkdown(content),
-            image: (item.image || "") as string,
-            tags: (item.tags || []) as string[],
-            series: (item.series || "") as string,
-            createdAt: item.createdAt as string,
-            modifiedAt: item.modifiedAt as string,
-            publish: (item.publish || "") as string,
+            ...metadata,
+            ...content,
           };
         } catch (error) {
           console.log(error);
-          console.warn(`Skipping invalid post: ${item.urlPath}`);
+          console.warn(`Skipping invalid post: ${metadata.urlPath}`);
           return null;
         }
       }),
     );
 
-    // 날짜 기준으로 정렬 (최신 글이 먼저 오도록)
-    const validPosts = posts.filter(Boolean) as Post[];
-    return validPosts.sort((a, b) => 
-      new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-    );
+    return posts.filter(Boolean) as Post[];
   } catch (error) {
     console.error("Error loading posts:", error);
     return []; // 에러 시 빈 배열 반환
+  }
+}
+
+// 포스트 콘텐츠만 가져오는 함수
+async function getPostContent(urlPath: string): Promise<PostContent> {
+  try {
+    // 먼저 최적화된 JSON 콘텐츠 파일이 있는지 확인
+    const contentJsonPath = path.join(
+      process.cwd(),
+      "public",
+      "post-contents",
+      `${urlPath}.json`,
+    );
+
+    try {
+      // JSON 콘텐츠 파일이 있으면 그것을 사용
+      await fs.access(contentJsonPath, fs.constants.F_OK);
+      const contentJson = await fs.readFile(contentJsonPath, "utf8");
+      return JSON.parse(contentJson);
+    } catch (error) {
+      console.log(error);
+      // JSON 파일이 없으면 원래 MD 파일을 사용 (하위 호환성)
+      const mdFilePath = path.join(
+        process.cwd(),
+        "content",
+        "posts",
+        `${urlPath}.md`,
+      );
+
+      const fileContent = await fs.readFile(mdFilePath, "utf8");
+
+      // 프론트매터 제거 및 내용만 추출
+      const content = fileContent.replace(/^---[\s\S]*?---\s*/, "");
+      return {
+        content,
+        plainContent: extractPlainTextFromMarkdown(content),
+      };
+    }
+  } catch (error) {
+    console.error(`Error loading post content for ${urlPath}:`, error);
+    throw error;
   }
 }
 
@@ -95,25 +151,14 @@ export async function getPost(slug: string[]): Promise<Post | null> {
 
     if (!postMeta) return null;
 
-    // 파일 존재 여부 확인
-    const filePath = path.join(
-      process.cwd(),
-      "content",
-      "posts",
-      `${postMeta.urlPath}.md`,
-    );
-
-    await fs.access(filePath, fs.constants.F_OK); // 파일 존재 확인
-
-    const fileContent = await fs.readFile(filePath, "utf8");
-    const { content } = matter(fileContent);
+    // 콘텐츠 가져오기
+    const content = await getPostContent(postMeta.urlPath as string);
 
     return {
       urlPath: postMeta.urlPath as string,
       title: postMeta.title as string,
       summary: postMeta.summary as string,
-      content,
-      plainContent: extractPlainTextFromMarkdown(content),
+      ...content,
       image: (postMeta.image || "") as string,
       tags: (postMeta.tags || []) as string[],
       series: (postMeta.series || "") as string,
@@ -127,24 +172,37 @@ export async function getPost(slug: string[]): Promise<Post | null> {
   }
 }
 
-// 이전 및 다음 게시물 가져오기
-export async function getAdjacentPosts(currentPost: Post): Promise<{ prev: Post | null; next: Post | null }> {
+// 이전 및 다음 게시물 가져오기 (최적화된 버전)
+export async function getAdjacentPosts(
+  currentPost: Post,
+): Promise<{ prev: Post | null; next: Post | null }> {
   try {
-    const allPosts = await getPosts();
-    
+    // 메타데이터만 먼저 가져와서 순서 파악
+    const allPostsMetadata = await getPostsMetadata();
+
     // 현재 게시물의 인덱스 찾기
-    const currentIndex = allPosts.findIndex(post => post.urlPath === currentPost.urlPath);
-    
+    const currentIndex = allPostsMetadata.findIndex(
+      (post) => post.urlPath === currentPost.urlPath,
+    );
+
     if (currentIndex === -1) {
       return { prev: null, next: null };
     }
-    
-    // 이전 글 (더 최신 글)
-    const prev = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
-    
-    // 다음 글 (더 오래된 글)
-    const next = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
-    
+
+    // 이전 글과 다음 글의 메타데이터
+    const prevMeta =
+      currentIndex > 0 ? allPostsMetadata[currentIndex - 1] : null;
+    const nextMeta =
+      currentIndex < allPostsMetadata.length - 1
+        ? allPostsMetadata[currentIndex + 1]
+        : null;
+
+    // 이전 글과 다음 글의 전체 콘텐츠 가져오기 (병렬로 처리)
+    const [prev, next] = await Promise.all([
+      prevMeta ? getPost(prevMeta.urlPath.split("/")) : Promise.resolve(null),
+      nextMeta ? getPost(nextMeta.urlPath.split("/")) : Promise.resolve(null),
+    ]);
+
     return { prev, next };
   } catch (error) {
     console.error("Error getting adjacent posts:", error);

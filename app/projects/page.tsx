@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import ProjectsPage from "./projects-component";
-import { getPosts } from "@/lib/posts";
+import { getPosts, getPostsMetadata } from "@/lib/posts";
 import { PostsProvider } from "@/contexts/posts-context";
 
 export const metadata: Metadata = {
@@ -10,10 +10,13 @@ export const metadata: Metadata = {
 
 export default async function Projects() {
   // 서버 컴포넌트에서 데이터를 가져와서 클라이언트 컴포넌트에 전달
-  const posts = await getPosts();
+  const [postsMetadata, posts] = await Promise.all([
+    getPostsMetadata(),
+    getPosts()
+  ]);
   
   return (
-    <PostsProvider posts={posts}>
+    <PostsProvider posts={posts} postsMetadata={postsMetadata}>
       <ProjectsPage />
     </PostsProvider>
   );

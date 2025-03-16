@@ -18,13 +18,29 @@ export function isVideoFile(url: string): boolean {
   if (!url) return false;
   const videoExtensions = ['.mp4', '.webm', '.ogg', '.mov', '.avi', '.mkv', '.flv', '.wmv'];
   const lowercaseUrl = url.toLowerCase();
+  
+  // URL에 확장자가 없는 경우(예: "/video/my-video")
+  if (!lowercaseUrl.includes('.')) {
+    // 비디오 관련 키워드 검사
+    const videoKeywords = ['video', 'mp4', 'webm'];
+    return videoKeywords.some(keyword => lowercaseUrl.includes(keyword));
+  }
+  
   return videoExtensions.some(ext => lowercaseUrl.endsWith(ext));
 }
 
 // 파일이 GIF인지 확인하는 함수
 export function isGifFile(url: string): boolean {
   if (!url) return false;
-  return url.toLowerCase().endsWith('.gif');
+  const lowercaseUrl = url.toLowerCase();
+  
+  // URL에 확장자가 없는 경우
+  if (!lowercaseUrl.includes('.')) {
+    // GIF 관련 키워드 검사
+    return lowercaseUrl.includes('gif');
+  }
+  
+  return lowercaseUrl.endsWith('.gif');
 }
 
 export function buildFolderStructure(posts: Post[]): FolderStructure[] {

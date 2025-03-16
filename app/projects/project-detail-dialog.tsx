@@ -9,14 +9,21 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, FileText, Globe, Download, Play } from "lucide-react";
+import {
+  ExternalLink,
+  Github,
+  FileText,
+  Globe,
+  Download,
+  Play,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Project } from "./types";
 import { usePosts } from "@/contexts/posts-context";
 import type { Post } from "@/lib/posts";
 import LiveDemoModal from "./live-demo-modal";
-import { isVideoFile, isGifFile } from "@/lib/utils";
+import { isVideoFile } from "@/lib/utils";
 
 interface ProjectDetailDialogProps {
   project: Project | null;
@@ -147,7 +154,9 @@ export default function ProjectDetailDialog({
           <DialogHeader className="pb-0 pr-4 sm:pr-8">
             <div className="flex justify-between items-center">
               <div className="flex flex-wrap items-center gap-2">
-                <DialogTitle className="text-xl sm:text-2xl break-all">{project.title}</DialogTitle>
+                <DialogTitle className="text-xl sm:text-2xl break-all">
+                  {project.title}
+                </DialogTitle>
                 {project.inDevelopment && (
                   <Badge className="bg-amber-500 text-white">개발 중</Badge>
                 )}
@@ -169,7 +178,8 @@ export default function ProjectDetailDialog({
         <div className="px-3 sm:px-6 pt-2 pb-0 overflow-y-auto flex-1 overscroll-contain">
           {/* 패딩 없음 - 스크롤 영역 */}
           <div className="overflow-hidden rounded-lg">
-            {(project.thumbnailType === "video" || (!project.thumbnailType && isVideoFile(project.thumbnail))) ? (
+            {project.thumbnailType === "video" ||
+            (!project.thumbnailType && isVideoFile(project.thumbnail)) ? (
               <div className="w-full aspect-video">
                 <video
                   src={project.thumbnail}
@@ -188,7 +198,9 @@ export default function ProjectDetailDialog({
               </div>
             ) : (
               <Image
-                src={project.thumbnail || "/postImg/project/default-project.png"}
+                src={
+                  project.thumbnail || "/postImg/project/default-project.png"
+                }
                 alt={project.title}
                 width={800}
                 height={450}
@@ -236,7 +248,9 @@ export default function ProjectDetailDialog({
               <h3 className="text-lg font-medium mb-2">어려웠던 점</h3>
               <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
                 {project.challenges.map((challenge, index) => (
-                  <li key={index} className="leading-relaxed">{challenge}</li>
+                  <li key={index} className="leading-relaxed">
+                    {challenge}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -313,9 +327,9 @@ export default function ProjectDetailDialog({
 
         {/* 푸터 영역 - 고정 */}
         <div className="border-t px-3 sm:px-6 py-2 sm:py-3 flex flex-wrap gap-1.5 sm:gap-3 bg-background mt-1">
-          {project.demoType && project.demoType !== 'none' && (
-            <Button 
-              variant="default" 
+          {project.demoType && project.demoType !== "none" && (
+            <Button
+              variant="default"
               size="sm"
               className="text-xs sm:text-sm py-1 h-7 sm:h-9"
               onClick={() => setLiveDemoOpen(true)}
@@ -330,8 +344,8 @@ export default function ProjectDetailDialog({
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="sm"
                 className="text-xs sm:text-sm py-1 h-7 sm:h-9"
               >
@@ -346,8 +360,8 @@ export default function ProjectDetailDialog({
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="sm"
                 className="text-xs sm:text-sm py-1 h-7 sm:h-9"
               >
@@ -362,8 +376,8 @@ export default function ProjectDetailDialog({
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="sm"
                 className="text-xs sm:text-sm py-1 h-7 sm:h-9"
               >
@@ -378,8 +392,8 @@ export default function ProjectDetailDialog({
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="sm"
                 className="text-xs sm:text-sm py-1 h-7 sm:h-9"
               >
@@ -390,15 +404,15 @@ export default function ProjectDetailDialog({
           )}
         </div>
       </DialogContent>
-      
+
       {/* 라이브 데모 모달 */}
-      <LiveDemoModal 
-        project={project} 
-        open={liveDemoOpen} 
+      <LiveDemoModal
+        project={project}
+        open={liveDemoOpen}
         onOpenChangeAction={(open) => {
           // 모달이 닫힐 때만 상태 업데이트
           setLiveDemoOpen(open);
-        }} 
+        }}
       />
     </Dialog>
   );

@@ -16,6 +16,7 @@ import { Github, ExternalLink, ArrowRight } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 
 import { Project } from "./types";
+import { isVideoFile, isGifFile } from "@/lib/utils";
 import ProjectDetailDialog from "./project-detail-dialog";
 
 // 기본 이미지 경로 (실제 이미지가 없을 경우 사용)
@@ -37,7 +38,7 @@ const ProjectCard = ({
           transition={{ duration: 0.3 }}
           className="relative h-full w-full"
         >
-          {project.thumbnailType === "video" ? (
+          {(project.thumbnailType === "video" || isVideoFile(project.thumbnail) || isGifFile(project.thumbnail)) ? (
             <div className="h-full w-full">
               <video
                 src={project.thumbnail}

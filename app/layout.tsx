@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import { Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { getPosts } from "@/lib/posts";
+import { getPosts, getPostsMetadata } from "@/lib/posts";
 import Header from "../components/header";
 import { PostsProvider } from "@/contexts/posts-context";
 import Footer from "@/components/footer";
@@ -51,7 +51,11 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const posts = await getPosts();
+  // 메타데이터와 기본 포스트 콘텐츠를 병렬로 가져옴
+  const [postsMetadata, posts] = await Promise.all([
+    getPostsMetadata(),
+    getPosts()
+  ]);
 
   return (
     <html lang="ko" suppressHydrationWarning>
@@ -64,7 +68,7 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <PostsProvider posts={posts}>
+          <PostsProvider posts={posts} postsMetadata={postsMetadata}>
             <div className="min-h-screen flex flex-col motion-reduce">
               <Header />
               <main className="flex flex-col xl:flex-row mt-12 sm:mt-14 md:mt-16 2xl:container 2xl:mx-auto md:px-5">

@@ -142,7 +142,10 @@ export default function LiveDemoModal({
                 />
               )}
 
-            {(project.demoType === "video" || (!project.demoType && project.demoUrl && isVideoFile(project.demoUrl))) && (
+            {(project.demoType === "video" ||
+              (!project.demoType &&
+                project.demoUrl &&
+                isVideoFile(project.demoUrl))) && (
               <div className="w-full h-full flex items-center justify-center bg-black/5">
                 {project.demoVideoUrl ? (
                   // iframe으로 외부 비디오(YouTube 등) 표시
@@ -195,18 +198,54 @@ export default function LiveDemoModal({
 
                       {project.demoImages &&
                         project.demoImages[currentImageIndex] &&
-                        (project.demoImages[currentImageIndex]?.isVideo || 
-                          isVideoFile(project.demoImages[currentImageIndex]?.url || "") ||
-                          isGifFile(project.demoImages[currentImageIndex]?.url || "") ? (
+                        // GIF는 이미지로 처리, 비디오는 비디오 플레이어로 처리
+                        (isGifFile(
+                          project.demoImages[currentImageIndex]?.url || "",
+                        ) ? (
+                          <div className="relative w-full h-full flex items-center justify-center bg-black/5">
+                            <Image
+                              src={
+                                project.demoImages[currentImageIndex]?.url || ""
+                              }
+                              alt={`${project.title} GIF ${currentImageIndex + 1}`}
+                              className="max-w-full max-h-full object-contain"
+                              fill
+                              onLoad={() => {
+                                setIsImageLoading(false);
+                                setLoadedImages((prev) => ({
+                                  ...prev,
+                                  [currentImageIndex]: true,
+                                }));
+                              }}
+                              onError={() => {
+                                console.error("GIF 로딩 오류");
+                                setIsImageLoading(false);
+                              }}
+                              key={`gif-${project.demoImages[currentImageIndex]?.url}`}
+                            />
+                          </div>
+                        ) : project.demoImages[currentImageIndex]?.isVideo ||
+                          isVideoFile(
+                            project.demoImages[currentImageIndex]?.url || "",
+                          ) ? (
                           <div className="relative w-full h-full flex items-center justify-center bg-black/5">
                             <video
                               src={
                                 project.demoImages[currentImageIndex]?.url || ""
                               }
                               className="max-w-full max-h-full object-contain"
-                              autoPlay={project.demoImages[currentImageIndex]?.autoplay !== false}
-                              loop={project.demoImages[currentImageIndex]?.loop !== false}
-                              muted={project.demoImages[currentImageIndex]?.muted !== false}
+                              autoPlay={
+                                project.demoImages[currentImageIndex]
+                                  ?.autoplay !== false
+                              }
+                              loop={
+                                project.demoImages[currentImageIndex]?.loop !==
+                                false
+                              }
+                              muted={
+                                project.demoImages[currentImageIndex]?.muted !==
+                                false
+                              }
                               playsInline
                               preload="auto"
                               controls={false}

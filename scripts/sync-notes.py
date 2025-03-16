@@ -63,6 +63,33 @@ def validate_frontmatter(file_path: Path) -> Optional[dict]:
         return None
 
 
+# 마크다운에서 일반 텍스트 추출 함수
+def extract_plain_text_from_markdown(markdown: str) -> str:
+    # 이미지 제거
+    text = re.sub(r"!\[[^\]]*\]\([^)]+\)", "", markdown)
+    # 헤딩 제거
+    text = re.sub(r"^#+\s+(.*)$", "", text, flags=re.MULTILINE)
+    # 링크 텍스트만 유지
+    text = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", text)
+    # 코드 블록 제거
+    text = re.sub(r"```[\s\S]*?```", "", text)
+    # 인라인 코드 텍스트만 유지
+    text = re.sub(r"`([^`]+)`", r"\1", text)
+    # 굵은 글씨/이탤릭 텍스트만 유지
+    text = re.sub(r"(\*\*|\*)(.*?)\1", r"\2", text)
+    # 리스트 기호 제거
+    text = re.sub(r"^[ \t\-*]+(.*)$", r"\1", text, flags=re.MULTILINE)
+    # 위키링크 텍스트만 유지
+    text = re.sub(
+        r"\[\[([^|]+)(?:\|([^\]]+))?\]\]",
+        lambda m: m.group(2) if m.group(2) else m.group(1),
+        text,
+    )
+    # 빈 줄 제거
+    text = re.sub(r"\n\s*\n", "\n", text)
+    return text.strip()
+
+
 # 링크된 파일 추출
 def extract_linked_files(content: str) -> List[str]:
     return re.findall(r"\[\[([^|\]]+\.md)(?:\|[^\]]+)?\]\]", content)
@@ -190,7 +217,11 @@ def sync_notes():
                         f.write("\n")
             f.write("}\n")
 
-        # 메타데이터 생성
+        # 메타데이터 생성 및 콘텐츠 파일 생성
+        # 콘텐츠 디렉토리 생성
+        content_dir = Path(tmp_post_dir) / "contents"
+        content_dir.mkdir(parents=True, exist_ok=True)
+
         with open(meta_data_path, "w", encoding="utf-8") as f:
             f.write("[\n")
             for i, (orig_path, publish_path) in enumerate(publish_map.items()):
@@ -198,6 +229,7 @@ def sync_notes():
                 if md_file.exists():
                     frontmatter = validate_frontmatter(md_file)
                     if frontmatter:
+                        # 메타데이터 정보 추출
                         title = md_file.stem
                         summary = frontmatter.get("summary", "")
                         image = frontmatter.get("image", "")
@@ -208,6 +240,33 @@ def sync_notes():
                         series = frontmatter.get("series", "")
                         publish = frontmatter.get("publish", "")
 
+                        # 콘텐츠 파일 저장 (별도 JSON 파일로)
+                        content_file_path = content_dir / f"{publish_path}.json"
+                        content_file_path.parent.mkdir(parents=True, exist_ok=True)
+
+                        # 원본 파일 내용 읽어서 콘텐츠 추출
+                        file_content = md_file.read_text(encoding="utf-8")
+                        content = re.search(
+                            r"^---\n.*?\n---\n(.*)", file_content, re.DOTALL
+                        )
+                        content_text = content.group(1) if content else ""
+
+                        with open(
+                            content_file_path, "w", encoding="utf-8"
+                        ) as content_file:
+                            json.dump(
+                                {
+                                    "content": content_text,
+                                    "plainContent": extract_plain_text_from_markdown(
+                                        content_text
+                                    ),
+                                },
+                                content_file,
+                                ensure_ascii=False,
+                                indent=2,
+                            )
+
+                        # 메타데이터 파일에는 콘텐츠 없이 메타데이터만 포함
                         f.write(f'''  {{
                             "urlPath": "{publish_path}",
                             "title": "{title}",
@@ -231,6 +290,12 @@ def sync_notes():
         os.makedirs(config["img_base"], exist_ok=True)
         os.makedirs(os.path.dirname(config["link_map"]), exist_ok=True)
 
+        # 콘텐츠 디렉토리 생성
+        content_json_dir = os.path.join(
+            os.path.dirname(config["meta_data"]), "post-contents"
+        )
+        os.makedirs(content_json_dir, exist_ok=True)
+
         # rsync 명령어 실행
         subprocess.run(
             [
@@ -239,6 +304,7 @@ def sync_notes():
                 "--delete",
                 "--exclude=link-map.json",
                 "--exclude=meta-data.json",
+                "--exclude=contents",
                 f"{tmp_post_dir}/",
                 config["post_base"],
             ]
@@ -246,6 +312,18 @@ def sync_notes():
         subprocess.run(
             ["rsync", "-a", "--delete", f"{tmp_img_dir}/", config["img_base"]]
         )
+
+        # 콘텐츠 JSON 파일 동기화
+        if os.path.exists(os.path.join(tmp_post_dir, "contents")):
+            subprocess.run(
+                [
+                    "rsync",
+                    "-a",
+                    "--delete",
+                    f"{tmp_post_dir}/contents/",
+                    content_json_dir,
+                ]
+            )
 
         # 매핑 파일 복사
         shutil.copy(link_map_path, config["link_map"])
@@ -258,3 +336,4 @@ def sync_notes():
 
 if __name__ == "__main__":
     sync_notes()
+
