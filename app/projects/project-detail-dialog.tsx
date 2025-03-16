@@ -189,9 +189,24 @@ export default function ProjectDetailDialog({
                   autoPlay={project.thumbnailOptions?.autoplay !== false}
                   loop={project.thumbnailOptions?.loop !== false}
                   muted={project.thumbnailOptions?.muted !== false}
+                  ref={(videoEl) => {
+                    if (videoEl) {
+                      // 재생 속도 설정
+                      const rate = project.thumbnailOptions && 
+                        'playbackRate' in project.thumbnailOptions &&
+                        typeof project.thumbnailOptions.playbackRate === 'number'
+                          ? project.thumbnailOptions.playbackRate 
+                          : undefined;
+                      if (rate) videoEl.playbackRate = rate;
+                    }
+                  }}
                   playsInline
                   preload="auto"
-                  controls={false}
+                  controls={Boolean(
+                    project.thumbnailOptions && 
+                    'showControls' in project.thumbnailOptions && 
+                    project.thumbnailOptions.showControls === true
+                  )}
                   disablePictureInPicture={true}
                   onError={(e) => console.error("비디오 로딩 오류:", e)}
                 />

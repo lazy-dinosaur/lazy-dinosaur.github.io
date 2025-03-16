@@ -246,9 +246,25 @@ export default function LiveDemoModal({
                                 project.demoImages[currentImageIndex]?.muted !==
                                 false
                               }
+                              ref={(videoEl) => {
+                                if (videoEl) {
+                                  // 재생 속도 설정
+                                  const currentImage = project.demoImages?.[currentImageIndex];
+                                  const rate = currentImage && 
+                                    'playbackRate' in currentImage &&
+                                    typeof currentImage.playbackRate === 'number'
+                                      ? currentImage.playbackRate 
+                                      : undefined;
+                                  if (rate) videoEl.playbackRate = rate;
+                                }
+                              }}
                               playsInline
                               preload="auto"
-                              controls={false}
+                              controls={Boolean(
+                                project.demoImages?.[currentImageIndex] && 
+                                'showControls' in project.demoImages[currentImageIndex] && 
+                                project.demoImages[currentImageIndex].showControls === true
+                              )}
                               disablePictureInPicture={true}
                               onLoadedData={() => {
                                 // 비디오가 로드되면 로딩 상태 해제

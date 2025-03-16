@@ -11,7 +11,8 @@
       "TypeScript",
       "Tailwind CSS",
       "Framer Motion",
-      "Shadcn UI"
+      "Shadcn UI",
+      "EsHangul"
     ],
     "githubUrl": "https://github.com/lazy-dinosaur/lazy-dinosaur.github.io",
     "serviceUrl": "https://lazy-dinosaur.github.io/",
@@ -24,7 +25,8 @@
       "다크 모드 지원 및 테마 전환 기능",
       "반응형 레이아웃으로 모든 디바이스 지원",
       "목차 자동 생성 및 스크롤 위치 추적",
-      "코드 구문 강조 및 복사 기능"
+      "코드 구문 강조 및 복사 기능",
+      "한글 검색 기능 및 하이라이팅 기능"
     ],
     "lessons": "이 프로젝트를 통해 Next.js의 App Router 구조와 서버 컴포넌트 활용법을 배웠습니다. 또한 마크다운 파일 파싱과 렌더링 최적화, 그리고 애니메이션 처리에 관한 경험을 쌓을 수 있었습니다.",
     "challenges": [
@@ -38,8 +40,17 @@
     "demoType": "images",
     "demoImages": [
       {
-        "url": "/projects/my-blog/my-blog.png",
-        "description": "My Blog"
+        "url": "/projects/my-blog/blog-post-example.mp4",
+        "description": "Neovim과의 통합: Neovim 을 통해 노트를 작성하면서 커맨드를 통해 블로그를 바로 포스팅 할 수 있습니다.",
+        "playbackRate": 2.5
+      },
+      {
+        "url": "/projects/my-blog/blog-search-example.mp4",
+        "description": "한글 검색기능: 전체 노트의 타이틀, 태그, 본문을 검색하며 한글의 자모음을 분리하여 검색해 부자연스러운 결과를 없앴습니다."
+      },
+      {
+        "url": "/projects/my-blog/blog-toc-example.mp4",
+        "description": "목차 생성: 마크다운을 읽으면서 목차를 생성하고 스크롤하여 화면에 보이는 문서상의 위치를 하이라이팅 하며 클릭시 해당 위치로 이동합니다."
       }
     ],
     "futurePlans": [

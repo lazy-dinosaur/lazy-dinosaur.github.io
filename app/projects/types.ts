@@ -9,6 +9,8 @@ export interface DemoImage {
   autoplay?: boolean; // 자동 재생 여부
   loop?: boolean; // 반복 여부
   muted?: boolean; // 음소거 여부
+  playbackRate?: number; // 재생 속도 (기본값: 1.0)
+  showControls?: boolean; // 비디오 컨트롤 UI 표시 여부
 }
 
 export interface Project {
@@ -22,6 +24,8 @@ export interface Project {
     autoplay?: boolean;
     loop?: boolean;
     muted?: boolean;
+    playbackRate?: number; // 재생 속도 (기본값: 1.0)
+    showControls?: boolean; // 비디오 컨트롤 UI 표시 여부
   };
   tags: string[];
   technologies: string[];

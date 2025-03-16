@@ -38,7 +38,9 @@ const ProjectCard = ({
           transition={{ duration: 0.3 }}
           className="relative h-full w-full"
         >
-          {(project.thumbnailType === "video" || isVideoFile(project.thumbnail) || isGifFile(project.thumbnail)) ? (
+          {project.thumbnailType === "video" ||
+          isVideoFile(project.thumbnail) ||
+          isGifFile(project.thumbnail) ? (
             <div className="h-full w-full">
               <video
                 src={project.thumbnail}
@@ -48,9 +50,25 @@ const ProjectCard = ({
                 autoPlay={true}
                 loop={true}
                 muted={true}
+                ref={(videoEl) => {
+                  if (videoEl) {
+                    // 재생 속도 설정
+                    // 명시적으로 숫자 타입으로 변환하여 타입 오류 방지
+                    const rate = project.thumbnailOptions && 
+                      'playbackRate' in project.thumbnailOptions &&
+                      typeof project.thumbnailOptions.playbackRate === 'number' 
+                        ? project.thumbnailOptions.playbackRate 
+                        : undefined;
+                    if (rate) videoEl.playbackRate = rate;
+                  }
+                }}
                 playsInline
                 preload="auto"
-                controls={false}
+                controls={Boolean(
+                  project.thumbnailOptions && 
+                  'showControls' in project.thumbnailOptions && 
+                  project.thumbnailOptions.showControls === true
+                )}
                 disablePictureInPicture={true}
                 onError={(e) => console.error("썸네일 비디오 로딩 오류:", e)}
                 key={`thumbnail-video-${project.id}`}
