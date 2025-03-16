@@ -18,7 +18,7 @@
                             "tags": ["blog", "dev", "project"],
                             "series": "나의 맞춤 블로그 만들기",
                             "createdAt": "2025-03-08 17:12:17",
-                            "modifiedAt": "2025-03-13 15:00:05",
+                            "modifiedAt": "2025-03-16 13:15:51",
                             "publish": "project/blog"
                         },
   {
@@ -29,7 +29,7 @@
                             "tags": ["ai", "tool", "aider"],
                             "series": "",
                             "createdAt": "2025-03-10 08:21:08",
-                            "modifiedAt": "2025-03-16 13:14:21",
+                            "modifiedAt": "2025-03-16 13:16:45",
                             "publish": "resource/ai"
                         }
 ]
