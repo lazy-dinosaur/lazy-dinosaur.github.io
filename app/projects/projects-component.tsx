@@ -31,151 +31,170 @@ const ProjectCard = ({
   onClick: () => void;
 }) => {
   return (
-    <div className="group overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-all duration-300 hover:shadow-md h-full flex flex-col">
-      <div className="aspect-video w-full overflow-hidden">
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.3 }}
-          className="relative h-full w-full"
-        >
-          {project.thumbnailType === "video" ||
-          isVideoFile(project.thumbnail) ||
-          isGifFile(project.thumbnail) ? (
-            <div className="h-full w-full">
-              <video
-                src={project.thumbnail}
+    <motion.div
+      className="h-full w-full"
+      whileHover={{
+        y: -5,
+        boxShadow: "0 12px 24px rgba(0,0,0,0.1)",
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 400,
+        damping: 20,
+      }}
+    >
+      <div className="group overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-all duration-300 hover:shadow-md h-full flex flex-col">
+        <div className="aspect-video w-full overflow-hidden">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+            className="relative h-full w-full"
+          >
+            {project.thumbnailType === "video" ||
+            isVideoFile(project.thumbnail) ||
+            isGifFile(project.thumbnail) ? (
+              <div className="h-full w-full">
+                <video
+                  src={project.thumbnail}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:opacity-90"
+                  width={600}
+                  height={340}
+                  autoPlay={true}
+                  loop={true}
+                  muted={true}
+                  ref={(videoEl) => {
+                    if (videoEl) {
+                      // 재생 속도 설정
+                      // 명시적으로 숫자 타입으로 변환하여 타입 오류 방지
+                      const rate =
+                        project.thumbnailOptions &&
+                        "playbackRate" in project.thumbnailOptions &&
+                        typeof project.thumbnailOptions.playbackRate ===
+                          "number"
+                          ? project.thumbnailOptions.playbackRate
+                          : undefined;
+                      if (rate) videoEl.playbackRate = rate;
+                    }
+                  }}
+                  playsInline
+                  preload="auto"
+                  controls={Boolean(
+                    project.thumbnailOptions &&
+                      "showControls" in project.thumbnailOptions &&
+                      project.thumbnailOptions.showControls === true,
+                  )}
+                  disablePictureInPicture={true}
+                  onError={(e) => console.error("썸네일 비디오 로딩 오류:", e)}
+                  key={`thumbnail-video-${project.id}`}
+                />
+              </div>
+            ) : (
+              <Image
+                src={project.thumbnail || DEFAULT_IMAGE}
+                alt={project.title}
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:opacity-90"
                 width={600}
                 height={340}
-                autoPlay={true}
-                loop={true}
-                muted={true}
-                ref={(videoEl) => {
-                  if (videoEl) {
-                    // 재생 속도 설정
-                    // 명시적으로 숫자 타입으로 변환하여 타입 오류 방지
-                    const rate = project.thumbnailOptions && 
-                      'playbackRate' in project.thumbnailOptions &&
-                      typeof project.thumbnailOptions.playbackRate === 'number' 
-                        ? project.thumbnailOptions.playbackRate 
-                        : undefined;
-                    if (rate) videoEl.playbackRate = rate;
-                  }
-                }}
-                playsInline
-                preload="auto"
-                controls={Boolean(
-                  project.thumbnailOptions && 
-                  'showControls' in project.thumbnailOptions && 
-                  project.thumbnailOptions.showControls === true
-                )}
-                disablePictureInPicture={true}
-                onError={(e) => console.error("썸네일 비디오 로딩 오류:", e)}
-                key={`thumbnail-video-${project.id}`}
               />
-            </div>
-          ) : (
-            <Image
-              src={project.thumbnail || DEFAULT_IMAGE}
-              alt={project.title}
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:opacity-90"
-              width={600}
-              height={340}
-            />
-          )}
-          <div className="absolute right-2 top-2 flex flex-col gap-1">
-            {project.featured && (
-              <Badge
-                className="bg-primary text-primary-foreground"
-                variant="default"
-              >
-                주요 프로젝트
-              </Badge>
             )}
-            {project.inDevelopment && (
-              <Badge className="bg-amber-500 text-white" variant="default">
-                개발 중
-              </Badge>
-            )}
-          </div>
-
-          {project.tags && project.tags.length > 0 && (
-            <div className="absolute bottom-0 left-0 right-0 flex flex-wrap gap-1 p-2 bg-gradient-to-t from-slate-900/30 to-transparent dark:from-black/60">
-              {project.tags.map((tag, index) => (
+            <div className="absolute right-2 top-2 flex flex-col gap-1">
+              {project.featured && (
                 <Badge
-                  key={`img-tag-${index}`}
-                  className="text-xs bg-primary/90 text-primary-foreground border-none shadow-sm hover:bg-primary/100 transition-colors"
+                  className="bg-primary text-primary-foreground"
+                  variant="default"
                 >
-                  {tag}
+                  주요 프로젝트
+                </Badge>
+              )}
+              {project.inDevelopment && (
+                <Badge className="bg-amber-500 text-white" variant="default">
+                  개발 중
+                </Badge>
+              )}
+            </div>
+
+            {project.tags && project.tags.length > 0 && (
+              <div className="absolute bottom-0 left-0 right-0 flex flex-wrap gap-1 p-2 bg-gradient-to-t from-slate-900/30 to-transparent dark:from-black/60">
+                {project.tags.map((tag, index) => (
+                  <Badge
+                    key={`img-tag-${index}`}
+                    className="text-xs bg-primary/90 text-primary-foreground border-none shadow-sm hover:bg-primary/100 transition-colors"
+                  >
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            )}
+          </motion.div>
+        </div>
+        <div className="p-4 sm:p-6 flex flex-col flex-grow">
+          <h2 className="text-xl font-bold line-clamp-1 group-hover:text-primary transition-colors">
+            {project.title}
+          </h2>
+
+          <p className="mt-2 text-muted-foreground text-sm line-clamp-2">
+            {project.description}
+          </p>
+
+          <div className="mt-4 flex flex-wrap gap-1">
+            {project.technologies &&
+              project.technologies.slice(0, 4).map((tech) => (
+                <Badge variant="secondary" key={tech} className="text-xs">
+                  {tech}
                 </Badge>
               ))}
-            </div>
-          )}
-        </motion.div>
-      </div>
-
-      <div className="p-4 sm:p-6 flex flex-col flex-grow">
-        <h2 className="text-xl font-bold line-clamp-1 group-hover:text-primary transition-colors">
-          {project.title}
-        </h2>
-
-        <p className="mt-2 text-muted-foreground text-sm line-clamp-2">
-          {project.description}
-        </p>
-
-        <div className="mt-4 flex flex-wrap gap-1">
-          {project.technologies &&
-            project.technologies.slice(0, 4).map((tech) => (
-              <Badge variant="secondary" key={tech} className="text-xs">
-                {tech}
+            {project.technologies && project.technologies.length > 4 && (
+              <Badge variant="outline" className="text-xs">
+                +{project.technologies.length - 4}
               </Badge>
-            ))}
-          {project.technologies && project.technologies.length > 4 && (
-            <Badge variant="outline" className="text-xs">
-              +{project.technologies.length - 4}
-            </Badge>
-          )}
-        </div>
-
-        <div className="mt-auto pt-4 flex justify-between items-center">
-          <div className="flex space-x-2">
-            {project.githubUrl && (
-              <Link
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button size="icon" variant="outline" title="GitHub 저장소">
-                  <Github className="h-4 w-4" />
-                </Button>
-              </Link>
-            )}
-            {(project.liveSiteUrl || project.serviceUrl) && (
-              <Link
-                href={project.liveSiteUrl || project.serviceUrl || ""}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button size="icon" variant="outline" title="서비스 링크">
-                  <ExternalLink className="h-4 w-4" />
-                </Button>
-              </Link>
             )}
           </div>
 
-          <Button variant="ghost" className="group" size="sm" onClick={onClick}>
-            자세히 보기
-            <motion.span
-              className="inline-block ml-1"
-              whileHover={{ x: 3 }}
-              transition={{ duration: 0.2 }}
+          <div className="mt-auto pt-4 flex justify-between items-center">
+            <div className="flex space-x-2">
+              {project.githubUrl && (
+                <Link
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button size="icon" variant="outline" title="GitHub 저장소">
+                    <Github className="h-4 w-4" />
+                  </Button>
+                </Link>
+              )}
+              {(project.liveSiteUrl || project.serviceUrl) && (
+                <Link
+                  href={project.liveSiteUrl || project.serviceUrl || ""}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button size="icon" variant="outline" title="서비스 링크">
+                    <ExternalLink className="h-4 w-4" />
+                  </Button>
+                </Link>
+              )}
+            </div>
+
+            <Button
+              variant="ghost"
+              className="group"
+              size="sm"
+              onClick={onClick}
             >
-              <ArrowRight className="h-4 w-4" />
-            </motion.span>
-          </Button>
+              자세히 보기
+              <motion.span
+                className="inline-block ml-1"
+                whileHover={{ x: 3 }}
+                transition={{ duration: 0.2 }}
+              >
+                <ArrowRight className="h-4 w-4" />
+              </motion.span>
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
