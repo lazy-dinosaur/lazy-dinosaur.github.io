@@ -13,6 +13,20 @@ export interface FolderStructure {
   urlPath?: string;
 }
 
+// 파일이 비디오인지 확인하는 함수
+export function isVideoFile(url: string): boolean {
+  if (!url) return false;
+  const videoExtensions = ['.mp4', '.webm', '.ogg', '.mov', '.avi', '.mkv', '.flv', '.wmv'];
+  const lowercaseUrl = url.toLowerCase();
+  return videoExtensions.some(ext => lowercaseUrl.endsWith(ext));
+}
+
+// 파일이 GIF인지 확인하는 함수
+export function isGifFile(url: string): boolean {
+  if (!url) return false;
+  return url.toLowerCase().endsWith('.gif');
+}
+
 export function buildFolderStructure(posts: Post[]): FolderStructure[] {
   const structure: FolderStructure[] = [];
 

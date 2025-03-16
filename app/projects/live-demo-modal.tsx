@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Project } from "./types";
+import { isVideoFile, isGifFile } from "@/lib/utils";
 
 interface LiveDemoModalProps {
   project: Project | null;
@@ -141,7 +142,7 @@ export default function LiveDemoModal({
                 />
               )}
 
-            {project.demoType === "video" && (
+            {(project.demoType === "video" || (!project.demoType && project.demoUrl && isVideoFile(project.demoUrl))) && (
               <div className="w-full h-full flex items-center justify-center bg-black/5">
                 {project.demoVideoUrl ? (
                   // iframe으로 외부 비디오(YouTube 등) 표시
@@ -158,9 +159,9 @@ export default function LiveDemoModal({
                   <video
                     src={project.demoUrl}
                     className="max-w-full max-h-full object-contain"
-                    autoPlay
-                    loop
-                    muted
+                    autoPlay={true}
+                    loop={true}
+                    muted={true}
                     playsInline
                     preload="auto"
                     controls={false}
@@ -194,16 +195,18 @@ export default function LiveDemoModal({
 
                       {project.demoImages &&
                         project.demoImages[currentImageIndex] &&
-                        (project.demoImages[currentImageIndex]?.isVideo ? (
+                        (project.demoImages[currentImageIndex]?.isVideo || 
+                          isVideoFile(project.demoImages[currentImageIndex]?.url || "") ||
+                          isGifFile(project.demoImages[currentImageIndex]?.url || "") ? (
                           <div className="relative w-full h-full flex items-center justify-center bg-black/5">
                             <video
                               src={
                                 project.demoImages[currentImageIndex]?.url || ""
                               }
                               className="max-w-full max-h-full object-contain"
-                              autoPlay={true}
-                              loop={true}
-                              muted={true}
+                              autoPlay={project.demoImages[currentImageIndex]?.autoplay !== false}
+                              loop={project.demoImages[currentImageIndex]?.loop !== false}
+                              muted={project.demoImages[currentImageIndex]?.muted !== false}
                               playsInline
                               preload="auto"
                               controls={false}

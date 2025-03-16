@@ -16,6 +16,7 @@ import { Project } from "./types";
 import { usePosts } from "@/contexts/posts-context";
 import type { Post } from "@/lib/posts";
 import LiveDemoModal from "./live-demo-modal";
+import { isVideoFile, isGifFile } from "@/lib/utils";
 
 interface ProjectDetailDialogProps {
   project: Project | null;
@@ -168,16 +169,16 @@ export default function ProjectDetailDialog({
         <div className="px-3 sm:px-6 pt-2 pb-0 overflow-y-auto flex-1 overscroll-contain">
           {/* 패딩 없음 - 스크롤 영역 */}
           <div className="overflow-hidden rounded-lg">
-            {project.thumbnailType === "video" ? (
+            {(project.thumbnailType === "video" || (!project.thumbnailType && isVideoFile(project.thumbnail))) ? (
               <div className="w-full aspect-video">
                 <video
                   src={project.thumbnail}
                   className="w-full h-full object-cover"
                   width={800}
                   height={450}
-                  autoPlay={true}
-                  loop={true}
-                  muted={true}
+                  autoPlay={project.thumbnailOptions?.autoplay !== false}
+                  loop={project.thumbnailOptions?.loop !== false}
+                  muted={project.thumbnailOptions?.muted !== false}
                   playsInline
                   preload="auto"
                   controls={false}

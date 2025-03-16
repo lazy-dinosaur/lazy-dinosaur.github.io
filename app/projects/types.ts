@@ -5,10 +5,7 @@ export type ProjectType = "project" | "study"; // 프로젝트 유형: 실제 �
 export interface DemoImage {
   url: string;
   description?: string;
-  isVideo?: boolean; // 비디오 여부
-  autoplay?: boolean; // 자동 재생 여부
-  loop?: boolean; // 반복 재생 여부
-  muted?: boolean; // 음소거 여부
+  // isVideo 속성은 더 이상 필요하지 않음 - 확장자로 자동 감지
 }
 
 export interface Project {
@@ -17,12 +14,8 @@ export interface Project {
   title: string;
   description: string;
   thumbnail: string; // 이미지 URL 또는 비디오 URL
-  thumbnailType?: "image" | "video"; // 썸네일 타입 (이미지 또는 비디오)
-  thumbnailOptions?: { // 비디오 썸네일 옵션
-    autoplay?: boolean;
-    loop?: boolean;
-    muted?: boolean;
-  };
+  // thumbnailType은 필요 없음 - 확장자로 자동 감지됨
+  // 비디오는 항상 autoplay=true, loop=true, muted=true로 설정됨
   tags: string[];
   technologies: string[];
   githubUrl?: string;
