@@ -5,6 +5,10 @@ export type ProjectType = "project" | "study"; // 프로젝트 유형: 실제 �
 export interface DemoImage {
   url: string;
   description?: string;
+  isVideo?: boolean; // 비디오 여부
+  autoplay?: boolean; // 자동 재생 여부
+  loop?: boolean; // 반복 재생 여부
+  muted?: boolean; // 음소거 여부
 }
 
 export interface Project {
@@ -12,7 +16,13 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  thumbnail: string;
+  thumbnail: string; // 이미지 URL 또는 비디오 URL
+  thumbnailType?: "image" | "video"; // 썸네일 타입 (이미지 또는 비디오)
+  thumbnailOptions?: { // 비디오 썸네일 옵션
+    autoplay?: boolean;
+    loop?: boolean;
+    muted?: boolean;
+  };
   tags: string[];
   technologies: string[];
   githubUrl?: string;

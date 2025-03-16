@@ -37,13 +37,33 @@ const ProjectCard = ({
           transition={{ duration: 0.3 }}
           className="relative h-full w-full"
         >
-          <Image
-            src={project.thumbnail || DEFAULT_IMAGE}
-            alt={project.title}
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:opacity-90"
-            width={600}
-            height={340}
-          />
+          {project.thumbnailType === "video" ? (
+            <div className="h-full w-full">
+              <video
+                src={project.thumbnail}
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:opacity-90"
+                width={600}
+                height={340}
+                autoPlay={true}
+                loop={true}
+                muted={true}
+                playsInline
+                preload="auto"
+                controls={false}
+                disablePictureInPicture={true}
+                onError={(e) => console.error("썸네일 비디오 로딩 오류:", e)}
+                key={`thumbnail-video-${project.id}`}
+              />
+            </div>
+          ) : (
+            <Image
+              src={project.thumbnail || DEFAULT_IMAGE}
+              alt={project.title}
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:opacity-90"
+              width={600}
+              height={340}
+            />
+          )}
           <div className="absolute right-2 top-2 flex flex-col gap-1">
             {project.featured && (
               <Badge

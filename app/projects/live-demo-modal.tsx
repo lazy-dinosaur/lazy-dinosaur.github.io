@@ -141,16 +141,34 @@ export default function LiveDemoModal({
                 />
               )}
 
-            {project.demoType === "video" && project.demoVideoUrl && (
-              <div className="w-full h-full flex items-center justify-center bg-black">
-                <iframe
-                  className="w-full h-full"
-                  src={project.demoVideoUrl}
-                  title={`${project.title} 데모 비디오`}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+            {project.demoType === "video" && (
+              <div className="w-full h-full flex items-center justify-center bg-black/5">
+                {project.demoVideoUrl ? (
+                  // iframe으로 외부 비디오(YouTube 등) 표시
+                  <iframe
+                    className="w-full h-full"
+                    src={project.demoVideoUrl}
+                    title={`${project.title} 데모 비디오`}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                ) : (
+                  // 직접 비디오 파일을 표시하고 자동 재생, 루프 설정
+                  <video
+                    src={project.demoUrl}
+                    className="max-w-full max-h-full object-contain"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    controls={false}
+                    disablePictureInPicture={true}
+                    onError={(e) => console.error("비디오 로딩 오류:", e)}
+                    key={`video-demo-${project.id}`}
+                  ></video>
+                )}
               </div>
             )}
 
@@ -175,7 +193,37 @@ export default function LiveDemoModal({
                       )}
 
                       {project.demoImages &&
-                        project.demoImages[currentImageIndex] && (
+                        project.demoImages[currentImageIndex] &&
+                        (project.demoImages[currentImageIndex]?.isVideo ? (
+                          <div className="relative w-full h-full flex items-center justify-center bg-black/5">
+                            <video
+                              src={
+                                project.demoImages[currentImageIndex]?.url || ""
+                              }
+                              className="max-w-full max-h-full object-contain"
+                              autoPlay={true}
+                              loop={true}
+                              muted={true}
+                              playsInline
+                              preload="auto"
+                              controls={false}
+                              disablePictureInPicture={true}
+                              onLoadedData={() => {
+                                // 비디오가 로드되면 로딩 상태 해제
+                                setIsImageLoading(false);
+                                setLoadedImages((prev) => ({
+                                  ...prev,
+                                  [currentImageIndex]: true,
+                                }));
+                              }}
+                              onError={(e) => {
+                                console.error("비디오 로딩 오류:", e);
+                                setIsImageLoading(false);
+                              }}
+                              key={`video-${project.demoImages[currentImageIndex]?.url}`}
+                            />
+                          </div>
+                        ) : (
                           <Image
                             src={
                               project.demoImages[currentImageIndex]?.url || ""
@@ -193,7 +241,7 @@ export default function LiveDemoModal({
                               }));
                             }}
                           />
-                        )}
+                        ))}
 
                       {/* 이미지 설명 - 페이지네이션 불릿보다 위에 배치 */}
                       {project.demoImages &&

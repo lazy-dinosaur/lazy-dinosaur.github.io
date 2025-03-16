@@ -168,14 +168,33 @@ export default function ProjectDetailDialog({
         <div className="px-3 sm:px-6 pt-2 pb-0 overflow-y-auto flex-1 overscroll-contain">
           {/* 패딩 없음 - 스크롤 영역 */}
           <div className="overflow-hidden rounded-lg">
-            <Image
-              src={project.thumbnail || "/postImg/project/default-project.png"}
-              alt={project.title}
-              width={800}
-              height={450}
-              className="w-full object-cover"
-              priority
-            />
+            {project.thumbnailType === "video" ? (
+              <div className="w-full aspect-video">
+                <video
+                  src={project.thumbnail}
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={450}
+                  autoPlay={true}
+                  loop={true}
+                  muted={true}
+                  playsInline
+                  preload="auto"
+                  controls={false}
+                  disablePictureInPicture={true}
+                  onError={(e) => console.error("비디오 로딩 오류:", e)}
+                />
+              </div>
+            ) : (
+              <Image
+                src={project.thumbnail || "/postImg/project/default-project.png"}
+                alt={project.title}
+                width={800}
+                height={450}
+                className="w-full object-cover"
+                priority
+              />
+            )}
           </div>
           <div className="mt-6">
             <h3 className="text-lg font-medium mb-2">프로젝트 개요</h3>
