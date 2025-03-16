@@ -145,18 +145,18 @@ const ProjectCard = ({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button size="icon" variant="outline">
+                <Button size="icon" variant="outline" title="GitHub 저장소">
                   <Github className="h-4 w-4" />
                 </Button>
               </Link>
             )}
-            {project.liveSiteUrl && (
+            {(project.liveSiteUrl || project.serviceUrl) && (
               <Link
-                href={project.liveSiteUrl}
+                href={project.liveSiteUrl || project.serviceUrl || ""}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button size="icon" variant="outline">
+                <Button size="icon" variant="outline" title="서비스 링크">
                   <ExternalLink className="h-4 w-4" />
                 </Button>
               </Link>
