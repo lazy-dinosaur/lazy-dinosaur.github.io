@@ -7,7 +7,7 @@
                             "tags": ["blog", "dev", "project"],
                             "series": "나의 맞춤 블로그 만들기",
                             "createdAt": "2025-03-08 17:09:39",
-                            "modifiedAt": "2025-03-13 15:00:11",
+                            "modifiedAt": "2025-03-16 13:13:40",
                             "publish": "project/blog"
                         },
   {
@@ -20,5 +20,16 @@
                             "createdAt": "2025-03-08 17:12:17",
                             "modifiedAt": "2025-03-13 15:00:05",
                             "publish": "project/blog"
+                        },
+  {
+                            "urlPath": "resource/ai/Aider",
+                            "title": "Aider",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["ai", "tool", "aider"],
+                            "series": "",
+                            "createdAt": "2025-03-10 08:21:08",
+                            "modifiedAt": "2025-03-16 13:14:21",
+                            "publish": "resource/ai"
                         }
 ]
