@@ -394,7 +394,15 @@ export default function Header() {
             <Menu className="h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem]" />
           </motion.button>
         </div>
-        <CommandDialog open={open} onOpenChange={setOpen}>
+        <CommandDialog 
+          open={open} 
+          onOpenChange={(isOpen) => {
+            setOpen(isOpen);
+            if (!isOpen) {
+              setSearchQuery('');
+            }
+          }}
+        >
           <DialogTitle hidden={true}></DialogTitle>
           <DialogDescription hidden={true}></DialogDescription>
           <Command shouldFilter={false}>
