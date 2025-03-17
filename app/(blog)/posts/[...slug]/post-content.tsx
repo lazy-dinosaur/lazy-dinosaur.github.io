@@ -45,7 +45,7 @@ export default function PostContent({
 
           {/* 이전글/다음글 네비게이션 */}
           <nav className="mt-8 sm:mt-10 pt-4 sm:pt-6 border-t">
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div className="flex justify-between items-center ">
               {prevPost ? (
                 <motion.div
                   className="w-full sm:w-auto"
