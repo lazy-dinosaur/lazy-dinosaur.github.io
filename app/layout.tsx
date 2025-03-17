@@ -8,6 +8,7 @@ import { getPosts, getPostsMetadata } from "@/lib/posts";
 import Header from "../components/header";
 import { PostsProvider } from "@/contexts/posts-context";
 import Footer from "@/components/footer";
+import LeftSidebarSheet from "@/components/left-sidebar-sheet";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -54,7 +55,7 @@ export default async function RootLayout({
   // 메타데이터와 기본 포스트 콘텐츠를 병렬로 가져옴
   const [postsMetadata, posts] = await Promise.all([
     getPostsMetadata(),
-    getPosts()
+    getPosts(),
   ]);
 
   return (
@@ -72,6 +73,7 @@ export default async function RootLayout({
             <div className="min-h-screen flex flex-col motion-reduce">
               <Header />
               <main className="flex flex-col xl:flex-row mt-12 sm:mt-14 md:mt-16 2xl:container 2xl:mx-auto md:px-5">
+                <LeftSidebarSheet />
                 {children}
               </main>
               <Footer />

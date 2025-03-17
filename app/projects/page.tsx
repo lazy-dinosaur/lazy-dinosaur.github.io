@@ -12,9 +12,9 @@ export default async function Projects() {
   // 서버 컴포넌트에서 데이터를 가져와서 클라이언트 컴포넌트에 전달
   const [postsMetadata, posts] = await Promise.all([
     getPostsMetadata(),
-    getPosts()
+    getPosts(),
   ]);
-  
+
   return (
     <PostsProvider posts={posts} postsMetadata={postsMetadata}>
       <ProjectsPage />
