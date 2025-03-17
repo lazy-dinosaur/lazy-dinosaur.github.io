@@ -39,7 +39,7 @@ export default function Header() {
   // 뒤로가기 버튼이 필요한 페이지인지 확인하는 로직
   const isPostPage = pathname?.startsWith("/posts/");
   const isProjectDetailPage =
-    pathname === "/projects" &&
+    pathname === "/projects/" &&
     typeof window !== "undefined" &&
     window.location.search.includes("project=");
 
@@ -387,19 +387,22 @@ export default function Header() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="rounded-full h-8 w-8 sm:h-9 sm:w-9 flex items-center justify-center bg-primary/10 text-primary xl:hidden"
+            className={cn(
+              "rounded-full h-8 w-8 sm:h-9 sm:w-9 flex items-center justify-center bg-primary/10 text-primary",
+              pathname != "/projects/" ? "xl:hidden" : "",
+            )}
             onClick={() => document.getElementById("sidebar-trigger")?.click()}
             aria-label="사이드바 메뉴"
           >
             <Menu className="h-[1rem] w-[1rem] sm:h-[1.2rem] sm:w-[1.2rem]" />
           </motion.button>
         </div>
-        <CommandDialog 
-          open={open} 
+        <CommandDialog
+          open={open}
           onOpenChange={(isOpen) => {
             setOpen(isOpen);
             if (!isOpen) {
-              setSearchQuery('');
+              setSearchQuery("");
             }
           }}
         >
