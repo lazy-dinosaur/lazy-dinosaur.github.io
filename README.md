@@ -368,10 +368,22 @@ Next.js 기반
      필수는 아니지만 파일의 이름을 바꾸고 타이틀을 변경하는 경우 서로의 연결이 끊길수 있기 때문에 사용하면 좋음
 
      ```lua
-        pre_write_note = function(client, note)
+        pre_write_note = function(_, note)
           local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
           local content = table.concat(lines, "\n")
-          local first_heading = content:match("#%s*(.-)\n")
+          -- 첫 번째 헤딩 찾기 (여러 패턴 시도)
+          -- 패턴 1: 문서 시작 부분의 # 헤딩
+          local first_heading = content:match("^#%s+(.-)[\r\n]")
+
+          -- 패턴 2: 문서 중간의 # 헤딩
+          if not first_heading then
+            first_heading = content:match("\n#%s+(.-)[\r\n]")
+          end
+
+          -- 패턴 3: 더 관대한 패턴 (줄 끝이 아닌 어떤 문자든 허용)
+          if not first_heading then
+            first_heading = content:match("#%s+([^\r\n]+)")
+          end
           if first_heading and #first_heading > 0 then
             first_heading = first_heading:gsub('[/\\:*?"<>|]', "_"):gsub("^%s*(.-)%s*$", "%1")
             if #first_heading > 0 then
