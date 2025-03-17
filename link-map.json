@@ -1,5 +1,7 @@
 {
   "0.inbox/개인 블로그를 제작하게 된 이유.md": "project/blog/개인 블로그를 제작하게 된 이유",
-  "0.inbox/어떻게 블로그를 구현하였나.md": "project/blog/어떻게 블로그를 구현하였나",
-  "0.inbox/Aider.md": "resource/ai/Aider"
+  "0.inbox/동적 사이트 vs 정적사이트.md": "resource/web/동적 사이트 vs 정적사이트",
+  "0.inbox/Aider.md": "resource/ai/Aider",
+  "0.inbox/Next.js를 활용해 기본적인 블로그 만들기.md": "resource/nextjs/Next.js를 활용해 기본적인 블로그 만들기",
+  "0.inbox/어떻게 블로그를 구현하였나.md": "project/blog/어떻게 블로그를 구현하였나"
 }

@@ -11,15 +11,15 @@
                             "publish": "project/blog"
                         },
   {
-                            "urlPath": "project/blog/어떻게 블로그를 구현하였나",
-                            "title": "어떻게 블로그를 구현하였나",
+                            "urlPath": "resource/web/동적 사이트 vs 정적사이트",
+                            "title": "동적 사이트 vs 정적사이트",
                             "summary": "",
                             "image": "",
-                            "tags": ["blog", "dev", "project"],
-                            "series": "나의 맞춤 블로그 만들기",
-                            "createdAt": "2025-03-08 17:12:17",
-                            "modifiedAt": "2025-03-16 13:15:51",
-                            "publish": "project/blog"
+                            "tags": ["web"],
+                            "series": "",
+                            "createdAt": "2025-03-10 07:39:08",
+                            "modifiedAt": "2025-03-17 15:03:47",
+                            "publish": "resource/web"
                         },
   {
                             "urlPath": "resource/ai/Aider",
@@ -31,5 +31,27 @@
                             "createdAt": "2025-03-10 08:21:08",
                             "modifiedAt": "2025-03-16 13:16:45",
                             "publish": "resource/ai"
+                        },
+  {
+                            "urlPath": "resource/nextjs/Next.js를 활용해 기본적인 블로그 만들기",
+                            "title": "Next.js를 활용해 기본적인 블로그 만들기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["nextjs", "ssg", "example"],
+                            "series": "",
+                            "createdAt": "2025-03-17 10:00:58",
+                            "modifiedAt": "2025-03-17 13:17:39",
+                            "publish": "resource/nextjs"
+                        },
+  {
+                            "urlPath": "project/blog/어떻게 블로그를 구현하였나",
+                            "title": "어떻게 블로그를 구현하였나",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["blog", "dev", "project"],
+                            "series": "나의 맞춤 블로그 만들기",
+                            "createdAt": "2025-03-08 17:12:17",
+                            "modifiedAt": "2025-03-17 14:41:55",
+                            "publish": "project/blog"
                         }
 ]
