@@ -59,7 +59,7 @@ export default function PostContent({
                     <ArrowLeft className="mr-2 h-4 w-4" />
                     <div>
                       <div className="text-xs mb-1">이전 글</div>
-                      <div className="text-sm font-medium truncate max-w-[250px]">
+                      <div className="text-sm font-medium truncate max-w-[120px] sm:max-w-[200px] md:max-w-[250px]">
                         {prevPost.title}
                       </div>
                     </div>
@@ -89,7 +89,7 @@ export default function PostContent({
                   >
                     <div>
                       <div className="text-xs mb-1">다음 글</div>
-                      <div className="text-sm font-medium truncate max-w-[250px]">
+                      <div className="text-sm font-medium truncate max-w-[120px] sm:max-w-[200px] md:max-w-[250px]">
                         {nextPost.title}
                       </div>
                     </div>
