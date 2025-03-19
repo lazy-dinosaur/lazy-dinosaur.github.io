@@ -7,7 +7,7 @@
                             "tags": ["blog", "dev", "project"],
                             "series": "나의 맞춤 블로그 만들기",
                             "createdAt": "2025-03-08 17:09:39",
-                            "modifiedAt": "2025-03-17 16:08:24",
+                            "modifiedAt": "2025-03-17 16:10:11",
                             "publish": "project/blog"
                         },
   {
@@ -26,10 +26,10 @@
                             "title": "Aider",
                             "summary": "",
                             "image": "",
-                            "tags": ["ai", "tool", "aider"],
+                            "tags": ["ai", "tool", "aider", "quickstart"],
                             "series": "",
                             "createdAt": "2025-03-10 08:21:08",
-                            "modifiedAt": "2025-03-16 13:16:45",
+                            "modifiedAt": "2025-03-18 15:47:19",
                             "publish": "resource/ai"
                         },
   {
@@ -42,5 +42,16 @@
                             "createdAt": "2025-03-08 17:12:17",
                             "modifiedAt": "2025-03-17 14:41:55",
                             "publish": "project/blog"
+                        },
+  {
+                            "urlPath": "project/algorithm/취업을 위한 알고리즘 공부",
+                            "title": "취업을 위한 알고리즘 공부",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["project", "study", "algorithm"],
+                            "series": "취업을 위해 알고리즘 공부하기",
+                            "createdAt": "2025-03-19 08:05:06",
+                            "modifiedAt": "2025-03-19 15:57:04",
+                            "publish": "project/algorithm"
                         }
 ]
