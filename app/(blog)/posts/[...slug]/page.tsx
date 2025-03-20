@@ -15,7 +15,7 @@ export async function generateStaticParams() {
   }
 
   return posts.map((post) => ({
-    slug: decodeURIComponent(post.urlPath).split("/"),
+    slug: post.urlPath.split("/").map(segment => encodeURIComponent(segment)),
   }));
 }
 

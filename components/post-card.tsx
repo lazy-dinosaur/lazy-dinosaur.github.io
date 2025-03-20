@@ -53,7 +53,7 @@ const PostCard = ({
     (summary || plainContent || content).substring(0, 150) + "...";
 
   return (
-    <Link href={`/posts/${urlPath}`} className="block h-full">
+    <Link href={`/posts/${encodeURIComponent(urlPath)}`} className="block h-full">
       <motion.div
         className="h-full group overflow-hidden rounded-lg border border-border bg-card shadow-sm hover:shadow-md"
         whileHover={{

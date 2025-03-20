@@ -137,6 +137,7 @@ export async function getPost(slug: string[]): Promise<Post | null> {
     return null;
   }
 
+  // URL로 전달된 인코딩된 슬러그를 디코딩
   const urlPath = slug.join("/").replace(/\/+/g, "/").replace(/\.md$/, "");
 
   try {
