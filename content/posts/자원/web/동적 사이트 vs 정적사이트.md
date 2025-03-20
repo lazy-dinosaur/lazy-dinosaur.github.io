@@ -2,8 +2,8 @@
 tags:
   - web
 createdAt: 2025-03-10 07:39:08
-modifiedAt: 2025-03-17 15:03:47
-publish: resource/web
+modifiedAt: 2025-03-20 16:16:49
+publish: 자원/web
 related: ""
 series: ""
 ---

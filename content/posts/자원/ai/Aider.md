@@ -5,8 +5,8 @@ tags:
   - aider
   - quickstart
 createdAt: 2025-03-10 08:21:08
-modifiedAt: 2025-03-18 15:47:19
-publish: resource/ai
+modifiedAt: 2025-03-20 16:17:15
+publish: 자원/ai
 related: ""
 series: ""
 ---
