@@ -51,7 +51,18 @@
                             "tags": ["project", "study", "algorithm"],
                             "series": "취업을 위해 알고리즘 공부하기",
                             "createdAt": "2025-03-19 08:05:06",
-                            "modifiedAt": "2025-03-19 15:57:04",
+                            "modifiedAt": "2025-03-20 15:49:26",
                             "publish": "project/algorithm"
+                        },
+  {
+                            "urlPath": "resource/SWEA/SWEA 강의 정리노트",
+                            "title": "SWEA 강의 정리노트",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["study", "algorithm"],
+                            "series": "",
+                            "createdAt": "2025-03-19 12:20:41",
+                            "modifiedAt": "2025-03-20 14:47:07",
+                            "publish": "resource/SWEA 강의 정리노트"
                         }
 ]
