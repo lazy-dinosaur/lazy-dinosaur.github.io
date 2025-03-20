@@ -134,8 +134,8 @@ def sync_notes():
                 print(f"⏸️ 건너뜀: {md_file.name} (publish 필드 없음)")
                 return
 
-            # 안전한 경로 생성
-            safe_publish = re.sub(r"[^a-zA-Z0-9/._-]", "", publish)
+            # 안전한 경로 생성 - 원본 그대로 유지 (한글, 공백 포함)
+            safe_publish = publish
             post_dir = Path(tmp_post_dir) / safe_publish
             img_dir = Path(tmp_img_dir) / safe_publish
             post_dir.mkdir(parents=True, exist_ok=True)
