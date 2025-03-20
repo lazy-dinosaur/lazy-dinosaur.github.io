@@ -14,14 +14,35 @@ export async function generateStaticParams() {
     return [{ slug: ["no-post"] }];
   }
 
-  return posts.map((post) => ({
-    slug: post.urlPath.split("/").map(segment => encodeURIComponent(segment)),
-  }));
+  // 로깅 추가
+  console.log("Generating static params for posts:");
+  
+  return posts.map((post) => {
+    // 인코딩하지 않고 원래 경로 세그먼트 사용
+    const slugSegments = post.urlPath.split("/");
+    console.log(`Post path: ${post.urlPath} -> Segments: ${slugSegments.join("/")}`);
+    
+    return {
+      slug: slugSegments,
+    };
+  });
 }
 
 export default async function PostPage({ params }: PostPageProps) {
   const { slug } = await params;
-  const decodedSlug = slug.map((s) => decodeURIComponent(s)).filter(Boolean);
+  console.log("Raw URL slug segments:", slug);
+  
+  // 모든 세그먼트를 명시적으로 디코딩
+  const decodedSlug = slug.map((s) => {
+    try {
+      return decodeURIComponent(s);
+    } catch (e) {
+      console.error(`Failed to decode segment "${s}":`, e);
+      return s; // 디코딩 실패 시 원본 유지
+    }
+  }).filter(Boolean);
+  
+  console.log("Decoded slug:", decodedSlug);
   const post = await getPost(decodedSlug);
 
   if (!post) {

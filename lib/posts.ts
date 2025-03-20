@@ -137,8 +137,9 @@ export async function getPost(slug: string[]): Promise<Post | null> {
     return null;
   }
 
-  // URL로 전달된 인코딩된 슬러그를 디코딩
+  // URL 슬러그 처리 - 인코딩/디코딩 없이 사용
   const urlPath = slug.join("/").replace(/\/+/g, "/").replace(/\.md$/, "");
+  console.log("Getting post with urlPath:", urlPath);
 
   try {
     // 메타데이터 타입 안전성 강화
