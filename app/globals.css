@@ -260,6 +260,51 @@
   @apply max-w-none text-foreground;
 }
 
+/* 테이블 스타일 개선 */
+.prose-custom table {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+  table-layout: auto;
+  font-size: 0.875rem; /* 기본 텍스트보다 작은 크기 */
+  line-height: 1.5;
+}
+
+.prose-custom table td,
+.prose-custom table th {
+  padding: 0.5rem 0.625rem;
+  border: 1px solid hsl(var(--border));
+  white-space: normal;
+  word-break: break-word;
+  vertical-align: top;
+  text-align: left;
+}
+
+.prose-custom table th {
+  font-weight: 600;
+  background-color: hsl(var(--primary) / 0.1);
+  font-size: 0.875rem; /* 헤더 텍스트 크기 조정 */
+}
+
+.prose-custom table tr:nth-child(2n) {
+  background-color: hsl(var(--primary) / 0.03);
+}
+
+@media (max-width: 640px) {
+  .prose-custom table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 0.8125rem; /* 모바일에서 더 작게 */
+  }
+
+  .prose-custom table td,
+  .prose-custom table th {
+    min-width: 120px;
+    max-width: 280px;
+    padding: 0.4rem 0.5rem;
+  }
+}
 .prose-custom a {
   @apply text-primary font-medium hover:underline decoration-primary decoration-1 sm:decoration-2 underline-offset-2 transition-colors;
 }
@@ -396,7 +441,8 @@ html {
     }
 
     /* 콜아웃 내부의 리스트 스타일링 */
-    & > ul, & > ol {
+    & > ul,
+    & > ol {
       @apply ml-4 sm:ml-5 md:ml-6 space-y-1.5 sm:space-y-2 md:space-y-2.5;
     }
 

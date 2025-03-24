@@ -8,6 +8,7 @@ import { Element } from "hast";
 import CodeBlock from "./code-block";
 import { motion } from "framer-motion";
 import remarkCallout from "@r4ai/remark-callout";
+import remarkGfm from "remark-gfm";
 
 export interface MarkdownRendererProps {
   content: string;
@@ -146,7 +147,8 @@ export default function MarkdownRenderer({
     h2: ({ children }: { children?: React.ReactNode }) => {
       // 텍스트만 추출해서 id로 사용, 특수문자 제거하여 안전한 ID 생성
       const headingText = children?.toString() || "heading";
-      const id = "h2-" + 
+      const id =
+        "h2-" +
         headingText
           .toLowerCase()
           .replace(/\s+/g, "-")
@@ -180,7 +182,8 @@ export default function MarkdownRenderer({
     h3: ({ children }: { children?: React.ReactNode }) => {
       // 텍스트만 추출하고 안전한 ID를 생성 - h3는 "h3-"로 시작하도록 prefix 추가
       const headingText = children?.toString() || "heading";
-      const id = "h3-" + 
+      const id =
+        "h3-" +
         headingText
           .toLowerCase()
           .replace(/\s+/g, "-")
@@ -214,7 +217,8 @@ export default function MarkdownRenderer({
     h4: ({ children }: { children?: React.ReactNode }) => {
       // 텍스트만 추출하고 안전한 ID를 생성 - h4는 "h4-"로 시작하도록 prefix 추가
       const headingText = children?.toString() || "heading";
-      const id = "h4-" + 
+      const id =
+        "h4-" +
         headingText
           .toLowerCase()
           .replace(/\s+/g, "-")
@@ -432,14 +436,16 @@ export default function MarkdownRenderer({
     ),
     table: ({ children }: { children?: React.ReactNode }) => (
       <motion.div
-        className="spacing-section overflow-x-auto rounded-md sm:rounded-lg border border-primary/10 shadow-sm"
+        className="spacing-section overflow-x-auto "
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.15 }}
       >
-        <table className="w-full border-collapse text-hierarchy-body">
-          {children}
-        </table>
+        <div className="min-w-full inline-block align-middle">
+          <table className="min-w-full divide-y divide-primary/10 border-collapse text-hierarchy-body rounded-md sm:rounded-lg border border-primary/10 shadow-sm">
+            {children}
+          </table>
+        </div>
       </motion.div>
     ),
     thead: ({ children }: { children?: React.ReactNode }) => (
@@ -448,12 +454,18 @@ export default function MarkdownRenderer({
       </thead>
     ),
     th: ({ children }: { children?: React.ReactNode }) => (
-      <th className="text-left py-2.5 sm:py-3.5 px-3 sm:px-4 md:px-5 font-semibold border-b border-primary/10">
+      <th className="text-left py-2 sm:py-2.5 px-2.5 sm:px-3 font-semibold border border-primary/10 text-sm">
         {children}
       </th>
     ),
+    tbody: ({ children }: { children?: React.ReactNode }) => (
+      <tbody className="text-sm">{children}</tbody>
+    ),
+    tr: ({ children }: { children?: React.ReactNode }) => (
+      <tr className="even:bg-primary/[0.03]">{children}</tr>
+    ),
     td: ({ children }: { children?: React.ReactNode }) => (
-      <td className="py-2.5 sm:py-3.5 px-3 sm:px-4 md:px-5 border-b border-primary/5 transition-colors duration-150 hover:bg-primary/2">
+      <td className="py-1.5 sm:py-2 px-2.5 sm:px-3 border border-primary/10 align-top break-words text-sm">
         {children}
       </td>
     ),
@@ -479,7 +491,10 @@ export default function MarkdownRenderer({
 
   return (
     <div className="prose-custom">
-      <ReactMarkdown components={components} remarkPlugins={[remarkCallout]}>
+      <ReactMarkdown
+        components={components}
+        remarkPlugins={[remarkCallout, remarkGfm]}
+      >
         {finalProcessedContent}
       </ReactMarkdown>
     </div>
