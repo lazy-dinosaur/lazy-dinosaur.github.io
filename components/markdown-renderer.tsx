@@ -306,37 +306,71 @@ export default function MarkdownRenderer({
         </code>
       );
     },
-    img: ({ src, alt }: { src?: string; alt?: string }) => (
-      <motion.div
-        className="spacing-section relative group"
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.2 }}
-      >
-        <div className="flex flex-col w-full items-center justify-center">
-          <div
-            className="relative overflow-hidden rounded-md sm:rounded-lg shadow-lg transition-all duration-300 
+    img: ({ src, alt }: { src?: string; alt?: string }) => {
+      // 이미지 경로 변환 함수
+      const transformImagePath = (src: string) => {
+        // 이미 postImg로 시작하는 경우 (이미 처리된 경로)
+        if (src?.startsWith("/postImg/")) {
+          return src;
+        }
+
+        // 원래 이미지 파일이름만 갖고 있는 경우
+        const filename = src?.split("/").pop();
+        if (!filename) return src || "";
+
+        // 현재 포스트의 경로에서 보정된 이미지 경로 생성
+        if (typeof window !== "undefined") {
+          // 현재 URL에서 포스트 경로 추출
+          const pathSegments = window.location.pathname.split("/");
+          if (pathSegments.length >= 3 && pathSegments[1] === "posts") {
+            // posts 뒤의 경로를 가져와서 포스트 경로로 사용
+            const postPath = pathSegments.slice(2).join("/");
+
+            // 마지막 부분이 파일명이므로, 포스트 경로 중 마지막 부분을 제외
+            const folderPath = postPath.split("/");
+
+            // 경로 구성: /postImg/카테고리/포스트명/이미지파일.png
+            return `/postImg/${folderPath.join("/")}/${filename}`;
+          }
+        }
+
+        return src || "";
+      };
+
+      const transformedSrc = transformImagePath(src || "");
+
+      return (
+        <motion.div
+          className="spacing-section relative group"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.2 }}
+        >
+          <div className="flex flex-col w-full items-center justify-center">
+            <div
+              className="relative overflow-hidden rounded-md sm:rounded-lg shadow-lg transition-all duration-300 
             group-hover:shadow-xl border border-primary/10 w-full max-w-full sm:max-w-2xl md:max-w-3xl"
-          >
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent z-0"></div>
-            <Image
-              src={src || ""}
-              alt={alt || ""}
-              width={1200}
-              height={630}
-              className="w-full h-auto object-cover transition-transform duration-200 group-hover:scale-[1.02] relative z-10"
-              sizes="(max-width: 640px) 95vw, (max-width: 768px) 85vw, (max-width: 1024px) 75vw, 50vw"
-              loading="lazy"
-            />
-          </div>
-          {alt && (
-            <div className="text-center text-hierarchy-small mt-3 sm:mt-4 italic text-primary/80 font-medium">
-              {alt}
+            >
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent z-0"></div>
+              <Image
+                src={transformedSrc}
+                alt={alt || ""}
+                width={1200}
+                height={630}
+                className="w-full h-auto object-cover transition-transform duration-200 group-hover:scale-[1.02] relative z-10"
+                sizes="(max-width: 640px) 95vw, (max-width: 768px) 85vw, (max-width: 1024px) 75vw, 50vw"
+                loading="lazy"
+              />
             </div>
-          )}
-        </div>
-      </motion.div>
-    ),
+            {alt && (
+              <div className="text-center text-hierarchy-small mt-3 sm:mt-4 italic text-primary/80 font-medium">
+                {alt}
+              </div>
+            )}
+          </div>
+        </motion.div>
+      );
+    },
     a: ({ href, children }: { href?: string; children?: React.ReactNode }) => {
       if (!href) return <span>{children}</span>;
 

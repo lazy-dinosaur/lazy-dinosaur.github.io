@@ -65,10 +65,17 @@ process_note() {
 		return
 	fi
 	local safe_publish
-	safe_publish="$(echo "$publish" | tr -cd '[:alnum:]/._-')"
+	safe_publish="$publish"
+	
+	# 노트 파일 이름 (확장자 제외) - 이미지 경로에만 적용
+	local note_folder_name
+	note_folder_name="$(basename "$md_file" .md)"
+	
+	# post_dir은 기존 방식대로, img_dir만 노트 이름 하위 폴더 추가
 	local post_dir="$TMP_POST/${safe_publish}"
-	local img_dir="$TMP_IMG/${safe_publish}"
+	local img_dir="$TMP_IMG/${safe_publish}/${note_folder_name}"
 	mkdir -p "$post_dir" "$img_dir"
+	# 파일 복사
 	cp "$md_file" "$post_dir/$(basename "$md_file")"
 	echo "✅ 게시됨: $safe_publish/$(basename "$md_file")"
 	PUBLISH_MAP["$relative_path"]="$safe_publish/$(basename "$md_file" .md)"

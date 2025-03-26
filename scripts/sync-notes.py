@@ -136,8 +136,13 @@ def sync_notes():
 
             # 안전한 경로 생성 - 원본 그대로 유지 (한글, 공백 포함)
             safe_publish = publish
+
+            # 노트 파일 이름으로 추가 하위 폴더 생성 (확장자 제외) - 이미지 경로에만 적용
+            note_folder_name = md_file.stem
+
+            # post_dir은 기존 방식대로, img_dir만 노트 이름 하위 폴더 추가
             post_dir = Path(tmp_post_dir) / safe_publish
-            img_dir = Path(tmp_img_dir) / safe_publish
+            img_dir = Path(tmp_img_dir) / safe_publish / note_folder_name
             post_dir.mkdir(parents=True, exist_ok=True)
             img_dir.mkdir(parents=True, exist_ok=True)
 
@@ -336,4 +341,3 @@ def sync_notes():
 
 if __name__ == "__main__":
     sync_notes()
-
