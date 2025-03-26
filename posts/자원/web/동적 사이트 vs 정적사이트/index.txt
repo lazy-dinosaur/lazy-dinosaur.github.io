@@ -14,17 +14,421 @@ e:I[34835,[],""]
 :HL["/_next/static/css/f39913cce61522dc.css","style"]
 :HL["/_next/static/css/0f3413a78a46238e.css","style"]
 :HL["/_next/static/css/73563fcd4e895f21.css","style"]
-0:{"P":null,"b":"BCMs2ntzDxL8mis-Nhse3","p":"","c":["","posts","%EC%9E%90%EC%9B%90","web","%EB%8F%99%EC%A0%81%20%EC%82%AC%EC%9D%B4%ED%8A%B8%20vs%20%EC%A0%95%EC%A0%81%EC%82%AC%EC%9D%B4%ED%8A%B8",""],"i":false,"f":[[["",{"children":["(blog)",{"children":["posts",{"children":[["slug","%EC%9E%90%EC%9B%90/web/%EB%8F%99%EC%A0%81%20%EC%82%AC%EC%9D%B4%ED%8A%B8%20vs%20%EC%A0%95%EC%A0%81%EC%82%AC%EC%9D%B4%ED%8A%B8","c"],{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/f39913cce61522dc.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/0f3413a78a46238e.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/73563fcd4e895f21.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],"$L2"]}],{"children":["(blog)",["$","$1","c",{"children":[null,[["$","$L3",null,{"className":"w-60 xl:w-64 2xl:w-72 lg:shrink-0 lg:sticky h-full lg:top-16 mb-4 lg:mb-0 mt-52"}],["$","div",null,{"className":"xl:max-w-5xl mx-auto rounded-lg w-full overflow-x-hidden py-6 p-3 2xl:px-6 h-full overflow-y-hidden","children":["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","(blog)","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","$L6",null,{"className":"w-60 xl:w-64 2xl:w-72 shrink-0 hidden xl:block sticky top-16 h-full mt-52"}]]]}],{"children":["posts",["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","(blog)","children","posts","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","%EC%9E%90%EC%9B%90/web/%EB%8F%99%EC%A0%81%20%EC%82%AC%EC%9D%B4%ED%8A%B8%20vs%20%EC%A0%95%EC%A0%81%EC%82%AC%EC%9D%B4%ED%8A%B8","c"],["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","(blog)","children","posts","children","$0:f:0:1:2:children:2:children:2:children:0","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L7",null,["$","$L8",null,{"children":"$L9"}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","_Ha0Ima1vT6P9zKXF6Zt5",{"children":[["$","$La",null,{"children":"$Lb"}],["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+0:{"P":null,"b":"ZZH94XRV_zTwGd5awhgAf","p":"","c":["","posts","%EC%9E%90%EC%9B%90","web","%EB%8F%99%EC%A0%81%20%EC%82%AC%EC%9D%B4%ED%8A%B8%20vs%20%EC%A0%95%EC%A0%81%EC%82%AC%EC%9D%B4%ED%8A%B8",""],"i":false,"f":[[["",{"children":["(blog)",{"children":["posts",{"children":[["slug","%EC%9E%90%EC%9B%90/web/%EB%8F%99%EC%A0%81%20%EC%82%AC%EC%9D%B4%ED%8A%B8%20vs%20%EC%A0%95%EC%A0%81%EC%82%AC%EC%9D%B4%ED%8A%B8","c"],{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/f39913cce61522dc.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/0f3413a78a46238e.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/73563fcd4e895f21.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],"$L2"]}],{"children":["(blog)",["$","$1","c",{"children":[null,[["$","$L3",null,{"className":"w-60 xl:w-64 2xl:w-72 lg:shrink-0 lg:sticky h-full lg:top-16 mb-4 lg:mb-0 mt-52"}],["$","div",null,{"className":"xl:max-w-5xl mx-auto rounded-lg w-full overflow-x-hidden py-6 p-3 2xl:px-6 h-full overflow-y-hidden","children":["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","(blog)","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","$L6",null,{"className":"w-60 xl:w-64 2xl:w-72 shrink-0 hidden xl:block sticky top-16 h-full mt-52"}]]]}],{"children":["posts",["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","(blog)","children","posts","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","%EC%9E%90%EC%9B%90/web/%EB%8F%99%EC%A0%81%20%EC%82%AC%EC%9D%B4%ED%8A%B8%20vs%20%EC%A0%95%EC%A0%81%EC%82%AC%EC%9D%B4%ED%8A%B8","c"],["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","(blog)","children","posts","children","$0:f:0:1:2:children:2:children:2:children:0","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L7",null,["$","$L8",null,{"children":"$L9"}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","OsOU1AAYsmPNsfOjv7i0V",{"children":[["$","$La",null,{"children":"$Lb"}],["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
 d:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 b:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"LazyDino Dev Log"}],["$","meta","2",{"name":"description","content":"내가 한걸 티내기 위해 만든 블로그"}],["$","link","3",{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"256x256"}],["$","link","4",{"rel":"icon","href":"/favicon.ico","sizes":"any","type":"image/x-icon"}]]
 9:null
 f:I[14627,["204","static/chunks/94730671-1e2691690418b851.js","711","static/chunks/8e1d74a4-e827b714699a717f.js","173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","200","static/chunks/200-e5b4f393133f2b22.js","285","static/chunks/285-5f450dbbf95cfc99.js","359","static/chunks/359-4401a530635be94c.js","177","static/chunks/app/layout-b6c3f1c862db2fc0.js"],"ThemeProvider"]
 10:I[96403,["204","static/chunks/94730671-1e2691690418b851.js","711","static/chunks/8e1d74a4-e827b714699a717f.js","173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","200","static/chunks/200-e5b4f393133f2b22.js","285","static/chunks/285-5f450dbbf95cfc99.js","359","static/chunks/359-4401a530635be94c.js","177","static/chunks/app/layout-b6c3f1c862db2fc0.js"],"PostsProvider"]
-19:I[23655,["204","static/chunks/94730671-1e2691690418b851.js","711","static/chunks/8e1d74a4-e827b714699a717f.js","173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","200","static/chunks/200-e5b4f393133f2b22.js","285","static/chunks/285-5f450dbbf95cfc99.js","359","static/chunks/359-4401a530635be94c.js","177","static/chunks/app/layout-b6c3f1c862db2fc0.js"],"default"]
-1a:I[33475,["204","static/chunks/94730671-1e2691690418b851.js","711","static/chunks/8e1d74a4-e827b714699a717f.js","173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","200","static/chunks/200-e5b4f393133f2b22.js","285","static/chunks/285-5f450dbbf95cfc99.js","359","static/chunks/359-4401a530635be94c.js","177","static/chunks/app/layout-b6c3f1c862db2fc0.js"],"default"]
-1b:I[48173,["173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","869","static/chunks/869-c4764269b4319e39.js","594","static/chunks/app/(blog)/posts/%5B...slug%5D/page-3e8617894314718a.js"],""]
-1c:I[52845,["204","static/chunks/94730671-1e2691690418b851.js","711","static/chunks/8e1d74a4-e827b714699a717f.js","173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","200","static/chunks/200-e5b4f393133f2b22.js","285","static/chunks/285-5f450dbbf95cfc99.js","359","static/chunks/359-4401a530635be94c.js","177","static/chunks/app/layout-b6c3f1c862db2fc0.js"],"default"]
-11:T2b9f,
+1b:I[23655,["204","static/chunks/94730671-1e2691690418b851.js","711","static/chunks/8e1d74a4-e827b714699a717f.js","173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","200","static/chunks/200-e5b4f393133f2b22.js","285","static/chunks/285-5f450dbbf95cfc99.js","359","static/chunks/359-4401a530635be94c.js","177","static/chunks/app/layout-b6c3f1c862db2fc0.js"],"default"]
+1c:I[33475,["204","static/chunks/94730671-1e2691690418b851.js","711","static/chunks/8e1d74a4-e827b714699a717f.js","173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","200","static/chunks/200-e5b4f393133f2b22.js","285","static/chunks/285-5f450dbbf95cfc99.js","359","static/chunks/359-4401a530635be94c.js","177","static/chunks/app/layout-b6c3f1c862db2fc0.js"],"default"]
+1d:I[48173,["173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","869","static/chunks/869-c4764269b4319e39.js","594","static/chunks/app/(blog)/posts/%5B...slug%5D/page-3e8617894314718a.js"],""]
+1e:I[52845,["204","static/chunks/94730671-1e2691690418b851.js","711","static/chunks/8e1d74a4-e827b714699a717f.js","173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","200","static/chunks/200-e5b4f393133f2b22.js","285","static/chunks/285-5f450dbbf95cfc99.js","359","static/chunks/359-4401a530635be94c.js","177","static/chunks/app/layout-b6c3f1c862db2fc0.js"],"default"]
+11:T3c57,
+# 물류 서비스 웹사이트 개발 회고-혼자서 외주 프로젝트 완성하기
+
+## 프로젝트 개요
+
+이번 프로젝트는 물류 서비스 회사인 '아임유어박스'의 웹사이트를 개발하는 외주 작업이었습니다. 기존 사이트의 여러 문제점을 개선하고 현대적인 기술 스택으로 재구축하는 것이 주요 목표였습니다.
+
+![메인 화면](_assets/attachments/imyourbox/imyourbox-main.gif)
+
+## 기술 스택 선택과 구현 과정에서의 도전
+
+### 1. PayloadCMS 도입과 설정
+
+#### 헤드리스 CMS 선택의 이유와 도전
+
+웹사이트를 개발하면서 가장 큰 결정 중 하나는 헤드리스 CMS 선택이었습니다. 클라이언트가 뉴스, 공지사항, 채용정보 등의 콘텐츠를 직접 관리할 수 있어야 했기 때문입니다.
+
+```typescript
+// payload.config.ts - 프로젝트의 핵심 설정 파일
+export default buildConfig({
+  admin: {
+    user: Users.slug,
+    importMap: {
+      baseDir: path.resolve(dirname),
+    },
+    dependencies: {
+      ExportInquiries: {
+        path: "@/components/ExportInquiries",
+        type: "component",
+      },
+    },
+  },
+  collections: [Users, Media, News, History, Inquiries, Notices, Locations],
+  editor: lexicalEditor(),
+  db: postgresAdapter({
+    pool: {
+      connectionString: process.env.DATABASE_URI || "",
+    },
+  }),
+  plugins: [
+    payloadCloudPlugin(),
+    s3Storage({
+      // S3 설정...
+    }),
+  ],
+});
+```
+
+PayloadCMS를 처음 도입할 때는 문서가 제한적이었고, 특히 복잡한 요구사항을 구현하는 과정에서 많은 시행착오가 있었습니다. 예를 들어, 컬렉션 간의 관계 설정이나 커스텀 필드 타입 구현에서 TypeScript 오류가 자주 발생했습니다.
+
+특히 어려웠던 점은:
+
+- 데이터 모델링과 스키마 설계
+- 관리자 패널 커스터마이징
+- 프론트엔드와 백엔드 통합
+
+하지만 이런 초기 어려움을 극복한 후에는 PayloadCMS의 강력한 기능과 유연성이 개발 속도를 크게 향상시켰습니다.
+
+![페이로드 대시보드](_assets/attachments/imyourbox/imyourbox-payload-admin-dashboard.png)
+PayloadCMS의 관리자 인터페이스에 커스텀 기능을 추가하는 과정은 문서의 부재로 인해 특히 어려웠습니다. 문의 내역을 CSV로 내보내는 기능을 구현하기 위해 많은 시간을 투자했습니다.
+
+```tsx
+// ExportInquiries.tsx
+import React, { useState } from "react";
+import { Button } from "payload/components/elements";
+import { useConfig } from "payload/components/utilities";
+import { stringify } from "csv-stringify/sync";
+
+const ExportInquiries: React.FC = () => {
+  const [isExporting, setIsExporting] = useState(false);
+  const { serverURL } = useConfig();
+
+  const handleExport = async () => {
+    try {
+      setIsExporting(true);
+
+      // API 호출을 통한 데이터 가져오기
+      const response = await fetch(`${serverURL}/api/inquiries?limit=500`);
+      const json = await response.json();
+
+      // CSV 변환 및 다운로드 로직
+      const csvData = stringify(
+        json.docs.map((doc) => ({
+          업체명: doc.companyName,
+          연락처: doc.phone,
+          담당자: doc.managerName,
+          이메일: doc.email,
+          접수일: new Date(doc.createdAt).toLocaleDateString("ko-KR"),
+          문의유형: doc.inquiryType === "price" ? "견적문의" : "일반문의",
+          문의내용: doc.content,
+        })),
+        { header: true },
+      );
+
+      // 다운로드 처리
+      const blob = new Blob([csvData], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.setAttribute("href", url);
+      link.setAttribute(
+        "download",
+        `문의-내역-${new Date().toISOString().slice(0, 10)}.csv`,
+      );
+      link.style.visibility = "hidden";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error("Export failed:", error);
+      alert(
+        "내보내기 실패: " +
+          (error instanceof Error ? error.message : "알 수 없는 오류"),
+      );
+    } finally {
+      setIsExporting(false);
+    }
+  };
+
+  return (
+    <Button onClick={handleExport} disabled={isExporting}>
+      {isExporting ? "내보내는 중..." : "CSV 내보내기"}
+    </Button>
+  );
+};
+
+export default ExportInquiries;
+```
+
+이 기능을 구현하기 위해 다음과 같은 도전 과제가 있었습니다:
+
+1. **PayloadCMS Admin 컴포넌트 확장**: PayloadCMS의 관리자 UI에 커스텀 버튼을 추가하는 방법이 직관적이지 않았습니다. 결국 소스 코드를 분석하고 커뮤니티 포럼에서 해결책을 찾았습니다.
+
+2. **대용량 데이터 처리**: 문의 데이터가 많아질 경우를 대비하여 페이지네이션 기반으로 데이터를 가져오고 스트리밍 방식으로 처리하는 로직을 구현해야 했습니다.
+
+3. **문자 인코딩 문제**: 한글이 포함된 CSV 파일이 Excel에서 정상적으로 열리도록 하는 인코딩 처리가 필요했습니다.
+
+이런 어려움을 해결한 후에는 클라이언트가 쉽게 데이터를 관리하고 분석할 수 있게 되었습니다. 이 과정에서 PayloadCMS의 내부 구조를 더 깊이 이해하게 되었고, 이는 추후 다른 커스텀 기능 개발에도 큰 도움이 되었습니다.
+
+<!-- 이미지 3: 커스텀 CSV Export 버튼이 있는 문의 내역 관리 화면 - 실제 문의 데이터 목록과 상단에 구현한 내보내기 버튼이 보이도록 캡처 -->
+
+![CSV export](_assets/attachments/imyourbox/imyourbox-csv-example.gif)
+
+### 3. 이메일 시스템 구현
+
+견적 문의나 일반 문의가 접수되면 관리자에게 이메일로 알림을 보내는 기능을 구현하는 과정도 많은 도전이 있었습니다.
+![이메일 문의 프로세스](_assets/attachments/imyourbox/imyourbox-email-process.gif)
+
+```typescript
+// app/(app)/api/contact/route.ts
+import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
+import { render } from "@react-email/render";
+import { InquiryEmail } from "@/emails/inquiry-email";
+
+export async function POST(req: Request) {
+  try {
+    // 환경 변수 검증
+    if (!process.env.SMTP_FROM_EMAIL || !process.env.SMTP_TO_EMAIL) {
+      throw new Error("이메일 주소 설정이 누락되었습니다.");
+    }
+
+    const body = await req.json();
+    const transporter = createTransporter();
+
+    // SMTP 연결 확인
+    try {
+      await Promise.race([
+        transporter.verify(),
+        new Promise((_, reject) =>
+          setTimeout(() => reject(new Error("SMTP 연결 시간 초과")), 5000),
+        ),
+      ]);
+    } catch (verifyError) {
+      console.error("SMTP verification failed:", verifyError);
+      throw new Error("SMTP 연결 실패");
+    }
+
+    // 이메일 템플릿 렌더링
+    const emailHtml = await render(
+      InquiryEmail({
+        companyName: body.companyName,
+        phone: body.phone,
+        email: body.email,
+        managerName: body.managerName,
+        content: body.content,
+      }),
+    );
+
+    // 이메일 전송
+    try {
+      await Promise.race([
+        transporter.sendMail({
+          from: process.env.SMTP_FROM_EMAIL,
+          to: process.env.SMTP_TO_EMAIL,
+          subject: `[간편문의] ${body.companyName} - ${body.managerName}`,
+          html: emailHtml,
+        }),
+        new Promise((_, reject) =>
+          setTimeout(() => reject(new Error("이메일 전송 시간 초과")), 10000),
+        ),
+      ]);
+    } catch (sendError) {
+      console.error("Email send error:", sendError);
+      throw new Error("이메일 전송 실패");
+    }
+
+    return NextResponse.json(
+      { message: "문의가 성공적으로 접수되었습니다." },
+      { status: 200 },
+    );
+  } catch (error) {
+    console.error("Error:", error);
+    return NextResponse.json(
+      { message: "문의 접수 중 오류가 발생했습니다." },
+      { status: 500 },
+    );
+  }
+}
+```
+
+주요 도전 과제:
+
+1. **이메일 템플릿 관리**: React Email을 사용하여 컴포넌트 기반의 이메일 템플릿을 구현했지만, 다양한 이메일 클라이언트에서 일관되게 표시되도록 하는 것이 어려웠습니다.
+
+2. **SMTP 오류 처리**: 프로덕션 환경에서 간헐적으로 SMTP 연결 문제가 발생했습니다. 이를 해결하기 위해 타임아웃 처리와 재시도 로직을 구현했습니다.
+
+3. **개발-프로덕션 환경 차이**: 개발 중에는 실제 이메일을 보내지 않고 로컬에서 테스트할 수 있는 방법이 필요했습니다. 이를 위해 환경에 따른 조건부 로직을 구현했습니다.
+
+이러한 도전을 해결하면서 견고한 이메일 시스템을 구축할 수 있었고, 클라이언트의 비즈니스 프로세스 개선에 크게 기여했습니다.
+
+![이메일 템플릿](_assets/attachments/imyourbox/imyourbox-email-template.png)
+
+### 4. S3 버킷을 활용한 미디어 관리
+
+PayloadCMS의 미디어 관리 시스템을 AWS S3와 통합하는 과정도 복잡했습니다.
+
+```typescript
+// S3 스토리지 설정
+s3Storage({
+  collections: {
+    media: {
+      prefix: "media",
+    },
+  },
+  bucket: String(process.env.S3_BUCKET),
+  config: {
+    forcePathStyle: true,
+    credentials: {
+      accessKeyId: String(process.env.S3_ACCESS_KEY_ID),
+      secretAccessKey: String(process.env.S3_SECRET_ACCESS_KEY),
+    },
+    region: process.env.S3_REGION,
+    endpoint: process.env.S3_ENDPOINT,
+  },
+});
+```
+
+미디어 관리 시스템 구현에서 다음과 같은 도전 과제가 있었습니다:
+
+1. **CORS 설정**: S3 버킷에 대한 적절한 CORS 설정이 없어서 이미지 업로드가 실패하는 문제가 있었습니다. 이를 해결하기 위해 상세한 CORS 구성을 설정했습니다.
+
+2. **이미지 최적화**: 웹사이트 성능을 위해 업로드된 이미지를 자동으로 최적화하는 시스템을 구현했습니다. Sharp 라이브러리를 통합하여 다양한 크기의 이미지 버전을 생성했습니다.
+
+3. **로컬-프로덕션 환경 차이**: 개발 환경에서는 실제 S3 대신 MinIO를 사용하여 S3 호환 스토리지를 로컬에 구축했습니다. 이를 통해 개발 과정에서도 실제 환경과 유사한 경험을 유지했습니다.
+
+이런 노력 덕분에 웹사이트의 이미지와 미디어 파일이 효율적으로 관리되고, 페이지 로딩 속도도 최적화할 수 있었습니다.
+
+![s3 버킷 관리](_assets/attachments/imyourbox/s3-media-management.png.png)
+
+## 웹사이트 디자인과 구현
+
+웹사이트는 현대적이고 사용자 친화적인 디자인으로 구현되었습니다:
+
+![서비스 소개페이지](_assets/attachments/imyourbox/service-page-overview.png)
+
+1. **반응형 네비게이션**: 모바일과 데스크톱 모두에서 최적화된 네비게이션 바
+2. **패럴랙스 스크롤 효과**: 메인 페이지의 시각적 효과를 위한 패럴랙스 스크롤 구현
+3. **견적 계산기**: 사용자가 쉽게 서비스 견적을 계산할 수 있는 단계별 폼
+4. **서비스 소개 페이지**: 아이콘과 설명을 통해 서비스를 명확하게 소개
+
+각 페이지별로 사용자 경험을 최우선으로 고려하여 디자인과 기능을 구현했습니다:
+
+1. **메인 페이지**: 패럴랙스 스크롤 효과와 애니메이션을 통한 시각적 매력 향상
+
+   ![패러랠 이펙트](_assets/attachments/imyourbox/imyourweb-parallax.gif)
+
+2. **견적 페이지**: 단계별 폼을 통한 사용자 친화적인 견적 계산 시스템
+
+   - 기본 정보
+     ![price-calculator-step1.png](_assets/attachments/imyourbox/price-calculator-step1.png)
+
+   - 상품 정보
+     ![price-calculator-stop2](_assets/attachments/imyourbox/price-calculator-step2.png)
+   - 견적 결과
+     ![price-calculator-step3.png](_assets/attachments/imyourbox/price-calculator-step3.png)
+
+3. **서비스 소개 페이지**: 명확한 아이콘과 설명을 통한 서비스 이해도 향상
+   ![service-icons-grid.png](_assets/attachments/imyourbox/service-icons-grid.png)
+
+4. **회사 소개 페이지**: 타임라인 형식의 회사 연혁과 핵심 가치 전달
+   ![company-timeline](_assets/attachments/imyourbox/imyourweb-company-timeline.gif)
+
+5. **채용 정보 페이지**: 회사 문화와 채용 프로세스, 현재 채용 중인 포지션 표시
+   ![imyourweb-employment](_assets/attachments/imyourbox/imyourweb-employment.png)
+
+이런 디자인 요소들은 Framer Motion과 TailwindCSS를 활용하여 구현되었으며, 사용자 경험을 최우선으로 고려했습니다.
+
+<!-- 이미지 13: 반응형 디자인 - 모바일, 태블릿, 데스크톱 버전이 나란히 보이는 비교 스크린샷 -->
+
+- 데스크톱
+  ![desktop-design](_assets/attachments/imyourbox/desktop-design.png)
+
+- 모바일
+  ![mobild-design](_assets/attachments/imyourbox/mobild-design.png)
+
+<!-- 이미지 14: 모바일 메뉴 - 햄버거 메뉴를 통해 펼쳐진 모바일 네비게이션 화면 -->
+
+- 모바일 메뉴
+  ![mobile-menu-expanded.png](_assets/attachments/imyourbox/mobile-menu-expanded.png)
+
+## 학습 및 성과
+
+이 프로젝트를 통해 풀스택 개발자로서 많은 성장을 경험했습니다:
+
+1. **헤드리스 CMS 전문성**: PayloadCMS의 복잡한 설정과 커스터마이징에 대한 깊은 이해
+2. **서버리스 아키텍처**: Next.js와 API 라우트를 활용한 서버리스 아키텍처 구현
+3. **클라우드 서비스 통합**: AWS S3와 같은 클라우드 서비스와의 효율적인 통합
+4. **성능 최적화**: 이미지 최적화, 코드 스플리팅, 레이지 로딩 등을 통한 웹사이트 성능 향상
+
+특히, PayloadCMS와 같은 상대적으로 덜 알려진 기술을 도입하면서 문서가 부족한 상황에서도 문제를 해결하는 능력이 크게 향상되었습니다. 소스 코드 분석, 커뮤니티 포럼 활용, 그리고 실험적 접근을 통해 다양한 기술적 도전을 극복했습니다.
+
+## 개선 가능한 부분
+
+프로젝트를 성공적으로 완료했지만, 추후 개선할 수 있는 부분도 있습니다:
+
+1. **테스트 자동화**: 단위 테스트와 E2E 테스트를 추가하여 코드 품질 보장
+2. **접근성 개선**: 웹 접근성 지침에 따른 더 포괄적인 사용자 경험 제공
+3. **성능 모니터링**: 실시간 성능 모니터링 도구 통합으로 지속적인 최적화
+4. **국제화 지원**: 다국어 지원을 위한 i18n 통합
+
+## 결론
+
+아임유어박스 웹사이트 개발은 새로운 기술 스택과 복잡한 요구사항을 다루는 도전적인 프로젝트였습니다. PayloadCMS, Next.js, AWS S3 등 여러 기술을 통합하면서 많은 기술적 문제를 해결했고, 이 과정에서 풀스택 개발자로서 크게 성장할 수 있었습니다.
+
+특히 PayloadCMS의 커스터마이징, 견적 계산 시스템 구현, 이메일 통합, 그리고 S3 기반 미디어 관리 시스템 등을 성공적으로 구현하여 클라이언트의 비즈니스 요구사항을 충족시켰습니다. 이 프로젝트는 기술적 도전을 넘어 실제 비즈니스 가치를 창출하는 웹 애플리케이션을 구축하는 소중한 경험이었습니다.
+12:T1fee,이번 프로젝트는 물류 서비스 회사인 '아임유어박스'의 웹사이트를 개발하는 외주 작업이었습니다. 기존 사이트의 여러 문제점을 개선하고 현대적인 기술 스택으로 재구축하는 것이 주요 목표였습니다.
+웹사이트를 개발하면서 가장 큰 결정 중 하나는 헤드리스 CMS 선택이었습니다. 클라이언트가 뉴스, 공지사항, 채용정보 등의 콘텐츠를 직접 관리할 수 있어야 했기 때문입니다.
+PayloadCMS를 처음 도입할 때는 문서가 제한적이었고, 특히 복잡한 요구사항을 구현하는 과정에서 많은 시행착오가 있었습니다. 예를 들어, 컬렉션 간의 관계 설정이나 커스텀 필드 타입 구현에서 TypeScript 오류가 자주 발생했습니다.
+특히 어려웠던 점은:
+데이터 모델링과 스키마 설계
+관리자 패널 커스터마이징
+프론트엔드와 백엔드 통합
+하지만 이런 초기 어려움을 극복한 후에는 PayloadCMS의 강력한 기능과 유연성이 개발 속도를 크게 향상시켰습니다.
+PayloadCMS의 관리자 인터페이스에 커스텀 기능을 추가하는 과정은 문서의 부재로 인해 특히 어려웠습니다. 문의 내역을 CSV로 내보내는 기능을 구현하기 위해 많은 시간을 투자했습니다.
+이 기능을 구현하기 위해 다음과 같은 도전 과제가 있었습니다:
+1. PayloadCMS Admin 컴포넌트 확장: PayloadCMS의 관리자 UI에 커스텀 버튼을 추가하는 방법이 직관적이지 않았습니다. 결국 소스 코드를 분석하고 커뮤니티 포럼에서 해결책을 찾았습니다.
+2. 대용량 데이터 처리: 문의 데이터가 많아질 경우를 대비하여 페이지네이션 기반으로 데이터를 가져오고 스트리밍 방식으로 처리하는 로직을 구현해야 했습니다.
+3. 문자 인코딩 문제: 한글이 포함된 CSV 파일이 Excel에서 정상적으로 열리도록 하는 인코딩 처리가 필요했습니다.
+이런 어려움을 해결한 후에는 클라이언트가 쉽게 데이터를 관리하고 분석할 수 있게 되었습니다. 이 과정에서 PayloadCMS의 내부 구조를 더 깊이 이해하게 되었고, 이는 추후 다른 커스텀 기능 개발에도 큰 도움이 되었습니다.
+<!-- 이미지 3: 커스텀 CSV Export 버튼이 있는 문의 내역 관리 화면 - 실제 문의 데이터 목록과 상단에 구현한 내보내기 버튼이 보이도록 캡처 -->
+견적 문의나 일반 문의가 접수되면 관리자에게 이메일로 알림을 보내는 기능을 구현하는 과정도 많은 도전이 있었습니다.
+주요 도전 과제:
+1. 이메일 템플릿 관리: React Email을 사용하여 컴포넌트 기반의 이메일 템플릿을 구현했지만, 다양한 이메일 클라이언트에서 일관되게 표시되도록 하는 것이 어려웠습니다.
+2. SMTP 오류 처리: 프로덕션 환경에서 간헐적으로 SMTP 연결 문제가 발생했습니다. 이를 해결하기 위해 타임아웃 처리와 재시도 로직을 구현했습니다.
+3. 개발-프로덕션 환경 차이: 개발 중에는 실제 이메일을 보내지 않고 로컬에서 테스트할 수 있는 방법이 필요했습니다. 이를 위해 환경에 따른 조건부 로직을 구현했습니다.
+이러한 도전을 해결하면서 견고한 이메일 시스템을 구축할 수 있었고, 클라이언트의 비즈니스 프로세스 개선에 크게 기여했습니다.
+PayloadCMS의 미디어 관리 시스템을 AWS S3와 통합하는 과정도 복잡했습니다.
+미디어 관리 시스템 구현에서 다음과 같은 도전 과제가 있었습니다:
+1. CORS 설정: S3 버킷에 대한 적절한 CORS 설정이 없어서 이미지 업로드가 실패하는 문제가 있었습니다. 이를 해결하기 위해 상세한 CORS 구성을 설정했습니다.
+2. 이미지 최적화: 웹사이트 성능을 위해 업로드된 이미지를 자동으로 최적화하는 시스템을 구현했습니다. Sharp 라이브러리를 통합하여 다양한 크기의 이미지 버전을 생성했습니다.
+3. 로컬-프로덕션 환경 차이: 개발 환경에서는 실제 S3 대신 MinIO를 사용하여 S3 호환 스토리지를 로컬에 구축했습니다. 이를 통해 개발 과정에서도 실제 환경과 유사한 경험을 유지했습니다.
+이런 노력 덕분에 웹사이트의 이미지와 미디어 파일이 효율적으로 관리되고, 페이지 로딩 속도도 최적화할 수 있었습니다.
+웹사이트는 현대적이고 사용자 친화적인 디자인으로 구현되었습니다:
+1. 반응형 네비게이션: 모바일과 데스크톱 모두에서 최적화된 네비게이션 바
+2. 패럴랙스 스크롤 효과: 메인 페이지의 시각적 효과를 위한 패럴랙스 스크롤 구현
+3. 견적 계산기: 사용자가 쉽게 서비스 견적을 계산할 수 있는 단계별 폼
+4. 서비스 소개 페이지: 아이콘과 설명을 통해 서비스를 명확하게 소개
+각 페이지별로 사용자 경험을 최우선으로 고려하여 디자인과 기능을 구현했습니다:
+1. 메인 페이지: 패럴랙스 스크롤 효과와 애니메이션을 통한 시각적 매력 향상
+2. 견적 페이지: 단계별 폼을 통한 사용자 친화적인 견적 계산 시스템
+기본 정보
+상품 정보
+견적 결과
+3. 서비스 소개 페이지: 명확한 아이콘과 설명을 통한 서비스 이해도 향상
+4. 회사 소개 페이지: 타임라인 형식의 회사 연혁과 핵심 가치 전달
+5. 채용 정보 페이지: 회사 문화와 채용 프로세스, 현재 채용 중인 포지션 표시
+이런 디자인 요소들은 Framer Motion과 TailwindCSS를 활용하여 구현되었으며, 사용자 경험을 최우선으로 고려했습니다.
+<!-- 이미지 13: 반응형 디자인 - 모바일, 태블릿, 데스크톱 버전이 나란히 보이는 비교 스크린샷 -->
+데스크톱
+모바일
+<!-- 이미지 14: 모바일 메뉴 - 햄버거 메뉴를 통해 펼쳐진 모바일 네비게이션 화면 -->
+모바일 메뉴
+이 프로젝트를 통해 풀스택 개발자로서 많은 성장을 경험했습니다:
+1. 헤드리스 CMS 전문성: PayloadCMS의 복잡한 설정과 커스터마이징에 대한 깊은 이해
+2. 서버리스 아키텍처: Next.js와 API 라우트를 활용한 서버리스 아키텍처 구현
+3. 클라우드 서비스 통합: AWS S3와 같은 클라우드 서비스와의 효율적인 통합
+4. 성능 최적화: 이미지 최적화, 코드 스플리팅, 레이지 로딩 등을 통한 웹사이트 성능 향상
+특히, PayloadCMS와 같은 상대적으로 덜 알려진 기술을 도입하면서 문서가 부족한 상황에서도 문제를 해결하는 능력이 크게 향상되었습니다. 소스 코드 분석, 커뮤니티 포럼 활용, 그리고 실험적 접근을 통해 다양한 기술적 도전을 극복했습니다.
+프로젝트를 성공적으로 완료했지만, 추후 개선할 수 있는 부분도 있습니다:
+1. 테스트 자동화: 단위 테스트와 E2E 테스트를 추가하여 코드 품질 보장
+2. 접근성 개선: 웹 접근성 지침에 따른 더 포괄적인 사용자 경험 제공
+3. 성능 모니터링: 실시간 성능 모니터링 도구 통합으로 지속적인 최적화
+4. 국제화 지원: 다국어 지원을 위한 i18n 통합
+아임유어박스 웹사이트 개발은 새로운 기술 스택과 복잡한 요구사항을 다루는 도전적인 프로젝트였습니다. PayloadCMS, Next.js, AWS S3 등 여러 기술을 통합하면서 많은 기술적 문제를 해결했고, 이 과정에서 풀스택 개발자로서 크게 성장할 수 있었습니다.
+특히 PayloadCMS의 커스터마이징, 견적 계산 시스템 구현, 이메일 통합, 그리고 S3 기반 미디어 관리 시스템 등을 성공적으로 구현하여 클라이언트의 비즈니스 요구사항을 충족시켰습니다. 이 프로젝트는 기술적 도전을 넘어 실제 비즈니스 가치를 창출하는 웹 애플리케이션을 구축하는 소중한 경험이었습니다.13:T2b9f,
 # 크롬 확장프로그램에 케시메모리 추가하기
 
 크롬 확장 프로그램을 통해 [[LazyTrading|트레이딩 도구]]를 개발하는 도중, 한 가지 큰 문제가 있었다.
@@ -321,7 +725,7 @@ function MyComponent() {
 확장 프로그램 세션이 종료되어도 사용자 경험을 유지하는 것은 생각보다 까다로운 문제였다. `background.js`를 활용한 메모리 기반 캐시는 데이터의 민감성과 일시적인 저장 특성을 고려할 때 최적의 선택이었다. React Query와 Context API를 함께 사용함으로써 상태 관리 로직을 깔끔하게 구현할 수 있었고, 사용자 경험을 크게 향상시킬 수 있었다.
 
 트레이딩 도구처럼 빠른 상호작용이 필요한 확장 프로그램에서는 이런 방식의 캐시가 매우 유용하다. 다음 프로젝트에서도 이런 패턴을 적극 활용해봐야겠다.
-12:T15b7,크롬 확장 프로그램을 통해 트레이딩 도구를 개발하는 도중, 한 가지 큰 문제가 있었다.
+14:T15b7,크롬 확장 프로그램을 통해 트레이딩 도구를 개발하는 도중, 한 가지 큰 문제가 있었다.
 크롬 확장 프로그램은 일반 앱처럼 보이지만, 사용자가 팝업 창이나 사이드바를 닫으면 확장 프로그램의 세션이 완전히 종료된다. 이로 인해 사용자가 입력했던 데이터나 현재 보고 있던 화면 위치가 저장되지 않고, 재접속 시 항상 처음 화면으로 돌아가게 된다.
 멀티태스킹 환경에서 트레이더들은 확장 프로그램을 수시로 열고 닫아야 하는데, 매번 처음부터 시작해야 하는 것은 큰 불편함이었다.
 문제를 해결의 목표를 단순하게 정리하면 다음과 같다
@@ -356,7 +760,7 @@ useCacheMutation: 앱 상태를 업데이트하는 뮤테이션
 캐시 시스템을 실제로 어떻게 사용하는지 예시 코드를 살펴보자.
 이런 식으로 다양한 컴포넌트에서 캐시를 활용하여 상태를 저장하고 복원할 수 있다.
 확장 프로그램 세션이 종료되어도 사용자 경험을 유지하는 것은 생각보다 까다로운 문제였다. background.js를 활용한 메모리 기반 캐시는 데이터의 민감성과 일시적인 저장 특성을 고려할 때 최적의 선택이었다. React Query와 Context API를 함께 사용함으로써 상태 관리 로직을 깔끔하게 구현할 수 있었고, 사용자 경험을 크게 향상시킬 수 있었다.
-트레이딩 도구처럼 빠른 상호작용이 필요한 확장 프로그램에서는 이런 방식의 캐시가 매우 유용하다. 다음 프로젝트에서도 이런 패턴을 적극 활용해봐야겠다.13:T199f,
+트레이딩 도구처럼 빠른 상호작용이 필요한 확장 프로그램에서는 이런 방식의 캐시가 매우 유용하다. 다음 프로젝트에서도 이런 패턴을 적극 활용해봐야겠다.15:T199f,
 # 취업을 위한 알고리즘 공부
 
 목표: 취업을 하기위한 알고리즘 공부
@@ -471,7 +875,7 @@ useCacheMutation: 앱 상태를 업데이트하는 뮤테이션
 우선 [SWEA](https://swexpertacademy.com/main/learn/course/subjectList.do?courseId=AVuPCwCKAAPw5UW6)강의를 보고 프로그래머스 0.5레벨 문제를 푸는것을 시작으로 백준 단계별 문제풀기, 유형별 풀기, 책보기 순서로 나아가야할것 같다.
 
 - [[SWEA 강의 정리노트]]
-14:T120b,목표: 취업을 하기위한 알고리즘 공부
+16:T120b,목표: 취업을 하기위한 알고리즘 공부
 어디서 어떻게 시작해야 발전할 수 있는지 모르기 때문에 다른 사람들을 먼저 찾아보고 따라해보면서 공부해 나간다.
 인터넷검색을 통해 내가 실천할 수 있을만한 것들을 선별하여 정리하자
 출처:Velog 포스트
@@ -541,7 +945,7 @@ useCacheMutation: 앱 상태를 업데이트하는 뮤테이션
 4. 나의 생각과 풀이를 논리적으로 표현하여 문제 풀이 기록하기
 위에서 찾은 모든것을 종합해서 진행해볼생각이다.
 우선 SWEA강의를 보고 프로그래머스 0.5레벨 문제를 푸는것을 시작으로 백준 단계별 문제풀기, 유형별 풀기, 책보기 순서로 나아가야할것 같다.
-SWEA 강의 정리노트15:Tb5b,
+SWEA 강의 정리노트17:Tb5b,
 # 어떻게 블로그를 구현하였나
 
 [[개인 블로그를 제작하게 된 이유|앞선 포스트]]에서 살펴본것처럼 내가 중요하게 생각한 블로그의 조건은 다음과 같았다.
@@ -578,7 +982,7 @@ Python을 통해 파일 시스템을 만져본것은 처음이라 [[Aider|AI 툴
 > - [[Python Script로 JSON 파일 작성하기]]
 
 Next.js 를 활용하여 블로그를 만들때 기본적으로 content 폴더에 파일들을 가져와 빌드하게 된다.
-16:T9fa,앞선 포스트에서 살펴본것처럼 내가 중요하게 생각한 블로그의 조건은 다음과 같았다.
+18:T9fa,앞선 포스트에서 살펴본것처럼 내가 중요하게 생각한 블로그의 조건은 다음과 같았다.
 1. 블로그 포스팅과 노트 작성의 흐름이 자연스럽게 연결될 것
 2. 노트와 블로그 포스트가 분리되어, 원하는 노트만 포스팅할 수 있을 것
 3. 포스팅 시 블로그의 구조를 내가 직접 정의할 수 있을 것
@@ -599,7 +1003,7 @@ Python을 통해 파일 시스템을 만져본것은 처음이라 AI 툴을 활�
 > - Python Script로 파일 복사해오기]]
 > - [[Python Script로 Markdown 파일 읽어오기]]
 > - [[Python Script로 JSON 파일 작성하기
-Next.js 를 활용하여 블로그를 만들때 기본적으로 content 폴더에 파일들을 가져와 빌드하게 된다.17:T11a8,
+Next.js 를 활용하여 블로그를 만들때 기본적으로 content 폴더에 파일들을 가져와 빌드하게 된다.19:T11a8,
 # 개인 블로그를 제작하게 된 이유
 
 개발자로서 내가 한 일을 기록하고, 이를 공유할 수 있는 공간이 필요했다. 여러 블로그 플랫폼이 있지만, **작성한 글을 복사해서 붙여넣어야 한다는 점**이 번거로웠다. 이 과정에서 블로그 운영이 기록의 목적이 아니라 **포스트를 만들기 위한 기록**처럼 느껴지는 문제가 발생했다. 결국, 기존 플랫폼을 이용하는 방식은 내 스타일이 아니라는 결론을 내렸다.
@@ -658,7 +1062,7 @@ Notion과 Obsidian은 강력한 노트 관리 기능을 제공하지만, 블로�
 블로그를 만들기 위한 다양한 프레임워크가 있지만 내가 다룰 줄 아는 프레임워크인 Next.js 가 커스터마이징하기 쉬워 보였기 때문에 Next.js 를 활용하여 블로그를 구축 하기로 결정하였다.
 
 다음: [[어떻게 블로그를 구현하였나]]
-18:Tf5f,개발자로서 내가 한 일을 기록하고, 이를 공유할 수 있는 공간이 필요했다. 여러 블로그 플랫폼이 있지만, 작성한 글을 복사해서 붙여넣어야 한다는 점이 번거로웠다. 이 과정에서 블로그 운영이 기록의 목적이 아니라 포스트를 만들기 위한 기록처럼 느껴지는 문제가 발생했다. 결국, 기존 플랫폼을 이용하는 방식은 내 스타일이 아니라는 결론을 내렸다.
+1a:Tf5f,개발자로서 내가 한 일을 기록하고, 이를 공유할 수 있는 공간이 필요했다. 여러 블로그 플랫폼이 있지만, 작성한 글을 복사해서 붙여넣어야 한다는 점이 번거로웠다. 이 과정에서 블로그 운영이 기록의 목적이 아니라 포스트를 만들기 위한 기록처럼 느껴지는 문제가 발생했다. 결국, 기존 플랫폼을 이용하는 방식은 내 스타일이 아니라는 결론을 내렸다.
 블로그를 운영하는 방식에는 크게 세 가지가 있다고 생각했다.
 1. 기존 블로그 플랫폼을 이용하는 방법
 2. Notion이나 Obsidian의 Publish 기능을 활용하는 방법
@@ -678,10 +1082,10 @@ Notion과 Obsidian은 강력한 노트 관리 기능을 제공하지만, 블로�
 4. 필요에 따라 기능을 추가하거나 제거할 수 있도록 커스터마이징이 가능할 것
 이러한 목표를 달성하기 위해 데이터베이스(DB) 사용도 고려했지만, 단순한 방법이 더 적합하다고 판단했다. 그래서 Python을 활용하여 Obsidian Vault 폴더 내의 Markdown 파일을 자동으로 블로그로 가져오는 방식을 선택했다.
 블로그를 만들기 위한 다양한 프레임워크가 있지만 내가 다룰 줄 아는 프레임워크인 Next.js 가 커스터마이징하기 쉬워 보였기 때문에 Next.js 를 활용하여 블로그를 구축 하기로 결정하였다.
-다음: 어떻게 블로그를 구현하였나2:["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":["$","body",null,{"className":"__variable_4d318d __variable_ea5f4b __variable_d65c78 __variable_dc8395 antialiased transition-all","children":["$","$Lf",null,{"attribute":"class","defaultTheme":"system","enableSystem":true,"disableTransitionOnChange":true,"children":["$","$L10",null,{"posts":[{"urlPath":"자원/크롬 확장프로그램/크롬 확장프로그램에 케시메모리 추가하기","title":"크롬 확장프로그램에 케시메모리 추가하기","summary":"","image":"","tags":["chrome-extension","example","problem"],"series":"","createdAt":"2025-03-23 09:21:24","modifiedAt":"2025-03-24 13:58:25","publish":"자원/크롬 확장프로그램","content":"$11","plainContent":"$12"},{"urlPath":"자원/SWEA 강의 정리노트/SWEA 강의 정리노트","title":"SWEA 강의 정리노트","summary":"","image":"","tags":["study","algorithm"],"series":"","createdAt":"2025-03-19 12:20:41","modifiedAt":"2025-03-20 16:17:34","publish":"자원/SWEA 강의 정리노트","content":"\n# SWEA 강의 정리노트\n\n- [강의 주소](https://swexpertacademy.com/main/learn/course/subjectList.do?courseId=AVuPCwCKAAPw5UW6)\n\n## 강의 노트\n\n### Computaional Thinking\n\n- [[프로그래밍과 논리수학]]\n","plainContent":"강의 주소\n프로그래밍과 논리수학"},{"urlPath":"프로젝트/알고리즘/취업을 위한 알고리즘 공부","title":"취업을 위한 알고리즘 공부","summary":"","image":"","tags":["project","study","algorithm"],"series":"취업을 위해 알고리즘 공부하기","createdAt":"2025-03-19 08:05:06","modifiedAt":"2025-03-20 16:16:00","publish":"프로젝트/알고리즘","content":"$13","plainContent":"$14"},{"urlPath":"자원/ai/Aider","title":"Aider","summary":"","image":"","tags":["ai","tool","aider","quickstart"],"series":"","createdAt":"2025-03-10 08:21:08","modifiedAt":"2025-03-20 16:17:15","publish":"자원/ai","content":"\n# Aider\n\n공식 홈페이지:[Home | Aider](https://aider.chat/)\n\n> [!quote]\n> Aider lets you pair program with LLMs, to edit code in your local git repository. Start a new project or work with an existing code base.\n\nAider 는 터미널을 통해 AI 와 [Pair Programming](https://namu.wiki/w/%ED%8E%98%EC%96%B4%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)을 할 수 있도록 해주는 툴이다.\n\n비슷 한 툴로는 Cursor, Claude, Windsurf 등이 있다.\n\n## QuickStart\n","plainContent":"공식 홈페이지:Home | Aider\n> [!quote]\n> Aider lets you pair program with LLMs, to edit code in your local git repository. Start a new project or work with an existing code base.\nAider 는 터미널을 통해 AI 와 Pair Programming을 할 수 있도록 해주는 툴이다.\n비슷 한 툴로는 Cursor, Claude, Windsurf 등이 있다."},{"urlPath":"자원/web/동적 사이트 vs 정적사이트","title":"동적 사이트 vs 정적사이트","summary":"","image":"","tags":["web"],"series":"","createdAt":"2025-03-10 07:39:08","modifiedAt":"2025-03-20 16:16:49","publish":"자원/web","content":"\n# 동적 사이트 vs 정적사이트\n\n복잡하게 생각하지 말고 단순하게 동적 사이트와 정적 사이트를 구분한다면 페이지의 렌더링 **_(화면 렌더링 아님)_** 시기 이다.\n\n정적 사이트는 HTML이 빌드 타임에 미리 생성되고 수정되지 않는다.\n하지만 동적 사이트의 경우 클라이언트 측이든 서버 측이든 요청에 따라 HTML 이 생성되게 된다.\n\n> [!caution] 화면 렌더링(브라우저의 렌더링) 과 페이지 렌더링의 차이\n> 동적 사이트와 정적사이트에서 표현하는 렌더링은 HTML에 대한 렌더링 이다. 즉 코드를 HTML 로 변환하는 과정을 말한다.\n> 화면에 대한 렌더링은 이 완성된 HTML 과 CSS 를 웹브라우져가 화면에 그려 표현해주는것을 뜻한다.\n> 참고: [[웹브라우저의 렌더링]]\n\n## CSR,SSR,SSG\n\nCSR(Client Side Rendering) 과 SSR(Server Side Rendering) 의 경우 동적 사이트로 분류될 수 있다. 왜냐하면 HTML 의 렌더링 시기 때문이다.\nSSR의 경우 요청에 따라 Javascript 가 담겨있는 HTML을 받아와 해당 javascript 코드를 실행하여 직접 HTML을 생성하여 렌더링 하게 된다. SSR의 경우 요청에 따라 서버 측에서 HTML 을 생성하여 클라이언트로 전송한다.\n\nCSR과 SSR둘 다 요청 이후에 필요에 따라 HTML이 새로 만들어지며 이 때문에 **_동적 사이트_** 방식으로 분류될 수 있다.\n\nSSG의 경우 HTML 을 빌드 타임에 미리 생성하게 되기 때문에 **_정적 사이트_**로 분류될 수 있다.\n\n참고: [[CSR vs SSR vs SSG]]\n","plainContent":"복잡하게 생각하지 말고 단순하게 동적 사이트와 정적 사이트를 구분한다면 페이지의 렌더링 _(화면 렌더링 아님)_ 시기 이다.\n정적 사이트는 HTML이 빌드 타임에 미리 생성되고 수정되지 않는다.\n하지만 동적 사이트의 경우 클라이언트 측이든 서버 측이든 요청에 따라 HTML 이 생성되게 된다.\n> [!caution] 화면 렌더링(브라우저의 렌더링) 과 페이지 렌더링의 차이\n> 동적 사이트와 정적사이트에서 표현하는 렌더링은 HTML에 대한 렌더링 이다. 즉 코드를 HTML 로 변환하는 과정을 말한다.\n> 화면에 대한 렌더링은 이 완성된 HTML 과 CSS 를 웹브라우져가 화면에 그려 표현해주는것을 뜻한다.\n> 참고: 웹브라우저의 렌더링]]\nCSR(Client Side Rendering) 과 SSR(Server Side Rendering) 의 경우 동적 사이트로 분류될 수 있다. 왜냐하면 HTML 의 렌더링 시기 때문이다.\nSSR의 경우 요청에 따라 Javascript 가 담겨있는 HTML을 받아와 해당 javascript 코드를 실행하여 직접 HTML을 생성하여 렌더링 하게 된다. SSR의 경우 요청에 따라 서버 측에서 HTML 을 생성하여 클라이언트로 전송한다.\nCSR과 SSR둘 다 요청 이후에 필요에 따라 HTML이 새로 만들어지며 이 때문에 _동적 사이트_ 방식으로 분류될 수 있다.\nSSG의 경우 HTML 을 빌드 타임에 미리 생성하게 되기 때문에 _정적 사이트_로 분류될 수 있다.\n참고: [[CSR vs SSR vs SSG"},{"urlPath":"프로젝트/블로그/어떻게 블로그를 구현하였나","title":"어떻게 블로그를 구현하였나","summary":"","image":"","tags":["blog","dev","project"],"series":"나의 맞춤 블로그 만들기","createdAt":"2025-03-08 17:12:17","modifiedAt":"2025-03-20 16:16:24","publish":"프로젝트/블로그","content":"$15","plainContent":"$16"},{"urlPath":"프로젝트/블로그/개인 블로그를 제작하게 된 이유","title":"개인 블로그를 제작하게 된 이유","summary":"","image":"","tags":["blog","dev","project"],"series":"나의 맞춤 블로그 만들기","createdAt":"2025-03-08 17:09:39","modifiedAt":"2025-03-20 16:17:00","publish":"프로젝트/블로그","content":"$17","plainContent":"$18"}],"postsMetadata":[{"urlPath":"자원/크롬 확장프로그램/크롬 확장프로그램에 케시메모리 추가하기","title":"크롬 확장프로그램에 케시메모리 추가하기","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:0:tags","series":"","createdAt":"2025-03-23 09:21:24","modifiedAt":"2025-03-24 13:58:25","publish":"자원/크롬 확장프로그램"},{"urlPath":"자원/SWEA 강의 정리노트/SWEA 강의 정리노트","title":"SWEA 강의 정리노트","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:1:tags","series":"","createdAt":"2025-03-19 12:20:41","modifiedAt":"2025-03-20 16:17:34","publish":"자원/SWEA 강의 정리노트"},{"urlPath":"프로젝트/알고리즘/취업을 위한 알고리즘 공부","title":"취업을 위한 알고리즘 공부","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:2:tags","series":"취업을 위해 알고리즘 공부하기","createdAt":"2025-03-19 08:05:06","modifiedAt":"2025-03-20 16:16:00","publish":"프로젝트/알고리즘"},{"urlPath":"자원/ai/Aider","title":"Aider","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:3:tags","series":"","createdAt":"2025-03-10 08:21:08","modifiedAt":"2025-03-20 16:17:15","publish":"자원/ai"},{"urlPath":"자원/web/동적 사이트 vs 정적사이트","title":"동적 사이트 vs 정적사이트","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:4:tags","series":"","createdAt":"2025-03-10 07:39:08","modifiedAt":"2025-03-20 16:16:49","publish":"자원/web"},{"urlPath":"프로젝트/블로그/어떻게 블로그를 구현하였나","title":"어떻게 블로그를 구현하였나","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:5:tags","series":"나의 맞춤 블로그 만들기","createdAt":"2025-03-08 17:12:17","modifiedAt":"2025-03-20 16:16:24","publish":"프로젝트/블로그"},{"urlPath":"프로젝트/블로그/개인 블로그를 제작하게 된 이유","title":"개인 블로그를 제작하게 된 이유","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:6:tags","series":"나의 맞춤 블로그 만들기","createdAt":"2025-03-08 17:09:39","modifiedAt":"2025-03-20 16:17:00","publish":"프로젝트/블로그"}],"children":["$","div",null,{"className":"min-h-screen flex flex-col motion-reduce","children":[["$","$L19",null,{}],["$","main",null,{"className":"flex flex-col xl:flex-row mt-12 sm:mt-14 md:mt-16 2xl:container 2xl:mx-auto md:px-5","children":[["$","$L1a",null,{}],["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[],["$","main",null,{"className":"flex-1 mx-auto p-5 lg:p-10 shadow-md","children":["$","article",null,{"className":"mx-auto rounded-lg p-8","children":[["$","h1",null,{"className":"text-2xl font-bold mb-4","children":"페이지를 찾을 수 없습니다"}],["$","div",null,{"className":"prose dark:prose-invert","children":[["$","p",null,{"className":"text-muted-foreground","children":"요청하신 페이지가 존재하지 않거나 삭제되었습니다."}],["$","$L1b",null,{"href":"/","className":"mt-4 inline-block text-primary hover:underline transition-colors duration-200","children":"← 홈으로 돌아가기"}]]}]]}]}]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],["$","$L1c",null,{}]]}]}]}]}]}]
-1d:I[29519,["173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","869","static/chunks/869-c4764269b4319e39.js","594","static/chunks/app/(blog)/posts/%5B...slug%5D/page-3e8617894314718a.js"],"default"]
-1e:I[44932,["173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","869","static/chunks/869-c4764269b4319e39.js","594","static/chunks/app/(blog)/posts/%5B...slug%5D/page-3e8617894314718a.js"],"default"]
-1f:Tb5b,
+다음: 어떻게 블로그를 구현하였나2:["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":["$","body",null,{"className":"__variable_4d318d __variable_ea5f4b __variable_d65c78 __variable_dc8395 antialiased transition-all","children":["$","$Lf",null,{"attribute":"class","defaultTheme":"system","enableSystem":true,"disableTransitionOnChange":true,"children":["$","$L10",null,{"posts":[{"urlPath":"프로젝트/아임유어박스 웹사이트 개발/물류 서비스 웹사이트 개발 회고-혼자서 외주 프로젝트 완성하기","title":"물류 서비스 웹사이트 개발 회고-혼자서 외주 프로젝트 완성하기","summary":"","image":"","tags":["project","회고"],"series":"","createdAt":"2025-03-25 16:46:50","modifiedAt":"2025-03-26 15:03:47","publish":"프로젝트/아임유어박스 웹사이트 개발","content":"$11","plainContent":"$12"},{"urlPath":"자원/크롬 확장프로그램/크롬 확장프로그램에 케시메모리 추가하기","title":"크롬 확장프로그램에 케시메모리 추가하기","summary":"","image":"","tags":["chrome-extension","example","problem"],"series":"","createdAt":"2025-03-23 09:21:24","modifiedAt":"2025-03-24 13:58:25","publish":"자원/크롬 확장프로그램","content":"$13","plainContent":"$14"},{"urlPath":"자원/SWEA 강의 정리노트/SWEA 강의 정리노트","title":"SWEA 강의 정리노트","summary":"","image":"","tags":["study","algorithm"],"series":"","createdAt":"2025-03-19 12:20:41","modifiedAt":"2025-03-20 16:17:34","publish":"자원/SWEA 강의 정리노트","content":"\n# SWEA 강의 정리노트\n\n- [강의 주소](https://swexpertacademy.com/main/learn/course/subjectList.do?courseId=AVuPCwCKAAPw5UW6)\n\n## 강의 노트\n\n### Computaional Thinking\n\n- [[프로그래밍과 논리수학]]\n","plainContent":"강의 주소\n프로그래밍과 논리수학"},{"urlPath":"프로젝트/알고리즘/취업을 위한 알고리즘 공부","title":"취업을 위한 알고리즘 공부","summary":"","image":"","tags":["project","study","algorithm"],"series":"취업을 위해 알고리즘 공부하기","createdAt":"2025-03-19 08:05:06","modifiedAt":"2025-03-20 16:16:00","publish":"프로젝트/알고리즘","content":"$15","plainContent":"$16"},{"urlPath":"자원/ai/Aider","title":"Aider","summary":"","image":"","tags":["ai","tool","aider","quickstart"],"series":"","createdAt":"2025-03-10 08:21:08","modifiedAt":"2025-03-20 16:17:15","publish":"자원/ai","content":"\n# Aider\n\n공식 홈페이지:[Home | Aider](https://aider.chat/)\n\n> [!quote]\n> Aider lets you pair program with LLMs, to edit code in your local git repository. Start a new project or work with an existing code base.\n\nAider 는 터미널을 통해 AI 와 [Pair Programming](https://namu.wiki/w/%ED%8E%98%EC%96%B4%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)을 할 수 있도록 해주는 툴이다.\n\n비슷 한 툴로는 Cursor, Claude, Windsurf 등이 있다.\n\n## QuickStart\n","plainContent":"공식 홈페이지:Home | Aider\n> [!quote]\n> Aider lets you pair program with LLMs, to edit code in your local git repository. Start a new project or work with an existing code base.\nAider 는 터미널을 통해 AI 와 Pair Programming을 할 수 있도록 해주는 툴이다.\n비슷 한 툴로는 Cursor, Claude, Windsurf 등이 있다."},{"urlPath":"자원/web/동적 사이트 vs 정적사이트","title":"동적 사이트 vs 정적사이트","summary":"","image":"","tags":["web"],"series":"","createdAt":"2025-03-10 07:39:08","modifiedAt":"2025-03-20 16:16:49","publish":"자원/web","content":"\n# 동적 사이트 vs 정적사이트\n\n복잡하게 생각하지 말고 단순하게 동적 사이트와 정적 사이트를 구분한다면 페이지의 렌더링 **_(화면 렌더링 아님)_** 시기 이다.\n\n정적 사이트는 HTML이 빌드 타임에 미리 생성되고 수정되지 않는다.\n하지만 동적 사이트의 경우 클라이언트 측이든 서버 측이든 요청에 따라 HTML 이 생성되게 된다.\n\n> [!caution] 화면 렌더링(브라우저의 렌더링) 과 페이지 렌더링의 차이\n> 동적 사이트와 정적사이트에서 표현하는 렌더링은 HTML에 대한 렌더링 이다. 즉 코드를 HTML 로 변환하는 과정을 말한다.\n> 화면에 대한 렌더링은 이 완성된 HTML 과 CSS 를 웹브라우져가 화면에 그려 표현해주는것을 뜻한다.\n> 참고: [[웹브라우저의 렌더링]]\n\n## CSR,SSR,SSG\n\nCSR(Client Side Rendering) 과 SSR(Server Side Rendering) 의 경우 동적 사이트로 분류될 수 있다. 왜냐하면 HTML 의 렌더링 시기 때문이다.\nSSR의 경우 요청에 따라 Javascript 가 담겨있는 HTML을 받아와 해당 javascript 코드를 실행하여 직접 HTML을 생성하여 렌더링 하게 된다. SSR의 경우 요청에 따라 서버 측에서 HTML 을 생성하여 클라이언트로 전송한다.\n\nCSR과 SSR둘 다 요청 이후에 필요에 따라 HTML이 새로 만들어지며 이 때문에 **_동적 사이트_** 방식으로 분류될 수 있다.\n\nSSG의 경우 HTML 을 빌드 타임에 미리 생성하게 되기 때문에 **_정적 사이트_**로 분류될 수 있다.\n\n참고: [[CSR vs SSR vs SSG]]\n","plainContent":"복잡하게 생각하지 말고 단순하게 동적 사이트와 정적 사이트를 구분한다면 페이지의 렌더링 _(화면 렌더링 아님)_ 시기 이다.\n정적 사이트는 HTML이 빌드 타임에 미리 생성되고 수정되지 않는다.\n하지만 동적 사이트의 경우 클라이언트 측이든 서버 측이든 요청에 따라 HTML 이 생성되게 된다.\n> [!caution] 화면 렌더링(브라우저의 렌더링) 과 페이지 렌더링의 차이\n> 동적 사이트와 정적사이트에서 표현하는 렌더링은 HTML에 대한 렌더링 이다. 즉 코드를 HTML 로 변환하는 과정을 말한다.\n> 화면에 대한 렌더링은 이 완성된 HTML 과 CSS 를 웹브라우져가 화면에 그려 표현해주는것을 뜻한다.\n> 참고: 웹브라우저의 렌더링]]\nCSR(Client Side Rendering) 과 SSR(Server Side Rendering) 의 경우 동적 사이트로 분류될 수 있다. 왜냐하면 HTML 의 렌더링 시기 때문이다.\nSSR의 경우 요청에 따라 Javascript 가 담겨있는 HTML을 받아와 해당 javascript 코드를 실행하여 직접 HTML을 생성하여 렌더링 하게 된다. SSR의 경우 요청에 따라 서버 측에서 HTML 을 생성하여 클라이언트로 전송한다.\nCSR과 SSR둘 다 요청 이후에 필요에 따라 HTML이 새로 만들어지며 이 때문에 _동적 사이트_ 방식으로 분류될 수 있다.\nSSG의 경우 HTML 을 빌드 타임에 미리 생성하게 되기 때문에 _정적 사이트_로 분류될 수 있다.\n참고: [[CSR vs SSR vs SSG"},{"urlPath":"프로젝트/블로그/어떻게 블로그를 구현하였나","title":"어떻게 블로그를 구현하였나","summary":"","image":"","tags":["blog","dev","project"],"series":"나의 맞춤 블로그 만들기","createdAt":"2025-03-08 17:12:17","modifiedAt":"2025-03-20 16:16:24","publish":"프로젝트/블로그","content":"$17","plainContent":"$18"},{"urlPath":"프로젝트/블로그/개인 블로그를 제작하게 된 이유","title":"개인 블로그를 제작하게 된 이유","summary":"","image":"","tags":["blog","dev","project"],"series":"나의 맞춤 블로그 만들기","createdAt":"2025-03-08 17:09:39","modifiedAt":"2025-03-20 16:17:00","publish":"프로젝트/블로그","content":"$19","plainContent":"$1a"}],"postsMetadata":[{"urlPath":"프로젝트/아임유어박스 웹사이트 개발/물류 서비스 웹사이트 개발 회고-혼자서 외주 프로젝트 완성하기","title":"물류 서비스 웹사이트 개발 회고-혼자서 외주 프로젝트 완성하기","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:0:tags","series":"","createdAt":"2025-03-25 16:46:50","modifiedAt":"2025-03-26 15:03:47","publish":"프로젝트/아임유어박스 웹사이트 개발"},{"urlPath":"자원/크롬 확장프로그램/크롬 확장프로그램에 케시메모리 추가하기","title":"크롬 확장프로그램에 케시메모리 추가하기","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:1:tags","series":"","createdAt":"2025-03-23 09:21:24","modifiedAt":"2025-03-24 13:58:25","publish":"자원/크롬 확장프로그램"},{"urlPath":"자원/SWEA 강의 정리노트/SWEA 강의 정리노트","title":"SWEA 강의 정리노트","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:2:tags","series":"","createdAt":"2025-03-19 12:20:41","modifiedAt":"2025-03-20 16:17:34","publish":"자원/SWEA 강의 정리노트"},{"urlPath":"프로젝트/알고리즘/취업을 위한 알고리즘 공부","title":"취업을 위한 알고리즘 공부","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:3:tags","series":"취업을 위해 알고리즘 공부하기","createdAt":"2025-03-19 08:05:06","modifiedAt":"2025-03-20 16:16:00","publish":"프로젝트/알고리즘"},{"urlPath":"자원/ai/Aider","title":"Aider","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:4:tags","series":"","createdAt":"2025-03-10 08:21:08","modifiedAt":"2025-03-20 16:17:15","publish":"자원/ai"},{"urlPath":"자원/web/동적 사이트 vs 정적사이트","title":"동적 사이트 vs 정적사이트","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:5:tags","series":"","createdAt":"2025-03-10 07:39:08","modifiedAt":"2025-03-20 16:16:49","publish":"자원/web"},{"urlPath":"프로젝트/블로그/어떻게 블로그를 구현하였나","title":"어떻게 블로그를 구현하였나","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:6:tags","series":"나의 맞춤 블로그 만들기","createdAt":"2025-03-08 17:12:17","modifiedAt":"2025-03-20 16:16:24","publish":"프로젝트/블로그"},{"urlPath":"프로젝트/블로그/개인 블로그를 제작하게 된 이유","title":"개인 블로그를 제작하게 된 이유","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:7:tags","series":"나의 맞춤 블로그 만들기","createdAt":"2025-03-08 17:09:39","modifiedAt":"2025-03-20 16:17:00","publish":"프로젝트/블로그"}],"children":["$","div",null,{"className":"min-h-screen flex flex-col motion-reduce","children":[["$","$L1b",null,{}],["$","main",null,{"className":"flex flex-col xl:flex-row mt-12 sm:mt-14 md:mt-16 2xl:container 2xl:mx-auto md:px-5","children":[["$","$L1c",null,{}],["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[],["$","main",null,{"className":"flex-1 mx-auto p-5 lg:p-10 shadow-md","children":["$","article",null,{"className":"mx-auto rounded-lg p-8","children":[["$","h1",null,{"className":"text-2xl font-bold mb-4","children":"페이지를 찾을 수 없습니다"}],["$","div",null,{"className":"prose dark:prose-invert","children":[["$","p",null,{"className":"text-muted-foreground","children":"요청하신 페이지가 존재하지 않거나 삭제되었습니다."}],["$","$L1d",null,{"href":"/","className":"mt-4 inline-block text-primary hover:underline transition-colors duration-200","children":"← 홈으로 돌아가기"}]]}]]}]}]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],["$","$L1e",null,{}]]}]}]}]}]}]
+1f:I[29519,["173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","869","static/chunks/869-c4764269b4319e39.js","594","static/chunks/app/(blog)/posts/%5B...slug%5D/page-3e8617894314718a.js"],"default"]
+20:I[44932,["173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","869","static/chunks/869-c4764269b4319e39.js","594","static/chunks/app/(blog)/posts/%5B...slug%5D/page-3e8617894314718a.js"],"default"]
+21:Tb5b,
 # 어떻게 블로그를 구현하였나
 
 [[개인 블로그를 제작하게 된 이유|앞선 포스트]]에서 살펴본것처럼 내가 중요하게 생각한 블로그의 조건은 다음과 같았다.
@@ -718,7 +1122,7 @@ Python을 통해 파일 시스템을 만져본것은 처음이라 [[Aider|AI 툴
 > - [[Python Script로 JSON 파일 작성하기]]
 
 Next.js 를 활용하여 블로그를 만들때 기본적으로 content 폴더에 파일들을 가져와 빌드하게 된다.
-20:T9fa,앞선 포스트에서 살펴본것처럼 내가 중요하게 생각한 블로그의 조건은 다음과 같았다.
+22:T9fa,앞선 포스트에서 살펴본것처럼 내가 중요하게 생각한 블로그의 조건은 다음과 같았다.
 1. 블로그 포스팅과 노트 작성의 흐름이 자연스럽게 연결될 것
 2. 노트와 블로그 포스트가 분리되어, 원하는 노트만 포스팅할 수 있을 것
 3. 포스팅 시 블로그의 구조를 내가 직접 정의할 수 있을 것
@@ -739,4 +1143,4 @@ Python을 통해 파일 시스템을 만져본것은 처음이라 AI 툴을 활�
 > - Python Script로 파일 복사해오기]]
 > - [[Python Script로 Markdown 파일 읽어오기]]
 > - [[Python Script로 JSON 파일 작성하기
-Next.js 를 활용하여 블로그를 만들때 기본적으로 content 폴더에 파일들을 가져와 빌드하게 된다.7:["$","$L1d",null,{"children":["$","$L1e",null,{"content":"\n# 동적 사이트 vs 정적사이트\n\n복잡하게 생각하지 말고 단순하게 동적 사이트와 정적 사이트를 구분한다면 페이지의 렌더링 **_(화면 렌더링 아님)_** 시기 이다.\n\n정적 사이트는 HTML이 빌드 타임에 미리 생성되고 수정되지 않는다.\n하지만 동적 사이트의 경우 클라이언트 측이든 서버 측이든 요청에 따라 HTML 이 생성되게 된다.\n\n> [!caution] 화면 렌더링(브라우저의 렌더링) 과 페이지 렌더링의 차이\n> 동적 사이트와 정적사이트에서 표현하는 렌더링은 HTML에 대한 렌더링 이다. 즉 코드를 HTML 로 변환하는 과정을 말한다.\n> 화면에 대한 렌더링은 이 완성된 HTML 과 CSS 를 웹브라우져가 화면에 그려 표현해주는것을 뜻한다.\n> 참고: [[웹브라우저의 렌더링]]\n\n## CSR,SSR,SSG\n\nCSR(Client Side Rendering) 과 SSR(Server Side Rendering) 의 경우 동적 사이트로 분류될 수 있다. 왜냐하면 HTML 의 렌더링 시기 때문이다.\nSSR의 경우 요청에 따라 Javascript 가 담겨있는 HTML을 받아와 해당 javascript 코드를 실행하여 직접 HTML을 생성하여 렌더링 하게 된다. SSR의 경우 요청에 따라 서버 측에서 HTML 을 생성하여 클라이언트로 전송한다.\n\nCSR과 SSR둘 다 요청 이후에 필요에 따라 HTML이 새로 만들어지며 이 때문에 **_동적 사이트_** 방식으로 분류될 수 있다.\n\nSSG의 경우 HTML 을 빌드 타임에 미리 생성하게 되기 때문에 **_정적 사이트_**로 분류될 수 있다.\n\n참고: [[CSR vs SSR vs SSG]]\n","publishPath":"자원/web","published":"2025-03-10 07:39:08","modified":"2025-03-20 16:16:49","tags":"$2:props:children:props:children:props:children:props:posts:4:tags","prevPost":{"urlPath":"자원/ai/Aider","title":"Aider","summary":"","content":"\n# Aider\n\n공식 홈페이지:[Home | Aider](https://aider.chat/)\n\n> [!quote]\n> Aider lets you pair program with LLMs, to edit code in your local git repository. Start a new project or work with an existing code base.\n\nAider 는 터미널을 통해 AI 와 [Pair Programming](https://namu.wiki/w/%ED%8E%98%EC%96%B4%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)을 할 수 있도록 해주는 툴이다.\n\n비슷 한 툴로는 Cursor, Claude, Windsurf 등이 있다.\n\n## QuickStart\n","plainContent":"공식 홈페이지:Home | Aider\n> [!quote]\n> Aider lets you pair program with LLMs, to edit code in your local git repository. Start a new project or work with an existing code base.\nAider 는 터미널을 통해 AI 와 Pair Programming을 할 수 있도록 해주는 툴이다.\n비슷 한 툴로는 Cursor, Claude, Windsurf 등이 있다.","image":"","tags":"$2:props:children:props:children:props:children:props:posts:3:tags","series":"","createdAt":"2025-03-10 08:21:08","modifiedAt":"2025-03-20 16:17:15","publish":"자원/ai"},"nextPost":{"urlPath":"프로젝트/블로그/어떻게 블로그를 구현하였나","title":"어떻게 블로그를 구현하였나","summary":"","content":"$1f","plainContent":"$20","image":"","tags":"$2:props:children:props:children:props:children:props:posts:5:tags","series":"나의 맞춤 블로그 만들기","createdAt":"2025-03-08 17:12:17","modifiedAt":"2025-03-20 16:16:24","publish":"프로젝트/블로그"}}]}]
+Next.js 를 활용하여 블로그를 만들때 기본적으로 content 폴더에 파일들을 가져와 빌드하게 된다.7:["$","$L1f",null,{"children":["$","$L20",null,{"content":"\n# 동적 사이트 vs 정적사이트\n\n복잡하게 생각하지 말고 단순하게 동적 사이트와 정적 사이트를 구분한다면 페이지의 렌더링 **_(화면 렌더링 아님)_** 시기 이다.\n\n정적 사이트는 HTML이 빌드 타임에 미리 생성되고 수정되지 않는다.\n하지만 동적 사이트의 경우 클라이언트 측이든 서버 측이든 요청에 따라 HTML 이 생성되게 된다.\n\n> [!caution] 화면 렌더링(브라우저의 렌더링) 과 페이지 렌더링의 차이\n> 동적 사이트와 정적사이트에서 표현하는 렌더링은 HTML에 대한 렌더링 이다. 즉 코드를 HTML 로 변환하는 과정을 말한다.\n> 화면에 대한 렌더링은 이 완성된 HTML 과 CSS 를 웹브라우져가 화면에 그려 표현해주는것을 뜻한다.\n> 참고: [[웹브라우저의 렌더링]]\n\n## CSR,SSR,SSG\n\nCSR(Client Side Rendering) 과 SSR(Server Side Rendering) 의 경우 동적 사이트로 분류될 수 있다. 왜냐하면 HTML 의 렌더링 시기 때문이다.\nSSR의 경우 요청에 따라 Javascript 가 담겨있는 HTML을 받아와 해당 javascript 코드를 실행하여 직접 HTML을 생성하여 렌더링 하게 된다. SSR의 경우 요청에 따라 서버 측에서 HTML 을 생성하여 클라이언트로 전송한다.\n\nCSR과 SSR둘 다 요청 이후에 필요에 따라 HTML이 새로 만들어지며 이 때문에 **_동적 사이트_** 방식으로 분류될 수 있다.\n\nSSG의 경우 HTML 을 빌드 타임에 미리 생성하게 되기 때문에 **_정적 사이트_**로 분류될 수 있다.\n\n참고: [[CSR vs SSR vs SSG]]\n","publishPath":"자원/web","published":"2025-03-10 07:39:08","modified":"2025-03-20 16:16:49","tags":"$2:props:children:props:children:props:children:props:posts:5:tags","prevPost":{"urlPath":"자원/ai/Aider","title":"Aider","summary":"","content":"\n# Aider\n\n공식 홈페이지:[Home | Aider](https://aider.chat/)\n\n> [!quote]\n> Aider lets you pair program with LLMs, to edit code in your local git repository. Start a new project or work with an existing code base.\n\nAider 는 터미널을 통해 AI 와 [Pair Programming](https://namu.wiki/w/%ED%8E%98%EC%96%B4%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)을 할 수 있도록 해주는 툴이다.\n\n비슷 한 툴로는 Cursor, Claude, Windsurf 등이 있다.\n\n## QuickStart\n","plainContent":"공식 홈페이지:Home | Aider\n> [!quote]\n> Aider lets you pair program with LLMs, to edit code in your local git repository. Start a new project or work with an existing code base.\nAider 는 터미널을 통해 AI 와 Pair Programming을 할 수 있도록 해주는 툴이다.\n비슷 한 툴로는 Cursor, Claude, Windsurf 등이 있다.","image":"","tags":"$2:props:children:props:children:props:children:props:posts:4:tags","series":"","createdAt":"2025-03-10 08:21:08","modifiedAt":"2025-03-20 16:17:15","publish":"자원/ai"},"nextPost":{"urlPath":"프로젝트/블로그/어떻게 블로그를 구현하였나","title":"어떻게 블로그를 구현하였나","summary":"","content":"$21","plainContent":"$22","image":"","tags":"$2:props:children:props:children:props:children:props:posts:6:tags","series":"나의 맞춤 블로그 만들기","createdAt":"2025-03-08 17:12:17","modifiedAt":"2025-03-20 16:16:24","publish":"프로젝트/블로그"}}]}]
