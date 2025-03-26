@@ -36,9 +36,10 @@ const PostCard = ({
     !thumbnail.startsWith("http") &&
     !thumbnail.startsWith("/")
   ) {
-    const publishDir = urlPath.split("/").slice(0, -1).join("/");
+    // 이미지 파일명 추출
     const imageName = thumbnail.split("/").pop();
-    thumbnail = `/postImg/${publishDir}/${imageName}`;
+    // 이미지 경로: /postImg/urlPath/이미지파일명
+    thumbnail = `/postImg/${urlPath}/${imageName}`;
   }
 
   // 날짜 포맷팅
