@@ -159,7 +159,7 @@
     "id": "ccxt-mcp",
     "title": "CCXT MCP Server",
     "description": "AI 모델(Claude/GPT)이 100개 이상의 암호화폐 거래소 API와 상호작용할 수 있게 해주는 Model Context Protocol(MCP) 서버입니다. CCXT 라이브러리를 활용하여 암호화폐 거래소에 접근하고 거래할 수 있는 기능을 제공합니다.",
-    "thumbnail": "/projects/ccxt-mcp/ccxt-mcp-logo.png",
+    "thumbnail": "/projects/ccxt-mcp/ccxt-mcp-main.png",
     "tags": ["Crypto", "MCP", "AI", "NPM"],
     "technologies": [
       "TypeScript",
