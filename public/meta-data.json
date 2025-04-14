@@ -66,15 +66,15 @@
                             "publish": "자원/크롬 확장프로그램"
                         },
   {
-                            "urlPath": "자원/web/동적 사이트 vs 정적사이트",
+                            "urlPath": "자원/웹개발/동적 사이트 vs 정적사이트",
                             "title": "동적 사이트 vs 정적사이트",
                             "summary": "",
                             "image": "",
-                            "tags": ["web"],
+                            "tags": ["resource", "web"],
                             "series": "",
                             "createdAt": "2025-03-10 07:39:08",
-                            "modifiedAt": "2025-03-20 16:16:49",
-                            "publish": "자원/web"
+                            "modifiedAt": "2025-04-14 19:22:41",
+                            "publish": "자원/웹개발"
                         },
   {
                             "urlPath": "자원/웹개발/웹사이트는 어떻게 구성되어있나",
