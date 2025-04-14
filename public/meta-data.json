@@ -22,17 +22,6 @@
                             "publish": "프로젝트/아임유어박스 웹사이트"
                         },
   {
-                            "urlPath": "프로젝트/개인 블로그 제작/개인 블로그 제작기 - 옵시디언에서 Next.js로",
-                            "title": "개인 블로그 제작기 - 옵시디언에서 Next.js로",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["blog", "nextjs", "obsidian", "portfolio", "\ud68c\uace0"],
-                            "series": "개인 블로그 제작기",
-                            "createdAt": "2025-03-27 10:33:01",
-                            "modifiedAt": "2025-04-01 19:50:13",
-                            "publish": "프로젝트/개인 블로그 제작"
-                        },
-  {
                             "urlPath": "프로젝트/블로그/어떻게 블로그를 구현하였나",
                             "title": "어떻게 블로그를 구현하였나",
                             "summary": "",
