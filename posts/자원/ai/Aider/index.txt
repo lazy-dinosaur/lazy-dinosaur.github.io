@@ -14,16 +14,16 @@ e:I[34835,[],""]
 :HL["/_next/static/css/f39913cce61522dc.css","style"]
 :HL["/_next/static/css/0f3413a78a46238e.css","style"]
 :HL["/_next/static/css/73563fcd4e895f21.css","style"]
-0:{"P":null,"b":"fRbr63P71T5kPX3bIJCxE","p":"","c":["","posts","%EC%9E%90%EC%9B%90","ai","Aider",""],"i":false,"f":[[["",{"children":["(blog)",{"children":["posts",{"children":[["slug","%EC%9E%90%EC%9B%90/ai/Aider","c"],{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/f39913cce61522dc.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/0f3413a78a46238e.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/73563fcd4e895f21.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],"$L2"]}],{"children":["(blog)",["$","$1","c",{"children":[null,[["$","$L3",null,{"className":"w-60 xl:w-64 2xl:w-72 lg:shrink-0 lg:sticky h-full lg:top-16 mb-4 lg:mb-0 mt-52"}],["$","div",null,{"className":"xl:max-w-5xl mx-auto rounded-lg w-full overflow-x-hidden py-6 p-3 2xl:px-6 h-full overflow-y-hidden","children":["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","(blog)","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","$L6",null,{"className":"w-60 xl:w-64 2xl:w-72 shrink-0 hidden xl:block sticky top-16 h-full mt-52"}]]]}],{"children":["posts",["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","(blog)","children","posts","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","%EC%9E%90%EC%9B%90/ai/Aider","c"],["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","(blog)","children","posts","children","$0:f:0:1:2:children:2:children:2:children:0","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L7",null,["$","$L8",null,{"children":"$L9"}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","xvD6IDSuIKdGYtK3lrp-H",{"children":[["$","$La",null,{"children":"$Lb"}],["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+0:{"P":null,"b":"rd7jBpl6sM5rkLME1ZoAe","p":"","c":["","posts","%EC%9E%90%EC%9B%90","ai","Aider",""],"i":false,"f":[[["",{"children":["(blog)",{"children":["posts",{"children":[["slug","%EC%9E%90%EC%9B%90/ai/Aider","c"],{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/f39913cce61522dc.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/0f3413a78a46238e.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/73563fcd4e895f21.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],"$L2"]}],{"children":["(blog)",["$","$1","c",{"children":[null,[["$","$L3",null,{"className":"w-60 xl:w-64 2xl:w-72 lg:shrink-0 lg:sticky h-full lg:top-16 mb-4 lg:mb-0 mt-52"}],["$","div",null,{"className":"xl:max-w-5xl mx-auto rounded-lg w-full overflow-x-hidden py-6 p-3 2xl:px-6 h-full overflow-y-hidden","children":["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","(blog)","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","$L6",null,{"className":"w-60 xl:w-64 2xl:w-72 shrink-0 hidden xl:block sticky top-16 h-full mt-52"}]]]}],{"children":["posts",["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","(blog)","children","posts","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","%EC%9E%90%EC%9B%90/ai/Aider","c"],["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","(blog)","children","posts","children","$0:f:0:1:2:children:2:children:2:children:0","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L7",null,["$","$L8",null,{"children":"$L9"}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","fRM8NNFDzE5QrbhXZlUZQ",{"children":[["$","$La",null,{"children":"$Lb"}],["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
 d:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 b:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"LazyDino Dev Log"}],["$","meta","2",{"name":"description","content":"내가 한걸 티내기 위해 만든 블로그"}],["$","link","3",{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"256x256"}],["$","link","4",{"rel":"icon","href":"/favicon.ico","sizes":"any","type":"image/x-icon"}]]
 9:null
 f:I[14627,["204","static/chunks/94730671-1e2691690418b851.js","711","static/chunks/8e1d74a4-e827b714699a717f.js","173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","200","static/chunks/200-e5b4f393133f2b22.js","285","static/chunks/285-5f450dbbf95cfc99.js","359","static/chunks/359-4401a530635be94c.js","177","static/chunks/app/layout-b6c3f1c862db2fc0.js"],"ThemeProvider"]
 10:I[96403,["204","static/chunks/94730671-1e2691690418b851.js","711","static/chunks/8e1d74a4-e827b714699a717f.js","173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","200","static/chunks/200-e5b4f393133f2b22.js","285","static/chunks/285-5f450dbbf95cfc99.js","359","static/chunks/359-4401a530635be94c.js","177","static/chunks/app/layout-b6c3f1c862db2fc0.js"],"PostsProvider"]
-1f:I[23655,["204","static/chunks/94730671-1e2691690418b851.js","711","static/chunks/8e1d74a4-e827b714699a717f.js","173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","200","static/chunks/200-e5b4f393133f2b22.js","285","static/chunks/285-5f450dbbf95cfc99.js","359","static/chunks/359-4401a530635be94c.js","177","static/chunks/app/layout-b6c3f1c862db2fc0.js"],"default"]
-20:I[33475,["204","static/chunks/94730671-1e2691690418b851.js","711","static/chunks/8e1d74a4-e827b714699a717f.js","173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","200","static/chunks/200-e5b4f393133f2b22.js","285","static/chunks/285-5f450dbbf95cfc99.js","359","static/chunks/359-4401a530635be94c.js","177","static/chunks/app/layout-b6c3f1c862db2fc0.js"],"default"]
-21:I[48173,["173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","869","static/chunks/869-c4764269b4319e39.js","594","static/chunks/app/(blog)/posts/%5B...slug%5D/page-bea9b55e6217c9f6.js"],""]
-22:I[52845,["204","static/chunks/94730671-1e2691690418b851.js","711","static/chunks/8e1d74a4-e827b714699a717f.js","173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","200","static/chunks/200-e5b4f393133f2b22.js","285","static/chunks/285-5f450dbbf95cfc99.js","359","static/chunks/359-4401a530635be94c.js","177","static/chunks/app/layout-b6c3f1c862db2fc0.js"],"default"]
+1d:I[23655,["204","static/chunks/94730671-1e2691690418b851.js","711","static/chunks/8e1d74a4-e827b714699a717f.js","173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","200","static/chunks/200-e5b4f393133f2b22.js","285","static/chunks/285-5f450dbbf95cfc99.js","359","static/chunks/359-4401a530635be94c.js","177","static/chunks/app/layout-b6c3f1c862db2fc0.js"],"default"]
+1e:I[33475,["204","static/chunks/94730671-1e2691690418b851.js","711","static/chunks/8e1d74a4-e827b714699a717f.js","173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","200","static/chunks/200-e5b4f393133f2b22.js","285","static/chunks/285-5f450dbbf95cfc99.js","359","static/chunks/359-4401a530635be94c.js","177","static/chunks/app/layout-b6c3f1c862db2fc0.js"],"default"]
+1f:I[48173,["173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","869","static/chunks/869-c4764269b4319e39.js","594","static/chunks/app/(blog)/posts/%5B...slug%5D/page-bea9b55e6217c9f6.js"],""]
+20:I[52845,["204","static/chunks/94730671-1e2691690418b851.js","711","static/chunks/8e1d74a4-e827b714699a717f.js","173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","200","static/chunks/200-e5b4f393133f2b22.js","285","static/chunks/285-5f450dbbf95cfc99.js","359","static/chunks/359-4401a530635be94c.js","177","static/chunks/app/layout-b6c3f1c862db2fc0.js"],"default"]
 11:T95b,
 # 웹사이트는 어떻게 보여지는가
 
@@ -51,346 +51,7 @@ Javascript 처리가 끝나면 중단 시점부터 HTML 과 CSS의 파싱이 재
 Javascript 처리가 끝나면 중단 시점부터 HTML 과 CSS의 파싱이 재게된다.
 또한 HTML 파싱과 CSS 파싱은 둘 다 점진적으로 진행되며 일정부분까지 DOM생성이 되었고 해당 부분까지 필요한 CSS 파싱이 처리되어 CSSOM이 생성되었다면 두 트리를 합쳐 Render Tree를 생성하는데 이때 화면에 표시되지 않는 요소들을 배제한다(ex: display:none)
 이렇게 부분 부분 처리하며 특정 부분의 렌더트리가 생성이 됬다면 _Layout_ 단계를 거쳐 Render Tree의 노드와 그 관계되는 각 요소들이 화면에 위치해야 하는 위치와 크기를 설정하고 _Paint_ 단계로 넘어가 Render Tree의 각 노드를 화면에 그리게 된다. 이때 색상, 이미지, 그림자 등 시각적 요소가 처리된다. 이때 노드들간의 관계를 이해하고 표현하기 때문에 필요에 따라 여러 레이어를 형성하게 된다
-이후 Compositing을 통해 만들어진 페이지 레이어들을 합성한다. z-index가 적용된 우선순위에 따라 레이어 우선순위가 정해진다.13:T3ca4,
-# 개인 블로그 제작기 - 옵시디언에서 Next.js로
-
-풀스택 개발자로서 취업 포트폴리오를 준비하면서, 단순한 웹사이트 이상의 것을 만들고 싶었습니다. 평소 옵시디언(Obsidian)에서 노트를 작성하고 Neovim으로 코딩하는 워크플로우를 가지고 있었기에, 이 두 가지를 자연스럽게 연결하는 블로그 시스템을 구축하고자 했습니다. 이 글에서는 개인 블로그를 제작하면서 마주했던 기술적 도전과 해결 과정을 공유합니다.
-
-![blog-main-desktop.png](_assets/attachments/blog/blog-main-desktop.png)
-
-## 1. 기술 스택 선택의 이유와 고민
-
-### Next.js를 선택한 이유
-
-처음에는 Gatsby와 Next.js 사이에서 고민했습니다. Gatsby는 블로그에 최적화된 프레임워크지만, Next.js의 더 넓은 생태계와 유연성, 그리고 최근 버전의 개선된 정적 사이트 생성(SSG) 기능이 결정적이었습니다. 특히 App Router와 서버 컴포넌트의 도입으로 데이터 관리가 훨씬 간결해질 것으로 판단했습니다.
-
-## 2. 옵시디언 노트 동기화: 가장 큰 도전
-
-### 문제 상황
-
-옵시디언 노트를 블로그 포스트로 변환하는 과정에서 다음과 같은 문제에 직면했습니다:
-
-1. **파일 구조 불일치**: 옵시디언의 폴더 구조가 블로그의 URL 구조와 일치하지 않음
-2. **이미지 참조**: 옵시디언의 상대 경로 참조가 블로그에서 제대로 작동하지 않음
-3. **내부 링크**: `[[노트 제목]]` 형식의 위키링크가 웹에서 작동하도록 변환 필요
-4. **메타데이터 관리**: 게시 여부, 카테고리, 태그 등의 메타데이터 처리
-
-> [!screenshot] > **추가할 스크린샷**: 옵시디언 노트의 원본 화면과 그것이 블로그에서 어떻게 보이는지 비교하는 이미지를 추가하면 좋을 것 같습니다. 특히 위키링크와 이미지가 어떻게 변환되는지 보여주면 유용할 것입니다.
-
-### 해결 과정: Python 스크립트 개발
-
-동기화 문제를 해결하기 위해 `sync-notes.py` 스크립트를 개발했습니다. 이 과정에서 몇 가지 중요한 결정과 구현 사항이 있었습니다:
-
-```python
-# 핵심 아이디어: publish 필드를 통한 선택적 게시 및 카테고리 관리
-if not frontmatter.get("publish"):
-    print(f"⏸️ 건너뜀: {md_file.name} (publish 필드 없음)")
-    return
-```
-
-이 접근 방식은 모든 노트를 블로그에 게시하지 않고, `publish` 필드가 있는 노트만 선택적으로 게시할 수 있게 해주었습니다. 또한 `publish` 값을 URL 경로로 사용함으로써 노트의 실제 위치와 관계없이 블로그 내 카테고리를 유연하게 구성할 수 있었습니다.
-
-> [!screenshot] > **추가할 스크린샷**: sync-notes.py 스크립트 실행 결과를 보여주는 터미널 출력 화면을 추가하면 좋을 것 같습니다. 노트가 처리되고 링크가 변환되는 과정을 보여주는 로그가 유용할 것입니다.
-
-### 이미지 처리 문제
-
-옵시디언에서는 이미지를 간단히 드래그 앤 드롭으로 삽입하면 자동으로 관리되지만, 블로그에서는 이 경로들이 문제가 되었습니다. 특히 다양한 위치에 저장된 이미지를 찾아 적절한 경로로 복사하는 로직 구현이 까다로웠습니다.
-
-```python
-# 이미지 처리 로직 중 일부
-for img_path in re.findall(r"!\[.*?\]\(([^)]+)\)", content):
-    if img_path.startswith(("http://", "https://")):
-        continue  # 외부 이미지는 처리하지 않음
-
-    img_name = os.path.basename(img_path)
-    # 이미지 파일 찾기 및 복사
-    found = False
-    for root, _, files in os.walk(config["source_dir"]):
-        if ".obsidian" in root:
-            continue
-        if img_name in files:
-            shutil.copy(os.path.join(root, img_name), img_dir / img_name)
-            found = True
-            break
-```
-
-이 접근은 초기에는 작동했지만, 노트 수가 늘어나면서 동일한 이름의 이미지가 다른 노트에서 사용될 때 충돌이 발생했습니다. 결국 각 노트별로 분리된 이미지 폴더를 생성하는 구조로 개선했습니다.
-
-> [!screenshot] > **추가할 스크린샷**: 이미지 처리 전후의 디렉토리 구조와 파일 변환 결과를 보여주는 이미지를 추가하면 좋을 것 같습니다. 생성된 파일 구조와 옵시디언에서의 이미지 참조가 블로그에서 어떻게 변환되는지 시각적으로 보여주면 도움이 될 것입니다.
-
-## 3. Neovim 통합: 개발자 경험의 향상
-
-옵시디언과 블로그를 연결하는 것도 중요했지만, Neovim에서 직접 블로그를 배포할 수 있는 시스템을 구축하는 것이 워크플로우 개선에 중요했습니다.
-
-### 어려웠던 점: 비동기 작업 관리
-
-Lua로 작성된 Neovim 플러그인에서 비동기 작업을 관리하는 것은 생각보다 까다로웠습니다. 특히 동기화 작업이 완료된 후 Git 명령을 실행하고, 그 결과를 사용자에게 알림으로 표시하는 과정에서 많은 시행착오가 있었습니다.
-
-```lua
--- 비동기 작업 처리와 피드백 제공
-vim.fn.jobstart(cmd, {
-  on_stdout = function(_, data) ... end,
-  on_stderr = function(_, data) ... end,
-  on_exit = function(_, code)
-    -- 타이머 정리
-    if timer ~= nil then
-      timer:stop()
-      timer:close()
-    end
-
-    if code == 0 then
-      -- 성공 알림
-      notify("블로그 배포가 완료되었습니다!", vim.log.levels.INFO, {...})
-    else
-      -- 실패 알림
-      notify("블로그 배포에 실패했습니다! (코드: " .. code .. ")", vim.log.levels.ERROR, {...})
-    end
-  end,
-})
-```
-
-이 코드는 비동기 작업의 상태를 실시간으로 추적하고 사용자에게 피드백을 제공하기 위한 것으로, 몇 번의 리팩토링을 거쳐 최종적으로 안정화되었습니다.
-
-> [!screenshot] > **추가할 스크린샷**: Neovim에서 BlogDeploy 명령어를 실행하는 화면과 배포 진행 중/완료 알림을 보여주는 스크린샷을 추가하면 좋을 것 같습니다.
-
-### 헤딩과 파일명 동기화
-
-Obsidian.nvim 플러그인을 확장하여 문서의 첫 번째 헤딩이 변경될 때 파일명도 자동으로 변경되도록 구현했습니다. 이 기능은 백링크 업데이트 로직까지 포함해야 했기 때문에 복잡했지만, 결과적으로 노트 관리 효율성을 크게 높였습니다.
-
-```lua
--- 헤딩 변경 시 파일명 업데이트 및 백링크 수정
-pre_write_note = function(_, note)
-  local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
-  local content = table.concat(lines, "\n")
-  -- 첫 번째 헤딩 찾기 (여러 패턴 시도)
-  local first_heading = content:match("^#%s+(.-)[\r\n]")
-
-  if first_heading and #first_heading > 0 then
-    -- 파일명 변경 로직
-    -- ...
-
-    -- 백링크 업데이트 로직
-    -- ...
-  end
-end
-```
-
-> [!screenshot] > **추가할 스크린샷**: 헤딩 변경 전후의 파일명 변화와 백링크가 자동으로 업데이트되는 모습을 보여주는 스크린샷을 추가하면 좋을 것 같습니다.
-
-## 4. 프론트엔드 구현: 반응형과 성능 사이
-
-### React와 클라이언트 상태 관리
-
-블로그의 프론트엔드 구현에서 가장 어려웠던 부분은 포스트 데이터의 효율적인 로딩과 관리였습니다. 초기에는 모든 포스트 콘텐츠를 한 번에 로드했지만, 포스트 수가 늘어나면서 성능 이슈가 발생했습니다.
-
-이를 해결하기 위해 다음과 같은 전략을 도입했습니다:
-
-1. **메타데이터와 콘텐츠 분리**: 메타데이터는 한 번에 로드하고, 콘텐츠는 필요할 때만 로드
-2. **React Context API**: 전역 상태로 포스트 데이터 관리
-3. **JSON 캐싱**: 포스트 콘텐츠를 별도의 JSON 파일로 분리하여 필요할 때만 로드
-
-```typescript
-// 콘텐츠 로딩 함수 - 정적 JSON 파일에서 직접 로드
-const loadPostContent = async (urlPath: string): Promise<Post | null> => {
-  // 이미 로드된 포스트라면 캐시에서 반환
-  if (loadedPosts[urlPath]) {
-    return loadedPosts[urlPath];
-  }
-
-  setIsLoading(true);
-  try {
-    // 정적 JSON 파일에서 직접 콘텐츠 가져오기
-    const response = await fetch(`/post-contents/${urlPath}.json`);
-    if (!response.ok) {
-      throw new Error(`Failed to load post content: ${response.statusText}`);
-    }
-
-    const contentData = await response.json();
-    const post: Post = {
-      ...metadata,
-      content: contentData.content,
-      plainContent: contentData.plainContent,
-    };
-
-    // 캐시에 저장
-    setLoadedPosts((prev) => ({
-      ...prev,
-      [urlPath]: post,
-    }));
-
-    return post;
-  } catch (error) {
-    console.error(`Error loading post content for ${urlPath}:`, error);
-    return null;
-  } finally {
-    setIsLoading(false);
-  }
-};
-```
-
-이 접근 방식으로 초기 로딩 시간을 약 70% 단축할 수 있었습니다.
-
-> [!screenshot] > **추가할 스크린샷**: 성능 최적화 전후의 로딩 시간 비교 차트나 네트워크 탭 스크린샷을 추가하면 좋을 것 같습니다. 메타데이터와 콘텐츠 분리 구조를 시각화한 다이어그램도 유용할 것입니다.
-
-### URL 인코딩 이슈
-
-한글이나 특수문자가 포함된 포스트 URL을 처리할 때 인코딩/디코딩 문제로 고생했습니다. Next.js의 동적 라우팅에서 이러한 문자들이 때때로 잘못 해석되어 포스트를 찾을 수 없는 오류가 발생했습니다.
-
-```typescript
-// 명시적인 디코딩을 통한 문제 해결
-const decodedSlug = slug
-  .map((s) => {
-    try {
-      return decodeURIComponent(s);
-    } catch (e) {
-      console.error(`Failed to decode segment "${s}":`, e);
-      return s; // 디코딩 실패 시 원본 유지
-    }
-  })
-  .filter(Boolean);
-```
-
-이 해결책은 간단해 보이지만, 도달하기까지 여러 시도와 실패를 거쳐야 했습니다.
-
-> [!screenshot] > **추가할 스크린샷**: URL 인코딩 이슈가 발생했을 때의 오류 화면과 해결 후 정상 작동하는 한글/특수문자 URL의 블로그 페이지를 비교하는 스크린샷을 추가하면 좋을 것 같습니다.
-
-## 5. 배포 자동화: GitHub Actions
-
-### GitHub Pages 배포 환경 구축
-
-GitHub Pages를 통한 배포 자동화를 위해 GitHub Actions 워크플로우를 구성했습니다. 이 과정에서 몇 가지 장벽에 부딪혔습니다:
-
-1. **Next.js 정적 내보내기**: Next.js App Router를 사용하면서 정적 HTML로 내보내는 과정에서 호환성 문제 발생
-2. **환경 변수 관리**: 빌드 시 환경 변수를 안전하게 전달하는 문제
-3. **권한 설정**: GitHub Actions에서 gh-pages 브랜치에 쓰기 권한 설정 문제
-
-특히 GitHub Actions의 workflow 권한 설정 문제는 많은 시간을 소비하게 만들었습니다:
-
-```yaml
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write # GitHub Pages 배포를 위해 쓰기 권한 부여
-```
-
-이 한 줄의 `permissions` 설정을 추가하기 전까지 지속적으로 배포 실패가 발생했었습니다.
-
-> [!screenshot] > **추가할 스크린샷**: GitHub Actions 워크플로우 구성 파일과 실제 성공적인 배포 과정을 보여주는 GitHub Actions 실행 로그 스크린샷을 추가하면 좋을 것 같습니다.
-
-## 6. 성능 최적화: 속도와 SEO
-
-### 이미지 최적화
-
-Next.js의 Image 컴포넌트는 강력하지만, 정적 사이트 생성 시 제한이 있었습니다. 이를 해결하기 위해 `next-export-optimize-images` 라이브러리를 도입했고, 빌드 시 이미지를 자동으로 최적화하는 과정을 구현했습니다.
-
-> [!screenshot] > **추가할 스크린샷**: 이미지 최적화 전후의 파일 크기 및 로딩 시간 비교 차트나 Lighthouse 성능 점수를 보여주는 스크린샷을 추가하면 좋을 것 같습니다.
-
-### 라우팅 최적화
-
-초기에는 각 포스트마다 별도의 정적 HTML 페이지를 생성했지만, 포스트 수가 많아지면서 빌드 시간이 크게 증가했습니다. 이를 해결하기 위해 동적 라우팅 방식을 적용했습니다:
-
-```typescript
-export async function generateStaticParams() {
-  const posts = await getPosts();
-  if (posts.length === 0) {
-    return [{ slug: ["no-post"] }];
-  }
-
-  return posts.map((post) => {
-    const slugSegments = post.urlPath.split("/");
-    return {
-      slug: slugSegments,
-    };
-  });
-}
-```
-
-이 접근 방식으로 빌드 시간을 약 40% 단축할 수 있었습니다.
-
-> [!screenshot] > **추가할 스크린샷**: 빌드 시간 최적화 전후를 비교하는 터미널 출력 화면을 추가하면 좋을 것 같습니다.
-
-## 7. 배운 점과 향후 계획
-
-### 주요 교훈
-
-1. **통합 시스템의 복잡성**: 서로 다른 도구(옵시디언, Neovim, Next.js)를 연결할 때 생각보다 많은 엣지 케이스와 복잡성이 존재함
-2. **빠른 프로토타이핑의 중요성**: 완벽한 시스템을 처음부터 설계하려 하기보다, 작은 기능부터 구현하고 점진적으로 개선하는 접근이 효과적
-3. **자동화의 가치**: 동기화와 배포 과정을 자동화함으로써 콘텐츠 작성에 더 집중할 수 있게 됨
-
-> [!screenshot] > **추가할 스크린샷**: 전체 워크플로우를 시각화한 다이어그램이나 인포그래픽을 추가하면 좋을 것 같습니다. 옵시디언 → Neovim → GitHub → 블로그로 이어지는 데이터 흐름을 보여주는 이미지가 유용할 것입니다.
-
-### 향후 개선 계획
-
-1. **Contents Layer 도입**: 현재 Python 스크립트 기반 동기화 방식을 Next.js의 Contents Layer로 대체하여 더 나은 통합 제공
-2. **소개 및 포트폴리오 페이지 추가**: 블로그를 넘어 종합적인 개인 브랜딩 사이트로 확장
-3. **댓글 기능 구현**: Giscus 또는 유사한 시스템을 통한 댓글 기능 추가
-
-> [!screenshot] > **추가할 스크린샷**: 계획 중인 개선 사항에 대한 간단한 목업이나 프로토타입 이미지를 추가하면 좋을 것 같습니다.
-
-## 결론
-
-이 프로젝트는 단순한 블로그 제작을 넘어, 개발자로서의 워크플로우를 개선하고 기술적 도전을 해결하는 과정이었습니다. 특히 옵시디언에서 작성한 노트를 자동으로 블로그로 변환하는 시스템은 콘텐츠 생산과 기술 개발 사이의 균형을 찾는 데 큰 도움이 되었습니다.
-
-기술적 어려움을 해결하는 과정에서 Python, TypeScript, Lua 등 다양한 언어를 활용하고, 파일 시스템, 비동기 처리, 상태 관리 등 여러 영역의 지식을 통합적으로 적용할 수 있었습니다. 이 경험은 풀스택 개발자로서의 역량을 한층 더 강화하는 계기가 되었습니다.
-
-앞으로도 이 블로그 시스템을 지속적으로 개선하면서, 더 효율적인 개발 워크플로우를 구축하고 기술 지식을 공유하는 플랫폼으로 발전시켜 나갈 계획입니다.
-
-> [!screenshot] > **추가할 스크린샷**: 완성된 블로그의 주요 기능들(메인 페이지, 포스트 페이지, 검색, 태그 필터링 등)을 보여주는 여러 스크린샷을 추가하여 글을 마무리하면 좋을 것 같습니다.
-14:T2a33,풀스택 개발자로서 취업 포트폴리오를 준비하면서, 단순한 웹사이트 이상의 것을 만들고 싶었습니다. 평소 옵시디언(Obsidian)에서 노트를 작성하고 Neovim으로 코딩하는 워크플로우를 가지고 있었기에, 이 두 가지를 자연스럽게 연결하는 블로그 시스템을 구축하고자 했습니다. 이 글에서는 개인 블로그를 제작하면서 마주했던 기술적 도전과 해결 과정을 공유합니다.
-처음에는 Gatsby와 Next.js 사이에서 고민했습니다. Gatsby는 블로그에 최적화된 프레임워크지만, Next.js의 더 넓은 생태계와 유연성, 그리고 최근 버전의 개선된 정적 사이트 생성(SSG) 기능이 결정적이었습니다. 특히 App Router와 서버 컴포넌트의 도입으로 데이터 관리가 훨씬 간결해질 것으로 판단했습니다.
-옵시디언 노트를 블로그 포스트로 변환하는 과정에서 다음과 같은 문제에 직면했습니다:
-1. 파일 구조 불일치: 옵시디언의 폴더 구조가 블로그의 URL 구조와 일치하지 않음
-2. 이미지 참조: 옵시디언의 상대 경로 참조가 블로그에서 제대로 작동하지 않음
-3. 내부 링크: 노트 제목 형식의 위키링크가 웹에서 작동하도록 변환 필요
-4. 메타데이터 관리: 게시 여부, 카테고리, 태그 등의 메타데이터 처리
-> [!screenshot] > 추가할 스크린샷: 옵시디언 노트의 원본 화면과 그것이 블로그에서 어떻게 보이는지 비교하는 이미지를 추가하면 좋을 것 같습니다. 특히 위키링크와 이미지가 어떻게 변환되는지 보여주면 유용할 것입니다.
-동기화 문제를 해결하기 위해 sync-notes.py 스크립트를 개발했습니다. 이 과정에서 몇 가지 중요한 결정과 구현 사항이 있었습니다:
-이 접근 방식은 모든 노트를 블로그에 게시하지 않고, publish 필드가 있는 노트만 선택적으로 게시할 수 있게 해주었습니다. 또한 publish 값을 URL 경로로 사용함으로써 노트의 실제 위치와 관계없이 블로그 내 카테고리를 유연하게 구성할 수 있었습니다.
-> [!screenshot] > 추가할 스크린샷: sync-notes.py 스크립트 실행 결과를 보여주는 터미널 출력 화면을 추가하면 좋을 것 같습니다. 노트가 처리되고 링크가 변환되는 과정을 보여주는 로그가 유용할 것입니다.
-옵시디언에서는 이미지를 간단히 드래그 앤 드롭으로 삽입하면 자동으로 관리되지만, 블로그에서는 이 경로들이 문제가 되었습니다. 특히 다양한 위치에 저장된 이미지를 찾아 적절한 경로로 복사하는 로직 구현이 까다로웠습니다.
-이 접근은 초기에는 작동했지만, 노트 수가 늘어나면서 동일한 이름의 이미지가 다른 노트에서 사용될 때 충돌이 발생했습니다. 결국 각 노트별로 분리된 이미지 폴더를 생성하는 구조로 개선했습니다.
-> [!screenshot] > 추가할 스크린샷: 이미지 처리 전후의 디렉토리 구조와 파일 변환 결과를 보여주는 이미지를 추가하면 좋을 것 같습니다. 생성된 파일 구조와 옵시디언에서의 이미지 참조가 블로그에서 어떻게 변환되는지 시각적으로 보여주면 도움이 될 것입니다.
-옵시디언과 블로그를 연결하는 것도 중요했지만, Neovim에서 직접 블로그를 배포할 수 있는 시스템을 구축하는 것이 워크플로우 개선에 중요했습니다.
-Lua로 작성된 Neovim 플러그인에서 비동기 작업을 관리하는 것은 생각보다 까다로웠습니다. 특히 동기화 작업이 완료된 후 Git 명령을 실행하고, 그 결과를 사용자에게 알림으로 표시하는 과정에서 많은 시행착오가 있었습니다.
-이 코드는 비동기 작업의 상태를 실시간으로 추적하고 사용자에게 피드백을 제공하기 위한 것으로, 몇 번의 리팩토링을 거쳐 최종적으로 안정화되었습니다.
-> [!screenshot] > 추가할 스크린샷: Neovim에서 BlogDeploy 명령어를 실행하는 화면과 배포 진행 중/완료 알림을 보여주는 스크린샷을 추가하면 좋을 것 같습니다.
-Obsidian.nvim 플러그인을 확장하여 문서의 첫 번째 헤딩이 변경될 때 파일명도 자동으로 변경되도록 구현했습니다. 이 기능은 백링크 업데이트 로직까지 포함해야 했기 때문에 복잡했지만, 결과적으로 노트 관리 효율성을 크게 높였습니다.
-> [!screenshot] > 추가할 스크린샷: 헤딩 변경 전후의 파일명 변화와 백링크가 자동으로 업데이트되는 모습을 보여주는 스크린샷을 추가하면 좋을 것 같습니다.
-블로그의 프론트엔드 구현에서 가장 어려웠던 부분은 포스트 데이터의 효율적인 로딩과 관리였습니다. 초기에는 모든 포스트 콘텐츠를 한 번에 로드했지만, 포스트 수가 늘어나면서 성능 이슈가 발생했습니다.
-이를 해결하기 위해 다음과 같은 전략을 도입했습니다:
-1. 메타데이터와 콘텐츠 분리: 메타데이터는 한 번에 로드하고, 콘텐츠는 필요할 때만 로드
-2. React Context API: 전역 상태로 포스트 데이터 관리
-3. JSON 캐싱: 포스트 콘텐츠를 별도의 JSON 파일로 분리하여 필요할 때만 로드
-이 접근 방식으로 초기 로딩 시간을 약 70% 단축할 수 있었습니다.
-> [!screenshot] > 추가할 스크린샷: 성능 최적화 전후의 로딩 시간 비교 차트나 네트워크 탭 스크린샷을 추가하면 좋을 것 같습니다. 메타데이터와 콘텐츠 분리 구조를 시각화한 다이어그램도 유용할 것입니다.
-한글이나 특수문자가 포함된 포스트 URL을 처리할 때 인코딩/디코딩 문제로 고생했습니다. Next.js의 동적 라우팅에서 이러한 문자들이 때때로 잘못 해석되어 포스트를 찾을 수 없는 오류가 발생했습니다.
-이 해결책은 간단해 보이지만, 도달하기까지 여러 시도와 실패를 거쳐야 했습니다.
-> [!screenshot] > 추가할 스크린샷: URL 인코딩 이슈가 발생했을 때의 오류 화면과 해결 후 정상 작동하는 한글/특수문자 URL의 블로그 페이지를 비교하는 스크린샷을 추가하면 좋을 것 같습니다.
-GitHub Pages를 통한 배포 자동화를 위해 GitHub Actions 워크플로우를 구성했습니다. 이 과정에서 몇 가지 장벽에 부딪혔습니다:
-1. Next.js 정적 내보내기: Next.js App Router를 사용하면서 정적 HTML로 내보내는 과정에서 호환성 문제 발생
-2. 환경 변수 관리: 빌드 시 환경 변수를 안전하게 전달하는 문제
-3. 권한 설정: GitHub Actions에서 gh-pages 브랜치에 쓰기 권한 설정 문제
-특히 GitHub Actions의 workflow 권한 설정 문제는 많은 시간을 소비하게 만들었습니다:
-이 한 줄의 permissions 설정을 추가하기 전까지 지속적으로 배포 실패가 발생했었습니다.
-> [!screenshot] > 추가할 스크린샷: GitHub Actions 워크플로우 구성 파일과 실제 성공적인 배포 과정을 보여주는 GitHub Actions 실행 로그 스크린샷을 추가하면 좋을 것 같습니다.
-Next.js의 Image 컴포넌트는 강력하지만, 정적 사이트 생성 시 제한이 있었습니다. 이를 해결하기 위해 next-export-optimize-images 라이브러리를 도입했고, 빌드 시 이미지를 자동으로 최적화하는 과정을 구현했습니다.
-> [!screenshot] > 추가할 스크린샷: 이미지 최적화 전후의 파일 크기 및 로딩 시간 비교 차트나 Lighthouse 성능 점수를 보여주는 스크린샷을 추가하면 좋을 것 같습니다.
-초기에는 각 포스트마다 별도의 정적 HTML 페이지를 생성했지만, 포스트 수가 많아지면서 빌드 시간이 크게 증가했습니다. 이를 해결하기 위해 동적 라우팅 방식을 적용했습니다:
-이 접근 방식으로 빌드 시간을 약 40% 단축할 수 있었습니다.
-> [!screenshot] > 추가할 스크린샷: 빌드 시간 최적화 전후를 비교하는 터미널 출력 화면을 추가하면 좋을 것 같습니다.
-1. 통합 시스템의 복잡성: 서로 다른 도구(옵시디언, Neovim, Next.js)를 연결할 때 생각보다 많은 엣지 케이스와 복잡성이 존재함
-2. 빠른 프로토타이핑의 중요성: 완벽한 시스템을 처음부터 설계하려 하기보다, 작은 기능부터 구현하고 점진적으로 개선하는 접근이 효과적
-3. 자동화의 가치: 동기화와 배포 과정을 자동화함으로써 콘텐츠 작성에 더 집중할 수 있게 됨
-> [!screenshot] > 추가할 스크린샷: 전체 워크플로우를 시각화한 다이어그램이나 인포그래픽을 추가하면 좋을 것 같습니다. 옵시디언 → Neovim → GitHub → 블로그로 이어지는 데이터 흐름을 보여주는 이미지가 유용할 것입니다.
-1. Contents Layer 도입: 현재 Python 스크립트 기반 동기화 방식을 Next.js의 Contents Layer로 대체하여 더 나은 통합 제공
-2. 소개 및 포트폴리오 페이지 추가: 블로그를 넘어 종합적인 개인 브랜딩 사이트로 확장
-3. 댓글 기능 구현: Giscus 또는 유사한 시스템을 통한 댓글 기능 추가
-> [!screenshot] > 추가할 스크린샷: 계획 중인 개선 사항에 대한 간단한 목업이나 프로토타입 이미지를 추가하면 좋을 것 같습니다.
-이 프로젝트는 단순한 블로그 제작을 넘어, 개발자로서의 워크플로우를 개선하고 기술적 도전을 해결하는 과정이었습니다. 특히 옵시디언에서 작성한 노트를 자동으로 블로그로 변환하는 시스템은 콘텐츠 생산과 기술 개발 사이의 균형을 찾는 데 큰 도움이 되었습니다.
-기술적 어려움을 해결하는 과정에서 Python, TypeScript, Lua 등 다양한 언어를 활용하고, 파일 시스템, 비동기 처리, 상태 관리 등 여러 영역의 지식을 통합적으로 적용할 수 있었습니다. 이 경험은 풀스택 개발자로서의 역량을 한층 더 강화하는 계기가 되었습니다.
-앞으로도 이 블로그 시스템을 지속적으로 개선하면서, 더 효율적인 개발 워크플로우를 구축하고 기술 지식을 공유하는 플랫폼으로 발전시켜 나갈 계획입니다.
-> [!screenshot] > 추가할 스크린샷: 완성된 블로그의 주요 기능들(메인 페이지, 포스트 페이지, 검색, 태그 필터링 등)을 보여주는 여러 스크린샷을 추가하여 글을 마무리하면 좋을 것 같습니다.15:T3d3c,
+이후 Compositing을 통해 만들어진 페이지 레이어들을 합성한다. z-index가 적용된 우선순위에 따라 레이어 우선순위가 정해진다.13:T3d3c,
 # 물류 서비스 웹사이트 개발 회고-혼자서 외주 프로젝트 완성하기
 
 ## 프로젝트 개요
@@ -742,7 +403,7 @@ const supabaseStorage = {
 아임유어박스 웹사이트 개발은 새로운 기술 스택과 복잡한 요구사항을 다루는 도전적인 프로젝트였습니다. PayloadCMS, Next.js, Supabase 등 여러 기술을 통합하면서 많은 기술적 문제를 해결했고, 이 과정에서 풀스택 개발자로서 크게 성장할 수 있었습니다.
 
 특히 PayloadCMS의 커스터마이징, 견적 계산 시스템 구현, 이메일 통합, 그리고 Supabase 기반 미디어 관리 시스템 등을 성공적으로 구현하여 클라이언트의 비즈니스 요구사항을 충족시켰습니다. 이 프로젝트는 기술적 도전을 넘어 실제 비즈니스 가치를 창출하는 웹 애플리케이션을 구축하는 소중한 경험이었습니다.
-16:T1f66,이번 프로젝트는 물류 서비스 회사인 '아임유어박스'의 웹사이트를 개발하는 외주 작업이었습니다. 기존 사이트의 여러 문제점을 개선하고 현대적인 기술 스택으로 재구축하는 것이 주요 목표였습니다.
+14:T1f66,이번 프로젝트는 물류 서비스 회사인 '아임유어박스'의 웹사이트를 개발하는 외주 작업이었습니다. 기존 사이트의 여러 문제점을 개선하고 현대적인 기술 스택으로 재구축하는 것이 주요 목표였습니다.
 웹사이트를 개발하면서 가장 큰 결정 중 하나는 헤드리스 CMS 선택이었습니다. 클라이언트가 뉴스, 공지사항, 채용정보 등의 콘텐츠를 직접 관리할 수 있어야 했기 때문입니다.
 PayloadCMS를 처음 도입할 때는 문서가 제한적이었고, 특히 복잡한 요구사항을 구현하는 과정에서 많은 시행착오가 있었습니다. 예를 들어, 컬렉션 간의 관계 설정이나 커스텀 필드 타입 구현에서 TypeScript 오류가 자주 발생했습니다.
 특히 어려웠던 점은:
@@ -799,7 +460,7 @@ PayloadCMS의 미디어 관리 시스템을 Supabase Storage와 통합하는 과
 3. 성능 모니터링: 실시간 성능 모니터링 도구 통합으로 지속적인 최적화
 4. 국제화 지원: 다국어 지원을 위한 i18n 통합
 아임유어박스 웹사이트 개발은 새로운 기술 스택과 복잡한 요구사항을 다루는 도전적인 프로젝트였습니다. PayloadCMS, Next.js, Supabase 등 여러 기술을 통합하면서 많은 기술적 문제를 해결했고, 이 과정에서 풀스택 개발자로서 크게 성장할 수 있었습니다.
-특히 PayloadCMS의 커스터마이징, 견적 계산 시스템 구현, 이메일 통합, 그리고 Supabase 기반 미디어 관리 시스템 등을 성공적으로 구현하여 클라이언트의 비즈니스 요구사항을 충족시켰습니다. 이 프로젝트는 기술적 도전을 넘어 실제 비즈니스 가치를 창출하는 웹 애플리케이션을 구축하는 소중한 경험이었습니다.17:T2aca,
+특히 PayloadCMS의 커스터마이징, 견적 계산 시스템 구현, 이메일 통합, 그리고 Supabase 기반 미디어 관리 시스템 등을 성공적으로 구현하여 클라이언트의 비즈니스 요구사항을 충족시켰습니다. 이 프로젝트는 기술적 도전을 넘어 실제 비즈니스 가치를 창출하는 웹 애플리케이션을 구축하는 소중한 경험이었습니다.15:T2aca,
 # 크롬 확장프로그램에 케시메모리 추가하기
 
 크롬 확장 프로그램을 통해 [[LazyTrading|트레이딩 도구]]를 개발하는 도중, 한 가지 큰 문제가 있었다.
@@ -1096,7 +757,7 @@ function MyComponent() {
 확장 프로그램 세션이 종료되어도 사용자 경험을 유지하는 것은 생각보다 까다로운 문제였다. `background.js`를 활용한 메모리 기반 캐시는 데이터의 민감성과 일시적인 저장 특성을 고려할 때 최적의 선택이었다. React Query와 Context API를 함께 사용함으로써 상태 관리 로직을 깔끔하게 구현할 수 있었고, 사용자 경험을 크게 향상시킬 수 있었다.
 
 트레이딩 도구처럼 빠른 상호작용이 필요한 확장 프로그램에서는 이런 방식의 캐시가 매우 유용하다. 다음 프로젝트에서도 이런 패턴을 적극 활용해봐야겠다.
-18:T14ee,크롬 확장 프로그램을 통해 트레이딩 도구를 개발하는 도중, 한 가지 큰 문제가 있었다.
+16:T14ee,크롬 확장 프로그램을 통해 트레이딩 도구를 개발하는 도중, 한 가지 큰 문제가 있었다.
 크롬 확장 프로그램은 일반 앱처럼 보이지만, 사용자가 팝업 창이나 사이드바를 닫으면 확장 프로그램의 세션이 완전히 종료된다. 이로 인해 사용자가 입력했던 데이터나 현재 보고 있던 화면 위치가 저장되지 않고, 재접속 시 항상 처음 화면으로 돌아가게 된다.
 멀티태스킹 환경에서 트레이더들은 확장 프로그램을 수시로 열고 닫아야 하는데, 매번 처음부터 시작해야 하는 것은 큰 불편함이었다.
 문제를 해결의 목표를 단순하게 정리하면 다음과 같다
@@ -1131,7 +792,7 @@ useCacheMutation: 앱 상태를 업데이트하는 뮤테이션
 캐시 시스템을 실제로 어떻게 사용하는지 예시 코드를 살펴보자.
 이런 식으로 다양한 컴포넌트에서 캐시를 활용하여 상태를 저장하고 복원할 수 있다.
 확장 프로그램 세션이 종료되어도 사용자 경험을 유지하는 것은 생각보다 까다로운 문제였다. background.js를 활용한 메모리 기반 캐시는 데이터의 민감성과 일시적인 저장 특성을 고려할 때 최적의 선택이었다. React Query와 Context API를 함께 사용함으로써 상태 관리 로직을 깔끔하게 구현할 수 있었고, 사용자 경험을 크게 향상시킬 수 있었다.
-트레이딩 도구처럼 빠른 상호작용이 필요한 확장 프로그램에서는 이런 방식의 캐시가 매우 유용하다. 다음 프로젝트에서도 이런 패턴을 적극 활용해봐야겠다.19:T199f,
+트레이딩 도구처럼 빠른 상호작용이 필요한 확장 프로그램에서는 이런 방식의 캐시가 매우 유용하다. 다음 프로젝트에서도 이런 패턴을 적극 활용해봐야겠다.17:T199f,
 # 취업을 위한 알고리즘 공부
 
 목표: 취업을 하기위한 알고리즘 공부
@@ -1246,7 +907,7 @@ useCacheMutation: 앱 상태를 업데이트하는 뮤테이션
 우선 [SWEA](https://swexpertacademy.com/main/learn/course/subjectList.do?courseId=AVuPCwCKAAPw5UW6)강의를 보고 프로그래머스 0.5레벨 문제를 푸는것을 시작으로 백준 단계별 문제풀기, 유형별 풀기, 책보기 순서로 나아가야할것 같다.
 
 - [[SWEA 강의 정리노트]]
-1a:T120b,목표: 취업을 하기위한 알고리즘 공부
+18:T120b,목표: 취업을 하기위한 알고리즘 공부
 어디서 어떻게 시작해야 발전할 수 있는지 모르기 때문에 다른 사람들을 먼저 찾아보고 따라해보면서 공부해 나간다.
 인터넷검색을 통해 내가 실천할 수 있을만한 것들을 선별하여 정리하자
 출처:Velog 포스트
@@ -1316,7 +977,7 @@ useCacheMutation: 앱 상태를 업데이트하는 뮤테이션
 4. 나의 생각과 풀이를 논리적으로 표현하여 문제 풀이 기록하기
 위에서 찾은 모든것을 종합해서 진행해볼생각이다.
 우선 SWEA강의를 보고 프로그래머스 0.5레벨 문제를 푸는것을 시작으로 백준 단계별 문제풀기, 유형별 풀기, 책보기 순서로 나아가야할것 같다.
-SWEA 강의 정리노트1b:Tb5b,
+SWEA 강의 정리노트19:Tb5b,
 # 어떻게 블로그를 구현하였나
 
 [[개인 블로그를 제작하게 된 이유|앞선 포스트]]에서 살펴본것처럼 내가 중요하게 생각한 블로그의 조건은 다음과 같았다.
@@ -1353,7 +1014,7 @@ Python을 통해 파일 시스템을 만져본것은 처음이라 [[Aider|AI 툴
 > - [[Python Script로 JSON 파일 작성하기]]
 
 Next.js 를 활용하여 블로그를 만들때 기본적으로 content 폴더에 파일들을 가져와 빌드하게 된다.
-1c:T9fa,앞선 포스트에서 살펴본것처럼 내가 중요하게 생각한 블로그의 조건은 다음과 같았다.
+1a:T9fa,앞선 포스트에서 살펴본것처럼 내가 중요하게 생각한 블로그의 조건은 다음과 같았다.
 1. 블로그 포스팅과 노트 작성의 흐름이 자연스럽게 연결될 것
 2. 노트와 블로그 포스트가 분리되어, 원하는 노트만 포스팅할 수 있을 것
 3. 포스팅 시 블로그의 구조를 내가 직접 정의할 수 있을 것
@@ -1374,7 +1035,7 @@ Python을 통해 파일 시스템을 만져본것은 처음이라 AI 툴을 활�
 > - Python Script로 파일 복사해오기]]
 > - [[Python Script로 Markdown 파일 읽어오기]]
 > - [[Python Script로 JSON 파일 작성하기
-Next.js 를 활용하여 블로그를 만들때 기본적으로 content 폴더에 파일들을 가져와 빌드하게 된다.1d:T11a8,
+Next.js 를 활용하여 블로그를 만들때 기본적으로 content 폴더에 파일들을 가져와 빌드하게 된다.1b:T11a8,
 # 개인 블로그를 제작하게 된 이유
 
 개발자로서 내가 한 일을 기록하고, 이를 공유할 수 있는 공간이 필요했다. 여러 블로그 플랫폼이 있지만, **작성한 글을 복사해서 붙여넣어야 한다는 점**이 번거로웠다. 이 과정에서 블로그 운영이 기록의 목적이 아니라 **포스트를 만들기 위한 기록**처럼 느껴지는 문제가 발생했다. 결국, 기존 플랫폼을 이용하는 방식은 내 스타일이 아니라는 결론을 내렸다.
@@ -1433,7 +1094,7 @@ Notion과 Obsidian은 강력한 노트 관리 기능을 제공하지만, 블로�
 블로그를 만들기 위한 다양한 프레임워크가 있지만 내가 다룰 줄 아는 프레임워크인 Next.js 가 커스터마이징하기 쉬워 보였기 때문에 Next.js 를 활용하여 블로그를 구축 하기로 결정하였다.
 
 다음: [[어떻게 블로그를 구현하였나]]
-1e:Tf5f,개발자로서 내가 한 일을 기록하고, 이를 공유할 수 있는 공간이 필요했다. 여러 블로그 플랫폼이 있지만, 작성한 글을 복사해서 붙여넣어야 한다는 점이 번거로웠다. 이 과정에서 블로그 운영이 기록의 목적이 아니라 포스트를 만들기 위한 기록처럼 느껴지는 문제가 발생했다. 결국, 기존 플랫폼을 이용하는 방식은 내 스타일이 아니라는 결론을 내렸다.
+1c:Tf5f,개발자로서 내가 한 일을 기록하고, 이를 공유할 수 있는 공간이 필요했다. 여러 블로그 플랫폼이 있지만, 작성한 글을 복사해서 붙여넣어야 한다는 점이 번거로웠다. 이 과정에서 블로그 운영이 기록의 목적이 아니라 포스트를 만들기 위한 기록처럼 느껴지는 문제가 발생했다. 결국, 기존 플랫폼을 이용하는 방식은 내 스타일이 아니라는 결론을 내렸다.
 블로그를 운영하는 방식에는 크게 세 가지가 있다고 생각했다.
 1. 기존 블로그 플랫폼을 이용하는 방법
 2. Notion이나 Obsidian의 Publish 기능을 활용하는 방법
@@ -1453,10 +1114,10 @@ Notion과 Obsidian은 강력한 노트 관리 기능을 제공하지만, 블로�
 4. 필요에 따라 기능을 추가하거나 제거할 수 있도록 커스터마이징이 가능할 것
 이러한 목표를 달성하기 위해 데이터베이스(DB) 사용도 고려했지만, 단순한 방법이 더 적합하다고 판단했다. 그래서 Python을 활용하여 Obsidian Vault 폴더 내의 Markdown 파일을 자동으로 블로그로 가져오는 방식을 선택했다.
 블로그를 만들기 위한 다양한 프레임워크가 있지만 내가 다룰 줄 아는 프레임워크인 Next.js 가 커스터마이징하기 쉬워 보였기 때문에 Next.js 를 활용하여 블로그를 구축 하기로 결정하였다.
-다음: 어떻게 블로그를 구현하였나2:["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":["$","body",null,{"className":"__variable_4d318d __variable_ea5f4b __variable_d65c78 __variable_dc8395 antialiased transition-all","children":["$","$Lf",null,{"attribute":"class","defaultTheme":"system","enableSystem":true,"disableTransitionOnChange":true,"children":["$","$L10",null,{"posts":[{"urlPath":"자원/웹개발/웹사이트에 들어갈때에는 어떤 일이 생기는가","title":"웹사이트에 들어갈때에는 어떤 일이 생기는가","summary":"","image":"","tags":["resource","web"],"series":"","createdAt":"2025-04-14 16:19:40","modifiedAt":"2025-04-14 17:20:33","publish":"자원/웹개발","content":"\n# 웹사이트에 들어갈때에는 어떤 일이 생기는가\n\n브라우저에 웹사이트가 화면에 나타나기 까지엔 다음과 같은 과정이 필요하다\n\n1. URL 입력\n   사용자가 링크를 클릭하거나 주소창에 웹 주소를 입력한다.\n\n2. DNS(Domain Name System) 조회\n   입력받은 도메인 이름을 IP 주소로 변환합니다.이때 DNS 캐시를 먼저 확인해 보고 없다면 DNS서버에 요청하여 IP를 받아온다.\n\n3. 서버 연결\n   찾은 IP주소를 통해 서버에 TCP/IP 연결을 설정한다.\n\n4. [[HTTP-Methods|HTTP 요청]]\n   브라우저가 서버에 웹사이트 데이터를 요청한다.\n\n5. 서버 응답\n   서버는 HTML,CSS,Javascript등의 파일을 브라우저에 전송한다.\n\n6. 렌더링 과정\n   HTML 과 CSS 를 파싱하여 각각 DOM tree 와 CSSOM tree 만들고 둘을 합쳐 렌더 트리를 생성한다. 이후 Javascript를 처리한다. 이후 파싱한 DOM 과 CSSOM 을 쳐 Render tree를 만들고 레이아웃 과정을 통해 뷰포트에 표시될 각 요소들의 크기와 위치를 계산하고 페인트 단계를 거쳐 렌더트리의 각 노드를 화면에 그리고 마지막 컴포지팅 단계에서 여러 레이어로 나뉜 페이지의 요소들을 합성하여 최종 화면을 만든다.\n\n- 참고:[[웹사이트는 어떻게 보여지는가]]\n","plainContent":"브라우저에 웹사이트가 화면에 나타나기 까지엔 다음과 같은 과정이 필요하다\n1. URL 입력\n사용자가 링크를 클릭하거나 주소창에 웹 주소를 입력한다.\n2. DNS(Domain Name System) 조회\n입력받은 도메인 이름을 IP 주소로 변환합니다.이때 DNS 캐시를 먼저 확인해 보고 없다면 DNS서버에 요청하여 IP를 받아온다.\n3. 서버 연결\n찾은 IP주소를 통해 서버에 TCP/IP 연결을 설정한다.\n4. HTTP 요청\n브라우저가 서버에 웹사이트 데이터를 요청한다.\n5. 서버 응답\n서버는 HTML,CSS,Javascript등의 파일을 브라우저에 전송한다.\n6. 렌더링 과정\nHTML 과 CSS 를 파싱하여 각각 DOM tree 와 CSSOM tree 만들고 둘을 합쳐 렌더 트리를 생성한다. 이후 Javascript를 처리한다. 이후 파싱한 DOM 과 CSSOM 을 쳐 Render tree를 만들고 레이아웃 과정을 통해 뷰포트에 표시될 각 요소들의 크기와 위치를 계산하고 페인트 단계를 거쳐 렌더트리의 각 노드를 화면에 그리고 마지막 컴포지팅 단계에서 여러 레이어로 나뉜 페이지의 요소들을 합성하여 최종 화면을 만든다.\n참고:웹사이트는 어떻게 보여지는가"},{"urlPath":"자원/웹개발/웹사이트는 어떻게 보여지는가","title":"웹사이트는 어떻게 보여지는가","summary":"","image":"","tags":["resource","web"],"series":"","createdAt":"2025-04-14 14:30:49","modifiedAt":"2025-04-14 18:56:02","publish":"자원/웹개발","content":"$11","plainContent":"$12"},{"urlPath":"자원/웹개발/웹사이트는 어떻게 구성되어있나","title":"웹사이트는 어떻게 구성되어있나","summary":"","image":"","tags":["resource","web"],"series":"","createdAt":"2025-04-14 09:18:21","modifiedAt":"2025-04-14 18:28:01","publish":"자원/웹개발","content":"\n# 웹사이트는 어떻게 구성되어있나\n\n웹 사이트가 브라우저 상에서 우리의 눈으로 보여지기 위해서는 *우리가 원하는 모습을 브라우저에게 인식*시켜야 한다.\n이 문서의 구조와 형태를 브라우저에게 이해시키는 언어가 바로 _[[HTML]]_ 과 *[[CSS]]*이다.\n\nHTML 의 경우 문서가 어떤 *구조*로 구성되어 있는지 브라우저에게 이해시키는 역할을 하고 CSS의 경우 이 문서가 _어떻게 생겼고 구조가 어떤식으로 보여져야 하는지_ 브라우저에게 알려주는 역할을 한다.\n\n보통 위키피디아나 간단한 뉴스 혹은 블로그 처럼 웹사이트와 상호작용이 필요 없는 사이트의 경우 이 [[HTML]]과 [[CSS]] 만으로 충분 하지만 상호작용을 통해 문서가 조작되어야 한다면 [[Javascript]]를 활용하여야 한다.\n\n> [!info] Interactive 한 웹사이트\n> 상호작용이 가능하다는 것의 의미는 사용자의 입력에 반응하거나 페이지를 업데이트 하지 않고 콘텐츠를 업데이트 하거나 실시간으로 데이터를 처리하는 등의 문서가 Javascript에 의해 조작되는 웹사이트를 말한다.\n\n## 궁금한점\n\n- [[웹사이트는 어떻게 보여지는가]]\n- [[Javascript가 웹사이트를 어떻게 조작할 수 있는가]]\n","plainContent":"웹 사이트가 브라우저 상에서 우리의 눈으로 보여지기 위해서는 우리가 원하는 모습을 브라우저에게 인식시켜야 한다.\n이 문서의 구조와 형태를 브라우저에게 이해시키는 언어가 바로 _HTML]]_ 과 [[CSS]]이다.\nHTML 의 경우 문서가 어떤 구조로 구성되어 있는지 브라우저에게 이해시키는 역할을 하고 CSS의 경우 이 문서가 _어떻게 생겼고 구조가 어떤식으로 보여져야 하는지_ 브라우저에게 알려주는 역할을 한다.\n보통 위키피디아나 간단한 뉴스 혹은 블로그 처럼 웹사이트와 상호작용이 필요 없는 사이트의 경우 이 [[HTML]]과 [[CSS]] 만으로 충분 하지만 상호작용을 통해 문서가 조작되어야 한다면 [[Javascript]]를 활용하여야 한다.\n> [!info] Interactive 한 웹사이트\n> 상호작용이 가능하다는 것의 의미는 사용자의 입력에 반응하거나 페이지를 업데이트 하지 않고 콘텐츠를 업데이트 하거나 실시간으로 데이터를 처리하는 등의 문서가 Javascript에 의해 조작되는 웹사이트를 말한다.\n[[웹사이트는 어떻게 보여지는가]]\n[[Javascript가 웹사이트를 어떻게 조작할 수 있는가"},{"urlPath":"프로젝트/개인 블로그 제작/개인 블로그 제작기 - 옵시디언에서 Next.js로","title":"개인 블로그 제작기 - 옵시디언에서 Next.js로","summary":"","image":"","tags":["blog","nextjs","obsidian","portfolio","회고"],"series":"개인 블로그 제작기","createdAt":"2025-03-27 10:33:01","modifiedAt":"2025-04-01 19:50:13","publish":"프로젝트/개인 블로그 제작","content":"$13","plainContent":"$14"},{"urlPath":"프로젝트/아임유어박스 웹사이트/물류 서비스 웹사이트 개발 회고-혼자서 외주 프로젝트 완성하기","title":"물류 서비스 웹사이트 개발 회고-혼자서 외주 프로젝트 완성하기","summary":"","image":"","tags":["project","회고","portfolio"],"series":"","createdAt":"2025-03-25 16:46:50","modifiedAt":"2025-03-27 16:52:58","publish":"프로젝트/아임유어박스 웹사이트","content":"$15","plainContent":"$16"},{"urlPath":"자원/크롬 확장프로그램/크롬 확장프로그램에 케시메모리 추가하기","title":"크롬 확장프로그램에 케시메모리 추가하기","summary":"","image":"","tags":["chrome-extension","example","problem"],"series":"","createdAt":"2025-03-23 09:21:24","modifiedAt":"2025-03-31 19:48:24","publish":"자원/크롬 확장프로그램","content":"$17","plainContent":"$18"},{"urlPath":"자원/SWEA 강의 정리노트/SWEA 강의 정리노트","title":"SWEA 강의 정리노트","summary":"","image":"","tags":["study","algorithm"],"series":"","createdAt":"2025-03-19 12:20:41","modifiedAt":"2025-03-20 16:17:34","publish":"자원/SWEA 강의 정리노트","content":"\n# SWEA 강의 정리노트\n\n- [강의 주소](https://swexpertacademy.com/main/learn/course/subjectList.do?courseId=AVuPCwCKAAPw5UW6)\n\n## 강의 노트\n\n### Computaional Thinking\n\n- [[프로그래밍과 논리수학]]\n","plainContent":"강의 주소\n프로그래밍과 논리수학"},{"urlPath":"프로젝트/알고리즘/취업을 위한 알고리즘 공부","title":"취업을 위한 알고리즘 공부","summary":"","image":"","tags":["project","study","algorithm"],"series":"취업을 위해 알고리즘 공부하기","createdAt":"2025-03-19 08:05:06","modifiedAt":"2025-03-20 16:16:00","publish":"프로젝트/알고리즘","content":"$19","plainContent":"$1a"},{"urlPath":"자원/ai/Aider","title":"Aider","summary":"","image":"","tags":["ai","tool","aider","quickstart"],"series":"","createdAt":"2025-03-10 08:21:08","modifiedAt":"2025-03-20 16:17:15","publish":"자원/ai","content":"\n# Aider\n\n공식 홈페이지:[Home | Aider](https://aider.chat/)\n\n> [!quote]\n> Aider lets you pair program with LLMs, to edit code in your local git repository. Start a new project or work with an existing code base.\n\nAider 는 터미널을 통해 AI 와 [Pair Programming](https://namu.wiki/w/%ED%8E%98%EC%96%B4%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)을 할 수 있도록 해주는 툴이다.\n\n비슷 한 툴로는 Cursor, Claude, Windsurf 등이 있다.\n\n## QuickStart\n","plainContent":"공식 홈페이지:Home | Aider\n> [!quote]\n> Aider lets you pair program with LLMs, to edit code in your local git repository. Start a new project or work with an existing code base.\nAider 는 터미널을 통해 AI 와 Pair Programming을 할 수 있도록 해주는 툴이다.\n비슷 한 툴로는 Cursor, Claude, Windsurf 등이 있다."},{"urlPath":"자원/web/동적 사이트 vs 정적사이트","title":"동적 사이트 vs 정적사이트","summary":"","image":"","tags":["web"],"series":"","createdAt":"2025-03-10 07:39:08","modifiedAt":"2025-03-20 16:16:49","publish":"자원/web","content":"\n# 동적 사이트 vs 정적사이트\n\n복잡하게 생각하지 말고 단순하게 동적 사이트와 정적 사이트를 구분한다면 페이지의 렌더링 **_(화면 렌더링 아님)_** 시기 이다.\n\n정적 사이트는 HTML이 빌드 타임에 미리 생성되고 수정되지 않는다.\n하지만 동적 사이트의 경우 클라이언트 측이든 서버 측이든 요청에 따라 HTML 이 생성되게 된다.\n\n> [!caution] 화면 렌더링(브라우저의 렌더링) 과 페이지 렌더링의 차이\n> 동적 사이트와 정적사이트에서 표현하는 렌더링은 HTML에 대한 렌더링 이다. 즉 코드를 HTML 로 변환하는 과정을 말한다.\n> 화면에 대한 렌더링은 이 완성된 HTML 과 CSS 를 웹브라우져가 화면에 그려 표현해주는것을 뜻한다.\n> 참고: [[웹브라우저의 렌더링]]\n\n## CSR,SSR,SSG\n\nCSR(Client Side Rendering) 과 SSR(Server Side Rendering) 의 경우 동적 사이트로 분류될 수 있다. 왜냐하면 HTML 의 렌더링 시기 때문이다.\nSSR의 경우 요청에 따라 Javascript 가 담겨있는 HTML을 받아와 해당 javascript 코드를 실행하여 직접 HTML을 생성하여 렌더링 하게 된다. SSR의 경우 요청에 따라 서버 측에서 HTML 을 생성하여 클라이언트로 전송한다.\n\nCSR과 SSR둘 다 요청 이후에 필요에 따라 HTML이 새로 만들어지며 이 때문에 **_동적 사이트_** 방식으로 분류될 수 있다.\n\nSSG의 경우 HTML 을 빌드 타임에 미리 생성하게 되기 때문에 **_정적 사이트_**로 분류될 수 있다.\n\n참고: [[CSR vs SSR vs SSG]]\n","plainContent":"복잡하게 생각하지 말고 단순하게 동적 사이트와 정적 사이트를 구분한다면 페이지의 렌더링 _(화면 렌더링 아님)_ 시기 이다.\n정적 사이트는 HTML이 빌드 타임에 미리 생성되고 수정되지 않는다.\n하지만 동적 사이트의 경우 클라이언트 측이든 서버 측이든 요청에 따라 HTML 이 생성되게 된다.\n> [!caution] 화면 렌더링(브라우저의 렌더링) 과 페이지 렌더링의 차이\n> 동적 사이트와 정적사이트에서 표현하는 렌더링은 HTML에 대한 렌더링 이다. 즉 코드를 HTML 로 변환하는 과정을 말한다.\n> 화면에 대한 렌더링은 이 완성된 HTML 과 CSS 를 웹브라우져가 화면에 그려 표현해주는것을 뜻한다.\n> 참고: 웹브라우저의 렌더링]]\nCSR(Client Side Rendering) 과 SSR(Server Side Rendering) 의 경우 동적 사이트로 분류될 수 있다. 왜냐하면 HTML 의 렌더링 시기 때문이다.\nSSR의 경우 요청에 따라 Javascript 가 담겨있는 HTML을 받아와 해당 javascript 코드를 실행하여 직접 HTML을 생성하여 렌더링 하게 된다. SSR의 경우 요청에 따라 서버 측에서 HTML 을 생성하여 클라이언트로 전송한다.\nCSR과 SSR둘 다 요청 이후에 필요에 따라 HTML이 새로 만들어지며 이 때문에 _동적 사이트_ 방식으로 분류될 수 있다.\nSSG의 경우 HTML 을 빌드 타임에 미리 생성하게 되기 때문에 _정적 사이트_로 분류될 수 있다.\n참고: [[CSR vs SSR vs SSG"},{"urlPath":"프로젝트/블로그/어떻게 블로그를 구현하였나","title":"어떻게 블로그를 구현하였나","summary":"","image":"","tags":["blog","dev","project"],"series":"나의 맞춤 블로그 만들기","createdAt":"2025-03-08 17:12:17","modifiedAt":"2025-03-20 16:16:24","publish":"프로젝트/블로그","content":"$1b","plainContent":"$1c"},{"urlPath":"프로젝트/블로그/개인 블로그를 제작하게 된 이유","title":"개인 블로그를 제작하게 된 이유","summary":"","image":"","tags":["blog","dev","project"],"series":"나의 맞춤 블로그 만들기","createdAt":"2025-03-08 17:09:39","modifiedAt":"2025-03-20 16:17:00","publish":"프로젝트/블로그","content":"$1d","plainContent":"$1e"}],"postsMetadata":[{"urlPath":"자원/웹개발/웹사이트에 들어갈때에는 어떤 일이 생기는가","title":"웹사이트에 들어갈때에는 어떤 일이 생기는가","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:0:tags","series":"","createdAt":"2025-04-14 16:19:40","modifiedAt":"2025-04-14 17:20:33","publish":"자원/웹개발"},{"urlPath":"자원/웹개발/웹사이트는 어떻게 보여지는가","title":"웹사이트는 어떻게 보여지는가","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:1:tags","series":"","createdAt":"2025-04-14 14:30:49","modifiedAt":"2025-04-14 18:56:02","publish":"자원/웹개발"},{"urlPath":"자원/웹개발/웹사이트는 어떻게 구성되어있나","title":"웹사이트는 어떻게 구성되어있나","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:2:tags","series":"","createdAt":"2025-04-14 09:18:21","modifiedAt":"2025-04-14 18:28:01","publish":"자원/웹개발"},{"urlPath":"프로젝트/개인 블로그 제작/개인 블로그 제작기 - 옵시디언에서 Next.js로","title":"개인 블로그 제작기 - 옵시디언에서 Next.js로","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:3:tags","series":"개인 블로그 제작기","createdAt":"2025-03-27 10:33:01","modifiedAt":"2025-04-01 19:50:13","publish":"프로젝트/개인 블로그 제작"},{"urlPath":"프로젝트/아임유어박스 웹사이트/물류 서비스 웹사이트 개발 회고-혼자서 외주 프로젝트 완성하기","title":"물류 서비스 웹사이트 개발 회고-혼자서 외주 프로젝트 완성하기","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:4:tags","series":"","createdAt":"2025-03-25 16:46:50","modifiedAt":"2025-03-27 16:52:58","publish":"프로젝트/아임유어박스 웹사이트"},{"urlPath":"자원/크롬 확장프로그램/크롬 확장프로그램에 케시메모리 추가하기","title":"크롬 확장프로그램에 케시메모리 추가하기","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:5:tags","series":"","createdAt":"2025-03-23 09:21:24","modifiedAt":"2025-03-31 19:48:24","publish":"자원/크롬 확장프로그램"},{"urlPath":"자원/SWEA 강의 정리노트/SWEA 강의 정리노트","title":"SWEA 강의 정리노트","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:6:tags","series":"","createdAt":"2025-03-19 12:20:41","modifiedAt":"2025-03-20 16:17:34","publish":"자원/SWEA 강의 정리노트"},{"urlPath":"프로젝트/알고리즘/취업을 위한 알고리즘 공부","title":"취업을 위한 알고리즘 공부","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:7:tags","series":"취업을 위해 알고리즘 공부하기","createdAt":"2025-03-19 08:05:06","modifiedAt":"2025-03-20 16:16:00","publish":"프로젝트/알고리즘"},{"urlPath":"자원/ai/Aider","title":"Aider","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:8:tags","series":"","createdAt":"2025-03-10 08:21:08","modifiedAt":"2025-03-20 16:17:15","publish":"자원/ai"},{"urlPath":"자원/web/동적 사이트 vs 정적사이트","title":"동적 사이트 vs 정적사이트","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:9:tags","series":"","createdAt":"2025-03-10 07:39:08","modifiedAt":"2025-03-20 16:16:49","publish":"자원/web"},{"urlPath":"프로젝트/블로그/어떻게 블로그를 구현하였나","title":"어떻게 블로그를 구현하였나","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:10:tags","series":"나의 맞춤 블로그 만들기","createdAt":"2025-03-08 17:12:17","modifiedAt":"2025-03-20 16:16:24","publish":"프로젝트/블로그"},{"urlPath":"프로젝트/블로그/개인 블로그를 제작하게 된 이유","title":"개인 블로그를 제작하게 된 이유","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:11:tags","series":"나의 맞춤 블로그 만들기","createdAt":"2025-03-08 17:09:39","modifiedAt":"2025-03-20 16:17:00","publish":"프로젝트/블로그"}],"children":["$","div",null,{"className":"min-h-screen flex flex-col motion-reduce","children":[["$","$L1f",null,{}],["$","main",null,{"className":"flex flex-col xl:flex-row mt-12 sm:mt-14 md:mt-16 2xl:container 2xl:mx-auto md:px-5","children":[["$","$L20",null,{}],["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[],["$","main",null,{"className":"flex-1 mx-auto p-5 lg:p-10 shadow-md","children":["$","article",null,{"className":"mx-auto rounded-lg p-8","children":[["$","h1",null,{"className":"text-2xl font-bold mb-4","children":"페이지를 찾을 수 없습니다"}],["$","div",null,{"className":"prose dark:prose-invert","children":[["$","p",null,{"className":"text-muted-foreground","children":"요청하신 페이지가 존재하지 않거나 삭제되었습니다."}],["$","$L21",null,{"href":"/","className":"mt-4 inline-block text-primary hover:underline transition-colors duration-200","children":"← 홈으로 돌아가기"}]]}]]}]}]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],["$","$L22",null,{}]]}]}]}]}]}]
-23:I[29519,["173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","869","static/chunks/869-c4764269b4319e39.js","594","static/chunks/app/(blog)/posts/%5B...slug%5D/page-bea9b55e6217c9f6.js"],"default"]
-24:I[44932,["173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","869","static/chunks/869-c4764269b4319e39.js","594","static/chunks/app/(blog)/posts/%5B...slug%5D/page-bea9b55e6217c9f6.js"],"default"]
-25:T199f,
+다음: 어떻게 블로그를 구현하였나2:["$","html",null,{"lang":"ko","suppressHydrationWarning":true,"children":["$","body",null,{"className":"__variable_4d318d __variable_ea5f4b __variable_d65c78 __variable_dc8395 antialiased transition-all","children":["$","$Lf",null,{"attribute":"class","defaultTheme":"system","enableSystem":true,"disableTransitionOnChange":true,"children":["$","$L10",null,{"posts":[{"urlPath":"자원/웹개발/웹사이트에 들어갈때에는 어떤 일이 생기는가","title":"웹사이트에 들어갈때에는 어떤 일이 생기는가","summary":"","image":"","tags":["resource","web"],"series":"","createdAt":"2025-04-14 16:19:40","modifiedAt":"2025-04-14 17:20:33","publish":"자원/웹개발","content":"\n# 웹사이트에 들어갈때에는 어떤 일이 생기는가\n\n브라우저에 웹사이트가 화면에 나타나기 까지엔 다음과 같은 과정이 필요하다\n\n1. URL 입력\n   사용자가 링크를 클릭하거나 주소창에 웹 주소를 입력한다.\n\n2. DNS(Domain Name System) 조회\n   입력받은 도메인 이름을 IP 주소로 변환합니다.이때 DNS 캐시를 먼저 확인해 보고 없다면 DNS서버에 요청하여 IP를 받아온다.\n\n3. 서버 연결\n   찾은 IP주소를 통해 서버에 TCP/IP 연결을 설정한다.\n\n4. [[HTTP-Methods|HTTP 요청]]\n   브라우저가 서버에 웹사이트 데이터를 요청한다.\n\n5. 서버 응답\n   서버는 HTML,CSS,Javascript등의 파일을 브라우저에 전송한다.\n\n6. 렌더링 과정\n   HTML 과 CSS 를 파싱하여 각각 DOM tree 와 CSSOM tree 만들고 둘을 합쳐 렌더 트리를 생성한다. 이후 Javascript를 처리한다. 이후 파싱한 DOM 과 CSSOM 을 쳐 Render tree를 만들고 레이아웃 과정을 통해 뷰포트에 표시될 각 요소들의 크기와 위치를 계산하고 페인트 단계를 거쳐 렌더트리의 각 노드를 화면에 그리고 마지막 컴포지팅 단계에서 여러 레이어로 나뉜 페이지의 요소들을 합성하여 최종 화면을 만든다.\n\n- 참고:[[웹사이트는 어떻게 보여지는가]]\n","plainContent":"브라우저에 웹사이트가 화면에 나타나기 까지엔 다음과 같은 과정이 필요하다\n1. URL 입력\n사용자가 링크를 클릭하거나 주소창에 웹 주소를 입력한다.\n2. DNS(Domain Name System) 조회\n입력받은 도메인 이름을 IP 주소로 변환합니다.이때 DNS 캐시를 먼저 확인해 보고 없다면 DNS서버에 요청하여 IP를 받아온다.\n3. 서버 연결\n찾은 IP주소를 통해 서버에 TCP/IP 연결을 설정한다.\n4. HTTP 요청\n브라우저가 서버에 웹사이트 데이터를 요청한다.\n5. 서버 응답\n서버는 HTML,CSS,Javascript등의 파일을 브라우저에 전송한다.\n6. 렌더링 과정\nHTML 과 CSS 를 파싱하여 각각 DOM tree 와 CSSOM tree 만들고 둘을 합쳐 렌더 트리를 생성한다. 이후 Javascript를 처리한다. 이후 파싱한 DOM 과 CSSOM 을 쳐 Render tree를 만들고 레이아웃 과정을 통해 뷰포트에 표시될 각 요소들의 크기와 위치를 계산하고 페인트 단계를 거쳐 렌더트리의 각 노드를 화면에 그리고 마지막 컴포지팅 단계에서 여러 레이어로 나뉜 페이지의 요소들을 합성하여 최종 화면을 만든다.\n참고:웹사이트는 어떻게 보여지는가"},{"urlPath":"자원/웹개발/웹사이트는 어떻게 보여지는가","title":"웹사이트는 어떻게 보여지는가","summary":"","image":"","tags":["resource","web"],"series":"","createdAt":"2025-04-14 14:30:49","modifiedAt":"2025-04-14 18:56:02","publish":"자원/웹개발","content":"$11","plainContent":"$12"},{"urlPath":"자원/웹개발/웹사이트는 어떻게 구성되어있나","title":"웹사이트는 어떻게 구성되어있나","summary":"","image":"","tags":["resource","web"],"series":"","createdAt":"2025-04-14 09:18:21","modifiedAt":"2025-04-14 18:28:01","publish":"자원/웹개발","content":"\n# 웹사이트는 어떻게 구성되어있나\n\n웹 사이트가 브라우저 상에서 우리의 눈으로 보여지기 위해서는 *우리가 원하는 모습을 브라우저에게 인식*시켜야 한다.\n이 문서의 구조와 형태를 브라우저에게 이해시키는 언어가 바로 _[[HTML]]_ 과 *[[CSS]]*이다.\n\nHTML 의 경우 문서가 어떤 *구조*로 구성되어 있는지 브라우저에게 이해시키는 역할을 하고 CSS의 경우 이 문서가 _어떻게 생겼고 구조가 어떤식으로 보여져야 하는지_ 브라우저에게 알려주는 역할을 한다.\n\n보통 위키피디아나 간단한 뉴스 혹은 블로그 처럼 웹사이트와 상호작용이 필요 없는 사이트의 경우 이 [[HTML]]과 [[CSS]] 만으로 충분 하지만 상호작용을 통해 문서가 조작되어야 한다면 [[Javascript]]를 활용하여야 한다.\n\n> [!info] Interactive 한 웹사이트\n> 상호작용이 가능하다는 것의 의미는 사용자의 입력에 반응하거나 페이지를 업데이트 하지 않고 콘텐츠를 업데이트 하거나 실시간으로 데이터를 처리하는 등의 문서가 Javascript에 의해 조작되는 웹사이트를 말한다.\n\n## 궁금한점\n\n- [[웹사이트는 어떻게 보여지는가]]\n- [[Javascript가 웹사이트를 어떻게 조작할 수 있는가]]\n","plainContent":"웹 사이트가 브라우저 상에서 우리의 눈으로 보여지기 위해서는 우리가 원하는 모습을 브라우저에게 인식시켜야 한다.\n이 문서의 구조와 형태를 브라우저에게 이해시키는 언어가 바로 _HTML]]_ 과 [[CSS]]이다.\nHTML 의 경우 문서가 어떤 구조로 구성되어 있는지 브라우저에게 이해시키는 역할을 하고 CSS의 경우 이 문서가 _어떻게 생겼고 구조가 어떤식으로 보여져야 하는지_ 브라우저에게 알려주는 역할을 한다.\n보통 위키피디아나 간단한 뉴스 혹은 블로그 처럼 웹사이트와 상호작용이 필요 없는 사이트의 경우 이 [[HTML]]과 [[CSS]] 만으로 충분 하지만 상호작용을 통해 문서가 조작되어야 한다면 [[Javascript]]를 활용하여야 한다.\n> [!info] Interactive 한 웹사이트\n> 상호작용이 가능하다는 것의 의미는 사용자의 입력에 반응하거나 페이지를 업데이트 하지 않고 콘텐츠를 업데이트 하거나 실시간으로 데이터를 처리하는 등의 문서가 Javascript에 의해 조작되는 웹사이트를 말한다.\n[[웹사이트는 어떻게 보여지는가]]\n[[Javascript가 웹사이트를 어떻게 조작할 수 있는가"},{"urlPath":"프로젝트/아임유어박스 웹사이트/물류 서비스 웹사이트 개발 회고-혼자서 외주 프로젝트 완성하기","title":"물류 서비스 웹사이트 개발 회고-혼자서 외주 프로젝트 완성하기","summary":"","image":"","tags":["project","회고","portfolio"],"series":"","createdAt":"2025-03-25 16:46:50","modifiedAt":"2025-03-27 16:52:58","publish":"프로젝트/아임유어박스 웹사이트","content":"$13","plainContent":"$14"},{"urlPath":"자원/크롬 확장프로그램/크롬 확장프로그램에 케시메모리 추가하기","title":"크롬 확장프로그램에 케시메모리 추가하기","summary":"","image":"","tags":["chrome-extension","example","problem"],"series":"","createdAt":"2025-03-23 09:21:24","modifiedAt":"2025-03-31 19:48:24","publish":"자원/크롬 확장프로그램","content":"$15","plainContent":"$16"},{"urlPath":"자원/SWEA 강의 정리노트/SWEA 강의 정리노트","title":"SWEA 강의 정리노트","summary":"","image":"","tags":["study","algorithm"],"series":"","createdAt":"2025-03-19 12:20:41","modifiedAt":"2025-03-20 16:17:34","publish":"자원/SWEA 강의 정리노트","content":"\n# SWEA 강의 정리노트\n\n- [강의 주소](https://swexpertacademy.com/main/learn/course/subjectList.do?courseId=AVuPCwCKAAPw5UW6)\n\n## 강의 노트\n\n### Computaional Thinking\n\n- [[프로그래밍과 논리수학]]\n","plainContent":"강의 주소\n프로그래밍과 논리수학"},{"urlPath":"프로젝트/알고리즘/취업을 위한 알고리즘 공부","title":"취업을 위한 알고리즘 공부","summary":"","image":"","tags":["project","study","algorithm"],"series":"취업을 위해 알고리즘 공부하기","createdAt":"2025-03-19 08:05:06","modifiedAt":"2025-03-20 16:16:00","publish":"프로젝트/알고리즘","content":"$17","plainContent":"$18"},{"urlPath":"자원/ai/Aider","title":"Aider","summary":"","image":"","tags":["ai","tool","aider","quickstart"],"series":"","createdAt":"2025-03-10 08:21:08","modifiedAt":"2025-03-20 16:17:15","publish":"자원/ai","content":"\n# Aider\n\n공식 홈페이지:[Home | Aider](https://aider.chat/)\n\n> [!quote]\n> Aider lets you pair program with LLMs, to edit code in your local git repository. Start a new project or work with an existing code base.\n\nAider 는 터미널을 통해 AI 와 [Pair Programming](https://namu.wiki/w/%ED%8E%98%EC%96%B4%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)을 할 수 있도록 해주는 툴이다.\n\n비슷 한 툴로는 Cursor, Claude, Windsurf 등이 있다.\n\n## QuickStart\n","plainContent":"공식 홈페이지:Home | Aider\n> [!quote]\n> Aider lets you pair program with LLMs, to edit code in your local git repository. Start a new project or work with an existing code base.\nAider 는 터미널을 통해 AI 와 Pair Programming을 할 수 있도록 해주는 툴이다.\n비슷 한 툴로는 Cursor, Claude, Windsurf 등이 있다."},{"urlPath":"자원/web/동적 사이트 vs 정적사이트","title":"동적 사이트 vs 정적사이트","summary":"","image":"","tags":["web"],"series":"","createdAt":"2025-03-10 07:39:08","modifiedAt":"2025-03-20 16:16:49","publish":"자원/web","content":"\n# 동적 사이트 vs 정적사이트\n\n복잡하게 생각하지 말고 단순하게 동적 사이트와 정적 사이트를 구분한다면 페이지의 렌더링 **_(화면 렌더링 아님)_** 시기 이다.\n\n정적 사이트는 HTML이 빌드 타임에 미리 생성되고 수정되지 않는다.\n하지만 동적 사이트의 경우 클라이언트 측이든 서버 측이든 요청에 따라 HTML 이 생성되게 된다.\n\n> [!caution] 화면 렌더링(브라우저의 렌더링) 과 페이지 렌더링의 차이\n> 동적 사이트와 정적사이트에서 표현하는 렌더링은 HTML에 대한 렌더링 이다. 즉 코드를 HTML 로 변환하는 과정을 말한다.\n> 화면에 대한 렌더링은 이 완성된 HTML 과 CSS 를 웹브라우져가 화면에 그려 표현해주는것을 뜻한다.\n> 참고: [[웹브라우저의 렌더링]]\n\n## CSR,SSR,SSG\n\nCSR(Client Side Rendering) 과 SSR(Server Side Rendering) 의 경우 동적 사이트로 분류될 수 있다. 왜냐하면 HTML 의 렌더링 시기 때문이다.\nSSR의 경우 요청에 따라 Javascript 가 담겨있는 HTML을 받아와 해당 javascript 코드를 실행하여 직접 HTML을 생성하여 렌더링 하게 된다. SSR의 경우 요청에 따라 서버 측에서 HTML 을 생성하여 클라이언트로 전송한다.\n\nCSR과 SSR둘 다 요청 이후에 필요에 따라 HTML이 새로 만들어지며 이 때문에 **_동적 사이트_** 방식으로 분류될 수 있다.\n\nSSG의 경우 HTML 을 빌드 타임에 미리 생성하게 되기 때문에 **_정적 사이트_**로 분류될 수 있다.\n\n참고: [[CSR vs SSR vs SSG]]\n","plainContent":"복잡하게 생각하지 말고 단순하게 동적 사이트와 정적 사이트를 구분한다면 페이지의 렌더링 _(화면 렌더링 아님)_ 시기 이다.\n정적 사이트는 HTML이 빌드 타임에 미리 생성되고 수정되지 않는다.\n하지만 동적 사이트의 경우 클라이언트 측이든 서버 측이든 요청에 따라 HTML 이 생성되게 된다.\n> [!caution] 화면 렌더링(브라우저의 렌더링) 과 페이지 렌더링의 차이\n> 동적 사이트와 정적사이트에서 표현하는 렌더링은 HTML에 대한 렌더링 이다. 즉 코드를 HTML 로 변환하는 과정을 말한다.\n> 화면에 대한 렌더링은 이 완성된 HTML 과 CSS 를 웹브라우져가 화면에 그려 표현해주는것을 뜻한다.\n> 참고: 웹브라우저의 렌더링]]\nCSR(Client Side Rendering) 과 SSR(Server Side Rendering) 의 경우 동적 사이트로 분류될 수 있다. 왜냐하면 HTML 의 렌더링 시기 때문이다.\nSSR의 경우 요청에 따라 Javascript 가 담겨있는 HTML을 받아와 해당 javascript 코드를 실행하여 직접 HTML을 생성하여 렌더링 하게 된다. SSR의 경우 요청에 따라 서버 측에서 HTML 을 생성하여 클라이언트로 전송한다.\nCSR과 SSR둘 다 요청 이후에 필요에 따라 HTML이 새로 만들어지며 이 때문에 _동적 사이트_ 방식으로 분류될 수 있다.\nSSG의 경우 HTML 을 빌드 타임에 미리 생성하게 되기 때문에 _정적 사이트_로 분류될 수 있다.\n참고: [[CSR vs SSR vs SSG"},{"urlPath":"프로젝트/블로그/어떻게 블로그를 구현하였나","title":"어떻게 블로그를 구현하였나","summary":"","image":"","tags":["blog","dev","project"],"series":"나의 맞춤 블로그 만들기","createdAt":"2025-03-08 17:12:17","modifiedAt":"2025-03-20 16:16:24","publish":"프로젝트/블로그","content":"$19","plainContent":"$1a"},{"urlPath":"프로젝트/블로그/개인 블로그를 제작하게 된 이유","title":"개인 블로그를 제작하게 된 이유","summary":"","image":"","tags":["blog","dev","project"],"series":"나의 맞춤 블로그 만들기","createdAt":"2025-03-08 17:09:39","modifiedAt":"2025-03-20 16:17:00","publish":"프로젝트/블로그","content":"$1b","plainContent":"$1c"}],"postsMetadata":[{"urlPath":"자원/웹개발/웹사이트에 들어갈때에는 어떤 일이 생기는가","title":"웹사이트에 들어갈때에는 어떤 일이 생기는가","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:0:tags","series":"","createdAt":"2025-04-14 16:19:40","modifiedAt":"2025-04-14 17:20:33","publish":"자원/웹개발"},{"urlPath":"자원/웹개발/웹사이트는 어떻게 보여지는가","title":"웹사이트는 어떻게 보여지는가","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:1:tags","series":"","createdAt":"2025-04-14 14:30:49","modifiedAt":"2025-04-14 18:56:02","publish":"자원/웹개발"},{"urlPath":"자원/웹개발/웹사이트는 어떻게 구성되어있나","title":"웹사이트는 어떻게 구성되어있나","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:2:tags","series":"","createdAt":"2025-04-14 09:18:21","modifiedAt":"2025-04-14 18:28:01","publish":"자원/웹개발"},{"urlPath":"프로젝트/아임유어박스 웹사이트/물류 서비스 웹사이트 개발 회고-혼자서 외주 프로젝트 완성하기","title":"물류 서비스 웹사이트 개발 회고-혼자서 외주 프로젝트 완성하기","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:3:tags","series":"","createdAt":"2025-03-25 16:46:50","modifiedAt":"2025-03-27 16:52:58","publish":"프로젝트/아임유어박스 웹사이트"},{"urlPath":"자원/크롬 확장프로그램/크롬 확장프로그램에 케시메모리 추가하기","title":"크롬 확장프로그램에 케시메모리 추가하기","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:4:tags","series":"","createdAt":"2025-03-23 09:21:24","modifiedAt":"2025-03-31 19:48:24","publish":"자원/크롬 확장프로그램"},{"urlPath":"자원/SWEA 강의 정리노트/SWEA 강의 정리노트","title":"SWEA 강의 정리노트","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:5:tags","series":"","createdAt":"2025-03-19 12:20:41","modifiedAt":"2025-03-20 16:17:34","publish":"자원/SWEA 강의 정리노트"},{"urlPath":"프로젝트/알고리즘/취업을 위한 알고리즘 공부","title":"취업을 위한 알고리즘 공부","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:6:tags","series":"취업을 위해 알고리즘 공부하기","createdAt":"2025-03-19 08:05:06","modifiedAt":"2025-03-20 16:16:00","publish":"프로젝트/알고리즘"},{"urlPath":"자원/ai/Aider","title":"Aider","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:7:tags","series":"","createdAt":"2025-03-10 08:21:08","modifiedAt":"2025-03-20 16:17:15","publish":"자원/ai"},{"urlPath":"자원/web/동적 사이트 vs 정적사이트","title":"동적 사이트 vs 정적사이트","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:8:tags","series":"","createdAt":"2025-03-10 07:39:08","modifiedAt":"2025-03-20 16:16:49","publish":"자원/web"},{"urlPath":"프로젝트/블로그/어떻게 블로그를 구현하였나","title":"어떻게 블로그를 구현하였나","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:9:tags","series":"나의 맞춤 블로그 만들기","createdAt":"2025-03-08 17:12:17","modifiedAt":"2025-03-20 16:16:24","publish":"프로젝트/블로그"},{"urlPath":"프로젝트/블로그/개인 블로그를 제작하게 된 이유","title":"개인 블로그를 제작하게 된 이유","summary":"","image":"","tags":"$2:props:children:props:children:props:children:props:posts:10:tags","series":"나의 맞춤 블로그 만들기","createdAt":"2025-03-08 17:09:39","modifiedAt":"2025-03-20 16:17:00","publish":"프로젝트/블로그"}],"children":["$","div",null,{"className":"min-h-screen flex flex-col motion-reduce","children":[["$","$L1d",null,{}],["$","main",null,{"className":"flex flex-col xl:flex-row mt-12 sm:mt-14 md:mt-16 2xl:container 2xl:mx-auto md:px-5","children":[["$","$L1e",null,{}],["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[],["$","main",null,{"className":"flex-1 mx-auto p-5 lg:p-10 shadow-md","children":["$","article",null,{"className":"mx-auto rounded-lg p-8","children":[["$","h1",null,{"className":"text-2xl font-bold mb-4","children":"페이지를 찾을 수 없습니다"}],["$","div",null,{"className":"prose dark:prose-invert","children":[["$","p",null,{"className":"text-muted-foreground","children":"요청하신 페이지가 존재하지 않거나 삭제되었습니다."}],["$","$L1f",null,{"href":"/","className":"mt-4 inline-block text-primary hover:underline transition-colors duration-200","children":"← 홈으로 돌아가기"}]]}]]}]}]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],["$","$L20",null,{}]]}]}]}]}]}]
+21:I[29519,["173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","869","static/chunks/869-c4764269b4319e39.js","594","static/chunks/app/(blog)/posts/%5B...slug%5D/page-bea9b55e6217c9f6.js"],"default"]
+22:I[44932,["173","static/chunks/173-392b385b0cae3bc1.js","762","static/chunks/762-2429aa46e96cf35d.js","565","static/chunks/565-5d63cb2cfc9b6b83.js","869","static/chunks/869-c4764269b4319e39.js","594","static/chunks/app/(blog)/posts/%5B...slug%5D/page-bea9b55e6217c9f6.js"],"default"]
+23:T199f,
 # 취업을 위한 알고리즘 공부
 
 목표: 취업을 하기위한 알고리즘 공부
@@ -1571,7 +1232,7 @@ Notion과 Obsidian은 강력한 노트 관리 기능을 제공하지만, 블로�
 우선 [SWEA](https://swexpertacademy.com/main/learn/course/subjectList.do?courseId=AVuPCwCKAAPw5UW6)강의를 보고 프로그래머스 0.5레벨 문제를 푸는것을 시작으로 백준 단계별 문제풀기, 유형별 풀기, 책보기 순서로 나아가야할것 같다.
 
 - [[SWEA 강의 정리노트]]
-26:T120b,목표: 취업을 하기위한 알고리즘 공부
+24:T120b,목표: 취업을 하기위한 알고리즘 공부
 어디서 어떻게 시작해야 발전할 수 있는지 모르기 때문에 다른 사람들을 먼저 찾아보고 따라해보면서 공부해 나간다.
 인터넷검색을 통해 내가 실천할 수 있을만한 것들을 선별하여 정리하자
 출처:Velog 포스트
@@ -1641,4 +1302,4 @@ Notion과 Obsidian은 강력한 노트 관리 기능을 제공하지만, 블로�
 4. 나의 생각과 풀이를 논리적으로 표현하여 문제 풀이 기록하기
 위에서 찾은 모든것을 종합해서 진행해볼생각이다.
 우선 SWEA강의를 보고 프로그래머스 0.5레벨 문제를 푸는것을 시작으로 백준 단계별 문제풀기, 유형별 풀기, 책보기 순서로 나아가야할것 같다.
-SWEA 강의 정리노트7:["$","$L23",null,{"children":["$","$L24",null,{"content":"\n# Aider\n\n공식 홈페이지:[Home | Aider](https://aider.chat/)\n\n> [!quote]\n> Aider lets you pair program with LLMs, to edit code in your local git repository. Start a new project or work with an existing code base.\n\nAider 는 터미널을 통해 AI 와 [Pair Programming](https://namu.wiki/w/%ED%8E%98%EC%96%B4%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)을 할 수 있도록 해주는 툴이다.\n\n비슷 한 툴로는 Cursor, Claude, Windsurf 등이 있다.\n\n## QuickStart\n","publishPath":"자원/ai","published":"2025-03-10 08:21:08","modified":"2025-03-20 16:17:15","tags":"$2:props:children:props:children:props:children:props:posts:8:tags","prevPost":{"urlPath":"프로젝트/알고리즘/취업을 위한 알고리즘 공부","title":"취업을 위한 알고리즘 공부","summary":"","content":"$25","plainContent":"$26","image":"","tags":"$2:props:children:props:children:props:children:props:posts:7:tags","series":"취업을 위해 알고리즘 공부하기","createdAt":"2025-03-19 08:05:06","modifiedAt":"2025-03-20 16:16:00","publish":"프로젝트/알고리즘"},"nextPost":{"urlPath":"자원/web/동적 사이트 vs 정적사이트","title":"동적 사이트 vs 정적사이트","summary":"","content":"\n# 동적 사이트 vs 정적사이트\n\n복잡하게 생각하지 말고 단순하게 동적 사이트와 정적 사이트를 구분한다면 페이지의 렌더링 **_(화면 렌더링 아님)_** 시기 이다.\n\n정적 사이트는 HTML이 빌드 타임에 미리 생성되고 수정되지 않는다.\n하지만 동적 사이트의 경우 클라이언트 측이든 서버 측이든 요청에 따라 HTML 이 생성되게 된다.\n\n> [!caution] 화면 렌더링(브라우저의 렌더링) 과 페이지 렌더링의 차이\n> 동적 사이트와 정적사이트에서 표현하는 렌더링은 HTML에 대한 렌더링 이다. 즉 코드를 HTML 로 변환하는 과정을 말한다.\n> 화면에 대한 렌더링은 이 완성된 HTML 과 CSS 를 웹브라우져가 화면에 그려 표현해주는것을 뜻한다.\n> 참고: [[웹브라우저의 렌더링]]\n\n## CSR,SSR,SSG\n\nCSR(Client Side Rendering) 과 SSR(Server Side Rendering) 의 경우 동적 사이트로 분류될 수 있다. 왜냐하면 HTML 의 렌더링 시기 때문이다.\nSSR의 경우 요청에 따라 Javascript 가 담겨있는 HTML을 받아와 해당 javascript 코드를 실행하여 직접 HTML을 생성하여 렌더링 하게 된다. SSR의 경우 요청에 따라 서버 측에서 HTML 을 생성하여 클라이언트로 전송한다.\n\nCSR과 SSR둘 다 요청 이후에 필요에 따라 HTML이 새로 만들어지며 이 때문에 **_동적 사이트_** 방식으로 분류될 수 있다.\n\nSSG의 경우 HTML 을 빌드 타임에 미리 생성하게 되기 때문에 **_정적 사이트_**로 분류될 수 있다.\n\n참고: [[CSR vs SSR vs SSG]]\n","plainContent":"복잡하게 생각하지 말고 단순하게 동적 사이트와 정적 사이트를 구분한다면 페이지의 렌더링 _(화면 렌더링 아님)_ 시기 이다.\n정적 사이트는 HTML이 빌드 타임에 미리 생성되고 수정되지 않는다.\n하지만 동적 사이트의 경우 클라이언트 측이든 서버 측이든 요청에 따라 HTML 이 생성되게 된다.\n> [!caution] 화면 렌더링(브라우저의 렌더링) 과 페이지 렌더링의 차이\n> 동적 사이트와 정적사이트에서 표현하는 렌더링은 HTML에 대한 렌더링 이다. 즉 코드를 HTML 로 변환하는 과정을 말한다.\n> 화면에 대한 렌더링은 이 완성된 HTML 과 CSS 를 웹브라우져가 화면에 그려 표현해주는것을 뜻한다.\n> 참고: 웹브라우저의 렌더링]]\nCSR(Client Side Rendering) 과 SSR(Server Side Rendering) 의 경우 동적 사이트로 분류될 수 있다. 왜냐하면 HTML 의 렌더링 시기 때문이다.\nSSR의 경우 요청에 따라 Javascript 가 담겨있는 HTML을 받아와 해당 javascript 코드를 실행하여 직접 HTML을 생성하여 렌더링 하게 된다. SSR의 경우 요청에 따라 서버 측에서 HTML 을 생성하여 클라이언트로 전송한다.\nCSR과 SSR둘 다 요청 이후에 필요에 따라 HTML이 새로 만들어지며 이 때문에 _동적 사이트_ 방식으로 분류될 수 있다.\nSSG의 경우 HTML 을 빌드 타임에 미리 생성하게 되기 때문에 _정적 사이트_로 분류될 수 있다.\n참고: [[CSR vs SSR vs SSG","image":"","tags":"$2:props:children:props:children:props:children:props:posts:9:tags","series":"","createdAt":"2025-03-10 07:39:08","modifiedAt":"2025-03-20 16:16:49","publish":"자원/web"}}]}]
+SWEA 강의 정리노트7:["$","$L21",null,{"children":["$","$L22",null,{"content":"\n# Aider\n\n공식 홈페이지:[Home | Aider](https://aider.chat/)\n\n> [!quote]\n> Aider lets you pair program with LLMs, to edit code in your local git repository. Start a new project or work with an existing code base.\n\nAider 는 터미널을 통해 AI 와 [Pair Programming](https://namu.wiki/w/%ED%8E%98%EC%96%B4%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)을 할 수 있도록 해주는 툴이다.\n\n비슷 한 툴로는 Cursor, Claude, Windsurf 등이 있다.\n\n## QuickStart\n","publishPath":"자원/ai","published":"2025-03-10 08:21:08","modified":"2025-03-20 16:17:15","tags":"$2:props:children:props:children:props:children:props:posts:7:tags","prevPost":{"urlPath":"프로젝트/알고리즘/취업을 위한 알고리즘 공부","title":"취업을 위한 알고리즘 공부","summary":"","content":"$23","plainContent":"$24","image":"","tags":"$2:props:children:props:children:props:children:props:posts:6:tags","series":"취업을 위해 알고리즘 공부하기","createdAt":"2025-03-19 08:05:06","modifiedAt":"2025-03-20 16:16:00","publish":"프로젝트/알고리즘"},"nextPost":{"urlPath":"자원/web/동적 사이트 vs 정적사이트","title":"동적 사이트 vs 정적사이트","summary":"","content":"\n# 동적 사이트 vs 정적사이트\n\n복잡하게 생각하지 말고 단순하게 동적 사이트와 정적 사이트를 구분한다면 페이지의 렌더링 **_(화면 렌더링 아님)_** 시기 이다.\n\n정적 사이트는 HTML이 빌드 타임에 미리 생성되고 수정되지 않는다.\n하지만 동적 사이트의 경우 클라이언트 측이든 서버 측이든 요청에 따라 HTML 이 생성되게 된다.\n\n> [!caution] 화면 렌더링(브라우저의 렌더링) 과 페이지 렌더링의 차이\n> 동적 사이트와 정적사이트에서 표현하는 렌더링은 HTML에 대한 렌더링 이다. 즉 코드를 HTML 로 변환하는 과정을 말한다.\n> 화면에 대한 렌더링은 이 완성된 HTML 과 CSS 를 웹브라우져가 화면에 그려 표현해주는것을 뜻한다.\n> 참고: [[웹브라우저의 렌더링]]\n\n## CSR,SSR,SSG\n\nCSR(Client Side Rendering) 과 SSR(Server Side Rendering) 의 경우 동적 사이트로 분류될 수 있다. 왜냐하면 HTML 의 렌더링 시기 때문이다.\nSSR의 경우 요청에 따라 Javascript 가 담겨있는 HTML을 받아와 해당 javascript 코드를 실행하여 직접 HTML을 생성하여 렌더링 하게 된다. SSR의 경우 요청에 따라 서버 측에서 HTML 을 생성하여 클라이언트로 전송한다.\n\nCSR과 SSR둘 다 요청 이후에 필요에 따라 HTML이 새로 만들어지며 이 때문에 **_동적 사이트_** 방식으로 분류될 수 있다.\n\nSSG의 경우 HTML 을 빌드 타임에 미리 생성하게 되기 때문에 **_정적 사이트_**로 분류될 수 있다.\n\n참고: [[CSR vs SSR vs SSG]]\n","plainContent":"복잡하게 생각하지 말고 단순하게 동적 사이트와 정적 사이트를 구분한다면 페이지의 렌더링 _(화면 렌더링 아님)_ 시기 이다.\n정적 사이트는 HTML이 빌드 타임에 미리 생성되고 수정되지 않는다.\n하지만 동적 사이트의 경우 클라이언트 측이든 서버 측이든 요청에 따라 HTML 이 생성되게 된다.\n> [!caution] 화면 렌더링(브라우저의 렌더링) 과 페이지 렌더링의 차이\n> 동적 사이트와 정적사이트에서 표현하는 렌더링은 HTML에 대한 렌더링 이다. 즉 코드를 HTML 로 변환하는 과정을 말한다.\n> 화면에 대한 렌더링은 이 완성된 HTML 과 CSS 를 웹브라우져가 화면에 그려 표현해주는것을 뜻한다.\n> 참고: 웹브라우저의 렌더링]]\nCSR(Client Side Rendering) 과 SSR(Server Side Rendering) 의 경우 동적 사이트로 분류될 수 있다. 왜냐하면 HTML 의 렌더링 시기 때문이다.\nSSR의 경우 요청에 따라 Javascript 가 담겨있는 HTML을 받아와 해당 javascript 코드를 실행하여 직접 HTML을 생성하여 렌더링 하게 된다. SSR의 경우 요청에 따라 서버 측에서 HTML 을 생성하여 클라이언트로 전송한다.\nCSR과 SSR둘 다 요청 이후에 필요에 따라 HTML이 새로 만들어지며 이 때문에 _동적 사이트_ 방식으로 분류될 수 있다.\nSSG의 경우 HTML 을 빌드 타임에 미리 생성하게 되기 때문에 _정적 사이트_로 분류될 수 있다.\n참고: [[CSR vs SSR vs SSG","image":"","tags":"$2:props:children:props:children:props:children:props:posts:8:tags","series":"","createdAt":"2025-03-10 07:39:08","modifiedAt":"2025-03-20 16:16:49","publish":"자원/web"}}]}]
