@@ -1,0 +1,299 @@
+---
+tags:
+  - blog
+  - nextjs
+  - obsidian
+  - portfolio
+  - 회고
+createdAt: 2025-03-27 10:33:01
+modifiedAt: 2025-04-01 19:50:13
+publish: 프로젝트/개인 블로그 제작
+related: []
+series: 개인 블로그 제작기
+---
+
+# 개인 블로그 제작기 - 옵시디언에서 Next.js로
+
+풀스택 개발자로서 취업 포트폴리오를 준비하면서, 단순한 웹사이트 이상의 것을 만들고 싶었습니다. 평소 옵시디언(Obsidian)에서 노트를 작성하고 Neovim으로 코딩하는 워크플로우를 가지고 있었기에, 이 두 가지를 자연스럽게 연결하는 블로그 시스템을 구축하고자 했습니다. 이 글에서는 개인 블로그를 제작하면서 마주했던 기술적 도전과 해결 과정을 공유합니다.
+
+![blog-main-desktop.png](_assets/attachments/blog/blog-main-desktop.png)
+
+## 1. 기술 스택 선택의 이유와 고민
+
+### Next.js를 선택한 이유
+
+처음에는 Gatsby와 Next.js 사이에서 고민했습니다. Gatsby는 블로그에 최적화된 프레임워크지만, Next.js의 더 넓은 생태계와 유연성, 그리고 최근 버전의 개선된 정적 사이트 생성(SSG) 기능이 결정적이었습니다. 특히 App Router와 서버 컴포넌트의 도입으로 데이터 관리가 훨씬 간결해질 것으로 판단했습니다.
+
+## 2. 옵시디언 노트 동기화: 가장 큰 도전
+
+### 문제 상황
+
+옵시디언 노트를 블로그 포스트로 변환하는 과정에서 다음과 같은 문제에 직면했습니다:
+
+1. **파일 구조 불일치**: 옵시디언의 폴더 구조가 블로그의 URL 구조와 일치하지 않음
+2. **이미지 참조**: 옵시디언의 상대 경로 참조가 블로그에서 제대로 작동하지 않음
+3. **내부 링크**: `[[노트 제목]]` 형식의 위키링크가 웹에서 작동하도록 변환 필요
+4. **메타데이터 관리**: 게시 여부, 카테고리, 태그 등의 메타데이터 처리
+
+> [!screenshot] > **추가할 스크린샷**: 옵시디언 노트의 원본 화면과 그것이 블로그에서 어떻게 보이는지 비교하는 이미지를 추가하면 좋을 것 같습니다. 특히 위키링크와 이미지가 어떻게 변환되는지 보여주면 유용할 것입니다.
+
+### 해결 과정: Python 스크립트 개발
+
+동기화 문제를 해결하기 위해 `sync-notes.py` 스크립트를 개발했습니다. 이 과정에서 몇 가지 중요한 결정과 구현 사항이 있었습니다:
+
+```python
+# 핵심 아이디어: publish 필드를 통한 선택적 게시 및 카테고리 관리
+if not frontmatter.get("publish"):
+    print(f"⏸️ 건너뜀: {md_file.name} (publish 필드 없음)")
+    return
+```
+
+이 접근 방식은 모든 노트를 블로그에 게시하지 않고, `publish` 필드가 있는 노트만 선택적으로 게시할 수 있게 해주었습니다. 또한 `publish` 값을 URL 경로로 사용함으로써 노트의 실제 위치와 관계없이 블로그 내 카테고리를 유연하게 구성할 수 있었습니다.
+
+> [!screenshot] > **추가할 스크린샷**: sync-notes.py 스크립트 실행 결과를 보여주는 터미널 출력 화면을 추가하면 좋을 것 같습니다. 노트가 처리되고 링크가 변환되는 과정을 보여주는 로그가 유용할 것입니다.
+
+### 이미지 처리 문제
+
+옵시디언에서는 이미지를 간단히 드래그 앤 드롭으로 삽입하면 자동으로 관리되지만, 블로그에서는 이 경로들이 문제가 되었습니다. 특히 다양한 위치에 저장된 이미지를 찾아 적절한 경로로 복사하는 로직 구현이 까다로웠습니다.
+
+```python
+# 이미지 처리 로직 중 일부
+for img_path in re.findall(r"!\[.*?\]\(([^)]+)\)", content):
+    if img_path.startswith(("http://", "https://")):
+        continue  # 외부 이미지는 처리하지 않음
+
+    img_name = os.path.basename(img_path)
+    # 이미지 파일 찾기 및 복사
+    found = False
+    for root, _, files in os.walk(config["source_dir"]):
+        if ".obsidian" in root:
+            continue
+        if img_name in files:
+            shutil.copy(os.path.join(root, img_name), img_dir / img_name)
+            found = True
+            break
+```
+
+이 접근은 초기에는 작동했지만, 노트 수가 늘어나면서 동일한 이름의 이미지가 다른 노트에서 사용될 때 충돌이 발생했습니다. 결국 각 노트별로 분리된 이미지 폴더를 생성하는 구조로 개선했습니다.
+
+> [!screenshot] > **추가할 스크린샷**: 이미지 처리 전후의 디렉토리 구조와 파일 변환 결과를 보여주는 이미지를 추가하면 좋을 것 같습니다. 생성된 파일 구조와 옵시디언에서의 이미지 참조가 블로그에서 어떻게 변환되는지 시각적으로 보여주면 도움이 될 것입니다.
+
+## 3. Neovim 통합: 개발자 경험의 향상
+
+옵시디언과 블로그를 연결하는 것도 중요했지만, Neovim에서 직접 블로그를 배포할 수 있는 시스템을 구축하는 것이 워크플로우 개선에 중요했습니다.
+
+### 어려웠던 점: 비동기 작업 관리
+
+Lua로 작성된 Neovim 플러그인에서 비동기 작업을 관리하는 것은 생각보다 까다로웠습니다. 특히 동기화 작업이 완료된 후 Git 명령을 실행하고, 그 결과를 사용자에게 알림으로 표시하는 과정에서 많은 시행착오가 있었습니다.
+
+```lua
+-- 비동기 작업 처리와 피드백 제공
+vim.fn.jobstart(cmd, {
+  on_stdout = function(_, data) ... end,
+  on_stderr = function(_, data) ... end,
+  on_exit = function(_, code)
+    -- 타이머 정리
+    if timer ~= nil then
+      timer:stop()
+      timer:close()
+    end
+
+    if code == 0 then
+      -- 성공 알림
+      notify("블로그 배포가 완료되었습니다!", vim.log.levels.INFO, {...})
+    else
+      -- 실패 알림
+      notify("블로그 배포에 실패했습니다! (코드: " .. code .. ")", vim.log.levels.ERROR, {...})
+    end
+  end,
+})
+```
+
+이 코드는 비동기 작업의 상태를 실시간으로 추적하고 사용자에게 피드백을 제공하기 위한 것으로, 몇 번의 리팩토링을 거쳐 최종적으로 안정화되었습니다.
+
+> [!screenshot] > **추가할 스크린샷**: Neovim에서 BlogDeploy 명령어를 실행하는 화면과 배포 진행 중/완료 알림을 보여주는 스크린샷을 추가하면 좋을 것 같습니다.
+
+### 헤딩과 파일명 동기화
+
+Obsidian.nvim 플러그인을 확장하여 문서의 첫 번째 헤딩이 변경될 때 파일명도 자동으로 변경되도록 구현했습니다. 이 기능은 백링크 업데이트 로직까지 포함해야 했기 때문에 복잡했지만, 결과적으로 노트 관리 효율성을 크게 높였습니다.
+
+```lua
+-- 헤딩 변경 시 파일명 업데이트 및 백링크 수정
+pre_write_note = function(_, note)
+  local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+  local content = table.concat(lines, "\n")
+  -- 첫 번째 헤딩 찾기 (여러 패턴 시도)
+  local first_heading = content:match("^#%s+(.-)[\r\n]")
+
+  if first_heading and #first_heading > 0 then
+    -- 파일명 변경 로직
+    -- ...
+
+    -- 백링크 업데이트 로직
+    -- ...
+  end
+end
+```
+
+> [!screenshot] > **추가할 스크린샷**: 헤딩 변경 전후의 파일명 변화와 백링크가 자동으로 업데이트되는 모습을 보여주는 스크린샷을 추가하면 좋을 것 같습니다.
+
+## 4. 프론트엔드 구현: 반응형과 성능 사이
+
+### React와 클라이언트 상태 관리
+
+블로그의 프론트엔드 구현에서 가장 어려웠던 부분은 포스트 데이터의 효율적인 로딩과 관리였습니다. 초기에는 모든 포스트 콘텐츠를 한 번에 로드했지만, 포스트 수가 늘어나면서 성능 이슈가 발생했습니다.
+
+이를 해결하기 위해 다음과 같은 전략을 도입했습니다:
+
+1. **메타데이터와 콘텐츠 분리**: 메타데이터는 한 번에 로드하고, 콘텐츠는 필요할 때만 로드
+2. **React Context API**: 전역 상태로 포스트 데이터 관리
+3. **JSON 캐싱**: 포스트 콘텐츠를 별도의 JSON 파일로 분리하여 필요할 때만 로드
+
+```typescript
+// 콘텐츠 로딩 함수 - 정적 JSON 파일에서 직접 로드
+const loadPostContent = async (urlPath: string): Promise<Post | null> => {
+  // 이미 로드된 포스트라면 캐시에서 반환
+  if (loadedPosts[urlPath]) {
+    return loadedPosts[urlPath];
+  }
+
+  setIsLoading(true);
+  try {
+    // 정적 JSON 파일에서 직접 콘텐츠 가져오기
+    const response = await fetch(`/post-contents/${urlPath}.json`);
+    if (!response.ok) {
+      throw new Error(`Failed to load post content: ${response.statusText}`);
+    }
+
+    const contentData = await response.json();
+    const post: Post = {
+      ...metadata,
+      content: contentData.content,
+      plainContent: contentData.plainContent,
+    };
+
+    // 캐시에 저장
+    setLoadedPosts((prev) => ({
+      ...prev,
+      [urlPath]: post,
+    }));
+
+    return post;
+  } catch (error) {
+    console.error(`Error loading post content for ${urlPath}:`, error);
+    return null;
+  } finally {
+    setIsLoading(false);
+  }
+};
+```
+
+이 접근 방식으로 초기 로딩 시간을 약 70% 단축할 수 있었습니다.
+
+> [!screenshot] > **추가할 스크린샷**: 성능 최적화 전후의 로딩 시간 비교 차트나 네트워크 탭 스크린샷을 추가하면 좋을 것 같습니다. 메타데이터와 콘텐츠 분리 구조를 시각화한 다이어그램도 유용할 것입니다.
+
+### URL 인코딩 이슈
+
+한글이나 특수문자가 포함된 포스트 URL을 처리할 때 인코딩/디코딩 문제로 고생했습니다. Next.js의 동적 라우팅에서 이러한 문자들이 때때로 잘못 해석되어 포스트를 찾을 수 없는 오류가 발생했습니다.
+
+```typescript
+// 명시적인 디코딩을 통한 문제 해결
+const decodedSlug = slug
+  .map((s) => {
+    try {
+      return decodeURIComponent(s);
+    } catch (e) {
+      console.error(`Failed to decode segment "${s}":`, e);
+      return s; // 디코딩 실패 시 원본 유지
+    }
+  })
+  .filter(Boolean);
+```
+
+이 해결책은 간단해 보이지만, 도달하기까지 여러 시도와 실패를 거쳐야 했습니다.
+
+> [!screenshot] > **추가할 스크린샷**: URL 인코딩 이슈가 발생했을 때의 오류 화면과 해결 후 정상 작동하는 한글/특수문자 URL의 블로그 페이지를 비교하는 스크린샷을 추가하면 좋을 것 같습니다.
+
+## 5. 배포 자동화: GitHub Actions
+
+### GitHub Pages 배포 환경 구축
+
+GitHub Pages를 통한 배포 자동화를 위해 GitHub Actions 워크플로우를 구성했습니다. 이 과정에서 몇 가지 장벽에 부딪혔습니다:
+
+1. **Next.js 정적 내보내기**: Next.js App Router를 사용하면서 정적 HTML로 내보내는 과정에서 호환성 문제 발생
+2. **환경 변수 관리**: 빌드 시 환경 변수를 안전하게 전달하는 문제
+3. **권한 설정**: GitHub Actions에서 gh-pages 브랜치에 쓰기 권한 설정 문제
+
+특히 GitHub Actions의 workflow 권한 설정 문제는 많은 시간을 소비하게 만들었습니다:
+
+```yaml
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # GitHub Pages 배포를 위해 쓰기 권한 부여
+```
+
+이 한 줄의 `permissions` 설정을 추가하기 전까지 지속적으로 배포 실패가 발생했었습니다.
+
+> [!screenshot] > **추가할 스크린샷**: GitHub Actions 워크플로우 구성 파일과 실제 성공적인 배포 과정을 보여주는 GitHub Actions 실행 로그 스크린샷을 추가하면 좋을 것 같습니다.
+
+## 6. 성능 최적화: 속도와 SEO
+
+### 이미지 최적화
+
+Next.js의 Image 컴포넌트는 강력하지만, 정적 사이트 생성 시 제한이 있었습니다. 이를 해결하기 위해 `next-export-optimize-images` 라이브러리를 도입했고, 빌드 시 이미지를 자동으로 최적화하는 과정을 구현했습니다.
+
+> [!screenshot] > **추가할 스크린샷**: 이미지 최적화 전후의 파일 크기 및 로딩 시간 비교 차트나 Lighthouse 성능 점수를 보여주는 스크린샷을 추가하면 좋을 것 같습니다.
+
+### 라우팅 최적화
+
+초기에는 각 포스트마다 별도의 정적 HTML 페이지를 생성했지만, 포스트 수가 많아지면서 빌드 시간이 크게 증가했습니다. 이를 해결하기 위해 동적 라우팅 방식을 적용했습니다:
+
+```typescript
+export async function generateStaticParams() {
+  const posts = await getPosts();
+  if (posts.length === 0) {
+    return [{ slug: ["no-post"] }];
+  }
+
+  return posts.map((post) => {
+    const slugSegments = post.urlPath.split("/");
+    return {
+      slug: slugSegments,
+    };
+  });
+}
+```
+
+이 접근 방식으로 빌드 시간을 약 40% 단축할 수 있었습니다.
+
+> [!screenshot] > **추가할 스크린샷**: 빌드 시간 최적화 전후를 비교하는 터미널 출력 화면을 추가하면 좋을 것 같습니다.
+
+## 7. 배운 점과 향후 계획
+
+### 주요 교훈
+
+1. **통합 시스템의 복잡성**: 서로 다른 도구(옵시디언, Neovim, Next.js)를 연결할 때 생각보다 많은 엣지 케이스와 복잡성이 존재함
+2. **빠른 프로토타이핑의 중요성**: 완벽한 시스템을 처음부터 설계하려 하기보다, 작은 기능부터 구현하고 점진적으로 개선하는 접근이 효과적
+3. **자동화의 가치**: 동기화와 배포 과정을 자동화함으로써 콘텐츠 작성에 더 집중할 수 있게 됨
+
+> [!screenshot] > **추가할 스크린샷**: 전체 워크플로우를 시각화한 다이어그램이나 인포그래픽을 추가하면 좋을 것 같습니다. 옵시디언 → Neovim → GitHub → 블로그로 이어지는 데이터 흐름을 보여주는 이미지가 유용할 것입니다.
+
+### 향후 개선 계획
+
+1. **Contents Layer 도입**: 현재 Python 스크립트 기반 동기화 방식을 Next.js의 Contents Layer로 대체하여 더 나은 통합 제공
+2. **소개 및 포트폴리오 페이지 추가**: 블로그를 넘어 종합적인 개인 브랜딩 사이트로 확장
+3. **댓글 기능 구현**: Giscus 또는 유사한 시스템을 통한 댓글 기능 추가
+
+> [!screenshot] > **추가할 스크린샷**: 계획 중인 개선 사항에 대한 간단한 목업이나 프로토타입 이미지를 추가하면 좋을 것 같습니다.
+
+## 결론
+
+이 프로젝트는 단순한 블로그 제작을 넘어, 개발자로서의 워크플로우를 개선하고 기술적 도전을 해결하는 과정이었습니다. 특히 옵시디언에서 작성한 노트를 자동으로 블로그로 변환하는 시스템은 콘텐츠 생산과 기술 개발 사이의 균형을 찾는 데 큰 도움이 되었습니다.
+
+기술적 어려움을 해결하는 과정에서 Python, TypeScript, Lua 등 다양한 언어를 활용하고, 파일 시스템, 비동기 처리, 상태 관리 등 여러 영역의 지식을 통합적으로 적용할 수 있었습니다. 이 경험은 풀스택 개발자로서의 역량을 한층 더 강화하는 계기가 되었습니다.
+
+앞으로도 이 블로그 시스템을 지속적으로 개선하면서, 더 효율적인 개발 워크플로우를 구축하고 기술 지식을 공유하는 플랫폼으로 발전시켜 나갈 계획입니다.
+
+> [!screenshot] > **추가할 스크린샷**: 완성된 블로그의 주요 기능들(메인 페이지, 포스트 페이지, 검색, 태그 필터링 등)을 보여주는 여러 스크린샷을 추가하여 글을 마무리하면 좋을 것 같습니다.
