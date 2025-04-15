@@ -100,11 +100,18 @@ export default function MarkdownRenderer({
     });
   };
 
+  // HTML 주석 제거 함수 추가
+  const removeHtmlComments = (text: string) => {
+    return text.replace(/<!--[\s\S]*?-->/g, '');
+  };
+
   // 처리 순서 변경: 위키링크 처리 전에 콜아웃 처리
   const processedContent = processWikiLinks(content);
   const fullProcessedContent = processContentWithCallouts(processedContent);
+  // HTML 주석 제거 처리 추가
+  const withoutComments = removeHtmlComments(fullProcessedContent);
   // 최종 처리된 콘텐츠
-  const finalProcessedContent = fullProcessedContent;
+  const finalProcessedContent = withoutComments;
 
   const components = {
     h1: ({ children }: { children?: React.ReactNode }) => (
