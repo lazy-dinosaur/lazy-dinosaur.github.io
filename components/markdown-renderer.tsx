@@ -528,6 +528,21 @@ export default function MarkdownRenderer({
         />
       </span>
     ),
+    mark: ({ children }: { children?: React.ReactNode }) => (
+      <mark className="bg-transparent text-[#14b8a6] font-medium px-0.5">
+        {children}
+      </mark>
+    ),
+    em: ({ children }: { children?: React.ReactNode }) => (
+      <em className="text-[#9333ea] italic">
+        {children}
+      </em>
+    ),
+    strong: ({ children }: { children?: React.ReactNode }) => (
+      <strong className="text-[#f97316] font-bold">
+        {children}
+      </strong>
+    ),
   };
 
   return (
