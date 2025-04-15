@@ -1,5 +1,16 @@
 [
   {
+                            "urlPath": "자원/웹개발/HTTP(Hypertext Transfer Protocol)",
+                            "title": "HTTP(Hypertext Transfer Protocol)",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "web"],
+                            "series": "",
+                            "createdAt": "2025-04-15 15:05:31",
+                            "modifiedAt": "2025-04-15 17:40:56",
+                            "publish": "자원/웹개발"
+                        },
+  {
                             "urlPath": "자원/SWEA 강의 정리노트/SWEA 강의 정리노트",
                             "title": "SWEA 강의 정리노트",
                             "summary": "",
@@ -18,18 +29,7 @@
                             "tags": ["resource", "web", "javascript"],
                             "series": "",
                             "createdAt": "2025-04-14 09:46:13",
-                            "modifiedAt": "2025-04-15 14:15:50",
-                            "publish": "자원/웹개발"
-                        },
-  {
-                            "urlPath": "자원/웹개발/웹사이트에 들어갈때에는 어떤 일이 생기는가",
-                            "title": "웹사이트에 들어갈때에는 어떤 일이 생기는가",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "web"],
-                            "series": "",
-                            "createdAt": "2025-04-14 16:19:40",
-                            "modifiedAt": "2025-04-14 17:20:33",
+                            "modifiedAt": "2025-04-15 14:50:17",
                             "publish": "자원/웹개발"
                         },
   {
@@ -63,6 +63,17 @@
                             "series": "",
                             "createdAt": "2025-04-14 09:18:21",
                             "modifiedAt": "2025-04-15 14:16:00",
+                            "publish": "자원/웹개발"
+                        },
+  {
+                            "urlPath": "자원/웹개발/웹사이트에 들어갈때에는 어떤 일이 생기는가",
+                            "title": "웹사이트에 들어갈때에는 어떤 일이 생기는가",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "web"],
+                            "series": "",
+                            "createdAt": "2025-04-14 16:19:40",
+                            "modifiedAt": "2025-04-15 14:23:32",
                             "publish": "자원/웹개발"
                         },
   {
