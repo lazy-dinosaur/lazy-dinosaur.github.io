@@ -3,7 +3,7 @@ tags:
   - resource
   - web
 createdAt: 2025-04-15 15:05:31
-modifiedAt: 2025-04-15 17:40:56
+modifiedAt: 2025-04-15 17:54:01
 publish: 자원/웹개발
 related: ""
 series: ""
@@ -29,8 +29,9 @@ HTTP 요청과 응답은 둘 다 각각 세부분으로 구성된다
 ### HTTP 요청
 
 1. 요청라인
+   <!-- TODO: HTTP-Methods 페이지 완성하기-->
 
-   - [[HTTP 메소드]]-수행할 작업 유형(GET,POST 등)
+   - [[HTTP-Methods|HTTP 메소드]]-수행할 작업 유형(GET,POST 등)
    - URI(Uniform Resource Identifier)-요청하는 리소스의 경로
    - HTTP 버전-사용하는 HTTP 프로토콜 버전
 
@@ -64,9 +65,10 @@ HTTP 요청과 응답은 둘 다 각각 세부분으로 구성된다
 ### HTTP 응답
 
 1. 상태 라인
+   <!-- TODO: 상태코드 페이지 완성하기 -->
 
    - HTTP 버전-사용된 HTTP 프로토콜 버전
-   - 상태코드-요청 처리 결과를 나타내는 3자리 숫자
+   - [[HTTP-Statuscode|상태코드]]-요청 처리 결과를 나타내는 3자리 숫자
    - 상태 메시지-상태 코드에 대한 간략한 설명
 
 2. 헤더-응답에 대한 추가 정보를 제공하는 키-값 쌍
