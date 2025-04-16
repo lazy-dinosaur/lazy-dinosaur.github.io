@@ -14,7 +14,7 @@ e:I[34835,[],""]
 :HL["/_next/static/css/f39913cce61522dc.css","style"]
 :HL["/_next/static/css/0f3413a78a46238e.css","style"]
 :HL["/_next/static/css/73563fcd4e895f21.css","style"]
-0:{"P":null,"b":"gp-1zyW5j_m7aicdZEOvN","p":"","c":["","posts","%EC%9E%90%EC%9B%90","%EC%9B%B9%EA%B0%9C%EB%B0%9C","%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8%EC%97%90%20%EB%93%A4%EC%96%B4%EA%B0%88%EB%95%8C%EC%97%90%EB%8A%94%20%EC%96%B4%EB%96%A4%20%EC%9D%BC%EC%9D%B4%20%EC%83%9D%EA%B8%B0%EB%8A%94%EA%B0%80-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8%EC%A0%91%EC%86%8D%EC%9D%98%20%EA%B3%BC%EC%A0%95",""],"i":false,"f":[[["",{"children":["(blog)",{"children":["posts",{"children":[["slug","%EC%9E%90%EC%9B%90/%EC%9B%B9%EA%B0%9C%EB%B0%9C/%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8%EC%97%90%20%EB%93%A4%EC%96%B4%EA%B0%88%EB%95%8C%EC%97%90%EB%8A%94%20%EC%96%B4%EB%96%A4%20%EC%9D%BC%EC%9D%B4%20%EC%83%9D%EA%B8%B0%EB%8A%94%EA%B0%80-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8%EC%A0%91%EC%86%8D%EC%9D%98%20%EA%B3%BC%EC%A0%95","c"],{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/f39913cce61522dc.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/0f3413a78a46238e.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/73563fcd4e895f21.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],"$L2"]}],{"children":["(blog)",["$","$1","c",{"children":[null,[["$","$L3",null,{"className":"w-60 xl:w-64 2xl:w-72 lg:shrink-0 lg:sticky h-full lg:top-16 mb-4 lg:mb-0 mt-52"}],["$","div",null,{"className":"xl:max-w-5xl mx-auto rounded-lg w-full overflow-x-hidden py-6 p-3 2xl:px-6 h-full overflow-y-hidden","children":["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","(blog)","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","$L6",null,{"className":"w-60 xl:w-64 2xl:w-72 shrink-0 hidden xl:block sticky top-16 h-full mt-52"}]]]}],{"children":["posts",["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","(blog)","children","posts","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","%EC%9E%90%EC%9B%90/%EC%9B%B9%EA%B0%9C%EB%B0%9C/%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8%EC%97%90%20%EB%93%A4%EC%96%B4%EA%B0%88%EB%95%8C%EC%97%90%EB%8A%94%20%EC%96%B4%EB%96%A4%20%EC%9D%BC%EC%9D%B4%20%EC%83%9D%EA%B8%B0%EB%8A%94%EA%B0%80-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8%EC%A0%91%EC%86%8D%EC%9D%98%20%EA%B3%BC%EC%A0%95","c"],["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","(blog)","children","posts","children","$0:f:0:1:2:children:2:children:2:children:0","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L7",null,["$","$L8",null,{"children":"$L9"}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","lfBP7f3XrBjz7K_FnbUbY",{"children":[["$","$La",null,{"children":"$Lb"}],["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
+0:{"P":null,"b":"gp-1zyW5j_m7aicdZEOvN","p":"","c":["","posts","%EC%9E%90%EC%9B%90","%EC%9B%B9%EA%B0%9C%EB%B0%9C","DOM(Document%20Object%20Model)",""],"i":false,"f":[[["",{"children":["(blog)",{"children":["posts",{"children":[["slug","%EC%9E%90%EC%9B%90/%EC%9B%B9%EA%B0%9C%EB%B0%9C/DOM(Document%20Object%20Model)","c"],{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/f39913cce61522dc.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/0f3413a78a46238e.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/73563fcd4e895f21.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],"$L2"]}],{"children":["(blog)",["$","$1","c",{"children":[null,[["$","$L3",null,{"className":"w-60 xl:w-64 2xl:w-72 lg:shrink-0 lg:sticky h-full lg:top-16 mb-4 lg:mb-0 mt-52"}],["$","div",null,{"className":"xl:max-w-5xl mx-auto rounded-lg w-full overflow-x-hidden py-6 p-3 2xl:px-6 h-full overflow-y-hidden","children":["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","(blog)","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","$L6",null,{"className":"w-60 xl:w-64 2xl:w-72 shrink-0 hidden xl:block sticky top-16 h-full mt-52"}]]]}],{"children":["posts",["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","(blog)","children","posts","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","%EC%9E%90%EC%9B%90/%EC%9B%B9%EA%B0%9C%EB%B0%9C/DOM(Document%20Object%20Model)","c"],["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","(blog)","children","posts","children","$0:f:0:1:2:children:2:children:2:children:0","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L7",null,["$","$L8",null,{"children":"$L9"}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","kl0Y7O2_dDdvrnbQygpbh",{"children":[["$","$La",null,{"children":"$Lb"}],["$","$Lc",null,{"children":"$Ld"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]]}],false]],"m":"$undefined","G":["$e","$undefined"],"s":false,"S":true}
 d:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 b:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"LazyDino Dev Log"}],["$","meta","2",{"name":"description","content":"내가 한걸 티내기 위해 만든 블로그"}],["$","link","3",{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"256x256"}],["$","link","4",{"rel":"icon","href":"/favicon.ico","sizes":"any","type":"image/x-icon"}]]
 9:null
@@ -1419,42 +1419,72 @@ newElement.textContent = "안녕하세요";
 // DOM에 요소 추가
 element.appendChild(newElement);
 ```
-27:Tc4d,
-# 웹사이트는 어떻게 보여지는가-브라우저의 렌더링
+27:Ta45,
+# HTTP(Hypertext Transfer Protocol)
 
-웹사이트는 [[웹사이트에 들어갈때에는 어떤 일이 생기는가-웹사이트접속의 과정|사용자의 요청]]에 따라 [[웹사이트는 어떻게 구성되어있나-HTML과 CSS와 Javascript의 이해|웹사이트를 구성]]하는 [[HTML]]과 [[CSS]] [[Javascript]]를 전달받고 이 파일들을 **브라우저가 이해하고 렌더링**하는 과정을 거쳐 눈에 보여지게 된다.
+HTTP(Hypertext Transfer Protocol)는 웹에서 데이터를 주고받기 위한 애플리케이션 계층 프로토콜 이다. 클라이언트와 서버 간의 통신을 담당한다.
 
-## 브라우저의 렌더링 과정
+## 주요 특징
 
-브라우저는 HTML 과 CSS를 바로 이해하지 못한다 따라서 이해하고 화면에 그릴 수 있도록 하는 일련의 과정을 거친다. 그리고 이 과정을 **Critical Rendering Path**라고 부른다.
+- 무상태성-각 요청은 독립적으로 처리되며, 서버는 이전 요청에대한 정보를 저장하지 않는다.
+- 비연결성-요청-응답 후 연결을 끊는다. (HTTP/1.1에서는 연결을 유지할 수 있음)
+- 요청/응답구조-클라이언트가 요청을보내면, 서버는 응답을 반환한다.
 
-1. HTML 파싱과 DOM 생성
+> [!tip]
+> 무상태성 이라는 특성 때문에 서버는 클라이언트와 재 연결이 되도 클라이언트를 식별하지 못한다. 그 문제를 해결하기 위해서 쿠키와 세션이라는 개념이 등장했다.
 
-   첫번째로 브라우져는 서버로 부터 받은 **HTML을 파싱하여 점진적으로 DOM(Document Object Model)을 생성**한다. 파싱 과정은 첫줄부터 순차적으로 진행된다
+## HTTP의 요청-응답
 
-2. CSS 파싱과 CSSOM 생성
+HTTP 요청과 응답은 둘 다 각각 세부분으로 구성된다
 
-   파싱하는 도중 `<link rel="stylesheet">`태그를 만나면 CSS 파일을 요청하고 파싱하여 **CSSOM(CSS Object Model)을 생성**한다. CSS는 렌더링 차단 리소스로, HTML 파싱은 계속될 수 있지만 **최종 렌더링은 CSSOM이 완성될 때까지 지연**될 수 있다.
+### HTTP 요청
 
-3. Javascript 처리
+1. 요청라인
+   <!-- TODO: HTTP-Methods 페이지 완성하기-->
 
-   HTML **파싱 중 `<script>`태그를 만나면 HTML 파싱은 즉시 일시 중단**된다.스크립트 실행 전, 해당 스크립트 이전에 선언된 모든 CSS가 로드되고 파싱될 때까지 Javascript실행이 차단된다(Javascript가 CSSOM에 접근할 수 있기 때문). 이후 **Javascript 처리가 끝나면 HTML파싱이 중단된 시점부터 재게**된다. 하지만 **`defer`나 `async`속성이 있는 스크립트느 HTML파싱을 차단하지 않고 다른 방식으로 처리**된다.
+   - [[HTTP-Methods|HTTP 메소드]]-수행할 작업 유형(GET,POST 등)
+   - URI(Uniform Resource Identifier)-요청하는 리소스의 경로
+   - HTTP 버전-사용하는 HTTP 프로토콜 버전
 
-4. Render Tree 생성
+   예) `GET /index.html HTTP/1.1`
 
-   HTML과 CSS 파싱은 둘 다 **점진적으로 진행**되며 DOM과 CSSOM이 생성되면 **두 트리를 결합하여 Render Tree를 생성**한다. 이때 화면에 표시되지 앟는 요소들을 배제한다(`display:none`적용된 요소, `<head>` 내의 요소 등).
+2. 헤더-요청에 대한 추가 정보를 제공하는 키-값
 
-5. Layout
+   - `Host`-요청을 보내는 서버의 도메인 이름
+   - `User-Agent`-클라이언트 프로그래 정보(브라우저 종류 등)
+   - `Accept`-클라이언트가 처리할 수 있는 콘텐츠 유형
+   - `Content-Type`-요청 본문의 미디어 타입
+   - `Cookie`-서버에서 이전에 설정한 쿠키 정보
 
-이렇게 Render Tree 가 생성되면 Layout 단계를 거쳐 Render Tree의 노드와 그 관계되는 각 **요소들이 화면에 위치해야 하는 위치와 크기를 설정**한다.
+   ```http 예시
+   Host: www.example.com
+   User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+   Accept: text/html,application/xhtml+xml
+   Content-Type: application/json
+   Cookie: session=abc123
+   ```
 
-6. Paint
+3. 본문- 주로 POST 나 PUT 메소드에서 서버로 보내는 데이터를 포함한다. GET 요청은 일반적으로 본문이 없다.
 
-   Paint 단계로 넘어가 Render Tree의 **각 노드를 화면에 그리게 된다**. 이때 색상, 이미지, 그림자 등 시각적 요소가 처리된다. 이 때 시각적 요소에 따라 필요하다면 여러 레이어들을 생성하게 된다.
+   ```json 예시
+   {
+     "username": "user123",
+     "password": "securepass"
+   }
+   ```
 
-7. Compositing
+### HTTP 응답
 
-   생성된 여러 **레이어를 합성하여 최종 화면을 화면에 표시**한다. CSS 의 Z-index에 의해 쌓이는 순서가 결정된다. 이 레이어 합성은 주로 GPU를 활용하여 처리하여 에니메이션이나 전환 효과의 성능을 향상시킨다.
+1. 상태 라인
+   <!-- TODO: 상태코드 페이지 완성하기 -->
 
-이렇게 화면에 보여지는 웹사이트는 DOM과 CSSOM를 이용해 [[Javascript가 웹사이트를 어떻게 조작할 수 있는가-DOM과 CSSOM의 개념|Javascript를 통해 조작]]이 가능해 진다.
-7:["$","$L24",null,{"children":["$","$L25",null,{"content":"\n# 웹사이트에 들어갈때에는 어떤 일이 생기는가-웹사이트접속의 과정\n\n브라우저에 웹사이트가 화면에 나타나기 까지엔 다음과 같은 과정이 필요하다\n\n1. URL 입력\n   사용자가 링크를 클릭하거나 주소창에 웹 주소를 입력한다.\n\n2. DNS(Domain Name System) 조회\n   입력받은 도메인 이름을 IP 주소로 변환합니다.이때 DNS 캐시를 먼저 확인해 보고 없다면 DNS서버에 요청하여 IP를 받아온다.\n\n3. 서버 연결\n   찾은 IP주소를 통해 서버에 TCP/IP 연결을 설정한다.\n\n4. [[HTTP-Methods|HTTP 요청]]\n   브라우저가 서버에 웹사이트 데이터를 요청한다.\n\n5. 서버 응답\n   서버는 HTML,CSS,Javascript등의 파일을 브라우저에 전송한다.\n\n6. 렌더링 과정\n   HTML 과 CSS 를 파싱하여 각각 DOM tree 와 CSSOM tree 만들고 둘을 합쳐 렌더 트리를 생성한다. 이후 Javascript를 처리한다. 이후 파싱한 DOM 과 CSSOM 을 쳐 Render tree를 만들고 레이아웃 과정을 통해 뷰포트에 표시될 각 요소들의 크기와 위치를 계산하고 페인트 단계를 거쳐 렌더트리의 각 노드를 화면에 그리고 마지막 컴포지팅 단계에서 여러 레이어로 나뉜 페이지의 요소들을 합성하여 최종 화면을 만든다.\n\n- 참고:[[웹사이트는 어떻게 보여지는가-브라우저의 렌더링]]\n","publishPath":"자원/웹개발","published":"2025-04-14 16:19:40","modified":"2025-04-16 08:30:03","tags":"$2:props:children:props:children:props:children:props:posts:2:tags","prevPost":{"urlPath":"자원/웹개발/DOM(Document Object Model)","title":"DOM(Document Object Model)","summary":"","content":"$26","plainContent":"DOM(Document Object Model)이란 HTML,XML 같은 마크업 문서를 위한 프로그래밍 인터페이스 이다.\nDOM은 문서를 노드와 객체로 표현해 웹 페이지의 구조화된 표현을 제공한다.\nDOM은 개발자가 Javascript를 통해 웹 페이지의 콘텐츠, 구조, 스타일을 동적으로 변경할 수 있게 해 준다. 이를 통해 사용자와 상호작용하는 웹 애플리케이션을 구축할 수 있다.\n트리구조: 문서는 부모-자식 관계를 가진 노드들의 트리로 표현된다.\n노드: HTML요소, 속성 텍스트등 모든 것이 노드이다.\n조작기능: Javascript를 사용해 DOM 노드를 추가, 수정, 삭제할 수 있다.\n이벤트 처리: 사용자 상호작용(클릭, 입력 등)에 반응하는 이벤트를 처리한다.\nDocument: DOM 트리의 루트 노드\nElement: HTML 태그에 해당하는 노드(div, p, span 등)\nAttribute: 요소의 속성(id, class, href 등)\nText: 텍스트 내용을 담고 있는 노드\n> [!info] window 오브젝트\n> window 객체는 브라우저에서 Javascript의 전역 객체이다. 브라우저 환경에서의 모든 Javascript코드가 실행되는 기본적인 컨테이너 이다.\ndocument: DOM에 접근할 수 있는 객체\nlocation: 현재 URL 정보와 탐색 기능\nhistory: 브라우저 방문 기록 관리\nnavigator: 브라우저 정보\nscreen: 사용자 화면 정보\nlocalStorage,sessionStorage:클라이언트 측 데이터 저장소","image":"","tags":"$2:props:children:props:children:props:children:props:posts:1:tags","series":"","createdAt":"2025-04-14 18:08:07","modifiedAt":"2025-04-16 12:47:05","publish":"자원/웹개발"},"nextPost":{"urlPath":"자원/웹개발/웹사이트는 어떻게 보여지는가-브라우저의 렌더링","title":"웹사이트는 어떻게 보여지는가-브라우저의 렌더링","summary":"","content":"$27","plainContent":"웹사이트는 사용자의 요청에 따라 웹사이트를 구성하는 Javascript를 통해 조작이 가능해 진다.","image":"","tags":"$2:props:children:props:children:props:children:props:posts:3:tags","series":"","createdAt":"2025-04-14 14:30:49","modifiedAt":"2025-04-16 09:36:05","publish":"자원/웹개발"}}]}]
+   - HTTP 버전-사용된 HTTP 프로토콜 버전
+   - [[HTTP-Statuscode|상태코드]]-요청 처리 결과를 나타내는 3자리 숫자
+   - 상태 메시지-상태 코드에 대한 간략한 설명
+
+2. 헤더-응답에 대한 추가 정보를 제공하는 키-값 쌍
+   - `Content-Type`-응답 본문의 미디어 타입
+   - `Content-Length`-응답 본문의 크기
+   - `Server`-서버 소프트웨어 정보
+   - `Set-Cookie`-클라이언트에 저장할 쿠키 정보
+7:["$","$L24",null,{"children":["$","$L25",null,{"content":"$26","publishPath":"자원/웹개발","published":"2025-04-14 18:08:07","modified":"2025-04-16 12:47:05","tags":"$2:props:children:props:children:props:children:props:posts:1:tags","prevPost":{"urlPath":"자원/웹개발/HTTP(Hypertext Transfer Protocol)","title":"HTTP(Hypertext Transfer Protocol)","summary":"","content":"$27","plainContent":"HTTP(Hypertext Transfer Protocol)는 웹에서 데이터를 주고받기 위한 애플리케이션 계층 프로토콜 이다. 클라이언트와 서버 간의 통신을 담당한다.\n무상태성-각 요청은 독립적으로 처리되며, 서버는 이전 요청에대한 정보를 저장하지 않는다.\n비연결성-요청-응답 후 연결을 끊는다. (HTTP/1.1에서는 연결을 유지할 수 있음)\n요청/응답구조-클라이언트가 요청을보내면, 서버는 응답을 반환한다.\n> [!tip]\n> 무상태성 이라는 특성 때문에 서버는 클라이언트와 재 연결이 되도 클라이언트를 식별하지 못한다. 그 문제를 해결하기 위해서 쿠키와 세션이라는 개념이 등장했다.\nHTTP 요청과 응답은 둘 다 각각 세부분으로 구성된다\n1. 요청라인\n<!-- TODO: HTTP-Methods 페이지 완성하기-->\nHTTP 메소드-수행할 작업 유형(GET,POST 등)\nURI(Uniform Resource Identifier)-요청하는 리소스의 경로\nHTTP 버전-사용하는 HTTP 프로토콜 버전\n예) GET /index.html HTTP/1.1\n2. 헤더-요청에 대한 추가 정보를 제공하는 키-값\nHost-요청을 보내는 서버의 도메인 이름\nUser-Agent-클라이언트 프로그래 정보(브라우저 종류 등)\nAccept-클라이언트가 처리할 수 있는 콘텐츠 유형\nContent-Type-요청 본문의 미디어 타입\nCookie-서버에서 이전에 설정한 쿠키 정보\n3. 본문- 주로 POST 나 PUT 메소드에서 서버로 보내는 데이터를 포함한다. GET 요청은 일반적으로 본문이 없다.\n1. 상태 라인\n<!-- TODO: 상태코드 페이지 완성하기 -->\nHTTP 버전-사용된 HTTP 프로토콜 버전\n상태코드-요청 처리 결과를 나타내는 3자리 숫자\n상태 메시지-상태 코드에 대한 간략한 설명\n2. 헤더-응답에 대한 추가 정보를 제공하는 키-값 쌍\nContent-Type-응답 본문의 미디어 타입\nContent-Length-응답 본문의 크기\nServer-서버 소프트웨어 정보\nSet-Cookie-클라이언트에 저장할 쿠키 정보","image":"","tags":"$2:props:children:props:children:props:children:props:posts:0:tags","series":"","createdAt":"2025-04-15 15:05:31","modifiedAt":"2025-04-15 17:54:01","publish":"자원/웹개발"},"nextPost":{"urlPath":"자원/웹개발/웹사이트에 들어갈때에는 어떤 일이 생기는가-웹사이트접속의 과정","title":"웹사이트에 들어갈때에는 어떤 일이 생기는가-웹사이트접속의 과정","summary":"","content":"\n# 웹사이트에 들어갈때에는 어떤 일이 생기는가-웹사이트접속의 과정\n\n브라우저에 웹사이트가 화면에 나타나기 까지엔 다음과 같은 과정이 필요하다\n\n1. URL 입력\n   사용자가 링크를 클릭하거나 주소창에 웹 주소를 입력한다.\n\n2. DNS(Domain Name System) 조회\n   입력받은 도메인 이름을 IP 주소로 변환합니다.이때 DNS 캐시를 먼저 확인해 보고 없다면 DNS서버에 요청하여 IP를 받아온다.\n\n3. 서버 연결\n   찾은 IP주소를 통해 서버에 TCP/IP 연결을 설정한다.\n\n4. [[HTTP-Methods|HTTP 요청]]\n   브라우저가 서버에 웹사이트 데이터를 요청한다.\n\n5. 서버 응답\n   서버는 HTML,CSS,Javascript등의 파일을 브라우저에 전송한다.\n\n6. 렌더링 과정\n   HTML 과 CSS 를 파싱하여 각각 DOM tree 와 CSSOM tree 만들고 둘을 합쳐 렌더 트리를 생성한다. 이후 Javascript를 처리한다. 이후 파싱한 DOM 과 CSSOM 을 쳐 Render tree를 만들고 레이아웃 과정을 통해 뷰포트에 표시될 각 요소들의 크기와 위치를 계산하고 페인트 단계를 거쳐 렌더트리의 각 노드를 화면에 그리고 마지막 컴포지팅 단계에서 여러 레이어로 나뉜 페이지의 요소들을 합성하여 최종 화면을 만든다.\n\n- 참고:[[웹사이트는 어떻게 보여지는가-브라우저의 렌더링]]\n","plainContent":"브라우저에 웹사이트가 화면에 나타나기 까지엔 다음과 같은 과정이 필요하다\n1. URL 입력\n사용자가 링크를 클릭하거나 주소창에 웹 주소를 입력한다.\n2. DNS(Domain Name System) 조회\n입력받은 도메인 이름을 IP 주소로 변환합니다.이때 DNS 캐시를 먼저 확인해 보고 없다면 DNS서버에 요청하여 IP를 받아온다.\n3. 서버 연결\n찾은 IP주소를 통해 서버에 TCP/IP 연결을 설정한다.\n4. HTTP 요청\n브라우저가 서버에 웹사이트 데이터를 요청한다.\n5. 서버 응답\n서버는 HTML,CSS,Javascript등의 파일을 브라우저에 전송한다.\n6. 렌더링 과정\nHTML 과 CSS 를 파싱하여 각각 DOM tree 와 CSSOM tree 만들고 둘을 합쳐 렌더 트리를 생성한다. 이후 Javascript를 처리한다. 이후 파싱한 DOM 과 CSSOM 을 쳐 Render tree를 만들고 레이아웃 과정을 통해 뷰포트에 표시될 각 요소들의 크기와 위치를 계산하고 페인트 단계를 거쳐 렌더트리의 각 노드를 화면에 그리고 마지막 컴포지팅 단계에서 여러 레이어로 나뉜 페이지의 요소들을 합성하여 최종 화면을 만든다.\n참고:웹사이트는 어떻게 보여지는가-브라우저의 렌더링","image":"","tags":"$2:props:children:props:children:props:children:props:posts:2:tags","series":"","createdAt":"2025-04-14 16:19:40","modifiedAt":"2025-04-16 08:30:03","publish":"자원/웹개발"}}]}]

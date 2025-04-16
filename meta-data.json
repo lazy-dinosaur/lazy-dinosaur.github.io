@@ -40,7 +40,7 @@
                             "tags": ["resource", "web"],
                             "series": "",
                             "createdAt": "2025-04-14 14:30:49",
-                            "modifiedAt": "2025-04-16 09:26:16",
+                            "modifiedAt": "2025-04-16 09:36:05",
                             "publish": "자원/웹개발"
                         },
   {
@@ -73,7 +73,7 @@
                             "tags": ["resource", "web", "javascript"],
                             "series": "",
                             "createdAt": "2025-04-14 09:46:13",
-                            "modifiedAt": "2025-04-16 09:26:38",
+                            "modifiedAt": "2025-04-16 11:15:36",
                             "publish": "자원/웹개발"
                         },
   {
@@ -86,6 +86,17 @@
                             "createdAt": "2025-03-23 09:21:24",
                             "modifiedAt": "2025-03-31 19:48:24",
                             "publish": "자원/크롬 확장프로그램"
+                        },
+  {
+                            "urlPath": "자원/웹개발/DOM(Document Object Model)",
+                            "title": "DOM(Document Object Model)",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "web"],
+                            "series": "",
+                            "createdAt": "2025-04-14 18:08:07",
+                            "modifiedAt": "2025-04-16 12:47:05",
+                            "publish": "자원/웹개발"
                         },
   {
                             "urlPath": "자원/ai/Aider",
