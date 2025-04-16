@@ -11,17 +11,6 @@
                             "publish": "자원/SWEA 강의 정리노트"
                         },
   {
-                            "urlPath": "자원/웹개발/Javascript가 웹사이트를 어떻게 조작할 수 있는가",
-                            "title": "Javascript가 웹사이트를 어떻게 조작할 수 있는가",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "web", "javascript"],
-                            "series": "",
-                            "createdAt": "2025-04-14 09:46:13",
-                            "modifiedAt": "2025-04-15 14:50:17",
-                            "publish": "자원/웹개발"
-                        },
-  {
                             "urlPath": "자원/웹개발/동적 사이트 vs 정적사이트",
                             "title": "동적 사이트 vs 정적사이트",
                             "summary": "",
@@ -29,40 +18,7 @@
                             "tags": ["resource", "web"],
                             "series": "",
                             "createdAt": "2025-03-10 07:39:08",
-                            "modifiedAt": "2025-04-14 19:22:41",
-                            "publish": "자원/웹개발"
-                        },
-  {
-                            "urlPath": "자원/웹개발/웹사이트는 어떻게 보여지는가",
-                            "title": "웹사이트는 어떻게 보여지는가",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "web"],
-                            "series": "",
-                            "createdAt": "2025-04-14 14:30:49",
-                            "modifiedAt": "2025-04-14 18:56:02",
-                            "publish": "자원/웹개발"
-                        },
-  {
-                            "urlPath": "자원/웹개발/웹사이트는 어떻게 구성되어있나",
-                            "title": "웹사이트는 어떻게 구성되어있나",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "web"],
-                            "series": "",
-                            "createdAt": "2025-04-14 09:18:21",
-                            "modifiedAt": "2025-04-15 14:16:00",
-                            "publish": "자원/웹개발"
-                        },
-  {
-                            "urlPath": "자원/웹개발/웹사이트에 들어갈때에는 어떤 일이 생기는가",
-                            "title": "웹사이트에 들어갈때에는 어떤 일이 생기는가",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "web"],
-                            "series": "",
-                            "createdAt": "2025-04-14 16:19:40",
-                            "modifiedAt": "2025-04-15 14:23:32",
+                            "modifiedAt": "2025-04-16 08:52:13",
                             "publish": "자원/웹개발"
                         },
   {
@@ -74,6 +30,50 @@
                             "series": "",
                             "createdAt": "2025-04-15 15:05:31",
                             "modifiedAt": "2025-04-15 17:54:01",
+                            "publish": "자원/웹개발"
+                        },
+  {
+                            "urlPath": "자원/웹개발/웹사이트는 어떻게 보여지는가-브라우저의 렌더링",
+                            "title": "웹사이트는 어떻게 보여지는가-브라우저의 렌더링",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "web"],
+                            "series": "",
+                            "createdAt": "2025-04-14 14:30:49",
+                            "modifiedAt": "2025-04-16 09:26:16",
+                            "publish": "자원/웹개발"
+                        },
+  {
+                            "urlPath": "자원/웹개발/웹사이트는 어떻게 구성되어있나-HTML과 CSS와 Javascript의 이해",
+                            "title": "웹사이트는 어떻게 구성되어있나-HTML과 CSS와 Javascript의 이해",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "web"],
+                            "series": "",
+                            "createdAt": "2025-04-14 09:18:21",
+                            "modifiedAt": "2025-04-16 08:29:36",
+                            "publish": "자원/웹개발"
+                        },
+  {
+                            "urlPath": "자원/웹개발/웹사이트에 들어갈때에는 어떤 일이 생기는가-웹사이트접속의 과정",
+                            "title": "웹사이트에 들어갈때에는 어떤 일이 생기는가-웹사이트접속의 과정",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "web"],
+                            "series": "",
+                            "createdAt": "2025-04-14 16:19:40",
+                            "modifiedAt": "2025-04-16 08:30:03",
+                            "publish": "자원/웹개발"
+                        },
+  {
+                            "urlPath": "자원/웹개발/Javascript가 웹사이트를 어떻게 조작할 수 있는가-DOM과 CSSOM의 개념",
+                            "title": "Javascript가 웹사이트를 어떻게 조작할 수 있는가-DOM과 CSSOM의 개념",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "web", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-14 09:46:13",
+                            "modifiedAt": "2025-04-16 09:26:38",
                             "publish": "자원/웹개발"
                         },
   {
