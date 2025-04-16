@@ -99,6 +99,17 @@
                             "publish": "자원/웹개발"
                         },
   {
+                            "urlPath": "자원/웹개발/CSSOM(CSS Object Model)",
+                            "title": "CSSOM(CSS Object Model)",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "web"],
+                            "series": "",
+                            "createdAt": "2025-04-15 14:55:32",
+                            "modifiedAt": "2025-04-16 12:49:54",
+                            "publish": "자원/웹개발"
+                        },
+  {
                             "urlPath": "자원/ai/Aider",
                             "title": "Aider",
                             "summary": "",
