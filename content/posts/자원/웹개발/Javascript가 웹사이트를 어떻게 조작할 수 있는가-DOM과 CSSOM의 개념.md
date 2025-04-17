@@ -4,7 +4,7 @@ tags:
   - web
   - javascript
 createdAt: 2025-04-14 09:46:13
-modifiedAt: 2025-04-16 11:15:36
+modifiedAt: 2025-04-16 19:08:41
 publish: 자원/웹개발
 related: ""
 series: ""
@@ -54,19 +54,21 @@ DOM 은 여러가지의 object를 포함한다. `window`,`document`,`element`,`n
 
 대표적인 인터페이스는 다음과 같다.
 
-- document.getElementById(id)
-- document.getElementsByTagName(name)
-- document.createElement(name)
-- parentNode.appendChild(node)
-- element.innerHTML
-- element.style.left
-- element.setAttribute
-- element.getAttribute
-- element.addEventListener
-- window.content
-- window.onload
-- window.dump
-- window.scrollTo
+> [!example]
+>
+> - `document.getElementById(id)`
+> - `document.getElementsByTagName(name)`
+> - `document.createElement(name)`
+> - `parentNode.appendChild(node)`
+> - `element.innerHTML`
+> - `element.style.left`
+> - `element.setAttribute`
+> - `element.getAttribute`
+> - `element.addEventListener`
+> - `window.content`
+> - `window.onload`
+> - `window.dump`
+> - `window.scrollTo`
 
 ## 예시
 
