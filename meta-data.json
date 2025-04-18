@@ -1,38 +1,5 @@
 [
   {
-                            "urlPath": "자원/JavaScript/Javascript-변수의 선언,초기화,할당의 차이점은 무엇인가",
-                            "title": "Javascript-변수의 선언,초기화,할당의 차이점은 무엇인가",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "javascript"],
-                            "series": "",
-                            "createdAt": "2025-04-17 13:25:40",
-                            "modifiedAt": "2025-04-17 15:07:30",
-                            "publish": "자원/JavaScript"
-                        },
-  {
-                            "urlPath": "자원/JavaScript/Javascript-호이스팅(Hoisting)이란 무엇인가",
-                            "title": "Javascript-호이스팅(Hoisting)이란 무엇인가",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "javascript"],
-                            "series": "",
-                            "createdAt": "2025-04-17 14:08:12",
-                            "modifiedAt": "2025-04-17 15:07:47",
-                            "publish": "자원/JavaScript"
-                        },
-  {
-                            "urlPath": "자원/JavaScript/Javascript-var,let,const의 주요 차이점은 무엇인가",
-                            "title": "Javascript-var,let,const의 주요 차이점은 무엇인가",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "javascript"],
-                            "series": "",
-                            "createdAt": "2025-04-17 14:40:27",
-                            "modifiedAt": "2025-04-17 15:07:54",
-                            "publish": "자원/JavaScript"
-                        },
-  {
                             "urlPath": "자원/SWEA 강의 정리노트/SWEA 강의 정리노트",
                             "title": "SWEA 강의 정리노트",
                             "summary": "",
@@ -44,6 +11,28 @@
                             "publish": "자원/SWEA 강의 정리노트"
                         },
   {
+                            "urlPath": "자원/JavaScript/변수의 선언,초기화,할당의 차이점은 무엇인가",
+                            "title": "변수의 선언,초기화,할당의 차이점은 무엇인가",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-17 13:25:40",
+                            "modifiedAt": "2025-04-18 15:01:06",
+                            "publish": "자원/JavaScript"
+                        },
+  {
+                            "urlPath": "자원/JavaScript/호이스팅(Hoisting)이란 무엇인가",
+                            "title": "호이스팅(Hoisting)이란 무엇인가",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-17 14:08:12",
+                            "modifiedAt": "2025-04-18 14:58:20",
+                            "publish": "자원/JavaScript"
+                        },
+  {
                             "urlPath": "자원/JavaScript/Javascript",
                             "title": "Javascript",
                             "summary": "",
@@ -51,7 +40,29 @@
                             "tags": ["resource", "web", "javascript"],
                             "series": "",
                             "createdAt": "2025-04-12 09:09:33",
-                            "modifiedAt": "2025-04-17 15:08:15",
+                            "modifiedAt": "2025-04-18 14:59:35",
+                            "publish": "자원/JavaScript"
+                        },
+  {
+                            "urlPath": "자원/JavaScript/var,let,const의 주요 차이점은 무엇인가",
+                            "title": "var,let,const의 주요 차이점은 무엇인가",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-17 14:40:27",
+                            "modifiedAt": "2025-04-18 15:01:31",
+                            "publish": "자원/JavaScript"
+                        },
+  {
+                            "urlPath": "자원/JavaScript/데이터 타입과 불변성",
+                            "title": "데이터 타입과 불변성",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-17 16:02:18",
+                            "modifiedAt": "2025-04-18 15:00:11",
                             "publish": "자원/JavaScript"
                         },
   {
