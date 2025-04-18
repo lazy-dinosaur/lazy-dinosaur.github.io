@@ -28,7 +28,10 @@ export default function LeftSidebar({ className }: LeftSidebarProps) {
 			{/* 데스크톱 버전 */}
 			<motion.aside
 				key={sidebarKey}
-				className={cn("hidden xl:block", className)}
+				className={cn(
+					"hidden xl:block h-[calc(100vh-4rem)] sticky top-16 mt-52", // 높이와 sticky 설정 수정
+					className,
+				)}
 				initial={{ opacity: 0, x: -20 }}
 				animate={{ opacity: 1, x: 0 }}
 				transition={{
@@ -37,7 +40,10 @@ export default function LeftSidebar({ className }: LeftSidebarProps) {
 					delay: 0.05,
 				}}
 			>
-				<ScrollArea className="h-full">
+				{/* ScrollArea에 명확한 높이 지정 */}
+				<ScrollArea className="h-full pb-8">
+					{" "}
+					{/* 하단에 약간의 패딩 추가 */}
 					{/* 네비게이션 메뉴 (데스크톱) */}
 					<SidebarSection title="메뉴">
 						<motion.div
@@ -99,7 +105,6 @@ export default function LeftSidebar({ className }: LeftSidebarProps) {
 							</div>
 						</motion.div>
 					</SidebarSection>
-
 					<SidebarSection title="카테고리">
 						<motion.div
 							initial={{ opacity: 0 }}
