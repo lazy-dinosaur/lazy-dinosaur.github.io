@@ -66,6 +66,39 @@
                             "publish": "자원/JavaScript"
                         },
   {
+                            "urlPath": "자원/JavaScript/null,undefined,undeclared 의 차이점은",
+                            "title": "null,undefined,undeclared 의 차이점은",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-18 14:59:03",
+                            "modifiedAt": "2025-04-18 15:14:42",
+                            "publish": "자원/JavaScript"
+                        },
+  {
+                            "urlPath": "자원/JavaScript/`==` 과 `===` 의 차이",
+                            "title": "`==` 과 `===` 의 차이",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-18 21:21:24",
+                            "modifiedAt": "2025-04-18 21:53:33",
+                            "publish": "자원/JavaScript"
+                        },
+  {
+                            "urlPath": "자원/JavaScript/스코프(Scope)란 무엇인가",
+                            "title": "스코프(Scope)란 무엇인가",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-18 21:55:13",
+                            "modifiedAt": "2025-04-18 22:35:57",
+                            "publish": "자원/JavaScript"
+                        },
+  {
                             "urlPath": "자원/웹개발/동적 사이트 vs 정적사이트",
                             "title": "동적 사이트 vs 정적사이트",
                             "summary": "",
@@ -129,6 +162,17 @@
                             "series": "",
                             "createdAt": "2025-04-14 09:46:13",
                             "modifiedAt": "2025-04-16 19:08:41",
+                            "publish": "자원/웹개발"
+                        },
+  {
+                            "urlPath": "자원/웹개발/라이브러리vs프레임워크",
+                            "title": "라이브러리vs프레임워크",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["web", "resource"],
+                            "series": "",
+                            "createdAt": "2025-04-18 20:56:02",
+                            "modifiedAt": "2025-04-18 21:53:50",
                             "publish": "자원/웹개발"
                         },
   {
