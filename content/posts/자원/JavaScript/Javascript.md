@@ -4,7 +4,7 @@ tags:
   - web
   - javascript
 createdAt: 2025-04-12 09:09:33
-modifiedAt: 2025-04-17 15:08:15
+modifiedAt: 2025-04-18 14:59:35
 publish: 자원/JavaScript
 related: ""
 series: ""
@@ -16,6 +16,7 @@ series: ""
 
 ## 관련 정보
 
-- [[Javascript-변수의 선언,초기화,할당의 차이점은 무엇인가]]
-- [[Javascript-호이스팅(Hoisting)이란 무엇인가]]
-- [[Javascript-데이터 타입과 불변성]]
+- [[변수의 선언,초기화,할당의 차이점은 무엇인가]]
+- [[호이스팅(Hoisting)이란 무엇인가]]
+- [[데이터 타입과 불변성]]
+- [[null,undefined,undeclared 의 차이점은]]

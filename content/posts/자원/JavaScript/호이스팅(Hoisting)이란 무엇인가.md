@@ -3,13 +3,13 @@ tags:
   - resource
   - javascript
 createdAt: 2025-04-17 14:08:12
-modifiedAt: 2025-04-17 15:07:47
+modifiedAt: 2025-04-18 14:58:20
 publish: 자원/JavaScript
 related: ""
 series: ""
 ---
 
-# Javascript-호이스팅(Hoisting)이란 무엇인가
+# 호이스팅(Hoisting)이란 무엇인가
 
 호이스팅은 자바스크립트 엔진이 코드를 실행하기 전에 변수, 함수, 클래스의 **선언** 부분을 해당 스코프의 최상단으로 끌어올리는 것처럼 동작하는 현상을 말한다.
 
@@ -51,10 +51,10 @@ series: ""
 
 > [!tip]
 >
-> - [[Javascript-var,let,const의 주요 차이점은 무엇인가]]
+> - [[var,let,const의 주요 차이점은 무엇인가]]
 
 호이스팅은 특히`var`을 사용할 때 코드의 실행 순서와 변수 값 예측을 어렵게 만들 수 있다.`let`과 `const`의 도입 및 TDZ는 이러한 혼란을 줄이고 더 예측 가능한 코드를 작성하는 데 도움을 준다.
 
 ## 관련 정보
 
-- [[Javascript-변수의 선언,초기화,할당의 차이점은 무엇인가]]
+- [[변수의 선언,초기화,할당의 차이점은 무엇인가]]
