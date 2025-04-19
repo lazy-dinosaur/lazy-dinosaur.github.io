@@ -3,7 +3,7 @@ tags:
   - resource
   - javascript
 createdAt: 2025-04-19 10:37:27
-modifiedAt: 2025-04-19 13:12:42
+modifiedAt: 2025-04-19 13:26:08
 publish: 자원/JavaScript
 related: ""
 series: ""
@@ -48,7 +48,7 @@ series: ""
 
 3. `this`바인딩
 
-   - 현재 컨텍스트에서 `this`가 가리키는 대상
+   - 현재 컨텍스트에서[[`this`키워드|`this`]]가 가리키는 대상
 
 ## 실행 컨텍스트의 생성 및 실행 과정
 
