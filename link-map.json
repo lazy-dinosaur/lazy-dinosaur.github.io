@@ -1,6 +1,4 @@
 {
-  "0.inbox/`this`키워드.md": "자원/JavaScript/`this`키워드",
-  "0.inbox/프로토타입(Prototype)과 프로토타입 상속.md": "자원/JavaScript/프로토타입(Prototype)과 프로토타입 상속",
   "3.resource/SWEA강의/SWEA 강의 정리노트.md": "자원/SWEA 강의 정리노트/SWEA 강의 정리노트",
   "3.resource/Javascript/변수의 선언,초기화,할당의 차이점은 무엇인가.md": "자원/JavaScript/변수의 선언,초기화,할당의 차이점은 무엇인가",
   "3.resource/Javascript/호이스팅(Hoisting)이란 무엇인가.md": "자원/JavaScript/호이스팅(Hoisting)이란 무엇인가",
@@ -13,6 +11,10 @@
   "3.resource/Javascript/콜 스택(Call Stack)이란 무엇인가.md": "자원/JavaScript/콜 스택(Call Stack)이란 무엇인가",
   "3.resource/Javascript/클로저(Closure)란 무엇인가.md": "자원/JavaScript/클로저(Closure)란 무엇인가",
   "3.resource/Javascript/var,let,const의 주요 차이점은 무엇인가.md": "자원/JavaScript/var,let,const의 주요 차이점은 무엇인가",
+  "3.resource/Javascript/`this`키워드.md": "자원/JavaScript/`this`키워드",
+  "3.resource/Javascript/프로토타입(Prototype)과 프로토타입 상속.md": "자원/JavaScript/프로토타입(Prototype)과 프로토타입 상속",
+  "3.resource/Javascript/Javascript에서의 비동기 함수.md": "자원/JavaScript/Javascript에서의 비동기 함수",
+  "3.resource/Javascript/Javascript는 어떻게 비동기 처리가 가능한 것인가.md": "자원/JavaScript/Javascript는 어떻게 비동기 처리가 가능한 것인가",
   "3.resource/Web/동적 사이트 vs 정적사이트.md": "자원/웹개발/동적 사이트 vs 정적사이트",
   "3.resource/Web/HTTP(Hypertext Transfer Protocol).md": "자원/웹개발/HTTP(Hypertext Transfer Protocol)",
   "3.resource/Web/웹사이트는 어떻게 보여지는가-브라우저의 렌더링.md": "자원/웹개발/웹사이트는 어떻게 보여지는가-브라우저의 렌더링",
