@@ -40,7 +40,7 @@
                             "tags": ["resource", "web", "javascript"],
                             "series": "",
                             "createdAt": "2025-04-12 09:09:33",
-                            "modifiedAt": "2025-04-18 14:59:35",
+                            "modifiedAt": "2025-04-19 11:50:58",
                             "publish": "자원/JavaScript"
                         },
   {
@@ -95,7 +95,40 @@
                             "tags": ["resource", "javascript"],
                             "series": "",
                             "createdAt": "2025-04-18 21:55:13",
-                            "modifiedAt": "2025-04-18 22:35:57",
+                            "modifiedAt": "2025-04-19 09:24:31",
+                            "publish": "자원/JavaScript"
+                        },
+  {
+                            "urlPath": "자원/JavaScript/실행컨텍스트(Execution Context)",
+                            "title": "실행컨텍스트(Execution Context)",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-19 10:37:27",
+                            "modifiedAt": "2025-04-19 13:12:42",
+                            "publish": "자원/JavaScript"
+                        },
+  {
+                            "urlPath": "자원/JavaScript/콜 스택(Call Stack)이란 무엇인가",
+                            "title": "콜 스택(Call Stack)이란 무엇인가",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-19 11:15:16",
+                            "modifiedAt": "2025-04-19 13:12:49",
+                            "publish": "자원/JavaScript"
+                        },
+  {
+                            "urlPath": "자원/JavaScript/클로저(Closure)란 무엇인가",
+                            "title": "클로저(Closure)란 무엇인가",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-18 22:36:08",
+                            "modifiedAt": "2025-04-19 13:13:00",
                             "publish": "자원/JavaScript"
                         },
   {
