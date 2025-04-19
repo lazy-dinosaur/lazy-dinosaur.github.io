@@ -3,7 +3,7 @@ tags:
   - resource
   - javascript
 createdAt: 2025-04-18 22:36:08
-modifiedAt: 2025-04-19 13:13:00
+modifiedAt: 2025-04-19 16:55:15
 publish: 자원/JavaScript
 related: ""
 series: ""
@@ -11,7 +11,7 @@ series: ""
 
 # 클로저(Closure)란 무엇인가
 
-클로저는 함수와 그 함수가 선언된 렉시컬 환경(Lexical Environment)의 조합이다. 간단하게 함수가 자신이 생성될 때의 환경(변수)을 기억하는 현상을 말한다.
+클로저는 함수와 그 **함수가 선언된 렉시컬 환경(Lexical Environment)의 조합**이다. 간단하게 **함수가 자신이 생성될 때의 환경(변수)을 기억하는 현상**을 말한다.
 
 클로저는 자바스크립트의 핵심 개념 중 하나로, 함수형 프로그래밍 패러다임과 다양한 디자인 패턴을 구현하는 데 필수적이다.
 

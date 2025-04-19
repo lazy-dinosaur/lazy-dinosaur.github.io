@@ -4,7 +4,7 @@ tags:
   - web
   - javascript
 createdAt: 2025-04-12 09:09:33
-modifiedAt: 2025-04-19 15:22:20
+modifiedAt: 2025-04-19 18:43:43
 publish: 자원/JavaScript
 related: ""
 series: ""
@@ -28,3 +28,4 @@ series: ""
 - [[클로저(Closure)란 무엇인가]]
 - [[`this`키워드`]]
 - [[프로토타입(Prototype)과 프로토타입 상속]]
+- [[Javascript는 어떻게 비동기 처리가 가능한 것인가]]

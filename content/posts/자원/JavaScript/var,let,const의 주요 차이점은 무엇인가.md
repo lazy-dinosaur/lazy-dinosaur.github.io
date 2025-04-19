@@ -27,7 +27,7 @@ series: ""
 
 > [!tip] 스코프 더 자세히 알아 보기
 >
-> - [[Javascript-스코프와 스코프 체인]]
+> - [[스코프(Scope)란 무엇인가]]
 
 ### 재선언(Redeclaration)
 

@@ -11,6 +11,17 @@
                             "publish": "자원/JavaScript"
                         },
   {
+                            "urlPath": "자원/JavaScript/프로토타입(Prototype)과 프로토타입 상속",
+                            "title": "프로토타입(Prototype)과 프로토타입 상속",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-19 15:21:35",
+                            "modifiedAt": "2025-04-19 18:39:55",
+                            "publish": "자원/JavaScript"
+                        },
+  {
                             "urlPath": "자원/SWEA 강의 정리노트/SWEA 강의 정리노트",
                             "title": "SWEA 강의 정리노트",
                             "summary": "",
@@ -40,7 +51,7 @@
                             "tags": ["resource", "javascript"],
                             "series": "",
                             "createdAt": "2025-04-17 14:08:12",
-                            "modifiedAt": "2025-04-18 14:58:20",
+                            "modifiedAt": "2025-04-19 17:42:08",
                             "publish": "자원/JavaScript"
                         },
   {
@@ -51,18 +62,7 @@
                             "tags": ["resource", "web", "javascript"],
                             "series": "",
                             "createdAt": "2025-04-12 09:09:33",
-                            "modifiedAt": "2025-04-19 15:22:20",
-                            "publish": "자원/JavaScript"
-                        },
-  {
-                            "urlPath": "자원/JavaScript/var,let,const의 주요 차이점은 무엇인가",
-                            "title": "var,let,const의 주요 차이점은 무엇인가",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "javascript"],
-                            "series": "",
-                            "createdAt": "2025-04-17 14:40:27",
-                            "modifiedAt": "2025-04-18 15:01:31",
+                            "modifiedAt": "2025-04-19 18:43:43",
                             "publish": "자원/JavaScript"
                         },
   {
@@ -117,7 +117,7 @@
                             "tags": ["resource", "javascript"],
                             "series": "",
                             "createdAt": "2025-04-19 10:37:27",
-                            "modifiedAt": "2025-04-19 13:26:08",
+                            "modifiedAt": "2025-04-19 17:30:58",
                             "publish": "자원/JavaScript"
                         },
   {
@@ -139,7 +139,18 @@
                             "tags": ["resource", "javascript"],
                             "series": "",
                             "createdAt": "2025-04-18 22:36:08",
-                            "modifiedAt": "2025-04-19 13:13:00",
+                            "modifiedAt": "2025-04-19 16:55:15",
+                            "publish": "자원/JavaScript"
+                        },
+  {
+                            "urlPath": "자원/JavaScript/var,let,const의 주요 차이점은 무엇인가",
+                            "title": "var,let,const의 주요 차이점은 무엇인가",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-17 14:40:27",
+                            "modifiedAt": "2025-04-18 15:01:31",
                             "publish": "자원/JavaScript"
                         },
   {
