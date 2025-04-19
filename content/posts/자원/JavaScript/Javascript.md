@@ -4,7 +4,7 @@ tags:
   - web
   - javascript
 createdAt: 2025-04-12 09:09:33
-modifiedAt: 2025-04-19 18:43:43
+modifiedAt: 2025-04-19 20:48:09
 publish: 자원/JavaScript
 related: ""
 series: ""
@@ -29,3 +29,4 @@ series: ""
 - [[`this`키워드`]]
 - [[프로토타입(Prototype)과 프로토타입 상속]]
 - [[Javascript는 어떻게 비동기 처리가 가능한 것인가]]
+- [[Javascript에서의 비동기 함수]]
