@@ -3,13 +3,15 @@ tags:
   - resource
   - react
 createdAt: 2025-04-20 09:40:39
-modifiedAt: 2025-04-20 12:44:48
-publish: resource/React
+modifiedAt: 2025-04-21 07:22:55
+publish: 자원/React
 related: ""
 series: ""
 ---
 
 # props와 state
+
+![1745187761-propsAndState.png](_assets/attachments/1745187761-propsAndState.png)
 
 props 와 state 둘다 데이터를 관리하기 위한 값이다.
 

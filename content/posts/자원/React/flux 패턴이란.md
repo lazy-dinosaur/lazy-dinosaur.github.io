@@ -4,7 +4,7 @@ tags:
   - react
 createdAt: 2025-04-19 22:48:15
 modifiedAt: 2025-04-20 09:23:43
-publish: resource/React
+publish: 자원/React
 related: ""
 series: ""
 ---
