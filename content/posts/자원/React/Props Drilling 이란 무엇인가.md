@@ -3,13 +3,15 @@ tags:
   - resource
   - react
 createdAt: 2025-04-20 10:03:21
-modifiedAt: 2025-04-20 23:26:54
+modifiedAt: 2025-04-21 07:40:48
 publish: 자원/React
 related: ""
 series: ""
 ---
 
 # Props Drilling 이란 무엇인가
+
+![1745188841-propsDrilling.png](_assets/attachments/1745188841-propsDrilling.png)
 
 Props Drilling은 React와 같은 컴포넌트 기반 프레임워크에서 발생하는 **패턴**으로,상위 컴포넌트에서 깊이 중첩된 하위 컴포넌트로 데이터(props)를 전달하기 위해 중간에 있는 여러 컴포넌트들을 통과시키는 과정을 말한다.
 
