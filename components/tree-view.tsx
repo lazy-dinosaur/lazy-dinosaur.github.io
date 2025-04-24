@@ -11,7 +11,7 @@ interface TreeViewProps {
   data: FolderStructure[];
   level?: number;
   parentPath?: string;
-  onNodeClick: () => void;
+  onNodeClick?: () => void;
 }
 
 export function TreeView({ data, level = 0, parentPath = "", onNodeClick }: TreeViewProps) {
@@ -23,7 +23,7 @@ export function TreeView({ data, level = 0, parentPath = "", onNodeClick }: Tree
           node={item}
           level={level}
           parentPath={parentPath}
-          onNodeClick={onNodeClick}
+          onNodeClick={onNodeClick ? onNodeClick : () => { }}
         />
       ))}
     </div>

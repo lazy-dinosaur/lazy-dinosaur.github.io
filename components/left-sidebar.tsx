@@ -55,8 +55,8 @@ export default function LeftSidebar({ className }: LeftSidebarProps) {
                 <Link
                   href="/"
                   className={`flex items-center px-3 py-2 rounded-md transition-colors ${pathname === "/"
-                      ? "bg-primary/10 text-primary font-medium"
-                      : "hover:bg-accent"
+                    ? "bg-primary/10 text-primary font-medium"
+                    : "hover:bg-accent"
                     }`}
                 >
                   <svg
@@ -77,8 +77,8 @@ export default function LeftSidebar({ className }: LeftSidebarProps) {
                 <Link
                   href="/projects"
                   className={`flex items-center px-3 py-2 rounded-md transition-colors ${pathname === "/projects"
-                      ? "bg-primary/10 text-primary font-medium"
-                      : "hover:bg-accent"
+                    ? "bg-primary/10 text-primary font-medium"
+                    : "hover:bg-accent"
                     }`}
                 >
                   <svg
@@ -112,7 +112,6 @@ export default function LeftSidebar({ className }: LeftSidebarProps) {
               <TreeView
                 key={`desktop-tree-${pathname}`}
                 data={folderStructure}
-                onNodeClick={() => { }}
               />
             </motion.div>
           </SidebarSection>
