@@ -1,5 +1,38 @@
 [
   {
+                            "urlPath": "자원/React/자식컴포넌트에서 부모컴포넌트로 데이터 전달하기",
+                            "title": "자식컴포넌트에서 부모컴포넌트로 데이터 전달하기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "react"],
+                            "series": "",
+                            "createdAt": "2025-04-20 10:02:37",
+                            "modifiedAt": "2025-04-21 18:45:45",
+                            "publish": "자원/React"
+                        },
+  {
+                            "urlPath": "자원/React/가상DOM의 원리",
+                            "title": "가상DOM의 원리",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "react"],
+                            "series": "",
+                            "createdAt": "2025-04-21 18:45:51",
+                            "modifiedAt": "2025-04-23 14:15:23",
+                            "publish": "자원/React"
+                        },
+  {
+                            "urlPath": "자원/React/리엑트 함수형 컴포넌트의 생명주기",
+                            "title": "리엑트 함수형 컴포넌트의 생명주기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "react"],
+                            "series": "",
+                            "createdAt": "2025-04-24 08:34:02",
+                            "modifiedAt": "2025-04-24 08:44:05",
+                            "publish": "자원/React"
+                        },
+  {
                             "urlPath": "자원/SWEA 강의 정리노트/SWEA 강의 정리노트",
                             "title": "SWEA 강의 정리노트",
                             "summary": "",
@@ -73,7 +106,7 @@
                             "tags": ["resource", "javascript"],
                             "series": "",
                             "createdAt": "2025-04-18 21:21:24",
-                            "modifiedAt": "2025-04-21 08:13:00",
+                            "modifiedAt": "2025-04-24 12:16:07",
                             "publish": "자원/JavaScript"
                         },
   {
@@ -183,7 +216,7 @@
                             "tags": ["resource", "react"],
                             "series": "",
                             "createdAt": "2025-04-11 18:37:48",
-                            "modifiedAt": "2025-04-20 10:03:17",
+                            "modifiedAt": "2025-04-24 08:25:50",
                             "publish": "자원/React"
                         },
   {

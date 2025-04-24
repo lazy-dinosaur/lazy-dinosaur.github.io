@@ -1,4 +1,7 @@
 {
+  "0.inbox/자식컴포넌트에서 부모컴포넌트로 데이터 전달하기.md": "자원/React/자식컴포넌트에서 부모컴포넌트로 데이터 전달하기",
+  "0.inbox/가상DOM의 원리.md": "자원/React/가상DOM의 원리",
+  "0.inbox/리엑트 함수형 컴포넌트의 생명주기.md": "자원/React/리엑트 함수형 컴포넌트의 생명주기",
   "3.resource/SWEA강의/SWEA 강의 정리노트.md": "자원/SWEA 강의 정리노트/SWEA 강의 정리노트",
   "3.resource/Javascript/변수의 선언,초기화,할당의 차이점은 무엇인가.md": "자원/JavaScript/변수의 선언,초기화,할당의 차이점은 무엇인가",
   "3.resource/Javascript/호이스팅(Hoisting)이란 무엇인가.md": "자원/JavaScript/호이스팅(Hoisting)이란 무엇인가",

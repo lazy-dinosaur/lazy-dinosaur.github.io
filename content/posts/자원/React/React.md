@@ -3,7 +3,7 @@ tags:
   - resource
   - react
 createdAt: 2025-04-11 18:37:48
-modifiedAt: 2025-04-20 10:03:17
+modifiedAt: 2025-04-24 08:25:50
 publish: 자원/React
 related: ""
 series: ""
@@ -101,11 +101,11 @@ series: ""
 - [[Props Drilling 이란 무엇인가]]
 - [[자식컴포넌트에서 부모컴포넌트로 데이터 전달하기]]
 - [[가상DOM의 원리]]
-- [[리엑트의 상태관리]]
+- [[React의 상태관리]]
 - [[리엑트 함수형 컴포넌트의 생명주기]]
 - [[useRef란 무엇인가]]
 - [[useEffect와 useLayoutEffect]]
-- [[useCallback와 useMemo]]
+- [[useCallback과 useMemo]]
 - [[react-query]]
 - [[portal이란 무엇인가]]
 - [[hook이란 무엇인가]]
