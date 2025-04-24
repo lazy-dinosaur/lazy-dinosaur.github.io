@@ -11,9 +11,10 @@ interface TreeViewProps {
   data: FolderStructure[];
   level?: number;
   parentPath?: string;
+  onNodeClick: () => void;
 }
 
-export function TreeView({ data, level = 0, parentPath = "" }: TreeViewProps) {
+export function TreeView({ data, level = 0, parentPath = "", onNodeClick }: TreeViewProps) {
   return (
     <div className="space-y-1.5">
       {data.map((item) => (
@@ -22,6 +23,7 @@ export function TreeView({ data, level = 0, parentPath = "" }: TreeViewProps) {
           node={item}
           level={level}
           parentPath={parentPath}
+          onNodeClick={onNodeClick}
         />
       ))}
     </div>
@@ -32,10 +34,12 @@ function TreeNode({
   node,
   level,
   parentPath,
+  onNodeClick,
 }: {
   node: FolderStructure;
   level: number;
   parentPath: string;
+  onNodeClick: () => void;
 }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const pathname = usePathname();
@@ -86,7 +90,7 @@ function TreeNode({
         )}
         <div className="flex-1 min-w-0 max-w-full">
           {node.type === "file" ? (
-            <Link href={normalizedCurrentPath} className={linkClassName}>
+            <Link href={normalizedCurrentPath} className={linkClassName} onClick={() => onNodeClick()}>
               {isFileActive && (
                 <span className="absolute left-0 top-0 bottom-0 w-0.5 bg-primary" />
               )}
@@ -128,6 +132,7 @@ function TreeNode({
             data={node.children}
             level={level + 1}
             parentPath={currentPath}
+            onNodeClick={onNodeClick}
           />
         </motion.div>
       )}
