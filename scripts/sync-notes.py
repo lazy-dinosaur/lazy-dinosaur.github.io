@@ -6,6 +6,7 @@ import re
 import subprocess
 import yaml
 import json
+import unicodedata
 from pathlib import Path
 from typing import List, Optional
 
@@ -26,6 +27,12 @@ def load_env():
                     key, value = line.split("=", 1)
                     os.environ[key] = value
 
+
+# 유니코드 정규화 함수 - 경로를 NFC(Normalization Form C) 형식으로 정규화
+def normalize_path(path):
+    if isinstance(path, str):
+        return unicodedata.normalize('NFC', path)
+    return path
 
 # 설정 - 모든 상대 경로를 프로젝트 루트 기준으로 변경
 def get_config():
@@ -134,11 +141,11 @@ def sync_notes():
                 print(f"⏸️ 건너뜀: {md_file.name} (publish 필드 없음)")
                 return
 
-            # 안전한 경로 생성 - 원본 그대로 유지 (한글, 공백 포함)
-            safe_publish = publish
+            # 안전한 경로 생성 - NFC 형식으로 정규화하여 한글 경로 문제 해결
+            safe_publish = normalize_path(publish)
 
             # 노트 파일 이름으로 추가 하위 폴더 생성 (확장자 제외) - 이미지 경로에만 적용
-            note_folder_name = md_file.stem
+            note_folder_name = normalize_path(md_file.stem)
 
             # post_dir은 기존 방식대로, img_dir만 노트 이름 하위 폴더 추가
             post_dir = Path(tmp_post_dir) / safe_publish
@@ -150,9 +157,11 @@ def sync_notes():
             shutil.copy(md_file, post_dir / md_file.name)
             print(f"✅ 게시됨: {safe_publish}/{md_file.name}")
 
-            # 매핑 추가
-            publish_map[relative_path] = f"{safe_publish}/{md_file.stem}"
-            print(f"매핑 추가: {relative_path} -> {publish_map[relative_path]}")
+            # 매핑 추가 - 정규화된 경로 사용
+            normalized_relative_path = normalize_path(relative_path)
+            normalized_stem = normalize_path(md_file.stem)
+            publish_map[normalized_relative_path] = f"{safe_publish}/{normalized_stem}"
+            print(f"매핑 추가: {normalized_relative_path} -> {publish_map[normalized_relative_path]}")
 
             # 이미지 처리
             for img_path in re.findall(r"!\[.*?\]\(([^)]+)\)", content):
@@ -175,20 +184,22 @@ def sync_notes():
                         f"⚠️ 이미지 파일을 찾을 수 없음: {img_name} (from {md_file.name})"
                     )
 
-            # 링크된 파일 처리
+            # 링크된 파일 처리 - 정규화된 경로 사용
             for linked_file in extract_linked_files(content):
-                if linked_file.startswith("/"):
-                    linked_abs_path = Path(config["source_dir"]) / linked_file.lstrip(
+                normalized_linked_file = normalize_path(linked_file)
+                
+                if normalized_linked_file.startswith("/"):
+                    linked_abs_path = Path(config["source_dir"]) / normalized_linked_file.lstrip(
                         "/"
                     )
                 else:
-                    linked_abs_path = md_file.parent / linked_file
+                    linked_abs_path = md_file.parent / normalized_linked_file
 
                 if linked_abs_path.exists():
                     process_note(linked_abs_path)
                 else:
                     print(
-                        f"⚠️ 링크된 파일을 찾을 수 없음: {linked_file} (from {md_file.name})"
+                        f"⚠️ 링크된 파일을 찾을 수 없음: {normalized_linked_file} (from {md_file.name})"
                     )
 
         # 게시 가능한 노트 검색
@@ -245,8 +256,9 @@ def sync_notes():
                         series = frontmatter.get("series", "")
                         publish = frontmatter.get("publish", "")
 
-                        # 콘텐츠 파일 저장 (별도 JSON 파일로)
-                        content_file_path = content_dir / f"{publish_path}.json"
+                        # 콘텐츠 파일 저장 (별도 JSON 파일로) - 정규화된 경로 사용
+                        normalized_publish_path = normalize_path(publish_path)
+                        content_file_path = content_dir / f"{normalized_publish_path}.json"
                         content_file_path.parent.mkdir(parents=True, exist_ok=True)
 
                         # 원본 파일 내용 읽어서 콘텐츠 추출
@@ -272,16 +284,23 @@ def sync_notes():
                             )
 
                         # 메타데이터 파일에는 콘텐츠 없이 메타데이터만 포함
+                        # 모든 값들을 정규화하여 사용
+                        normalized_title = normalize_path(title)
+                        normalized_summary = normalize_path(summary)
+                        normalized_image = normalize_path(image)
+                        normalized_series = normalize_path(series)
+                        normalized_publish = normalize_path(publish)
+                        
                         f.write(f'''  {{
-                            "urlPath": "{publish_path}",
-                            "title": "{title}",
-                            "summary": "{summary}",
-                            "image": "{image}",
-                            "tags": {json.dumps(tags)},
-                            "series": "{series}",
+                            "urlPath": "{normalized_publish_path}",
+                            "title": "{normalized_title}",
+                            "summary": "{normalized_summary}",
+                            "image": "{normalized_image}",
+                            "tags": {json.dumps([normalize_path(tag) for tag in tags])},
+                            "series": "{normalized_series}",
                             "createdAt": "{created_at}",
                             "modifiedAt": "{modified_at}",
-                            "publish": "{publish}"
+                            "publish": "{normalized_publish}"
                         }}''')
                         if i < len(publish_map) - 1:
                             f.write(",\n")

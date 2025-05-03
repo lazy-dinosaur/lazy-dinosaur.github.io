@@ -1,7 +1,7 @@
 [
   {
-                            "urlPath": "자원/React/리엑트 함수형 컴포넌트의 생명주기",
-                            "title": "리엑트 함수형 컴포넌트의 생명주기",
+                            "urlPath": "자원/React/리엑트 함수형 컴포넌트의 생명주기",
+                            "title": "리엑트 함수형 컴포넌트의 생명주기",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "react"],
@@ -11,8 +11,8 @@
                             "publish": "자원/React"
                         },
   {
-                            "urlPath": "자원/React/자식컴포넌트에서 부모컴포넌트로 데이터 전달하기",
-                            "title": "자식컴포넌트에서 부모컴포넌트로 데이터 전달하기",
+                            "urlPath": "자원/React/자식컴포넌트에서 부모컴포넌트로 데이터 전달하기",
+                            "title": "자식컴포넌트에서 부모컴포넌트로 데이터 전달하기",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "react"],
@@ -22,8 +22,8 @@
                             "publish": "자원/React"
                         },
   {
-                            "urlPath": "자원/React/가상DOM의 원리",
-                            "title": "가상DOM의 원리",
+                            "urlPath": "자원/React/가상DOM의 원리",
+                            "title": "가상DOM의 원리",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "react"],
@@ -33,8 +33,8 @@
                             "publish": "자원/React"
                         },
   {
-                            "urlPath": "자원/웹개발/웹사이트는 어떻게 보여지는가-브라우저의 렌더링",
-                            "title": "웹사이트는 어떻게 보여지는가-브라우저의 렌더링",
+                            "urlPath": "자원/웹개발/웹사이트는 어떻게 보여지는가-브라우저의 렌더링",
+                            "title": "웹사이트는 어떻게 보여지는가-브라우저의 렌더링",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "web"],
@@ -44,8 +44,8 @@
                             "publish": "자원/웹개발"
                         },
   {
-                            "urlPath": "자원/웹개발/웹사이트는 어떻게 구성되어있나-HTML과 CSS와 Javascript의 이해",
-                            "title": "웹사이트는 어떻게 구성되어있나-HTML과 CSS와 Javascript의 이해",
+                            "urlPath": "자원/웹개발/웹사이트는 어떻게 구성되어있나-HTML과 CSS와 Javascript의 이해",
+                            "title": "웹사이트는 어떻게 구성되어있나-HTML과 CSS와 Javascript의 이해",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "web"],
@@ -55,8 +55,8 @@
                             "publish": "자원/웹개발"
                         },
   {
-                            "urlPath": "자원/웹개발/웹사이트에 들어갈때에는 어떤 일이 생기는가-웹사이트접속의 과정",
-                            "title": "웹사이트에 들어갈때에는 어떤 일이 생기는가-웹사이트접속의 과정",
+                            "urlPath": "자원/웹개발/웹사이트에 들어갈때에는 어떤 일이 생기는가-웹사이트접속의 과정",
+                            "title": "웹사이트에 들어갈때에는 어떤 일이 생기는가-웹사이트접속의 과정",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "web"],
@@ -77,8 +77,8 @@
                             "publish": "자원/웹개발"
                         },
   {
-                            "urlPath": "자원/웹개발/Javascript가 웹사이트를 어떻게 조작할 수 있는가-DOM과 CSSOM의 개념",
-                            "title": "Javascript가 웹사이트를 어떻게 조작할 수 있는가-DOM과 CSSOM의 개념",
+                            "urlPath": "자원/웹개발/Javascript가 웹사이트를 어떻게 조작할 수 있는가-DOM과 CSSOM의 개념",
+                            "title": "Javascript가 웹사이트를 어떻게 조작할 수 있는가-DOM과 CSSOM의 개념",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "web", "javascript"],
@@ -88,8 +88,8 @@
                             "publish": "자원/웹개발"
                         },
   {
-                            "urlPath": "자원/웹개발/동적 사이트 vs 정적사이트",
-                            "title": "동적 사이트 vs 정적사이트",
+                            "urlPath": "자원/웹개발/동적 사이트 vs 정적사이트",
+                            "title": "동적 사이트 vs 정적사이트",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "web"],
@@ -99,8 +99,8 @@
                             "publish": "자원/웹개발"
                         },
   {
-                            "urlPath": "자원/웹개발/라이브러리vs프레임워크",
-                            "title": "라이브러리vs프레임워크",
+                            "urlPath": "자원/웹개발/라이브러리vs프레임워크",
+                            "title": "라이브러리vs프레임워크",
                             "summary": "",
                             "image": "",
                             "tags": ["web", "resource"],
@@ -110,8 +110,8 @@
                             "publish": "자원/웹개발"
                         },
   {
-                            "urlPath": "자원/크롬 확장프로그램/크롬 확장프로그램에 케시메모리 추가하기",
-                            "title": "크롬 확장프로그램에 케시메모리 추가하기",
+                            "urlPath": "자원/크롬 확장프로그램/크롬 확장프로그램에 케시메모리 추가하기",
+                            "title": "크롬 확장프로그램에 케시메모리 추가하기",
                             "summary": "",
                             "image": "",
                             "tags": ["chrome-extension", "example", "problem"],
@@ -121,8 +121,8 @@
                             "publish": "자원/크롬 확장프로그램"
                         },
   {
-                            "urlPath": "자원/JavaScript/스코프(Scope)란 무엇인가",
-                            "title": "스코프(Scope)란 무엇인가",
+                            "urlPath": "자원/JavaScript/스코프(Scope)란 무엇인가",
+                            "title": "스코프(Scope)란 무엇인가",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "javascript"],
@@ -132,8 +132,8 @@
                             "publish": "자원/JavaScript"
                         },
   {
-                            "urlPath": "자원/JavaScript/콜 스택(Call Stack)이란 무엇인가",
-                            "title": "콜 스택(Call Stack)이란 무엇인가",
+                            "urlPath": "자원/JavaScript/콜 스택(Call Stack)이란 무엇인가",
+                            "title": "콜 스택(Call Stack)이란 무엇인가",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "javascript"],
@@ -143,8 +143,8 @@
                             "publish": "자원/JavaScript"
                         },
   {
-                            "urlPath": "자원/JavaScript/클로저(Closure)란 무엇인가",
-                            "title": "클로저(Closure)란 무엇인가",
+                            "urlPath": "자원/JavaScript/클로저(Closure)란 무엇인가",
+                            "title": "클로저(Closure)란 무엇인가",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "javascript"],
@@ -154,8 +154,8 @@
                             "publish": "자원/JavaScript"
                         },
   {
-                            "urlPath": "자원/JavaScript/데이터 타입과 불변성",
-                            "title": "데이터 타입과 불변성",
+                            "urlPath": "자원/JavaScript/데이터 타입과 불변성",
+                            "title": "데이터 타입과 불변성",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "javascript"],
@@ -165,8 +165,8 @@
                             "publish": "자원/JavaScript"
                         },
   {
-                            "urlPath": "자원/JavaScript/var,let,const의 주요 차이점은 무엇인가",
-                            "title": "var,let,const의 주요 차이점은 무엇인가",
+                            "urlPath": "자원/JavaScript/var,let,const의 주요 차이점은 무엇인가",
+                            "title": "var,let,const의 주요 차이점은 무엇인가",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "javascript"],
@@ -176,8 +176,8 @@
                             "publish": "자원/JavaScript"
                         },
   {
-                            "urlPath": "자원/JavaScript/프로토타입(Prototype)과 프로토타입 상속",
-                            "title": "프로토타입(Prototype)과 프로토타입 상속",
+                            "urlPath": "자원/JavaScript/프로토타입(Prototype)과 프로토타입 상속",
+                            "title": "프로토타입(Prototype)과 프로토타입 상속",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "javascript"],
@@ -187,8 +187,8 @@
                             "publish": "자원/JavaScript"
                         },
   {
-                            "urlPath": "자원/JavaScript/null,undefined,undeclared 의 차이점은",
-                            "title": "null,undefined,undeclared 의 차이점은",
+                            "urlPath": "자원/JavaScript/null,undefined,undeclared 의 차이점은",
+                            "title": "null,undefined,undeclared 의 차이점은",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "javascript"],
@@ -198,8 +198,8 @@
                             "publish": "자원/JavaScript"
                         },
   {
-                            "urlPath": "자원/JavaScript/실행컨텍스트(Execution Context)",
-                            "title": "실행컨텍스트(Execution Context)",
+                            "urlPath": "자원/JavaScript/실행컨텍스트(Execution Context)",
+                            "title": "실행컨텍스트(Execution Context)",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "javascript"],
@@ -220,8 +220,8 @@
                             "publish": "자원/JavaScript"
                         },
   {
-                            "urlPath": "자원/JavaScript/호이스팅(Hoisting)이란 무엇인가",
-                            "title": "호이스팅(Hoisting)이란 무엇인가",
+                            "urlPath": "자원/JavaScript/호이스팅(Hoisting)이란 무엇인가",
+                            "title": "호이스팅(Hoisting)이란 무엇인가",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "javascript"],
@@ -231,8 +231,8 @@
                             "publish": "자원/JavaScript"
                         },
   {
-                            "urlPath": "자원/JavaScript/Javascript는 어떻게 비동기 처리가 가능한 것인가",
-                            "title": "Javascript는 어떻게 비동기 처리가 가능한 것인가",
+                            "urlPath": "자원/JavaScript/Javascript는 어떻게 비동기 처리가 가능한 것인가",
+                            "title": "Javascript는 어떻게 비동기 처리가 가능한 것인가",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "javascript"],
@@ -242,8 +242,8 @@
                             "publish": "자원/JavaScript"
                         },
   {
-                            "urlPath": "자원/JavaScript/변수의 선언,초기화,할당의 차이점은 무엇인가",
-                            "title": "변수의 선언,초기화,할당의 차이점은 무엇인가",
+                            "urlPath": "자원/JavaScript/변수의 선언,초기화,할당의 차이점은 무엇인가",
+                            "title": "변수의 선언,초기화,할당의 차이점은 무엇인가",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "javascript"],
@@ -253,8 +253,8 @@
                             "publish": "자원/JavaScript"
                         },
   {
-                            "urlPath": "자원/JavaScript/Javascript에서의 비동기 함수",
-                            "title": "Javascript에서의 비동기 함수",
+                            "urlPath": "자원/JavaScript/Javascript에서의 비동기 함수",
+                            "title": "Javascript에서의 비동기 함수",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "javascript"],
@@ -264,19 +264,19 @@
                             "publish": "자원/JavaScript"
                         },
   {
-                            "urlPath": "자원/JavaScript/`==` 과 `===` 의 차이",
-                            "title": "`==` 과 `===` 의 차이",
+                            "urlPath": "자원/JavaScript/`==` 과 `===` 의 차이",
+                            "title": "`==` 과 `===` 의 차이",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "javascript"],
                             "series": "",
                             "createdAt": "2025-04-18 21:21:24",
-                            "modifiedAt": "2025-05-02 22:03:20",
+                            "modifiedAt": "2025-05-03 09:36:55",
                             "publish": "자원/JavaScript"
                         },
   {
-                            "urlPath": "자원/JavaScript/`this`키워드",
-                            "title": "`this`키워드",
+                            "urlPath": "자원/JavaScript/`this`키워드",
+                            "title": "`this`키워드",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "javascript"],
@@ -286,8 +286,8 @@
                             "publish": "자원/JavaScript"
                         },
   {
-                            "urlPath": "자원/React/엘리먼트와 컴포넌트의 차이",
-                            "title": "엘리먼트와 컴포넌트의 차이",
+                            "urlPath": "자원/React/엘리먼트와 컴포넌트의 차이",
+                            "title": "엘리먼트와 컴포넌트의 차이",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "react"],
@@ -297,8 +297,8 @@
                             "publish": "자원/React"
                         },
   {
-                            "urlPath": "자원/React/flux 패턴이란",
-                            "title": "flux 패턴이란",
+                            "urlPath": "자원/React/flux 패턴이란",
+                            "title": "flux 패턴이란",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "react"],
@@ -319,8 +319,8 @@
                             "publish": "자원/React"
                         },
   {
-                            "urlPath": "자원/React/props와 state",
-                            "title": "props와 state",
+                            "urlPath": "자원/React/props와 state",
+                            "title": "props와 state",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "react"],
@@ -330,8 +330,8 @@
                             "publish": "자원/React"
                         },
   {
-                            "urlPath": "자원/React/Props Drilling 이란 무엇인가",
-                            "title": "Props Drilling 이란 무엇인가",
+                            "urlPath": "자원/React/Props Drilling 이란 무엇인가",
+                            "title": "Props Drilling 이란 무엇인가",
                             "summary": "",
                             "image": "",
                             "tags": ["resource", "react"],
@@ -341,8 +341,8 @@
                             "publish": "자원/React"
                         },
   {
-                            "urlPath": "자원/SWEA 강의 정리노트/SWEA 강의 정리노트",
-                            "title": "SWEA 강의 정리노트",
+                            "urlPath": "자원/SWEA 강의 정리노트/SWEA 강의 정리노트",
+                            "title": "SWEA 강의 정리노트",
                             "summary": "",
                             "image": "",
                             "tags": ["study", "algorithm"],
@@ -385,8 +385,8 @@
                             "publish": "자원/웹개발"
                         },
   {
-                            "urlPath": "프로젝트/블로그/개인 블로그를 제작하게 된 이유",
-                            "title": "개인 블로그를 제작하게 된 이유",
+                            "urlPath": "프로젝트/블로그/개인 블로그를 제작하게 된 이유",
+                            "title": "개인 블로그를 제작하게 된 이유",
                             "summary": "",
                             "image": "",
                             "tags": ["blog", "dev", "project"],
@@ -396,8 +396,8 @@
                             "publish": "프로젝트/블로그"
                         },
   {
-                            "urlPath": "프로젝트/블로그/어떻게 블로그를 구현하였나",
-                            "title": "어떻게 블로그를 구현하였나",
+                            "urlPath": "프로젝트/블로그/어떻게 블로그를 구현하였나",
+                            "title": "어떻게 블로그를 구현하였나",
                             "summary": "",
                             "image": "",
                             "tags": ["blog", "dev", "project"],
@@ -407,8 +407,8 @@
                             "publish": "프로젝트/블로그"
                         },
   {
-                            "urlPath": "프로젝트/아임유어박스 웹사이트/물류 서비스 웹사이트 개발 회고-혼자서 외주 프로젝트 완성하기",
-                            "title": "물류 서비스 웹사이트 개발 회고-혼자서 외주 프로젝트 완성하기",
+                            "urlPath": "프로젝트/아임유어박스 웹사이트/물류 서비스 웹사이트 개발 회고-혼자서 외주 프로젝트 완성하기",
+                            "title": "물류 서비스 웹사이트 개발 회고-혼자서 외주 프로젝트 완성하기",
                             "summary": "",
                             "image": "",
                             "tags": ["project", "\ud68c\uace0", "portfolio"],
@@ -418,8 +418,8 @@
                             "publish": "프로젝트/아임유어박스 웹사이트"
                         },
   {
-                            "urlPath": "프로젝트/알고리즘/취업을 위한 알고리즘 공부",
-                            "title": "취업을 위한 알고리즘 공부",
+                            "urlPath": "프로젝트/알고리즘/취업을 위한 알고리즘 공부",
+                            "title": "취업을 위한 알고리즘 공부",
                             "summary": "",
                             "image": "",
                             "tags": ["project", "study", "algorithm"],
