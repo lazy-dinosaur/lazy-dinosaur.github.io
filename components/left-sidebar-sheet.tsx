@@ -126,7 +126,7 @@ export default function LeftSidebarSheet() {
                   </svg>
                 </Link>
                 <Link
-                  href="mailto:woohs0130@naver.com"
+                  href="mailto:lazydino1314@gmail.com"
                   target="_blank"
                   onClick={() => setOpen(false)}
                   className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors"

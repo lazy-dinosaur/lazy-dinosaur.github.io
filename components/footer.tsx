@@ -41,7 +41,7 @@ export default function Footer() {
 							</svg>
 						</Link>
 						<Link
-							href="mailto:woohs0130@naver.com"
+							href="mailto:lazydino1314@gmail.com"
 							target="_blank"
 							className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
 						>
@@ -138,7 +138,7 @@ export default function Footer() {
 								whileTap={{ scale: 0.95 }}
 							>
 								<Link
-									href="mailto:woohs0130@naver.com"
+									href="mailto:lazydino1314@gmail.com"
 									target="_blank"
 									className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
 								>

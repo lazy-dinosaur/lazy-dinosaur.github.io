@@ -7,7 +7,7 @@
     "thumbnail": "/projects/my-blog/my-blog.png",
     "tags": [
       "웹",
-      "프론트엔드"
+      "풀스택"
     ],
     "technologies": [
       "Next.js",
@@ -243,7 +243,7 @@
     "title": "LazyTrading 크롬 확장프로그램",
     "description": "Vite, React, Typescript, Tailwind CSS, ReactQuery, Light Weight Chart를 사용하여 개발한 크롬 확장 프로그램입니다. 자동으로 계산된 손절가와 진입 배율을 활용해 한 번의 클릭으로 안전한 매매를 가능하게 하는 것을 목적으로 합니다.",
     "thumbnail": "/projects/lazy-trading/lazy-trading.png",
-    "inDevelopment": true,
+    "inDevelopment": false,
     "demoType": "images",
     "demoImages": [
       {
