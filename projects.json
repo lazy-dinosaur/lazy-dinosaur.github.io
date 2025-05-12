@@ -5,10 +5,7 @@
     "title": "개인 블로그",
     "description": "Next.js, TypeScript, Tailwind CSS를 사용하여 개발한 개인 블로그입니다. 마크다운 기반 콘텐츠 관리와 다크 모드를 지원합니다.",
     "thumbnail": "/projects/my-blog/my-blog.png",
-    "tags": [
-      "웹",
-      "풀스택"
-    ],
+    "tags": ["웹", "풀스택"],
     "technologies": [
       "Next.js",
       "TypeScript",
@@ -85,10 +82,7 @@
     "thumbnailOptions": {
       "playbackRate": 2.5
     },
-    "tags": [
-      "웹",
-      "풀스택"
-    ],
+    "tags": ["웹", "풀스택"],
     "technologies": [
       "Next.js",
       "Framer Motion",
@@ -168,12 +162,7 @@
     "title": "CCXT MCP Server",
     "description": "AI 모델(Claude/GPT)이 100개 이상의 암호화폐 거래소 API와 상호작용할 수 있게 해주는 Model Context Protocol(MCP) 서버입니다. CCXT 라이브러리를 활용하여 암호화폐 거래소에 접근하고 거래할 수 있는 기능을 제공합니다.",
     "thumbnail": "/projects/ccxt-mcp/ccxt-mcp-main.png",
-    "tags": [
-      "Crypto",
-      "MCP",
-      "AI",
-      "NPM"
-    ],
+    "tags": ["Crypto", "MCP", "AI", "NPM"],
     "technologies": [
       "TypeScript",
       "Node.js",
@@ -251,12 +240,7 @@
         "description": "대시보드 화면: 실시간 가격 정보와 함께 거래 설정을 할 수 있는 메인 인터페이스입니다."
       }
     ],
-    "tags": [
-      "가상화폐",
-      "웹",
-      "시각화",
-      "프론트엔드"
-    ],
+    "tags": ["가상화폐", "웹", "시각화", "프론트엔드"],
     "technologies": [
       "React",
       "Vite",
@@ -267,7 +251,7 @@
       "React Query",
       "Crypto 모듈"
     ],
-    "githubUrl": "https://github.com/lazy-dinosaur/lazy-trading",
+    "serviceUrl": "https://chromewebstore.google.com/detail/lazytrading/cacdlclfkbngdkffeofgniiaikelelai?hl=ko",
     "featured": true,
     "createdAt": "2023-10-15",
     "overview": "가상화폐 거래소 바이낸스 웹사이트에서 사용할 수 있는 크롬 확장 프로그램으로, 안전한 거래를 위한 손절가 및 진입 배율을 자동으로 계산하여 빠르고 효율적인 트레이딩을 도와주는 도구입니다. 이 프로젝트에서는 API 키 보안을 위한 Crypto 모듈의 활용이 큰 특징입니다.",
