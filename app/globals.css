@@ -1,3 +1,6 @@
+/* 사파리 폰트 호환성을 위한 명시적 폰트 선언 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -142,6 +145,11 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+  }
+  
+  /* 사파리 폰트 호환성 향상을 위한 폰트 스택 */
+  body {
+    font-family: var(--font-noto-sans-kr), "Noto Sans KR", var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   }
 }
 

@@ -80,8 +80,23 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["var(--font-noto-sans-kr)", "var(--font-inter)", "sans-serif"],
-        serif: ["var(--font-noto-sans-kr)", "serif"],
+        sans: [
+          "var(--font-noto-sans-kr)",
+          "var(--font-inter)",
+          "Noto Sans KR",
+          "Inter",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "system-ui",
+          "sans-serif"
+        ],
+        serif: [
+          "var(--font-noto-sans-kr)",
+          "Noto Sans KR",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "serif"
+        ],
       },
       typography: {
         DEFAULT: {

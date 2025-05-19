@@ -30,7 +30,8 @@ const notoSansKr = Noto_Sans_KR({
   variable: "--font-noto-sans-kr",
   weight: ["400", "500", "700"],
   subsets: ["latin"],
-  display: "swap",
+  preload: true,
+  display: "block", // Safari에서 더 나은 렌더링을 위해 'block'으로 변경
 });
 
 export const metadata: Metadata = {
