@@ -1,14 +1,25 @@
 [
   {
-                            "urlPath": "자원/React/자식컴포넌트에서 부모컴포넌트로 데이터 전달하기",
-                            "title": "자식컴포넌트에서 부모컴포넌트로 데이터 전달하기",
+                            "urlPath": "프로젝트/알고리즘/취업을 위한 알고리즘 공부",
+                            "title": "취업을 위한 알고리즘 공부",
                             "summary": "",
                             "image": "",
-                            "tags": ["resource", "react"],
+                            "tags": ["project", "study", "algorithm"],
+                            "series": "취업을 위해 알고리즘 공부하기",
+                            "createdAt": "2025-03-19 08:05:06",
+                            "modifiedAt": "2025-05-19 21:02:57",
+                            "publish": "프로젝트/알고리즘"
+                        },
+  {
+                            "urlPath": "자원/ReactNative/expo 시작하기",
+                            "title": "expo 시작하기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "react-native", "expo"],
                             "series": "",
-                            "createdAt": "2025-04-20 10:02:37",
-                            "modifiedAt": "2025-04-21 18:45:45",
-                            "publish": "자원/React"
+                            "createdAt": "2025-05-08 08:19:03",
+                            "modifiedAt": "2025-05-08 08:23:14",
+                            "publish": "자원/ReactNative"
                         },
   {
                             "urlPath": "자원/React/가상DOM의 원리",
@@ -18,272 +29,8 @@
                             "tags": ["resource", "react"],
                             "series": "",
                             "createdAt": "2025-04-21 18:45:51",
-                            "modifiedAt": "2025-04-23 14:15:23",
+                            "modifiedAt": "2025-05-19 20:45:24",
                             "publish": "자원/React"
-                        },
-  {
-                            "urlPath": "자원/React/리엑트 함수형 컴포넌트의 생명주기",
-                            "title": "리엑트 함수형 컴포넌트의 생명주기",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "react"],
-                            "series": "",
-                            "createdAt": "2025-04-24 08:34:02",
-                            "modifiedAt": "2025-04-24 08:44:05",
-                            "publish": "자원/React"
-                        },
-  {
-                            "urlPath": "자원/SWEA 강의 정리노트/SWEA 강의 정리노트",
-                            "title": "SWEA 강의 정리노트",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["study", "algorithm"],
-                            "series": "",
-                            "createdAt": "2025-03-19 12:20:41",
-                            "modifiedAt": "2025-03-20 16:17:34",
-                            "publish": "자원/SWEA 강의 정리노트"
-                        },
-  {
-                            "urlPath": "자원/JavaScript/변수의 선언,초기화,할당의 차이점은 무엇인가",
-                            "title": "변수의 선언,초기화,할당의 차이점은 무엇인가",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "javascript"],
-                            "series": "",
-                            "createdAt": "2025-04-17 13:25:40",
-                            "modifiedAt": "2025-04-20 08:03:35",
-                            "publish": "자원/JavaScript"
-                        },
-  {
-                            "urlPath": "자원/JavaScript/호이스팅(Hoisting)이란 무엇인가",
-                            "title": "호이스팅(Hoisting)이란 무엇인가",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "javascript"],
-                            "series": "",
-                            "createdAt": "2025-04-17 14:08:12",
-                            "modifiedAt": "2025-04-19 17:42:08",
-                            "publish": "자원/JavaScript"
-                        },
-  {
-                            "urlPath": "자원/JavaScript/Javascript",
-                            "title": "Javascript",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "web", "javascript"],
-                            "series": "",
-                            "createdAt": "2025-04-12 09:09:33",
-                            "modifiedAt": "2025-04-20 09:23:09",
-                            "publish": "자원/JavaScript"
-                        },
-  {
-                            "urlPath": "자원/JavaScript/데이터 타입과 불변성",
-                            "title": "데이터 타입과 불변성",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "javascript"],
-                            "series": "",
-                            "createdAt": "2025-04-17 16:02:18",
-                            "modifiedAt": "2025-04-18 15:00:11",
-                            "publish": "자원/JavaScript"
-                        },
-  {
-                            "urlPath": "자원/JavaScript/null,undefined,undeclared 의 차이점은",
-                            "title": "null,undefined,undeclared 의 차이점은",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "javascript"],
-                            "series": "",
-                            "createdAt": "2025-04-18 14:59:03",
-                            "modifiedAt": "2025-04-18 15:14:42",
-                            "publish": "자원/JavaScript"
-                        },
-  {
-                            "urlPath": "자원/JavaScript/`==` 과 `===` 의 차이",
-                            "title": "`==` 과 `===` 의 차이",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "javascript"],
-                            "series": "",
-                            "createdAt": "2025-04-18 21:21:24",
-                            "modifiedAt": "2025-04-24 12:16:07",
-                            "publish": "자원/JavaScript"
-                        },
-  {
-                            "urlPath": "자원/JavaScript/스코프(Scope)란 무엇인가",
-                            "title": "스코프(Scope)란 무엇인가",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "javascript"],
-                            "series": "",
-                            "createdAt": "2025-04-18 21:55:13",
-                            "modifiedAt": "2025-04-19 09:24:31",
-                            "publish": "자원/JavaScript"
-                        },
-  {
-                            "urlPath": "자원/JavaScript/실행컨텍스트(Execution Context)",
-                            "title": "실행컨텍스트(Execution Context)",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "javascript"],
-                            "series": "",
-                            "createdAt": "2025-04-19 10:37:27",
-                            "modifiedAt": "2025-04-19 17:30:58",
-                            "publish": "자원/JavaScript"
-                        },
-  {
-                            "urlPath": "자원/JavaScript/콜 스택(Call Stack)이란 무엇인가",
-                            "title": "콜 스택(Call Stack)이란 무엇인가",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "javascript"],
-                            "series": "",
-                            "createdAt": "2025-04-19 11:15:16",
-                            "modifiedAt": "2025-04-19 13:12:49",
-                            "publish": "자원/JavaScript"
-                        },
-  {
-                            "urlPath": "자원/JavaScript/클로저(Closure)란 무엇인가",
-                            "title": "클로저(Closure)란 무엇인가",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "javascript"],
-                            "series": "",
-                            "createdAt": "2025-04-18 22:36:08",
-                            "modifiedAt": "2025-04-19 16:55:15",
-                            "publish": "자원/JavaScript"
-                        },
-  {
-                            "urlPath": "자원/JavaScript/var,let,const의 주요 차이점은 무엇인가",
-                            "title": "var,let,const의 주요 차이점은 무엇인가",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "javascript"],
-                            "series": "",
-                            "createdAt": "2025-04-17 14:40:27",
-                            "modifiedAt": "2025-04-18 15:01:31",
-                            "publish": "자원/JavaScript"
-                        },
-  {
-                            "urlPath": "자원/JavaScript/`this`키워드",
-                            "title": "`this`키워드",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "javascript"],
-                            "series": "",
-                            "createdAt": "2025-04-19 13:24:41",
-                            "modifiedAt": "2025-04-19 15:21:13",
-                            "publish": "자원/JavaScript"
-                        },
-  {
-                            "urlPath": "자원/JavaScript/프로토타입(Prototype)과 프로토타입 상속",
-                            "title": "프로토타입(Prototype)과 프로토타입 상속",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "javascript"],
-                            "series": "",
-                            "createdAt": "2025-04-19 15:21:35",
-                            "modifiedAt": "2025-04-19 18:39:55",
-                            "publish": "자원/JavaScript"
-                        },
-  {
-                            "urlPath": "자원/JavaScript/Javascript에서의 비동기 함수",
-                            "title": "Javascript에서의 비동기 함수",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "javascript"],
-                            "series": "",
-                            "createdAt": "2025-04-19 20:47:13",
-                            "modifiedAt": "2025-04-19 21:35:38",
-                            "publish": "자원/JavaScript"
-                        },
-  {
-                            "urlPath": "자원/JavaScript/Javascript는 어떻게 비동기 처리가 가능한 것인가",
-                            "title": "Javascript는 어떻게 비동기 처리가 가능한 것인가",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "javascript"],
-                            "series": "",
-                            "createdAt": "2025-04-19 18:43:45",
-                            "modifiedAt": "2025-04-19 21:35:43",
-                            "publish": "자원/JavaScript"
-                        },
-  {
-                            "urlPath": "자원/React/React",
-                            "title": "React",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "react"],
-                            "series": "",
-                            "createdAt": "2025-04-11 18:37:48",
-                            "modifiedAt": "2025-04-24 18:26:29",
-                            "publish": "자원/React"
-                        },
-  {
-                            "urlPath": "자원/React/엘리먼트와 컴포넌트의 차이",
-                            "title": "엘리먼트와 컴포넌트의 차이",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "react"],
-                            "series": "",
-                            "createdAt": "2025-04-20 08:41:50",
-                            "modifiedAt": "2025-04-20 09:44:34",
-                            "publish": "자원/React"
-                        },
-  {
-                            "urlPath": "자원/React/flux 패턴이란",
-                            "title": "flux 패턴이란",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "react"],
-                            "series": "",
-                            "createdAt": "2025-04-19 22:48:15",
-                            "modifiedAt": "2025-04-20 09:23:43",
-                            "publish": "자원/React"
-                        },
-  {
-                            "urlPath": "자원/React/props와 state",
-                            "title": "props와 state",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "react"],
-                            "series": "",
-                            "createdAt": "2025-04-20 09:40:39",
-                            "modifiedAt": "2025-04-21 07:22:55",
-                            "publish": "자원/React"
-                        },
-  {
-                            "urlPath": "자원/React/Props Drilling 이란 무엇인가",
-                            "title": "Props Drilling 이란 무엇인가",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "react"],
-                            "series": "",
-                            "createdAt": "2025-04-20 10:03:21",
-                            "modifiedAt": "2025-04-21 07:40:48",
-                            "publish": "자원/React"
-                        },
-  {
-                            "urlPath": "자원/웹개발/동적 사이트 vs 정적사이트",
-                            "title": "동적 사이트 vs 정적사이트",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "web"],
-                            "series": "",
-                            "createdAt": "2025-03-10 07:39:08",
-                            "modifiedAt": "2025-04-16 08:52:13",
-                            "publish": "자원/웹개발"
-                        },
-  {
-                            "urlPath": "자원/웹개발/HTTP(Hypertext Transfer Protocol)",
-                            "title": "HTTP(Hypertext Transfer Protocol)",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "web"],
-                            "series": "",
-                            "createdAt": "2025-04-15 15:05:31",
-                            "modifiedAt": "2025-04-16 13:14:25",
-                            "publish": "자원/웹개발"
                         },
   {
                             "urlPath": "자원/웹개발/웹사이트는 어떻게 보여지는가-브라우저의 렌더링",
@@ -319,6 +66,17 @@
                             "publish": "자원/웹개발"
                         },
   {
+                            "urlPath": "자원/웹개발/HTTP(Hypertext Transfer Protocol)",
+                            "title": "HTTP(Hypertext Transfer Protocol)",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "web"],
+                            "series": "",
+                            "createdAt": "2025-04-15 15:05:31",
+                            "modifiedAt": "2025-04-16 13:14:25",
+                            "publish": "자원/웹개발"
+                        },
+  {
                             "urlPath": "자원/웹개발/Javascript가 웹사이트를 어떻게 조작할 수 있는가-DOM과 CSSOM의 개념",
                             "title": "Javascript가 웹사이트를 어떻게 조작할 수 있는가-DOM과 CSSOM의 개념",
                             "summary": "",
@@ -327,6 +85,17 @@
                             "series": "",
                             "createdAt": "2025-04-14 09:46:13",
                             "modifiedAt": "2025-04-16 19:08:41",
+                            "publish": "자원/웹개발"
+                        },
+  {
+                            "urlPath": "자원/웹개발/동적 사이트 vs 정적사이트",
+                            "title": "동적 사이트 vs 정적사이트",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "web"],
+                            "series": "",
+                            "createdAt": "2025-03-10 07:39:08",
+                            "modifiedAt": "2025-04-16 08:52:13",
                             "publish": "자원/웹개발"
                         },
   {
@@ -352,26 +121,268 @@
                             "publish": "자원/크롬 확장프로그램"
                         },
   {
-                            "urlPath": "자원/웹개발/DOM(Document Object Model)",
-                            "title": "DOM(Document Object Model)",
+                            "urlPath": "자원/JavaScript/스코프(Scope)란 무엇인가",
+                            "title": "스코프(Scope)란 무엇인가",
                             "summary": "",
                             "image": "",
-                            "tags": ["resource", "web"],
+                            "tags": ["resource", "javascript"],
                             "series": "",
-                            "createdAt": "2025-04-14 18:08:07",
-                            "modifiedAt": "2025-04-16 12:47:05",
-                            "publish": "자원/웹개발"
+                            "createdAt": "2025-04-18 21:55:13",
+                            "modifiedAt": "2025-04-19 09:24:31",
+                            "publish": "자원/JavaScript"
                         },
   {
-                            "urlPath": "자원/웹개발/CSSOM(CSS Object Model)",
-                            "title": "CSSOM(CSS Object Model)",
+                            "urlPath": "자원/JavaScript/콜 스택(Call Stack)이란 무엇인가",
+                            "title": "콜 스택(Call Stack)이란 무엇인가",
                             "summary": "",
                             "image": "",
-                            "tags": ["resource", "web"],
+                            "tags": ["resource", "javascript"],
                             "series": "",
-                            "createdAt": "2025-04-15 14:55:32",
-                            "modifiedAt": "2025-04-16 12:49:54",
-                            "publish": "자원/웹개발"
+                            "createdAt": "2025-04-19 11:15:16",
+                            "modifiedAt": "2025-04-19 13:12:49",
+                            "publish": "자원/JavaScript"
+                        },
+  {
+                            "urlPath": "자원/JavaScript/클로저(Closure)란 무엇인가",
+                            "title": "클로저(Closure)란 무엇인가",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-18 22:36:08",
+                            "modifiedAt": "2025-04-19 16:55:15",
+                            "publish": "자원/JavaScript"
+                        },
+  {
+                            "urlPath": "자원/JavaScript/데이터 타입과 불변성",
+                            "title": "데이터 타입과 불변성",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-17 16:02:18",
+                            "modifiedAt": "2025-04-18 15:00:11",
+                            "publish": "자원/JavaScript"
+                        },
+  {
+                            "urlPath": "자원/JavaScript/var,let,const의 주요 차이점은 무엇인가",
+                            "title": "var,let,const의 주요 차이점은 무엇인가",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-17 14:40:27",
+                            "modifiedAt": "2025-04-18 15:01:31",
+                            "publish": "자원/JavaScript"
+                        },
+  {
+                            "urlPath": "자원/JavaScript/프로토타입(Prototype)과 프로토타입 상속",
+                            "title": "프로토타입(Prototype)과 프로토타입 상속",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-19 15:21:35",
+                            "modifiedAt": "2025-04-19 18:39:55",
+                            "publish": "자원/JavaScript"
+                        },
+  {
+                            "urlPath": "자원/JavaScript/null,undefined,undeclared 의 차이점은",
+                            "title": "null,undefined,undeclared 의 차이점은",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-18 14:59:03",
+                            "modifiedAt": "2025-04-18 15:14:42",
+                            "publish": "자원/JavaScript"
+                        },
+  {
+                            "urlPath": "자원/JavaScript/실행컨텍스트(Execution Context)",
+                            "title": "실행컨텍스트(Execution Context)",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-19 10:37:27",
+                            "modifiedAt": "2025-04-19 17:30:58",
+                            "publish": "자원/JavaScript"
+                        },
+  {
+                            "urlPath": "자원/JavaScript/Javascript",
+                            "title": "Javascript",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "web", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-12 09:09:33",
+                            "modifiedAt": "2025-04-20 09:23:09",
+                            "publish": "자원/JavaScript"
+                        },
+  {
+                            "urlPath": "자원/JavaScript/호이스팅(Hoisting)이란 무엇인가",
+                            "title": "호이스팅(Hoisting)이란 무엇인가",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-17 14:08:12",
+                            "modifiedAt": "2025-04-19 17:42:08",
+                            "publish": "자원/JavaScript"
+                        },
+  {
+                            "urlPath": "자원/JavaScript/Javascript는 어떻게 비동기 처리가 가능한 것인가",
+                            "title": "Javascript는 어떻게 비동기 처리가 가능한 것인가",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-19 18:43:45",
+                            "modifiedAt": "2025-04-19 21:35:43",
+                            "publish": "자원/JavaScript"
+                        },
+  {
+                            "urlPath": "자원/JavaScript/변수의 선언,초기화,할당의 차이점은 무엇인가",
+                            "title": "변수의 선언,초기화,할당의 차이점은 무엇인가",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-17 13:25:40",
+                            "modifiedAt": "2025-04-20 08:03:35",
+                            "publish": "자원/JavaScript"
+                        },
+  {
+                            "urlPath": "자원/JavaScript/Javascript에서의 비동기 함수",
+                            "title": "Javascript에서의 비동기 함수",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-19 20:47:13",
+                            "modifiedAt": "2025-04-19 21:35:38",
+                            "publish": "자원/JavaScript"
+                        },
+  {
+                            "urlPath": "자원/JavaScript/`==` 과 `===` 의 차이",
+                            "title": "`==` 과 `===` 의 차이",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-18 21:21:24",
+                            "modifiedAt": "2025-05-03 09:44:07",
+                            "publish": "자원/JavaScript"
+                        },
+  {
+                            "urlPath": "자원/JavaScript/`this`키워드",
+                            "title": "`this`키워드",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-19 13:24:41",
+                            "modifiedAt": "2025-04-19 15:21:13",
+                            "publish": "자원/JavaScript"
+                        },
+  {
+                            "urlPath": "자원/React/리엑트 함수형 컴포넌트의 생명주기",
+                            "title": "리엑트 함수형 컴포넌트의 생명주기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "react"],
+                            "series": "",
+                            "createdAt": "2025-04-24 08:34:02",
+                            "modifiedAt": "2025-04-24 08:44:05",
+                            "publish": "자원/React"
+                        },
+  {
+                            "urlPath": "자원/React/엘리먼트와 컴포넌트의 차이",
+                            "title": "엘리먼트와 컴포넌트의 차이",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "react"],
+                            "series": "",
+                            "createdAt": "2025-04-20 08:41:50",
+                            "modifiedAt": "2025-04-20 09:44:34",
+                            "publish": "자원/React"
+                        },
+  {
+                            "urlPath": "자원/React/자식컴포넌트에서 부모컴포넌트로 데이터 전달하기",
+                            "title": "자식컴포넌트에서 부모컴포넌트로 데이터 전달하기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "react"],
+                            "series": "",
+                            "createdAt": "2025-04-20 10:02:37",
+                            "modifiedAt": "2025-04-21 18:45:45",
+                            "publish": "자원/React"
+                        },
+  {
+                            "urlPath": "자원/React/flux 패턴이란",
+                            "title": "flux 패턴이란",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "react"],
+                            "series": "",
+                            "createdAt": "2025-04-19 22:48:15",
+                            "modifiedAt": "2025-04-20 09:23:43",
+                            "publish": "자원/React"
+                        },
+  {
+                            "urlPath": "자원/React/가상DOM의 원리",
+                            "title": "가상DOM의 원리",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "react"],
+                            "series": "",
+                            "createdAt": "2025-04-21 18:45:51",
+                            "modifiedAt": "2025-04-23 14:15:23",
+                            "publish": "자원/React"
+                        },
+  {
+                            "urlPath": "자원/React/React",
+                            "title": "React",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "react"],
+                            "series": "",
+                            "createdAt": "2025-04-11 18:37:48",
+                            "modifiedAt": "2025-04-24 18:26:29",
+                            "publish": "자원/React"
+                        },
+  {
+                            "urlPath": "자원/React/props와 state",
+                            "title": "props와 state",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "react"],
+                            "series": "",
+                            "createdAt": "2025-04-20 09:40:39",
+                            "modifiedAt": "2025-04-21 07:22:55",
+                            "publish": "자원/React"
+                        },
+  {
+                            "urlPath": "자원/React/Props Drilling 이란 무엇인가",
+                            "title": "Props Drilling 이란 무엇인가",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "react"],
+                            "series": "",
+                            "createdAt": "2025-04-20 10:03:21",
+                            "modifiedAt": "2025-04-21 07:40:48",
+                            "publish": "자원/React"
+                        },
+  {
+                            "urlPath": "자원/SWEA 강의 정리노트/SWEA 강의 정리노트",
+                            "title": "SWEA 강의 정리노트",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["study", "algorithm"],
+                            "series": "",
+                            "createdAt": "2025-03-19 12:20:41",
+                            "modifiedAt": "2025-05-08 08:04:36",
+                            "publish": "자원/SWEA 강의 정리노트"
                         },
   {
                             "urlPath": "자원/ai/Aider",
@@ -385,15 +396,48 @@
                             "publish": "자원/ai"
                         },
   {
-                            "urlPath": "프로젝트/알고리즘/취업을 위한 알고리즘 공부",
-                            "title": "취업을 위한 알고리즘 공부",
+                            "urlPath": "자원/웹개발/CSSOM(CSS Object Model)",
+                            "title": "CSSOM(CSS Object Model)",
                             "summary": "",
                             "image": "",
-                            "tags": ["project", "study", "algorithm"],
-                            "series": "취업을 위해 알고리즘 공부하기",
-                            "createdAt": "2025-03-19 08:05:06",
-                            "modifiedAt": "2025-03-20 16:16:00",
-                            "publish": "프로젝트/알고리즘"
+                            "tags": ["resource", "web"],
+                            "series": "",
+                            "createdAt": "2025-04-15 14:55:32",
+                            "modifiedAt": "2025-04-16 12:49:54",
+                            "publish": "자원/웹개발"
+                        },
+  {
+                            "urlPath": "자원/웹개발/DOM(Document Object Model)",
+                            "title": "DOM(Document Object Model)",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "web"],
+                            "series": "",
+                            "createdAt": "2025-04-14 18:08:07",
+                            "modifiedAt": "2025-04-16 12:47:05",
+                            "publish": "자원/웹개발"
+                        },
+  {
+                            "urlPath": "프로젝트/블로그/개인 블로그를 제작하게 된 이유",
+                            "title": "개인 블로그를 제작하게 된 이유",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["blog", "dev", "project"],
+                            "series": "나의 맞춤 블로그 만들기",
+                            "createdAt": "2025-03-08 17:09:39",
+                            "modifiedAt": "2025-05-03 11:55:52",
+                            "publish": "프로젝트/블로그"
+                        },
+  {
+                            "urlPath": "프로젝트/블로그/어떻게 블로그를 구현하였나",
+                            "title": "어떻게 블로그를 구현하였나",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["blog", "dev", "project"],
+                            "series": "나의 맞춤 블로그 만들기",
+                            "createdAt": "2025-03-08 17:12:17",
+                            "modifiedAt": "2025-05-03 11:55:54",
+                            "publish": "프로젝트/블로그"
                         },
   {
                             "urlPath": "프로젝트/아임유어박스 웹사이트/물류 서비스 웹사이트 개발 회고-혼자서 외주 프로젝트 완성하기",
@@ -407,25 +451,14 @@
                             "publish": "프로젝트/아임유어박스 웹사이트"
                         },
   {
-                            "urlPath": "프로젝트/블로그/개인 블로그를 제작하게 된 이유",
-                            "title": "개인 블로그를 제작하게 된 이유",
+                            "urlPath": "프로젝트/알고리즘/취업을 위한 알고리즘 공부",
+                            "title": "취업을 위한 알고리즘 공부",
                             "summary": "",
                             "image": "",
-                            "tags": ["blog", "dev", "project"],
-                            "series": "나의 맞춤 블로그 만들기",
-                            "createdAt": "2025-03-08 17:09:39",
-                            "modifiedAt": "2025-03-20 16:17:00",
-                            "publish": "프로젝트/블로그"
-                        },
-  {
-                            "urlPath": "프로젝트/블로그/어떻게 블로그를 구현하였나",
-                            "title": "어떻게 블로그를 구현하였나",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["blog", "dev", "project"],
-                            "series": "나의 맞춤 블로그 만들기",
-                            "createdAt": "2025-03-08 17:12:17",
-                            "modifiedAt": "2025-03-20 16:16:24",
-                            "publish": "프로젝트/블로그"
+                            "tags": ["project", "study", "algorithm"],
+                            "series": "취업을 위해 알고리즘 공부하기",
+                            "createdAt": "2025-03-19 08:05:06",
+                            "modifiedAt": "2025-05-08 08:04:10",
+                            "publish": "프로젝트/알고리즘"
                         }
 ]
