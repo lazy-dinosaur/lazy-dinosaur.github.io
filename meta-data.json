@@ -22,17 +22,6 @@
                             "publish": "자원/React"
                         },
   {
-                            "urlPath": "resource/ai/mcp/typescript-mcp 서버 만들기",
-                            "title": "typescript-mcp 서버 만들기",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["ai", "mcp", "quickstart"],
-                            "series": "",
-                            "createdAt": "2025-05-28 10:08:43",
-                            "modifiedAt": "2025-05-29 16:16:52",
-                            "publish": "resource/ai/mcp"
-                        },
-  {
                             "urlPath": "프로젝트/알고리즘/취업을 위한 알고리즘 공부",
                             "title": "취업을 위한 알고리즘 공부",
                             "summary": "",
