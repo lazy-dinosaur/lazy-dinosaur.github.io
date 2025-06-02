@@ -283,5 +283,89 @@
       "모바일 앱 버전 개발"
     ],
     "publishPath": "project/lazy-trading"
+  },
+  {
+    "projectType": "project",
+    "id": "no-more-lost-car",
+    "title": "잊지마차",
+    "description": "React Native, Expo, TypeScript를 사용하여 개발한 주차 위치 기록 모바일 앱입니다. 카메라와 GPS를 활용해 주차 위치를 쉽게 저장하고 찾을 수 있게 도와줍니다.",
+    "thumbnail": "/projects/nomorelostcar/nomorelostcar-autorecentering.mp4",
+    "thumbnailOptions": {
+      "playbackRate": 1
+    },
+    "tags": ["모바일", "앱", "React Native"],
+    "technologies": [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "expo-camera",
+      "expo-location",
+      "react-native-maps",
+      "AsyncStorage",
+      "expo-linear-gradient"
+    ],
+    "githubUrl": "https://github.com/lazy-dinosaur/where-did-i-park",
+    "featured": false,
+    "createdAt": "2025-05-20",
+    "overview": "주차할 때마다 사진을 찾는 번거로움을 해결하기 위해 개발한 '잊지마차'는 카메라와 GPS를 활용해 원터치로 주차 위치를 저장할 수 있는 모바일 앱입니다. 사용자가 주차 후 버튼 한 번으로 현재 위치와 주변 사진을 저장하고, 나중에 쉽게 차량을 찾을 수 있도록 도와줍니다.",
+    "features": [
+      "원터치 주차 기록: 카메라와 GPS를 활용한 즉시 주차 위치 저장",
+      "지도 연동: 정확한 주차 위치를 지도에서 확인",
+      "현재 위치와 주차 위치 간 거리 표시",
+      "메모 기능: 주차 위치에 대한 추가 정보 기록",
+      "다크모드 지원: 시간과 환경에 따른 편안한 사용",
+      "카메라 줌 컨트롤 및 그리드 가이드",
+      "지도 전체화면 보기 및 현위치 중심 이동",
+      "직관적인 UI와 사용자 친화적 경험"
+    ],
+    "lessons": "이 프로젝트를 통해 React Native와 Expo를 활용한 모바일 앱 개발 경험을 쌓았습니다. 특히 네이티브 기능(카메라, GPS)의 활용과 모바일 기기의 권한 관리, 그리고 사용자 경험에 중점을 둔 UI/UX 설계에 대한 이해를 깊게 할 수 있었습니다. 또한 지도 API와의 통합 과정에서 위치 기반 서비스의 구현 방법을 습득했습니다.",
+    "challenges": [
+      "지도 인터랙션 최적화: 사용자가 지도를 조작할 때와 자동 위치 갱신 간의 충돌을 방지하기 위한 로직 구현이 필요했습니다.",
+      "안드로이드 헤딩 데이터 불안정성 해결: iOS에서는 expo-location의 watchHeadingAsync API가 안정적으로 작동했지만, 안드로이드에서는 동일한 API로 얻은 헤딩 데이터가 불규칙하게 튀는 현상이 발생했습니다. 이 문제를 해결하기 위해 안드로이드에서는 expo-sensors의 DeviceMotion API를 대체 데이터 소스로 사용하는 플랫폼 분기 처리를 구현했습니다. 또한 requestAnimationFrame을 활용한 프레임 기반 부드러운 보간 로직과 throttling 기법을 구현했습니다. 특히 90fps에 맞춘 타이밍으로 헤딩 값을 점진적으로 업데이트하고, 급격한 변화를 필터링하는 알고리즘을 적용하여 지도의 방향 전환이 부드럽게 이루어지도록 최적화했습니다. 또한 각도 차이가 180도 이상인 경우(예: 350도에서 10도로 변경)에 대한 특별한 처리 로직을 추가하여 지도가 불필요하게 회전하는 현상을 방지했습니다."
+    ],
+    "demoType": "images",
+    "demoImages": [
+      {
+        "url": "/projects/nomorelostcar/nomorelostcar-camera.jpg",
+        "description": "메인 화면: 카메라 뷰와 '주차 기록하기' 버튼이 있는 주요 인터페이스입니다."
+      },
+      {
+        "url": "/projects/nomorelostcar/nomorelostcar-permission.jpg",
+        "description": "권한 요청 화면: 앱 사용에 필요한 카메라와 위치 권한을 요청하는 화면입니다."
+      },
+      {
+        "url": "/projects/nomorelostcar/nomorelostcar-parkinginfoscreen.jpg",
+        "description": "주차 정보 화면: 저장된 주차 위치, 사진, 메모를 확인할 수 있는 화면입니다."
+      },
+      {
+        "url": "/projects/nomorelostcar/nomorelostcar-fullmap.mp4",
+        "description": "지도 전체화면: 주차 위치를 더 넓은 맥락에서 확인할 수 있는 전체화면 지도입니다."
+      },
+      {
+        "url": "/projects/nomorelostcar/nomorelostcar-memoexample.mp4",
+        "description": "메모 작성 화면: 주차 위치에 대한 추가 정보를 기록할 수 있는 메모 기능입니다."
+      },
+      {
+        "url": "/projects/nomorelostcar/nomorelostcar-headingupdate.mp4",
+        "description": "사용자 방향 인식: 자동적으로 사용자가 향하는 화면을 지도에 적용하는 기능입니다."
+      },
+      {
+        "url": "/projects/nomorelostcar/nomorelostcar-autorecentering.mp4",
+        "description": "맵 중앙 자동 초첨: 맵을 움직여 다른곳을 확인한 이후 일정 시간 이후 다시 사용자와 자동차 사이를 포커스 하는 기능 입니다."
+      }
+    ],
+    "futurePlans": [
+      "추가 사진 저장 기능",
+      "다중 주차 위치 저장",
+      "주차 시간 알림 기능",
+      "주차료 계산기",
+      "친구들과 위치 공유",
+      "Apple Watch / Wear OS 연동",
+      "오프라인 모드 지원",
+      "3D 및 AR 내비게이션 기능",
+      "음성 메모 기능",
+      "주차장 추천 및 정보 제공"
+    ],
+    "publishPath": "project/where-did-i-park"
   }
 ]
