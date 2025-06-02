@@ -305,7 +305,7 @@
       "expo-linear-gradient"
     ],
     "githubUrl": "https://github.com/lazy-dinosaur/where-did-i-park",
-    "featured": true,
+    "featured": false,
     "createdAt": "2025-05-20",
     "overview": "주차할 때마다 사진을 찾는 번거로움을 해결하기 위해 개발한 '잊지마차'는 카메라와 GPS를 활용해 원터치로 주차 위치를 저장할 수 있는 모바일 앱입니다. 사용자가 주차 후 버튼 한 번으로 현재 위치와 주변 사진을 저장하고, 나중에 쉽게 차량을 찾을 수 있도록 도와줍니다.",
     "features": [
