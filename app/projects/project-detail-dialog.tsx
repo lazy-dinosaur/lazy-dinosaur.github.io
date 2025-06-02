@@ -180,10 +180,10 @@ export default function ProjectDetailDialog({
           <div className="overflow-hidden rounded-lg">
             {project.thumbnailType === "video" ||
             (!project.thumbnailType && isVideoFile(project.thumbnail)) ? (
-              <div className="w-full aspect-video">
+              <div className="w-full aspect-auto">
                 <video
                   src={project.thumbnail}
-                  className="w-full h-full object-cover"
+                  className="w-full max-h-[50vh] h-full object-contain"
                   width={800}
                   height={450}
                   autoPlay={project.thumbnailOptions?.autoplay !== false}
@@ -192,10 +192,12 @@ export default function ProjectDetailDialog({
                   ref={(videoEl) => {
                     if (videoEl) {
                       // 재생 속도 설정
-                      const rate = project.thumbnailOptions && 
-                        'playbackRate' in project.thumbnailOptions &&
-                        typeof project.thumbnailOptions.playbackRate === 'number'
-                          ? project.thumbnailOptions.playbackRate 
+                      const rate =
+                        project.thumbnailOptions &&
+                        "playbackRate" in project.thumbnailOptions &&
+                        typeof project.thumbnailOptions.playbackRate ===
+                          "number"
+                          ? project.thumbnailOptions.playbackRate
                           : undefined;
                       if (rate) videoEl.playbackRate = rate;
                     }
@@ -203,9 +205,9 @@ export default function ProjectDetailDialog({
                   playsInline
                   preload="auto"
                   controls={Boolean(
-                    project.thumbnailOptions && 
-                    'showControls' in project.thumbnailOptions && 
-                    project.thumbnailOptions.showControls === true
+                    project.thumbnailOptions &&
+                      "showControls" in project.thumbnailOptions &&
+                      project.thumbnailOptions.showControls === true,
                   )}
                   disablePictureInPicture={true}
                   onError={(e) => console.error("비디오 로딩 오류:", e)}
