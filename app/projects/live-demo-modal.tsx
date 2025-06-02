@@ -106,7 +106,7 @@ export default function LiveDemoModal({
   return (
     <Dialog open={open} onOpenChange={onOpenChangeAction}>
       <DialogContent className="w-[92vw] max-w-full sm:max-w-4xl p-0 overflow-hidden h-[85vh] max-h-[85vh] sm:max-h-[90vh] fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] rounded-xl">
-        <div className="flex flex-col h-full">
+        <div className="flex flex-col h-[85vh] max-h-[85vh] sm:max-h-[90vh]">
           <DialogHeader className="px-4 sm:px-6 py-3 border-b">
             <div className="flex justify-between items-center">
               <DialogTitle className="text-lg sm:text-xl break-all">
@@ -146,7 +146,7 @@ export default function LiveDemoModal({
               (!project.demoType &&
                 project.demoUrl &&
                 isVideoFile(project.demoUrl))) && (
-              <div className="w-full h-full flex items-center justify-center bg-black/5">
+              <div className="relative w-full h-[85vh] max-h-[85vh] sm:max-h-[90vh] pb-3 flex items-center justify-center bg-black/5">
                 {project.demoVideoUrl ? (
                   // iframe으로 외부 비디오(YouTube 등) 표시
                   <iframe
@@ -228,7 +228,7 @@ export default function LiveDemoModal({
                           isVideoFile(
                             project.demoImages[currentImageIndex]?.url || "",
                           ) ? (
-                          <div className="relative w-full h-full flex items-center justify-center bg-black/5">
+                          <div className="relative w-full h-[85vh] max-h-[85vh] sm:max-h-[90vh] pb-36 flex items-center justify-center bg-black/5">
                             <video
                               src={
                                 project.demoImages[currentImageIndex]?.url || ""
@@ -249,11 +249,14 @@ export default function LiveDemoModal({
                               ref={(videoEl) => {
                                 if (videoEl) {
                                   // 재생 속도 설정
-                                  const currentImage = project.demoImages?.[currentImageIndex];
-                                  const rate = currentImage && 
-                                    'playbackRate' in currentImage &&
-                                    typeof currentImage.playbackRate === 'number'
-                                      ? currentImage.playbackRate 
+                                  const currentImage =
+                                    project.demoImages?.[currentImageIndex];
+                                  const rate =
+                                    currentImage &&
+                                    "playbackRate" in currentImage &&
+                                    typeof currentImage.playbackRate ===
+                                      "number"
+                                      ? currentImage.playbackRate
                                       : undefined;
                                   if (rate) videoEl.playbackRate = rate;
                                 }
@@ -261,9 +264,11 @@ export default function LiveDemoModal({
                               playsInline
                               preload="auto"
                               controls={Boolean(
-                                project.demoImages?.[currentImageIndex] && 
-                                'showControls' in project.demoImages[currentImageIndex] && 
-                                project.demoImages[currentImageIndex].showControls === true
+                                project.demoImages?.[currentImageIndex] &&
+                                  "showControls" in
+                                    project.demoImages[currentImageIndex] &&
+                                  project.demoImages[currentImageIndex]
+                                    .showControls === true,
                               )}
                               disablePictureInPicture={true}
                               onLoadedData={() => {
