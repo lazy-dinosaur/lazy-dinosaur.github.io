@@ -4,7 +4,7 @@ tags:
   - mcp
   - quickstart
 createdAt: 2025-05-28 10:08:43
-modifiedAt: 2025-06-05 14:10:49
+modifiedAt: 2025-06-05 14:11:03
 publish: 자원/ai
 related: ""
 series: ""
