@@ -4,7 +4,7 @@ tags:
   - web
   - javascript
 createdAt: 2025-04-12 09:09:33
-modifiedAt: 2025-04-20 09:23:09
+modifiedAt: 2025-06-05 14:10:09
 publish: 자원/JavaScript
 related: ""
 series: ""
@@ -28,7 +28,7 @@ series: ""
 - [[실행컨텍스트(Execution Context)]]
 - [[콜 스택(Call Stack)이란 무엇인가]]
 - [[클로저(Closure)란 무엇인가]]
-- [[`this`키워드`]]
+- [[`this`키워드]]
 - [[프로토타입(Prototype)과 프로토타입 상속]]
 - [[Javascript는 어떻게 비동기 처리가 가능한 것인가]]
 - [[Javascript에서의 비동기 함수]]
