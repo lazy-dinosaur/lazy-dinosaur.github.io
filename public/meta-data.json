@@ -209,15 +209,15 @@
                             "publish": "자원/JavaScript"
                         },
   {
-                            "urlPath": "자원/ai/mcp/Typescript로 mcp 서버 만들기",
+                            "urlPath": "자원/ai/Typescript로 mcp 서버 만들기",
                             "title": "Typescript로 mcp 서버 만들기",
                             "summary": "",
                             "image": "",
                             "tags": ["ai", "mcp", "quickstart"],
                             "series": "",
                             "createdAt": "2025-05-28 10:08:43",
-                            "modifiedAt": "2025-06-05 13:53:32",
-                            "publish": "자원/ai/mcp"
+                            "modifiedAt": "2025-06-05 14:10:49",
+                            "publish": "자원/ai"
                         },
   {
                             "urlPath": "자원/React/엘리먼트와 컴포넌트의 차이",
