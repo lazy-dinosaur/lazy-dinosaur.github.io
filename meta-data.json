@@ -22,14 +22,14 @@
                             "publish": "자원/ReactNative"
                         },
   {
-                            "urlPath": "자원/Python/python에서 가상환경 설정하기",
-                            "title": "python에서 가상환경 설정하기",
+                            "urlPath": "자원/Python/Python에 의존성 주입하기",
+                            "title": "Python에 의존성 주입하기",
                             "summary": "",
                             "image": "",
                             "tags": ["python"],
                             "series": "",
-                            "createdAt": "2025-06-06 17:31:12",
-                            "modifiedAt": "2025-06-06 19:55:18",
+                            "createdAt": "2025-06-06 20:02:38",
+                            "modifiedAt": "2025-06-06 20:04:36",
                             "publish": "자원/Python"
                         },
   {
@@ -405,6 +405,17 @@
                             "createdAt": "2025-04-19 10:37:27",
                             "modifiedAt": "2025-04-19 17:30:58",
                             "publish": "자원/JavaScript"
+                        },
+  {
+                            "urlPath": "자원/Python/python에서 가상환경 설정하기",
+                            "title": "python에서 가상환경 설정하기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["python"],
+                            "series": "",
+                            "createdAt": "2025-06-06 17:31:12",
+                            "modifiedAt": "2025-06-06 19:55:18",
+                            "publish": "자원/Python"
                         },
   {
                             "urlPath": "자원/SWEA 강의 정리노트/SWEA 강의 정리노트",
