@@ -4,13 +4,13 @@ tags:
   - mcp
   - quickstart
 createdAt: 2025-05-28 10:08:43
-modifiedAt: 2025-05-29 16:16:52
-publish: resource/ai/mcp
+modifiedAt: 2025-06-05 14:10:49
+publish: 자원/ai
 related: ""
 series: ""
 ---
 
-# typescript-mcp 서버 만들기
+# Typescript로 mcp 서버 만들기
 
 mcp 서버를 쉽고 빠르게 만들기 위해 SDK 를 사용하는것이 좋다.
 
@@ -29,11 +29,9 @@ mcp 서버를 쉽고 빠르게 만들기 위해 SDK 를 사용하는것이 좋�
 
 ## SDK 설치
 
-- `Typescript`
-
-  ```bash
-  bun install @modelcontextprotocol/sdk
-  ```
+```bash
+bun install @modelcontextprotocol/sdk
+```
 
 ## MCP 서버 개발의 기본 구조
 

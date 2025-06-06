@@ -1,27 +1,5 @@
 [
   {
-                            "urlPath": "resource/ai/mcp/typescript-mcp 서버 만들기",
-                            "title": "typescript-mcp 서버 만들기",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["ai", "mcp", "quickstart"],
-                            "series": "",
-                            "createdAt": "2025-05-28 10:08:43",
-                            "modifiedAt": "2025-05-29 16:16:52",
-                            "publish": "resource/ai/mcp"
-                        },
-  {
-                            "urlPath": "resource/ai/mcp/Typescript로 mcp 서버 만들기",
-                            "title": "Typescript로 mcp 서버 만들기",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["ai", "mcp", "quickstart"],
-                            "series": "",
-                            "createdAt": "2025-05-28 10:08:43",
-                            "modifiedAt": "2025-05-29 16:31:14",
-                            "publish": "resource/ai/mcp"
-                        },
-  {
                             "urlPath": "자원/React/가상DOM의 원리",
                             "title": "가상DOM의 원리",
                             "summary": "",
@@ -42,6 +20,17 @@
                             "createdAt": "2025-05-08 08:19:03",
                             "modifiedAt": "2025-05-28 19:49:55",
                             "publish": "자원/ReactNative"
+                        },
+  {
+                            "urlPath": "자원/Python/python에서 가상환경 설정하기",
+                            "title": "python에서 가상환경 설정하기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["python"],
+                            "series": "",
+                            "createdAt": "2025-06-06 17:31:12",
+                            "modifiedAt": "2025-06-06 19:43:08",
+                            "publish": "자원/Python"
                         },
   {
                             "urlPath": "프로젝트/알고리즘/취업을 위한 알고리즘 공부",
@@ -231,6 +220,28 @@
                             "publish": "자원/React"
                         },
   {
+                            "urlPath": "자원/ai/Typescript로 mcp 서버 만들기-fedora-safeBackup-0001",
+                            "title": "Typescript로 mcp 서버 만들기-fedora-safeBackup-0001",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["ai", "mcp", "quickstart"],
+                            "series": "",
+                            "createdAt": "2025-05-28 10:08:43",
+                            "modifiedAt": "2025-06-05 14:10:49",
+                            "publish": "자원/ai"
+                        },
+  {
+                            "urlPath": "자원/ai/Typescript로 mcp 서버 만들기",
+                            "title": "Typescript로 mcp 서버 만들기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["ai", "mcp", "quickstart"],
+                            "series": "",
+                            "createdAt": "2025-05-28 10:08:43",
+                            "modifiedAt": "2025-06-05 14:11:03",
+                            "publish": "자원/ai"
+                        },
+  {
                             "urlPath": "자원/JavaScript/Javascript는 어떻게 비동기 처리가 가능한 것인가",
                             "title": "Javascript는 어떻게 비동기 처리가 가능한 것인가",
                             "summary": "",
@@ -282,7 +293,7 @@
                             "tags": ["resource", "web", "javascript"],
                             "series": "",
                             "createdAt": "2025-04-12 09:09:33",
-                            "modifiedAt": "2025-04-20 09:23:09",
+                            "modifiedAt": "2025-06-05 15:40:53",
                             "publish": "자원/JavaScript"
                         },
   {
@@ -327,6 +338,17 @@
                             "series": "",
                             "createdAt": "2025-04-19 20:47:13",
                             "modifiedAt": "2025-04-19 21:35:38",
+                            "publish": "자원/JavaScript"
+                        },
+  {
+                            "urlPath": "자원/JavaScript/Javascript-lazydino",
+                            "title": "Javascript-lazydino",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "web", "javascript"],
+                            "series": "",
+                            "createdAt": "2025-04-12 09:09:33",
+                            "modifiedAt": "2025-06-05 15:38:48",
                             "publish": "자원/JavaScript"
                         },
   {
@@ -458,7 +480,7 @@
                             "tags": ["blog", "dev", "project"],
                             "series": "나의 맞춤 블로그 만들기",
                             "createdAt": "2025-03-08 17:09:39",
-                            "modifiedAt": "2025-05-03 11:55:52",
+                            "modifiedAt": "2025-06-06 16:48:13",
                             "publish": "프로젝트/블로그"
                         },
   {
