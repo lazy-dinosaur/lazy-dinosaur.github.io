@@ -2,7 +2,7 @@
 tags:
   - python
 createdAt: 2025-06-06 17:31:12
-modifiedAt: 2025-06-06 19:43:08
+modifiedAt: 2025-06-06 19:50:18
 publish: 자원/Python
 related: ""
 series: ""
