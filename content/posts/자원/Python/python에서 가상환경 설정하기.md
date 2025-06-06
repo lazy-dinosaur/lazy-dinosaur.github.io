@@ -2,7 +2,7 @@
 tags:
   - python
 createdAt: 2025-06-06 17:31:12
-modifiedAt: 2025-06-06 19:50:18
+modifiedAt: 2025-06-06 19:55:18
 publish: 자원/Python
 related: ""
 series: ""
@@ -35,3 +35,5 @@ series: ""
   ```bash
   deactivate
   ```
+
+가상환경을 활용하여 프로젝트마다의 의존성을 보존할 수 있다
