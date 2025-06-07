@@ -74,8 +74,9 @@ export function PostItem({
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
       transition={{
-        delay: 0.05 * (index % 3) + 0.25,
+        delay: 0.05 * index + 0.1,
         duration: 0.2,
         ease: "easeOut",
       }}
