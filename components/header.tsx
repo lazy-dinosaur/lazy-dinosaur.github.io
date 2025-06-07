@@ -82,162 +82,103 @@ export default function Header() {
       searchInContent?: boolean;
       searchInTags?: boolean;
     } = {
-      searchInTitle: true,
-      searchInContent: true,
-      searchInTags: true,
-    },
+        searchInTitle: true,
+        searchInContent: true,
+        searchInTags: true,
+      },
   ) => {
     if (!query.trim()) return [];
 
     // 검색어 소문자 변환
-    const lowerQuery = query.toLowerCase().trim();
-    
-    // 검색어가 너무 짧은 경우 정확도를 높이기 위한 조정
-    const isShortQuery = lowerQuery.length <= 1;
-    
-    // 검색어 자모 분리 - 한글인 경우에만 수행
-    const isKorean = /[가-힣ㄱ-ㅎㅏ-ㅣ]/.test(lowerQuery);
-    const decomposedQuery = isKorean ? disassemble(lowerQuery) : "";
+    const lowerQuery = query.toLowerCase();
 
-    // 검색 결과와 점수를 함께 저장
-    const scoredResults = posts.map(post => {
-      let score = 0;
-      let matchDetails = {
-        titleMatch: false,
-        contentMatch: false,
-        tagMatch: false,
-        exactMatch: false
-      };
+    // 검색어 자모 분리
+    const decomposedQuery = disassemble(lowerQuery);
+
+    return posts.filter((post) => {
+      // 포스트 제목과 내용
+      const title = post.title.toLowerCase();
+      const content = post.plainContent.toLowerCase();
+      let matches = false;
 
       // 1. 제목 검색
       if (options.searchInTitle) {
-        const title = post.title.toLowerCase();
-        
-        // 1.1 정확한 일치 (가장 높은 점수)
-        if (title === lowerQuery) {
-          score += 100;
-          matchDetails.titleMatch = true;
-          matchDetails.exactMatch = true;
+        // 1.1 간단한 부분 문자열 검색
+        if (title.includes(lowerQuery)) {
+          matches = true;
         }
-        // 1.2 부분 문자열 검색 (높은 점수)
-        else if (title.includes(lowerQuery)) {
-          // 제목 시작 부분에 있으면 더 높은 점수
-          if (title.startsWith(lowerQuery)) {
-            score += 90;
-          } else {
-            score += 80;
-          }
-          matchDetails.titleMatch = true;
-        }
-        // 1.3 단어 시작 부분 검색
-        else if (!isShortQuery) {
+
+        // 1.2 단어 시작 부분 검색 (예: '개'로 검색하면 '개인'이 매칭됨)
+        if (!matches) {
           const titleWords = title.split(/\s+/);
           for (const word of titleWords) {
             if (word.startsWith(lowerQuery)) {
-              score += 70;
-              matchDetails.titleMatch = true;
+              matches = true;
               break;
             }
           }
         }
-        
-        // 1.4 자모음 분리 검색 (제목) - 한글인 경우에만
-        if (!matchDetails.titleMatch && isKorean && decomposedQuery) {
+
+        // 1.3 자모음 분리 검색 (제목)
+        if (!matches && /[가-힣ㄱ-ㅎㅏ-ㅣ]/.test(lowerQuery)) {
           const decomposedTitle = disassemble(title);
           if (decomposedTitle.includes(decomposedQuery)) {
-            // 너무 짧은 쿼리의 경우 점수 낮게 부여
-            score += isShortQuery ? 30 : 60;
-            matchDetails.titleMatch = true;
+            matches = true;
           }
         }
       }
 
       // 2. 내용 검색
-      if (options.searchInContent) {
-        const content = post.plainContent.toLowerCase();
-        
-        // 2.1 정확한 단어/구문 일치
-        if (content.includes(` ${lowerQuery} `) || 
-            content.startsWith(`${lowerQuery} `) || 
-            content.endsWith(` ${lowerQuery}`)) {
-          score += 50;
-          matchDetails.contentMatch = true;
+      if (!matches && options.searchInContent) {
+        // 2.1 간단한 부분 문자열 검색
+        if (content.includes(lowerQuery)) {
+          matches = true;
         }
-        // 2.2 부분 문자열 검색
-        else if (!isShortQuery && content.includes(lowerQuery)) {
-          score += 40;
-          matchDetails.contentMatch = true;
-        }
-        // 2.3 단어 시작 부분 검색
-        else if (!isShortQuery) {
+
+        // 2.2 단어 시작 부분 검색
+        if (!matches) {
           const contentWords = content.split(/\s+/);
           for (const word of contentWords) {
             if (word.startsWith(lowerQuery)) {
-              score += 30;
-              matchDetails.contentMatch = true;
+              matches = true;
               break;
             }
           }
         }
-        
-        // 2.4 자모음 분리 검색 (내용) - 한글이고 쿼리가 짧지 않은 경우만
-        if (!matchDetails.contentMatch && isKorean && !isShortQuery && decomposedQuery) {
+
+        // 2.3 자모음 분리 검색 (내용)
+        if (!matches && /[가-힣ㄱ-ㅎㅏ-ㅣ]/.test(lowerQuery)) {
           const decomposedContent = disassemble(content);
           if (decomposedContent.includes(decomposedQuery)) {
-            score += 20;
-            matchDetails.contentMatch = true;
+            matches = true;
           }
         }
       }
 
       // 3. 태그 검색
-      if (options.searchInTags) {
+      if (!matches && options.searchInTags) {
         for (const tag of post.tags) {
           const lowerTag = tag.toLowerCase();
-          
-          // 3.1 정확한 태그 일치 (높은 점수)
-          if (lowerTag === lowerQuery) {
-            score += 85;
-            matchDetails.tagMatch = true;
+
+          // 3.1 단순 부분 문자열 검색
+          if (lowerTag.includes(lowerQuery)) {
+            matches = true;
             break;
           }
-          // 3.2 태그 시작 부분 일치
-          else if (lowerTag.startsWith(lowerQuery)) {
-            score += 75;
-            matchDetails.tagMatch = true;
-            break;
-          }
-          // 3.3 태그 내 부분 문자열 검색
-          else if (!isShortQuery && lowerTag.includes(lowerQuery)) {
-            score += 65;
-            matchDetails.tagMatch = true;
-            break;
-          }
-          
-          // 3.4 자모음 분리 검색 (태그) - 한글인 경우
-          if (!matchDetails.tagMatch && isKorean && decomposedQuery) {
+
+          // 3.2 자모음 분리 검색 (태그)
+          if (/[가-힣ㄱ-ㅎㅏ-ㅣ]/.test(lowerQuery)) {
             const decomposedTag = disassemble(lowerTag);
             if (decomposedTag.includes(decomposedQuery)) {
-              score += isShortQuery ? 25 : 55;
-              matchDetails.tagMatch = true;
+              matches = true;
               break;
             }
           }
         }
       }
 
-      return {
-        post,
-        score,
-        matchDetails
-      };
+      return matches;
     });
-
-    // 점수가 있는 결과만 필터링하고 점수 내림차순으로 정렬
-    return scoredResults
-      .filter(result => result.score > 0)
-      .sort((a, b) => b.score - a.score)
-      .map(result => result.post);
   };
 
   // 전체 검색 결과
@@ -485,10 +426,9 @@ export default function Header() {
                       key={tab}
                       onClick={() => setActiveTab(tab)}
                       className={`px-2 sm:px-3 py-1 text-xs sm:text-sm rounded-md transition-colors whitespace-nowrap
-                        ${
-                          activeTab === tab
-                            ? "bg-primary/10 text-primary border border-primary/30"
-                            : "bg-background hover:bg-secondary/20 border border-transparent"
+                        ${activeTab === tab
+                          ? "bg-primary/10 text-primary border border-primary/30"
+                          : "bg-background hover:bg-secondary/20 border border-transparent"
                         }`}
                     >
                       {tab}
