@@ -4,13 +4,13 @@ tags:
   - wsl
   - neovim
 createdAt: 2025-06-07 15:43:20
-modifiedAt: 2025-06-07 17:48:10
+modifiedAt: 2025-06-07 17:50:53
 publish: 자원/Wsl
 related: ""
 series: ""
 ---
 
-# WSL에서 im-select.nvim 사용하기
+# Wsl에서 im-select.nvim 사용하기
 
 - [im-select.nvim](https://github.com/keaising/im-select.nvim)
 - [im-select](https://github.com/daipeihust/im-select)
@@ -70,21 +70,21 @@ WSL 환경에서 `im-select-imm`을 활용한 `im-select.nvim` 설정은 다음�
             -- 기본 입력기를 한글 입력기의 영어 모드로 설정
             default_im_select = "im-select-imm.exe 1042 0",
             default_command = "im-select-imm.exe",
-            
+
             -- 다음 이벤트 발생 시 기본 입력기로 변경
-            set_default_events = { 
-                "VimEnter", 
-                "FocusGained", 
-                "InsertLeave", 
-                "CmdlineLeave" 
+            set_default_events = {
+                "VimEnter",
+                "FocusGained",
+                "InsertLeave",
+                "CmdlineLeave"
             },
-            
+
             -- Insert 모드 진입 시 이전 입력기 상태 복원
             set_previous_events = { "InsertEnter" },
-            
+
             -- 실행 파일이 없을 때 알림 표시
             keep_quiet_on_no_binary = false,
-            
+
             -- 입력기 변경을 비동기로 실행
             async_switch_im = true,
         })
