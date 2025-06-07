@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
@@ -25,6 +25,43 @@ import { usePosts } from "@/contexts/posts-context";
 import { motion } from "framer-motion";
 import { Post } from "@/lib/posts";
 
+// 디바운스 훅
+function useDebounce<T>(value: T, delay: number): T {
+  const [debouncedValue, setDebouncedValue] = useState<T>(value);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value, delay]);
+
+  return debouncedValue;
+}
+
+// 검색 인덱스 타입
+interface SearchIndex {
+  id: string;
+  title: string;
+  titleLower: string;
+  titleDecomposed: string;
+  summary: string;
+  summaryLower: string;
+  tags: string[];
+  tagsLower: string[];
+  tagsDecomposed: string[];
+}
+
+// 검색 결과 타입
+interface SearchResult {
+  post: Post;
+  matchedIn: Set<'title' | 'content' | 'tag'>;
+  score: number;
+}
+
 export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
@@ -35,6 +72,46 @@ export default function Header() {
   const [isClient, setIsClient] = useState(false);
   const [activeTab, setActiveTab] = useState("전체");
   const { posts } = usePosts();
+  const { theme, setTheme } = useTheme();
+
+  // 검색 결과 캐시
+  const searchCache = useRef<Map<string, SearchResult[]>>(new Map());
+
+  // 디바운스된 검색어
+  const debouncedSearchQuery = useDebounce(searchQuery, 300);
+
+  // 검색 인덱스 생성 (포스트 변경 시에만 재생성)
+  const searchIndex = useMemo(() => {
+    const index = new Map<string, SearchIndex>();
+
+    posts.forEach(post => {
+      const titleLower = post.title.toLowerCase();
+      const summaryLower = post.summary.toLowerCase();
+
+      index.set(post.urlPath, {
+        id: post.urlPath,
+        title: post.title,
+        titleLower,
+        titleDecomposed: disassemble(titleLower),
+        summary: post.summary,
+        summaryLower,
+        tags: post.tags,
+        tagsLower: post.tags.map(tag => tag.toLowerCase()),
+        tagsDecomposed: post.tags.map(tag => disassemble(tag.toLowerCase())),
+      });
+    });
+
+    return index;
+  }, [posts]);
+
+  // 포스트 맵 (빠른 조회용)
+  const postMap = useMemo(() => {
+    const map = new Map<string, Post>();
+    posts.forEach(post => {
+      map.set(post.urlPath, post);
+    });
+    return map;
+  }, [posts]);
 
   // 뒤로가기 버튼이 필요한 페이지인지 확인하는 로직
   const isPostPage = pathname?.startsWith("/posts/");
@@ -73,163 +150,155 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollY]);
-  // 검색 로직을 함수로 분리
-  const searchInPosts = (
+
+  // 최적화된 검색 함수
+  const performSearch = useCallback((
     query: string,
-    posts: Post[],
-    options: {
-      searchInTitle?: boolean;
-      searchInContent?: boolean;
-      searchInTags?: boolean;
-    } = {
-        searchInTitle: true,
-        searchInContent: true,
-        searchInTags: true,
-      },
-  ) => {
+    searchType: 'all' | 'title' | 'content' | 'tag' = 'all'
+  ): SearchResult[] => {
     if (!query.trim()) return [];
 
-    // 검색어 소문자 변환
+    // 캐시 키 생성
+    const cacheKey = `${searchType}:${query}`;
+
+    // 캐시 확인
+    if (searchCache.current.has(cacheKey)) {
+      return searchCache.current.get(cacheKey)!;
+    }
+
     const lowerQuery = query.toLowerCase();
-
-    // 검색어 자모 분리
     const decomposedQuery = disassemble(lowerQuery);
+    const isKorean = /[가-힣ㄱ-ㅎㅏ-ㅣ]/.test(query);
 
-    return posts.filter((post) => {
-      // 포스트 제목과 내용
-      const title = post.title.toLowerCase();
-      const content = post.plainContent.toLowerCase();
-      let matches = false;
+    const results: SearchResult[] = [];
 
-      // 1. 제목 검색
-      if (options.searchInTitle) {
-        // 1.1 간단한 부분 문자열 검색
-        if (title.includes(lowerQuery)) {
-          matches = true;
-        }
+    searchIndex.forEach((indexItem, postId) => {
+      const matchedIn = new Set<'title' | 'content' | 'tag'>();
+      let score = 0;
 
-        // 1.2 단어 시작 부분 검색 (예: '개'로 검색하면 '개인'이 매칭됨)
-        if (!matches) {
-          const titleWords = title.split(/\s+/);
-          for (const word of titleWords) {
-            if (word.startsWith(lowerQuery)) {
-              matches = true;
-              break;
-            }
+      // 제목 검색
+      if (searchType === 'all' || searchType === 'title') {
+        if (indexItem.titleLower.includes(lowerQuery)) {
+          matchedIn.add('title');
+          score += 10; // 제목 매칭은 높은 점수
+
+          // 정확한 매칭은 추가 점수
+          if (indexItem.titleLower === lowerQuery) {
+            score += 5;
           }
-        }
-
-        // 1.3 자모음 분리 검색 (제목)
-        if (!matches && /[가-힣ㄱ-ㅎㅏ-ㅣ]/.test(lowerQuery)) {
-          const decomposedTitle = disassemble(title);
-          if (decomposedTitle.includes(decomposedQuery)) {
-            matches = true;
-          }
+        } else if (isKorean && indexItem.titleDecomposed.includes(decomposedQuery)) {
+          matchedIn.add('title');
+          score += 5; // 자모 매칭은 낮은 점수
         }
       }
 
-      // 2. 내용 검색
-      if (!matches && options.searchInContent) {
-        // 2.1 간단한 부분 문자열 검색
-        if (content.includes(lowerQuery)) {
-          matches = true;
-        }
-
-        // 2.2 단어 시작 부분 검색
-        if (!matches) {
-          const contentWords = content.split(/\s+/);
-          for (const word of contentWords) {
-            if (word.startsWith(lowerQuery)) {
-              matches = true;
-              break;
-            }
-          }
-        }
-
-        // 2.3 자모음 분리 검색 (내용)
-        if (!matches && /[가-힣ㄱ-ㅎㅏ-ㅣ]/.test(lowerQuery)) {
-          const decomposedContent = disassemble(content);
-          if (decomposedContent.includes(decomposedQuery)) {
-            matches = true;
-          }
+      // 내용 검색 (summary 검색으로 변경)
+      if (searchType === 'all' || searchType === 'content') {
+        if (indexItem.summaryLower.includes(lowerQuery)) {
+          matchedIn.add('content');
+          score += 3;
         }
       }
 
-      // 3. 태그 검색
-      if (!matches && options.searchInTags) {
-        for (const tag of post.tags) {
-          const lowerTag = tag.toLowerCase();
-
-          // 3.1 단순 부분 문자열 검색
-          if (lowerTag.includes(lowerQuery)) {
-            matches = true;
-            break;
+      // 태그 검색
+      if (searchType === 'all' || searchType === 'tag') {
+        indexItem.tagsLower.forEach((tagLower, idx) => {
+          if (tagLower.includes(lowerQuery)) {
+            matchedIn.add('tag');
+            score += 5;
+          } else if (isKorean && indexItem.tagsDecomposed[idx].includes(decomposedQuery)) {
+            matchedIn.add('tag');
+            score += 3;
           }
-
-          // 3.2 자모음 분리 검색 (태그)
-          if (/[가-힣ㄱ-ㅎㅏ-ㅣ]/.test(lowerQuery)) {
-            const decomposedTag = disassemble(lowerTag);
-            if (decomposedTag.includes(decomposedQuery)) {
-              matches = true;
-              break;
-            }
-          }
-        }
+        });
       }
 
-      return matches;
+      // 매칭된 경우에만 결과에 추가
+      if (matchedIn.size > 0) {
+        const post = postMap.get(postId);
+        if (post) {
+          results.push({ post, matchedIn, score });
+        }
+      }
     });
-  };
 
-  // 전체 검색 결과
-  const filteredPosts = useMemo(() => {
-    if (!searchQuery.trim()) return posts;
-    return searchInPosts(searchQuery, posts);
-  }, [searchQuery, posts]);
+    // 점수순으로 정렬
+    results.sort((a, b) => b.score - a.score);
 
-  // 제목 검색 결과
-  const titleFilteredPosts = useMemo(() => {
-    if (!searchQuery.trim()) return [];
-    return searchInPosts(searchQuery, posts, {
-      searchInTitle: true,
-      searchInContent: false,
-      searchInTags: false,
-    });
-  }, [searchQuery, posts]);
+    // 캐시에 저장
+    searchCache.current.set(cacheKey, results);
 
-  // 내용 검색 결과
-  const contentFilteredPosts = useMemo(() => {
-    if (!searchQuery.trim()) return [];
-    return searchInPosts(searchQuery, posts, {
-      searchInTitle: false,
-      searchInContent: true,
-      searchInTags: false,
-    });
-  }, [searchQuery, posts]);
+    return results;
+  }, [searchIndex, postMap]);
 
-  // 태그 검색 결과
-  const tagFilteredPosts = useMemo(() => {
-    if (!searchQuery.trim()) return [];
-    return searchInPosts(searchQuery, posts, {
-      searchInTitle: false,
-      searchInContent: false,
-      searchInTags: true,
-    });
-  }, [searchQuery, posts]);
+  // 검색 결과 가져오기 (디바운스된 검색어 사용)
+  const searchResults = useMemo(() => {
+    if (!debouncedSearchQuery.trim()) {
+      return {
+        all: [],
+        title: [],
+        content: [],
+        tag: []
+      };
+    }
+
+    return {
+      all: performSearch(debouncedSearchQuery, 'all'),
+      title: performSearch(debouncedSearchQuery, 'title'),
+      content: performSearch(debouncedSearchQuery, 'content'),
+      tag: performSearch(debouncedSearchQuery, 'tag')
+    };
+  }, [debouncedSearchQuery, performSearch]);
 
   // 현재 탭에 따른 검색 결과 반환
-  const getCurrentPosts = () => {
+  const getCurrentResults = useCallback(() => {
     switch (activeTab) {
       case "제목":
-        return titleFilteredPosts;
+        return searchResults.title;
       case "내용":
-        return contentFilteredPosts;
+        return searchResults.content;
       case "태그":
-        return tagFilteredPosts;
+        return searchResults.tag;
       default:
-        return filteredPosts;
+        return searchResults.all;
     }
-  };
+  }, [activeTab, searchResults]);
+
+  // 하이라이트 렌더링 최적화
+  const renderHighlightedText = useCallback((
+    text: string,
+    query: string
+  ) => {
+    if (!query.trim()) return text;
+
+    const lowerText = text.toLowerCase();
+    const lowerQuery = query.toLowerCase();
+    const index = lowerText.indexOf(lowerQuery);
+
+    if (index === -1) return text;
+
+    return (
+      <>
+        {text.slice(0, index)}
+        <mark className="bg-yellow-200/30">
+          {text.slice(index, index + query.length)}
+        </mark>
+        {text.slice(index + query.length)}
+      </>
+    );
+  }, []);
+
+  // 검색 다이얼로그가 닫힐 때 캐시 초기화
+  useEffect(() => {
+    if (!open) {
+      // 일정 시간 후 캐시 초기화 (메모리 절약)
+      const timer = setTimeout(() => {
+        searchCache.current.clear();
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [open]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -241,8 +310,6 @@ export default function Header() {
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, []);
-
-  const { theme, setTheme } = useTheme();
 
   if (!isClient) return null;
 
@@ -421,31 +488,28 @@ export default function Header() {
             {searchQuery.trim() !== "" && (
               <div className="border-b border-border/40 mt-1">
                 <div className="flex overflow-x-auto px-2 py-1 sm:px-3 sm:py-2 gap-2 sm:gap-3">
-                  {["전체", "제목", "내용", "태그"].map((tab) => (
-                    <button
-                      key={tab}
-                      onClick={() => setActiveTab(tab)}
-                      className={`px-2 sm:px-3 py-1 text-xs sm:text-sm rounded-md transition-colors whitespace-nowrap
-                        ${activeTab === tab
-                          ? "bg-primary/10 text-primary border border-primary/30"
-                          : "bg-background hover:bg-secondary/20 border border-transparent"
-                        }`}
-                    >
-                      {tab}
-                      {tab === "전체" &&
-                        filteredPosts.length > 0 &&
-                        ` (${filteredPosts.length})`}
-                      {tab === "제목" &&
-                        titleFilteredPosts.length > 0 &&
-                        ` (${titleFilteredPosts.length})`}
-                      {tab === "내용" &&
-                        contentFilteredPosts.length > 0 &&
-                        ` (${contentFilteredPosts.length})`}
-                      {tab === "태그" &&
-                        tagFilteredPosts.length > 0 &&
-                        ` (${tagFilteredPosts.length})`}
-                    </button>
-                  ))}
+                  {["전체", "제목", "내용", "태그"].map((tab) => {
+                    const count =
+                      tab === "전체" ? searchResults.all.length :
+                        tab === "제목" ? searchResults.title.length :
+                          tab === "내용" ? searchResults.content.length :
+                            tab === "태그" ? searchResults.tag.length : 0;
+
+                    return (
+                      <button
+                        key={tab}
+                        onClick={() => setActiveTab(tab)}
+                        className={`px-2 sm:px-3 py-1 text-xs sm:text-sm rounded-md transition-colors whitespace-nowrap
+                          ${activeTab === tab
+                            ? "bg-primary/10 text-primary border border-primary/30"
+                            : "bg-background hover:bg-secondary/20 border border-transparent"
+                          }`}
+                      >
+                        {tab}
+                        {count > 0 && ` (${count})`}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
             )}
@@ -473,210 +537,47 @@ export default function Header() {
 
                 <CommandGroup
                   heading={
-                    getCurrentPosts().length > 0
-                      ? `${activeTab} 검색 결과 (${getCurrentPosts().length})`
+                    getCurrentResults().length > 0
+                      ? `${activeTab} 검색 결과 (${getCurrentResults().length})`
                       : "Posts"
                   }
                   className="text-xs font-medium text-primary/80 px-2"
                 >
-                  {getCurrentPosts().map((post) => (
+                  {getCurrentResults().map((result) => (
                     <CommandItem
-                      key={post.urlPath}
-                      value={`${post.title} ${disassemble(post.title)} ${post.tags.join(" ")}`}
+                      key={result.post.urlPath}
+                      value={`${result.post.title} ${disassemble(result.post.title)} ${result.post.tags.join(" ")}`}
                       onSelect={() => {
-                        router.push(`/posts/${post.urlPath}`);
+                        router.push(`/posts/${result.post.urlPath}`);
                         setOpen(false);
                       }}
                       className="cursor-pointer aria-selected:bg-primary/10 aria-selected:text-primary rounded-md mb-1 border border-transparent hover:border-border/40"
                     >
                       <div className="py-1 sm:py-2">
                         <h3 className="text-sm sm:text-base font-medium">
-                          {(() => {
-                            const lowerText = post.title;
-                            const lowerQuery = searchQuery.toLowerCase();
-                            const exactIndex = lowerText
-                              .toLowerCase()
-                              .indexOf(lowerQuery);
-                            if (exactIndex !== -1) {
-                              return (
-                                <>
-                                  {lowerText.slice(0, exactIndex)}
-                                  <mark className="bg-yellow-200/30">
-                                    {lowerText.slice(
-                                      exactIndex,
-                                      exactIndex + searchQuery.length,
-                                    )}
-                                  </mark>
-                                  {lowerText.slice(
-                                    exactIndex + searchQuery.length,
-                                  )}
-                                </>
-                              );
-                            }
-                            return post.title;
-                          })()}
+                          {renderHighlightedText(result.post.title, searchQuery)}
                         </h3>
                         <p className="text-xs sm:text-sm text-muted-foreground line-clamp-1">
-                          {(() => {
-                            // 먼저 요약(summary)에서 검색
-                            const lowerSummary = post.summary.toLowerCase();
-                            const lowerQuery = searchQuery.toLowerCase();
-                            const summaryIndex =
-                              lowerSummary.indexOf(lowerQuery);
-
-                            if (summaryIndex !== -1) {
-                              return (
-                                <>
-                                  {post.summary.slice(0, summaryIndex)}
-                                  <mark className="bg-yellow-200/30">
-                                    {post.summary.slice(
-                                      summaryIndex,
-                                      summaryIndex + searchQuery.length,
-                                    )}
-                                  </mark>
-                                  {post.summary.slice(
-                                    summaryIndex + searchQuery.length,
-                                  )}
-                                </>
-                              );
-                            }
-
-                            // 요약에 없으면 본문(content)에서 검색
-                            const lowerContent =
-                              post.plainContent.toLowerCase();
-                            const contentIndex =
-                              lowerContent.indexOf(lowerQuery);
-
-                            if (contentIndex !== -1) {
-                              // 검색 결과 주변 텍스트 추출 (앞뒤 30자)
-                              const start = Math.max(0, contentIndex - 30);
-                              const end = Math.min(
-                                lowerContent.length,
-                                contentIndex + searchQuery.length + 30,
-                              );
-                              const beforeMatch = post.plainContent.slice(
-                                start,
-                                contentIndex,
-                              );
-                              const match = post.plainContent.slice(
-                                contentIndex,
-                                contentIndex + searchQuery.length,
-                              );
-                              const afterMatch = post.plainContent.slice(
-                                contentIndex + searchQuery.length,
-                                end,
-                              );
-
-                              return (
-                                <>
-                                  {start > 0 ? "..." : ""}
-                                  {beforeMatch}
-                                  <mark className="bg-yellow-200/30">
-                                    {match}
-                                  </mark>
-                                  {afterMatch}
-                                  {end < post.plainContent.length ? "..." : ""}
-                                </>
-                              );
-                            }
-
-                            // 단어 시작 부분 검색 결과
-                            const words = post.plainContent.split(/\s+/);
-                            for (let i = 0; i < words.length; i++) {
-                              if (
-                                words[i].toLowerCase().startsWith(lowerQuery)
-                              ) {
-                                const wordIndex = post.plainContent.indexOf(
-                                  words[i],
-                                );
-                                if (wordIndex !== -1) {
-                                  // 단어 주변 텍스트 추출
-                                  const start = Math.max(0, wordIndex - 30);
-                                  const end = Math.min(
-                                    post.plainContent.length,
-                                    wordIndex + words[i].length + 30,
-                                  );
-                                  const beforeMatch = post.plainContent.slice(
-                                    start,
-                                    wordIndex,
-                                  );
-                                  const match = post.plainContent.slice(
-                                    wordIndex,
-                                    wordIndex + lowerQuery.length,
-                                  );
-                                  const afterMatch = post.plainContent.slice(
-                                    wordIndex + lowerQuery.length,
-                                    wordIndex + words[i].length,
-                                  );
-                                  const remaining = post.plainContent.slice(
-                                    wordIndex + words[i].length,
-                                    end,
-                                  );
-
-                                  return (
-                                    <>
-                                      {start > 0 ? "..." : ""}
-                                      {beforeMatch}
-                                      <mark className="bg-yellow-200/30">
-                                        {match}
-                                      </mark>
-                                      {afterMatch}
-                                      {remaining}
-                                      {end < post.plainContent.length
-                                        ? "..."
-                                        : ""}
-                                    </>
-                                  );
-                                }
-                              }
-                            }
-
-                            // 자모 검색 결과 (검색 결과가 있지만 정확한 위치를 찾기 어려움)
-                            if (
-                              /[가-힣ㄱ-ㅎㅏ-ㅣ]/.test(lowerQuery) &&
-                              disassemble(lowerContent).includes(
-                                disassemble(lowerQuery),
-                              )
-                            ) {
-                              // 본문 앞부분 일부 표시 (100자)
-                              return `${post.plainContent.slice(0, 100)}...`;
-                            }
-
-                            // 검색 결과가 없으면 요약 반환
-                            return post.summary;
-                          })()}
+                          {result.matchedIn.has('content') && searchQuery ?
+                            renderHighlightedText(
+                              result.post.summary,
+                              searchQuery
+                            ) :
+                            result.post.summary
+                          }
                         </p>
                         <div className="mt-1 flex gap-2">
-                          {post.tags.map((tag) => {
-                            const lowerTag = tag.toLowerCase();
-                            const lowerQuery = searchQuery.toLowerCase();
-                            const exactIndex = lowerTag.indexOf(lowerQuery);
-                            if (exactIndex !== -1) {
-                              return (
-                                <Badge
-                                  key={tag}
-                                  className="text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full"
-                                >
-                                  #{tag.slice(0, exactIndex)}
-                                  <mark className="bg-yellow-200/30">
-                                    {tag.slice(
-                                      exactIndex,
-                                      exactIndex + searchQuery.length,
-                                    )}
-                                  </mark>
-                                  {tag.slice(exactIndex + searchQuery.length)}
-                                </Badge>
-                              );
-                            }
-                            return (
-                              <Badge
-                                key={tag}
-                                className="text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full"
-                              >
-                                #{tag}
-                              </Badge>
-                            );
-                          })}
+                          {result.post.tags.map((tag) => (
+                            <Badge
+                              key={tag}
+                              className="text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full"
+                            >
+                              #{result.matchedIn.has('tag') && searchQuery ?
+                                renderHighlightedText(tag, searchQuery) :
+                                tag
+                              }
+                            </Badge>
+                          ))}
                         </div>
                       </div>
                     </CommandItem>
