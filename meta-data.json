@@ -44,14 +44,14 @@
                             "publish": "자원/Wsl"
                         },
   {
-                            "urlPath": "자원/Wsl/Wsl에서 im-select.nvim 사용하기",
-                            "title": "Wsl에서 im-select.nvim 사용하기",
+                            "urlPath": "자원/Wsl/WSL에서 im-select.nvim 사용하기",
+                            "title": "WSL에서 im-select.nvim 사용하기",
                             "summary": "",
                             "image": "",
                             "tags": ["windows", "wsl", "neovim"],
                             "series": "",
                             "createdAt": "2025-06-07 15:43:20",
-                            "modifiedAt": "2025-06-07 17:40:38",
+                            "modifiedAt": "2025-06-07 17:48:03",
                             "publish": "자원/Wsl"
                         },
   {
