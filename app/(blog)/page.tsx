@@ -5,14 +5,16 @@ import { usePosts } from "@/contexts/posts-context";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { Post } from "@/lib/posts";
 
 // 페이지당 포스트 수 정의
 const POSTS_PER_PAGE = 8;
 
 export default function Home() {
+  // 상태 타입 정의
   const { posts } = usePosts();
-  const [currentPage, setCurrentPage] = useState(1);
-  const [displayedPosts, setDisplayedPosts] = useState([]);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [displayedPosts, setDisplayedPosts] = useState<Post[]>([]);
   const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
 
   // 페이지 변경 시 표시할 포스트 업데이트
@@ -30,14 +32,14 @@ export default function Home() {
   }, [currentPage, posts]);
 
   // 페이지 이동 함수
-  const goToPage = (page) => {
+  const goToPage = (page: number): void => {
     setCurrentPage(page);
     // 페이지 상단으로 부드럽게 스크롤
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   // 다음 페이지로 이동
-  const goToNextPage = () => {
+  const goToNextPage = (): void => {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -45,7 +47,7 @@ export default function Home() {
   };
 
   // 이전 페이지로 이동
-  const goToPrevPage = () => {
+  const goToPrevPage = (): void => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -53,8 +55,8 @@ export default function Home() {
   };
 
   // 페이지네이션 UI에 표시할 페이지 번호 계산
-  const getPageNumbers = () => {
-    const pageNumbers = [];
+  const getPageNumbers = (): Array<number | string> => {
+    const pageNumbers: Array<number | string> = [];
     const maxPageButtons = 5; // 최대 표시할 페이지 버튼 수
     
     if (totalPages <= maxPageButtons) {
@@ -168,7 +170,7 @@ export default function Home() {
               <Button
                 key={`page-${pageNum}`}
                 variant={currentPage === pageNum ? "default" : "outline"}
-                onClick={() => goToPage(pageNum)}
+                onClick={() => goToPage(pageNum as number)}
                 className="w-10 h-10"
                 aria-label={`${pageNum}페이지로 이동`}
                 aria-current={currentPage === pageNum ? "page" : undefined}
