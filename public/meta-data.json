@@ -40,7 +40,18 @@
                             "tags": ["windows", "linux", "wsl"],
                             "series": "",
                             "createdAt": "2025-06-07 11:53:51",
-                            "modifiedAt": "2025-06-07 12:50:23",
+                            "modifiedAt": "2025-06-07 12:55:02",
+                            "publish": "자원/Wsl"
+                        },
+  {
+                            "urlPath": "자원/Wsl/Wsl에서 im-select.nvim 사용하기",
+                            "title": "Wsl에서 im-select.nvim 사용하기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["windows", "wsl", "neovim"],
+                            "series": "",
+                            "createdAt": "2025-06-07 15:43:20",
+                            "modifiedAt": "2025-06-07 17:40:38",
                             "publish": "자원/Wsl"
                         },
   {
@@ -53,6 +64,17 @@
                             "createdAt": "2025-06-06 20:02:38",
                             "modifiedAt": "2025-06-07 11:16:50",
                             "publish": "자원/Python"
+                        },
+  {
+                            "urlPath": "자원/linux/Linux에서 원드라이브 사용하기",
+                            "title": "Linux에서 원드라이브 사용하기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["linux", "onedrive", "wsl"],
+                            "series": "",
+                            "createdAt": "2025-06-07 13:01:39",
+                            "modifiedAt": "2025-06-07 13:10:42",
+                            "publish": "자원/linux"
                         },
   {
                             "urlPath": "프로젝트/알고리즘/취업을 위한 알고리즘 공부",

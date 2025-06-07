@@ -4,7 +4,7 @@ tags:
   - linux
   - wsl
 createdAt: 2025-06-07 11:53:51
-modifiedAt: 2025-06-07 12:50:23
+modifiedAt: 2025-06-07 12:55:02
 publish: 자원/Wsl
 related: ""
 series: ""
