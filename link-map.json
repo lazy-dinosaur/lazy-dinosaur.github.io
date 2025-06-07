@@ -1,7 +1,7 @@
 {
   "0.inbox/가상DOM의 원리.md": "자원/React/가상DOM의 원리",
   "0.inbox/expo 시작하기.md": "자원/ReactNative/expo 시작하기",
-  "0.inbox/Linux에서 원드라이브 사용하기.md": "자원/linux/Linux에서 원드라이브 사용하기",
+  "0.inbox/Linux에서 원드라이브 사용하기.md": "자원/Linux/Linux에서 원드라이브 사용하기",
   "2.area/취업을 위한 알고리즘 공부.md": "프로젝트/알고리즘/취업을 위한 알고리즘 공부",
   "3.resource/크롬 확장프로그램/크롬 확장프로그램에 케시메모리 추가하기.md": "자원/크롬 확장프로그램/크롬 확장프로그램에 케시메모리 추가하기",
   "3.resource/Web/웹사이트에 들어갈때에는 어떤 일이 생기는가-웹사이트접속의 과정.md": "자원/웹개발/웹사이트에 들어갈때에는 어떤 일이 생기는가-웹사이트접속의 과정",
@@ -32,7 +32,6 @@
   "3.resource/Javascript/`this`키워드.md": "자원/JavaScript/`this`키워드",
   "3.resource/Javascript/콜 스택(Call Stack)이란 무엇인가.md": "자원/JavaScript/콜 스택(Call Stack)이란 무엇인가",
   "3.resource/Javascript/Javascript에서의 비동기 함수.md": "자원/JavaScript/Javascript에서의 비동기 함수",
-  "3.resource/Javascript/Javascript-lazydino.md": "자원/JavaScript/Javascript-lazydino",
   "3.resource/Javascript/데이터 타입과 불변성.md": "자원/JavaScript/데이터 타입과 불변성",
   "3.resource/Javascript/var,let,const의 주요 차이점은 무엇인가.md": "자원/JavaScript/var,let,const의 주요 차이점은 무엇인가",
   "3.resource/Javascript/변수의 선언,초기화,할당의 차이점은 무엇인가.md": "자원/JavaScript/변수의 선언,초기화,할당의 차이점은 무엇인가",

@@ -22,15 +22,15 @@
                             "publish": "자원/ReactNative"
                         },
   {
-                            "urlPath": "자원/linux/Linux에서 원드라이브 사용하기",
+                            "urlPath": "자원/Linux/Linux에서 원드라이브 사용하기",
                             "title": "Linux에서 원드라이브 사용하기",
                             "summary": "",
                             "image": "",
                             "tags": ["linux", "onedrive", "wsl"],
                             "series": "",
                             "createdAt": "2025-06-07 13:01:39",
-                            "modifiedAt": "2025-06-07 13:10:42",
-                            "publish": "자원/linux"
+                            "modifiedAt": "2025-06-07 17:53:47",
+                            "publish": "자원/Linux"
                         },
   {
                             "urlPath": "프로젝트/알고리즘/취업을 위한 알고리즘 공부",
@@ -360,17 +360,6 @@
                             "series": "",
                             "createdAt": "2025-04-19 20:47:13",
                             "modifiedAt": "2025-04-19 21:35:38",
-                            "publish": "자원/JavaScript"
-                        },
-  {
-                            "urlPath": "자원/JavaScript/Javascript-lazydino",
-                            "title": "Javascript-lazydino",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["resource", "web", "javascript"],
-                            "series": "",
-                            "createdAt": "2025-04-12 09:09:33",
-                            "modifiedAt": "2025-06-05 15:38:48",
                             "publish": "자원/JavaScript"
                         },
   {
