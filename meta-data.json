@@ -11,17 +11,6 @@
                             "publish": "자원/React"
                         },
   {
-                            "urlPath": "자원/Wsl/Wsl에 fedora설치하기",
-                            "title": "Wsl에 fedora설치하기",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["windows", "linux", "wsl"],
-                            "series": "",
-                            "createdAt": "2025-06-07 11:23:26",
-                            "modifiedAt": "2025-06-07 12:50:20",
-                            "publish": "자원/Wsl"
-                        },
-  {
                             "urlPath": "자원/ReactNative/expo 시작하기",
                             "title": "expo 시작하기",
                             "summary": "",
@@ -31,39 +20,6 @@
                             "createdAt": "2025-05-08 08:19:03",
                             "modifiedAt": "2025-05-28 19:49:55",
                             "publish": "자원/ReactNative"
-                        },
-  {
-                            "urlPath": "자원/Wsl/Wsl에 neovim 붙혀넣기 줄바꿈 문자 해결",
-                            "title": "Wsl에 neovim 붙혀넣기 줄바꿈 문자 해결",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["windows", "linux", "wsl"],
-                            "series": "",
-                            "createdAt": "2025-06-07 11:53:51",
-                            "modifiedAt": "2025-06-07 12:55:02",
-                            "publish": "자원/Wsl"
-                        },
-  {
-                            "urlPath": "자원/Wsl/WSL에서 im-select.nvim 사용하기",
-                            "title": "WSL에서 im-select.nvim 사용하기",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["windows", "wsl", "neovim"],
-                            "series": "",
-                            "createdAt": "2025-06-07 15:43:20",
-                            "modifiedAt": "2025-06-07 17:48:10",
-                            "publish": "자원/Wsl"
-                        },
-  {
-                            "urlPath": "자원/Python/Python에 의존성 주입하기",
-                            "title": "Python에 의존성 주입하기",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["python"],
-                            "series": "",
-                            "createdAt": "2025-06-06 20:02:38",
-                            "modifiedAt": "2025-06-07 11:16:50",
-                            "publish": "자원/Python"
                         },
   {
                             "urlPath": "자원/linux/Linux에서 원드라이브 사용하기",
@@ -275,6 +231,39 @@
                             "publish": "자원/ai"
                         },
   {
+                            "urlPath": "자원/Wsl/Wsl에 fedora설치하기",
+                            "title": "Wsl에 fedora설치하기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["windows", "linux", "wsl"],
+                            "series": "",
+                            "createdAt": "2025-06-07 11:23:26",
+                            "modifiedAt": "2025-06-07 12:50:20",
+                            "publish": "자원/Wsl"
+                        },
+  {
+                            "urlPath": "자원/Wsl/Wsl에 neovim 붙혀넣기 줄바꿈 문자 해결",
+                            "title": "Wsl에 neovim 붙혀넣기 줄바꿈 문자 해결",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["windows", "linux", "wsl"],
+                            "series": "",
+                            "createdAt": "2025-06-07 11:53:51",
+                            "modifiedAt": "2025-06-07 12:55:02",
+                            "publish": "자원/Wsl"
+                        },
+  {
+                            "urlPath": "자원/Wsl/Wsl에서 im-select.nvim 사용하기",
+                            "title": "Wsl에서 im-select.nvim 사용하기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["windows", "wsl", "neovim"],
+                            "series": "",
+                            "createdAt": "2025-06-07 15:43:20",
+                            "modifiedAt": "2025-06-07 17:50:53",
+                            "publish": "자원/Wsl"
+                        },
+  {
                             "urlPath": "자원/JavaScript/Javascript는 어떻게 비동기 처리가 가능한 것인가",
                             "title": "Javascript는 어떻게 비동기 처리가 가능한 것인가",
                             "summary": "",
@@ -459,6 +448,17 @@
                             "series": "",
                             "createdAt": "2025-06-06 17:31:12",
                             "modifiedAt": "2025-06-06 19:55:18",
+                            "publish": "자원/Python"
+                        },
+  {
+                            "urlPath": "자원/Python/Python에 의존성 주입하기",
+                            "title": "Python에 의존성 주입하기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["python"],
+                            "series": "",
+                            "createdAt": "2025-06-06 20:02:38",
+                            "modifiedAt": "2025-06-07 11:16:50",
                             "publish": "자원/Python"
                         },
   {
