@@ -11,6 +11,17 @@
                             "publish": "자원/React"
                         },
   {
+                            "urlPath": "자원/Wsl/Wsl에 fedora설치하기",
+                            "title": "Wsl에 fedora설치하기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["windows", "linux", "wsl"],
+                            "series": "",
+                            "createdAt": "2025-06-07 11:23:26",
+                            "modifiedAt": "2025-06-07 12:50:20",
+                            "publish": "자원/Wsl"
+                        },
+  {
                             "urlPath": "자원/ReactNative/expo 시작하기",
                             "title": "expo 시작하기",
                             "summary": "",
@@ -22,6 +33,17 @@
                             "publish": "자원/ReactNative"
                         },
   {
+                            "urlPath": "자원/Wsl/Wsl에 neovim 붙혀넣기 줄바꿈 문자 해결",
+                            "title": "Wsl에 neovim 붙혀넣기 줄바꿈 문자 해결",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["windows", "linux", "wsl"],
+                            "series": "",
+                            "createdAt": "2025-06-07 11:53:51",
+                            "modifiedAt": "2025-06-07 12:50:23",
+                            "publish": "자원/Wsl"
+                        },
+  {
                             "urlPath": "자원/Python/Python에 의존성 주입하기",
                             "title": "Python에 의존성 주입하기",
                             "summary": "",
@@ -29,7 +51,7 @@
                             "tags": ["python"],
                             "series": "",
                             "createdAt": "2025-06-06 20:02:38",
-                            "modifiedAt": "2025-06-06 20:04:36",
+                            "modifiedAt": "2025-06-07 11:16:50",
                             "publish": "자원/Python"
                         },
   {

@@ -1,4 +1,4 @@
 {
-  "content": "\n# Python에 의존성 주입하기\n\n```bash\n# 의존성 페케지들의 이름 혹은 이름 및 버전의 정보를 가지고 있는 텍스트 파일에 대한 경로\npip install -r ./requirements.txt\n```\n",
-  "plainContent": ""
+  "content": "\n# Python에 의존성 주입하기\n\n의존성 페케지들의 이름 혹은 이름 및 버전의 정보를 가지고 있는 텍스트 파일에 대한 경로\n\n```bash\npip install -r ./requirements.txt\n```\n",
+  "plainContent": "의존성 페케지들의 이름 혹은 이름 및 버전의 정보를 가지고 있는 텍스트 파일에 대한 경로"
 }
