@@ -4,7 +4,7 @@ tags:
   - wsl
   - neovim
 createdAt: 2025-06-07 15:43:20
-modifiedAt: 2025-06-07 17:48:03
+modifiedAt: 2025-06-07 17:48:10
 publish: 자원/Wsl
 related: ""
 series: ""
