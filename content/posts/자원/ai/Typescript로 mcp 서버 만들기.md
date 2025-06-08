@@ -4,7 +4,7 @@ tags:
   - mcp
   - quickstart
 createdAt: 2025-05-28 10:08:43
-modifiedAt: 2025-06-05 14:11:03
+modifiedAt: 2025-06-08 12:34:57
 publish: 자원/ai
 related: ""
 series: ""
@@ -17,11 +17,11 @@ mcp 서버를 쉽고 빠르게 만들기 위해 SDK 를 사용하는것이 좋�
 > [!info]
 > SDK 를 지원하는 언어는 다음과 같다.
 >
-> 1.  Typescript SDK
-> 2.  Python SDK
-> 3.  Java SDK
-> 4.  Kotlin SDK
-> 5.  C# SDK
+> 1. Typescript SDK
+> 2. Python SDK
+> 3. Java SDK
+> 4. Kotlin SDK
+> 5. C# SDK
 >
 > 위의 리스트에 포함되어 있지 않은 경우에도 커뮤니티에서 다른 언어를 위한 프레임워크들을 만든 경우가 있기 때문에 검토해보는 것이 좋다.
 >
@@ -110,7 +110,7 @@ bun install @modelcontextprotocol/sdk
 
 > [!info]
 > tool 의 경우 ai 모델이 자동적으로 사용하게 되며 리소스 혹은 프롬프트의 경우 첨부 파일의 형태로 사용하게 된다.
-> ![mcp-prompt](../_assets/attachments/mcp-prompt.png)
+> ![mcp-prompt](_assets/attachments/mcp-prompt.png)
 
 - MCP 서버 시작
 
