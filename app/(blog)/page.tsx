@@ -21,10 +21,10 @@ export default function Home() {
   useEffect(() => {
     const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
     const endIndex = startIndex + POSTS_PER_PAGE;
-    
+
     // 페이지 변경 시 즉시 이전 포스트를 지우고 새 포스트를 설정
     setDisplayedPosts([]);
-    
+
     // 약간의 지연 후 새 포스트 표시 (애니메이션 효과 향상)
     setTimeout(() => {
       setDisplayedPosts(posts.slice(startIndex, endIndex));
@@ -57,45 +57,59 @@ export default function Home() {
   // 페이지네이션 UI에 표시할 페이지 번호 계산
   const getPageNumbers = (): Array<number | string> => {
     const pageNumbers: Array<number | string> = [];
-    const maxPageButtons = 5; // 최대 표시할 페이지 버튼 수
-    
+    const maxPageButtons = 4; // 최대 표시할 페이지 버튼 수
+
     if (totalPages <= maxPageButtons) {
       // 전체 페이지가 최대 버튼 수보다 적으면 모든 페이지 표시
       for (let i = 1; i <= totalPages; i++) {
         pageNumbers.push(i);
       }
     } else {
-      // 현재 페이지를 중심으로 앞뒤로 표시할 페이지 수 계산
-      const halfButtons = Math.floor(maxPageButtons / 2);
-      
-      // 시작 페이지와 끝 페이지 계산
-      let startPage = Math.max(1, currentPage - halfButtons);
-      let endPage = Math.min(totalPages, startPage + maxPageButtons - 1);
-      
-      // 끝 페이지가 totalPages를 초과하지 않도록 조정
-      if (endPage > totalPages) {
-        endPage = totalPages;
-        startPage = Math.max(1, endPage - maxPageButtons + 1);
-      }
-      
-      // 시작 페이지가 1이 아니면 첫 페이지와 줄임표 추가
-      if (startPage > 1) {
+      // 현재 페이지를 중심으로 페이지 번호 계산
+      if (currentPage <= 2) {
+        // 현재 페이지가 2 이하면 1~4 표시
+        for (let i = 1; i <= maxPageButtons; i++) {
+          pageNumbers.push(i);
+        }
+        if (totalPages > maxPageButtons) {
+          pageNumbers.push("...");
+          pageNumbers.push(totalPages);
+        }
+      } else if (currentPage >= totalPages - 1) {
+        // 현재 페이지가 끝에서 1번째 이내면 마지막 4개 표시
         pageNumbers.push(1);
-        if (startPage > 2) pageNumbers.push("...");
-      }
-      
-      // 중간 페이지들 추가
-      for (let i = startPage; i <= endPage; i++) {
-        pageNumbers.push(i);
-      }
-      
-      // 끝 페이지가 totalPages가 아니면 줄임표와 마지막 페이지 추가
-      if (endPage < totalPages) {
-        if (endPage < totalPages - 1) pageNumbers.push("...");
+        pageNumbers.push("...");
+        for (let i = totalPages - 3; i <= totalPages; i++) {
+          pageNumbers.push(i);
+        }
+      } else {
+        // 중간 페이지인 경우 현재 페이지 중심으로 표시
+        pageNumbers.push(1);
+        pageNumbers.push("...");
+
+        // 현재 페이지 주변 표시
+        if (currentPage === 3) {
+          // 3페이지인 경우 2, 3, 4 표시
+          pageNumbers.push(2);
+          pageNumbers.push(3);
+          pageNumbers.push(4);
+        } else if (currentPage === totalPages - 2) {
+          // 뒤에서 3번째인 경우
+          pageNumbers.push(totalPages - 3);
+          pageNumbers.push(totalPages - 2);
+          pageNumbers.push(totalPages - 1);
+        } else {
+          // 그 외의 경우 현재 페이지와 주변 1개씩 표시
+          pageNumbers.push(currentPage - 1);
+          pageNumbers.push(currentPage);
+          pageNumbers.push(currentPage + 1);
+        }
+
+        pageNumbers.push("...");
         pageNumbers.push(totalPages);
       }
     }
-    
+
     return pageNumbers;
   };
 
@@ -132,8 +146,8 @@ export default function Home() {
 
       {/* 페이지네이션 UI */}
       {totalPages > 1 && (
-        <motion.div 
-          className="flex justify-center items-center gap-2 mt-8 py-4"
+        <motion.div
+          className="flex justify-center items-center gap-1 sm:gap-2 mt-8 py-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
@@ -143,35 +157,36 @@ export default function Home() {
             variant="outline"
             onClick={goToPrevPage}
             disabled={currentPage === 1}
-            className="px-3"
+            className="px-2 sm:px-3 h-8 w-8 sm:h-10 sm:w-auto"
             aria-label="이전 페이지"
           >
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              width="24" 
-              height="24" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="w-4 h-4"
             >
-              <path d="m15 18-6-6 6-6"/>
+              <path d="m15 18-6-6 6-6" />
             </svg>
+            <span className="hidden sm:inline ml-1">이전</span>
           </Button>
 
           {/* 페이지 번호 버튼들 */}
           {getPageNumbers().map((pageNum, index) => (
             pageNum === "..." ? (
-              <span key={`ellipsis-${index}`} className="px-2">...</span>
+              <span key={`ellipsis-${index}`} className="px-1 sm:px-2 text-sm">...</span>
             ) : (
               <Button
                 key={`page-${pageNum}`}
                 variant={currentPage === pageNum ? "default" : "outline"}
                 onClick={() => goToPage(pageNum as number)}
-                className="w-10 h-10"
+                className="w-8 h-8 sm:w-10 sm:h-10 text-sm sm:text-base"
                 aria-label={`${pageNum}페이지로 이동`}
                 aria-current={currentPage === pageNum ? "page" : undefined}
               >
@@ -185,22 +200,23 @@ export default function Home() {
             variant="outline"
             onClick={goToNextPage}
             disabled={currentPage === totalPages}
-            className="px-3"
+            className="px-2 sm:px-3 h-8 w-8 sm:h-10 sm:w-auto"
             aria-label="다음 페이지"
           >
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              width="24" 
-              height="24" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
+            <span className="hidden sm:inline mr-1">다음</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="w-4 h-4"
             >
-              <path d="m9 18 6-6-6-6"/>
+              <path d="m9 18 6-6-6-6" />
             </svg>
           </Button>
         </motion.div>
