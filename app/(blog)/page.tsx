@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { Post } from "@/lib/posts";
 
 // 페이지당 포스트 수 정의
-const POSTS_PER_PAGE = 8;
+const POSTS_PER_PAGE = 6;
 
 export default function Home() {
   // 상태 타입 정의

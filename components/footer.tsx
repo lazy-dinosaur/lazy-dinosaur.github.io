@@ -18,7 +18,7 @@ export default function Footer() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
-          className="fixed bottom-0 py-6 border-border/60 hidden xl:block w-full"
+          className="fixed bottom-0 py-6 border-border/60 hidden xl:block w-full md:px-5"
         >
           {/* 소셜 링크 */}
           <div className="flex items-center justify-end gap-4 mb-4 max-w-screen-2xl mx-auto">
