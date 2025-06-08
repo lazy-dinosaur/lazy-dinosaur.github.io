@@ -516,73 +516,95 @@ export default function Header() {
 
             <ScrollArea className="h-full max-h-[50vh] sm:max-h-[300px]">
               <CommandList className="px-2 py-3 max-h-full">
-                <CommandEmpty className="py-6 text-center">
-                  <div className="flex flex-col items-center gap-2">
+                {/* 검색어가 없을 때 */}
+                {!searchQuery.trim() && (
+                  <div className="py-6 text-center">
                     <motion.div
                       initial={{ scale: 0 }}
-                      animate={{ scale: 1, rotate: [0, 10, 0] }}
-                      transition={{ duration: 0.5, type: "spring" }}
-                      className="text-muted-foreground/50 text-xl mb-2"
+                      animate={{ scale: 1 }}
+                      transition={{ duration: 0.3, type: "spring" }}
+                      className="text-muted-foreground/50 text-2xl mb-3"
                     >
-                      😕
+                      🔍
                     </motion.div>
-                    <p className="text-sm text-muted-foreground">
-                      No results found.
+                    <p className="text-sm text-muted-foreground font-medium">
+                      검색어를 입력하세요
                     </p>
-                    <p className="text-xs text-muted-foreground/70">
-                      Try searching with different keywords
+                    <p className="text-xs text-muted-foreground/70 mt-1">
+                      포스트 제목, 내용, 태그로 검색할 수 있습니다
                     </p>
                   </div>
-                </CommandEmpty>
+                )}
 
-                <CommandGroup
-                  heading={
-                    getCurrentResults().length > 0
-                      ? `${activeTab} 검색 결과 (${getCurrentResults().length})`
-                      : "Posts"
-                  }
-                  className="text-xs font-medium text-primary/80 px-2"
-                >
-                  {getCurrentResults().map((result) => (
-                    <CommandItem
-                      key={result.post.urlPath}
-                      value={`${result.post.title} ${disassemble(result.post.title)} ${result.post.tags.join(" ")}`}
-                      onSelect={() => {
-                        router.push(`/posts/${result.post.urlPath}`);
-                        setOpen(false);
-                      }}
-                      className="cursor-pointer aria-selected:bg-primary/10 aria-selected:text-primary rounded-md mb-1 border border-transparent hover:border-border/40"
-                    >
-                      <div className="py-1 sm:py-2">
-                        <h3 className="text-sm sm:text-base font-medium">
-                          {renderHighlightedText(result.post.title, searchQuery)}
-                        </h3>
-                        <p className="text-xs sm:text-sm text-muted-foreground line-clamp-1">
-                          {result.matchedIn.has('content') && searchQuery ?
-                            renderHighlightedText(
-                              result.post.summary,
-                              searchQuery
-                            ) :
-                            result.post.summary
-                          }
-                        </p>
-                        <div className="mt-1 flex gap-2">
-                          {result.post.tags.map((tag) => (
-                            <Badge
-                              key={tag}
-                              className="text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full"
-                            >
-                              #{result.matchedIn.has('tag') && searchQuery ?
-                                renderHighlightedText(tag, searchQuery) :
-                                tag
-                              }
-                            </Badge>
-                          ))}
+                {/* 검색어가 있지만 결과가 없을 때 */}
+                {searchQuery.trim() && getCurrentResults().length === 0 && (
+                  <CommandEmpty className="py-6 text-center">
+                    <div className="flex flex-col items-center gap-2">
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1, rotate: [0, 10, 0] }}
+                        transition={{ duration: 0.5, type: "spring" }}
+                        className="text-muted-foreground/50 text-xl mb-2"
+                      >
+                        😕
+                      </motion.div>
+                      <p className="text-sm text-muted-foreground">
+                        검색 결과가 없습니다
+                      </p>
+                      <p className="text-xs text-muted-foreground/70">
+                        다른 키워드로 검색해보세요
+                      </p>
+                    </div>
+                  </CommandEmpty>
+                )}
+
+                {/* 검색 결과가 있을 때 */}
+                {searchQuery.trim() && getCurrentResults().length > 0 && (
+                  <CommandGroup
+                    heading={`${activeTab} 검색 결과 (${getCurrentResults().length})`}
+                    className="text-xs font-medium text-primary/80 px-2"
+                  >
+                    {getCurrentResults().map((result) => (
+                      <CommandItem
+                        key={result.post.urlPath}
+                        value={`${result.post.title} ${disassemble(result.post.title)} ${result.post.tags.join(" ")}`}
+                        onSelect={() => {
+                          router.push(`/posts/${result.post.urlPath}`);
+                          setOpen(false);
+                        }}
+                        className="cursor-pointer aria-selected:bg-primary/10 aria-selected:text-primary rounded-md mb-1 border border-transparent hover:border-border/40"
+                      >
+                        <div className="py-1 sm:py-2">
+                          <h3 className="text-sm sm:text-base font-medium">
+                            {renderHighlightedText(result.post.title, searchQuery)}
+                          </h3>
+                          <p className="text-xs sm:text-sm text-muted-foreground line-clamp-1">
+                            {result.matchedIn.has('content') && searchQuery ?
+                              renderHighlightedText(
+                                result.post.summary,
+                                searchQuery
+                              ) :
+                              result.post.summary
+                            }
+                          </p>
+                          <div className="mt-1 flex gap-2">
+                            {result.post.tags.map((tag) => (
+                              <Badge
+                                key={tag}
+                                className="text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full"
+                              >
+                                #{result.matchedIn.has('tag') && searchQuery ?
+                                  renderHighlightedText(tag, searchQuery) :
+                                  tag
+                                }
+                              </Badge>
+                            ))}
+                          </div>
                         </div>
-                      </div>
-                    </CommandItem>
-                  ))}
-                </CommandGroup>
+                      </CommandItem>
+                    ))}
+                  </CommandGroup>
+                )}
               </CommandList>
             </ScrollArea>
           </Command>
