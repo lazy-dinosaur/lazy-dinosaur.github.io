@@ -8,7 +8,7 @@ import { Post } from "@/lib/posts";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { MobileTableOfContents } from "@/components/mobile-toc";
+import { MobileSidebarSheet } from "@/components/mobile-sidebar-sheet";
 import type { TOCItem } from "@/components/table-of-contents";
 
 interface PostContentProps {
@@ -134,7 +134,7 @@ export default function PostContent({
         </div>
       </div>
       <ScrollToTop />
-      <MobileTableOfContents headings={headings} />
+      <MobileSidebarSheet headings={headings} />
     </>
   );
 }
