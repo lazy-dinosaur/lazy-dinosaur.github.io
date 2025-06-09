@@ -89,7 +89,7 @@ const TreeNode = memo(function TreeNode({
   const paddingLeft = level * 16; // px 문자열 대신 숫자로
   const linkClassName = cn(
     "flex items-center gap-2 text-sm font-medium transition-colors duration-150",
-    "w-full py-1.5 rounded-md relative",
+    "w-full p-1.5 rounded-md relative",
     "hover:bg-accent/50",
     (paths.isFileActive || paths.isFolderActive) && "bg-primary/10 text-primary font-semibold"
   );
