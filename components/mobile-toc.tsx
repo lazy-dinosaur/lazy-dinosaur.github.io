@@ -5,7 +5,6 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sh
 import TableOfContents from "@/components/table-of-contents";
 import type { TOCItem } from "@/components/table-of-contents";
 import { List } from "lucide-react";
-import { useIsMobile } from "@/hooks/use-mobile";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface MobileTableOfContentsProps {
@@ -16,16 +15,13 @@ export function MobileTableOfContents({ headings }: MobileTableOfContentsProps) 
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isAtBottom, setIsAtBottom] = useState(false);
-  const isMobile = useIsMobile();
-
+  const [isInitialized, setIsInitialized] = useState(false);
   useEffect(() => {
-    // 모바일에서만 표시
-    if (!isMobile || headings.length === 0) {
+    // 헤딩이 없으면 표시 안함
+    if (headings.length === 0) {
       setIsVisible(false);
       return;
     }
-
-    setIsVisible(true);
 
     // 스크롤 시 버튼 표시/숨김 처리
     const handleScroll = () => {
@@ -38,13 +34,19 @@ export function MobileTableOfContents({ headings }: MobileTableOfContentsProps) 
 
       // 페이지 하단 근처인지 확인 (100px 이내)
       setIsAtBottom(scrollTop + clientHeight >= scrollHeight - 100);
+      
+      // 초기화 완료 표시
+      if (!isInitialized) {
+        setIsInitialized(true);
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // 초기 상태 설정
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isMobile, headings.length]);
+  }, [headings.length]);
 
-  if (!isMobile || headings.length === 0) return null;
+  if (headings.length === 0) return null;
 
   return (
     <>
@@ -53,13 +55,17 @@ export function MobileTableOfContents({ headings }: MobileTableOfContentsProps) 
         {isVisible && (
           <motion.button
             onClick={() => setIsOpen(true)}
-            className="fixed rounded-full p-2 bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 transition-colors z-40 right-6"
+            className="fixed rounded-full p-2 bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 transition-colors z-40 right-6 xl:hidden"
             aria-label="목차 열기"
-            initial={{ opacity: 0, scale: 0.5 }}
+            initial={{ 
+              opacity: 0, 
+              scale: 0.5,
+              bottom: isAtBottom ? "14rem" : "8.5rem"
+            }}
             animate={{
               opacity: 1,
               scale: 1,
-              bottom: isAtBottom ? "10.5rem" : "4.5rem"
+              bottom: isAtBottom ? "14rem" : "8.5rem"
             }}
             exit={{ opacity: 0, scale: 0.5 }}
             whileHover={{ scale: 1.1 }}

@@ -233,8 +233,8 @@ export default function TableOfContents({ className, headings: propHeadings, onI
       setClickedId(id);
       setActiveId(id);
       
-      // URL 해시 업데이트
-      window.history.pushState(null, "", `#${id}`);
+      // URL 해시 업데이트 - replaceState를 사용하여 히스토리에 추가하지 않음
+      window.history.replaceState(null, "", `#${id}`);
 
       // 부드러운 스크롤 - 헤더 높이 고려
       const scrollOffset = getHeaderHeight() + 20;
