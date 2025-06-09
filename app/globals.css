@@ -147,6 +147,11 @@
     @apply border-border outline-ring/50;
   }
   
+  /* 스크롤바 공간 예약 */
+  html {
+    scrollbar-gutter: stable;
+  }
+  
   /* 사파리 폰트 호환성 향상을 위한 폰트 스택 */
   body {
     font-family: var(--font-noto-sans-kr), "Noto Sans KR", var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
