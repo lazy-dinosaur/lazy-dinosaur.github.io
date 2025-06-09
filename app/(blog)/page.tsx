@@ -127,25 +127,59 @@ export default function Home() {
       />
 
       {/* 포스트 그리드 */}
-      <PostGrid key={`post-grid-page-${currentPage}`}>
-        {displayedPosts.map((post, index) => (
-          <PostItem key={`${currentPage}-${post.urlPath}`} index={index}>
-            <PostCard
-              urlPath={post.urlPath}
-              title={post.title}
-              summary={post.summary}
-              content={post.content}
-              plainContent={post.plainContent}
-              image={post.image}
-              tags={post.tags}
-              createdAt={post.createdAt}
-            />
-          </PostItem>
-        ))}
-      </PostGrid>
+      {displayedPosts.length > 0 ? (
+        <PostGrid key={`post-grid-page-${currentPage}`}>
+          {displayedPosts.map((post, index) => (
+            <PostItem key={`${currentPage}-${post.urlPath}`} index={index}>
+              <PostCard
+                urlPath={post.urlPath}
+                title={post.title}
+                summary={post.summary}
+                content={post.content}
+                plainContent={post.plainContent}
+                image={post.image}
+                tags={post.tags}
+                createdAt={post.createdAt}
+              />
+            </PostItem>
+          ))}
+        </PostGrid>
+      ) : posts.length > 0 ? (
+        <PostGrid>
+          {[...Array(POSTS_PER_PAGE)].map((_, index) => (
+            <PostItem key={`skeleton-${index}`} index={index}>
+              <motion.div
+                className="bg-card rounded-lg p-6 h-[300px] relative overflow-hidden"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+              >
+                {/* 스켈레톤 효과 */}
+                <div className="absolute inset-0 -translate-x-full animate-[shimmer_2s_infinite]">
+                  <div className="h-full w-1/2 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                </div>
+
+                {/* 스켈레톤 컨텐츠 */}
+                <div className="space-y-4">
+                  <div className="h-32 bg-muted/50 rounded animate-pulse" />
+                  <div className="space-y-2">
+                    <div className="h-4 bg-muted/50 rounded w-3/4 animate-pulse" />
+                    <div className="h-4 bg-muted/50 rounded w-full animate-pulse" />
+                    <div className="h-4 bg-muted/50 rounded w-5/6 animate-pulse" />
+                  </div>
+                  <div className="flex gap-2">
+                    <div className="h-6 w-16 bg-muted/50 rounded-full animate-pulse" />
+                    <div className="h-6 w-20 bg-muted/50 rounded-full animate-pulse" />
+                  </div>
+                </div>
+              </motion.div>
+            </PostItem>
+          ))}
+        </PostGrid>
+      ) : null}
 
       {/* 페이지네이션 UI */}
-      {totalPages > 1 && (
+      {totalPages > 1 && displayedPosts.length > 0 && (
         <motion.div
           className="flex justify-center items-center gap-1 sm:gap-2 mt-8 py-4"
           initial={{ opacity: 0, y: 20 }}
@@ -224,8 +258,16 @@ export default function Home() {
 
       {/* 현재 페이지 정보 */}
       <div className="text-center text-sm text-muted-foreground">
-        {posts.length > 0 ? (
-          <p>총 {posts.length}개의 포스트 중 {(currentPage - 1) * POSTS_PER_PAGE + 1}-{Math.min(currentPage * POSTS_PER_PAGE, posts.length)}번째 포스트</p>
+        {posts.length > 0 && displayedPosts.length > 0 ? (
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            총 {posts.length}개의 포스트 중 {(currentPage - 1) * POSTS_PER_PAGE + 1}-{Math.min(currentPage * POSTS_PER_PAGE, posts.length)}번째 포스트
+          </motion.p>
+        ) : posts.length > 0 ? (
+          <></>
         ) : (
           <p>포스트가 없습니다.</p>
         )}

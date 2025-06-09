@@ -238,6 +238,16 @@
 
 /* 타이포그래피 시스템 */
 @layer utilities {
+  /* Shimmer 애니메이션 */
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(200%);
+    }
+  }
+  
   /* 글꼴 크기 계층 구조 */
   .text-hierarchy-h1 {
     @apply text-xl sm:text-2xl lg:text-3xl font-bold;
