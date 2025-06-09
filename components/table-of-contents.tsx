@@ -80,85 +80,87 @@ export default function TableOfContents({ className }: TableOfContentsProps) {
     };
   }, [pathname]);
 
-  // IntersectionObserver 설정
+  // 스크롤 기반 활성화 로직 (IntersectionObserver 대신)
   useEffect(() => {
     if (headings.length === 0) return;
 
-    // 기존 observer 정리
-    if (observerRef.current) {
-      observerRef.current.disconnect();
-    }
+    let rafId: number | null = null;
+    let lastActiveId = '';
+    let debounceTimer: NodeJS.Timeout | null = null;
 
-    // 새로운 observer 생성
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // 화면에 보이는 헤딩들 찾기
-        const visibleHeadings = entries
-          .filter((entry) => entry.isIntersecting)
-          .map((entry) => ({
-            id: entry.target.id,
-            y: entry.boundingClientRect.y,
-          }))
-          .sort((a, b) => a.y - b.y);
-
-        if (visibleHeadings.length > 0) {
-          // 가장 위에 있는 헤딩을 활성화
-          setActiveId(visibleHeadings[0].id);
-        } else {
-          // 보이는 헤딩이 없으면 현재 스크롤 위치 위에 있는 가장 가까운 헤딩 활성화
-          const scrollTop = window.scrollY;
-          let closestHeading = headings[0];
-          
-          for (const heading of headings) {
-            const element = document.getElementById(heading.id);
-            if (element && element.offsetTop <= scrollTop + 150) {
-              closestHeading = heading;
-            } else {
-              break;
-            }
-          }
-          
-          setActiveId(closestHeading.id);
-        }
-      },
-      {
-        rootMargin: "-100px 0px -70% 0px",
-        threshold: [0, 0.5, 1.0],
-      }
-    );
-
-    // 모든 헤딩 관찰
-    headings.forEach((heading) => {
-      const element = document.getElementById(heading.id);
-      if (element) {
-        observer.observe(element);
-      }
-    });
-
-    observerRef.current = observer;
-
-    // 초기 상태 설정
-    const handleInitialScroll = () => {
+    const updateActiveHeading = () => {
       const scrollTop = window.scrollY;
-      let activeHeading = headings[0];
+      const viewportHeight = window.innerHeight;
       
-      for (const heading of headings) {
-        const element = document.getElementById(heading.id);
-        if (element && element.offsetTop <= scrollTop + 150) {
-          activeHeading = heading;
+      // 뷰포트의 상단 30% 지점을 기준으로 설정
+      const activationPoint = scrollTop + viewportHeight * 0.3;
+      
+      let newActiveId = '';
+      
+      // 각 헤딩의 위치와 다음 헤딩까지의 영역을 확인
+      for (let i = 0; i < headings.length; i++) {
+        const element = document.getElementById(headings[i].id);
+        if (!element) continue;
+        
+        const elementTop = element.offsetTop;
+        const nextElement = i < headings.length - 1 ? 
+          document.getElementById(headings[i + 1].id) : null;
+        const elementBottom = nextElement ? 
+          nextElement.offsetTop : document.body.scrollHeight;
+        
+        // 활성화 지점이 현재 섹션 내에 있는지 확인
+        if (activationPoint >= elementTop && activationPoint < elementBottom) {
+          newActiveId = headings[i].id;
+          break;
         }
       }
       
-      setActiveId(activeHeading.id);
+      // 스크롤이 최상단 근처인 경우 첫 번째 헤딩 활성화
+      if (!newActiveId && scrollTop < 100) {
+        newActiveId = headings[0]?.id || '';
+      }
+      
+      // 스크롤이 최하단인 경우 마지막 헤딩 활성화
+      if (!newActiveId && scrollTop + viewportHeight >= document.body.scrollHeight - 50) {
+        newActiveId = headings[headings.length - 1]?.id || '';
+      }
+      
+      // 활성 ID가 변경된 경우에만 업데이트 (깜빡임 방지)
+      if (newActiveId && newActiveId !== lastActiveId) {
+        lastActiveId = newActiveId;
+        
+        // 디바운싱을 통해 빠른 스크롤 시 안정성 향상
+        if (debounceTimer) clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+          setActiveId(newActiveId);
+        }, 50);
+      }
     };
 
-    // 약간의 지연 후 초기 상태 설정
-    const timer = setTimeout(handleInitialScroll, 100);
+    const handleScroll = () => {
+      if (rafId !== null) return;
+      
+      rafId = requestAnimationFrame(() => {
+        updateActiveHeading();
+        rafId = null;
+      });
+    };
 
+    // 초기 상태 설정
+    updateActiveHeading();
+    
+    // 스크롤 이벤트 리스너
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
+    
     return () => {
-      clearTimeout(timer);
-      if (observerRef.current) {
-        observerRef.current.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
+      }
+      if (debounceTimer) {
+        clearTimeout(debounceTimer);
       }
     };
   }, [headings]);
@@ -167,7 +169,7 @@ export default function TableOfContents({ className }: TableOfContentsProps) {
   useEffect(() => {
     const hash = window.location.hash.slice(1);
     if (hash && headings.some((h) => h.id === hash)) {
-      setActiveId(hash);
+      // setActiveId(hash); 제거 - 스크롤 이벤트가 자연스럽게 처리하도록
       // 해당 요소로 스크롤
       setTimeout(() => {
         const element = document.getElementById(hash);
@@ -192,7 +194,7 @@ export default function TableOfContents({ className }: TableOfContentsProps) {
         behavior: "smooth",
       });
       
-      setActiveId(id);
+      // setActiveId(id); 제거 - 스크롤 이벤트가 자연스럽게 처리하도록
     }
   }, []);
 
