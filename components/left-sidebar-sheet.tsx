@@ -4,11 +4,12 @@ import { DialogTitle, DialogDescription } from "@radix-ui/react-dialog";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { TreeView } from "./tree-view";
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { usePosts } from "@/contexts/posts-context";
 import { buildFolderStructure } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
 
 export default function LeftSidebarSheet() {
   const { posts } = usePosts();
@@ -99,6 +100,20 @@ export default function LeftSidebarSheet() {
                 data={folderStructure}
                 onNodeClick={() => setOpen(false)}
               />
+              
+              {/* 최근 게시물 섹션 */}
+              <div className="mt-6 px-1 sm:px-2">
+                <h2 className="text-lg font-semibold mb-3">최근 게시물</h2>
+                <RecentPostsSection pathname={pathname} onClose={() => setOpen(false)} />
+              </div>
+              
+              {/* 인기 태그 섹션 */}
+              <div className="mt-6 px-1 sm:px-2">
+                <h2 className="text-lg font-semibold mb-3">인기 태그</h2>
+                <div className="flex flex-wrap gap-1.5">
+                  <PopularTagsSection />
+                </div>
+              </div>
             </div>
 
             {/* 푸터 정보 */}
@@ -177,5 +192,95 @@ export default function LeftSidebarSheet() {
         </div>
       </SheetContent>
     </Sheet>
+  );
+}
+
+// 최근 게시물 섹션 컴포넌트
+function RecentPostsSection({ pathname, onClose }: { pathname: string; onClose: () => void }) {
+  const { posts } = usePosts();
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  
+  const recentPosts = posts.slice(0, 5);
+  const isInsidePostPage = pathname.startsWith("/posts/");
+  
+  return (
+    <div className="space-y-2">
+      {recentPosts.map((post, index) => {
+        const isActive = mounted && isInsidePostPage && pathname === `/posts/${post.urlPath}`;
+        
+        return (
+          <Link
+            key={post.urlPath}
+            href={`/posts/${post.urlPath}`}
+            onClick={onClose}
+            className={`block p-2 rounded-md transition-colors ${
+              isActive
+                ? "bg-primary/10 text-primary font-medium"
+                : "hover:bg-accent/50"
+            }`}
+          >
+            <div className="flex items-start gap-2">
+              {isActive && (
+                <div className="w-1 h-full bg-primary rounded-full mt-1" />
+              )}
+              <div className="flex-1 min-w-0">
+                <h3 className="text-sm font-medium truncate">{post.title}</h3>
+                <p className="text-xs text-muted-foreground">
+                  {new Date(post.createdAt).toLocaleDateString("ko-KR", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </p>
+              </div>
+            </div>
+          </Link>
+        );
+      })}
+    </div>
+  );
+}
+
+// 인기 태그 섹션 컴포넌트
+function PopularTagsSection() {
+  const { posts } = usePosts();
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  
+  const sortedTags = useMemo(() => {
+    const tagCount: Record<string, number> = {};
+    posts.forEach((post) => {
+      post.tags.forEach((tag) => {
+        tagCount[tag] = (tagCount[tag] || 0) + 1;
+      });
+    });
+    
+    return Object.entries(tagCount)
+      .sort(([, countA], [, countB]) => countB - countA)
+      .slice(0, 10)
+      .map(([tag]) => tag);
+  }, [posts]);
+  
+  if (!mounted) return null;
+  
+  return (
+    <>
+      {sortedTags.map((tag, index) => (
+        <Badge
+          key={tag}
+          variant="outline"
+          className="text-xs hover:bg-primary hover:text-primary-foreground px-2 py-1"
+        >
+          #{tag}
+        </Badge>
+      ))}
+    </>
   );
 }

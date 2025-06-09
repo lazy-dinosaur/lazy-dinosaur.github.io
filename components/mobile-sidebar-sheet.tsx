@@ -102,31 +102,32 @@ export function MobileSidebarSheet({ headings }: MobileSidebarSheetProps) {
           className="h-[70vh] rounded-t-2xl overflow-hidden"
         >
           <SheetHeader className="mb-4">
-            <SheetTitle>메뉴</SheetTitle>
+            <SheetTitle>{isPostPage && headings.length > 0 ? "목차" : "메뉴"}</SheetTitle>
           </SheetHeader>
           <div className="h-[calc(100%-4rem)] overflow-y-auto custom-scrollbar">
-            {/* 포스트 페이지에서만 목차 표시 */}
-            {isPostPage && headings.length > 0 && (
-              <div className="mb-6">
-                <TableOfContents
-                  headings={headings}
-                  onItemClick={() => setIsOpen(false)}
-                  className="h-auto"
-                />
-              </div>
-            )}
-            
-            {/* 최근 게시물 */}
-            <SidebarSection title="최근 게시물">
-              <RecentPosts onItemClick={() => setIsOpen(false)} />
-            </SidebarSection>
+            {/* 포스트 페이지에서는 목차만 표시 */}
+            {isPostPage && headings.length > 0 ? (
+              <TableOfContents
+                headings={headings}
+                onItemClick={() => setIsOpen(false)}
+                className="h-auto"
+              />
+            ) : (
+              <>
+                {/* 포스트 페이지가 아닐 때는 최근 게시물과 인기 태그 표시 */}
+                {/* 최근 게시물 */}
+                <SidebarSection title="최근 게시물">
+                  <RecentPosts onItemClick={() => setIsOpen(false)} />
+                </SidebarSection>
 
-            {/* 인기 태그 */}
-            <SidebarSection title="인기 태그">
-              <div className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-3 px-1.5">
-                <PopularTags />
-              </div>
-            </SidebarSection>
+                {/* 인기 태그 */}
+                <SidebarSection title="인기 태그">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-3 px-1.5">
+                    <PopularTags />
+                  </div>
+                </SidebarSection>
+              </>
+            )}
           </div>
         </SheetContent>
       </Sheet>
