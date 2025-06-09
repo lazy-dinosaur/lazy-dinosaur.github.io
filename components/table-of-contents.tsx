@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
@@ -18,7 +18,6 @@ interface TableOfContentsProps {
 export default function TableOfContents({ className }: TableOfContentsProps) {
   const pathname = usePathname();
   const [activeId, setActiveId] = useState<string>("");
-  const observerRef = useRef<IntersectionObserver | null>(null);
   const [isExpanded, setIsExpanded] = useState(true);
 
   // 헤딩 상태 관리
@@ -216,9 +215,12 @@ export default function TableOfContents({ className }: TableOfContentsProps) {
       aria-label="목차"
       role="navigation"
     >
-      <div className="pt-2 pb-4">
-        <div className="flex items-center justify-between mb-4">
-          <h4 className="text-hierarchy-h4">목차</h4>
+      <div className="mb-6 sm:mb-8 md:mb-10">
+        <h2 className="text-base 2xl:text-lg font-semibold mb-3 sm:mb-4 md:mb-5 px-2 sm:px-3 pb-2 border-b border-border/50 flex items-center justify-between transition-colors">
+          <div className="flex items-center">
+            <span className="w-1 h-4 bg-primary rounded-full mr-2 opacity-60" />
+            목차
+          </div>
           <button
             onClick={() => setIsExpanded(!isExpanded)}
             className="p-1 hover:bg-accent rounded-md transition-colors"
@@ -227,7 +229,7 @@ export default function TableOfContents({ className }: TableOfContentsProps) {
           >
             <svg
               className={cn(
-                "w-4 h-4 transition-transform",
+                "w-4 h-4 transition-transform text-muted-foreground",
                 isExpanded ? "rotate-180" : ""
               )}
               fill="none"
@@ -242,7 +244,7 @@ export default function TableOfContents({ className }: TableOfContentsProps) {
               />
             </svg>
           </button>
-        </div>
+        </h2>
         
         <motion.div
           initial={false}
@@ -251,29 +253,29 @@ export default function TableOfContents({ className }: TableOfContentsProps) {
             opacity: isExpanded ? 1 : 0,
           }}
           transition={{ duration: 0.2, ease: "easeInOut" }}
-          className="overflow-hidden"
+          className="overflow-hidden px-1 sm:px-2"
         >
-          <ul role="list" className="space-y-1 text-sm">
-            {headings.map((heading) => {
+          <ul role="list" className="space-y-1">
+            {headings.map((heading, index) => {
               const isActive = heading.id === activeId;
               
               return (
-                <li
+                <motion.li
                   key={heading.id}
                   role="listitem"
                   style={{ paddingLeft: `${(heading.level - 1) * 12}px` }}
                   className="relative"
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.15, delay: index * 0.02 }}
                 >
                   {isActive && (
                     <motion.span
-                      layoutId="activeIndicator"
-                      className="absolute left-0 top-0 bottom-0 w-0.5 bg-primary rounded-full"
-                      initial={false}
-                      transition={{
-                        type: "spring",
-                        stiffness: 500,
-                        damping: 30,
-                      }}
+                      layoutId="toc-active-indicator"
+                      className="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.2 }}
                     />
                   )}
                   
@@ -281,35 +283,34 @@ export default function TableOfContents({ className }: TableOfContentsProps) {
                     onClick={() => handleClick(heading.id)}
                     onKeyDown={(e) => handleKeyDown(e, heading.id)}
                     className={cn(
-                      "block w-full text-left py-1 px-2 rounded-md transition-all duration-200",
-                      "focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
+                      "block w-full text-left text-sm py-0.5 px-2.5 rounded-md transition-all duration-200 relative overflow-hidden group",
                       isActive
-                        ? "text-primary font-medium bg-primary/10"
-                        : "text-muted-foreground hover:text-foreground hover:bg-accent"
+                        ? "text-primary bg-primary/10 font-medium"
+                        : "text-muted-foreground hover:bg-accent hover:text-primary"
                     )}
                     role="link"
                     aria-current={isActive ? "location" : undefined}
                     aria-label={`${heading.text}로 이동`}
                   >
-                    {heading.text}
+                    <span className="relative line-clamp-2">{heading.text}</span>
                   </button>
-                </li>
+                </motion.li>
               );
             })}
           </ul>
         </motion.div>
         
         {/* 진행률 표시기 */}
-        <div className="mt-4 h-1 bg-muted rounded-full overflow-hidden">
+        <div className="mt-4 mx-1 sm:mx-2 h-0.5 bg-border/30 rounded-full overflow-hidden">
           <motion.div
-            className="h-full bg-primary"
+            className="h-full bg-primary/60"
             initial={{ width: "0%" }}
             animate={{
               width: activeId
                 ? `${((headings.findIndex((h) => h.id === activeId) + 1) / headings.length) * 100}%`
                 : "0%",
             }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
           />
         </div>
       </div>
