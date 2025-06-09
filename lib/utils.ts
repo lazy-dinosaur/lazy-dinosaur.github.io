@@ -43,6 +43,16 @@ export function isGifFile(url: string): boolean {
   return lowercaseUrl.endsWith('.gif');
 }
 
+// 헤딩 ID 생성을 위한 공통 함수
+export function generateHeadingId(text: string, level: number): string {
+  const prefix = `h${level}-`;
+  const slug = text
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w\-가-힣]/g, ''); // 한글 지원
+  return `${prefix}${slug}`;
+}
+
 export function buildFolderStructure(posts: Post[]): FolderStructure[] {
   const structure: FolderStructure[] = [];
   const sortedPosts = [...posts].sort((a, b) => a.urlPath.localeCompare(b.urlPath));

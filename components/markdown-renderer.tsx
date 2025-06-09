@@ -9,6 +9,7 @@ import CodeBlock from "./code-block";
 import { motion } from "framer-motion";
 import remarkCallout from "@r4ai/remark-callout";
 import remarkGfm from "remark-gfm";
+import { generateHeadingId } from "@/lib/utils";
 
 export interface MarkdownRendererProps {
 	content: string;
@@ -152,14 +153,8 @@ export default function MarkdownRenderer({
 			</div>
 		),
 		h2: ({ children }: { children?: React.ReactNode }) => {
-			// 텍스트만 추출해서 id로 사용, 특수문자 제거하여 안전한 ID 생성
 			const headingText = children?.toString() || "heading";
-			const id =
-				"h2-" +
-				headingText
-					.toLowerCase()
-					.replace(/\s+/g, "-")
-					.replace(/[^\w\-]/g, "");
+			const id = generateHeadingId(headingText, 2);
 
 			// 현재 URL에서 # 이후의 앵커 부분 제외하고 기본 URL만 가져오기
 			const getBaseUrl = () => {
@@ -187,14 +182,8 @@ export default function MarkdownRenderer({
 			);
 		},
 		h3: ({ children }: { children?: React.ReactNode }) => {
-			// 텍스트만 추출하고 안전한 ID를 생성 - h3는 "h3-"로 시작하도록 prefix 추가
 			const headingText = children?.toString() || "heading";
-			const id =
-				"h3-" +
-				headingText
-					.toLowerCase()
-					.replace(/\s+/g, "-")
-					.replace(/[^\w\-]/g, "");
+			const id = generateHeadingId(headingText, 3);
 
 			// 현재 URL에서 # 이후의 앵커 부분 제외하고 기본 URL만 가져오기
 			const getBaseUrl = () => {
@@ -222,14 +211,8 @@ export default function MarkdownRenderer({
 			);
 		},
 		h4: ({ children }: { children?: React.ReactNode }) => {
-			// 텍스트만 추출하고 안전한 ID를 생성 - h4는 "h4-"로 시작하도록 prefix 추가
 			const headingText = children?.toString() || "heading";
-			const id =
-				"h4-" +
-				headingText
-					.toLowerCase()
-					.replace(/\s+/g, "-")
-					.replace(/[^\w\-]/g, "");
+			const id = generateHeadingId(headingText, 4);
 
 			// 현재 URL에서 # 이후의 앵커 부분 제외하고 기본 URL만 가져오기
 			const getBaseUrl = () => {

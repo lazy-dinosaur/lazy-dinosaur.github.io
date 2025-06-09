@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
@@ -17,227 +17,300 @@ interface TableOfContentsProps {
 
 export default function TableOfContents({ className }: TableOfContentsProps) {
   const pathname = usePathname();
-  const [headings, setHeadings] = useState<TOCItem[]>([]);
   const [activeId, setActiveId] = useState<string>("");
   const observerRef = useRef<IntersectionObserver | null>(null);
-  const headingRefs = useRef<Map<string, IntersectionObserverEntry>>(new Map());
+  const [isExpanded, setIsExpanded] = useState(true);
 
-  // 헤딩 요소 추출
+  // 헤딩 상태 관리
+  const [headings, setHeadings] = useState<TOCItem[]>([]);
+  
+  // 헤딩 요소 추출 - DOM이 완전히 로드된 후 실행
   useEffect(() => {
-    // 이전 headingRefs 초기화
-    headingRefs.current = new Map();
-    setActiveId("");
-
-    // h1, h2, h3, h4 + h2-, h3-, h4- 프리픽스가 있는 id도 포함하도록 쿼리 수정
-    const headingElements = document.querySelectorAll("h1, h2, h3, h4");
-
-    // 중복된 ID를 처리하기 위한 Set
-    const usedIds = new Set<string>();
-
-    const items: TOCItem[] = Array.from(headingElements)
-      .filter((el) => el.id && el.textContent?.trim()) // id가 있고 내용이 비어있지 않은 헤딩만 포함
-      .map((el, index) => {
-        let id = el.id;
-        
-        // ID가 이미 사용되었으면 고유 식별자 추가
-        if (usedIds.has(id)) {
-          id = `${id}-${index}`;
-          el.id = id; // DOM 요소의 ID도 업데이트
-        }
-
-        usedIds.add(id);
-
-        return {
-          id,
+    // DOM이 완전히 로드되었는지 확인하는 함수
+    const extractHeadings = () => {
+      const headingElements = document.querySelectorAll("h1, h2, h3, h4");
+      const items: TOCItem[] = Array.from(headingElements)
+        .filter((el) => el.id && el.textContent?.trim() && el.id !== "post-title")
+        .map((el) => ({
+          id: el.id,
           text: el.textContent?.trim() || "",
-          level: parseInt(el.tagName.substring(1)), // h1 -> 1, h2 -> 2, ...
-        };
-      })
-      .filter(item => item.text); // 빈 텍스트를 가진 항목 제외
-
-    setHeadings(items);
-
-    // observerRef가 있으면 연결 해제
-    if (observerRef.current) {
-      observerRef.current.disconnect();
-      observerRef.current = null;
-    }
+          level: parseInt(el.tagName.substring(1)),
+        }));
+      
+      setHeadings(items);
+    };
+    
+    // MutationObserver로 DOM 변경 감지
+    const observer = new MutationObserver((mutations) => {
+      // 헤딩 요소가 추가되었는지 확인
+      const hasHeadingChanges = mutations.some(mutation => {
+        return Array.from(mutation.addedNodes).some(node => {
+          if (node.nodeType === Node.ELEMENT_NODE) {
+            const element = node as Element;
+            return element.matches('h1, h2, h3, h4') || 
+                   element.querySelector('h1, h2, h3, h4');
+          }
+          return false;
+        });
+      });
+      
+      if (hasHeadingChanges) {
+        extractHeadings();
+      }
+    });
+    
+    // 초기 실행을 지연시켜 DOM이 완전히 로드되도록 함
+    const initialTimer = setTimeout(extractHeadings, 50);
+    
+    // DOM 변경 감지 시작
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+    
+    // 추가적으로 여러 번 확인 (fallback)
+    const timer1 = setTimeout(extractHeadings, 200);
+    const timer2 = setTimeout(extractHeadings, 500);
+    
+    return () => {
+      observer.disconnect();
+      clearTimeout(initialTimer);
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
   }, [pathname]);
 
-  // IntersectionObserver는 사용하지 않고 직접 스크롤 이벤트로 계산하는 방식으로 변경
+  // IntersectionObserver 설정
   useEffect(() => {
     if (headings.length === 0) return;
 
-    // 기존 Observer가 있으면 연결 해제
+    // 기존 observer 정리
     if (observerRef.current) {
       observerRef.current.disconnect();
-      observerRef.current = null;
     }
 
-    // 헤딩 참조 초기화
-    headingRefs.current.clear();
+    // 새로운 observer 생성
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // 화면에 보이는 헤딩들 찾기
+        const visibleHeadings = entries
+          .filter((entry) => entry.isIntersecting)
+          .map((entry) => ({
+            id: entry.target.id,
+            y: entry.boundingClientRect.y,
+          }))
+          .sort((a, b) => a.y - b.y);
 
-    // 콘솔에 디버그 정보 출력
-    console.log(`Table of Contents: ${headings.length} headings found`);
+        if (visibleHeadings.length > 0) {
+          // 가장 위에 있는 헤딩을 활성화
+          setActiveId(visibleHeadings[0].id);
+        } else {
+          // 보이는 헤딩이 없으면 현재 스크롤 위치 위에 있는 가장 가까운 헤딩 활성화
+          const scrollTop = window.scrollY;
+          let closestHeading = headings[0];
+          
+          for (const heading of headings) {
+            const element = document.getElementById(heading.id);
+            if (element && element.offsetTop <= scrollTop + 150) {
+              closestHeading = heading;
+            } else {
+              break;
+            }
+          }
+          
+          setActiveId(closestHeading.id);
+        }
+      },
+      {
+        rootMargin: "-100px 0px -70% 0px",
+        threshold: [0, 0.5, 1.0],
+      }
+    );
+
+    // 모든 헤딩 관찰
+    headings.forEach((heading) => {
+      const element = document.getElementById(heading.id);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    observerRef.current = observer;
+
+    // 초기 상태 설정
+    const handleInitialScroll = () => {
+      const scrollTop = window.scrollY;
+      let activeHeading = headings[0];
+      
+      for (const heading of headings) {
+        const element = document.getElementById(heading.id);
+        if (element && element.offsetTop <= scrollTop + 150) {
+          activeHeading = heading;
+        }
+      }
+      
+      setActiveId(activeHeading.id);
+    };
+
+    // 약간의 지연 후 초기 상태 설정
+    const timer = setTimeout(handleInitialScroll, 100);
 
     return () => {
+      clearTimeout(timer);
       if (observerRef.current) {
         observerRef.current.disconnect();
-        observerRef.current = null;
       }
     };
+  }, [headings]);
+
+  // URL 해시 처리
+  useEffect(() => {
+    const hash = window.location.hash.slice(1);
+    if (hash && headings.some((h) => h.id === hash)) {
+      setActiveId(hash);
+      // 해당 요소로 스크롤
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+    }
   }, [headings, pathname]);
 
-  // 스크롤 이벤트 핸들러
-  const handleClick = (id: string) => {
+  // 클릭 핸들러 - useCallback으로 최적화
+  const handleClick = useCallback((id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      // URL 해시 업데이트
+      window.history.pushState(null, "", `#${id}`);
+      
+      // 부드러운 스크롤
+      const offsetTop = element.offsetTop - 100;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+      
       setActiveId(id);
     }
-  };
+  }, []);
 
-  // 스크롤 이벤트 감지
-  useEffect(() => {
-    // 문서가 완전히 로드되었는지 확인
-    if (typeof window === "undefined") return;
-
-    // 직접 요소의 가시성을 계산하는 함수
-    const calculateVisibility = () => {
-      // 현재 문서에 존재하는 모든 헤딩 요소 선택 (h1은 제목이므로 제외)
-      // 새로운 h2-, h3-, h4- 프리픽스가 있는 id도 가져오도록 수정
-      const headingElements = Array.from(
-        document.querySelectorAll("h2, h3, h4"),
-      ).filter((el) => 
-        el.id && 
-        el.id !== "post-title" && 
-        el.textContent?.trim()
-      );
-
-      if (headingElements.length === 0) return;
-
-      // 화면의 상단에서 어느 정도 아래 위치한 영역을 활성 영역으로 간주
-      // 이렇게 하면 스크롤 시 현재 읽고 있는 섹션이 활성화됨
-      const activeZoneTop = 100; // 화면 상단에서 100px 아래 위치
-      const activeZoneBottom = 300; // 화면 상단에서 300px 아래 위치
-
-      // 현재 활성 영역에 있는 헤딩 찾기
-      let activeHeading = null;
-      let closestHeadingAbove = null;
-      let closestDistanceAbove = Number.MAX_SAFE_INTEGER;
-
-      for (const el of headingElements) {
-        const rect = el.getBoundingClientRect();
-
-        // 활성 영역 내에 있는 헤딩
-        if (rect.top <= activeZoneBottom && rect.bottom >= activeZoneTop) {
-          activeHeading = el;
-          break;
-        }
-
-        // 활성 영역보다 위에 있는 가장 가까운 헤딩 찾기
-        if (rect.bottom < activeZoneTop) {
-          const distance = activeZoneTop - rect.bottom;
-          if (distance < closestDistanceAbove) {
-            closestDistanceAbove = distance;
-            closestHeadingAbove = el;
-          }
-        }
-      }
-
-      // 활성 영역에 헤딩이 있으면 그것을 활성화
-      if (activeHeading) {
-        setActiveId(activeHeading.id);
-      }
-      // 없으면 활성 영역 위에 있는 가장 가까운 헤딩 활성화
-      else if (closestHeadingAbove) {
-        setActiveId(closestHeadingAbove.id);
-      }
-      // 둘 다 없으면 첫 번째 헤딩 활성화
-      else if (headingElements.length > 0) {
-        setActiveId(headingElements[0].id);
-      }
-    };
-
-    // 스로틀링 함수 구현
-    function throttle<T extends (...args: unknown[]) => unknown>(
-      fn: T,
-      delay: number,
-    ): (...args: Parameters<T>) => ReturnType<T> | undefined {
-      let lastCall = 0;
-
-      return function (...args: Parameters<T>): ReturnType<T> | undefined {
-        const now = new Date().getTime();
-        if (now - lastCall < delay) return undefined;
-        lastCall = now;
-        return fn(...args) as ReturnType<T>;
-      };
+  // 키보드 네비게이션 처리
+  const handleKeyDown = useCallback((e: React.KeyboardEvent, id: string) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      handleClick(id);
     }
-
-    // 스로틀된 스크롤 핸들러
-    const handleScroll = throttle(() => {
-      requestAnimationFrame(calculateVisibility);
-    }, 100); // 100ms마다 최대 한 번만 실행
-
-    window.addEventListener("scroll", handleScroll);
-
-    // 초기 로딩 시 한 번 실행하여 현재 보이는 요소 표시
-    setTimeout(calculateVisibility, 300);
-
-    // 추가: 윈도우 리사이즈 시에도 계산
-    window.addEventListener("resize", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
-    };
-  }, [pathname]);
+  }, [handleClick]);
 
   if (headings.length === 0) {
     return null;
   }
 
   return (
-    <div className={cn("toc w-full", className)}>
+    <nav 
+      className={cn("toc w-full", className)}
+      aria-label="목차"
+      role="navigation"
+    >
       <div className="pt-2 pb-4">
-        <h4 className="text-hierarchy-h4 mb-4">목차</h4>
-        <nav className="toc">
-          <ul className="space-y-1 text-sm">
-            {headings.map((heading) => (
-              <li
-                key={heading.id}
-                style={{ paddingLeft: `${(heading.level - 2) * 12}px` }}
-                className={cn(
-                  "border-l-2 pl-2 py-1 transition-colors duration-200",
-                  heading.id === activeId
-                    ? "border-primary text-primary font-medium"
-                    : "border-muted hover:border-primary/50 text-muted-foreground hover:text-foreground",
-                )}
-              >
-                <button
-                  onClick={() => handleClick(heading.id)}
-                  className="block w-full text-left hover:text-primary transition-colors"
+        <div className="flex items-center justify-between mb-4">
+          <h4 className="text-hierarchy-h4">목차</h4>
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="p-1 hover:bg-accent rounded-md transition-colors"
+            aria-label={isExpanded ? "목차 접기" : "목차 펼치기"}
+            aria-expanded={isExpanded}
+          >
+            <svg
+              className={cn(
+                "w-4 h-4 transition-transform",
+                isExpanded ? "rotate-180" : ""
+              )}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+        </div>
+        
+        <motion.div
+          initial={false}
+          animate={{
+            height: isExpanded ? "auto" : 0,
+            opacity: isExpanded ? 1 : 0,
+          }}
+          transition={{ duration: 0.2, ease: "easeInOut" }}
+          className="overflow-hidden"
+        >
+          <ul role="list" className="space-y-1 text-sm">
+            {headings.map((heading) => {
+              const isActive = heading.id === activeId;
+              
+              return (
+                <li
+                  key={heading.id}
+                  role="listitem"
+                  style={{ paddingLeft: `${(heading.level - 1) * 12}px` }}
+                  className="relative"
                 >
-                  {heading.id === activeId && (
+                  {isActive && (
                     <motion.span
                       layoutId="activeIndicator"
-                      className="absolute left-0 w-0.5 h-5 bg-primary rounded-full"
+                      className="absolute left-0 top-0 bottom-0 w-0.5 bg-primary rounded-full"
                       initial={false}
                       transition={{
                         type: "spring",
-                        stiffness: 600,
-                        damping: 35,
-                        duration: 0.1
+                        stiffness: 500,
+                        damping: 30,
                       }}
                     />
                   )}
-                  {heading.text}
-                </button>
-              </li>
-            ))}
+                  
+                  <button
+                    onClick={() => handleClick(heading.id)}
+                    onKeyDown={(e) => handleKeyDown(e, heading.id)}
+                    className={cn(
+                      "block w-full text-left py-1 px-2 rounded-md transition-all duration-200",
+                      "focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
+                      isActive
+                        ? "text-primary font-medium bg-primary/10"
+                        : "text-muted-foreground hover:text-foreground hover:bg-accent"
+                    )}
+                    role="link"
+                    aria-current={isActive ? "location" : undefined}
+                    aria-label={`${heading.text}로 이동`}
+                  >
+                    {heading.text}
+                  </button>
+                </li>
+              );
+            })}
           </ul>
-        </nav>
+        </motion.div>
+        
+        {/* 진행률 표시기 */}
+        <div className="mt-4 h-1 bg-muted rounded-full overflow-hidden">
+          <motion.div
+            className="h-full bg-primary"
+            initial={{ width: "0%" }}
+            animate={{
+              width: activeId
+                ? `${((headings.findIndex((h) => h.id === activeId) + 1) / headings.length) * 100}%`
+                : "0%",
+            }}
+            transition={{ duration: 0.2 }}
+          />
+        </div>
       </div>
-    </div>
+    </nav>
   );
 }
