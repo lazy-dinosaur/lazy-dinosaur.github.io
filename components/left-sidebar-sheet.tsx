@@ -1,7 +1,6 @@
 "use client";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { DialogTitle, DialogDescription } from "@radix-ui/react-dialog";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { TreeView } from "./tree-view";
@@ -34,7 +33,7 @@ export default function LeftSidebarSheet() {
       >
         <div className="relative h-full">
           <div className="h-full p-3 sm:p-4 flex flex-col">
-            <ScrollArea className="flex-grow">
+            <div className="flex-grow overflow-y-auto">
               {/* 네비게이션 링크 추가 */}
               <div className="mb-6 px-1 sm:px-2">
                 <h2 className="text-lg font-semibold mb-3">메뉴</h2>
@@ -100,7 +99,7 @@ export default function LeftSidebarSheet() {
                 data={folderStructure}
                 onNodeClick={() => setOpen(false)}
               />
-            </ScrollArea>
+            </div>
 
             {/* 푸터 정보 */}
             <div className="py-6 border-t border-border/60">

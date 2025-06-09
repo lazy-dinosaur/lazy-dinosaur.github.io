@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import MarkdownRenderer from "@/components/markdown-renderer";
 import { BackToHomeButton } from "@/components/post-animation";
 import ScrollToTop from "@/components/scroll-to-top";
@@ -8,6 +8,8 @@ import { Post } from "@/lib/posts";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { MobileTableOfContents } from "@/components/mobile-toc";
+import type { TOCItem } from "@/components/table-of-contents";
 
 interface PostContentProps {
   content: string;
@@ -28,6 +30,24 @@ export default function PostContent({
   prevPost,
   nextPost,
 }: PostContentProps) {
+  const [headings, setHeadings] = useState<TOCItem[]>([]);
+
+  useEffect(() => {
+    const extractHeadings = () => {
+      const headingElements = document.querySelectorAll("h1, h2, h3, h4");
+      const items: TOCItem[] = Array.from(headingElements)
+        .filter((el) => el.id && el.textContent?.trim() && el.id !== "post-title")
+        .map((el) => ({
+          id: el.id,
+          text: el.textContent?.trim() || "",
+          level: parseInt(el.tagName.substring(1)),
+        }));
+      setHeadings(items);
+    };
+
+    const timer = setTimeout(extractHeadings, 100);
+    return () => clearTimeout(timer);
+  }, [content]);
   return (
     <>
       <div className="flex flex-col lg:flex-row gap-6">
@@ -114,6 +134,7 @@ export default function PostContent({
         </div>
       </div>
       <ScrollToTop />
+      <MobileTableOfContents headings={headings} />
     </>
   );
 }

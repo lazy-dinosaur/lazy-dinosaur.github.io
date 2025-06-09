@@ -37,16 +37,27 @@ export default function ScrollToTop() {
       {isVisible && (
         <motion.button
           onClick={scrollToTop}
-          className={`fixed rounded-full p-2 bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 transition-colors z-50 ${
-            isAtBottom ? "bottom-28" : "bottom-6"
-          } right-6`}
+          className="fixed rounded-full p-2 bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 transition-colors z-50 right-6"
           aria-label="Scroll to top"
           initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
+          animate={{ 
+            opacity: 1, 
+            scale: 1,
+            bottom: isAtBottom ? "7rem" : "1.5rem"
+          }}
           exit={{ opacity: 0, scale: 0.5 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          transition={{ type: "spring", stiffness: 500, damping: 20 }}
+          transition={{ 
+            type: "spring", 
+            stiffness: 500, 
+            damping: 20,
+            bottom: {
+              type: "spring",
+              stiffness: 300,
+              damping: 30
+            }
+          }}
         >
           <ArrowUp className="h-5 w-5" />
         </motion.button>

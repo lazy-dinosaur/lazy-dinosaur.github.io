@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 
-interface TOCItem {
+export interface TOCItem {
   id: string;
   text: string;
   level: number;
@@ -13,14 +13,19 @@ interface TOCItem {
 
 interface TableOfContentsProps {
   className?: string;
+  headings?: TOCItem[];
+  onItemClick?: () => void;
 }
 
-export default function TableOfContents({ className }: TableOfContentsProps) {
+export default function TableOfContents({ className, headings: propHeadings, onItemClick }: TableOfContentsProps) {
   const pathname = usePathname();
   const [activeId, setActiveId] = useState<string>("");
   const [isExpanded, setIsExpanded] = useState(true);
   const [isUserScrolling, setIsUserScrolling] = useState(false);
   const [clickedId, setClickedId] = useState<string | null>(null);
+  
+  // 모바일에서는 항상 펼쳐진 상태 유지
+  const isMobile = !!onItemClick;
 
   // 헤더 높이 계산 (responsive)
   const getHeaderHeight = useCallback(() => {
@@ -32,10 +37,15 @@ export default function TableOfContents({ className }: TableOfContentsProps) {
   }, []);
 
   // 헤딩 상태 관리
-  const [headings, setHeadings] = useState<TOCItem[]>([]);
+  const [headings, setHeadings] = useState<TOCItem[]>(propHeadings || []);
 
   // 헤딩 요소 추출 - DOM이 완전히 로드된 후 실행
   useEffect(() => {
+    // propHeadings가 제공된 경우 DOM 추출 스킵
+    if (propHeadings) {
+      setHeadings(propHeadings);
+      return;
+    }
     // DOM이 완전히 로드되었는지 확인하는 함수
     const extractHeadings = () => {
       const headingElements = document.querySelectorAll("h1, h2, h3, h4");
@@ -237,8 +247,13 @@ export default function TableOfContents({ className }: TableOfContentsProps) {
         top: targetPosition,
         behavior: "smooth",
       });
+      
+      // 모바일에서 시트 닫기를 위한 콜백
+      if (onItemClick) {
+        onItemClick();
+      }
     }
-  }, [getHeaderHeight]);
+  }, [getHeaderHeight, onItemClick]);
 
   // 키보드 네비게이션 처리
   const handleKeyDown = useCallback((e: React.KeyboardEvent, id: string) => {
@@ -264,29 +279,31 @@ export default function TableOfContents({ className }: TableOfContentsProps) {
             <span className="w-1 h-4 bg-primary rounded-full mr-2 opacity-60" />
             목차
           </div>
-          <button
-            onClick={() => setIsExpanded(!isExpanded)}
-            className="p-1 hover:bg-accent rounded-md transition-colors"
-            aria-label={isExpanded ? "목차 접기" : "목차 펼치기"}
-            aria-expanded={isExpanded}
-          >
-            <svg
-              className={cn(
-                "w-4 h-4 transition-transform text-muted-foreground",
-                isExpanded ? "rotate-180" : ""
-              )}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          {!isMobile && (
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="p-1 hover:bg-accent rounded-md transition-colors"
+              aria-label={isExpanded ? "목차 접기" : "목차 펼치기"}
+              aria-expanded={isExpanded}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </button>
+              <svg
+                className={cn(
+                  "w-4 h-4 transition-transform text-muted-foreground",
+                  isExpanded ? "rotate-180" : ""
+                )}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+          )}
         </h2>
 
         <motion.div
