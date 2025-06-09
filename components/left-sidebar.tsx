@@ -1,5 +1,4 @@
 "use client";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { TreeView } from "@/components/tree-view";
 import { usePosts } from "@/contexts/posts-context";
 import { buildFolderStructure } from "@/lib/utils";
@@ -40,15 +39,15 @@ export default function LeftSidebar({ className }: LeftSidebarProps) {
           delay: 0.05,
         }}
       >
-        <ScrollArea className="h-full pr-4">
+        <div className="h-full overflow-y-auto custom-scrollbar">
           <div className="pb-6">{/* 하단 패딩을 ScrollArea 내부로 이동 */}
             {/* 네비게이션 메뉴 (데스크톱) */}
-            <SidebarSection title="메뉴">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.05, duration: 0.1 }}
-              >
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.05, duration: 0.1 }}
+            >
+              <SidebarSection title="메뉴">
                 <div className="flex flex-col space-y-2 px-1 py-1">
                   <Link
                     href="/"
@@ -99,22 +98,22 @@ export default function LeftSidebar({ className }: LeftSidebarProps) {
                     포트폴리오
                   </Link>
                 </div>
-              </motion.div>
-            </SidebarSection>
-            <SidebarSection title="카테고리">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.1, duration: 0.1 }}
-              >
+              </SidebarSection>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.1, duration: 0.1 }}
+            >
+              <SidebarSection title="카테고리">
                 <TreeView
                   key={`desktop-tree-${pathname}`}
                   data={folderStructure}
                 />
-              </motion.div>
-            </SidebarSection>
+              </SidebarSection>
+            </motion.div>
           </div>
-        </ScrollArea>
+        </div>
       </motion.aside>
     </>
   );

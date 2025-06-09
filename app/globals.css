@@ -191,7 +191,7 @@
 .custom-scrollbar {
   /* Firefox: */
   scrollbar-width: thin;
-  scrollbar-color: #6b7280 #e5e7eb;
+  scrollbar-color: #D5E8E3 #F8FDFB; /* 라이트모드: thumb track */
 }
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -199,18 +199,36 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #e5e7eb;
+  background: #F8FDFB; /* 라이트모드 배경색 */
   border-radius: 4px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #6b7280;
+  background-color: #D5E8E3; /* 라이트모드 border 색상 */
   border-radius: 4px;
-  border: 2px solid #e5e7eb;
+  border: 2px solid #F8FDFB; /* 라이트모드 배경색 */
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background-color: #4b5563;
+  background-color: #C2DDD6; /* 라이트모드 hover */
+}
+
+/* 다크모드 스크롤바 */
+.dark .custom-scrollbar {
+  scrollbar-color: #2A4845 #132826; /* 다크모드: thumb track */
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-track {
+  background: #132826; /* 다크모드 배경색 */
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #2A4845; /* 다크모드 border 색상 */
+  border: 2px solid #132826; /* 다크모드 배경색 */
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #3A5F5B; /* 다크모드 hover */
 }
 
 /* 타이포그래피 시스템 */
