@@ -13,11 +13,11 @@ interface TreeViewProps {
   onNodeClick?: () => void;
 }
 
-export const TreeView = memo(function TreeView({ 
-  data, 
-  level = 0, 
-  parentPath = "", 
-  onNodeClick 
+export const TreeView = memo(function TreeView({
+  data,
+  level = 0,
+  parentPath = "",
+  onNodeClick
 }: TreeViewProps) {
   // 콜백 최적화
   const handleNodeClick = useCallback(() => {
@@ -52,22 +52,22 @@ const TreeNode = memo(function TreeNode({
 }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const pathname = usePathname();
-  
+
   // 메모이제이션으로 경로 계산 최적화
   const paths = useMemo(() => {
     const decodedPath = decodeURIComponent(pathname);
     const urlPath = node.urlPath || "";
     const normalizedPath = `/posts/${urlPath}`;
-    
+
     // 더 정확한 경로 매칭
     const isFileActive = node.type === "file" && decodedPath === normalizedPath;
     const isFolderActive = node.type === "folder" && decodedPath.startsWith(`${normalizedPath}/`);
-    const shouldAutoExpand = isFolderActive || 
-      (node.children?.some(child => 
-        decodedPath === `/posts/${child.urlPath}` || 
+    const shouldAutoExpand = isFolderActive ||
+      (node.children?.some(child =>
+        decodedPath === `/posts/${child.urlPath}` ||
         decodedPath.startsWith(`/posts/${child.urlPath}/`)
       ) ?? false);
-    
+
     return { isFileActive, isFolderActive, shouldAutoExpand, normalizedPath };
   }, [pathname, node]);
 
@@ -89,28 +89,28 @@ const TreeNode = memo(function TreeNode({
   const paddingLeft = level * 16; // px 문자열 대신 숫자로
   const linkClassName = cn(
     "flex items-center gap-2 text-sm font-medium transition-colors duration-150",
-    "w-full px-3 py-1.5 rounded-md relative",
+    "w-full py-1.5 rounded-md relative",
     "hover:bg-accent/50",
     (paths.isFileActive || paths.isFolderActive) && "bg-primary/10 text-primary font-semibold"
   );
 
   return (
-    <motion.div 
-      style={{ paddingLeft }} 
+    <motion.div
+      style={{ paddingLeft }}
       className="relative"
       initial={{ opacity: 0, x: -10 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.15, delay: level * 0.02 }}
     >
       {node.type === "file" ? (
-        <Link 
-          href={paths.normalizedPath} 
-          className={linkClassName} 
+        <Link
+          href={paths.normalizedPath}
+          className={linkClassName}
           onClick={onNodeClick}
           title={node.name}
         >
           {paths.isFileActive && (
-            <motion.span 
+            <motion.span
               className="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r"
               layoutId={`active-indicator-${node.urlPath}`}
               initial={{ opacity: 0 }}
@@ -131,7 +131,7 @@ const TreeNode = memo(function TreeNode({
             title={node.name}
           >
             {paths.isFolderActive && (
-              <motion.span 
+              <motion.span
                 className="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r"
                 layoutId={`active-indicator-${node.urlPath}`}
                 initial={{ opacity: 0 }}
@@ -149,7 +149,7 @@ const TreeNode = memo(function TreeNode({
             <Folder className="h-4 w-4 flex-shrink-0 text-muted-foreground" />
             <span className="truncate">{node.name}</span>
           </button>
-          
+
           <AnimatePresence initial={false}>
             {node.children && isExpanded && (
               <motion.div
