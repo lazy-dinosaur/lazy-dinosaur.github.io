@@ -98,7 +98,7 @@ export default function TableOfContents({ className, headings: propHeadings, onI
       clearTimeout(timer1);
       clearTimeout(timer2);
     };
-  }, [pathname]);
+  }, [pathname, propHeadings]);
 
   // 스크롤 기반 활성화 로직 (IntersectionObserver 대신)
   useEffect(() => {

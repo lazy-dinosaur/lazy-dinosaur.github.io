@@ -53,7 +53,7 @@ export function MobileSidebarSheet({ headings }: MobileSidebarSheetProps) {
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll(); // 초기 상태 설정
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [headings.length, isPostPage]);
+  }, [headings.length, isPostPage, isInitialized]);
 
   if (headings.length === 0 && isPostPage) return null;
 

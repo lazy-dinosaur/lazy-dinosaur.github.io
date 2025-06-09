@@ -32,7 +32,7 @@ export default function ScrollToTop() {
 
     window.addEventListener("scroll", toggleVisibility);
     return () => window.removeEventListener("scroll", toggleVisibility);
-  }, []);
+  }, [isInitialized]);
 
   const scrollToTop = () => {
     window.scrollTo({

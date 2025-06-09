@@ -209,7 +209,7 @@ function RecentPostsSection({ pathname, onClose }: { pathname: string; onClose: 
   
   return (
     <div className="space-y-2">
-      {recentPosts.map((post, index) => {
+      {recentPosts.map((post) => {
         const isActive = mounted && isInsidePostPage && pathname === `/posts/${post.urlPath}`;
         
         return (
@@ -272,7 +272,7 @@ function PopularTagsSection() {
   
   return (
     <>
-      {sortedTags.map((tag, index) => (
+      {sortedTags.map((tag) => (
         <Badge
           key={tag}
           variant="outline"

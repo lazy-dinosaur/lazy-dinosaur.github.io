@@ -44,7 +44,7 @@ export function MobileTableOfContents({ headings }: MobileTableOfContentsProps) 
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll(); // 초기 상태 설정
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [headings.length]);
+  }, [headings.length, isInitialized]);
 
   if (headings.length === 0) return null;
 
