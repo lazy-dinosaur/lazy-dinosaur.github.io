@@ -45,9 +45,10 @@ export function isGifFile(url: string): boolean {
 
 export function buildFolderStructure(posts: Post[]): FolderStructure[] {
   const structure: FolderStructure[] = [];
+  const sortedPosts = [...posts].sort((a, b) => a.urlPath.localeCompare(b.urlPath));
 
-  posts.forEach((post) => {
-    const pathSegments = post.urlPath.split("/");
+  sortedPosts.forEach((post) => {
+    const pathSegments = post.urlPath.split("/").filter(Boolean); // 빈 문자열 제거
     let currentLevel = structure;
 
     pathSegments.forEach((segment, index) => {
@@ -58,15 +59,32 @@ export function buildFolderStructure(posts: Post[]): FolderStructure[] {
           name: segment,
           type: index === pathSegments.length - 1 ? "file" : "folder",
           urlPath: pathSegments.slice(0, index + 1).join("/"),
-          children: [],
+          children: index === pathSegments.length - 1 ? undefined : [],
         };
         currentLevel.push(newNode);
-        currentLevel = newNode.children!;
+        if (newNode.children) {
+          currentLevel = newNode.children;
+        }
       } else {
-        currentLevel = existingNode.children || [];
+        if (existingNode.children) {
+          currentLevel = existingNode.children;
+        }
       }
     });
   });
 
-  return structure;
+  // 각 레벨에서 폴더를 먼저, 파일을 나중에 정렬
+  const sortStructure = (items: FolderStructure[]): FolderStructure[] => {
+    return items.sort((a, b) => {
+      if (a.type !== b.type) {
+        return a.type === "folder" ? -1 : 1;
+      }
+      return a.name.localeCompare(b.name);
+    }).map(item => ({
+      ...item,
+      children: item.children ? sortStructure(item.children) : undefined
+    }));
+  };
+
+  return sortStructure(structure);
 }
