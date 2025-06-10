@@ -1,4 +1,0 @@
-{
-  "content": "\n# expo 시작하기\n\n- `npx` 사용\n\n  ```bash\n  npx create-expo-app@latest\n  ```\n\n- `bun` 사용\n\n  ```bash\n  bun create expo\n  ```\n",
-  "plainContent": "npx 사용\nbun 사용"
-}
