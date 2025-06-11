@@ -55,6 +55,17 @@
                             "publish": "자원/크롬 확장프로그램"
                         },
   {
+                            "urlPath": "자원/Windows/Windows에 환경변수 설정하기",
+                            "title": "Windows에 환경변수 설정하기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["windows"],
+                            "series": "",
+                            "createdAt": "2025-06-07 17:28:30",
+                            "modifiedAt": "2025-06-11 23:35:28",
+                            "publish": "자원/Windows"
+                        },
+  {
                             "urlPath": "자원/웹개발/웹사이트에 들어갈때에는 어떤 일이 생기는가-웹사이트접속의 과정",
                             "title": "웹사이트에 들어갈때에는 어떤 일이 생기는가-웹사이트접속의 과정",
                             "summary": "",
@@ -271,7 +282,7 @@
                             "tags": ["windows", "wsl", "neovim"],
                             "series": "",
                             "createdAt": "2025-06-07 15:43:20",
-                            "modifiedAt": "2025-06-07 17:50:53",
+                            "modifiedAt": "2025-06-11 23:37:01",
                             "publish": "자원/Wsl"
                         },
   {
@@ -546,7 +557,7 @@
                             "tags": ["blog", "dev", "project"],
                             "series": "나의 맞춤 블로그 만들기",
                             "createdAt": "2025-03-08 17:12:17",
-                            "modifiedAt": "2025-05-03 11:55:54",
+                            "modifiedAt": "2025-06-11 22:40:37",
                             "publish": "프로젝트/블로그"
                         },
   {
