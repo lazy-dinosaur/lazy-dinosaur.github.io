@@ -5,9 +5,9 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { SidebarSection } from "./sidebar-section";
 import TableOfContents from "@/components/table-of-contents";
-import { usePathname, useSearchParams, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, Suspense } from "react";
 
 interface RightSidebarProps {
   className?: string;
@@ -65,7 +65,9 @@ const RightSidebar = ({ className }: RightSidebarProps) => {
         >
           <SidebarSection title="인기 태그">
             <div className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-3 px-1.5">
-              <PopularTags key={`popular-tags-${pathname}`} />
+              <Suspense fallback={<div>Loading tags...</div>}>
+                <PopularTags key={`popular-tags-${pathname}`} />
+              </Suspense>
             </div>
           </SidebarSection>
         </motion.div>
@@ -194,8 +196,8 @@ const TagItem = ({ tag, index, onClick, isSelected }: { tag: string; index: numb
   );
 };
 
-// 인기 태그 컴포넌트
-function PopularTags() {
+// 인기 태그 컴포넌트 (useSearchParams 사용)
+function PopularTagsContent() {
   const { posts } = usePosts();
   const [mounted, setMounted] = useState(false);
   const router = useRouter();
@@ -256,6 +258,11 @@ function PopularTags() {
         ))}
     </>
   );
+}
+
+// Wrapper component for PopularTags to use Suspense
+function PopularTags() {
+  return <PopularTagsContent />;
 }
 
 export default RightSidebar;
