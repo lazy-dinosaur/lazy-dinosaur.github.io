@@ -22,14 +22,14 @@
                             "publish": "자원/ReactNative"
                         },
   {
-                            "urlPath": "자원/Linux/Linux에서 원드라이브 사용하기",
-                            "title": "Linux에서 원드라이브 사용하기",
+                            "urlPath": "자원/Linux/Linux에서 Onedrive 사용하기",
+                            "title": "Linux에서 Onedrive 사용하기",
                             "summary": "",
                             "image": "",
-                            "tags": ["linux", "onedrive", "wsl"],
+                            "tags": ["resource", "linux", "onedrive", "wsl"],
                             "series": "",
                             "createdAt": "2025-06-07 13:01:39",
-                            "modifiedAt": "2025-06-07 17:53:47",
+                            "modifiedAt": "2025-06-12 16:34:24",
                             "publish": "자원/Linux"
                         },
   {
