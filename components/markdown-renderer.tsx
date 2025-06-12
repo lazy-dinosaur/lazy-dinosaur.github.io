@@ -126,14 +126,18 @@ export default function MarkdownRenderer({
 
 				<div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
 					{tags?.map((tag) => (
-						<div key={tag}>
+						<Link
+							key={tag}
+							href={`/?tags=${encodeURIComponent(tag)}`}
+							className="inline-block"
+						>
 							<Badge
 								variant="secondary"
-								className="text-hierarchy-small hover:bg-primary/20 transition-colors duration-200"
+								className="text-hierarchy-small hover:bg-primary hover:text-primary-foreground transition-colors duration-200 cursor-pointer"
 							>
 								#{tag}
 							</Badge>
-						</div>
+						</Link>
 					))}
 				</div>
 

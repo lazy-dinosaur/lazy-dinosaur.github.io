@@ -15,6 +15,9 @@ interface PostCardProps {
   image: string;
   tags: string[];
   createdAt: string;
+  onTagClick?: (tag: string) => void;
+  selectedTags?: string[];
+  availableTags?: string[];
 }
 
 const DEFAULT_IMAGE = "/lazydino-logo.png";
@@ -28,6 +31,9 @@ const PostCard = ({
   image,
   tags,
   createdAt,
+  onTagClick,
+  selectedTags = [],
+  availableTags = [],
 }: PostCardProps) => {
   let thumbnail = image || (content.match(/!\[.*?\]\((.*?)\)/)?.[1] ?? "");
 
@@ -100,11 +106,27 @@ const PostCard = ({
           </p>
 
           <div className="flex flex-wrap gap-1.5 mb-4">
-            {tags.slice(0, 3).map((tag) => (
-              <Badge key={tag} variant="secondary" className="text-xs">
-                #{tag}
-              </Badge>
-            ))}
+            {tags.slice(0, 3).map((tag) => {
+              const isSelected = selectedTags.includes(tag);
+              const isAvailable = availableTags.includes(tag) || selectedTags.length === 0;
+              
+              return (
+                <Badge 
+                  key={tag} 
+                  variant={isSelected ? "default" : "secondary"} 
+                  className={`text-xs ${onTagClick && isAvailable ? 'cursor-pointer hover:opacity-80' : ''}`}
+                  onClick={(e) => {
+                    if (onTagClick && isAvailable) {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      onTagClick(tag);
+                    }
+                  }}
+                >
+                  #{tag}
+                </Badge>
+              );
+            })}
             {tags.length > 3 && (
               <Badge variant="outline" className="text-xs">
                 +{tags.length - 3}

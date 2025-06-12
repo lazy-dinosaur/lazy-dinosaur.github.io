@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { SidebarSection } from "./sidebar-section";
 import TableOfContents from "@/components/table-of-contents";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { useEffect, useState, useMemo } from "react";
 
@@ -160,7 +160,7 @@ function RecentPosts() {
 }
 
 // 개별 태그 컴포넌트
-const TagItem = ({ tag, index }: { tag: string; index: number }) => {
+const TagItem = ({ tag, index, onClick, isSelected }: { tag: string; index: number; onClick?: () => void; isSelected?: boolean }) => {
   return (
     <motion.div
       key={tag}
@@ -180,8 +180,13 @@ const TagItem = ({ tag, index }: { tag: string; index: number }) => {
       }}
     >
       <Badge
-        variant="outline"
-        className="text-xs hover:bg-primary hover:text-primary-foreground px-1.5 py-0.5 sm:px-2 sm:py-1"
+        variant={isSelected ? "default" : "outline"}
+        className={`text-xs px-1.5 py-0.5 sm:px-2 sm:py-1 cursor-pointer transition-colors ${
+          isSelected 
+            ? "bg-primary text-primary-foreground" 
+            : "hover:bg-primary hover:text-primary-foreground"
+        }`}
+        onClick={onClick}
       >
         #{tag}
       </Badge>
@@ -193,6 +198,8 @@ const TagItem = ({ tag, index }: { tag: string; index: number }) => {
 function PopularTags() {
   const { posts } = usePosts();
   const [mounted, setMounted] = useState(false);
+  const router = useRouter();
+  const searchParams = useSearchParams();
 
   // 마운트 여부만 한 번 체크
   useEffect(() => {
@@ -216,11 +223,36 @@ function PopularTags() {
       .map(([tag]) => tag);
   }, [posts]);
 
+  // 현재 선택된 태그들 가져오기
+  const selectedTags = searchParams.get('tags')?.split(',').filter(Boolean) || [];
+
+  // 태그 클릭 핸들러
+  const handleTagClick = (tag: string) => {
+    const newTags = selectedTags.includes(tag)
+      ? selectedTags.filter(t => t !== tag)
+      : [...selectedTags, tag];
+    
+    const params = new URLSearchParams(searchParams);
+    if (newTags.length > 0) {
+      params.set('tags', newTags.join(','));
+    } else {
+      params.delete('tags');
+    }
+    
+    router.push(`/?${params.toString()}`);
+  };
+
   return (
     <>
       {mounted &&
         sortedTags.map((tag, index) => (
-          <TagItem key={tag} tag={tag} index={index} />
+          <TagItem 
+            key={tag} 
+            tag={tag} 
+            index={index} 
+            onClick={() => handleTagClick(tag)}
+            isSelected={selectedTags.includes(tag)}
+          />
         ))}
     </>
   );

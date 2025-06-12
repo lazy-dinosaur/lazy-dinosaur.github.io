@@ -2,10 +2,13 @@
 import PostCard from "@/components/post-card";
 import { HeaderSection, PostGrid, PostItem } from "@/components/home-animation";
 import { usePosts } from "@/contexts/posts-context";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Post } from "@/lib/posts";
+import { useSearchParams, useRouter } from "next/navigation";
+import { Badge } from "@/components/ui/badge";
+import { X } from "lucide-react";
 
 // 페이지당 포스트 수 정의
 const POSTS_PER_PAGE = 6;
@@ -15,7 +18,71 @@ export default function Home() {
   const { posts } = usePosts();
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [displayedPosts, setDisplayedPosts] = useState<Post[]>([]);
-  const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
+  const [showAllTags, setShowAllTags] = useState<boolean>(false);
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  
+  // URL에서 태그 필터 가져오기
+  const selectedTags = useMemo(() => {
+    const tagsParam = searchParams.get('tags');
+    return tagsParam ? tagsParam.split(',').filter(Boolean) : [];
+  }, [searchParams]);
+
+  // 필터링된 포스트 계산
+  const filteredPosts = useMemo(() => {
+    if (selectedTags.length === 0) return posts;
+    
+    // 선택된 모든 태그를 포함하는 포스트만 필터링 (교집합)
+    return posts.filter(post => 
+      selectedTags.every(tag => post.tags.includes(tag))
+    );
+  }, [posts, selectedTags]);
+
+  // 필터링된 포스트에서 사용 가능한 태그 계산
+  const availableTags = useMemo(() => {
+    if (selectedTags.length === 0) return [];
+    
+    const tagCounts = new Map<string, number>();
+    
+    // 필터링된 포스트에서 태그 수집
+    filteredPosts.forEach(post => {
+      post.tags.forEach(tag => {
+        if (!selectedTags.includes(tag)) {
+          tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+        }
+      });
+    });
+    
+    return Array.from(tagCounts.keys());
+  }, [filteredPosts, selectedTags]);
+
+  // 모든 태그 계산 (태그 목록 보기용)
+  const allTags = useMemo(() => {
+    const tagCounts = new Map<string, number>();
+    
+    // 선택된 태그가 없으면 모든 포스트에서 태그 수집
+    if (selectedTags.length === 0) {
+      posts.forEach(post => {
+        post.tags.forEach(tag => {
+          tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+        });
+      });
+    } else {
+      // 선택된 태그가 있으면 필터링된 포스트에서 태그 수집
+      filteredPosts.forEach(post => {
+        post.tags.forEach(tag => {
+          tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+        });
+      });
+    }
+    
+    // 빈도순으로 정렬
+    return Array.from(tagCounts.entries())
+      .sort(([, a], [, b]) => b - a)
+      .map(([tag]) => tag);
+  }, [posts, filteredPosts, selectedTags]);
+
+  const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
 
   // 페이지 변경 시 표시할 포스트 업데이트
   useEffect(() => {
@@ -27,9 +94,35 @@ export default function Home() {
 
     // 약간의 지연 후 새 포스트 표시 (애니메이션 효과 향상)
     setTimeout(() => {
-      setDisplayedPosts(posts.slice(startIndex, endIndex));
+      setDisplayedPosts(filteredPosts.slice(startIndex, endIndex));
     }, 10);
-  }, [currentPage, posts]);
+  }, [currentPage, filteredPosts]);
+
+  // 필터 변경 시 첫 페이지로 리셋
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedTags.join(',')]);
+
+  // 태그 추가/제거 함수
+  const handleTagClick = (tag: string) => {
+    const newTags = selectedTags.includes(tag)
+      ? selectedTags.filter(t => t !== tag)
+      : [...selectedTags, tag];
+    
+    const params = new URLSearchParams(searchParams);
+    if (newTags.length > 0) {
+      params.set('tags', newTags.join(','));
+    } else {
+      params.delete('tags');
+    }
+    
+    router.push(`/?${params.toString()}`);
+  };
+
+  // 모든 태그 제거
+  const clearAllTags = () => {
+    router.push('/');
+  };
 
   // 페이지 이동 함수
   const goToPage = (page: number): void => {
@@ -126,6 +219,116 @@ export default function Home() {
         }
       />
 
+      {/* 모든 태그 보기/접기 섹션 - 태그가 선택되지 않았을 때만 표시 */}
+      {selectedTags.length === 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="space-y-3"
+        >
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setShowAllTags(!showAllTags)}
+            className="flex items-center gap-2"
+          >
+            {showAllTags ? "태그 목록 접기" : "모든 태그 보기"}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className={`transition-transform ${showAllTags ? "rotate-180" : ""}`}
+            >
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </Button>
+
+          {showAllTags && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="flex flex-wrap gap-2 p-4 bg-muted/30 rounded-lg"
+            >
+              {allTags.map((tag) => (
+                <Badge
+                  key={tag}
+                  variant="outline"
+                  className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
+                  onClick={() => handleTagClick(tag)}
+                >
+                  #{tag}
+                </Badge>
+              ))}
+            </motion.div>
+          )}
+        </motion.div>
+      )}
+
+      {/* 선택된 태그 필터 표시 */}
+      {selectedTags.length > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="space-y-3"
+        >
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="text-sm text-muted-foreground">필터링된 태그:</span>
+            {selectedTags.map((tag) => (
+              <Badge
+                key={tag}
+                variant="secondary"
+                className="cursor-pointer hover:bg-destructive hover:text-destructive-foreground transition-colors"
+                onClick={() => handleTagClick(tag)}
+              >
+                #{tag}
+                <X className="ml-1 h-3 w-3" />
+              </Badge>
+            ))}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={clearAllTags}
+              className="text-xs"
+            >
+              모두 지우기
+            </Button>
+          </div>
+          
+          {/* 추가 가능한 태그 표시 */}
+          {availableTags.length > 0 && (
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-sm text-muted-foreground">추가 가능한 태그:</span>
+              {availableTags.slice(0, 10).map((tag) => (
+                <Badge
+                  key={tag}
+                  variant="outline"
+                  className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
+                  onClick={() => handleTagClick(tag)}
+                >
+                  #{tag}
+                </Badge>
+              ))}
+              {availableTags.length > 10 && (
+                <span className="text-xs text-muted-foreground">
+                  +{availableTags.length - 10} more
+                </span>
+              )}
+            </div>
+          )}
+          
+          <div className="text-sm text-muted-foreground">
+            {filteredPosts.length}개의 포스트가 필터링되었습니다.
+          </div>
+        </motion.div>
+      )}
+
       {/* 포스트 그리드 */}
       {displayedPosts.length > 0 ? (
         <PostGrid key={`post-grid-page-${currentPage}`}>
@@ -140,6 +343,9 @@ export default function Home() {
                 image={post.image}
                 tags={post.tags}
                 createdAt={post.createdAt}
+                onTagClick={handleTagClick}
+                selectedTags={selectedTags}
+                availableTags={availableTags}
               />
             </PostItem>
           ))}
@@ -258,14 +464,20 @@ export default function Home() {
 
       {/* 현재 페이지 정보 */}
       <div className="text-center text-sm text-muted-foreground">
-        {posts.length > 0 && displayedPosts.length > 0 ? (
+        {filteredPosts.length > 0 && displayedPosts.length > 0 ? (
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
           >
-            총 {posts.length}개의 포스트 중 {(currentPage - 1) * POSTS_PER_PAGE + 1}-{Math.min(currentPage * POSTS_PER_PAGE, posts.length)}번째 포스트
+            {selectedTags.length > 0 ? (
+              <>필터링된 {filteredPosts.length}개의 포스트 중 {(currentPage - 1) * POSTS_PER_PAGE + 1}-{Math.min(currentPage * POSTS_PER_PAGE, filteredPosts.length)}번째 포스트</>
+            ) : (
+              <>총 {posts.length}개의 포스트 중 {(currentPage - 1) * POSTS_PER_PAGE + 1}-{Math.min(currentPage * POSTS_PER_PAGE, posts.length)}번째 포스트</>
+            )}
           </motion.p>
+        ) : filteredPosts.length === 0 && selectedTags.length > 0 ? (
+          <p>선택한 태그와 일치하는 포스트가 없습니다.</p>
         ) : posts.length > 0 ? (
           <></>
         ) : (
