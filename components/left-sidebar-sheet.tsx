@@ -6,7 +6,7 @@ import { Menu } from "lucide-react";
 import { TreeView } from "./tree-view";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import { usePosts } from "@/contexts/posts-context";
 import { buildFolderStructure } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
@@ -111,7 +111,7 @@ export default function LeftSidebarSheet() {
               <div className="mt-6 px-1 sm:px-2">
                 <h2 className="text-lg font-semibold mb-3">인기 태그</h2>
                 <div className="flex flex-wrap gap-1.5">
-                  <PopularTagsSection />
+                  <PopularTagsSection onClose={() => setOpen(false)} />
                 </div>
               </div>
             </div>
@@ -246,9 +246,11 @@ function RecentPostsSection({ pathname, onClose }: { pathname: string; onClose: 
 }
 
 // 인기 태그 섹션 컴포넌트
-function PopularTagsSection() {
+function PopularTagsSection({ onClose }: { onClose: () => void }) {
   const { posts } = usePosts();
   const [mounted, setMounted] = useState(false);
+  const router = useRouter();
+  const searchParams = useSearchParams();
   
   useEffect(() => {
     setMounted(true);
@@ -268,6 +270,26 @@ function PopularTagsSection() {
       .map(([tag]) => tag);
   }, [posts]);
   
+  // 현재 선택된 태그들 가져오기
+  const selectedTags = searchParams.get('tags')?.split(',').filter(Boolean) || [];
+  
+  // 태그 클릭 핸들러
+  const handleTagClick = (tag: string) => {
+    const newTags = selectedTags.includes(tag)
+      ? selectedTags.filter(t => t !== tag)
+      : [...selectedTags, tag];
+    
+    const params = new URLSearchParams(searchParams);
+    if (newTags.length > 0) {
+      params.set('tags', newTags.join(','));
+    } else {
+      params.delete('tags');
+    }
+    
+    router.push(`/?${params.toString()}`);
+    onClose(); // 시트 닫기
+  };
+  
   if (!mounted) return null;
   
   return (
@@ -275,8 +297,13 @@ function PopularTagsSection() {
       {sortedTags.map((tag) => (
         <Badge
           key={tag}
-          variant="outline"
-          className="text-xs hover:bg-primary hover:text-primary-foreground px-2 py-1"
+          variant={selectedTags.includes(tag) ? "default" : "outline"}
+          className={`text-xs px-2 py-1 cursor-pointer transition-colors ${
+            selectedTags.includes(tag)
+              ? "bg-primary text-primary-foreground"
+              : "hover:bg-primary hover:text-primary-foreground"
+          }`}
+          onClick={() => handleTagClick(tag)}
         >
           #{tag}
         </Badge>
