@@ -33,6 +33,17 @@
                             "publish": "자원/Linux"
                         },
   {
+                            "urlPath": "자원/Windows/Windows에서 AutoHotkey를 활용해 esc를 눌러 영문으로 전환하기",
+                            "title": "Windows에서 AutoHotkey를 활용해 esc를 눌러 영문으로 전환하기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["resource", "windows"],
+                            "series": "",
+                            "createdAt": "2025-06-12 08:26:36",
+                            "modifiedAt": "2025-06-12 16:41:31",
+                            "publish": "자원/Windows"
+                        },
+  {
                             "urlPath": "프로젝트/알고리즘/취업을 위한 알고리즘 공부",
                             "title": "취업을 위한 알고리즘 공부",
                             "summary": "",
