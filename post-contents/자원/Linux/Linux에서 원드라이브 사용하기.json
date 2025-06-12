@@ -1,4 +1,0 @@
-{
-  "content": "\n# Linux에서 원드라이브 사용하기\n\n출처:[linux를 위한 onedrive](https://github.com/abraunegg/onedrive)\n\n1. onedrive 패키지 설치\n\n  ```bash\n  sudo dnf install onedrive\n  ```\n\n2. 인증하기\n  onedrive를 한번 실행시키면 링크가 나타나며 해당 링크를 타고 들어가 로그인과 인증을 마친 이후 해당 페이지의 주소 창의 내용을 복사하여 붙혀넣는다.\n\n  ```bash\n  onedrive\n  ```\n\n3. 설정하기\n\n  설정 확인\n\n  ```bash\n  onedrive --display-config\n  ```\n",
-  "plainContent": "출처:linux를 위한 onedrive\n1. onedrive 패키지 설치\n2. 인증하기\nonedrive를 한번 실행시키면 링크가 나타나며 해당 링크를 타고 들어가 로그인과 인증을 마친 이후 해당 페이지의 주소 창의 내용을 복사하여 붙혀넣는다.\n3. 설정하기\n설정 확인"
-}
