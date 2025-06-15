@@ -11,17 +11,6 @@
                             "publish": "자원/React"
                         },
   {
-                            "urlPath": "프로젝트/괴담집/괴담집",
-                            "title": "괴담집",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["project", "\uad34\ub2f4\uc9d1"],
-                            "series": "",
-                            "createdAt": "2025-06-15 19:13:08",
-                            "modifiedAt": "2025-06-15 19:35:49",
-                            "publish": "프로젝트/괴담집"
-                        },
-  {
                             "urlPath": "프로젝트/알고리즘/취업을 위한 알고리즘 공부",
                             "title": "취업을 위한 알고리즘 공부",
                             "summary": "",
@@ -581,6 +570,17 @@
                             "createdAt": "2025-06-13 11:29:34",
                             "modifiedAt": "2025-06-15 18:24:16",
                             "publish": "프로젝트/당근마켓 클론코딩"
+                        },
+  {
+                            "urlPath": "프로젝트/괴담집/괴담집",
+                            "title": "괴담집",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["project", "\uad34\ub2f4\uc9d1"],
+                            "series": "",
+                            "createdAt": "2025-06-15 19:13:08",
+                            "modifiedAt": "2025-06-15 19:41:23",
+                            "publish": "프로젝트/괴담집"
                         },
   {
                             "urlPath": "프로젝트/아임유어박스 웹사이트/물류 서비스 웹사이트 개발 회고-혼자서 외주 프로젝트 완성하기",
