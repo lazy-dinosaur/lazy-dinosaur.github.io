@@ -260,6 +260,11 @@ def sync_notes():
                         image = frontmatter.get("image", "")
                         tags_raw = frontmatter.get("tags", [])
                         tags = tags_raw if isinstance(tags_raw, list) else [tags_raw]
+                        
+                        # 4.archive 폴더의 파일인 경우 'archive' 태그 추가
+                        if "4.archive" in orig_path:
+                            if 'archive' not in tags:
+                                tags.append('archive')
                         created_at = frontmatter.get("createdAt", "")
                         modified_at = frontmatter.get("modifiedAt", "")
                         series = frontmatter.get("series", "")
