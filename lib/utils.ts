@@ -84,17 +84,39 @@ export function buildFolderStructure(posts: Post[]): FolderStructure[] {
   });
 
   // 각 레벨에서 폴더를 먼저, 파일을 나중에 정렬
-  const sortStructure = (items: FolderStructure[]): FolderStructure[] => {
+  // 최상위 카테고리는 지정된 순서로, 나머지는 알파벳 순으로 정렬
+  const sortStructure = (items: FolderStructure[], isTopLevel: boolean = false): FolderStructure[] => {
     return items.sort((a, b) => {
       if (a.type !== b.type) {
         return a.type === "folder" ? -1 : 1;
       }
+      
+      // 최상위 레벨에서 특정 카테고리 순서 강제
+      if (isTopLevel && a.type === "folder" && b.type === "folder") {
+        const priorityOrder = ["프로젝트", "영역", "자원", "저장소"];
+        const aIndex = priorityOrder.indexOf(a.name);
+        const bIndex = priorityOrder.indexOf(b.name);
+        
+        // 둘 다 우선순위 카테고리인 경우
+        if (aIndex !== -1 && bIndex !== -1) {
+          return aIndex - bIndex;
+        }
+        // a만 우선순위 카테고리인 경우
+        if (aIndex !== -1) {
+          return -1;
+        }
+        // b만 우선순위 카테고리인 경우
+        if (bIndex !== -1) {
+          return 1;
+        }
+      }
+      
       return a.name.localeCompare(b.name);
     }).map(item => ({
       ...item,
-      children: item.children ? sortStructure(item.children) : undefined
+      children: item.children ? sortStructure(item.children, false) : undefined
     }));
   };
 
-  return sortStructure(structure);
+  return sortStructure(structure, true);
 }
