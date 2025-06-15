@@ -141,6 +141,15 @@ def sync_notes():
                 print(f"⏸️ 건너뜀: {md_file.name} (publish 필드 없음)")
                 return
 
+            # 4.archive 폴더의 파일인 경우 publish 경로 변환
+            if "4.archive" in str(md_file):
+                # publish 경로에서 첫 번째 부분을 "저장소"로 변경
+                publish_parts = publish.split("/")
+                if len(publish_parts) > 0 and publish_parts[0] in ["자원", "프로젝트", "영역"]:
+                    publish_parts[0] = "저장소"
+                    publish = "/".join(publish_parts)
+                    print(f"📦 아카이브 파일 publish 경로 변환: {frontmatter.get('publish')} -> {publish}")
+
             # 안전한 경로 생성 - NFC 형식으로 정규화하여 한글 경로 문제 해결
             safe_publish = normalize_path(publish)
 
