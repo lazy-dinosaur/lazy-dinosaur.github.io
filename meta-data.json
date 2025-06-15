@@ -7,8 +7,19 @@
                             "tags": ["resource", "react"],
                             "series": "",
                             "createdAt": "2025-04-21 18:45:51",
-                            "modifiedAt": "2025-05-19 20:45:24",
+                            "modifiedAt": "2025-06-15 14:44:31",
                             "publish": "자원/React"
+                        },
+  {
+                            "urlPath": "프로젝트/괴담집/괴담집",
+                            "title": "괴담집",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["project", "\uad34\ub2f4\uc9d1"],
+                            "series": "",
+                            "createdAt": "2025-06-15 19:13:08",
+                            "modifiedAt": "2025-06-15 19:35:49",
+                            "publish": "프로젝트/괴담집"
                         },
   {
                             "urlPath": "프로젝트/알고리즘/취업을 위한 알고리즘 공부",
@@ -480,7 +491,7 @@
                             "tags": ["resource", "javascript"],
                             "series": "",
                             "createdAt": "2025-04-19 15:21:35",
-                            "modifiedAt": "2025-04-19 18:39:55",
+                            "modifiedAt": "2025-06-15 14:38:53",
                             "publish": "자원/JavaScript"
                         },
   {
@@ -548,6 +559,28 @@
                             "createdAt": "2025-06-14 18:33:27",
                             "modifiedAt": "2025-06-14 19:17:57",
                             "publish": "영역/개발"
+                        },
+  {
+                            "urlPath": "프로젝트/당근마켓 클론코딩/당근마켓 클론코딩으로 기본적인 tailwind 공부하기",
+                            "title": "당근마켓 클론코딩으로 기본적인 tailwind 공부하기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["project", "carrot-market", "study", "clone", "tailwind"],
+                            "series": "",
+                            "createdAt": "2025-06-14 15:04:37",
+                            "modifiedAt": "2025-06-15 18:19:00",
+                            "publish": "프로젝트/당근마켓 클론코딩"
+                        },
+  {
+                            "urlPath": "프로젝트/당근마켓 클론코딩/당근마켓 클론코딩",
+                            "title": "당근마켓 클론코딩",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["project", "carrot-market", "study", "clone"],
+                            "series": "",
+                            "createdAt": "2025-06-13 11:29:34",
+                            "modifiedAt": "2025-06-15 18:24:16",
+                            "publish": "프로젝트/당근마켓 클론코딩"
                         },
   {
                             "urlPath": "프로젝트/아임유어박스 웹사이트/물류 서비스 웹사이트 개발 회고-혼자서 외주 프로젝트 완성하기",
