@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   const decodedSlug = slug.map((s) => {
     try {
       return decodeURIComponent(s);
-    } catch (e) {
+    } catch {
       return s;
     }
   }).filter(Boolean);
@@ -80,8 +80,8 @@ export default async function PostPage({ params }: PostPageProps) {
   const decodedSlug = slug.map((s) => {
     try {
       return decodeURIComponent(s);
-    } catch (e) {
-      console.error(`Failed to decode segment "${s}":`, e);
+    } catch {
+      console.error(`Failed to decode segment "${s}"`);
       return s; // 디코딩 실패 시 원본 유지
     }
   }).filter(Boolean);

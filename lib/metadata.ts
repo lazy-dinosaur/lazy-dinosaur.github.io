@@ -56,7 +56,7 @@ export function generateMetadata({
         }
       ],
       locale: 'ko_KR',
-      type: type as any,
+      type,
       ...(type === 'article' && {
         publishedTime,
         modifiedTime,
