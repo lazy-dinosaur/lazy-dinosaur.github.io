@@ -359,37 +359,15 @@ function HomeContent() {
 					))}
 				</PostGrid>
 			) : posts.length > 0 ? (
-				<PostGrid>
-					{[...Array(POSTS_PER_PAGE)].map((_, index) => (
-						<PostItem key={`skeleton-${index}`} index={index}>
-							<motion.div
-								className="bg-card rounded-lg p-6 h-[300px] relative overflow-hidden"
-								initial={{ opacity: 0 }}
-								animate={{ opacity: 1 }}
-								transition={{ duration: 0.3, delay: index * 0.05 }}
-							>
-								{/* 스켈레톤 효과 */}
-								<div className="absolute inset-0 -translate-x-full animate-[shimmer_2s_infinite]">
-									<div className="h-full w-1/2 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-								</div>
-
-								{/* 스켈레톤 컨텐츠 */}
-								<div className="space-y-4">
-									<div className="h-32 bg-muted/50 rounded animate-pulse" />
-									<div className="space-y-2">
-										<div className="h-4 bg-muted/50 rounded w-3/4 animate-pulse" />
-										<div className="h-4 bg-muted/50 rounded w-full animate-pulse" />
-										<div className="h-4 bg-muted/50 rounded w-5/6 animate-pulse" />
-									</div>
-									<div className="flex gap-2">
-										<div className="h-6 w-16 bg-muted/50 rounded-full animate-pulse" />
-										<div className="h-6 w-20 bg-muted/50 rounded-full animate-pulse" />
-									</div>
-								</div>
-							</motion.div>
-						</PostItem>
-					))}
-				</PostGrid>
+				<div className="flex justify-center items-center min-h-[400px]">
+					<div className="flex flex-col items-center gap-4">
+						<svg className="animate-spin h-12 w-12 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+							<circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+							<path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+						</svg>
+						<p className="text-muted-foreground">포스트를 불러오는 중...</p>
+					</div>
+				</div>
 			) : null}
 
 			{/* 페이지네이션 UI */}
@@ -511,32 +489,13 @@ function HomeContent() {
 export default function Home() {
 	return (
 		<Suspense fallback={
-			<div className="space-y-6 sm:space-y-8 2xl:space-y-10 h-full rounded-lg p-1 sm:p-7">
-				<div className="flex flex-col space-y-3 mb-6">
-					<div className="h-8 w-48 bg-muted animate-pulse rounded" />
-					<div className="h-4 w-64 bg-muted animate-pulse rounded" />
-				</div>
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-5 p-1 md:px-0">
-					{[...Array(6)].map((_, i) => (
-						<div
-							key={i}
-							className="overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-700 bg-card text-card-foreground shadow-lg dark:shadow-sm"
-							style={{ animationDelay: `${i * 0.1}s` }}
-						>
-							<div className="p-6 space-y-4">
-								<div className="h-32 bg-muted animate-pulse rounded" />
-								<div className="space-y-2">
-									<div className="h-6 bg-muted animate-pulse rounded w-3/4" />
-									<div className="h-4 bg-muted animate-pulse rounded" />
-									<div className="h-4 bg-muted animate-pulse rounded w-5/6" />
-								</div>
-								<div className="flex gap-2">
-									<div className="h-5 w-16 bg-muted animate-pulse rounded-full" />
-									<div className="h-5 w-20 bg-muted animate-pulse rounded-full" />
-								</div>
-							</div>
-						</div>
-					))}
+			<div className="flex justify-center items-center min-h-screen">
+				<div className="flex flex-col items-center gap-4">
+					<svg className="animate-spin h-16 w-16 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+						<circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+						<path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+					</svg>
+					<p className="text-lg text-muted-foreground">로딩 중...</p>
 				</div>
 			</div>
 		}>
