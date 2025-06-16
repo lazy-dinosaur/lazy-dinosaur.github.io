@@ -9,6 +9,8 @@ import Header from "../components/header";
 import { PostsProvider } from "@/contexts/posts-context";
 import Footer from "@/components/footer";
 import LeftSidebarSheet from "@/components/left-sidebar-sheet";
+import { generateMetadata, generateWebsiteJsonLd } from "@/lib/metadata";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,19 +36,10 @@ const notoSansKr = Noto_Sans_KR({
   display: "block", // Safari에서 더 나은 렌더링을 위해 'block'으로 변경
 });
 
-export const metadata: Metadata = {
-  title: "LazyDino Dev Log",
-  description: "내가 한걸 티내기 위해 만든 블로그",
-  icons: {
-    icon: [
-      {
-        url: "/favicon.ico",
-        sizes: "any",
-        type: "image/x-icon",
-      },
-    ],
-  },
-};
+export const metadata: Metadata = generateMetadata({
+  title: undefined,
+  description: "개발과 기술에 대한 이야기를 나누는 블로그",
+});
 
 export default async function RootLayout({
   children,
@@ -59,11 +52,18 @@ export default async function RootLayout({
     getPosts(),
   ]);
 
+  const jsonLd = generateWebsiteJsonLd();
+
   return (
     <html lang="ko" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${notoSansKr.variable} antialiased transition-all `}
       >
+        <Script
+          id="website-jsonld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

@@ -3,9 +3,53 @@ import { getPost, getPosts, getAdjacentPosts } from "@/lib/posts";
 import { ArrowLeft } from "lucide-react";
 import PostAnimation from "@/components/post-animation";
 import PostContent from "./post-content";
+import { generateMetadata as generateSEOMetadata, generateArticleJsonLd, generateBreadcrumbJsonLd } from "@/lib/metadata";
+import Script from "next/script";
+import type { Metadata } from "next";
 
 interface PostPageProps {
   params: Promise<{ slug: string[] }>;
+}
+
+export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const decodedSlug = slug.map((s) => {
+    try {
+      return decodeURIComponent(s);
+    } catch (e) {
+      return s;
+    }
+  }).filter(Boolean);
+  
+  const post = await getPost(decodedSlug);
+  
+  if (!post) {
+    return generateSEOMetadata({
+      title: "포스트를 찾을 수 없습니다",
+      description: "요청하신 포스트를 찾을 수 없습니다.",
+    });
+  }
+
+  // 포스트 제목 추출
+  const titleMatch = post.content.match(/^#\s+(.+)$/m);
+  const title = titleMatch ? titleMatch[1] : post.urlPath.split("/").pop() || "제목 없음";
+  
+  // 포스트 설명 추출 (첫 번째 단락)
+  const contentWithoutTitle = post.content.replace(/^#\s+.+$/m, "").trim();
+  const descriptionMatch = contentWithoutTitle.match(/^(.+?)(?:\n|$)/);
+  const description = descriptionMatch 
+    ? descriptionMatch[1].replace(/[#*`]/g, "").trim().substring(0, 160) 
+    : "블로그 포스트";
+
+  return generateSEOMetadata({
+    title,
+    description,
+    path: `/posts/${post.urlPath}`,
+    publishedTime: post.createdAt,
+    modifiedTime: post.modifiedAt,
+    tags: post.tags,
+    type: "article",
+  });
 }
 
 export async function generateStaticParams() {
@@ -67,17 +111,56 @@ export default async function PostPage({ params }: PostPageProps) {
   // 이전/다음 게시물 가져오기
   const { prev, next } = await getAdjacentPosts(post);
 
+  // 포스트 제목 추출
+  const titleMatch = post.content.match(/^#\s+(.+)$/m);
+  const title = titleMatch ? titleMatch[1] : post.urlPath.split("/").pop() || "제목 없음";
+  
+  // 포스트 설명 추출
+  const contentWithoutTitle = post.content.replace(/^#\s+.+$/m, "").trim();
+  const descriptionMatch = contentWithoutTitle.match(/^(.+?)(?:\n|$)/);
+  const description = descriptionMatch 
+    ? descriptionMatch[1].replace(/[#*`]/g, "").trim().substring(0, 160) 
+    : "블로그 포스트";
+
+  // JSON-LD 생성
+  const articleJsonLd = generateArticleJsonLd({
+    title,
+    description,
+    url: `https://lazy-dino.github.io/posts/${post.urlPath}`,
+    datePublished: post.createdAt,
+    dateModified: post.modifiedAt,
+    tags: post.tags,
+  });
+
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: "홈", url: "https://lazy-dino.github.io" },
+    { name: "포스트", url: "https://lazy-dino.github.io/posts" },
+    { name: title, url: `https://lazy-dino.github.io/posts/${post.urlPath}` },
+  ]);
+
   return (
-    <PostAnimation>
-      <PostContent
-        content={post.content}
-        publishPath={publishPath}
-        published={post.createdAt}
-        modified={post.modifiedAt}
-        tags={post.tags}
-        prevPost={prev}
-        nextPost={next}
+    <>
+      <Script
+        id="article-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
-    </PostAnimation>
+      <Script
+        id="breadcrumb-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <PostAnimation>
+        <PostContent
+          content={post.content}
+          publishPath={publishPath}
+          published={post.createdAt}
+          modified={post.modifiedAt}
+          tags={post.tags}
+          prevPost={prev}
+          nextPost={next}
+        />
+      </PostAnimation>
+    </>
   );
 }

@@ -1,0 +1,28 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <!-- 배경 -->
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  
+  <!-- 그라디언트 정의 -->
+  <defs>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 제목 -->
+  <text x="600" y="250" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="bold" text-anchor="middle" fill="url(#textGradient)">
+    Lazy Dino Blog
+  </text>
+  
+  <!-- 부제목 -->
+  <text x="600" y="340" font-family="system-ui, -apple-system, sans-serif" font-size="36" text-anchor="middle" fill="#94a3b8">
+    개발과 기술에 대한 이야기
+  </text>
+  
+  <!-- 아이콘/로고 영역 -->
+  <circle cx="600" cy="450" r="40" fill="none" stroke="url(#textGradient)" stroke-width="3"/>
+  <text x="600" y="465" font-family="system-ui, -apple-system, sans-serif" font-size="32" text-anchor="middle" fill="url(#textGradient)">
+    🦕
+  </text>
+</svg>

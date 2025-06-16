@@ -212,7 +212,7 @@ function HomeContent() {
 			{/* 헤더 섹션 */}
 			<HeaderSection
 				title="Lazydino's DevLog"
-				description="내가 한걸 티내기 위해 만든 블로그"
+				description="더 게을러지기위해 더 똑똑해지기"
 				extraContent={
 					<div className="text-muted-foreground">
 						<p>
