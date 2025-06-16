@@ -510,7 +510,36 @@ function HomeContent() {
 
 export default function Home() {
 	return (
-		<Suspense fallback={<div>Loading...</div>}>
+		<Suspense fallback={
+			<div className="space-y-6 sm:space-y-8 2xl:space-y-10 h-full rounded-lg p-1 sm:p-7">
+				<div className="flex flex-col space-y-3 mb-6">
+					<div className="h-8 w-48 bg-muted animate-pulse rounded" />
+					<div className="h-4 w-64 bg-muted animate-pulse rounded" />
+				</div>
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-5 p-1 md:px-0">
+					{[...Array(6)].map((_, i) => (
+						<div
+							key={i}
+							className="overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-700 bg-card text-card-foreground shadow-lg dark:shadow-sm"
+							style={{ animationDelay: `${i * 0.1}s` }}
+						>
+							<div className="p-6 space-y-4">
+								<div className="h-32 bg-muted animate-pulse rounded" />
+								<div className="space-y-2">
+									<div className="h-6 bg-muted animate-pulse rounded w-3/4" />
+									<div className="h-4 bg-muted animate-pulse rounded" />
+									<div className="h-4 bg-muted animate-pulse rounded w-5/6" />
+								</div>
+								<div className="flex gap-2">
+									<div className="h-5 w-16 bg-muted animate-pulse rounded-full" />
+									<div className="h-5 w-20 bg-muted animate-pulse rounded-full" />
+								</div>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		}>
 			<HomeContent />
 		</Suspense>
 	);
