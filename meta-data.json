@@ -7,7 +7,7 @@
                             "tags": ["resource", "react"],
                             "series": "",
                             "createdAt": "2025-04-21 18:45:51",
-                            "modifiedAt": "2025-06-15 14:44:31",
+                            "modifiedAt": "2025-06-17 14:39:39",
                             "publish": "자원/React"
                         },
   {
@@ -239,17 +239,6 @@
                             "series": "",
                             "createdAt": "2025-05-28 10:08:43",
                             "modifiedAt": "2025-06-08 12:34:57",
-                            "publish": "자원/ai"
-                        },
-  {
-                            "urlPath": "자원/ai/Typescript로 mcp 서버 만들기-lazydino-safeBackup-0001",
-                            "title": "Typescript로 mcp 서버 만들기-lazydino-safeBackup-0001",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["ai", "mcp", "quickstart"],
-                            "series": "",
-                            "createdAt": "2025-05-28 10:08:43",
-                            "modifiedAt": "2025-06-08 12:34:39",
                             "publish": "자원/ai"
                         },
   {
@@ -579,7 +568,7 @@
                             "tags": ["project", "carrot-market", "study", "clone"],
                             "series": "",
                             "createdAt": "2025-06-13 11:29:34",
-                            "modifiedAt": "2025-06-15 18:24:16",
+                            "modifiedAt": "2025-06-17 16:39:39",
                             "publish": "프로젝트/당근마켓 클론코딩"
                         },
   {
@@ -612,7 +601,7 @@
                             "tags": ["project", "\ud68c\uace0", "portfolio", "archive"],
                             "series": "",
                             "createdAt": "2025-03-25 16:46:50",
-                            "modifiedAt": "2025-03-27 16:52:58",
+                            "modifiedAt": "2025-06-17 14:31:02",
                             "publish": "프로젝트/아임유어박스 웹사이트"
                         },
   {
