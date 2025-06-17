@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Badge } from "./ui/badge";
 import { Element } from "hast";
 import CodeBlock from "./code-block";
+import MermaidBlock from "./mermaid-block";
 import { motion } from "framer-motion";
 import remarkCallout from "@r4ai/remark-callout";
 import remarkGfm from "remark-gfm";
@@ -287,6 +288,11 @@ export default function MarkdownRenderer({
 			const filenameMatch = code.match(/^\/\/\s*filename:\s*(.+)$/m);
 			if (filenameMatch) {
 				filename = filenameMatch[1].trim();
+			}
+
+			// Mermaid 다이어그램 처리
+			if (!inline && match && match[1] === "mermaid") {
+				return <MermaidBlock code={code} />;
 			}
 
 			return !inline && match ? (
