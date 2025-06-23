@@ -11,17 +11,6 @@
                             "publish": "자원/React"
                         },
   {
-                            "urlPath": "프로젝트/알고리즘/취업을 위한 알고리즘 공부",
-                            "title": "취업을 위한 알고리즘 공부",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["project", "study", "algorithm"],
-                            "series": "취업을 위해 알고리즘 공부하기",
-                            "createdAt": "2025-03-19 08:05:06",
-                            "modifiedAt": "2025-06-13 18:58:05",
-                            "publish": "프로젝트/알고리즘"
-                        },
-  {
                             "urlPath": "자원/크롬 확장프로그램/크롬 확장프로그램에 케시메모리 추가하기",
                             "title": "크롬 확장프로그램에 케시메모리 추가하기",
                             "summary": "",
@@ -568,18 +557,18 @@
                             "tags": ["project", "carrot-market", "study", "clone"],
                             "series": "",
                             "createdAt": "2025-06-13 11:29:34",
-                            "modifiedAt": "2025-06-17 16:39:39",
+                            "modifiedAt": "2025-06-17 22:24:43",
                             "publish": "프로젝트/당근마켓 클론코딩"
                         },
   {
-                            "urlPath": "프로젝트/괴담집/괴담집",
-                            "title": "괴담집",
+                            "urlPath": "프로젝트/괴담집/괴담집 프로젝트 소개",
+                            "title": "괴담집 프로젝트 소개",
                             "summary": "",
                             "image": "",
                             "tags": ["project", "\uad34\ub2f4\uc9d1"],
                             "series": "",
                             "createdAt": "2025-06-15 19:13:08",
-                            "modifiedAt": "2025-06-15 19:42:17",
+                            "modifiedAt": "2025-06-23 18:02:00",
                             "publish": "프로젝트/괴담집"
                         },
   {
@@ -605,25 +594,25 @@
                             "publish": "프로젝트/아임유어박스 웹사이트"
                         },
   {
-                            "urlPath": "저장소/블로그/개인 블로그를 제작하게 된 이유",
+                            "urlPath": "저장소/개인 블로그/개인 블로그를 제작하게 된 이유",
                             "title": "개인 블로그를 제작하게 된 이유",
                             "summary": "",
                             "image": "",
                             "tags": ["blog", "dev", "project", "archive"],
                             "series": "나의 맞춤 블로그 만들기",
                             "createdAt": "2025-03-08 17:09:39",
-                            "modifiedAt": "2025-06-06 16:48:13",
-                            "publish": "프로젝트/블로그"
+                            "modifiedAt": "2025-06-17 19:14:44",
+                            "publish": "프로젝트/개인 블로그"
                         },
   {
-                            "urlPath": "저장소/블로그/어떻게 블로그를 구현하였나",
+                            "urlPath": "저장소/개인 블로그/어떻게 블로그를 구현하였나",
                             "title": "어떻게 블로그를 구현하였나",
                             "summary": "",
                             "image": "",
                             "tags": ["blog", "dev", "project", "archive"],
                             "series": "나의 맞춤 블로그 만들기",
                             "createdAt": "2025-03-08 17:12:17",
-                            "modifiedAt": "2025-06-11 22:40:37",
-                            "publish": "프로젝트/블로그"
+                            "modifiedAt": "2025-06-17 19:14:52",
+                            "publish": "프로젝트/개인 블로그"
                         }
 ]
