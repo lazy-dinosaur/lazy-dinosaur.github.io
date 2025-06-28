@@ -138,6 +138,13 @@ export default function Header() {
 		}
 	}, [searchQuery]);
 
+	// 디바운스된 검색어가 변경될 때 로딩 상태 해제
+	useEffect(() => {
+		if (debouncedSearchQuery.trim() || !searchQuery.trim()) {
+			setIsSearching(false);
+		}
+	}, [debouncedSearchQuery, searchQuery]);
+
 	useEffect(() => {
 		setIsClient(true);
 
@@ -253,7 +260,6 @@ export default function Header() {
 	// 검색 결과 가져오기 (디바운스된 검색어 사용)
 	const searchResults = useMemo(() => {
 		if (!debouncedSearchQuery.trim()) {
-			setIsSearching(false);
 			return {
 				all: [],
 				title: [],
@@ -268,9 +274,6 @@ export default function Header() {
 			content: performSearch(debouncedSearchQuery, "content"),
 			tag: performSearch(debouncedSearchQuery, "tag"),
 		};
-		
-		// 검색 완료 후 로딩 상태 해제
-		setIsSearching(false);
 		
 		return results;
 	}, [debouncedSearchQuery, performSearch]);
