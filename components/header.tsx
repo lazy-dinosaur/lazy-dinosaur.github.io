@@ -77,6 +77,7 @@ export default function Header() {
 	const [headerVisible, setHeaderVisible] = useState(true);
 	const [isClient, setIsClient] = useState(false);
 	const [activeTab, setActiveTab] = useState("전체");
+	const [isSearching, setIsSearching] = useState(false);
 	const { posts } = usePosts();
 	const { theme, setTheme } = useTheme();
 
@@ -129,9 +130,12 @@ export default function Header() {
 	// 뒤로가기 버튼이 필요한 페이지인지 확인
 	const shouldShowBackButton = isPostPage || isProjectDetailPage;
 
-	// 검색 입력시 항상 전체 탭으로 초기화
+	// 검색 입력시 항상 전체 탭으로 초기화 및 로딩 상태 설정
 	useEffect(() => {
 		setActiveTab("전체");
+		if (searchQuery.trim()) {
+			setIsSearching(true);
+		}
 	}, [searchQuery]);
 
 	useEffect(() => {
@@ -249,6 +253,7 @@ export default function Header() {
 	// 검색 결과 가져오기 (디바운스된 검색어 사용)
 	const searchResults = useMemo(() => {
 		if (!debouncedSearchQuery.trim()) {
+			setIsSearching(false);
 			return {
 				all: [],
 				title: [],
@@ -257,12 +262,17 @@ export default function Header() {
 			};
 		}
 
-		return {
+		const results = {
 			all: performSearch(debouncedSearchQuery, "all"),
 			title: performSearch(debouncedSearchQuery, "title"),
 			content: performSearch(debouncedSearchQuery, "content"),
 			tag: performSearch(debouncedSearchQuery, "tag"),
 		};
+		
+		// 검색 완료 후 로딩 상태 해제
+		setIsSearching(false);
+		
+		return results;
 	}, [debouncedSearchQuery, performSearch]);
 
 	// 현재 탭에 따른 검색 결과 반환
@@ -501,7 +511,7 @@ export default function Header() {
 							<div className="border-b border-border/40 mt-1">
 								<div className="flex overflow-x-auto px-2 py-1 sm:px-3 sm:py-2 gap-2 sm:gap-3">
 									{["전체", "제목", "내용", "태그"].map((tab) => {
-										const count =
+										const count = !isSearching ? (
 											tab === "전체"
 												? searchResults.all.length
 												: tab === "제목"
@@ -510,21 +520,24 @@ export default function Header() {
 														? searchResults.content.length
 														: tab === "태그"
 															? searchResults.tag.length
-															: 0;
+															: 0
+										) : 0;
 
 										return (
 											<button
 												key={tab}
 												onClick={() => setActiveTab(tab)}
+												disabled={isSearching}
 												className={`px-2 sm:px-3 py-1 text-xs sm:text-sm rounded-md transition-colors whitespace-nowrap
                           ${
 														activeTab === tab
 															? "bg-primary/10 text-primary border border-primary/30"
 															: "bg-background hover:bg-secondary/20 border border-transparent"
-													}`}
+													} ${isSearching ? "opacity-50 cursor-wait" : ""}`}
 											>
 												{tab}
-												{count > 0 && ` (${count})`}
+												{!isSearching && count > 0 && ` (${count})`}
+												{isSearching && " ..."}
 											</button>
 										);
 									})}
@@ -554,8 +567,28 @@ export default function Header() {
 									</div>
 								)}
 
-								{/* 검색어가 있지만 결과가 없을 때 */}
-								{searchQuery.trim() && getCurrentResults().length === 0 && (
+								{/* 검색 중일 때 로딩 표시 */}
+								{searchQuery.trim() && isSearching && (
+									<div className="py-6 text-center">
+										<motion.div
+											initial={{ opacity: 0 }}
+											animate={{ opacity: 1 }}
+											className="flex flex-col items-center gap-3"
+										>
+											<motion.div
+												animate={{ rotate: 360 }}
+												transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+												className="w-8 h-8 border-2 border-primary/30 border-t-primary rounded-full"
+											/>
+											<p className="text-sm text-muted-foreground font-medium">
+												검색 중...
+											</p>
+										</motion.div>
+									</div>
+								)}
+
+								{/* 검색어가 있지만 결과가 없을 때 (로딩 중이 아닐 때만) */}
+								{searchQuery.trim() && !isSearching && getCurrentResults().length === 0 && (
 									<CommandEmpty className="py-6 text-center">
 										<div className="flex flex-col items-center gap-2">
 											<motion.div
@@ -576,8 +609,8 @@ export default function Header() {
 									</CommandEmpty>
 								)}
 
-								{/* 검색 결과가 있을 때 */}
-								{searchQuery.trim() && getCurrentResults().length > 0 && (
+								{/* 검색 결과가 있을 때 (로딩 중이 아닐 때만) */}
+								{searchQuery.trim() && !isSearching && getCurrentResults().length > 0 && (
 									<CommandGroup
 										heading={`${activeTab} 검색 결과 (${getCurrentResults().length})`}
 										className="text-xs font-medium text-primary/80 px-2"
