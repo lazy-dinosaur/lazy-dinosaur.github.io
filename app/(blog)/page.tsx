@@ -4,7 +4,7 @@ import { HeaderSection, PostGrid, PostItem } from "@/components/home-animation";
 import { usePosts } from "@/contexts/posts-context";
 import { useState, useEffect, useMemo, Suspense } from "react";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Post } from "@/lib/posts";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
@@ -237,7 +237,7 @@ function HomeContent() {
 						className="flex items-center gap-2"
 					>
 						{showAllTags ? "태그 목록 접기" : "모든 태그 보기"}
-						<svg
+						<motion.svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="16"
 							height="16"
@@ -247,31 +247,41 @@ function HomeContent() {
 							strokeWidth="2"
 							strokeLinecap="round"
 							strokeLinejoin="round"
-							className={`transition-transform ${showAllTags ? "rotate-180" : ""}`}
+							animate={{ rotate: showAllTags ? 180 : 0 }}
+							transition={{ duration: 0.3, ease: "easeInOut" }}
 						>
 							<path d="m6 9 6 6 6-6" />
-						</svg>
+						</motion.svg>
 					</Button>
 
-					{showAllTags && (
-						<motion.div
-							initial={{ opacity: 0, height: 0 }}
-							animate={{ opacity: 1, height: "auto" }}
-							exit={{ opacity: 0, height: 0 }}
-							className="flex flex-wrap gap-2 p-4 bg-muted/30 rounded-lg"
-						>
-							{allTags.map((tag) => (
-								<Badge
-									key={tag}
-									variant="outline"
-									className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
-									onClick={() => handleTagClick(tag)}
-								>
-									#{tag}
-								</Badge>
-							))}
-						</motion.div>
-					)}
+					<AnimatePresence>
+						{showAllTags && (
+							<motion.div
+								initial={{ opacity: 0, height: 0 }}
+								animate={{ opacity: 1, height: "auto" }}
+								exit={{ opacity: 0, height: 0 }}
+								transition={{
+									height: { duration: 0.3, ease: "easeInOut" },
+									opacity: { duration: 0.2 }
+								}}
+								className="overflow-hidden"
+							>
+								<div className="flex flex-wrap gap-2 p-4 bg-muted/30 rounded-lg">
+									{allTags.map((tag) => (
+										<div key={tag} className="group">
+											<Badge
+												variant="outline"
+												className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
+												onClick={() => handleTagClick(tag)}
+											>
+												#{tag}
+											</Badge>
+										</div>
+									))}
+								</div>
+							</motion.div>
+						)}
+					</AnimatePresence>
 				</motion.div>
 			)}
 
@@ -287,15 +297,16 @@ function HomeContent() {
 							필터링된 태그:
 						</span>
 						{selectedTags.map((tag) => (
-							<Badge
-								key={tag}
-								variant="secondary"
-								className="cursor-pointer hover:bg-destructive hover:text-destructive-foreground transition-colors"
-								onClick={() => handleTagClick(tag)}
-							>
-								#{tag}
-								<X className="ml-1 h-3 w-3" />
-							</Badge>
+							<div key={tag}>
+								<Badge
+									variant="secondary"
+									className="cursor-pointer hover:bg-destructive hover:text-destructive-foreground transition-colors duration-200"
+									onClick={() => handleTagClick(tag)}
+								>
+									#{tag}
+									<X className="ml-1 h-3 w-3" />
+								</Badge>
+							</div>
 						))}
 						<Button
 							variant="ghost"
@@ -314,14 +325,15 @@ function HomeContent() {
 								추가 가능한 태그:
 							</span>
 							{availableTags.slice(0, 10).map((tag) => (
-								<Badge
-									key={tag}
-									variant="outline"
-									className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
-									onClick={() => handleTagClick(tag)}
-								>
-									#{tag}
-								</Badge>
+								<div key={tag}>
+									<Badge
+										variant="outline"
+										className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
+										onClick={() => handleTagClick(tag)}
+									>
+										#{tag}
+									</Badge>
+								</div>
 							))}
 							{availableTags.length > 10 && (
 								<span className="text-xs text-muted-foreground">
