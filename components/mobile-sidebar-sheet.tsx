@@ -64,7 +64,7 @@ export function MobileSidebarSheet({ headings }: MobileSidebarSheetProps) {
         {isVisible && (
           <motion.button
             onClick={() => setIsOpen(true)}
-            className="fixed rounded-full p-2 bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 transition-colors z-40 right-6 xl:hidden"
+            className="fixed rounded-full p-2 shadow-lg z-40 right-6 xl:hidden overflow-hidden"
             aria-label="사이드바 열기"
             initial={{ 
               opacity: 0, 
@@ -90,7 +90,8 @@ export function MobileSidebarSheet({ headings }: MobileSidebarSheetProps) {
               }
             }}
           >
-            <List className="h-5 w-5" />
+            <span className="absolute inset-0 bg-primary hover:bg-primary/90 transition-colors duration-200" />
+            <List className="h-5 w-5 relative z-10 text-primary-foreground" />
           </motion.button>
         )}
       </AnimatePresence>

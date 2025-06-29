@@ -46,7 +46,7 @@ export default function ScrollToTop() {
       {isVisible && (
         <motion.button
           onClick={scrollToTop}
-          className="fixed rounded-full p-2 bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 transition-colors z-50 right-6 xl:hidden"
+          className="fixed rounded-full p-2 shadow-lg z-50 right-6 xl:hidden overflow-hidden"
           aria-label="Scroll to top"
           initial={{ 
             opacity: 0, 
@@ -72,7 +72,8 @@ export default function ScrollToTop() {
             }
           }}
         >
-          <ArrowUp className="h-5 w-5" />
+          <span className="absolute inset-0 bg-primary hover:bg-primary/90 transition-colors duration-200" />
+          <ArrowUp className="h-5 w-5 relative z-10 text-primary-foreground" />
         </motion.button>
       )}
     </AnimatePresence>
