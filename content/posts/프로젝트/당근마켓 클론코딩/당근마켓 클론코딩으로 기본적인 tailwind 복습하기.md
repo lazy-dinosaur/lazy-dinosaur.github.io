@@ -6,7 +6,7 @@ tags:
   - clone
   - tailwind
 createdAt: 2025-06-14 15:04:37
-modifiedAt: 2025-06-29 12:46:36
+modifiedAt: 2025-06-29 15:25:25
 publish: 프로젝트/당근마켓 클론코딩
 related: ""
 series: ""
@@ -74,11 +74,46 @@ modifier는 tailwind에서 클래스 이름에 접두사나 접미사를 붙여�
 
 Tailwind에는 기본적으로 유용한 에니메이션들이 준비 되어 있다.
 
-- `animate-pulse` -
+- `animate-pulse` - 요소에 펄스 효과 추가
+- `animate-bounce` - 요소가 튀기는것 처럼 통통 튀는 효과
+- `animate-spin` - 요소가 빙글빙글 도는 효과
+
+...
+
+### 커스텀 Animations
+
+내가 원하는 효과를추가하기 위해선 `@theme` directive를 사용해야 한다.
+
+`--animate-*`형태로 작성해 주어야 변수들이 동적으로 설정된다.
+
+```css
+@theme {
+  --animate-wiggle: wiggle 1s ease-in-out infinite;
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(-3deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
+  }
+}
+```
+
+사용할 때에는 `animate-wiggle`이라는 이름으로 사용하면 된다.
 
 ## Tailwind의 Directive
 
 출처:[tailwind functions and directives](https://tailwindcss.com/docs/functions-and-directives)
+
+- `@import`: CSS파일을 인라인으로 가져올 때 사용
+- `@theme`: 글꼴, 색상, 중단점 등 웹사이트나 앱 디자인의 핵심 요소들을 '변수'처럼 만들어 재사용할 수 있도록 정의할때 사용
+- `@source`: Tailwind의 자동 콘텐츠 감지에 포착되지 않는 소스 파일을 명시적으로 지정
+- `@utility`: hover, focus, lg와 같은 변형과 함께 작동하는 사용자 정의 유틸리티를 프로젝트에 추가
+- `@variant`: CSS의 스타일에 Tailwind 변형을 적용
+- `@custom-variant`: 프로젝트에 사용자 정의 변형을 추가
+- `@apply`: 기존 유틸리티 클래스를 사용자 정의 CSS에 인라인으로 적용
 
 ## Tailwind 플러그인 설치(v4)
 
