@@ -71,13 +71,13 @@ export function MobileTableOfContents({ headings }: MobileTableOfContentsProps) 
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             transition={{
-              type: "spring",
-              stiffness: 500,
-              damping: 20,
+              type: "keyframes",
+              duration: 0.3,
+              ease: "easeOut",
               bottom: {
-                type: "spring",
-                stiffness: 300,
-                damping: 30
+                type: "keyframes",
+                duration: 0.4,
+                ease: "easeInOut"
               }
             }}
           >
