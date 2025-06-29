@@ -11,6 +11,17 @@
                             "publish": "자원/React"
                         },
   {
+                            "urlPath": "프로젝트/괴담집/괴담집 이야기 생성 워크플로우 구축",
+                            "title": "괴담집 이야기 생성 워크플로우 구축",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["project", "\uad34\ub2f4\uc9d1", "ai", "n8n"],
+                            "series": "",
+                            "createdAt": "2025-06-28 17:53:01",
+                            "modifiedAt": "2025-06-29 12:39:56",
+                            "publish": "프로젝트/괴담집"
+                        },
+  {
                             "urlPath": "자원/크롬 확장프로그램/크롬 확장프로그램에 케시메모리 추가하기",
                             "title": "크롬 확장프로그램에 케시메모리 추가하기",
                             "summary": "",
@@ -576,10 +587,10 @@
                             "title": "괴담집 콘텐츠 인프라 구축",
                             "summary": "",
                             "image": "",
-                            "tags": ["project", "\uad34\ub2f4\uc9d1", "assets"],
+                            "tags": ["project", "\uad34\ub2f4\uc9d1", "strapi", "cms"],
                             "series": "",
                             "createdAt": "2025-06-23 09:47:32",
-                            "modifiedAt": "2025-06-28 18:42:36",
+                            "modifiedAt": "2025-06-28 19:49:02",
                             "publish": "프로젝트/괴담집"
                         },
   {
