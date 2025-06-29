@@ -11,17 +11,6 @@
                             "publish": "자원/React"
                         },
   {
-                            "urlPath": "프로젝트/괴담집/괴담집 이야기 생성 워크플로우 구축",
-                            "title": "괴담집 이야기 생성 워크플로우 구축",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["project", "\uad34\ub2f4\uc9d1", "ai", "n8n"],
-                            "series": "",
-                            "createdAt": "2025-06-28 17:53:01",
-                            "modifiedAt": "2025-06-29 12:39:56",
-                            "publish": "프로젝트/괴담집"
-                        },
-  {
                             "urlPath": "자원/크롬 확장프로그램/크롬 확장프로그램에 케시메모리 추가하기",
                             "title": "크롬 확장프로그램에 케시메모리 추가하기",
                             "summary": "",
@@ -550,14 +539,14 @@
                             "publish": "영역/개발"
                         },
   {
-                            "urlPath": "프로젝트/당근마켓 클론코딩/당근마켓 클론코딩으로 기본적인 tailwind 공부하기",
-                            "title": "당근마켓 클론코딩으로 기본적인 tailwind 공부하기",
+                            "urlPath": "프로젝트/당근마켓 클론코딩/당근마켓 클론코딩으로 기본적인 tailwind 복습하기",
+                            "title": "당근마켓 클론코딩으로 기본적인 tailwind 복습하기",
                             "summary": "",
                             "image": "",
                             "tags": ["project", "carrot-market", "study", "clone", "tailwind"],
                             "series": "",
                             "createdAt": "2025-06-14 15:04:37",
-                            "modifiedAt": "2025-06-15 18:19:00",
+                            "modifiedAt": "2025-06-29 12:46:36",
                             "publish": "프로젝트/당근마켓 클론코딩"
                         },
   {
@@ -580,6 +569,17 @@
                             "series": "",
                             "createdAt": "2025-06-15 19:13:08",
                             "modifiedAt": "2025-06-23 18:02:00",
+                            "publish": "프로젝트/괴담집"
+                        },
+  {
+                            "urlPath": "프로젝트/괴담집/괴담집 이야기 생성 워크플로우 구축",
+                            "title": "괴담집 이야기 생성 워크플로우 구축",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["project", "\uad34\ub2f4\uc9d1", "ai", "n8n"],
+                            "series": "",
+                            "createdAt": "2025-06-28 17:53:01",
+                            "modifiedAt": "2025-06-29 12:44:29",
                             "publish": "프로젝트/괴담집"
                         },
   {

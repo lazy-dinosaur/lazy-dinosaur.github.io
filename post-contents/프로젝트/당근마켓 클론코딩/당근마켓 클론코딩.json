@@ -1,4 +1,4 @@
 {
-  "content": "\n# 당근마켓 클론코딩\n\nNomadCoders의 [당근마켓 클론코딩](https://nomadcoders.co/carrot-market/) 강의를 수강하며 Next.js와 Tailwind CSS 그리고 Prisma에 대한 복습과 해당 내용을 블로그에 올리는것을 목표로 한다.\n\n## 프로젝트트 생성\n\nnext.js로 프로젝트를 생성한다.\n\n- npx\n\n  ```bash\n  npx create-next-app@latest\n  ```\n\n- bun\n\n  ```bash\n  bun create next-app\n  ```\n\n  기본 셋업을 통해 프로젝트를 생성하면 기본적으로 tailwindcss가 설치되어 기본적으로 사용할 수 있다.\n\n  - [[당근마켓 클론코딩으로 기본적인 tailwind 공부하기]]\n",
-  "plainContent": "NomadCoders의 당근마켓 클론코딩 강의를 수강하며 Next.js와 Tailwind CSS 그리고 Prisma에 대한 복습과 해당 내용을 블로그에 올리는것을 목표로 한다.\nnext.js로 프로젝트를 생성한다.\nnpx\nbun\n기본 셋업을 통해 프로젝트를 생성하면 기본적으로 tailwindcss가 설치되어 기본적으로 사용할 수 있다.\n당근마켓 클론코딩으로 기본적인 tailwind 공부하기"
+  "content": "\n# 당근마켓 클론코딩\n\nNomadCoders의 [당근마켓 클론코딩](https://nomadcoders.co/carrot-market/) 강의를 수강하며 Next.js와 Tailwind CSS 그리고 Prisma에 대한 복습과 해당 내용을 블로그에 올리는것을 목표로 한다.\n\n## 프로젝트트 생성\n\nnext.js로 프로젝트를 생성한다.\n\n- npx\n\n  ```bash\n  npx create-next-app@latest\n  ```\n\n- bun\n\n  ```bash\n  bun create next-app\n  ```\n\n  기본 셋업을 통해 프로젝트를 생성하면 기본적으로 tailwindcss가 설치되어 기본적으로 사용할 수 있다.\n\n  - [[당근마켓 클론코딩으로 기본적인 tailwind 복습하기]]\n",
+  "plainContent": "NomadCoders의 당근마켓 클론코딩 강의를 수강하며 Next.js와 Tailwind CSS 그리고 Prisma에 대한 복습과 해당 내용을 블로그에 올리는것을 목표로 한다.\nnext.js로 프로젝트를 생성한다.\nnpx\nbun\n기본 셋업을 통해 프로젝트를 생성하면 기본적으로 tailwindcss가 설치되어 기본적으로 사용할 수 있다.\n당근마켓 클론코딩으로 기본적인 tailwind 복습하기"
 }
