@@ -37,7 +37,7 @@ const RightSidebar = ({ className }: RightSidebarProps) => {
         delay: 0.05,
       }}
     >
-      {isPostPage && (
+      {isPostPage ? (
         <motion.div
           className="mb-6 sm:mb-8 md:mb-10"
           initial={{ opacity: 0, y: 10 }}
@@ -46,7 +46,7 @@ const RightSidebar = ({ className }: RightSidebarProps) => {
         >
           <TableOfContents key={`toc-${pathname}`} />
         </motion.div>
-      )}
+      ) : null}
       <div className="h-full overflow-y-auto custom-scrollbar">
         <motion.div
           initial={{ opacity: 0 }}

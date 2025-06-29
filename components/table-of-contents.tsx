@@ -23,6 +23,7 @@ export default function TableOfContents({ className, headings: propHeadings, onI
   const [isExpanded, setIsExpanded] = useState(true);
   const [isUserScrolling, setIsUserScrolling] = useState(false);
   const [clickedId, setClickedId] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(!propHeadings);
   
   // 모바일에서는 항상 펼쳐진 상태 유지
   const isMobile = !!onItemClick;
@@ -44,8 +45,13 @@ export default function TableOfContents({ className, headings: propHeadings, onI
     // propHeadings가 제공된 경우 DOM 추출 스킵
     if (propHeadings) {
       setHeadings(propHeadings);
+      setIsLoading(false);
       return;
     }
+    
+    // 로딩 상태 시작
+    setIsLoading(true);
+    
     // DOM이 완전히 로드되었는지 확인하는 함수
     const extractHeadings = () => {
       const headingElements = document.querySelectorAll("h1, h2, h3, h4");
@@ -58,6 +64,9 @@ export default function TableOfContents({ className, headings: propHeadings, onI
         }));
 
       setHeadings(items);
+      if (items.length > 0) {
+        setIsLoading(false);
+      }
     };
 
     // MutationObserver로 DOM 변경 감지
@@ -90,7 +99,11 @@ export default function TableOfContents({ className, headings: propHeadings, onI
 
     // 추가적으로 여러 번 확인 (fallback)
     const timer1 = setTimeout(extractHeadings, 200);
-    const timer2 = setTimeout(extractHeadings, 500);
+    const timer2 = setTimeout(() => {
+      extractHeadings();
+      // 500ms 후에도 헤딩이 없으면 로딩 해제
+      setIsLoading(false);
+    }, 500);
 
     return () => {
       observer.disconnect();
@@ -262,6 +275,27 @@ export default function TableOfContents({ className, headings: propHeadings, onI
       handleClick(id);
     }
   }, [handleClick]);
+
+  if (isLoading) {
+    return (
+      <nav className={cn("toc w-full", className)} aria-label="목차">
+        <div className="mb-6 sm:mb-8 md:mb-10">
+          <h2 className="text-base 2xl:text-lg font-semibold mb-3 sm:mb-4 md:mb-5 px-2 sm:px-3 pb-2 border-b border-border/50 flex items-center">
+            <span className="w-1 h-4 bg-primary rounded-full mr-2 opacity-60" />
+            목차
+          </h2>
+          <div className="px-1 sm:px-2 space-y-2">
+            {/* 스켈레톤 UI */}
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="animate-pulse">
+                <div className="h-4 bg-muted rounded w-3/4 mb-2" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </nav>
+    );
+  }
 
   if (headings.length === 0) {
     return null;
