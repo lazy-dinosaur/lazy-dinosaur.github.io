@@ -6,7 +6,7 @@ tags:
   - clone
   - tailwind
 createdAt: 2025-06-14 15:04:37
-modifiedAt: 2025-06-29 15:25:25
+modifiedAt: 2025-06-29 15:46:52
 publish: 프로젝트/당근마켓 클론코딩
 related: ""
 series: ""
@@ -109,11 +109,141 @@ Tailwind에는 기본적으로 유용한 에니메이션들이 준비 되어 있
 
 - `@import`: CSS파일을 인라인으로 가져올 때 사용
 - `@theme`: 글꼴, 색상, 중단점 등 웹사이트나 앱 디자인의 핵심 요소들을 '변수'처럼 만들어 재사용할 수 있도록 정의할때 사용
+
+  ```css
+  @theme {
+  /* 1. 새로운 브랜드 색상 추가 */
+  colors: {
+    'primary': '#007BFF',   /* 파란색 계열의 메인 색상 */
+    'secondary': '#6C757D' /* 회색 계열의 보조 색상 */
+  },
+
+  /* 2. 새로운 중단점(breakpoint) 추가 */
+  screens: {
+    '3xl': '1920px' /* 매우 큰 화면을 위한 중단점 */
+  },
+
+  /* 3. 새로운 간격(spacing) 값 추가 */
+  spacing: {
+    '112': '28rem' /* 448px */
+  }
+  }
+  ```
+
+  ```html
+  <button class="bg-primary text-white p-4">Primary Button</button>
+
+  <div class="text-center 3xl:text-left">
+    이 텍스트는 1920px 이상 화면에서 왼쪽 정렬됩니다.
+  </div>
+
+  <div class="mt-112">위쪽에 28rem 만큼의 여백이 있습니다.</div>
+  ```
+
 - `@source`: Tailwind의 자동 콘텐츠 감지에 포착되지 않는 소스 파일을 명시적으로 지정
 - `@utility`: hover, focus, lg와 같은 변형과 함께 작동하는 사용자 정의 유틸리티를 프로젝트에 추가
+
+  ```css
+  @utility .btn-blue {
+    background-color: #3490dc;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+  }
+
+  /* hover 시 배경색 변경 */
+  @utility .btn-blue:hover {
+    background-color: #2779bd;
+  }
+  ```
+
+  ```html
+  <button class="btn-blue">Click me</button>
+  ```
+
 - `@variant`: CSS의 스타일에 Tailwind 변형을 적용
+
+  ```css
+  /* 기본 카드 스타일 */
+  .card-header {
+    background-color: #f1f5f9; /* 기본 배경색 */
+    transition: background-color 0.2s;
+  }
+
+  /* 'group-hover' 변형을 '.card-header'에 적용
+    => 'group-hover:card-header' 클래스가 생성됨 
+  */
+  @variant group-hover & {
+    .card-header {
+      background-color: #e2e8f0; /* group-hover 시 변경될 배경색 */
+    }
+  }
+  ```
+
+  ```html
+  <div class="group border rounded-lg p-4">
+    <div class="card-header group-hover:card-header p-2 rounded">
+      Card Title
+    </div>
+
+    <p class="mt-2">
+      이 카드 전체(group)에 마우스를 올리면 제목의 배경색이 바뀝니다.
+    </p>
+  </div>
+  ```
+
 - `@custom-variant`: 프로젝트에 사용자 정의 변형을 추가
+
+  ```css
+  /* 1. 'active'라는 이름의 새로운 변형을 정의합니다. */
+  @custom-variant & active {
+    /* `data-state='active'` 속성을 가진 요소에 스타일을 적용합니다. */
+    &[data-state="active"] {
+      @slot; /* 여기에 active:bg-blue-500 같은 유틸리티 스타일이 적용됩니다. */
+    }
+  }
+
+  /* (기타 Tailwind 코드) */
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  ```
+
+  ```html
+  <div>
+    <button
+      class="px-4 py-2 rounded border
+            active:bg-blue-500 active:text-white"
+      data-state="inactive"
+    >
+      Tab 1
+    </button>
+
+    <button
+      class="px-4 py-2 rounded border
+            active:bg-blue-500 active:text-white"
+      data-state="active"
+    >
+      Tab 2
+    </button>
+  </div>
+  ```
+
 - `@apply`: 기존 유틸리티 클래스를 사용자 정의 CSS에 인라인으로 적용
+
+  ```css
+  .btn {
+    @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+  }
+
+  .btn:hover {
+    @apply bg-blue-700;
+  }
+  ```
+
+  ```html
+  <button class="btn">Click me</button>
+  ```
 
 ## Tailwind 플러그인 설치(v4)
 
