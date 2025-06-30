@@ -282,7 +282,7 @@
                             "tags": ["resource", "linux", "onedrive", "wsl"],
                             "series": "",
                             "createdAt": "2025-06-07 13:01:39",
-                            "modifiedAt": "2025-06-12 16:34:24",
+                            "modifiedAt": "2025-06-30 09:27:08",
                             "publish": "자원/Linux"
                         },
   {
@@ -535,7 +535,7 @@
                             "tags": ["area", "\uac1c\ubc1c"],
                             "series": "",
                             "createdAt": "2025-06-14 18:33:27",
-                            "modifiedAt": "2025-06-14 19:17:57",
+                            "modifiedAt": "2025-06-30 08:59:46",
                             "publish": "영역/개발"
                         },
   {
@@ -543,10 +543,21 @@
                             "title": "당근마켓 클론코딩으로 기본적인 tailwind 복습하기",
                             "summary": "",
                             "image": "",
-                            "tags": ["project", "carrot-market", "study", "clone", "tailwind"],
+                            "tags": ["project", "carrot-market", "study", "tailwind"],
                             "series": "",
                             "createdAt": "2025-06-14 15:04:37",
-                            "modifiedAt": "2025-06-29 15:46:52",
+                            "modifiedAt": "2025-06-30 08:56:48",
+                            "publish": "프로젝트/당근마켓 클론코딩"
+                        },
+  {
+                            "urlPath": "프로젝트/당근마켓 클론코딩/당근마켓 클론코딩으로 기본적인 Next.js 복습하기",
+                            "title": "당근마켓 클론코딩으로 기본적인 Next.js 복습하기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["project", "carrot-market", "study"],
+                            "series": "",
+                            "createdAt": "2025-06-30 08:48:51",
+                            "modifiedAt": "2025-06-30 21:16:46",
                             "publish": "프로젝트/당근마켓 클론코딩"
                         },
   {
@@ -557,7 +568,7 @@
                             "tags": ["project", "carrot-market", "study", "clone"],
                             "series": "",
                             "createdAt": "2025-06-13 11:29:34",
-                            "modifiedAt": "2025-06-17 22:24:43",
+                            "modifiedAt": "2025-06-30 15:17:53",
                             "publish": "프로젝트/당근마켓 클론코딩"
                         },
   {
@@ -612,7 +623,7 @@
                             "tags": ["project", "\ud68c\uace0", "portfolio", "archive"],
                             "series": "",
                             "createdAt": "2025-03-25 16:46:50",
-                            "modifiedAt": "2025-06-17 14:31:02",
+                            "modifiedAt": "2025-06-30 13:18:05",
                             "publish": "프로젝트/아임유어박스 웹사이트"
                         },
   {
