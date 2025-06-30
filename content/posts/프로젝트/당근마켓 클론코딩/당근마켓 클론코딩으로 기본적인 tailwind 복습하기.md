@@ -3,10 +3,9 @@ tags:
   - project
   - carrot-market
   - study
-  - clone
   - tailwind
 createdAt: 2025-06-14 15:04:37
-modifiedAt: 2025-06-29 15:46:52
+modifiedAt: 2025-06-30 08:56:48
 publish: 프로젝트/당근마켓 클론코딩
 related: ""
 series: ""

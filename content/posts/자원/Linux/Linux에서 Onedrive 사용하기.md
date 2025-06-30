@@ -5,7 +5,7 @@ tags:
   - onedrive
   - wsl
 createdAt: 2025-06-07 13:01:39
-modifiedAt: 2025-06-12 16:34:24
+modifiedAt: 2025-06-30 09:27:08
 publish: 자원/Linux
 related: ""
 series: ""
@@ -69,6 +69,16 @@ monitor_interval = "300"
 ```config
 앱/remotely-save/notes
 ```
+
+> [!tip] Obsidian과의 싱크를 위해 사용할 때 필수 옵션
+>
+> Onedrive를 --monitor 모드로 사용하여 Obsidian 파일들을 지속적으로 수정하게 되면 계속해서 `inotify` 이벤트를 받게되고 이는 지속적인 재업로드를 유발한다. 이 때문에 파일이 충돌이 나는 경우가 생겨 백업파일을 만들거나 파일이 삭제 되기도 한다.
+> 이것을 방지하기 위해 아래의 두 옵션을 사용하는것이 좋다.
+>
+> ```config
+> force_session_upload = "true"
+> delay_inotify_processing = "true"
+> ```
 
 ## 지속적으로 동기화하기
 
