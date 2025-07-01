@@ -5,14 +5,14 @@ tags:
   - study
   - tailwind
 createdAt: 2025-06-14 15:04:37
-modifiedAt: 2025-06-30 21:25:04
+modifiedAt: 2025-06-30 21:37:33
 publish: 프로젝트/당근마켓 클론코딩
 related:
   - "[[당근마켓 클론코딩]]"
 series: ""
 ---
 
-# 당근마켓 클론코딩으로 기본적인 tailwind 복습하기
+# 당근마켓 클론코딩으로 Tailwind 복습하기
 
 기본적으로 ide에서 제대로된 tailwind를 사용하기 위해서는 tailwindintellisense를 설치해야 한다.
 neovim의 경우 lazyvim을 통해 쉽게 설정이 가능하다. `:LazyExtra` 로 추가 플러그인 설치 창을 열고 `lang.tailwind`를 선택하여 설치하면 손쉽게 설정이 끝난다.
