@@ -9,6 +9,7 @@ import { Post } from "@/lib/posts";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { X } from "lucide-react";
+import Image from "next/image";
 
 // 페이지당 포스트 수 정의
 const POSTS_PER_PAGE = 6;
@@ -220,7 +221,7 @@ function HomeContent() {
 							🚀
 						</p>
 						<a href="https://myhits.vercel.app">
-							<img
+							<Image
 								src="https://myhits.vercel.app/api/hit/https%3A%2F%2Flazy-dinosaur.github.io%2F?color=green&label=Hits&size=medium"
 								alt="Hits"
 							/>
