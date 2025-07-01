@@ -4,7 +4,7 @@ tags:
   - figma
   - study
 createdAt: 2025-07-01 14:25:50
-modifiedAt: 2025-07-01 15:37:34
+modifiedAt: 2025-07-01 15:57:34
 publish: 프로젝트/Youtube로 피그마 배우기
 related:
   - "[[Youtube로 피그마 배우기]]"
@@ -13,13 +13,19 @@ series: ""
 
 # Youtube로 피그마 배우기-Day1
 
+![피그마 툴바](_assets/attachments/Youtube로%20피그마%20배우기/figma-toolbar.png)
+
 기본 도형및 선은 툴팁을 통해 간편하게 선택하여 그릴 수 있다.
 
 직관적으로 메뉴를 읽어보면 할수 있는것들이 많지만 알아두면 좋은 기능이 몇가지 있다.
 
 ## 벡터 선택 모드
 
+![기본 선택 옵션](_assets/attachments/Youtube로%20피그마%20배우기/figma-normal-select.png)
+
 일반적으로 생성한 물체를 선택하면 레이아웃과 위치 등 옵션을 변경할 수 있다. 여기서 더 나아가서 모형의 구체적인 생김새를 변형시킬 수 있는 모드가 바로 벡터 선택 모드이다.
+
+![벡터 선택 옵션](_assets/attachments/Youtube로%20피그마%20배우기/figma-vector-select.png)
 
 벡터 선택 모드는 도형을 선택한 이후 `엔터`를 누르거나 `더블클릭`을 통해 진입할 수 있다.
 

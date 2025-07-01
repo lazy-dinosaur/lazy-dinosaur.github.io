@@ -4,13 +4,15 @@ tags:
   - figma
   - study
 createdAt: 2025-07-01 14:01:49
-modifiedAt: 2025-07-01 15:37:39
+modifiedAt: 2025-07-01 15:52:43
 publish: 프로젝트/Youtube로 피그마 배우기
 related: ""
 series: ""
 ---
 
 # Youtube로 피그마 배우기
+
+![피그마 로고](_assets/attachments//Youtube로%20피그마%20배우기/figma-landing.png)
 
 > 미래의 개인프로젝트에 날개를 달아주자
 
