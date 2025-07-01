@@ -11,6 +11,17 @@
                             "publish": "자원/React"
                         },
   {
+                            "urlPath": "프로젝트/Youtube로 피그마 배우기/Youtube로 피그마 배우기-Day1",
+                            "title": "Youtube로 피그마 배우기-Day1",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["project", "figma", "study"],
+                            "series": "",
+                            "createdAt": "2025-07-01 14:25:50",
+                            "modifiedAt": "2025-07-01 15:37:34",
+                            "publish": "프로젝트/Youtube로 피그마 배우기"
+                        },
+  {
                             "urlPath": "자원/크롬 확장프로그램/크롬 확장프로그램에 케시메모리 추가하기",
                             "title": "크롬 확장프로그램에 케시메모리 추가하기",
                             "summary": "",
@@ -539,25 +550,25 @@
                             "publish": "영역/개발"
                         },
   {
-                            "urlPath": "프로젝트/당근마켓 클론코딩/당근마켓 클론코딩으로 기본적인 tailwind 복습하기",
-                            "title": "당근마켓 클론코딩으로 기본적인 tailwind 복습하기",
+                            "urlPath": "프로젝트/Youtube로 피그마 배우기/Youtube로 피그마 배우기",
+                            "title": "Youtube로 피그마 배우기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["project", "figma", "study"],
+                            "series": "",
+                            "createdAt": "2025-07-01 14:01:49",
+                            "modifiedAt": "2025-07-01 15:37:39",
+                            "publish": "프로젝트/Youtube로 피그마 배우기"
+                        },
+  {
+                            "urlPath": "프로젝트/당근마켓 클론코딩/당근마켓 클론코딩으로 Tailwind 복습하기",
+                            "title": "당근마켓 클론코딩으로 Tailwind 복습하기",
                             "summary": "",
                             "image": "",
                             "tags": ["project", "carrot-market", "study", "tailwind"],
                             "series": "",
                             "createdAt": "2025-06-14 15:04:37",
-                            "modifiedAt": "2025-06-30 21:25:04",
-                            "publish": "프로젝트/당근마켓 클론코딩"
-                        },
-  {
-                            "urlPath": "프로젝트/당근마켓 클론코딩/당근마켓 클론코딩으로 기본적인 Next.js 복습하기",
-                            "title": "당근마켓 클론코딩으로 기본적인 Next.js 복습하기",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["project", "carrot-market", "study"],
-                            "series": "",
-                            "createdAt": "2025-06-30 08:48:51",
-                            "modifiedAt": "2025-06-30 21:24:49",
+                            "modifiedAt": "2025-06-30 21:37:33",
                             "publish": "프로젝트/당근마켓 클론코딩"
                         },
   {
@@ -568,7 +579,18 @@
                             "tags": ["project", "carrot-market", "study", "clone"],
                             "series": "",
                             "createdAt": "2025-06-13 11:29:34",
-                            "modifiedAt": "2025-06-30 21:24:58",
+                            "modifiedAt": "2025-06-30 21:27:02",
+                            "publish": "프로젝트/당근마켓 클론코딩"
+                        },
+  {
+                            "urlPath": "프로젝트/당근마켓 클론코딩/당근마켓 클론코딩으로 Next.js 복습하기",
+                            "title": "당근마켓 클론코딩으로 Next.js 복습하기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["project", "carrot-market", "study"],
+                            "series": "",
+                            "createdAt": "2025-06-30 08:48:51",
+                            "modifiedAt": "2025-06-30 21:29:31",
                             "publish": "프로젝트/당근마켓 클론코딩"
                         },
   {
