@@ -228,7 +228,7 @@ export default function LiveDemoModal({
                           isVideoFile(
                             project.demoImages[currentImageIndex]?.url || "",
                           ) ? (
-                          <div className="relative w-full h-[85vh] max-h-[85vh] sm:max-h-[90vh] pb-36 flex items-center justify-center bg-black/5">
+                          <div className="relative w-full h-full flex items-center justify-center bg-black/5">
                             <video
                               src={
                                 project.demoImages[currentImageIndex]?.url || ""
@@ -285,6 +285,17 @@ export default function LiveDemoModal({
                               }}
                               key={`video-${project.demoImages[currentImageIndex]?.url}`}
                             />
+                            {/* 비디오 설명 추가 */}
+                            {project.demoImages[currentImageIndex]?.description && (
+                              <div className="absolute bottom-12 left-0 right-0 p-3 sm:p-4 bg-background/90 dark:bg-background/90 backdrop-blur-sm w-full text-center">
+                                <p className="text-xs sm:text-sm text-foreground">
+                                  {
+                                    project.demoImages[currentImageIndex]
+                                      ?.description
+                                  }
+                                </p>
+                              </div>
+                            )}
                           </div>
                         ) : (
                           <Image
