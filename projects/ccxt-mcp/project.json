@@ -1,0 +1,70 @@
+{
+  "projectType": "project",
+  "id": "ccxt-mcp",
+  "title": "CCXT MCP Server",
+  "description": "AI 모델(Claude/GPT)이 100개 이상의 암호화폐 거래소 API와 상호작용할 수 있게 해주는 Model Context Protocol(MCP) 서버입니다. CCXT 라이브러리를 활용하여 암호화폐 거래소에 접근하고 거래할 수 있는 기능을 제공합니다.",
+  "thumbnail": "./ccxt-mcp-main.png",
+  "tags": ["Crypto", "MCP", "AI", "NPM"],
+  "technologies": [
+    "TypeScript",
+    "Node.js",
+    "CCXT",
+    "Model Context Protocol",
+    "Zod",
+    "JSON Schema",
+    "NPM",
+    "AI"
+  ],
+  "githubUrl": "https://github.com/lazy-dinosaur/ccxt-mcp",
+  "serviceUrl": "https://www.npmjs.com/package/@lazydino/ccxt-mcp",
+  "featured": true,
+  "createdAt": "2025-03-29",
+  "overview": "CCXT MCP Server는 '모델이 MCP를 이용할 수 있게' 하는 동시에 'MCP 자체를 개발하는' 독특한 메타적 프로젝트입니다. 인공지능 활용이 급부상하는 시대적 트렌드에 맞춰, AI 모델이 암호화폐 거래소와 직접 상호작용할 수 있는 브릿지 역할을 하는 서버를 개발했습니다. Claude나 GPT 같은 AI 모델들이 사용자의 간단한 자연어 요청만으로 복잡한 거래소 API를 통해 정보를 조회하고 실제 거래를 실행할 수 있게 해줍니다.",
+  "features": [
+    "다양한 시장 정보 조회(거래소 목록, 가격, 주문장 등)",
+    "실시간 거래 기능(시장가/지정가 주문 생성, 주문 취소 및 상태 조회)",
+    "계정 자산 조회 및 거래 내역 분석",
+    "트레이딩 성과 분석(승률, 평균 수익/손실 비율 등)",
+    "포지션 관리(자본 대비 비율 매매, 레버리지 설정 등)",
+    "리스크 관리(기술적 지표 기반 손절매, 변동성 기반 손익 관리)",
+    "Claude Desktop과의 원활한 통합",
+    "100개 이상의 암호화폐 거래소 지원"
+  ],
+  "lessons": "이 프로젝트의 가장 큰 의의는 MCP를 사용하면서 MCP 서버 자체를 개발하는 메타적인 경험이었습니다. 최신 AI 트렌드를 따라가기 위해 Aider, Claude Desktop, Cursor 등 다양한 AI 툴을 활용해보며 각 도구의 장단점을 직접 체험할 수 있었습니다. 특히 MCP가 어떻게 통신하는지, 그리고 MCP 서버를 구축하기 위한 기본적인 설정 방법과 구조에 대해 깊이 이해하게 되었습니다. npm을 통한 패키지 배포 과정과 다른 컴퓨터에 설치하여 사용하는 전체 라이프사이클을 경험함으로써 개발자로서의 역량을 한층 더 강화할 수 있었습니다.",
+  "challenges": [
+    "Model Context Protocol 이해와 구현: MCP는 비교적 새로운 프로토콜로, 아직 문서화가 제한적이고 사용 사례도 많지 않아 구현 방법을 파악하는 데 어려움이 있었습니다.",
+    "다양한 AI 도구 학습 곡선: Aider, Claude Desktop, Cursor 등 각기 다른 AI 도구의 사용법과 특성을 이해하고 효과적으로 활용하는 데 시간이 필요했습니다.",
+    "거래소 API 통합의 복잡성: 100개 이상의 거래소마다 API 구조와 요구사항이 다르고, 이를 일관된 인터페이스로 추상화하는 과정이 복잡했습니다.",
+    "TypeScript 타입 정의의 어려움: CCXT 라이브러리와 MCP SDK에서 제공하는 다양한 타입을 조화롭게 통합하는 과정이 도전적이었습니다.",
+    "배포와 사용자 경험 고려: npm 패키지로 배포하고 다른 컴퓨터에서 쉽게 설치하고 사용할 수 있도록 설정과 문서화 작업에 많은 노력이 필요했습니다.",
+    "AI 모델의 제약 이해: AI 모델이 거래소 API와 상호작용할 때 발생할 수 있는 제약과 한계를 이해하고 이를 고려한 설계가 필요했습니다."
+  ],
+  "demoType": "images",
+  "demoImages": [
+    {
+      "url": "./ccxt-mcp-createOrderWithSL.mp4",
+      "description": "Claude와의 통합 데모: Claude 모델이 사용자 요청에 따라 실시간 암호화폐 가격을 조회하고 사용자의 요청에 따라 손절가를 정해 매매에 들어가는것을 보여줍니다.",
+      "showControls": true
+    },
+    {
+      "url": "./ccxt-mcp-winrate-analyze.mp4",
+      "description": "Claude와의 통합 데모: Claude 모델이 사용자의 과거 매매를 조화하고 사용자의 매매 패턴을 분석하는 것을 보여줍니다.",
+      "showControls": true
+    },
+    {
+      "url": "./ccxt-mcp-architecture-diagram.svg",
+      "description": "아키텍처 다이어그램: 사용자, AI 모델, MCP 서버, 그리고 암호화폐 거래소 간의 상호작용을 시각화한 다이어그램입니다."
+    },
+    {
+      "url": "./ccxt-mcp-npm.png",
+      "description": "NPM 패키지: @lazydino/ccxt-mcp NPM 패키지 페이지와 설치 통계를 보여주는 화면입니다."
+    }
+  ],
+  "futurePlans": [
+    "더 많은 AI 도구와의 통합 확장",
+    "다양한 MCP 서버 템플릿 개발",
+    "거래 전략 자동화 기능 향상",
+    "커뮤니티 기반 개발 확대"
+  ],
+  "publishPath": "프로젝트/CCXT-MCP"
+}

@@ -1,0 +1,83 @@
+{
+  "projectType": "project",
+  "id": "imyourbox-website",
+  "title": "아임유어박스 웹페이지",
+  "description": "Next.js, TypeScript, Tailwind CSS, Framer Motion, Payload.js, Supabase, Vercel을 활용한 회사 웹페이지입니다. 고객과 직원을 위한 웹사이트로, SMTP와 이메일 템플릿을 활용한 문의 기능과 Payload.js 기반 관리자 시스템이 특징입니다.",
+  "thumbnail": "./imyourbox-main.mp4",
+  "thumbnailOptions": {
+    "playbackRate": 2.5
+  },
+  "tags": ["웹", "풀스택"],
+  "technologies": [
+    "Next.js",
+    "Framer Motion",
+    "Shadcn UI",
+    "Tailwind CSS",
+    "TypeScript",
+    "Payload.js",
+    "Supabase",
+    "nodemailer",
+    "Naver Map API",
+    "Kakao OpenChat Link API",
+    "Vercel"
+  ],
+  "serviceUrl": "https://imyourbox.com",
+  "featured": true,
+  "createdAt": "2025-02-27",
+  "overview": "1인 외주로 진행한 풀필먼트 회사 웹페이지 프로젝트입니다. Next.js와 다양한 기술을 활용하여 개발하였으며, 회사 관계자가 직접 콘텐츠를 관리할 수 있도록 관리자 기능을 제공합니다.",
+  "features": [
+    "Payload.js를 활용한 관리자 페이지 구현",
+    "데이터 CSV 형식으로 추출하는 기능 구현",
+    "Zod와 React Hook Form을 활용한 데이터 검증",
+    "기업 뉴스, 연혁, 지도, 공지사항을 관리할 수 있는 기능",
+    "고객 문의 제출 및 이메일 전송 자동화",
+    "Framer Motion을 활용한 Parallax 스크롤 애니메이션",
+    "Naver 지도 API를 통한 위치 정보 시각화",
+    "Kakao 오픈채팅 링크 API 연동",
+    "Supabase를 활용한 데이터 저장 및 관리",
+    "모든 디바이스를 지원하는 반응형 디자인"
+  ],
+  "lessons": "이 프로젝트를 통해 Next.js의 App Router와 API 라우팅, Payload.js를 활용한 헤드리스 CMS 구현 방법을 배웠습니다. 또한 SMTP 연동, 이메일 템플릿 작성, 그리고 여러 외부 API와의 통합 경험을 쌓을 수 있었습니다. 혼자 외주를 받아 진행한 프로젝트인 만큼 클라이언트와 소통하며 의견을 조율하는 커뮤니케이션 능력도 크게 향상되었습니다.",
+  "challenges": [
+    "디자이너가 존재하지 않아 디자인을 새로 만들어야 했습니다.",
+    "Payload.js와 Supabase 통합: 외부 데이터베이스(Supabase)와 Payload.js를 연동하여 데이터를 저장하고 관리하는 과정에서 복잡한 관계 설정이 필요했습니다.",
+    "복잡한 애니메이션 구현: Framer Motion을 사용한 Parallax 스크롤 애니메이션의 성능 최적화가 어려웠으며, 다양한 디바이스에서 일관된 경험을 제공하기 위한 조정이 필요했습니다.",
+    "네이버 지도 API 커스터마이징: 네이버 지도 API를 활용하여 맞춤형 마커와 팝업 창을 구현하는 과정에서 API 문서 부족으로 인한 어려움이 있었습니다.",
+    "이메일 템플릿 반응형 설계: 다양한 이메일 클라이언트에서 일관되게 표시되는 반응형 이메일 템플릿을 설계하는 것이 예상보다 복잡했습니다.",
+    "고객 요구사항 변경 대응: 개발 중간에 추가되는 요구사항을 기존 구조를 최대한 유지하면서 효율적으로 통합하는 설계가 필요했습니다."
+  ],
+  "demoType": "images",
+  "demoImages": [
+    {
+      "url": "./imyourbox-main.mp4",
+      "description": "메인 페이지: 서비스의 핵심 내용을 한눈에 볼 수 있는 랜딩 페이지입니다. 애니메이션과 반응형 디자인으로 사용자 경험을 강화했습니다."
+    },
+    {
+      "url": "./imyourbox-parallax-example.mp4",
+      "description": "Parallax 스크롤 이펙트: Framer Motion을 활용하여 구현한 입체감 있는 스크롤 효과입니다."
+    },
+    {
+      "url": "./imyourbox-admin-collections.png",
+      "description": "관리자 대시보드: Payload.js를 통해 구현된 관리자 패널입니다. 회사 직원이 콘텐츠를 쉽게 관리할 수 있습니다. 회사 사이트 내의 공지사항 모달, 회사 뉴스, 회사 연혁, 회사의 위치 소개를 추가하고 삭제하며 관리하고 사이트의 콘텐츠를 관리할 수 있습니다. 또한 사이트를 통한 문의 내역을 저장하여 확인하고 수정할 수 있습니다."
+    },
+    {
+      "url": "./imyourbox-csv-example.mp4",
+      "description": "CSV 추출을 위한 커스텀 버튼: 요구사항에 맞춰 추가한 Payload의 커스텀 컴포넌트로 Payload에 저장된 고객 문의 사항들을 CSV 파일로 추출하는 기능을 구현한 버튼입니다.",
+      "showControls": true
+    },
+    {
+      "url": "./imyourbox-map-example.mp4",
+      "description": "위치 정보 페이지: 네이버 지도 API를 활용하여 회사 위치와 근처 주요 시설을 표시한 지도 기능입니다. Payload를 통해 추가되고 수정됩니다."
+    },
+    {
+      "url": "./imyourbox-inquiry-example.mp4",
+      "description": "문의 기능: nodemailer를 활용하여 문의 내용을 회사 이메일로 전송하는 기능입니다. 전송과 동시에 문의 내용이 Payload API를 활용하여 Supabase에 저장됩니다.",
+      "playbackRate": 2.5
+    },
+    {
+      "url": "./imyourbox-mail-blurry.png",
+      "description": "이메일 템플릿: 사이트를 통해 회사로 이메일이 전달되었을 때의 디자인입니다."
+    }
+  ],
+  "publishPath": "프로젝트/아임유어박스 웹사이트"
+}
