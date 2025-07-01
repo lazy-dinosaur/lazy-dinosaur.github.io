@@ -541,13 +541,80 @@ series: 나의 맞춤 블로그 만들기
 
 `publish`의 값은 문자열이어야 하며 할당된 값이 블로그 내의 주소 구조로 활용되며 카테고리를 만드는 역할을 한다. 즉 `블로그주소/posts/publish 값/파일이름` 의 주소를 갖게 된다.
 
+### 프로젝트 포트폴리오 구조
+
+포트폴리오 페이지의 프로젝트들은 각 프로젝트 폴더에 개별 `project.json` 파일로 관리됩니다.
+
+#### 프로젝트 파일 구조
+
+```
+public/projects/
+├── 프로젝트명/
+│   ├── project.json    # 프로젝트 정보
+│   └── (이미지/영상 파일들)
+```
+
+#### project.json 스키마
+
+```typescript
+interface Project {
+  projectType: "project" | "study"; // 프로젝트 타입
+  id: string; // 고유 ID
+  title: string; // 프로젝트 제목
+  description: string; // 간단한 설명
+  thumbnail: string; // 썸네일 경로 (상대경로 가능: "./이미지.png")
+  thumbnailOptions?: {
+    // 썸네일 옵션 (비디오인 경우)
+    playbackRate?: number; // 재생 속도
+  };
+  tags: string[]; // 태그 목록
+  technologies: string[]; // 사용 기술 목록
+  githubUrl?: string; // GitHub 저장소 URL
+  serviceUrl?: string; // 서비스 URL
+  featured: boolean; // 주요 프로젝트 여부
+  createdAt: string; // 생성일 (YYYY-MM-DD)
+  overview: string; // 프로젝트 개요
+  features: string[]; // 주요 기능 목록
+  lessons: string; // 배운 점
+  challenges: string[]; // 도전 과제 목록
+  demoType: "images" | "video"; // 데모 타입
+  demoImages?: {
+    // 데모 이미지/영상 목록
+    url: string; // 파일 경로 (상대경로 가능: "./파일.mp4")
+    description: string; // 설명
+    showControls?: boolean; // 비디오 컨트롤 표시 여부
+    playbackRate?: number; // 재생 속도
+  }[];
+  demoVideo?: string; // 데모 비디오 URL (demoType이 "video"인 경우)
+  inDevelopment?: boolean; // 개발 중 여부
+  futurePlans?: string[]; // 향후 계획
+  publishPath: string; // 블로그 포스트 경로
+}
+```
+
+#### 프로젝트 추가 방법
+
+1. `/public/projects/새프로젝트명/` 폴더 생성
+2. 해당 폴더에 `project.json` 파일 생성
+3. 프로젝트 에셋(이미지, 영상) 추가
+4. `npm run build-projects` 실행 (또는 `bun run build` 시 자동 실행)
+
+#### 경로 작성 방법
+
+- **상대 경로 사용**: `"./파일명.png"` - 빌드 시 자동으로 절대 경로로 변환됨
+- **절대 경로 사용**: `"/projects/프로젝트명/파일명.png"`
+
+#### 정렬 순서
+
+프로젝트는 `createdAt` 날짜 기준으로 최신순으로 정렬됩니다.
+
 ## 추가해야할 기능혹은 페이지
 
 - [ ] contents layer 로 대체
 - [ ] 소개 패이지
 - [x] 포트폴리오 페이지
 - [ ] 댓글 기능
-- [ ] 옵시디언 스타일의 콜아웃 적용
+- [x] 옵시디언 스타일의 콜아웃 적용
 - [ ] 비디오 임베드
 - [ ] D3.js를 홀용한 그래프 뷰
 - [ ] 연결된 관련 노트 리스트 추가
