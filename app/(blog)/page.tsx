@@ -220,12 +220,10 @@ function HomeContent() {
 							세상을 게으르게 만들기 위해 발전하고 싶은 프론트엔드 개발자입니다.
 							🚀
 						</p>
-						<a href="https://myhits.vercel.app">
-							<Image
-								src="https://myhits.vercel.app/api/hit/https%3A%2F%2Flazy-dinosaur.github.io%2F?color=green&label=Hits&size=medium"
-								alt="Hits"
-							/>
-						</a>
+						<Image
+							src="https://myhits.vercel.app/api/hit/https%3A%2F%2Flazy-dinosaur.github.io%2F?color=green&label=Hits&size=medium"
+							alt="Hits"
+						/>
 					</div>
 				}
 			/>
