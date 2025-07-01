@@ -4,14 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build && touch out/.nojekyll && node scripts/generate-sitemap.js && node scripts/generate-og-image.js && cp public/robots.txt out/ && cp public/og-image.svg out/",
+    "build": "node scripts/build-projects.js && next build && touch out/.nojekyll && node scripts/generate-sitemap.js && node scripts/generate-og-image.js && cp public/robots.txt out/ && cp public/og-image.svg out/",
     "start": "next start",
     "lint": "next lint",
     "sync": "scripts/sync-notes.py",
     "deploy": "bun run sync && bun run build && gh-pages -d out -b gh-pages",
     "post": "bun run sync && git add . && git commit -m 'update post' && git push",
     "serve": "bunx serve@latest out",
-    "generate-sitemap": "node scripts/generate-sitemap.js"
+    "generate-sitemap": "node scripts/generate-sitemap.js",
+    "build-projects": "node scripts/build-projects.js"
   },
   "dependencies": {
     "@r4ai/remark-callout": "^0.6.2",

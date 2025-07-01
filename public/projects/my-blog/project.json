@@ -1,0 +1,74 @@
+{
+  "projectType": "project",
+  "id": "my-blog",
+  "title": "개인 블로그",
+  "description": "Next.js, TypeScript, Tailwind CSS를 사용하여 개발한 개인 블로그입니다. 마크다운 기반 콘텐츠 관리와 다크 모드를 지원합니다.",
+  "thumbnail": "./my-blog.png",
+  "tags": ["웹", "풀스택"],
+  "technologies": [
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "Framer Motion",
+    "Shadcn UI",
+    "EsHangul"
+  ],
+  "githubUrl": "https://github.com/lazy-dinosaur/lazy-dinosaur.github.io",
+  "serviceUrl": "https://lazy-dinosaur.github.io/",
+  "featured": true,
+  "createdAt": "2025-03-05",
+  "overview": "마크다운 파일을 기반으로 콘텐츠를 관리하는 개인 블로그 프로젝트입니다. Next.js의 App Router와 TypeScript를 활용해 개발했으며, 저 스스로의 필요에 맞게 자동화했습니다. 이 블로그의 주요 특징은 노트 작성 중 언제든지 Neovim 커맨드를 통해 즉시 블로그에 포스팅할 수 있다는 점입니다.",
+  "features": [
+    "Neovim과 Obsidian을 통한 자동화된 마크다운 기반 콘텐츠 관리 시스템",
+    "명령어를 통한 노트 동기화 기능",
+    "다크 모드 지원 및 테마 전환 기능",
+    "반응형 레이아웃으로 모든 디바이스 지원",
+    "목차 자동 생성 및 스크롤 위치 추적",
+    "코드 구문 강조 및 복사 기능",
+    "한글 검색 기능 및 하이라이팅 기능"
+  ],
+  "lessons": "이 프로젝트를 통해 Next.js의 App Router 구조와 서버 컴포넌트 활용법을 배웠습니다. 또한 마크다운 파일 파싱과 렌더링 최적화, 그리고 애니메이션 처리에 관한 경험을 쌓을 수 있었습니다.",
+  "challenges": [
+    "Next.js의 App Router와 Server Components 모델 적응: 기존 Pages Router에서 App Router로 전환하면서 서버 컴포넌트와 클라이언트 컴포넌트의 구분 및 데이터 흐름을 이해하는 데 시간이 소요되었습니다.",
+    "마크다운 파싱 최적화: 코드 블록, 수식, 이미지 등 다양한 마크다운 확장 기능을 지원하면서도 빠른 렌더링을 위한 최적화 과정이 필요했습니다.",
+    "다크 모드 구현: 테마 전환 시 깜박임 없는 부드러운 전환을 구현하기 위해 여러 테스트를 거쳐야 했습니다.",
+    "모바일 반응형 디자인: 사이드바, 목차, 코드 블록 등 복잡한 요소들의 모바일 레이아웃 최적화가 어려웠습니다.",
+    "Next.js의 특정 훅 사용 제약: Suspense 경계 내에서만 사용 가능한 훅들로 인해 컴포넌트 구조를 재설계해야 했습니다."
+  ],
+  "demoType": "images",
+  "demoImages": [
+    {
+      "url": "./blog-sync-example.mp4",
+      "description": "파이썬 스크립트를 통한 노트 동기화: 스크립트를 통해 블로그에 필요한 파일들을 생성하고 자동으로 분류합니다.",
+      "showControls": true
+    },
+    {
+      "url": "./blog-post-example.mp4",
+      "description": "Neovim과의 통합: Neovim을 통해 노트를 작성하면서 커맨드를 통해 블로그를 바로 포스팅할 수 있습니다.",
+      "showControls": true,
+      "playbackRate": 2.5
+    },
+    {
+      "url": "./blog-search-example.mp4",
+      "description": "한글 검색기능: 전체 노트의 타이틀, 태그, 본문을 검색하며 한글의 자모음을 분리하여 검색해 부자연스러운 결과를 없앴습니다.",
+      "showControls": true
+    },
+    {
+      "url": "./blog-toc-example.mp4",
+      "description": "목차 생성: 마크다운을 읽으면서 목차를 생성하고 스크롤하여 화면에 보이는 문서상의 위치를 하이라이팅하며 클릭 시 해당 위치로 이동합니다."
+    }
+  ],
+  "futurePlans": [
+    "시리즈별/태그별 검색기능 추가",
+    "댓글 기능 추가",
+    "옵시디언 스타일의 그래프뷰 구현",
+    "관련 페이지 추천 기능",
+    "소셜 미디어 공유 기능 구현",
+    "성능 최적화 및 lighthouse 점수 개선",
+    "다국어 지원 기능 추가",
+    "영상 임베드 처리",
+    "마크다운 데이터 전처리 과정 개선",
+    "임베드되는 파일들 버킷으로 관리 및 자동화"
+  ],
+  "publishPath": "프로젝트/개인 블로그"
+}
