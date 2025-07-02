@@ -5,7 +5,7 @@ tags:
   - study
   - zod
 createdAt: 2025-06-30 21:21:49
-modifiedAt: 2025-07-02 18:38:21
+modifiedAt: 2025-07-02 18:42:59
 publish: 프로젝트/당근마켓 클론코딩
 related:
   - "[[당근마켓 클론코딩]]"
@@ -321,11 +321,29 @@ z.string().refine(check, message);
     );
   ```
 
-  이런식으로 formSchema자체에 `refine`메소드를 사용할 경우 에러가 발생하면 에러 오브젝트의 `formErrors`라는 키의 리스트에 추가되어 나오게 된다.
+##### refine 메소드의 에러 표시
 
-  ```json
-  {
-    formErrors: ["비밀번호가 일치하지 않음"]
-    fieldErrors:{...다른 필드 에러}
-  }
-  ```
+앞선 예시처럼 formSchema자체에 `refine`메소드를 사용할 경우 에러가 발생하면 에러 오브젝트의 `formErrors`라는 키의 리스트에 추가되어 나오게 된다.
+
+```json
+{
+  formErrors: ["비밀번호가 일치하지 않음"]
+  fieldErrors:{...다른 필드 에러}
+}
+```
+
+이때 message를 텍스트가 아닌 오브젝트로 넘겨주면서 `path`라는 키값에 특정 필드이름을 명시해 주면 해당 에러가 발생할때 해당 필드에 추가되어 결과가 나타난다
+
+```typescript
+const formSchema = z
+  .object({
+    username: z.string().min(3).max(10),
+    email: z.string().email(),
+    password: z.string().min(10),
+    confirmPassword: z.string().min(10),
+  })
+  .refine((form) => form.password == form.conformPassword, {
+    message: "비밀번호가 일치하지 않음",
+    path: ["confirmPassword"],
+  });
+```
