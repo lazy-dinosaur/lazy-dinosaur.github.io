@@ -572,6 +572,17 @@
                             "publish": "프로젝트/당근마켓 클론코딩"
                         },
   {
+                            "urlPath": "프로젝트/당근마켓 클론코딩/당근마켓 클론코딩으로 Zod 배우기",
+                            "title": "당근마켓 클론코딩으로 Zod 배우기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["project", "carrot-market", "study", "zod"],
+                            "series": "",
+                            "createdAt": "2025-06-30 21:21:49",
+                            "modifiedAt": "2025-07-02 18:38:21",
+                            "publish": "프로젝트/당근마켓 클론코딩"
+                        },
+  {
                             "urlPath": "프로젝트/당근마켓 클론코딩/당근마켓 클론코딩",
                             "title": "당근마켓 클론코딩",
                             "summary": "",
@@ -579,7 +590,7 @@
                             "tags": ["project", "carrot-market", "study", "clone"],
                             "series": "",
                             "createdAt": "2025-06-13 11:29:34",
-                            "modifiedAt": "2025-07-01 15:59:57",
+                            "modifiedAt": "2025-07-01 17:52:35",
                             "publish": "프로젝트/당근마켓 클론코딩"
                         },
   {
@@ -590,7 +601,7 @@
                             "tags": ["project", "carrot-market", "study"],
                             "series": "",
                             "createdAt": "2025-06-30 08:48:51",
-                            "modifiedAt": "2025-07-01 16:01:14",
+                            "modifiedAt": "2025-07-02 12:24:58",
                             "publish": "프로젝트/당근마켓 클론코딩"
                         },
   {

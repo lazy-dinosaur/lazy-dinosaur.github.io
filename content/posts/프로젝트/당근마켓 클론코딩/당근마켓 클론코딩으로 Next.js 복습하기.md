@@ -4,7 +4,7 @@ tags:
   - carrot-market
   - study
 createdAt: 2025-06-30 08:48:51
-modifiedAt: 2025-07-01 16:01:14
+modifiedAt: 2025-07-02 12:24:58
 publish: 프로젝트/당근마켓 클론코딩
 related:
   - "[[당근마켓 클론코딩]]"
@@ -39,7 +39,6 @@ my-next-app/
 ```
 
 - `app/`: 애플리케이션의 모든 라우트, 컴포넌트, 로직이 위치하는 핵심 디렉토리.
-
   - `layout.tsx`: 모든 페이지에 공통으로 적용되는 최상위 레이아웃. `<html>`, `<body>` 태그를 포함.
   - `page.tsx`: 특정 경로의 UI를 정의하는 기본 페이지 파일. app/page.tsx는 루트 경로(/)에 해당.
   - `loading.tsx`: 해당 경로의 콘텐츠가 로드되는 동안 보여줄 로딩 UI.
@@ -174,13 +173,12 @@ export default function FormBtn({ text }: FormBtnProps) {
 }
 ```
 
-### useFormState hook
+### useActionState hook
 
 결과를 ui로 전달하는 역할
+
 서버액션의 결과 특히 오류 등을 가져올 수 있는 역할을 한다.
-
-useFormState 훅은 인자로 action함수와 초기값을 받으며 클라이언트 컴포넌트에서 사용 가능하다.
-
+useActionState 훅은 인자로 action함수와 초기값을 받으며 클라이언트 컴포넌트에서 사용 가능하다.
 ServerAction 의 경우 서버 컴포넌트에서 사용 가능하기 때문에 다른 파일로 따로 분리한 이후 불러와 사용해야 한다.
 
 ```tsx
@@ -188,11 +186,11 @@ ServerAction 의 경우 서버 컴포넌트에서 사용 가능하기 때문에 
 import FormBtn from "@/components/form-btn";
 import FormInput from "@/components/form-input";
 import SocialLogin from "@/components/social-login";
-import { useFormState } from "react-dom";
+import { useActionState } from "react";
 import { handleForm } from "./actions";
 
 export default function Login() {
-  const [state, action] = useFormState(handleForm, null);
+  const [state, action] = useActionState(handleForm, null);
 
   return (
     <div className="flex flex-col gap-10 py-8 px-6">
