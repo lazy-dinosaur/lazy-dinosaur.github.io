@@ -1,15 +1,14 @@
 "use client";
-import PostCard from "@/components/post-card";
 import { HeaderSection, PostGrid, PostItem } from "@/components/home-animation";
-import { usePosts } from "@/contexts/posts-context";
-import { useState, useEffect, useMemo, Suspense } from "react";
-import { Button } from "@/components/ui/button";
-import { motion, AnimatePresence } from "framer-motion";
-import { Post } from "@/lib/posts";
-import { useSearchParams, useRouter } from "next/navigation";
+import PostCard from "@/components/post-card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { usePosts } from "@/contexts/posts-context";
+import { Post } from "@/lib/posts";
+import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
-import Image from "next/image";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense, useEffect, useMemo, useState } from "react";
 
 // 페이지당 포스트 수 정의
 const POSTS_PER_PAGE = 6;
@@ -216,14 +215,10 @@ function HomeContent() {
 				description="더 게을러지기위해 더 똑똑해지기"
 				extraContent={
 					<div className="text-muted-foreground">
-						<p className="mb-2">
+						<p>
 							세상을 게으르게 만들기 위해 발전하고 싶은 프론트엔드 개발자입니다.
 							🚀
 						</p>
-						<Image
-							src="https://myhits.vercel.app/api/hit/https%3A%2F%2Flazy-dinosaur.github.io%2F?color=green&label=Hits&size=medium"
-							alt="Hits"
-						/>
 					</div>
 				}
 			/>
