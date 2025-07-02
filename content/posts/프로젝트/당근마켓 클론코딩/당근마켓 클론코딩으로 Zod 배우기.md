@@ -5,7 +5,7 @@ tags:
   - study
   - zod
 createdAt: 2025-06-30 21:21:49
-modifiedAt: 2025-07-02 18:55:04
+modifiedAt: 2025-07-02 21:15:26
 publish: 프로젝트/당근마켓 클론코딩
 related:
   - "[[당근마켓 클론코딩]]"
@@ -386,3 +386,22 @@ const formSchema = z.object({
 
 - `toLowerCase`메소드: 입력받은 데이터를 소문자로 변환
 - `trim`메소드: 입력받은 데이터의 시작과 끝의 빈 문자열을 삭제해줌
+
+#### transform 메소드
+
+refine과 마찬가지로 함수를 변수로받아 유효성 검사 뒤에 데이터를 변환한다.
+
+```typescript
+const formSchema = z.object({
+  username: z
+    .string()
+    .min(3)
+    .max(10)
+    .trim()
+    .toLowerCase()
+    .transform((username) => `안녕 ${username}`),
+  email: z.string().email(),
+  password: z.string().min(10),
+  confirmPassword: z.string().min(10),
+});
+```
