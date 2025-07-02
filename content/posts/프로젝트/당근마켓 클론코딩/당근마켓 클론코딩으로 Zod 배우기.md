@@ -5,7 +5,7 @@ tags:
   - study
   - zod
 createdAt: 2025-06-30 21:21:49
-modifiedAt: 2025-07-02 18:42:59
+modifiedAt: 2025-07-02 18:55:04
 publish: 프로젝트/당근마켓 클론코딩
 related:
   - "[[당근마켓 클론코딩]]"
@@ -344,6 +344,45 @@ const formSchema = z
   })
   .refine((form) => form.password == form.conformPassword, {
     message: "비밀번호가 일치하지 않음",
-    path: ["confirmPassword"],
+    path: ["confirmPassword"], // 특정 필드에 에러 전가
   });
 ```
+
+### regex 검증
+
+regex를 활용해 검증할수도 있다.
+
+```typescript
+const passwordRegex = new RegExp(
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*?[$?!@$%^&*-]).+$/,
+);
+
+const formSchema = z.object({
+  username: z.string().min(3).max(10),
+  email: z.string().email(),
+  password: z
+    .string()
+    .min(10)
+    .regex(
+      passwordRegex,
+      "비밀번호는 소문자, 대문자, 숫자, 특수문자를 포함해야한다.",
+    ),
+  confirmPassword: z.string().min(10),
+});
+```
+
+### 데이터 변환
+
+입력받은 데이터를 검증하는 기능 외에도 변환하는 기능도 존재한다.
+
+```typescript
+const formSchema = z.object({
+  username: z.string().min(3).max(10).trim().toLowerCase(),
+  email: z.string().email(),
+  password: z.string().min(10),
+  confirmPassword: z.string().min(10),
+});
+```
+
+- `toLowerCase`메소드: 입력받은 데이터를 소문자로 변환
+- `trim`메소드: 입력받은 데이터의 시작과 끝의 빈 문자열을 삭제해줌
