@@ -4,7 +4,7 @@ tags:
   - carrot-market
   - study
 createdAt: 2025-06-30 08:48:51
-modifiedAt: 2025-07-03 12:55:22
+modifiedAt: 2025-07-03 14:59:00
 publish: 프로젝트/당근마켓 클론코딩
 related:
   - "[[당근마켓 클론코딩]]"
@@ -222,6 +222,115 @@ export default function Login() {
 }
 ```
 
-#### useActionState의 초기값의 활용
+#### useActionState의 초기값의 활용(휴대폰 토큰 검증 예시)
+
+`useActionState`에 할당할 수 있는 초기 값을 설정하여 휴대폰 입력을 하고 토큰을 받아 검증하는 시스템을 구현할 수 있다.
+
+```tsx
+"use client";
+
+import Button from "@/components/button";
+import Input from "@/components/input";
+import { useActionState } from "react";
+import { smsVerification } from "./actions";
+
+const initialState = {
+  token: false,
+  phone: undefined,
+};
+
+export default function SMSLogin() {
+  const [{ token, data, error }, action] = useActionState(
+    smsVerification,
+    initialState,
+  );
+  return (
+    <div className="flex flex-col gap-10 py-8 px-6">
+      <div className="flex flex-col gap-2 *:font-medium">
+        <h1 className="text-2xl">SMS Login</h1>
+        <h2 className="text-xl">Verify your phone number.</h2>
+      </div>
+      <form action={action} className="flex flex-col gap-4">
+        {!token ? (
+          <Input
+            name="phone"
+            defaultValue={token ? data : data}
+            type="text"
+            placeholder="Phone number"
+            errors={error?.formErrors}
+            required
+          />
+        ) : (
+          <Input
+            name="token"
+            type="number"
+            placeholder="Verification code"
+            required
+            min={100000}
+            max={999999}
+          />
+        )}
+        <Button text={token ? "Verify Token" : "Send Verification SMS"} />
+      </form>
+    </div>
+  );
+}
+```
+
+- initialState에 초기 token값을 정의하여 첫 ServerAction에 해당 값을 넘겨준디.
+
+```typescript
+"use server";
+import { z } from "zod";
+import validator from "validator";
+import { redirect } from "next/navigation";
+
+const phoneSchema = z
+  .string()
+  .trim()
+  .refine(
+    (phone) => validator.isMobilePhone(phone, "ko-KR"),
+    "잘못된 전화번호",
+  );
+const tokenSchema = z.coerce.number().min(100000).max(999999);
+
+interface ActionState {
+  token: boolean;
+}
+
+export async function smsVerification(
+  prevState: ActionState,
+  formData: FormData,
+) {
+  const phone = formData.get("phone");
+  const token = formData.get("token");
+
+  if (!prevState?.token) {
+    const result = phoneSchema.safeParse(phone);
+    if (!result.success) {
+      console.log(result.error.flatten());
+      return {
+        token: false,
+        error: result.error.flatten(),
+        data: result.data,
+      };
+    } else {
+      return {
+        token: true,
+        data: result.data,
+      };
+    }
+  } else {
+    const result = tokenSchema.safeParse(token);
+    if (!result.success) {
+      return { token: true };
+    } else {
+      redirect("/");
+    }
+  }
+}
+```
+
+- serverAction에서 휴대폰의 검증이 끝나 성공하면 token을 true로 변경하여 값을 반환하면 react 에서 해당 값을 기준으로 다른 인풋 창을 나타내 줄 수 있다.
 
 ## API Route Handler vs ServerAction

@@ -5,10 +5,11 @@ tags:
   - study
   - zod
 createdAt: 2025-06-30 21:21:49
-modifiedAt: 2025-07-03 13:39:02
+modifiedAt: 2025-07-03 13:41:23
 publish: 프로젝트/당근마켓 클론코딩
 related:
   - "[[당근마켓 클론코딩]]"
+  - "[[당근마켓 클론코딩으로 Validator 사용해보기]]"
 series: ""
 ---
 
@@ -417,12 +418,6 @@ const formSchema = z.object({
 
 ```typescript
 z.coerce.number().parse("1234");
-```
-
-##### 토큰 유효성 검사 예시
-
-```typescript
-
 ```
 
 ## 참고
