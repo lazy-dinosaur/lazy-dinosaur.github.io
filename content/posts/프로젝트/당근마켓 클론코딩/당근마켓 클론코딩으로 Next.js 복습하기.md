@@ -4,7 +4,7 @@ tags:
   - carrot-market
   - study
 createdAt: 2025-06-30 08:48:51
-modifiedAt: 2025-07-02 12:24:58
+modifiedAt: 2025-07-03 12:55:22
 publish: 프로젝트/당근마켓 클론코딩
 related:
   - "[[당근마켓 클론코딩]]"
@@ -221,5 +221,7 @@ export default function Login() {
   );
 }
 ```
+
+#### useActionState의 초기값의 활용
 
 ## API Route Handler vs ServerAction

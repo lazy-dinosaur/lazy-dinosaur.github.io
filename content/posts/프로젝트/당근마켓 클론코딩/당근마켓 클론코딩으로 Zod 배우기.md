@@ -5,7 +5,7 @@ tags:
   - study
   - zod
 createdAt: 2025-06-30 21:21:49
-modifiedAt: 2025-07-02 21:15:26
+modifiedAt: 2025-07-03 13:15:37
 publish: 프로젝트/당근마켓 클론코딩
 related:
   - "[[당근마켓 클론코딩]]"
@@ -405,3 +405,7 @@ const formSchema = z.object({
   confirmPassword: z.string().min(10),
 });
 ```
+
+## 참고
+
+- [[당근마켓 클론코딩으로 Validator 사용해보기]]

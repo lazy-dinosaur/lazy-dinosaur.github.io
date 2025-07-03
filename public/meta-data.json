@@ -11,6 +11,17 @@
                             "publish": "자원/React"
                         },
   {
+                            "urlPath": "프로젝트/당근마켓 클론코딩/당근마켓 클론코딩으로 Validator 사용해보기",
+                            "title": "당근마켓 클론코딩으로 Validator 사용해보기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["project", "carrot-market", "validator", "zod"],
+                            "series": "",
+                            "createdAt": "2025-07-03 13:12:42",
+                            "modifiedAt": "2025-07-03 13:21:06",
+                            "publish": "프로젝트/당근마켓 클론코딩"
+                        },
+  {
                             "urlPath": "자원/크롬 확장프로그램/크롬 확장프로그램에 케시메모리 추가하기",
                             "title": "크롬 확장프로그램에 케시메모리 추가하기",
                             "summary": "",
@@ -579,7 +590,7 @@
                             "tags": ["project", "carrot-market", "study", "zod"],
                             "series": "",
                             "createdAt": "2025-06-30 21:21:49",
-                            "modifiedAt": "2025-07-02 21:15:26",
+                            "modifiedAt": "2025-07-03 13:15:37",
                             "publish": "프로젝트/당근마켓 클론코딩"
                         },
   {
@@ -590,7 +601,7 @@
                             "tags": ["project", "carrot-market", "study", "clone"],
                             "series": "",
                             "createdAt": "2025-06-13 11:29:34",
-                            "modifiedAt": "2025-07-02 21:29:56",
+                            "modifiedAt": "2025-07-03 10:48:43",
                             "publish": "프로젝트/당근마켓 클론코딩"
                         },
   {
@@ -601,7 +612,7 @@
                             "tags": ["project", "carrot-market", "study"],
                             "series": "",
                             "createdAt": "2025-06-30 08:48:51",
-                            "modifiedAt": "2025-07-02 12:24:58",
+                            "modifiedAt": "2025-07-03 12:55:22",
                             "publish": "프로젝트/당근마켓 클론코딩"
                         },
   {
@@ -634,7 +645,7 @@
                             "tags": ["project", "\uad34\ub2f4\uc9d1", "strapi", "cms"],
                             "series": "",
                             "createdAt": "2025-06-23 09:47:32",
-                            "modifiedAt": "2025-06-28 19:49:02",
+                            "modifiedAt": "2025-07-03 13:18:40",
                             "publish": "프로젝트/괴담집"
                         },
   {
