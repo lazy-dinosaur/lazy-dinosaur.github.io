@@ -5,7 +5,7 @@ tags:
   - validator
   - zod
 createdAt: 2025-07-03 13:12:42
-modifiedAt: 2025-07-03 19:54:53
+modifiedAt: 2025-07-03 21:22:03
 publish: 프로젝트/당근마켓 클론코딩
 related:
   - 당근마켓 클론코딩
@@ -44,7 +44,7 @@ isMobilePhone(phone);
 
 ### Zod와 함께 사용하기
 
-[[당근마켓 클론코딩으로 Zod 배우기#refine 메소드]]를 활용하면 매우 간편하게 추가적인 유효성 검증을 실행할 수 있다.
+[[당근마켓 클론코딩으로 Zod 배우기#refine 메소드|zod의 refine 메소드]]를 활용하면 매우 간편하게 추가적인 유효성 검증을 실행할 수 있다.
 
 ```typescript
 import { z } from "zod";
