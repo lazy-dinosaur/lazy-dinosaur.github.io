@@ -5,7 +5,7 @@ tags:
   - study
   - zod
 createdAt: 2025-06-30 21:21:49
-modifiedAt: 2025-07-03 13:15:37
+modifiedAt: 2025-07-03 13:39:02
 publish: 프로젝트/당근마켓 클론코딩
 related:
   - "[[당근마켓 클론코딩]]"
@@ -348,7 +348,7 @@ const formSchema = z
   });
 ```
 
-### regex 검증
+#### regex 검증
 
 regex를 활용해 검증할수도 있다.
 
@@ -371,7 +371,7 @@ const formSchema = z.object({
 });
 ```
 
-### 데이터 변환
+#### 데이터 변환
 
 입력받은 데이터를 검증하는 기능 외에도 변환하는 기능도 존재한다.
 
@@ -387,7 +387,7 @@ const formSchema = z.object({
 - `toLowerCase`메소드: 입력받은 데이터를 소문자로 변환
 - `trim`메소드: 입력받은 데이터의 시작과 끝의 빈 문자열을 삭제해줌
 
-#### transform 메소드
+##### transform 메소드
 
 refine과 마찬가지로 함수를 변수로받아 유효성 검사 뒤에 데이터를 변환한다.
 
@@ -404,6 +404,25 @@ const formSchema = z.object({
   password: z.string().min(10),
   confirmPassword: z.string().min(10),
 });
+```
+
+#### coerce 메소드
+
+토큰이나 번호를 넘겨받다 보면 데이터가 숫자인 경오도 혹은 숫자가 문자열 형태로 받아지기도 한다. 특히 ServerAction을 사용하여 숫자들을 넘겨받게 된다면 html에서 타입을 숫자로 지정하더라도 문자열 형태로 받게 된다. 이때 zod 의 coerce가 유용하게 사용된다.
+
+![zod-coerce](_assets/attachments/당근마켓%20클론코딩/zod-coerce.png)
+
+`z.coerce`의 타입을 확인하면 뒤에 몇가지 타입을 지정할수 있는것을 확인할 수 있다.
+이 타입들의 역할은 입력받은 데이터를 먼저 해당 타입으로 변환을 시도하는 것을 한다.
+
+```typescript
+z.coerce.number().parse("1234");
+```
+
+##### 토큰 유효성 검사 예시
+
+```typescript
+
 ```
 
 ## 참고

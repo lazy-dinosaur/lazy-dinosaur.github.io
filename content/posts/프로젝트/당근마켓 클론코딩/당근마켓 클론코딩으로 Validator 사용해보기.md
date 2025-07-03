@@ -5,7 +5,7 @@ tags:
   - validator
   - zod
 createdAt: 2025-07-03 13:12:42
-modifiedAt: 2025-07-03 13:21:06
+modifiedAt: 2025-07-03 13:39:55
 publish: 프로젝트/당근마켓 클론코딩
 related:
   - 당근마켓 클론코딩
@@ -14,6 +14,8 @@ series: ""
 ---
 
 # 당근마켓 클론코딩으로 Validator 사용해보기
+
+![validator-landing](_assets/attachments/당근마켓%20클론코딩/validator-landing.png)
 
 ## Validator과 함께 사용해보기
 
