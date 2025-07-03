@@ -44,13 +44,14 @@ export function isGifFile(url: string): boolean {
 }
 
 // 헤딩 ID 생성을 위한 공통 함수
-export function generateHeadingId(text: string, level: number): string {
-  const prefix = `h${level}-`;
+export function generateHeadingId(text: string, level?: number): string {
   const slug = text
     .toLowerCase()
     .replace(/\s+/g, '-')
     .replace(/[^\w\-가-힣]/g, ''); // 한글 지원
-  return `${prefix}${slug}`;
+  
+  // level이 제공되면 prefix 추가, 아니면 slug만 반환
+  return level ? `h${level}-${slug}` : slug;
 }
 
 export function buildFolderStructure(posts: Post[]): FolderStructure[] {

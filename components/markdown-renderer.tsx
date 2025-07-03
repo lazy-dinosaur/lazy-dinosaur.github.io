@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
 import Image from "next/image";
@@ -43,6 +43,22 @@ export default function MarkdownRenderer({
 }: MarkdownRendererProps) {
 	const [linkMap, setLinkMap] = useState<LinkMap>({});
 	const [isMapLoaded, setIsMapLoaded] = useState(false);
+	
+	// 헤딩 ID 중복 추적을 위한 Map
+	const headingIdMap = useRef<Map<string, number>>(new Map());
+	
+	// 중복되지 않는 ID 생성 함수
+	const generateUniqueHeadingId = (text: string, level?: number): string => {
+		const baseId = generateHeadingId(text, level);
+		
+		// 현재 ID가 사용된 횟수 확인
+		const count = headingIdMap.current.get(baseId) || 0;
+		headingIdMap.current.set(baseId, count + 1);
+		
+		// 첫 번째 사용이면 그대로, 두 번째부터는 숫자 추가
+		return count === 0 ? baseId : `${baseId}-${count + 1}`;
+	};
+	
 	useEffect(() => {
 		fetch("/link-map.json")
 			.then((res) => res.json())
@@ -60,18 +76,63 @@ export default function MarkdownRenderer({
 		// 이스케이프된 링크 패턴을 정상 링크로 변환
 		let processed = text.replace(/\\(\[|\]|\(|\))/g, "$1");
 
-		// 위키링크 처리 - 정규식 개선
+		// 위키링크 처리 - 정규식 개선 (앵커 지원 추가)
 		processed = processed.replace(
-			/\[\[([^|\]]+)(?:\|([^\]]+))?\]\]/g,
-			(_, path, label) => {
+			/\[\[([^\]]+)\]\]/g,
+			(match, content) => {
+				// | 분리자가 있는지 확인
+				const pipeIndex = content.lastIndexOf('|');
+				let pathWithAnchor, label;
+				
+				if (pipeIndex !== -1) {
+					// | 이후가 label
+					pathWithAnchor = content.substring(0, pipeIndex);
+					label = content.substring(pipeIndex + 1);
+				} else {
+					pathWithAnchor = content;
+					label = null;
+				}
+				
+				// # 앵커 분리
+				const hashIndex = pathWithAnchor.indexOf('#');
+				let path, anchor;
+				
+				if (hashIndex !== -1) {
+					path = pathWithAnchor.substring(0, hashIndex);
+					anchor = pathWithAnchor.substring(hashIndex);
+				} else {
+					path = pathWithAnchor;
+					anchor = null;
+				}
+				
 				// 경로 정규화
 				const cleanPath = path.replace(/\.md$/, "");
-				// 표시할 이름이 없으면 경로의 마지막 부분을 사용
-				const displayName = label || cleanPath.split("/").pop() || cleanPath;
+				// 표시할 이름 결정
+				let displayName;
+				if (label) {
+					// 사용자가 지정한 라벨이 있으면 사용
+					displayName = label;
+				} else {
+					// 라벨이 없으면 파일명 사용
+					const fileName = cleanPath.split("/").pop() || cleanPath;
+					// 앵커가 있으면 파일명#앵커 형식으로 표시
+					displayName = anchor ? `${fileName}${anchor}` : fileName;
+				}
 				// URI 인코딩 적용
 				const encodedPath = encodeURIComponent(cleanPath);
+				
+				// 앵커 처리: #제목 형식을 헤딩 ID 형식으로 변환
+				let fullPath = encodedPath;
+				if (anchor) {
+					// #을 제거하고 텍스트 추출
+					const anchorText = anchor.substring(1);
+					// 헤딩 ID 형식으로 변환 (헤딩 레벨 없이 생성)
+					const headingId = generateHeadingId(anchorText);
+					fullPath = `${encodedPath}#${headingId}`;
+				}
+				
 				// 인코딩된 경로로 마크다운 링크 생성
-				return `[${displayName}](${encodedPath})`;
+				return `[${displayName}](${fullPath})`;
 			},
 		);
 		return processed;
@@ -83,20 +144,65 @@ export default function MarkdownRenderer({
 		const calloutRegex = /(>\s\[!.*?\].*?(?:\n>.*?)*)(?:\n\n|$)/gs;
 
 		return content.replace(calloutRegex, (calloutBlock) => {
-			// 전체 콜아웃 블록 내에서 모든 위키링크를 한 번에 처리
+			// 전체 콜아웃 블록 내에서 모든 위키링크를 한 번에 처리 (앵커 지원 추가)
 			return calloutBlock.replace(
-				/(- )?\[\[([^|\]]+)(?:\|([^\]]+))?\]\]/g,
-				(match, bulletPoint, path, label) => {
+				/(- )?\[\[([^\]]+)\]\]/g,
+				(match, bulletPoint, content) => {
+					// | 분리자가 있는지 확인
+					const pipeIndex = content.lastIndexOf('|');
+					let pathWithAnchor, label;
+					
+					if (pipeIndex !== -1) {
+						// | 이후가 label
+						pathWithAnchor = content.substring(0, pipeIndex);
+						label = content.substring(pipeIndex + 1);
+					} else {
+						pathWithAnchor = content;
+						label = null;
+					}
+					
+					// # 앵커 분리
+					const hashIndex = pathWithAnchor.indexOf('#');
+					let path, anchor;
+					
+					if (hashIndex !== -1) {
+						path = pathWithAnchor.substring(0, hashIndex);
+						anchor = pathWithAnchor.substring(hashIndex);
+					} else {
+						path = pathWithAnchor;
+						anchor = null;
+					}
+					
 					// 이스케이프 문자 제거 및 경로 정규화
 					const cleanPath = path.replace(/\\|\\.md$/, "");
-					// 표시할 이름이 없으면 경로의 마지막 부분을 사용
-					const displayName = label || cleanPath.split("/").pop() || cleanPath;
+					// 표시할 이름 결정
+					let displayName;
+					if (label) {
+						// 사용자가 지정한 라벨이 있으면 사용
+						displayName = label;
+					} else {
+						// 라벨이 없으면 파일명 사용
+						const fileName = cleanPath.split("/").pop() || cleanPath;
+						// 앵커가 있으면 파일명#앵커 형식으로 표시
+						displayName = anchor ? `${fileName}${anchor}` : fileName;
+					}
 					// URI 인코딩 적용
 					const encodedPath = encodeURIComponent(cleanPath);
+					
+					// 앵커 처리: #제목 형식을 헤딩 ID 형식으로 변환
+					let fullPath = encodedPath;
+					if (anchor) {
+						// #을 제거하고 텍스트 추출
+						const anchorText = anchor.substring(1);
+						// 헤딩 ID 형식으로 변환 (헤딩 레벨 없이 생성)
+						const headingId = generateHeadingId(anchorText);
+						fullPath = `${encodedPath}#${headingId}`;
+					}
+					
 					// 불릿 포인트가 있으면 유지
 					const prefix = bulletPoint || "";
 					// 인코딩된 경로로 마크다운 링크 생성
-					return `${prefix}[${displayName}](${encodedPath})`;
+					return `${prefix}[${displayName}](${fullPath})`;
 				},
 			);
 		});
@@ -159,7 +265,7 @@ export default function MarkdownRenderer({
 		),
 		h2: ({ children }: { children?: React.ReactNode }) => {
 			const headingText = children?.toString() || "heading";
-			const id = generateHeadingId(headingText, 2);
+			const id = generateUniqueHeadingId(headingText);
 
 			// 현재 URL에서 # 이후의 앵커 부분 제외하고 기본 URL만 가져오기
 			const getBaseUrl = () => {
@@ -188,7 +294,7 @@ export default function MarkdownRenderer({
 		},
 		h3: ({ children }: { children?: React.ReactNode }) => {
 			const headingText = children?.toString() || "heading";
-			const id = generateHeadingId(headingText, 3);
+			const id = generateUniqueHeadingId(headingText);
 
 			// 현재 URL에서 # 이후의 앵커 부분 제외하고 기본 URL만 가져오기
 			const getBaseUrl = () => {
@@ -217,7 +323,7 @@ export default function MarkdownRenderer({
 		},
 		h4: ({ children }: { children?: React.ReactNode }) => {
 			const headingText = children?.toString() || "heading";
-			const id = generateHeadingId(headingText, 4);
+			const id = generateUniqueHeadingId(headingText);
 
 			// 현재 URL에서 # 이후의 앵커 부분 제외하고 기본 URL만 가져오기
 			const getBaseUrl = () => {
@@ -405,13 +511,31 @@ export default function MarkdownRenderer({
 					</Link>
 				);
 			}
+			
+			// 동일 페이지 내의 앵커 링크 처리
+			if (href.startsWith('#')) {
+				return (
+					<a
+						href={href}
+						className="relative text-primary font-medium transition-all duration-200
+              hover:text-primary/80 after:absolute after:left-0 after:right-0 after:bottom-0 
+              after:h-[1px] after:bg-primary after:origin-bottom-right after:scale-x-0 
+              hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:duration-300"
+					>
+						{children}
+					</a>
+				);
+			}
 
 			// 내부 링크 처리
 			if (!isMapLoaded)
 				return <span className="text-muted-foreground">{children}</span>;
 
+			// 앵커 분리 처리
+			const [hrefWithoutAnchor, anchor] = href.split('#');
+			
 			// 디코딩 및 정규화
-			const decodedHref = decodeURIComponent(href);
+			const decodedHref = decodeURIComponent(hrefWithoutAnchor);
 			const normalizedHref = decodedHref.replace(/\.md$/, "");
 			const targetFileName = normalizedHref.split("/").pop();
 
@@ -419,9 +543,14 @@ export default function MarkdownRenderer({
 			for (const [key, value] of Object.entries(linkMap)) {
 				const srcFileName = key.replace(/\.md$/, "").split("/").pop();
 				if (srcFileName === targetFileName) {
+					// 앵커가 있으면 추가 (trailingSlash 설정 고려)
+					const basePath = `/posts/${value}`;
+					// 앵커가 있을 때는 trailing slash 제거 (Next.js trailingSlash: true 때문)
+					const cleanBasePath = anchor ? basePath.replace(/\/$/, '') : basePath;
+					const fullHref = anchor ? `${cleanBasePath}#${anchor}` : basePath;
 					return (
 						<Link
-							href={`/posts/${value}`}
+							href={fullHref}
 							className="relative text-primary font-medium transition-all duration-200
                 hover:text-primary/80 after:absolute after:left-0 after:right-0 after:bottom-0 
                 after:h-[1px] after:bg-primary after:origin-bottom-right after:scale-x-0 

@@ -5,7 +5,7 @@ tags:
   - validator
   - zod
 createdAt: 2025-07-03 13:12:42
-modifiedAt: 2025-07-03 13:39:55
+modifiedAt: 2025-07-03 19:54:53
 publish: 프로젝트/당근마켓 클론코딩
 related:
   - 당근마켓 클론코딩
