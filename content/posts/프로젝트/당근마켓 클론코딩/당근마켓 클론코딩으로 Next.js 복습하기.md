@@ -4,7 +4,7 @@ tags:
   - carrot-market
   - study
 createdAt: 2025-06-30 08:48:51
-modifiedAt: 2025-07-03 14:59:00
+modifiedAt: 2025-07-04 14:41:20
 publish: 프로젝트/당근마켓 클론코딩
 related:
   - "[[당근마켓 클론코딩]]"
@@ -14,6 +14,20 @@ series: ""
 # 당근마켓 클론코딩으로 Next.js 복습하기
 
 ![nextjs landing](_assets/attachments/당근마켓%20클론코딩/nextjs-landing.png)
+
+## 프로젝트 시작하기
+
+- npx
+
+  ```bash
+  npx create-next-app@latest
+  ```
+
+- bun
+
+  ```bash
+  bun create next-app
+  ```
 
 ## 앱 라우터 기본 구조
 
