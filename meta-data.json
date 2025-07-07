@@ -1,14 +1,14 @@
 [
   {
-                            "urlPath": "프로젝트/당근마켓 클론코딩/당근마켓 클론코딩으로 Prisma 복습하기",
-                            "title": "당근마켓 클론코딩으로 Prisma 복습하기",
+                            "urlPath": "프로젝트/괴담집/괴담집 프로젝트에 Prisma와 Supabase 설정하기",
+                            "title": "괴담집 프로젝트에 Prisma와 Supabase 설정하기",
                             "summary": "",
                             "image": "",
-                            "tags": ["project", "carrot-market", "prisma", "study"],
+                            "tags": ["project", "goedamjip"],
                             "series": "",
-                            "createdAt": "2025-07-04 14:44:19",
-                            "modifiedAt": "2025-07-04 17:18:05",
-                            "publish": "프로젝트/당근마켓 클론코딩"
+                            "createdAt": "2025-07-06 12:55:16",
+                            "modifiedAt": "2025-07-07 16:36:36",
+                            "publish": "프로젝트/괴담집"
                         },
   {
                             "urlPath": "자원/React/가상DOM의 원리",
@@ -20,17 +20,6 @@
                             "createdAt": "2025-04-21 18:45:51",
                             "modifiedAt": "2025-06-17 14:39:39",
                             "publish": "자원/React"
-                        },
-  {
-                            "urlPath": "프로젝트/당근마켓 클론코딩/당근마켓 클론코딩으로 Validator 사용해보기",
-                            "title": "당근마켓 클론코딩으로 Validator 사용해보기",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["project", "carrot-market", "validator", "zod"],
-                            "series": "",
-                            "createdAt": "2025-07-03 13:12:42",
-                            "modifiedAt": "2025-07-03 21:22:03",
-                            "publish": "프로젝트/당근마켓 클론코딩"
                         },
   {
                             "urlPath": "자원/크롬 확장프로그램/크롬 확장프로그램에 케시메모리 추가하기",
@@ -581,6 +570,28 @@
                             "createdAt": "2025-07-01 14:01:49",
                             "modifiedAt": "2025-07-01 15:52:43",
                             "publish": "프로젝트/Youtube로 피그마 배우기"
+                        },
+  {
+                            "urlPath": "프로젝트/당근마켓 클론코딩/당근마켓 클론코딩으로 Prisma 복습하기",
+                            "title": "당근마켓 클론코딩으로 Prisma 복습하기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["project", "carrot-market", "prisma", "study"],
+                            "series": "",
+                            "createdAt": "2025-07-04 14:44:19",
+                            "modifiedAt": "2025-07-04 17:18:05",
+                            "publish": "프로젝트/당근마켓 클론코딩"
+                        },
+  {
+                            "urlPath": "프로젝트/당근마켓 클론코딩/당근마켓 클론코딩으로 Validator 사용해보기",
+                            "title": "당근마켓 클론코딩으로 Validator 사용해보기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["project", "carrot-market", "validator", "zod"],
+                            "series": "",
+                            "createdAt": "2025-07-03 13:12:42",
+                            "modifiedAt": "2025-07-03 21:22:03",
+                            "publish": "프로젝트/당근마켓 클론코딩"
                         },
   {
                             "urlPath": "프로젝트/당근마켓 클론코딩/당근마켓 클론코딩으로 Tailwind 복습하기",
