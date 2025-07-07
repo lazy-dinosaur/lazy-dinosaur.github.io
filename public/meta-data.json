@@ -1,16 +1,5 @@
 [
   {
-                            "urlPath": "프로젝트/괴담집/괴담집 프로젝트에 Prisma와 Supabase 설정하기",
-                            "title": "괴담집 프로젝트에 Prisma와 Supabase 설정하기",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["project", "goedamjip"],
-                            "series": "",
-                            "createdAt": "2025-07-06 12:55:16",
-                            "modifiedAt": "2025-07-07 16:36:36",
-                            "publish": "프로젝트/괴담집"
-                        },
-  {
                             "urlPath": "자원/React/가상DOM의 원리",
                             "title": "가상DOM의 원리",
                             "summary": "",
@@ -636,6 +625,17 @@
                             "createdAt": "2025-06-30 08:48:51",
                             "modifiedAt": "2025-07-04 14:41:20",
                             "publish": "프로젝트/당근마켓 클론코딩"
+                        },
+  {
+                            "urlPath": "프로젝트/괴담집/괴담집 프로젝트에 Prisma와 Supabase 설정하기",
+                            "title": "괴담집 프로젝트에 Prisma와 Supabase 설정하기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["project", "goedamjip", "prisma", "supabase"],
+                            "series": "",
+                            "createdAt": "2025-07-06 12:55:16",
+                            "modifiedAt": "2025-07-08 08:25:36",
+                            "publish": "프로젝트/괴담집"
                         },
   {
                             "urlPath": "프로젝트/괴담집/괴담집 프로젝트 소개",

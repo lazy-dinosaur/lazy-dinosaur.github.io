@@ -2,8 +2,10 @@
 tags:
   - project
   - goedamjip
+  - prisma
+  - supabase
 createdAt: 2025-07-06 12:55:16
-modifiedAt: 2025-07-07 16:36:36
+modifiedAt: 2025-07-08 08:25:36
 publish: 프로젝트/괴담집
 related:
   - "[[괴담집]]"
