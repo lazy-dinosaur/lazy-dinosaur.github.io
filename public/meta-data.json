@@ -671,6 +671,17 @@
                             "publish": "프로젝트/괴담집"
                         },
   {
+                            "urlPath": "프로젝트/괴담집/괴담집 프로젝트에서 Prisma 사용하기",
+                            "title": "괴담집 프로젝트에서 Prisma 사용하기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["project", "goedamjip", "prisma"],
+                            "series": "",
+                            "createdAt": "2025-07-08 08:24:57",
+                            "modifiedAt": "2025-07-08 14:14:37",
+                            "publish": "프로젝트/괴담집"
+                        },
+  {
                             "urlPath": "프로젝트/알고리즘/취업을 위한 알고리즘 공부",
                             "title": "취업을 위한 알고리즘 공부",
                             "summary": "",
