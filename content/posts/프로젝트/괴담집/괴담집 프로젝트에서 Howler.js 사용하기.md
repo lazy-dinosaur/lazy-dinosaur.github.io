@@ -1,0 +1,346 @@
+---
+tags:
+  - project
+  - goedamjip
+  - howler
+createdAt: 2025-07-08 08:36:34
+modifiedAt: 2025-07-09 13:15:36
+publish: 프로젝트/괴담집
+related:
+  - "[[괴담집]]"
+series: ""
+---
+
+# 괴담집 프로젝트에서 Howler.js 사용하기
+
+Howler는 웹에서의 오디오 제어를 위한 라이브러리로 좋은 성능에 다양한 기능을 지원한다.
+특히 괴담집 프로젝트에 필요한 `fade`효과나 `loop`효과 그리고 여러 소리에 대한 개별 제어등 딱 알맞는 라이브러리라고 생각된다.
+
+이후에 업데이트할 때에는 공간음향같은 `Howler.js`에서 제공하는 특수효과도 사용하여 속삭임같은 무서운 음향효과를 구현할수도 있을것 같다는 생각이다.
+
+## 기본 사용법
+
+```typescript
+import { Howl, Howler } from "howler";
+
+// Setup the new Howl.
+const sound = new Howl({
+  src: ["sound.webm", "sound.mp3"],
+});
+
+// Play the sound.
+sound.play();
+
+// Change global volume.
+Howler.volume(0.5);
+```
+
+howler는 기본적으로 두가지 객체를 통해 소리를 로드하고 제어한다.
+
+- `Howl`: `Howl`은 개별 사운드에 대한 객체이며 해당 객체를 통해 각각의 소리를 제어할 수 있다.
+- `Howler`: `Howler`는 글로벌 제어를 위한 객체이며 전체 볼륨제어와 같은 전체 사운드에 대한 제어를 가능하게 한다.
+
+## React에서의 사용
+
+```tsx
+import { useRef } from "react";
+import { Howl, Howler } from "howler";
+의;
+export default function SoundTest({ asset }: { assets: AudioAsset }) {
+  const soundRef = useRef(null);
+
+  useEffect(() => {
+    if (!soundRef.current && asset?.file_url) {
+      soundRef.current = new Howl({
+        src: [asset.file_url],
+      });
+    }
+    soundRef.current.play();
+  }, []);
+
+  return <div>test</div>;
+}
+```
+
+에셋을 불러오는 작업과 React의 리렌더링은 수많은 메모리 누수를 일으킬 수 있다. 따라서 사운드를 불러오기 위해선 `useRef`를 활용하는것이 가장 좋다.
+
+### useRef를 사용하지 않았을때의 문제
+
+#### ❌ useRef 없이 일반 변수 사용:
+
+```tsx
+function BadExample() {
+  const [count, setCount] = useState(0);
+  let sound = null; // 매 렌더링마다 null로 초기화됨!
+
+  const playSound = () => {
+    sound = new Howl({ src: ["click.mp3"] });
+    sound.play();
+    setCount(count + 1); // 리렌더링 발생!
+  };
+
+  const stopSound = () => {
+    sound.stop(); // 에러! sound는 null
+  };
+
+  return (
+    <div>
+      <p>클릭 횟수: {count}</p>
+      <button onClick={playSound}>재생</button>
+      <button onClick={stopSound}>정지</button> {/* 작동 안 함! */}
+    </div>
+  );
+}
+```
+
+문제 시나리오:
+
+1. "재생" 클릭 → 소리 재생 시작
+2. setCount → 컴포넌트 리렌더링
+3. let sound = null 다시 실행 → 이전 Howl 인스턴스 참조 잃음
+4. "정지" 클릭 → sound는 null이라 에러!
+5. 오디오는 백그라운드에서 계속 재생 (제어 불가)
+
+#### ❌ useState 사용:
+
+```tsx
+function AlsoBadExample() {
+  const [sound, setSound] = useState<Howl | null>(null);
+
+  const playSound = () => {
+    const newSound = new Howl({ src: ["click.mp3"] });
+    setSound(newSound); // 리렌더링 발생!
+    newSound.play();
+  };
+
+  // setState로 인한 불필요한 리렌더링
+  // Howl 인스턴스를 state에 저장하는 것은 안티패턴
+}
+```
+
+1. UI변경이 없어 리렌더링이 불필요 한데도 소리의 변경 때문에 리렌더링이 발생할 수 있음.
+2. UI와 무관한 값은 ref에 저장한다는 철학에 위배됨ㄴ
+
+#### ✅ useRef 사용 (올바른 방법):
+
+```tsx
+function GoodExample() {
+  const [count, setCount] = useState(0);
+  const soundRef = useRef<Howl | null>(null);
+
+  const playSound = () => {
+    if (!soundRef.current) {
+      soundRef.current = new Howl({ src: ["click.mp3"] });
+    }
+    soundRef.current.play();
+    setCount(count + 1); // 리렌더링 발생해도 OK
+  };
+
+  const stopSound = () => {
+    soundRef.current?.stop(); // 정상 작동!
+  };
+
+  return (
+    <div>
+      <p>클릭 횟수: {count}</p>
+      <button onClick={playSound}>재생</button>
+      <button onClick={stopSound}>정지</button> {/* 정상 작동! */}
+    </div>
+  );
+}
+```
+
+## 본격적인 사용을 위한 고민
+
+`Howler.js`를 잘 사용하기 위해서 그리고 앱에서 아무 문제 없도록 사용하기 위해서 React와 관련된 몇가지 문제를 생각해 보아야 한다.
+
+1. 인스턴스 문제
+2. 사운드의 캐싱 문제
+3. 중복 로딩 문제
+
+보편적인 리엑트의 훅 혹은 context를 사용하게 되면 위와 같은 문제가 발생할 수 있다.
+
+훅을 통해 관리하면 여러 인스턴스가 겹치거나 인스턴스에 대한 제어권을 놓치게 되는 상황이 발생할 수 있고 context의 경우엔 해당 context를 벗어나면 이미 다운로드해서 캐싱됬던 메모리를 잃게 되거나 각각의 컴포넌트가 별개의 캐시를 갖게 될수도 있다.
+
+따라서 `Class`형식을 통해 싱글톤 패턴을 구현하여 추상화하고 추상화된 모듈을 훅을 통하여 접근할 수 있도록 하는게 좋을것이라고 판단된다.
+
+`Class`를 통해 로직을
+
+### AudioManager 만들기
+
+```typescript
+class AudioManager {
+  // private static: 클래스에 속하는 유일한 인스턴스
+  private static instance: AudioManager;
+
+  // private constructor: 외부에서 new AudioManager() 못하게 막음
+  private constructor() {}
+
+  // 유일한 인스턴스를 가져오는 메서드
+  static getInstance(): AudioManager {
+    if (!AudioManager.instance) {
+      AudioManager.instance = new AudioManager();
+    }
+    return AudioManager.instance;
+  }
+}
+
+// 왜 싱글톤?
+// → 앱 전체에서 하나의 AudioManager만 있어야 캐시 공유 가능
+```
+
+캐싱 문제와 인스턴스 문제를 해결하기 위해 싱글톤 패턴의 클래스를 하나 만든다.
+클래스를 통해서 관련 기능들을 하나로 묶을 수 있고, private을 통해 보호할 수 있다.
+
+### 캐싱 시스템 구현하기
+
+```typescript
+interface LoadedAudio {
+  howl: Howl; // 실제 오디오 객체
+  asset: AudioAsset; // 원본 정보 (URL, 이름 등)
+  loadedAt: Date; // 언제 로드했는지 (디버깅용)
+}
+
+class AudioManager {
+  // Map을 쓰는 이유: key-value 저장에 최적화
+  private audioCache: Map<string, LoadedAudio> = new Map();
+
+  // 로딩 중인 것도 추적 (중복 로딩 방지)
+  private loadingPromises: Map<string, Promise<LoadedAudio>> = new Map();
+}
+```
+
+오디오의 캐싱과 중복 로딩을 방지하기 위해 private으로 map자료구조의 변수를 선언해준다.
+
+### 프리로드 기능
+
+```typescript
+interface AudioAsset {
+	id: number;
+	tag_name: string | null;
+	display_name: string | null;
+	file_url: string | null;
+	file_mime: string | null;
+}
+
+class AudioManager {
+  ...
+  async preloadAudio(asset: AudioAsset): Promise<LoadedAudio> {
+    // 1. 캐시 확인 - 이미 있으면 바로 반환
+    const cached = this.audioCache.get(asset.tag_name || "");
+    if (cached) return cached;
+
+    // 2. 로딩 중인지 확인 - 중복 로딩 방지
+    const loading = this.loadingPromises.get(asset.tag_name || "");
+    if (loading) return loading;
+
+    // 3. 새로 로드
+    const loadPromise = this.loadAudioAsset(asset);
+    this.loadingPromises.set(asset.tag_name || "", loadPromise);
+
+    try {
+      const loaded = await loadPromise;
+      // 4. 캐시에 저장
+      this.audioCache.set(asset.tag_name || "", loaded);
+      return loaded;
+    } finally {
+      // 5. 로딩 목록에서 제거
+      this.loadingPromises.delete(asset.tag_name || "");
+    }
+  }
+
+  // 왜 이렇게 복잡하게?
+  // → 동시에 같은 파일 요청 시 한 번만 로드하기 위해
+  private loadAudioAsset(asset: AudioAsset): Promise<LoadedAudio> {
+    return new Promise((resolve, reject) => {
+      const howl = new Howl({
+        src: [asset.file_url!],
+        format: this.getAudioFormat(asset.file_mime),
+        preload: true,
+        onload: () => {
+          resolve({
+            howl,
+            asset,
+            loadedAt: new Date(),
+          });
+        },
+        onloaderror: (id, error) => {
+          reject(new Error(`Failed to load audio ${asset.tag_name}: ${error}`));
+        },
+      });
+    });
+  }
+  // 왜 private?
+  // → 외부에서는 preloadAudio를 사용해야 캐시 시스템이 작동
+  // → 직접 호출하면 캐시 우회 = 중복 로드 발생
+
+  private getAudioFormat(mime: string | null): string[] | undefined {
+    if (!mime) return undefined;
+
+    const formatMap: Record<string, string> = {
+      "audio/mpeg": "mp3",
+      "audio/mp3": "mp3",
+      "audio/ogg": "ogg",
+      "audio/wav": "wav",
+      "audio/webm": "webm",
+      "audio/mp4": "mp4",
+      "audio/aac": "aac",
+    };
+
+    const format = formatMap[mime];
+    return format ? [format] : undefined;
+  }
+
+  // 왜 필요한가?
+  // → Howler.js가 파일 확장자를 못 알아볼 때 명시적으로 알려줌
+  // → DB에서 mime type으로 저장하기 때문
+  ...
+}
+
+```
+
+넘겨받을 에셋의 타입을 정의하고 해당 정보를 등록한다. 이때 존재한다면 이미 존재하는걸 반환해야 한다.
+
+로직의 큰 구조는 먼저 캐시 혹은 로딩중인것 즉 메모리를 먼저 확인하여 현재 작업해야하는 에셋과 비교한 이후에 있다면 현재 저장된 데이터를 반환하고 그렇지 않다면 `loadAudioAsset`을 활용해 `howl` 객체를 만든다. 해당 객체가 load 되면 `onload`메소드를 통해 Promise의 결과값을 위한 `resolve({howl,asset,loadedAt})`을 반환한다.
+
+### 제어 기능들
+
+```typescript
+// 정지 - ID가 있으면 특정 재생만, 없으면 전체
+stopAudio(tagName: string, id?: number): void {
+  const loaded = this.audioCache.get(tagName);
+  if (loaded) {
+    loaded.howl.stop(id);
+  }
+}
+
+// 일시정지 - 게임 일시정지, 탭 전환 시 사용
+pauseAudio(tagName: string, id?: number): void {
+  const loaded = this.audioCache.get(tagName);
+  if (loaded) loaded.howl.pause(id);
+}
+
+// 재개 - 일시정지한 오디오 계속 재생
+resumeAudio(tagName: string, id?: number): void {
+  const loaded = this.audioCache.get(tagName);
+  if (loaded) {
+    loaded.howl.play(id); // play에 ID 전달하면 재개
+  }
+}
+
+// 페이드 - 부드러운 볼륨 전환
+fadeAudio(
+  tagName: string,
+  from: number,    // 시작 볼륨 (0~1)
+  to: number,      // 끝 볼륨 (0~1)
+  duration: number,// 시간 (밀리초)
+  id?: number
+): void {
+  const loaded = this.audioCache.get(tagName);
+  if (loaded) {
+    loaded.howl.fade(from, to, duration, id);
+  }
+}
+```
+
+이제 기본적인 제어에 대한 구현은 완료 되었다. 실제로 이 모듈이 어떻게 사용될지는 구조를 조금 더 살펴보면서 정해야 할것으로 보인다.
