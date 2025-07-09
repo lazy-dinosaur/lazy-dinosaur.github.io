@@ -627,6 +627,17 @@
                             "publish": "프로젝트/당근마켓 클론코딩"
                         },
   {
+                            "urlPath": "프로젝트/괴담집/괴담집 프로젝트에서 Howler.js 사용하기",
+                            "title": "괴담집 프로젝트에서 Howler.js 사용하기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["project", "goedamjip", "howler"],
+                            "series": "",
+                            "createdAt": "2025-07-08 08:36:34",
+                            "modifiedAt": "2025-07-09 13:15:36",
+                            "publish": "프로젝트/괴담집"
+                        },
+  {
                             "urlPath": "프로젝트/괴담집/괴담집 프로젝트에 Prisma와 Supabase 설정하기",
                             "title": "괴담집 프로젝트에 Prisma와 Supabase 설정하기",
                             "summary": "",
