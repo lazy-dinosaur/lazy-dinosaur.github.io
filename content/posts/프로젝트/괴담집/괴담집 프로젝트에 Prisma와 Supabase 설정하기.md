@@ -5,7 +5,7 @@ tags:
   - prisma
   - supabase
 createdAt: 2025-07-06 12:55:16
-modifiedAt: 2025-07-08 08:25:36
+modifiedAt: 2025-07-20 14:07:40
 publish: 프로젝트/괴담집
 related:
   - "[[괴담집]]"
@@ -51,6 +51,7 @@ Claude는 SQL의 View를 활용하여 Strapi로 관리되는 테이블중 필요
 ##### SQL 문을통해 View 생성하기
 
 ![sql view 생성](_assets/attachments/괴담집/sql-view-create.png)
+
 Claude의 도움을 받아 필요한 객체의 형태를 가져올 수 있도록 View를 생성할 수 있는 SQL 문을 만들었고 해당 문을 Supabase의 SQL Editor에 붙혀넣고 실행하여 View를 생성하였다.
 
 - 에셋을 가져오기 위한 SQL 문
