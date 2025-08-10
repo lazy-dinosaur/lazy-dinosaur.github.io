@@ -4,14 +4,14 @@ tags:
   - goedamjip
   - dev
 createdAt: 2025-07-18 12:54:33
-modifiedAt: 2025-07-22 14:32:30
+modifiedAt: 2025-08-07 12:07:42
 publish: 프로젝트/괴담집
 related:
   - "[[괴담집]]"
 series: ""
 ---
 
-# 괴담집 프로젝트의 Asset 필드 정리하기
+# 괴담집 프로젝트의 DB 전면 개편하기
 
 ![괴담집 에셋 필드](_assets/attachments/괴담집/strapi-asset-fields.png)
 

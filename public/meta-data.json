@@ -11,17 +11,6 @@
                             "publish": "자원/React"
                         },
   {
-                            "urlPath": "프로젝트/괴담집/괴담집 프로젝트의  Asset 필드 정리하기",
-                            "title": "괴담집 프로젝트의  Asset 필드 정리하기",
-                            "summary": "",
-                            "image": "",
-                            "tags": ["project", "goedamjip", "dev"],
-                            "series": "",
-                            "createdAt": "2025-07-18 12:54:33",
-                            "modifiedAt": "2025-07-22 14:32:30",
-                            "publish": "프로젝트/괴담집"
-                        },
-  {
                             "urlPath": "자원/크롬 확장프로그램/크롬 확장프로그램에 케시메모리 추가하기",
                             "title": "크롬 확장프로그램에 케시메모리 추가하기",
                             "summary": "",
@@ -690,6 +679,17 @@
                             "series": "",
                             "createdAt": "2025-06-23 09:47:32",
                             "modifiedAt": "2025-07-03 13:18:40",
+                            "publish": "프로젝트/괴담집"
+                        },
+  {
+                            "urlPath": "프로젝트/괴담집/괴담집 프로젝트의 DB 전면 개편하기",
+                            "title": "괴담집 프로젝트의 DB 전면 개편하기",
+                            "summary": "",
+                            "image": "",
+                            "tags": ["project", "goedamjip", "dev"],
+                            "series": "",
+                            "createdAt": "2025-07-18 12:54:33",
+                            "modifiedAt": "2025-08-07 12:07:42",
                             "publish": "프로젝트/괴담집"
                         },
   {
