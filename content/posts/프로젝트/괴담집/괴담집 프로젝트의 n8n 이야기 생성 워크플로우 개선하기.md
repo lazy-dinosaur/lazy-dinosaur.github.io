@@ -5,7 +5,7 @@ tags:
   - ai
   - n8n
 createdAt: 2025-08-05 10:36:25
-modifiedAt: 2025-08-11 10:37:25
+modifiedAt: 2025-08-11 12:02:57
 publish: 프로젝트/괴담집
 related:
   - "[[괴담집]]"
@@ -15,7 +15,7 @@ series: ""
 
 # 괴담집 프로젝트의 n8n 이야기 생성 워크플로우 개선하기
 
-![최초의 워크플로우 모습](_assets/attachments/괴담집/괴담집-n8n워크플로우%20모습.png)
+![최초의 워크플로우 모습](_assets/attachments/괴담집/goedamjip-n8n-first-workflow.png)
 
 최초에 만들었던 이야기 생성 워크플로우는 매우 단순했다.
 단 하나의 프롬프트를 활용해서 만들었으며 하나의 프롬프트가 창의적인 이야기 생성과 퀄리티 관리를 전부 담당하고 있었다.
@@ -29,7 +29,7 @@ series: ""
 
 ## 문제에 대한 해결
 
-![이야기 워크플로우](_assets/attachments/괴담집/괴담집-최종%20이야기%20워크플로우.png)
+![수정된 이야기 워크플로우](_assets/attachments/괴담집/goedamjip-current-story-workflow.png)
 
 여러가지 문제를 하나하나 기술적인면 그리고 프롬프트와 워크플로우를 통해서 해결하기 위해 고민하였고 해결하였다. 특히 하나의 프롬프트를 사용할 때에는 이야기의 퀄리티가 들쑥 날쑥 갑자기 조상님이 나와서 줄줄설명해주는등 여러가지 문제가 보였고 해당 부분을 프롬프트를 통해 제어하려고 시도했지만 프롬프트 자체가 너무 길어서 그런지 제대로 동작하지 않았다.
 
@@ -47,13 +47,13 @@ series: ""
 
 그래서 떠올린 방법은 strapi를 통해 supabase에 이야기의 재료들을 타입에 따라 여러가지를 저장하고 n8n워크플로의 시작에 랜덤으로 각 재료당 하나씩 불러와 이야기를 만드는 것이었다.
 
-![재료 구조](_assets/attachments/괴담집/괴담집-Story_ingredient%20구조.png)
+![재료 구조](_assets/attachments/괴담집/goedamjip-story-ingredient-structure.png)
 
 이야기의 재료는 공포의 유형, 주인공의 성격, 주인공 프로파일, 플롯의 종류 로 이루어 진다. 각각 단순하게 이름과 설명만 존재하는 매우 단순한 형태이다 각각 단순하게 이름과 설명만 존재하는 매우 단순한 형태이다.
 
 gemini-cli와 supabase-mcp를 통해 여러가지 죵류들을 생성하고 저장해 주었다.
 
-![재료 가져오기](_assets/attachments/괴담집/괴담집-n8n재료%20가져오기.png)
+![재료 가져오기](_assets/attachments/괴담집/goedamjip-get-ingredients.png)
 
 이 재료들을 하나씩 랜덤으로 가져오기 위해서 sql에서 Postgresql 함수를 작성하고 rpc로 접근하는 방식을 사용했다.
 
@@ -415,7 +415,7 @@ PATIENT_ZERO.
 
 이 문제를 해결하기 위해 각각 플롯, 시놉시스, 이야기 생성 단계에 검수단계와 수전단계 2단계를 추가해 주었다.
 
-![생성-검수-수정](_assets/attachments/괴담집/괴담집-n8n%20생성-검수-수정.png)
+![생성-검수-수정](_assets/attachments/괴담집/goedamjip-partial-workflow.png)
 
 해당 단계를 추가한 이후론 이런 현상이 싹 사라지고 좋은 퀄리티의 이야기만 나왔다.
 
